@@ -9,10 +9,10 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://timrocketsman.github.io/ai-recruiter/">
+    <meta property="og:url" content="https://timlabs.online/">
     <meta property="og:title" content="TimLabs | Экосистема ИИ-решений">
     <meta property="og:description" content="Устраняем хаос, автоматизируем рутину, внедряем нейросети в малый, средний и крупный бизнес.">
-    <meta property="og:image" content="https://timrocketsman.github.io/ai-recruiter/preview.jpg">
+    <meta property="og:image" content="https://timlabs.online/preview.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -29,7 +29,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(90deg, #00f0ff, #a855f7);
+            background-image: linear-gradient(90deg, #00b4ff, #d100ff);
         }
 
         .bg-effects-wrapper {
@@ -46,8 +46,8 @@
         }
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.3), 0 10px 30px -10px rgba(168, 85, 247, 0.3);
-            border-color: rgba(0, 240, 255, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(0, 180, 255, 0.3), 0 10px 30px -10px rgba(209, 0, 255, 0.3);
+            border-color: rgba(0, 180, 255, 0.5);
         }
     </style>
 </head>
@@ -57,11 +57,8 @@
     <nav class="fixed w-full z-50 top-0 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-6xl mx-auto px-4 md:px-5 py-3 md:py-4 flex justify-between items-center relative">
             
-            <!-- Кнопка Назад / На главную -->
-            <a href="index.html" class="flex items-center text-gray-400 hover:text-cyan-400 transition-colors text-sm md:text-base font-semibold group z-10">
-                <svg class="w-5 h-5 md:w-6 md:h-6 mr-1 md:mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                <span class="hidden sm:inline">На главную</span>
-            </a>
+            <!-- Кнопка Назад / На главную (скрыта на самой главной, но оставляет отступ) -->
+            <div class="w-20 md:w-24 z-10"></div>
 
             <!-- Логотип (по центру) -->
             <a href="index.html" class="text-xl md:text-2xl font-extrabold tracking-tight text-white absolute left-1/2 -translate-x-1/2 z-0">
@@ -69,7 +66,7 @@
             </a>
 
             <!-- Кнопка Связаться (справа) -->
-            <a href="sales.html" target="_blank" class="text-xs md:text-sm bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full transition-colors border border-gray-700 z-10">
+            <a href="https://t.me/AiRocketsManager" target="_blank" class="text-xs md:text-sm bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full transition-colors border border-gray-700 z-10">
                 Связаться
             </a>
             
@@ -79,8 +76,8 @@
     <!-- Hero Section -->
     <header class="relative pt-32 pb-20 px-5 lg:px-12 border-b border-gray-900 overflow-hidden">
         <div class="bg-effects-wrapper opacity-40">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-600 blur-[120px] rounded-full"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600 blur-[120px] rounded-full"></div>
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#00b4ff] blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#d100ff] blur-[120px] rounded-full"></div>
         </div>
         
         <div class="relative z-10 max-w-4xl mx-auto text-center mt-10">
@@ -91,7 +88,7 @@
                 Автоматизируем рутину, исключаем человеческий фактор и внедряем нейросети с соблюдением 152-ФЗ. От малого бизнеса до Enterprise.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#solutions" class="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-purple-500/20">
+                <a href="#solutions" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:from-[#0090cc] hover:to-[#a600cc] text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-[#d100ff]/20">
                     Смотреть решения
                 </a>
             </div>
@@ -108,27 +105,27 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- Карточка 1: ИИ Рекрутер (ВЕДЕТ НА ТВОЙ ЛЕНДИНГ) -->
+                <!-- Карточка 1: ИИ Рекрутер -->
                 <a href="recruiter.html" class="service-card block bg-gray-900 p-8 rounded-3xl border border-gray-800 relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/30">
+                    <div class="w-14 h-14 bg-[#00b4ff]/10 text-[#00b4ff] rounded-2xl flex items-center justify-center mb-6 border border-[#00b4ff]/30">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-3">ИИ-Рекрутер</h3>
                     <p class="text-gray-400 text-sm mb-6 leading-relaxed">Автоматизация масс-найма. Робот мгновенно отвечает на отклики с HH/Авито, проводит аудио-собеседования в WhatsApp и фильтрует кандидатов.</p>
-                    <div class="text-cyan-400 font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">
+                    <div class="text-[#00b4ff] font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">
                         Подробнее <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </div>
                 </a>
 
-                <!-- Карточка 2: ИИ Ассистент по продажам -->
-                <a href="https://t.me/AiRocketsManager" target="_blank" class="service-card block bg-gray-900 p-8 rounded-3xl border border-gray-800 relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/30">
+                <!-- Карточка 2: ИИ Ассистент по продажам (ОБНОВЛЕНА ССЫЛКА НА SALES.HTML) -->
+                <a href="sales.html" class="service-card block bg-gray-900 p-8 rounded-3xl border border-gray-800 relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-[#d100ff]/10 text-[#d100ff] rounded-2xl flex items-center justify-center mb-6 border border-[#d100ff]/30">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-3">ИИ-Продавец</h3>
                     <p class="text-gray-400 text-sm mb-6 leading-relaxed">Интеллектуальный агент для CRM. Квалифицирует лидов, отвечает на вопросы по базе знаний компании, прогревает клиента до оплаты.</p>
-                    <div class="text-purple-400 font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">
-                        Обсудить внедрение <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <div class="text-[#d100ff] font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">
+                        Подробнее <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </div>
                 </a>
 
@@ -159,8 +156,8 @@
                 Все решения разрабатываются с учетом специфики российского рынка и строгого соблюдения законодательства (152-ФЗ о персональных данных).
             </p>
             <div class="flex flex-wrap gap-4">
-                <a href="https://t.me/timrockets" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-bold text-sm">📍 Канал @timrockets</a>
-                <a href="https://t.me/timlabs" target="_blank" class="text-purple-400 hover:text-purple-300 font-bold text-sm">📍 Канал @timlabs</a>
+                <a href="https://t.me/timrockets" target="_blank" class="text-[#00b4ff] hover:text-[#0090cc] font-bold text-sm">📍 Канал @timrockets</a>
+                <a href="https://t.me/timlabs" target="_blank" class="text-[#d100ff] hover:text-[#a600cc] font-bold text-sm">📍 Канал @timlabs</a>
                 <a href="https://t.me/timlabs_art" target="_blank" class="text-blue-400 hover:text-blue-300 font-bold text-sm">📍 Канал @timlabs_art</a>
             </div>
         </div>
