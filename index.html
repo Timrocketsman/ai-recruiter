@@ -16,7 +16,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
         
         body {
             font-family: 'Inter', sans-serif;
@@ -95,6 +95,58 @@
         </div>
     </header>
 
+    <!-- ИНТЕГРАЦИЯ ИИ: Генератор стратегий (Gemini API) -->
+    <section class="py-16 px-5 lg:px-12 bg-gray-950 relative z-10 border-b border-gray-900">
+        <div class="max-w-4xl mx-auto bg-gray-900 p-8 md:p-12 rounded-3xl border border-gray-800 shadow-2xl relative overflow-hidden">
+            <!-- Эффекты свечения -->
+            <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#00b4ff] blur-[100px] rounded-full opacity-40"></div>
+            <div class="absolute -bottom-20 -left-20 w-48 h-48 bg-[#d100ff] blur-[100px] rounded-full opacity-30"></div>
+            
+            <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#00b4ff] to-[#d100ff] flex items-center justify-center text-white font-bold">AI</div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">Как ИИ поможет именно вам?</h2>
+                </div>
+                <p class="text-gray-400 mb-8 md:text-lg">Напишите нишу вашего бизнеса, и наша нейросеть прямо сейчас сгенерирует 3 персональные идеи для взрывного роста и автоматизации.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                    <input type="text" id="nicheInput" placeholder="Например: Производство кирпича, Автосервис..." class="flex-1 bg-black border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00b4ff] transition-colors text-lg shadow-inner">
+                    <button id="generateBtn" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:from-[#0090cc] hover:to-[#a600cc] text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-[#d100ff]/20 whitespace-nowrap text-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                        ✨ Сгенерировать
+                    </button>
+                </div>
+
+                <!-- Сообщение об ошибке (вместо alert) -->
+                <div id="errorModal" class="hidden text-red-400 bg-red-400/10 border border-red-400/20 p-4 rounded-xl mb-4 text-sm"></div>
+
+                <!-- Индикатор загрузки -->
+                <div id="loadingIndicator" class="hidden flex items-center gap-3 text-[#00b4ff] font-semibold p-4 bg-[#00b4ff]/5 rounded-xl border border-[#00b4ff]/20">
+                    <svg class="animate-spin h-5 w-5 text-[#00b4ff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Нейросеть TimLabs анализирует вашу нишу...
+                </div>
+
+                <!-- Контейнер для результата -->
+                <div id="resultContainer" class="hidden mt-8">
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-3 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-[#00b4ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Персональная стратегия готова
+                    </h3>
+                    <div id="resultContent" class="space-y-6"></div>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
+                        <p class="text-gray-400 text-sm">Хотите внедрить одно из этих решений в свой бизнес?</p>
+                        <a href="https://t.me/AiRocketsManager" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-xl text-sm font-semibold flex items-center transition-colors border border-gray-700">
+                            Обсудить с инженером <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Витрина решений (Cards) -->
     <section id="solutions" class="py-20 px-5 lg:px-12 bg-black relative z-10">
         <div class="max-w-6xl mx-auto">
@@ -117,7 +169,7 @@
                     </div>
                 </a>
 
-                <!-- Карточка 2: ИИ Ассистент по продажам (ОБНОВЛЕНА ССЫЛКА НА SALES.HTML) -->
+                <!-- Карточка 2: ИИ Ассистент по продажам -->
                 <a href="sales.html" class="service-card block bg-gray-900 p-8 rounded-3xl border border-gray-800 relative overflow-hidden group">
                     <div class="w-14 h-14 bg-[#d100ff]/10 text-[#d100ff] rounded-2xl flex items-center justify-center mb-6 border border-[#d100ff]/30">
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
@@ -156,20 +208,4 @@
                 Все решения разрабатываются с учетом специфики российского рынка и строгого соблюдения законодательства (152-ФЗ о персональных данных).
             </p>
             <div class="flex flex-wrap gap-4">
-                <a href="https://t.me/timrockets" target="_blank" class="text-[#00b4ff] hover:text-[#0090cc] font-bold text-sm">📍 Канал @timrockets</a>
-                <a href="https://t.me/timlabs" target="_blank" class="text-[#d100ff] hover:text-[#a600cc] font-bold text-sm">📍 Канал @timlabs</a>
-                <a href="https://t.me/timlabs_art" target="_blank" class="text-blue-400 hover:text-blue-300 font-bold text-sm">📍 Канал @timlabs_art</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black text-gray-500 py-10 px-5 border-t border-gray-900 text-center">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-2xl font-extrabold mb-4 tracking-tight text-gradient">TimLabs</div>
-            <p class="text-xs text-gray-600">&copy; 2026 TimLabs. Все права защищены.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                <a href="https://t.
