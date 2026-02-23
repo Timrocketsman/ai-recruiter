@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>TimLabs | Интеграция ИИ и автоматизация бизнеса</title>
+    <meta name="description" content="TimLabs: Автоматизация бизнес-процессов и внедрение искусственного интеллекта в России.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TimLabs | Экосистема ИИ-решений">
+    <meta property="og:description" content="Устраняем хаос, автоматизируем рутину, внедряем нейросети в малый, средний и крупный бизнес.">
+    <meta property="og:image" content="https://timrocketsman.github.io/ai-recruiter/preview.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #e5e7eb;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, #00f0ff, #a855f7);
+        }
+
+        .bg-effects-wrapper {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Неоновый ховер для карточек услуг */
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.3), 0 10px 30px -10px rgba(168, 85, 247, 0.3);
+            border-color: rgba(0, 240, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-200">
+
+    <!-- Навигация (Header) -->
+    <nav class="fixed w-full z-50 top-0 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-5 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tight text-white">
+                Tim<span class="text-gradient">Labs</span>
+            </div>
+            <a href="https://t.me/AiRocketsManager" target="_blank" class="text-sm md:text-base bg-gray-800 hover:bg-gray-700 text-white px-5 py-2 rounded-full transition-colors border border-gray-700">
+                Связаться
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 px-5 lg:px-12 border-b border-gray-900 overflow-hidden">
+        <div class="bg-effects-wrapper opacity-40">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-600 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600 blur-[120px] rounded-full"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto text-center mt-10">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white">
+                Экосистема <br/> <span class="text-gradient">ИИ-решений</span> для бизнеса
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">
+                Автоматизируем рутину, исключаем человеческий фактор и внедряем нейросети с соблюдением 152-ФЗ. От малого бизнеса до Enterprise.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#solutions" class="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-purple-500/20">
+                    Смотреть решения
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Витрина решений (Cards) -->
+    <section id="solutions" class="py-20 px-5 lg:px-12 bg-black relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Готовые модули</h2>
+                <p class="text-lg text-gray-400">Выберите направление для автоматизации</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Карточка 1: ИИ Рекрутер (ВЕДЕТ НА ТВОЙ СТАРЫЙ ЛЕНДИНГ) -->
+                <!-- ВАЖНО: ссылка ведет на recruiter.html -->
+                <a href="recruiter.html" class="service-card block bg-gray-900 p-8 rounded-3xl border border-gray-800 relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-2xl flex items-center justify-center mb-6 border border-cyan-500/30">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">ИИ-Рекрутер</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Автоматизация масс-найма. Робот мгновенно отвечает на отклики с HH/Авито, проводит аудио-собеседования в WhatsApp и фильтрует кандидатов.</p>
+                    <div class="text-cyan-400 font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">
+                        Подробнее <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </a>
+
+                <!-- Карточка 2: ИИ Ассистент по продажам -->
+                <a href="https://t.me/AiRocketsManager" target="_blank" class="service-card block bg-gray-900 p-8 rounded-3xl border border-gray-800 relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/30">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">ИИ-Продавец</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Интеллектуальный агент для CRM. Квалифицирует лидов, отвечает на вопросы по базе знаний компании, прогревает клиента до оплаты.</p>
+                    <div class="text-purple-400 font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">
+                        Обсудить внедрение <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </a>
+
+                <!-- Карточка 3: RAG Базы знаний -->
+                <a href="https://t.me/AiRocketsManager" target="_blank" class="service-card block bg-gray-900 p-8 rounded-3xl border border-gray-800 relative overflow-hidden group">
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/30">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">ИИ-База знаний</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Внедрение корпоративных ИИ-поисковиков (RAG) по вашим регламентам и документам. Моментальные и точные ответы для сотрудников без выдумок.</p>
+                    <div class="text-blue-400 font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">
+                        Обсудить внедрение <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- О нас (Основатель) -->
+    <section class="py-20 px-5 lg:px-12 bg-gray-950 border-t border-gray-900">
+        <div class="max-w-4xl mx-auto bg-gray-900 rounded-3xl p-8 md:p-12 border border-gray-800">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">О TimLabs</h2>
+            <p class="text-gray-400 leading-relaxed mb-6 text-sm md:text-base">
+                Мы — команда инженеров и аналитиков под руководством Тимура Гуцева. Наша главная задача — перевести бизнес с ручного управления на системное. Мы создаем архитектуру, где алгоритмы забирают на себя хаос, а люди занимаются тем, что действительно приносит прибыль.
+            </p>
+            <p class="text-gray-400 leading-relaxed text-sm md:text-base mb-8">
+                Все решения разрабатываются с учетом специфики российского рынка и строгого соблюдения законодательства (152-ФЗ о персональных данных).
+            </p>
+            <div class="flex gap-4">
+                <a href="https://t.me/timrockets" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-bold text-sm">📍 Канал @timrockets</a>
+                <a href="https://t.me/timlabs" target="_blank" class="text-purple-400 hover:text-purple-300 font-bold text-sm">📍 Канал @timlabs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 py-10 px-5 border-t border-gray-900 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-2xl font-extrabold mb-4 tracking-tight text-gradient">TimLabs</div>
+            <p class="text-xs text-gray-600">&copy; 2026 TimLabs. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
