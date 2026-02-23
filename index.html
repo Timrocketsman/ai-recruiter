@@ -1,145 +1,95 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>TimLabs | Интеграция ИИ и автоматизация бизнеса</title>
-    <meta name="description" content="TimLabs: Автоматизация бизнес-процессов и внедрение искусственного интеллекта в России.">
+    <title>TimLabs | Integracija veštačke inteligencije i automatizacija poslovanja</title>
+    <meta name="description" content="TimLabs: Automatizacija poslovnih procesa i implementacija veštačke inteligencije.">
     
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://timlabs.online/">
-    <meta property="og:title" content="TimLabs | Экосистема ИИ-решений">
-    <meta property="og:description" content="Устраняем хаос, автоматизируем рутину, внедряем нейросети в малый, средний и крупный бизнес.">
+    <meta property="og:title" content="TimLabs | Ekosistem AI rešenja">
+    <meta property="og:description" content="Automatizujemo rutinu, eliminišemo ljudski faktor i implementiramo neuronske mreže u poslovanje.">
     <meta property="og:image" content="https://timlabs.online/preview.jpg">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
         
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #030712;
-            color: #e5e7eb;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .text-gradient {
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(90deg, #00b4ff, #d100ff);
-        }
-
-        .bg-effects-wrapper {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Неоновый ховер для карточек услуг */
-        .service-card {
-            transition: all 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(0, 180, 255, 0.3), 0 10px 30px -10px rgba(209, 0, 255, 0.3);
-            border-color: rgba(0, 180, 255, 0.5);
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #e5e7eb; -webkit-font-smoothing: antialiased; }
+        .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(90deg, #00b4ff, #d100ff); }
+        .bg-effects-wrapper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+        .service-card { transition: all 0.3s ease; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px -10px rgba(0, 180, 255, 0.3), 0 10px 30px -10px rgba(209, 0, 255, 0.3); border-color: rgba(0, 180, 255, 0.5); }
     </style>
 </head>
 <body class="bg-gray-950 text-gray-200">
 
-    <!-- Навигация (Header) -->
+    <!-- Navigacija -->
     <nav class="fixed w-full z-50 top-0 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-6xl mx-auto px-4 md:px-5 py-3 md:py-4 flex justify-between items-center relative">
-            
-            <!-- Кнопка Назад / На главную (скрыта на самой главной, но оставляет отступ) -->
             <div class="w-20 md:w-24 z-10"></div>
-
-            <!-- Логотип (по центру) -->
-            <a href="index.html" class="text-xl md:text-2xl font-extrabold tracking-tight text-white absolute left-1/2 -translate-x-1/2 z-0">
-                Tim<span class="text-gradient">Labs</span>
-            </a>
-
-            <!-- Кнопка Связаться (справа) -->
-            <a href="https://t.me/AiRocketsManager" target="_blank" class="text-xs md:text-sm bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full transition-colors border border-gray-700 z-10">
-                Связаться
-            </a>
-            
+            <a href="index.html" class="text-xl md:text-2xl font-extrabold tracking-tight text-white absolute left-1/2 -translate-x-1/2 z-0">Tim<span class="text-gradient">Labs</span></a>
+            <a href="https://t.me/AiRocketsManager" target="_blank" class="text-xs md:text-sm bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full transition-colors border border-gray-700 z-10">Kontaktirajte nas</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Sekcija -->
     <header class="relative pt-32 pb-20 px-5 lg:px-12 border-b border-gray-900 overflow-hidden">
         <div class="bg-effects-wrapper opacity-40">
             <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#00b4ff] blur-[120px] rounded-full"></div>
             <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#d100ff] blur-[120px] rounded-full"></div>
         </div>
-        
         <div class="relative z-10 max-w-4xl mx-auto text-center mt-10">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white">
-                Экосистема <br/> <span class="text-gradient">ИИ-решений</span> для бизнеса
-            </h1>
-            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">
-                Автоматизируем рутину, исключаем человеческий фактор и внедряем нейросети с соблюдением 152-ФЗ. От малого бизнеса до Enterprise.
-            </p>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white">Ekosistem <br/> <span class="text-gradient">AI rešenja</span> za poslovanje</h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-10">Automatizujemo rutinu, eliminišemo ljudski faktor i implementiramo neuronske mreže. Od malih preduzeća do Enterprise-a.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#solutions" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:from-[#0090cc] hover:to-[#a600cc] text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-[#d100ff]/20">
-                    Смотреть решения
-                </a>
+                <a href="#solutions" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:from-[#0090cc] hover:to-[#a600cc] text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-[#d100ff]/20">Pogledajte rešenja</a>
             </div>
         </div>
     </header>
 
-    <!-- ИНТЕГРАЦИЯ ИИ: Генератор стратегий (Gemini API) -->
+    <!-- AI Integracija -->
     <section class="py-16 px-5 lg:px-12 bg-gray-950 relative z-10 border-b border-gray-900">
         <div class="max-w-4xl mx-auto bg-gray-900 p-8 md:p-12 rounded-3xl border border-gray-800 shadow-2xl relative overflow-hidden">
-            <!-- Эффекты свечения -->
             <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#00b4ff] blur-[100px] rounded-full opacity-40"></div>
             <div class="absolute -bottom-20 -left-20 w-48 h-48 bg-[#d100ff] blur-[100px] rounded-full opacity-30"></div>
             
             <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-4">
                     <div class="w-10 h-10 rounded-full bg-gradient-to-br from-[#00b4ff] to-[#d100ff] flex items-center justify-center text-white font-bold">AI</div>
-                    <h2 class="text-2xl md:text-3xl font-bold text-white">Как ИИ поможет именно вам?</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-white">Kako AI može pomoći vama?</h2>
                 </div>
-                <p class="text-gray-400 mb-8 md:text-lg">Напишите нишу вашего бизнеса, и наша нейросеть прямо сейчас сгенерирует 3 персональные идеи для взрывного роста и автоматизации.</p>
+                <p class="text-gray-400 mb-8 md:text-lg">Unesite nišu vašeg poslovanja, i naša neuronska mreža će odmah generisati 3 personalizovane ideje za eksplozivni rast i automatizaciju.</p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                    <input type="text" id="nicheInput" placeholder="Например: Производство кирпича, Автосервис..." class="flex-1 bg-black border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00b4ff] transition-colors text-lg shadow-inner">
+                    <input type="text" id="nicheInput" placeholder="Na primer: Proizvodnja cigli, Auto-servis..." class="flex-1 bg-black border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00b4ff] transition-colors text-lg shadow-inner">
                     <button id="generateBtn" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:from-[#0090cc] hover:to-[#a600cc] text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-[#d100ff]/20 whitespace-nowrap text-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
-                        ✨ Сгенерировать
+                        ✨ Generiši
                     </button>
                 </div>
 
-                <!-- Сообщение об ошибке (вместо alert) -->
                 <div id="errorModal" class="hidden text-red-400 bg-red-400/10 border border-red-400/20 p-4 rounded-xl mb-4 text-sm"></div>
 
-                <!-- Индикатор загрузки -->
                 <div id="loadingIndicator" class="hidden flex items-center gap-3 text-[#00b4ff] font-semibold p-4 bg-[#00b4ff]/5 rounded-xl border border-[#00b4ff]/20">
                     <svg class="animate-spin h-5 w-5 text-[#00b4ff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Нейросеть TimLabs анализирует вашу нишу...
+                    TimLabs neuronska mreža analizira vašu nišu...
                 </div>
 
-                <!-- Контейнер для результата -->
                 <div id="resultContainer" class="hidden mt-8">
                     <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-3 flex items-center gap-2">
                         <svg class="w-6 h-6 text-[#00b4ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Персональная стратегия готова
+                        Personalna strategija je spremna
                     </h3>
                     <div id="resultContent" class="space-y-6"></div>
-                    
                     <div class="mt-8 pt-6 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
-                        <p class="text-gray-400 text-sm">Хотите внедрить одно из этих решений в свой бизнес?</p>
+                        <p class="text-gray-400 text-sm">Da li želite da implementirate jedno od ovih rešenja u vaše poslovanje?</p>
                         <a href="https://t.me/AiRocketsManager" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-xl text-sm font-semibold flex items-center transition-colors border border-gray-700">
-                            Обсудить с инженером <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            Razgovarajte sa inženjerom <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -147,65 +97,153 @@
         </div>
     </section>
 
-    <!-- Витрина решений (Cards) -->
+    <!-- Kartice rešenja -->
     <section id="solutions" class="py-20 px-5 lg:px-12 bg-black relative z-10">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Готовые модули</h2>
-                <p class="text-lg text-gray-400">Выберите направление для автоматизации</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Gotovi moduli</h2>
+                <p class="text-lg text-gray-400">Izaberite pravac za automatizaciju</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Карточка 1: ИИ Рекрутер -->
                 <a href="recruiter.html" class="service-card block bg-gray-900 p-8 rounded-3xl border border-gray-800 relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-[#00b4ff]/10 text-[#00b4ff] rounded-2xl flex items-center justify-center mb-6 border border-[#00b4ff]/30">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">ИИ-Рекрутер</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Автоматизация масс-найма. Робот мгновенно отвечает на отклики с HH/Авито, проводит аудио-собеседования в WhatsApp и фильтрует кандидатов.</p>
-                    <div class="text-[#00b4ff] font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">
-                        Подробнее <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </div>
+                    <div class="w-14 h-14 bg-[#00b4ff]/10 text-[#00b4ff] rounded-2xl flex items-center justify-center mb-6 border border-[#00b4ff]/30"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
+                    <h3 class="text-2xl font-bold text-white mb-3">AI-Regruter</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Automatizacija masovnog zapošljavanja. Robot trenutno odgovara na prijave, obavlja audio intervjue na WhatsApp-u i filtrira kandidate.</p>
+                    <div class="text-[#00b4ff] font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">Saznaj više <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></div>
                 </a>
-
-                <!-- Карточка 2: ИИ Ассистент по продажам -->
                 <a href="sales.html" class="service-card block bg-gray-900 p-8 rounded-3xl border border-gray-800 relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-[#d100ff]/10 text-[#d100ff] rounded-2xl flex items-center justify-center mb-6 border border-[#d100ff]/30">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">ИИ-Продавец</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Интеллектуальный агент для CRM. Квалифицирует лидов, отвечает на вопросы по базе знаний компании, прогревает клиента до оплаты.</p>
-                    <div class="text-[#d100ff] font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">
-                        Подробнее <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </div>
+                    <div class="w-14 h-14 bg-[#d100ff]/10 text-[#d100ff] rounded-2xl flex items-center justify-center mb-6 border border-[#d100ff]/30"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
+                    <h3 class="text-2xl font-bold text-white mb-3">AI-Prodavac</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Intelektualni agent za CRM. Kvalifikuje lidove, odgovara na pitanja iz baze znanja kompanije, zagreva klijenta do plaćanja.</p>
+                    <div class="text-[#d100ff] font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">Saznaj više <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></div>
                 </a>
-
-                <!-- Карточка 3: RAG Базы знаний -->
                 <a href="https://t.me/TimLabs" target="_blank" class="service-card block bg-gray-900 p-8 rounded-3xl border border-gray-800 relative overflow-hidden group">
-                    <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/30">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">ИИ-База знаний</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Внедрение корпоративных ИИ-поисковиков (RAG) по вашим регламентам и документам. Моментальные и точные ответы для сотрудников без выдумок.</p>
-                    <div class="text-blue-400 font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">
-                        Обсудить внедрение <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </div>
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/30"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div>
+                    <h3 class="text-2xl font-bold text-white mb-3">AI-Baza znanja</h3>
+                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">Implementacija korporativnih AI pretraživača (RAG) prema vašim pravilnicima i dokumentima. Trenutni i tačni odgovori za zaposlene.</p>
+                    <div class="text-blue-400 font-semibold text-sm flex items-center group-hover:translate-x-2 transition-transform">Diskutujte o implementaciji <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></div>
                 </a>
-
             </div>
         </div>
     </section>
 
-    <!-- О нас (Основатель) -->
+    <!-- O nama -->
     <section class="py-20 px-5 lg:px-12 bg-gray-950 border-t border-gray-900">
         <div class="max-w-4xl mx-auto bg-gray-900 rounded-3xl p-8 md:p-12 border border-gray-800">
-            <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">О TimLabs</h2>
-            <p class="text-gray-400 leading-relaxed mb-6 text-sm md:text-base">
-                Мы — команда инженеров и аналитиков под руководством Тимура Гуцева. Наша главная задача — перевести бизнес с ручного управления на системное. Мы создаем архитектуру, где алгоритмы забирают на себя хаос, а люди занимаются тем, что действительно приносит прибыль.
-            </p>
-            <p class="text-gray-400 leading-relaxed text-sm md:text-base mb-8">
-                Все решения разрабатываются с учетом специфики российского рынка и строгого соблюдения законодательства (152-ФЗ о персональных данных).
-            </p>
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">O TimLabs</h2>
+            <p class="text-gray-400 leading-relaxed mb-6 text-sm md:text-base">Mi smo tim inženjera i analitičara pod vođstvom Timura Guceva. Naš glavni zadatak je prelazak poslovanja sa ručnog upravljanja na sistemsko. Gradimo arhitekturu gde algoritmi preuzimaju haos, a ljudi rade ono što zaista donosi profit.</p>
+            <p class="text-gray-400 leading-relaxed text-sm md:text-base mb-8">Sva rešenja se razvijaju uzimajući u obzir specifičnosti tržišta.</p>
             <div class="flex flex-wrap gap-4">
-                <a href="https://t.
+                <a href="https://t.me/timrockets" target="_blank" class="text-[#00b4ff] hover:text-[#0090cc] font-bold text-sm">📍 Kanal @timrockets</a>
+                <a href="https://t.me/timlabs" target="_blank" class="text-[#d100ff] hover:text-[#a600cc] font-bold text-sm">📍 Kanal @timlabs</a>
+                <a href="https://t.me/timlabs_art" target="_blank" class="text-blue-400 hover:text-blue-300 font-bold text-sm">📍 Kanal @timlabs_art</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 py-10 px-5 border-t border-gray-900 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-2xl font-extrabold mb-4 tracking-tight text-gradient">TimLabs</div>
+            <p class="text-xs text-gray-600">&copy; 2026 TimLabs. Sva prava zadržana.</p>
+        </div>
+    </footer>
+
+    <!-- Bezbedna klijentska skripta -->
+    <script>
+        // ❗️ TIM, TVOJ CLOUDFLARE LINK JE OVDE:
+        const CLOUDFLARE_WORKER_URL = "https://timlabs-ai-proxy.timrocketsman.workers.dev"; 
+
+        const cleanText = (str) => {
+            if(!str) return "";
+            return str.replace(/\*\*/g, '').replace(/\*/g, '');
+        };
+
+        document.getElementById('generateBtn').addEventListener('click', async () => {
+            const niche = document.getElementById('nicheInput').value.trim();
+            const btn = document.getElementById('generateBtn');
+            const loading = document.getElementById('loadingIndicator');
+            const resultBox = document.getElementById('resultContainer');
+            const resultContent = document.getElementById('resultContent');
+            const errorModal = document.getElementById('errorModal');
+
+            // Sakrij prethodne greške
+            errorModal.classList.add('hidden');
+            resultBox.classList.add('hidden');
+            resultContent.innerHTML = '';
+
+            if (!niche) {
+                errorModal.textContent = "Molimo vas, unesite nišu vašeg poslovanja.";
+                errorModal.classList.remove('hidden');
+                return;
+            }
+
+            // Prikaz učitavanja
+            btn.disabled = true;
+            btn.innerHTML = '<span class="opacity-50">Analiza...</span>';
+            loading.classList.remove('hidden');
+
+            try {
+                const response = await fetch(CLOUDFLARE_WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ niche: niche })
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    try {
+                        const errJson = JSON.parse(errorText);
+                        throw new Error(errJson.error || "Greška servera");
+                    } catch(e) {
+                        throw new Error(errorText || "Nepoznata greška servera");
+                    }
+                }
+                
+                const parsedData = await response.json();
+                const ideas = parsedData.ideas || [];
+
+                if(ideas.length === 0) throw new Error("Prazan odgovor od AI");
+
+                let htmlOutput = '';
+                ideas.forEach((idea, index) => {
+                    htmlOutput += `
+                    <div class="relative bg-black/40 border border-gray-800 hover:border-[#00b4ff]/50 p-6 md:p-8 rounded-2xl transition-all duration-300 group overflow-hidden backdrop-blur-md mb-4">
+                        <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#00b4ff] to-[#d100ff] opacity-80"></div>
+                        <h4 class="text-xl md:text-2xl font-bold text-white mb-3 flex items-center gap-3">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00b4ff] to-[#d100ff] font-black text-2xl md:text-3xl opacity-80">0${index + 1}</span>
+                            ${cleanText(idea.title)}
+                        </h4>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 pl-10 md:pl-12">
+                            ${cleanText(idea.description)}
+                        </p>
+                        <div class="ml-10 md:ml-12 bg-gray-900/80 p-4 rounded-xl border border-gray-800 flex items-start gap-3">
+                            <svg class="w-6 h-6 text-[#d100ff] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <div>
+                                <div class="text-[#d100ff] text-[10px] md:text-xs font-bold uppercase tracking-wider mb-1">Ključna korist</div>
+                                <div class="text-white text-sm md:text-base font-medium">${cleanText(idea.benefit)}</div>
+                            </div>
+                        </div>
+                    </div>`;
+                });
+
+                resultContent.innerHTML = htmlOutput;
+                resultBox.classList.remove('hidden');
+
+            } catch (error) {
+                console.error(error);
+                errorModal.textContent = "Greška: " + error.message + ". Kontaktirajte inženjera na Telegramu.";
+                errorModal.classList.remove('hidden');
+            } finally {
+                loading.classList.add('hidden');
+                btn.disabled = false;
+                btn.innerHTML = '✨ Generiši';
+            }
+        });
+
+        document.getElementById('nicheInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') document.getElementById('generateBtn').click();
+        });
+    </script>
+</body>
+</html>
