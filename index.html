@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>Внедрение нейросетей и ИИ в бизнес | TimLabs</title>
-    <meta name="description" content="Автоматизация отдела продаж, масс-найма и создание ИИ-баз знаний от TimLabs.">
+    <title>Implementacija neuronskih mreža i AI u poslovanje | TimLabs</title>
+    <meta name="description" content="Automatizacija odeljenja prodaje, masovnog zapošljavanja i kreiranje AI baza znanja od strane TimLabs-a.">
     
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
     
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://timlabs.online/">
-    <meta property="og:title" content="Внедрение ИИ в бизнес | TimLabs">
+    <meta property="og:title" content="Implementacija AI u poslovanje | TimLabs">
     <meta property="og:image" content="https://timlabs.online/preview2.jpg">
     
     <!-- Učitavanje dizajna (Tailwind) -->
@@ -35,7 +35,7 @@
                 <img src="logo.jpg" alt="TimLabs" class="w-10 h-10 rounded-full border border-gray-800 hidden sm:block object-cover">
                 Tim<span class="text-gradient">Labs</span>
             </a>
-            <a href="https://t.me/TimLabs_bot" target="_blank" class="text-sm bg-gray-800 hover:bg-gray-700 text-white px-5 py-2 rounded-full border border-gray-700 z-10 transition font-bold">Связаться с ИИ</a>
+            <a href="https://t.me/TimLabs_bot" target="_blank" class="text-sm bg-gray-800 hover:bg-gray-700 text-white px-5 py-2 rounded-full border border-gray-700 z-10 transition font-bold">Kontaktirajte AI</a>
         </div>
     </nav>
 
@@ -47,10 +47,10 @@
             </div>
             <div class="relative z-10 max-w-4xl mx-auto text-center mt-6">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-white">
-                    Автоматизация бизнеса <br/> через <span class="text-gradient">нейросети</span>
+                    Automatizacija poslovanja <br/> kroz <span class="text-gradient">neuronske mreže</span>
                 </h1>
                 <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-                    Внедряем искусственный интеллект в отделы продаж, HR и поддержку.
+                    Uvodimo veštačku inteligenciju u odeljenja prodaje, HR-a i podrške.
                 </p>
             </div>
         </header>
@@ -58,24 +58,24 @@
         <section class="py-16 px-5 bg-gray-950 relative z-10">
             <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-3xl border border-gray-800 shadow-xl relative overflow-hidden">
                 <div class="relative z-10">
-                    <h2 class="text-2xl font-bold text-white mb-2">Как ИИ поможет вам?</h2>
-                    <p class="text-gray-400 mb-8">Напишите нишу бизнеса, и нейросеть сгенерирует 3 идеи для роста.</p>
+                    <h2 class="text-2xl font-bold text-white mb-2">Kako AI može da vam pomogne?</h2>
+                    <p class="text-gray-400 mb-8">Upišite nišu svog poslovanja, a neuronska mreža će generisati 3 ideje za rast.</p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                        <input type="text" id="nicheInput" placeholder="Например: СТО, Магазин мебели..." class="flex-1 bg-black border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00b4ff]">
+                        <input type="text" id="nicheInput" placeholder="Na primer: Auto-servis, Prodavnica nameštaja..." class="flex-1 bg-black border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00b4ff]">
                         <button id="generateBtn" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white font-bold py-4 px-8 rounded-xl disabled:opacity-50 transition">
-                            Сгенерировать
+                            Generiši
                         </button>
                     </div>
 
                     <div id="errorModal" class="hidden text-red-400 bg-red-400/10 border border-red-400/20 p-4 rounded-xl mb-4 text-sm break-words"></div>
                     <div id="loadingIndicator" class="hidden text-[#00b4ff] font-semibold p-4 flex flex-col gap-2">
-                        <div class="animate-pulse">Нейросеть генерирует стратегию...</div>
-                        <div class="text-xs text-gray-500 font-normal">Подключение к серверам Google...</div>
+                        <div class="animate-pulse">Neuronska mreža generiše strategiju...</div>
+                        <div class="text-xs text-gray-500 font-normal">Povezivanje sa Google serverima...</div>
                     </div>
 
                     <div id="resultContainer" class="hidden mt-8">
-                        <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-3">Результат анализа:</h3>
+                        <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-3">Rezultat analize:</h3>
                         <div id="resultContent" class="space-y-6"></div>
                     </div>
                 </div>
@@ -85,11 +85,11 @@
 
     <footer class="bg-black text-gray-500 py-10 text-center border-t border-gray-900">
         <div class="text-2xl font-extrabold mb-2 text-gradient">TimLabs</div>
-        <p class="text-xs">&copy; 2026 TimLabs. Все права защищены.</p>
+        <p class="text-xs">&copy; 2026 TimLabs. Sva prava zadržana.</p>
     </footer>
 
     <script>
-        // Funkcija za bezbedan prenos podataka u Telegram
+        // Funkcija za bezbedno kodiranje podataka za Telegram bot
         function safeEncode(niche, ideaTitle) {
             const data = `${niche.substring(0, 15)}|${ideaTitle.substring(0, 30)}`; 
             try {
@@ -103,9 +103,9 @@
         }
 
         // ==============================================================
-        // Tvoj Google Apps Script URL
+        // Tvoj novi Google Apps Script URL (Zamenjen i spreman)
         // ==============================================================
-        const GOOGLE_APP_URL = "https://script.google.com/macros/s/AKfycbwxHYZkPxjPDrICWXGorae5kWgScu44iBzaeAC_F_zONYHgXIVDfrFmOzW8tV4B8s0zmg/exec";
+        const GOOGLE_APP_URL = "https://script.google.com/macros/s/AKfycby9bBK52J_AfBDqEspGCqVs_leTtKjueWUHKpSb88mxo-Qy3Pp4aVLpC__MTOJ4HcXymA/exec";
 
         document.getElementById('generateBtn').addEventListener('click', async () => {
             const niche = document.getElementById('nicheInput').value.trim();
@@ -115,13 +115,13 @@
             const resultContent = document.getElementById('resultContent');
             const errorModal = document.getElementById('errorModal');
 
-            // Sakrij greške i rezultate
+            // Sakrij greške i rezultate pre novog zahteva
             errorModal.classList.add('hidden');
             resultBox.classList.add('hidden');
             resultContent.innerHTML = '';
 
             if (!niche) {
-                errorModal.textContent = "Пожалуйста, введите нишу.";
+                errorModal.textContent = "Molimo vas, unesite nišu.";
                 errorModal.classList.remove('hidden');
                 return;
             }
@@ -130,11 +130,11 @@
             loading.classList.remove('hidden');
 
             try {
-                // Zahtev ide preko Google-a (zaobilazi blokade RKN)
+                // Zahtev ide preko Google-a (zaobilazi blokade bez problema)
                 const response = await fetch(`${GOOGLE_APP_URL}?niche=${encodeURIComponent(niche)}`);
 
                 if (!response.ok) {
-                    throw new Error(`Сбой сети (${response.status})`);
+                    throw new Error(`Greška na mreži (${response.status})`);
                 }
                 
                 const parsedData = await response.json();
@@ -144,7 +144,7 @@
                 }
 
                 const ideas = parsedData.ideas || [];
-                if(ideas.length === 0) throw new Error("ИИ вернул пустой список идей.");
+                if(ideas.length === 0) throw new Error("AI je vratio praznu listu ideja.");
 
                 let htmlOutput = '';
                 ideas.forEach((idea) => {
@@ -157,13 +157,13 @@
                         <p class="text-gray-300 text-sm md:text-base mb-6 pl-4 flex-grow">${idea.description}</p>
                         
                         <div class="ml-4 mb-6 bg-gray-900 p-4 rounded-xl border border-gray-800">
-                            <div class="text-[#d100ff] text-xs font-bold uppercase tracking-wider mb-1">Выгода</div>
+                            <div class="text-[#d100ff] text-xs font-bold uppercase tracking-wider mb-1">Prednost</div>
                             <div class="text-white text-sm">${idea.benefit}</div>
                         </div>
 
                         <div class="ml-4 mt-auto">
                             <a href="${botLink}" target="_blank" class="inline-flex items-center justify-center bg-gray-800 hover:bg-white hover:text-black text-white px-6 py-3 rounded-xl text-sm font-bold border border-gray-700 transition w-full sm:w-auto text-center uppercase">
-                                🔥 Внедрить
+                                🔥 Implementiraj
                             </a>
                         </div>
                     </div>`;
@@ -173,7 +173,7 @@
                 resultBox.classList.remove('hidden');
 
             } catch (error) {
-                errorModal.textContent = "Ошибка: " + error.message;
+                errorModal.textContent = "Greška: " + error.message;
                 errorModal.classList.remove('hidden');
             } finally {
                 // Prikaz rezultata i omogućavanje dugmeta
@@ -182,7 +182,7 @@
             }
         });
 
-        // Generisanje na pritisak tastera Enter
+        // Generisanje pritiskom na taster Enter
         document.getElementById('nicheInput').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') document.getElementById('generateBtn').click();
         });
