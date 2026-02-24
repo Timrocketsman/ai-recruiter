@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Внедрение нейросетей и ИИ в бизнес | TimLabs</title>
-    <meta name="description" content="Внедрение искусственного интеллекта и нейросетей в бизнес. Автоматизация отдела продаж, масс-найма и создание корпоративных ИИ-баз знаний от TimLabs.">
-    <meta name="keywords" content="внедрение нейросетей в бизнес, искусственный интеллект для бизнеса, автоматизация бизнес-процессов, ИИ-рекрутер, ИИ-продавец, разработка ИИ-ассистентов, автоматизация найма, RAG системы, автоматизация отдела продаж, TimLabs">
+    <meta name="description" content="Автоматизация отдела продаж, масс-найма и создание ИИ-баз знаний от TimLabs.">
     
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
     
+    <!-- Open Graph (Для Telegram) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://timlabs.online/">
-    <meta property="og:title" content="Внедрение ИИ и нейросетей в бизнес | TimLabs">
+    <meta property="og:title" content="Внедрение ИИ в бизнес | TimLabs">
     <meta property="og:description" content="Автоматизируем продажи, найм и рутину с помощью ИИ.">
     <meta property="og:image" content="https://timlabs.online/preview2.jpg">
     
-    <!-- Загрузка дизайна через защищенный API -->
-    <script src="https://api.timlabs.online/tailwind.js"></script>
+    <!-- Загрузка дизайна напрямую -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #030712; color: #e5e7eb; overflow-x: hidden;}
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: #030712; color: #e5e7eb; overflow-x: hidden;}
         .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(90deg, #00b4ff, #d100ff); }
         .bg-effects-wrapper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-        .service-card { transition: all 0.4s ease; }
-        .service-card:hover { transform: translateY(-8px); border-color: rgba(0, 180, 255, 0.4); box-shadow: 0 20px 40px -20px rgba(0, 180, 255, 0.3); }
+        .service-card { transition: transform 0.3s ease, border-color 0.3s ease; }
+        .service-card:hover { transform: translateY(-5px); border-color: rgba(0, 180, 255, 0.4); }
     </style>
 </head>
 <body class="bg-gray-950 text-gray-200">
@@ -34,10 +34,10 @@
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center relative">
             <div class="w-20 z-10"></div>
             <a href="index.html" class="text-2xl font-extrabold text-white absolute left-1/2 -translate-x-1/2 z-0 flex items-center gap-3">
-                <img src="logo.jpg" alt="TimLabs Logo" class="w-10 h-10 rounded-full border border-gray-800 hidden sm:block object-cover">
+                <img src="logo.jpg" alt="TimLabs" class="w-10 h-10 rounded-full border border-gray-800 hidden sm:block object-cover">
                 Tim<span class="text-gradient">Labs</span>
             </a>
-            <a href="https://t.me/TimLabs_bot" target="_blank" class="text-sm bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full transition-colors border border-gray-700 z-10">Связаться с ИИ</a>
+            <a href="https://t.me/TimLabs_bot" target="_blank" class="text-sm bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full border border-gray-700 z-10 transition">Связаться с ИИ</a>
         </div>
     </nav>
 
@@ -47,7 +47,7 @@
             <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#d100ff] blur-[150px] rounded-full"></div>
         </div>
         <div class="relative z-10 max-w-4xl mx-auto text-center mt-10">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-white">
                 Автоматизация бизнеса <br/> через <span class="text-gradient">нейросети</span>
             </h1>
             <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
@@ -56,32 +56,32 @@
         </div>
     </header>
 
-    <section class="py-16 px-5 bg-gray-950 relative z-10 border-b border-gray-900">
-        <div class="max-w-4xl mx-auto bg-gray-900 p-8 md:p-12 rounded-3xl border border-gray-800 shadow-2xl relative">
+    <section class="py-16 px-5 bg-gray-950 relative z-10">
+        <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-3xl border border-gray-800 shadow-xl relative overflow-hidden">
             <div class="relative z-10">
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Как ИИ поможет именно вам?</h2>
-                <p class="text-gray-400 mb-8 md:text-lg">Напишите нишу бизнеса, и нейросеть сгенерирует 3 идеи для взрывного роста.</p>
+                <h2 class="text-2xl font-bold text-white mb-2">Как ИИ поможет вам?</h2>
+                <p class="text-gray-400 mb-8">Напишите нишу бизнеса, и нейросеть сгенерирует 3 идеи для роста.</p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                    <input type="text" id="nicheInput" placeholder="Например: СТО, Магазин..." class="flex-1 bg-black border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00b4ff] text-lg">
-                    <button id="generateBtn" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white font-bold py-4 px-8 rounded-xl disabled:opacity-50">
-                        ✨ Сгенерировать
+                    <input type="text" id="nicheInput" placeholder="Например: Магазин одежды..." class="flex-1 bg-black border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00b4ff]">
+                    <button id="generateBtn" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white font-bold py-4 px-8 rounded-xl disabled:opacity-50 transition">
+                        Сгенерировать
                     </button>
                 </div>
 
                 <div id="errorModal" class="hidden text-red-400 bg-red-400/10 border border-red-400/20 p-4 rounded-xl mb-4 text-sm"></div>
-                <div id="loadingIndicator" class="hidden animate-pulse text-[#00b4ff] font-semibold p-4">Нейросеть TimLabs анализирует...</div>
+                <div id="loadingIndicator" class="hidden animate-pulse text-[#00b4ff] font-semibold p-4">Нейросеть генерирует стратегию...</div>
 
                 <div id="resultContainer" class="hidden mt-8">
-                    <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-3">Персональная стратегия готова</h3>
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-3">Результат:</h3>
                     <div id="resultContent" class="space-y-6"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-black text-gray-500 py-10 text-center">
-        <div class="text-2xl font-extrabold mb-4 text-gradient">TimLabs</div>
+    <footer class="bg-black text-gray-500 py-10 text-center border-t border-gray-900">
+        <div class="text-2xl font-extrabold mb-2 text-gradient">TimLabs</div>
         <p class="text-xs">&copy; 2026 TimLabs. Все права защищены.</p>
     </footer>
 
@@ -120,7 +120,8 @@
             loading.classList.remove('hidden');
 
             try {
-                const response = await fetch("https://api.timlabs.online/api/generate", {
+                // Прямой запрос к API
+                const response = await fetch("https://api.timlabs.online/", {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ niche: niche })
@@ -138,19 +139,19 @@
                     const botLink = `https://t.me/TimLabs_bot?start=${safeEncode(niche, idea.title)}`;
                     
                     htmlOutput += `
-                    <div class="service-card relative bg-black/40 border border-gray-800 p-6 md:p-8 rounded-2xl flex flex-col h-full">
+                    <div class="service-card relative bg-black/40 border border-gray-800 p-6 rounded-2xl flex flex-col">
                         <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#00b4ff] to-[#d100ff]"></div>
-                        <h4 class="text-xl md:text-2xl font-bold text-white mb-3 pl-4">${idea.title}</h4>
-                        <p class="text-gray-300 text-sm md:text-base mb-6 pl-4 flex-grow">${idea.description}</p>
+                        <h4 class="text-xl font-bold text-white mb-3 pl-4">${idea.title}</h4>
+                        <p class="text-gray-300 text-sm mb-6 pl-4">${idea.description}</p>
                         
-                        <div class="ml-4 mb-6 bg-gray-900 p-4 rounded-xl border border-gray-800">
-                            <div class="text-[#d100ff] text-xs font-bold uppercase tracking-wider mb-1">Ключевая выгода</div>
+                        <div class="ml-4 mb-6 bg-gray-900 p-3 rounded-lg border border-gray-800">
+                            <div class="text-[#d100ff] text-xs font-bold uppercase mb-1">Выгода</div>
                             <div class="text-white text-sm">${idea.benefit}</div>
                         </div>
 
                         <div class="ml-4 mt-auto">
-                            <a href="${botLink}" target="_blank" class="inline-flex items-center justify-center bg-gray-800 hover:bg-white hover:text-black text-white px-6 py-3 rounded-xl text-sm font-bold transition-colors border border-gray-700 w-full sm:w-auto text-center uppercase">
-                                🔥 Внедрить это решение
+                            <a href="${botLink}" target="_blank" class="inline-block bg-gray-800 hover:bg-white hover:text-black text-white px-5 py-3 rounded-xl text-sm font-bold border border-gray-700 transition w-full sm:w-auto text-center">
+                                🔥 Внедрить
                             </a>
                         </div>
                     </div>`;
@@ -160,7 +161,7 @@
                 resultBox.classList.remove('hidden');
 
             } catch (error) {
-                errorModal.textContent = "Ошибка связи с ИИ. Проверьте соединение.";
+                errorModal.textContent = "Ошибка. Отключите VPN или проверьте интернет.";
                 errorModal.classList.remove('hidden');
             } finally {
                 loading.classList.add('hidden');
