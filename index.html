@@ -4,78 +4,294 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>Внедрение нейросетей и ИИ в бизнес | TimLabs</title>
-    <meta name="description" content="Автоматизация отдела продаж, масс-найма и создание ИИ-баз знаний от TimLabs.">
+    <!-- SEO & Meta -->
+    <title>Внедрение нейросетей и ИИ в бизнес | Автоматизация от TimLabs</title>
+    <meta name="description" content="TimLabs: Автоматизация бизнес-процессов с помощью нейросетей для малого, среднего и крупного бизнеса. Полное соблюдение 152-ФЗ.">
+    <meta name="keywords" content="внедрение нейросетей в бизнес, ИИ-ассистент, ИИ-рекрутер, ИИ-продавец, RAG базы знаний, автоматизация бизнеса, TimLabs, Тим Гуцев">
+    <meta name="author" content="Тим Гуцев (TimLabs)">
+    <meta name="robots" content="index, follow">
     
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
     
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://timlabs.online/">
+    <meta property="og:site_name" content="TimLabs">
+    <meta property="og:locale" content="ru_RU">
     <meta property="og:title" content="Внедрение ИИ в бизнес | TimLabs">
-    <meta property="og:image" content="https://timlabs.online/preview2.jpg">
+    <meta property="og:description" content="Интеллектуальные системы для вашего бизнеса. Автоматизируем отделы продаж, найм и поддержку.">
     
-    <!-- Загрузка дизайна (Tailwind) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; background-color: #030712; color: #e5e7eb; overflow-x: hidden;}
-        .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(90deg, #00b4ff, #d100ff); }
-        .bg-effects-wrapper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-        .service-card { transition: transform 0.3s ease, border-color 0.3s ease; }
-        .service-card:hover { transform: translateY(-5px); border-color: rgba(0, 180, 255, 0.4); }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
+            background-color: #030712; 
+            color: #e5e7eb; 
+            overflow-x: hidden; 
+            scroll-behavior: smooth;
+        }
+
+        /* Текстовые градиенты */
+        .text-gradient { 
+            background-clip: text; 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            background-image: linear-gradient(90deg, #00b4ff, #d100ff, #00b4ff); 
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        /* 3D Сцена на главном экране */
+        #hero-scene {
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        /* Объемные облака (Nebula) */
+        .cloud {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            mix-blend-mode: screen;
+            transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+
+        /* Парящие 3D элементы */
+        .floating-obj {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(255,255,255,0.05);
+            transition: transform 0.2s ease-out;
+            will-change: transform;
+        }
+
+        @keyframes floatUpDown {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        @keyframes floatReverse {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(20px) rotate(-10deg); }
+        }
+
+        .anim-float-1 { animation: floatUpDown 8s ease-in-out infinite; }
+        .anim-float-2 { animation: floatReverse 12s ease-in-out infinite; }
+
+        /* Анимация скролла */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* 3D Карточки модулей */
+        .tilt-wrapper { perspective: 1200px; }
+        .tilt-card {
+            transform-style: preserve-3d;
+            transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+        .tilt-content { transform: translateZ(40px); }
+        .tilt-icon { transform: translateZ(70px); }
+
+        /* Эффект матового стекла */
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .animated-border { position: relative; }
+        .animated-border::before {
+            content: ""; position: absolute; inset: -2px; border-radius: 14px;
+            background: linear-gradient(45deg, #00b4ff, #d100ff, #00b4ff);
+            background-size: 200% auto; animation: shine 3s linear infinite;
+            z-index: -1; opacity: 0.5; transition: opacity 0.3s;
+        }
+        .animated-border:focus-within::before { opacity: 1; }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-200 flex flex-col min-h-screen">
+<body class="bg-gray-950 text-gray-200 flex flex-col min-h-screen selection:bg-[#d100ff] selection:text-white">
 
-    <nav class="fixed w-full z-50 top-0 bg-gray-950/80 backdrop-blur-xl border-b border-gray-800/50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center relative">
-            <div class="w-20 z-10"></div>
-            <a href="index.html" class="text-2xl font-extrabold text-white absolute left-1/2 -translate-x-1/2 z-0 flex items-center gap-3">
-                <img src="logo.jpg" alt="TimLabs" class="w-10 h-10 rounded-full border border-gray-800 hidden sm:block object-cover">
+    <!-- Навигация -->
+    <nav class="fixed w-full z-50 top-0 glass-panel border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center relative">
+            <div class="hidden sm:flex gap-6 z-10 text-sm font-semibold text-gray-400">
+                <a href="#modules" class="hover:text-white transition">Модули</a>
+                <a href="#analyzer" class="hover:text-white transition">Анализ ниши</a>
+            </div>
+            <a href="index.html" class="text-2xl font-extrabold text-white absolute left-1/2 -translate-x-1/2 z-0 flex items-center gap-3 hover:scale-105 transition transform duration-300">
+                <img src="logo.jpg" alt="TimLabs Logo" class="w-10 h-10 rounded-full border border-gray-800 hidden sm:block object-cover shadow-[0_0_15px_rgba(0,180,255,0.4)]">
                 Tim<span class="text-gradient">Labs</span>
             </a>
-            <a href="https://t.me/TimLabs_bot" target="_blank" class="text-sm bg-gray-800 hover:bg-gray-700 text-white px-5 py-2 rounded-full border border-gray-700 z-10 transition font-bold">Связаться с ИИ</a>
+            <a href="https://t.me/TimLabs_bot" target="_blank" class="text-sm bg-gray-800 hover:bg-gray-700 text-white px-5 py-2 rounded-full border border-gray-700 z-10 transition font-bold flex items-center gap-2 hover:shadow-[0_0_15px_rgba(209,0,255,0.3)]">
+                Связаться с ИИ
+            </a>
         </div>
     </nav>
 
     <main class="flex-grow">
-        <header class="relative pt-32 pb-16 px-5 border-b border-gray-900/50 overflow-hidden">
-            <div class="bg-effects-wrapper opacity-30">
-                <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#00b4ff] blur-[150px] rounded-full"></div>
-                <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#d100ff] blur-[150px] rounded-full"></div>
+        <!-- Главный экран (Hero Section) с 3D Облаками и элементами -->
+        <header id="hero-scene" class="relative pt-40 pb-24 px-5 border-b border-gray-900/50 overflow-hidden min-h-[90vh] flex items-center justify-center">
+            
+            <!-- Интерактивные 3D Облака (Nebula) -->
+            <div class="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
+                <div class="cloud parallax-layer" data-speed="40" style="width: 60vw; height: 60vw; background: #00b4ff; top: -10%; left: -10%;"></div>
+                <div class="cloud parallax-layer" data-speed="-50" style="width: 50vw; height: 50vw; background: #d100ff; bottom: -10%; right: -10%;"></div>
+                <div class="cloud parallax-layer" data-speed="20" style="width: 40vw; height: 40vw; background: #4f46e5; top: 20%; left: 30%; opacity: 0.4;"></div>
             </div>
-            <div class="relative z-10 max-w-4xl mx-auto text-center mt-6">
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-white">
-                    Автоматизация бизнеса <br/> через <span class="text-gradient">нейросети</span>
+
+            <!-- Парящие стеклянные объекты (Астероиды/Блоки) -->
+            <div class="absolute inset-0 pointer-events-none z-0">
+                <div class="floating-obj parallax-layer anim-float-1 rounded-2xl w-24 h-24 top-[20%] left-[15%]" data-speed="80"></div>
+                <div class="floating-obj parallax-layer anim-float-2 rounded-full w-16 h-16 bottom-[30%] right-[20%]" data-speed="-60"></div>
+                <div class="floating-obj parallax-layer anim-float-1 rounded-lg w-12 h-12 top-[40%] right-[10%] rotate-45" data-speed="100"></div>
+                <!-- Декоративная сетка точек -->
+                <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 40px 40px; mask-image: radial-gradient(circle, black 40%, transparent 80%); -webkit-mask-image: radial-gradient(circle, black 40%, transparent 80%);"></div>
+            </div>
+
+            <!-- Контент Hero (На переднем плане) -->
+            <div class="relative z-10 max-w-5xl mx-auto text-center parallax-layer" data-speed="10">
+                <div class="inline-block mb-6 px-5 py-2 rounded-full border border-white/10 glass-panel text-xs font-bold uppercase tracking-widest text-gray-300 shadow-xl">
+                    Для малого, среднего и крупного бизнеса
+                </div>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+                    Автоматизация <br/> через <span class="text-gradient">нейросети</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
-                    Внедряем искусственный интеллект в отделы продаж, HR и поддержку.
+                <p class="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
+                    Проектируем и внедряем интеллектуальные системы, которые работают 24/7. <strong class="text-white font-semibold">Полное соблюдение 152-ФЗ</strong> и защита корпоративных данных.
                 </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="#analyzer" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white text-lg font-bold py-4 px-12 rounded-xl hover:scale-105 transition-transform shadow-[0_0_40px_rgba(209,0,255,0.4)]">
+                        Сгенерировать план
+                    </a>
+                </div>
             </div>
         </header>
 
-        <section class="py-16 px-5 bg-gray-950 relative z-10">
-            <div class="max-w-4xl mx-auto bg-gray-900 p-8 rounded-3xl border border-gray-800 shadow-xl relative overflow-hidden">
-                <div class="relative z-10">
-                    <h2 class="text-2xl font-bold text-white mb-2">Как ИИ поможет вам?</h2>
-                    <p class="text-gray-400 mb-8">Напишите нишу бизнеса, и нейросеть сгенерирует 3 идеи для роста.</p>
+        <!-- Разработанные Модули (3D Витрина) -->
+        <section id="modules" class="py-24 px-5 relative z-10 overflow-hidden bg-black">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Готовые ИИ-решения</h2>
+                    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Модули, которые мы уже разработали и успешно интегрируем в бизнес-процессы.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     
-                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                        <input type="text" id="nicheInput" placeholder="Например: СТО, Магазин мебели..." class="flex-1 bg-black border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00b4ff]">
-                        <button id="generateBtn" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white font-bold py-4 px-8 rounded-xl disabled:opacity-50 transition">
-                            Сгенерировать
+                    <!-- Модуль 1: HR -->
+                    <div class="tilt-wrapper reveal">
+                        <div class="tilt-card glass-panel rounded-3xl p-8 h-full relative border-t border-l border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                            <div class="tilt-content flex flex-col h-full">
+                                <div class="tilt-icon absolute top-6 right-6 p-4 text-[#00b4ff] bg-[#00b4ff]/10 rounded-2xl border border-[#00b4ff]/20">
+                                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                </div>
+                                <div class="text-[#00b4ff] text-sm font-black uppercase tracking-widest mb-4">HR & Масс-найм</div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">ИИ-Рекрутер</h3>
+                                <p class="text-gray-400 mb-6 flex-grow leading-relaxed">Система сама связывается с откликами на HH.ru и Авито, проводит первичное аудио-собеседование и формирует таблицу готовых кандидатов. Идеально для заводов, СТО и ритейла.</p>
+                                
+                                <!-- Ссылка на презентацию -->
+                                <div class="mt-auto pt-4 border-t border-gray-800/50">
+                                    <a href="ai_recruiter_pitch.html" class="inline-flex items-center text-[#00b4ff] hover:text-white font-bold transition-colors group/link text-sm uppercase tracking-wide">
+                                        Узнать подробнее
+                                        <svg class="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Модуль 2: Продажи -->
+                    <div class="tilt-wrapper reveal" style="transition-delay: 150ms;">
+                        <div class="tilt-card glass-panel rounded-3xl p-8 h-full relative border-t border-l border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                            <div class="tilt-content flex flex-col h-full">
+                                <div class="tilt-icon absolute top-6 right-6 p-4 text-[#d100ff] bg-[#d100ff]/10 rounded-2xl border border-[#d100ff]/20">
+                                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                                </div>
+                                <div class="text-[#d100ff] text-sm font-black uppercase tracking-widest mb-4">Отдел продаж</div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">ИИ-Ассистент</h3>
+                                <p class="text-gray-400 mb-6 flex-grow leading-relaxed">Умный агент, интегрированный в вашу CRM. Отвечает за 1 секунду 24/7, квалифицирует лидов по теплоте и закрывает сделки на основе ваших прайсов и скриптов.</p>
+                                
+                                <!-- Ссылка на презентацию -->
+                                <div class="mt-auto pt-4 border-t border-gray-800/50">
+                                    <a href="sales.html" class="inline-flex items-center text-[#d100ff] hover:text-white font-bold transition-colors group/link text-sm uppercase tracking-wide">
+                                        Узнать подробнее
+                                        <svg class="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Модуль 3: Базы знаний -->
+                    <div class="tilt-wrapper reveal" style="transition-delay: 300ms;">
+                        <div class="tilt-card glass-panel rounded-3xl p-8 h-full relative border-t border-l border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                            <div class="tilt-content flex flex-col h-full">
+                                <div class="tilt-icon absolute top-6 right-6 p-4 text-blue-400 bg-blue-500/10 rounded-2xl border border-blue-500/20">
+                                    <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2zm0-10h2v8h-2z"/></svg>
+                                </div>
+                                <div class="text-blue-400 text-sm font-black uppercase tracking-widest mb-4">Поддержка</div>
+                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">RAG-Базы знаний</h3>
+                                <p class="text-gray-400 mb-6 flex-grow leading-relaxed">Оцифровываем регламенты и инструкции вашей компании. Сотрудники задают вопрос ИИ-поисковику и моментально получают точный ответ на основе внутренних данных.</p>
+                                
+                                <!-- Ссылка на страницу (или заглушку) -->
+                                <div class="mt-auto pt-4 border-t border-gray-800/50">
+                                    <a href="support.html" class="inline-flex items-center text-blue-400 hover:text-white font-bold transition-colors group/link text-sm uppercase tracking-wide">
+                                        Узнать подробнее
+                                        <svg class="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок ИИ-Анализатора (Генератор Лидов) -->
+        <section id="analyzer" class="py-24 px-5 relative z-10 border-y border-gray-900 bg-gray-950/50">
+            <div class="max-w-4xl mx-auto glass-panel p-8 md:p-14 rounded-[2rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden reveal">
+                <div class="relative z-10">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#00b4ff] to-[#d100ff] flex items-center justify-center text-white font-black text-2xl shadow-[0_0_20px_rgba(0,180,255,0.5)]">AI</div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Персональная стратегия</h2>
+                    </div>
+                    <p class="text-gray-400 mb-10 text-lg">Впишите нишу вашего бизнеса, и нейросеть прямо сейчас сгенерирует 3 варианта внедрения ИИ для роста компании.</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-5 mb-6 relative">
+                        <div class="flex-1 animated-border">
+                            <input type="text" id="nicheInput" placeholder="Например: Производство мебели, Сеть клиник..." class="w-full bg-black/80 border border-transparent rounded-xl px-6 py-5 text-white focus:outline-none text-lg relative z-10">
+                        </div>
+                        <button id="generateBtn" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white font-black uppercase tracking-widest py-5 px-10 rounded-xl disabled:opacity-50 transition hover:scale-105 shadow-lg z-10 flex-shrink-0">
+                            Анализ
                         </button>
                     </div>
 
-                    <div id="errorModal" class="hidden text-red-400 bg-red-400/10 border border-red-400/20 p-4 rounded-xl mb-4 text-sm break-words"></div>
-                    <div id="loadingIndicator" class="hidden text-[#00b4ff] font-semibold p-4 flex flex-col gap-2">
-                        <div class="animate-pulse">Нейросеть генерирует стратегию...</div>
-                        <div class="text-xs text-gray-500 font-normal">Подключение к серверам Google...</div>
+                    <div id="errorModal" class="hidden text-red-400 bg-red-500/10 border border-red-500/20 p-5 rounded-xl mb-4 text-sm font-medium backdrop-blur-sm"></div>
+                    <div id="loadingIndicator" class="hidden animate-pulse text-[#00b4ff] font-semibold p-5 bg-[#00b4ff]/10 rounded-xl border border-[#00b4ff]/20 flex items-center gap-4">
+                        <div class="w-6 h-6 border-4 border-[#00b4ff] border-t-transparent rounded-full animate-spin"></div>
+                        ИИ анализирует рынок и формирует точки роста...
                     </div>
 
-                    <div id="resultContainer" class="hidden mt-8">
-                        <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-3">Результат анализа:</h3>
+                    <div id="resultContainer" class="hidden mt-12 reveal">
+                        <h3 class="text-2xl font-bold text-white mb-8 border-b border-gray-800 pb-4">Ваш план автоматизации:</h3>
                         <div id="resultContent" class="space-y-6"></div>
                     </div>
                 </div>
@@ -83,13 +299,87 @@
         </section>
     </main>
 
-    <footer class="bg-black text-gray-500 py-10 text-center border-t border-gray-900">
-        <div class="text-2xl font-extrabold mb-2 text-gradient">TimLabs</div>
-        <p class="text-xs">&copy; 2026 TimLabs. Все права защищены.</p>
+    <footer class="bg-black text-gray-500 py-12 text-center border-t border-gray-900 relative z-10">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="text-3xl font-extrabold mb-4 text-gradient inline-block">TimLabs</div>
+            <p class="text-sm mb-6 max-w-lg mx-auto">Интеллектуальные решения для бизнеса. Работаем по всей России.</p>
+            <div class="flex justify-center gap-8 mb-8 text-sm font-medium">
+                <a href="https://t.me/timrockets" target="_blank" class="hover:text-[#00b4ff] transition">Telegram Канал</a>
+                <a href="https://t.me/timlabs" target="_blank" class="hover:text-[#d100ff] transition">Портфолио</a>
+            </div>
+            <p class="text-xs border-t border-gray-900 pt-8">&copy; 2026 TimLabs. Создано Тимом Гуцевым.</p>
+        </div>
     </footer>
 
     <script>
-        // Функция для безопасного кодирования данных для Telegram бота
+        // --- 1. Анимации при скролле (Reveal) ---
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // --- 2. Эффект Parallax (Облака и парящие объекты на главном экране) ---
+        const heroScene = document.getElementById('hero-scene');
+        const parallaxLayers = document.querySelectorAll('.parallax-layer');
+
+        heroScene.addEventListener('mousemove', (e) => {
+            // Вычисляем позицию мыши относительно центра экрана (-1 до 1)
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+
+            parallaxLayers.forEach(layer => {
+                const speed = layer.getAttribute('data-speed');
+                // Сдвигаем элементы в противоположную сторону (или в ту же, в зависимости от знака скорости)
+                layer.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+
+        // Сброс позиции при уходе мыши
+        heroScene.addEventListener('mouseleave', () => {
+            parallaxLayers.forEach(layer => {
+                layer.style.transform = `translate(0px, 0px)`;
+            });
+        });
+
+
+        // --- 3. Эффект 3D Parallax Tilt для карточек модулей ---
+        function initTilt(cardsNodeList) {
+            cardsNodeList.forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    // Максимальный угол наклона 10 градусов
+                    const rotateX = ((y - centerY) / centerY) * -10;
+                    const rotateY = ((x - centerX) / centerX) * 10;
+                    
+                    card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    
+                    // Добавляем красивый блик света за курсором
+                    card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.08) 0%, rgba(17,24,39,0.6) 60%)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = `perspective(1200px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
+                    card.style.background = `rgba(17, 24, 39, 0.6)`;
+                });
+            });
+        }
+        initTilt(document.querySelectorAll('.tilt-card'));
+
+        // --- 4. Логика генератора (Связь с Cloudflare Worker) ---
         function safeEncode(niche, ideaTitle) {
             const data = `${niche.substring(0, 15)}|${ideaTitle.substring(0, 30)}`; 
             try {
@@ -98,14 +388,11 @@
                 for (let i = 0; i < utf8Bytes.length; i++) binary += String.fromCharCode(utf8Bytes[i]);
                 return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
             } catch (e) {
-                return 'website';
+                return 'website_lead';
             }
         }
 
-        // ==============================================================
-        // Твой Google Apps Script URL
-        // ==============================================================
-        const GOOGLE_APP_URL = "https://script.google.com/macros/s/AKfycby9bBK52J_AfBDqEspGCqVs_leTtKjueWUHKpSb88mxo-Qy3Pp4aVLpC__MTOJ4HcXymA/exec";
+        const WORKER_API_URL = "https://api.timlabs.online/";
 
         document.getElementById('generateBtn').addEventListener('click', async () => {
             const niche = document.getElementById('nicheInput').value.trim();
@@ -115,13 +402,12 @@
             const resultContent = document.getElementById('resultContent');
             const errorModal = document.getElementById('errorModal');
 
-            // Скрываем ошибки и результаты перед новым запросом
             errorModal.classList.add('hidden');
             resultBox.classList.add('hidden');
             resultContent.innerHTML = '';
 
             if (!niche) {
-                errorModal.textContent = "Пожалуйста, введите нишу.";
+                errorModal.textContent = "Пожалуйста, введите нишу бизнеса.";
                 errorModal.classList.remove('hidden');
                 return;
             }
@@ -130,51 +416,47 @@
             loading.classList.remove('hidden');
 
             try {
-                let parsedData;
+                const response = await fetch(WORKER_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ niche: niche })
+                });
+
+                if (!response.ok) throw new Error(`Сервер недоступен (${response.status}). Убедитесь, что включен VPN.`);
                 
-                try {
-                    // Попытка 1: Прямой запрос к серверам Google
-                    const response = await fetch(`${GOOGLE_APP_URL}?niche=${encodeURIComponent(niche)}`, {
-                        redirect: "follow"
-                    });
-                    parsedData = await response.json();
-                } catch (e1) {
-                    console.warn("Прямой запрос заблокирован, пробуем резервный канал...", e1);
-                    
-                    // Попытка 2: Запрос через CORS-прокси (включается автоматически, если браузер блокирует)
-                    const proxyUrl = "https://corsproxy.io/?" + encodeURIComponent(`${GOOGLE_APP_URL}?niche=${niche}`);
-                    const fallbackResponse = await fetch(proxyUrl, {
-                        redirect: "follow"
-                    });
-                    parsedData = await fallbackResponse.json();
-                }
-
-                if (parsedData.error) {
-                    throw new Error(parsedData.error);
-                }
-
+                const parsedData = await response.json();
+                if (parsedData.error) throw new Error(parsedData.error);
+                
                 const ideas = parsedData.ideas || [];
-                if(ideas.length === 0) throw new Error("ИИ вернул пустой список идей.");
+                if(ideas.length === 0) throw new Error("Нейросеть не смогла сгенерировать идеи.");
 
                 let htmlOutput = '';
-                ideas.forEach((idea) => {
+                ideas.forEach((idea, index) => {
                     const botLink = `https://t.me/TimLabs_bot?start=${safeEncode(niche, idea.title)}`;
                     
                     htmlOutput += `
-                    <div class="service-card relative bg-black/40 border border-gray-800 p-6 md:p-8 rounded-2xl flex flex-col">
-                        <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#00b4ff] to-[#d100ff]"></div>
-                        <h4 class="text-xl md:text-2xl font-bold text-white mb-3 pl-4">${idea.title}</h4>
-                        <p class="text-gray-300 text-sm md:text-base mb-6 pl-4 flex-grow">${idea.description}</p>
-                        
-                        <div class="ml-4 mb-6 bg-gray-900 p-4 rounded-xl border border-gray-800">
-                            <div class="text-[#d100ff] text-xs font-bold uppercase tracking-wider mb-1">Выгода</div>
-                            <div class="text-white text-sm">${idea.benefit}</div>
-                        </div>
+                    <div class="tilt-wrapper reveal active" style="transition-delay: ${index * 150}ms">
+                        <div class="tilt-card glass-panel relative border border-gray-800 p-8 rounded-3xl flex flex-col mb-6 shadow-2xl">
+                            <div class="tilt-content">
+                                <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#00b4ff] to-[#d100ff] rounded-l-3xl"></div>
+                                <h4 class="text-3xl font-bold text-white mb-4 pl-4">${idea.title}</h4>
+                                <p class="text-gray-300 text-lg mb-6 pl-4 flex-grow leading-relaxed">${idea.description}</p>
+                                
+                                <div class="ml-4 mb-8 bg-gray-900/90 p-5 rounded-2xl border border-white/5 shadow-inner">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <svg class="w-5 h-5 text-[#d100ff]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <div class="text-[#d100ff] text-sm font-black uppercase tracking-widest">Целевой результат</div>
+                                    </div>
+                                    <div class="text-white text-base font-medium">${idea.benefit}</div>
+                                </div>
 
-                        <div class="ml-4 mt-auto">
-                            <a href="${botLink}" target="_blank" class="inline-flex items-center justify-center bg-gray-800 hover:bg-white hover:text-black text-white px-6 py-3 rounded-xl text-sm font-bold border border-gray-700 transition w-full sm:w-auto text-center uppercase">
-                                🔥 Внедрить
-                            </a>
+                                <div class="ml-4 mt-auto">
+                                    <a href="${botLink}" target="_blank" class="inline-flex items-center justify-center bg-white text-black hover:bg-gray-200 px-8 py-4 rounded-xl text-sm font-extrabold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)] uppercase tracking-wider group">
+                                        🔥 Внедрить систему
+                                        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>`;
                 });
@@ -182,22 +464,18 @@
                 resultContent.innerHTML = htmlOutput;
                 resultBox.classList.remove('hidden');
 
+                // Инициализируем 3D эффект для новых сгенерированных карточек
+                initTilt(resultBox.querySelectorAll('.tilt-card'));
+
             } catch (error) {
-                // Если произошла жесткая ошибка доступа (Failed to fetch)
-                if (error.message.includes("Failed to fetch") || error.message.includes("Unexpected token")) {
-                    errorModal.textContent = "Критическая ошибка доступа. Пожалуйста, зайдите в настройки Google Script -> Новое развертывание -> У кого есть доступ -> Обязательно выберите «Все» (Anyone), а не 'Только пользователи Google'.";
-                } else {
-                    errorModal.textContent = "Ошибка: " + error.message;
-                }
+                errorModal.innerHTML = `<strong>Ошибка нейросети.</strong><br>Проверьте подключение или VPN.<br><span class="text-xs text-gray-500 mt-2 block">${error.message}</span>`;
                 errorModal.classList.remove('hidden');
             } finally {
-                // Скрываем загрузку и включаем кнопку
                 loading.classList.add('hidden');
                 btn.disabled = false;
             }
         });
 
-        // Генерация по нажатию Enter
         document.getElementById('nicheInput').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') document.getElementById('generateBtn').click();
         });
