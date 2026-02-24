@@ -15,6 +15,7 @@
     <meta property="og:title" content="Внедрение ИИ в бизнес | TimLabs">
     <meta property="og:image" content="https://timlabs.online/preview2.jpg">
     
+    <!-- Učitavanje dizajna (Tailwind) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
@@ -68,7 +69,10 @@
                     </div>
 
                     <div id="errorModal" class="hidden text-red-400 bg-red-400/10 border border-red-400/20 p-4 rounded-xl mb-4 text-sm break-words"></div>
-                    <div id="loadingIndicator" class="hidden animate-pulse text-[#00b4ff] font-semibold p-4">Нейросеть TimLabs генерирует стратегию...</div>
+                    <div id="loadingIndicator" class="hidden text-[#00b4ff] font-semibold p-4 flex flex-col gap-2">
+                        <div class="animate-pulse">Нейросеть генерирует стратегию...</div>
+                        <div class="text-xs text-gray-500 font-normal">Подключение к серверам Google...</div>
+                    </div>
 
                     <div id="resultContainer" class="hidden mt-8">
                         <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-3">Результат анализа:</h3>
@@ -85,6 +89,7 @@
     </footer>
 
     <script>
+        // Funkcija za bezbedan prenos podataka u Telegram
         function safeEncode(niche, ideaTitle) {
             const data = `${niche.substring(0, 15)}|${ideaTitle.substring(0, 30)}`; 
             try {
@@ -97,6 +102,11 @@
             }
         }
 
+        // ==============================================================
+        // Tvoj Google Apps Script URL
+        // ==============================================================
+        const GOOGLE_APP_URL = "https://script.google.com/macros/s/AKfycbwxHYZkPxjPDrICWXGorae5kWgScu44iBzaeAC_F_zONYHgXIVDfrFmOzW8tV4B8s0zmg/exec";
+
         document.getElementById('generateBtn').addEventListener('click', async () => {
             const niche = document.getElementById('nicheInput').value.trim();
             const btn = document.getElementById('generateBtn');
@@ -105,6 +115,7 @@
             const resultContent = document.getElementById('resultContent');
             const errorModal = document.getElementById('errorModal');
 
+            // Sakrij greške i rezultate
             errorModal.classList.add('hidden');
             resultBox.classList.add('hidden');
             resultContent.innerHTML = '';
@@ -119,20 +130,20 @@
             loading.classList.remove('hidden');
 
             try {
-                // Прямой запрос на наш новый скрытый шлюз!
-                const response = await fetch("https://neuro.timlabs.online/", {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ niche: niche })
-                });
+                // Zahtev ide preko Google-a (zaobilazi blokade RKN)
+                const response = await fetch(`${GOOGLE_APP_URL}?niche=${encodeURIComponent(niche)}`);
 
                 if (!response.ok) {
-                    throw new Error(`Ошибка сервера (${response.status})`);
+                    throw new Error(`Сбой сети (${response.status})`);
                 }
                 
                 const parsedData = await response.json();
-                const ideas = parsedData.ideas || [];
+                
+                if (parsedData.error) {
+                    throw new Error(parsedData.error);
+                }
 
+                const ideas = parsedData.ideas || [];
                 if(ideas.length === 0) throw new Error("ИИ вернул пустой список идей.");
 
                 let htmlOutput = '';
@@ -162,14 +173,16 @@
                 resultBox.classList.remove('hidden');
 
             } catch (error) {
-                errorModal.textContent = "Ошибка при обращении к ИИ: " + error.message;
+                errorModal.textContent = "Ошибка: " + error.message;
                 errorModal.classList.remove('hidden');
             } finally {
+                // Prikaz rezultata i omogućavanje dugmeta
                 loading.classList.add('hidden');
                 btn.disabled = false;
             }
         });
 
+        // Generisanje na pritisak tastera Enter
         document.getElementById('nicheInput').addEventListener('keypress', function (e) {
             if (e.key === 'Enter') document.getElementById('generateBtn').click();
         });
