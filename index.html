@@ -17,13 +17,17 @@
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
     
-    <!-- Open Graph (Превью для ВКонтакте, Telegram, Facebook) -->
+    <!-- Open Graph (БРОНЕБОЙНОЕ ПРЕВЬЮ ДЛЯ ТЕЛЕГРАМ) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://timlabs.online/">
     <meta property="og:title" content="Внедрение ИИ и нейросетей в бизнес | TimLabs">
     <meta property="og:description" content="Автоматизируем продажи, найм и рутину с помощью ИИ. Решения для малого, среднего и крупного бизнеса.">
-    <!-- ЖЕСТКИЙ СБРОС КЭША: Изменено имя файла на preview2.jpg -->
-    <meta property="og:image" content="https://timlabs.online/preview2.jpg">
+    
+    <!-- Ссылка на preview2.jpg с параметром и строгими размерами -->
+    <meta property="og:image" content="https://timlabs.online/preview2.jpg?v=superfinal">
+    <meta property="og:image:secure_url" content="https://timlabs.online/preview2.jpg?v=superfinal">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="TimLabs">
     <meta property="og:locale" content="ru_RU">
 
@@ -32,8 +36,7 @@
     <meta name="twitter:url" content="https://timlabs.online/">
     <meta name="twitter:title" content="TimLabs | Внедрение нейросетей в бизнес">
     <meta name="twitter:description" content="Автоматизация бизнес-процессов с помощью искусственного интеллекта в России.">
-    <!-- ЖЕСТКИЙ СБРОС КЭША: Изменено имя файла на preview2.jpg -->
-    <meta name="twitter:image" content="https://timlabs.online/preview2.jpg">
+    <meta name="twitter:image" content="https://timlabs.online/preview2.jpg?v=superfinal">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -43,7 +46,6 @@
         .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(90deg, #00b4ff, #d100ff); }
         .bg-effects-wrapper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none; z-index: 0; }
         
-        /* Плавные анимации карточек и кнопок */
         .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .service-card:hover { transform: translateY(-8px); border-color: rgba(0, 180, 255, 0.4); box-shadow: 0 20px 40px -20px rgba(0, 180, 255, 0.3); }
         .btn-animate { transition: all 0.2s ease; }
@@ -116,7 +118,6 @@
                         Персональная стратегия готова
                     </h3>
                     
-                    <!-- Здесь появятся карточки с ИНДИВИДУАЛЬНЫМИ КНОПКАМИ -->
                     <div id="resultContent" class="space-y-6"></div>
                     
                     <div class="mt-8 pt-6 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -189,9 +190,7 @@
             return str.replace(/\*\*/g, '').replace(/\*/g, '');
         };
 
-        // НАДЕЖНЫЙ ШИФРАТОР С ПОДДЕРЖКОЙ UTF-8 (Кириллицы)
         function safeEncode(niche, ideaTitle) {
-            // Лимиты подогнаны под ограничения Telegram (64 символа)
             const shortNiche = niche.substring(0, 12);
             const shortTitle = ideaTitle.substring(0, 30);
             const data = `${shortNiche}|${shortTitle}`; 
@@ -243,7 +242,6 @@
 
                 let htmlOutput = '';
                 ideas.forEach((idea, index) => {
-                    // Генерируем уникальную ссылку для бота под КАЖДУЮ карточку
                     const botLink = `https://t.me/TimLabs_bot?start=${safeEncode(niche, idea.title)}`;
                     
                     htmlOutput += `
@@ -265,7 +263,6 @@
                             </div>
                         </div>
 
-                        <!-- НОВАЯ ЯРКАЯ КНОПКА ВНУТРИ КАРТОЧКИ -->
                         <div class="ml-10 md:ml-12 mt-auto">
                             <a href="${botLink}" target="_blank" class="btn-animate inline-flex items-center justify-center bg-gray-800 hover:bg-white hover:text-black text-white px-6 py-3 rounded-xl text-sm font-bold transition-colors border border-gray-700 w-full sm:w-auto text-center uppercase tracking-wide">
                                 🔥 Внедрить это решение <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -276,8 +273,6 @@
 
                 resultContent.innerHTML = htmlOutput;
                 resultBox.classList.remove('hidden');
-                
-                // Плавный скролл к результатам
                 resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             } catch (error) {
