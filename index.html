@@ -4,43 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- Базовые SEO Мета-теги -->
     <title>Внедрение нейросетей и ИИ в бизнес | TimLabs</title>
     <meta name="description" content="Внедрение искусственного интеллекта и нейросетей в бизнес. Автоматизация отдела продаж, масс-найма и создание корпоративных ИИ-баз знаний от TimLabs.">
-    <meta name="keywords" content="внедрение нейросетей в бизнес, искусственный интеллект для бизнеса, автоматизация бизнес-процессов, ИИ-рекрутер, ИИ-продавец, разработка ИИ-ассистентов, автоматизация найма, RAG системы, автоматизация отдела продаж, TimLabs">
-    <meta name="author" content="Тимур Гуцев (TimLabs)">
-    <meta name="robots" content="index, follow">
-    <meta name="language" content="Russian">
-    <meta name="theme-color" content="#030712">
     
-    <!-- Иконка сайта -->
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
     
-    <!-- Open Graph (БРОНЕБОЙНОЕ ПРЕВЬЮ ДЛЯ ТЕЛЕГРАМ) -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://timlabs.online/">
     <meta property="og:title" content="Внедрение ИИ и нейросетей в бизнес | TimLabs">
-    <meta property="og:description" content="Автоматизируем продажи, найм и рутину с помощью ИИ. Решения для малого, среднего и крупного бизнеса.">
+    <meta property="og:description" content="Автоматизируем продажи, найм и рутину с помощью ИИ. Решения для бизнеса.">
     <meta property="og:image" content="https://timlabs.online/preview2.jpg?v=superfinal">
-    <meta property="og:image:secure_url" content="https://timlabs.online/preview2.jpg?v=superfinal">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:site_name" content="TimLabs">
-    <meta property="og:locale" content="ru_RU">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://timlabs.online/">
-    <meta name="twitter:title" content="TimLabs | Внедрение нейросетей в бизнес">
-    <meta name="twitter:description" content="Автоматизация бизнес-процессов с помощью искусственного интеллекта в России.">
-    <meta name="twitter:image" content="https://timlabs.online/preview2.jpg?v=superfinal">
-
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ВОТ ЗДЕСЬ ГЛАВНАЯ МАГИЯ: Грузим дизайн с ТВОЕГО сервера -->
+    <script src="https://api.timlabs.online/tailwind.js"></script>
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
-        
-        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #e5e7eb; -webkit-font-smoothing: antialiased; overflow-x: hidden;}
+        /* Отключили внешние шрифты Google Fonts (они тоже тормозят загрузку), используем системные, они быстрые и красивые */
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background-color: #030712; color: #e5e7eb; -webkit-font-smoothing: antialiased; overflow-x: hidden;}
         .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(90deg, #00b4ff, #d100ff); }
         .bg-effects-wrapper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none; z-index: 0; }
         
@@ -181,7 +165,6 @@
     </footer>
 
     <script>
-        // ИМЕННО ЭТА СТРОЧКА ТЕПЕРЬ ПРОБИВАЕТ ЛЮБЫЕ БЛОКИРОВКИ РКН!
         const CLOUDFLARE_WORKER_URL = "https://api.timlabs.online"; 
 
         const cleanText = (str) => {
