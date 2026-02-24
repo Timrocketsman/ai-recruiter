@@ -15,7 +15,6 @@
     <meta property="og:title" content="Внедрение ИИ в бизнес | TimLabs">
     <meta property="og:image" content="https://timlabs.online/preview2.jpg">
     
-    <!-- Дизайн загружается напрямую -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
@@ -120,16 +119,15 @@
             loading.classList.remove('hidden');
 
             try {
-                // ВАЖНО: Теперь запрос идет внутри основного домена, минуя блокировщики рекламы и CORS-политики
-                const response = await fetch("/ai-proxy", {
+                // Прямой запрос на наш новый скрытый шлюз!
+                const response = await fetch("https://neuro.timlabs.online/", {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ niche: niche })
                 });
 
                 if (!response.ok) {
-                    const errText = await response.text();
-                    throw new Error(`Ошибка сервера (${response.status}): ${errText}`);
+                    throw new Error(`Ошибка сервера (${response.status})`);
                 }
                 
                 const parsedData = await response.json();
