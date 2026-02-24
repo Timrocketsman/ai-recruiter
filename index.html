@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
+    <!-- Базовые SEO Мета-теги -->
     <title>Внедрение нейросетей и ИИ в бизнес | TimLabs</title>
     <meta name="description" content="Внедрение искусственного интеллекта и нейросетей в бизнес. Автоматизация отдела продаж, масс-найма и создание корпоративных ИИ-баз знаний от TimLabs.">
     <meta name="keywords" content="внедрение нейросетей в бизнес, искусственный интеллект для бизнеса, автоматизация бизнес-процессов, ИИ-рекрутер, ИИ-продавец, разработка ИИ-ассистентов, автоматизация найма, RAG системы, автоматизация отдела продаж, TimLabs">
@@ -12,9 +13,11 @@
     <meta name="language" content="Russian">
     <meta name="theme-color" content="#030712">
     
+    <!-- Иконка сайта -->
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
     
+    <!-- Open Graph (Превью для ВКонтакте, Telegram, Facebook) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://timlabs.online/">
     <meta property="og:title" content="Внедрение ИИ и нейросетей в бизнес | TimLabs">
@@ -23,20 +26,31 @@
     <meta property="og:site_name" content="TimLabs">
     <meta property="og:locale" content="ru_RU">
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://timlabs.online/">
+    <meta name="twitter:title" content="TimLabs | Внедрение нейросетей в бизнес">
+    <meta name="twitter:description" content="Автоматизация бизнес-процессов с помощью искусственного интеллекта в России.">
+    <meta name="twitter:image" content="https://timlabs.online/preview.jpg">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
         
-        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #e5e7eb; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #e5e7eb; -webkit-font-smoothing: antialiased; overflow-x: hidden;}
         .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(90deg, #00b4ff, #d100ff); }
         .bg-effects-wrapper { position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-        .service-card { transition: all 0.3s ease; }
-        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px -10px rgba(0, 180, 255, 0.3), 0 10px 30px -10px rgba(209, 0, 255, 0.3); border-color: rgba(0, 180, 255, 0.5); }
+        
+        /* Плавные анимации карточек и кнопок */
+        .service-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .service-card:hover { transform: translateY(-8px); border-color: rgba(0, 180, 255, 0.4); box-shadow: 0 20px 40px -20px rgba(0, 180, 255, 0.3); }
+        .btn-animate { transition: all 0.2s ease; }
+        .btn-animate:active { transform: scale(0.96); }
     </style>
 </head>
 <body class="bg-gray-950 text-gray-200">
 
-    <nav class="fixed w-full z-50 top-0 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
+    <nav class="fixed w-full z-50 top-0 bg-gray-950/80 backdrop-blur-xl border-b border-gray-800/50">
         <div class="max-w-6xl mx-auto px-4 md:px-5 py-3 md:py-4 flex justify-between items-center relative">
             <div class="w-20 md:w-24 z-10"></div>
             <a href="index.html" class="text-xl md:text-2xl font-extrabold tracking-tight text-white absolute left-1/2 -translate-x-1/2 z-0 flex items-center gap-3">
@@ -47,10 +61,10 @@
         </div>
     </nav>
 
-    <header class="relative pt-32 pb-20 px-5 lg:px-12 border-b border-gray-900 overflow-hidden">
-        <div class="bg-effects-wrapper opacity-40">
-            <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#00b4ff] blur-[120px] rounded-full"></div>
-            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#d100ff] blur-[120px] rounded-full"></div>
+    <header class="relative pt-32 pb-20 px-5 lg:px-12 border-b border-gray-900/50 overflow-hidden">
+        <div class="bg-effects-wrapper opacity-30">
+            <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#00b4ff] blur-[150px] rounded-full"></div>
+            <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#d100ff] blur-[150px] rounded-full"></div>
         </div>
         <div class="relative z-10 max-w-4xl mx-auto text-center mt-10">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 text-white">
@@ -60,12 +74,12 @@
                 Внедряем искусственный интеллект в отделы продаж, HR и поддержку. Избавляем от рутины с соблюдением 152-ФЗ. Решения от малого и среднего до крупного бизнеса.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#solutions" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:from-[#0090cc] hover:to-[#a600cc] text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-[#d100ff]/20">Смотреть ИИ-решения</a>
+                <a href="#analyzer" class="btn-animate bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:from-[#0090cc] hover:to-[#a600cc] text-white font-bold py-4 px-10 rounded-full shadow-lg shadow-[#d100ff]/20">Подобрать решение</a>
             </div>
         </div>
     </header>
 
-    <section class="py-16 px-5 lg:px-12 bg-gray-950 relative z-10 border-b border-gray-900">
+    <section id="analyzer" class="py-16 px-5 lg:px-12 bg-gray-950 relative z-10 border-b border-gray-900">
         <div class="max-w-4xl mx-auto bg-gray-900 p-8 md:p-12 rounded-3xl border border-gray-800 shadow-2xl relative overflow-hidden">
             <div class="absolute -top-20 -right-20 w-48 h-48 bg-[#00b4ff] blur-[100px] rounded-full opacity-40"></div>
             <div class="absolute -bottom-20 -left-20 w-48 h-48 bg-[#d100ff] blur-[100px] rounded-full opacity-30"></div>
@@ -79,14 +93,14 @@
                 
                 <div class="flex flex-col sm:flex-row gap-4 mb-6">
                     <input type="text" id="nicheInput" placeholder="Например: СТО, Производство кирпича..." class="flex-1 bg-black border border-gray-700 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-[#00b4ff] transition-colors text-lg shadow-inner">
-                    <button id="generateBtn" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:from-[#0090cc] hover:to-[#a600cc] text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-[#d100ff]/20 whitespace-nowrap text-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                    <button id="generateBtn" class="btn-animate bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-[#d100ff]/20 whitespace-nowrap text-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                         ✨ Сгенерировать
                     </button>
                 </div>
 
                 <div id="errorModal" class="hidden text-red-400 bg-red-400/10 border border-red-400/20 p-4 rounded-xl mb-4 text-sm"></div>
 
-                <div id="loadingIndicator" class="hidden flex items-center gap-3 text-[#00b4ff] font-semibold p-4 bg-[#00b4ff]/5 rounded-xl border border-[#00b4ff]/20">
+                <div id="loadingIndicator" class="hidden animate-pulse flex items-center gap-3 text-[#00b4ff] font-semibold p-4 bg-[#00b4ff]/5 rounded-xl border border-[#00b4ff]/20">
                     <svg class="animate-spin h-5 w-5 text-[#00b4ff]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -106,7 +120,7 @@
                     <div class="mt-8 pt-6 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
                         <p class="text-gray-400 text-sm">Хотите обсудить внедрение в целом?</p>
                         <!-- Общая кнопка (запасная) -->
-                        <a href="https://t.me/TimLabs_bot?start=website" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-xl text-sm font-semibold flex items-center transition-colors border border-gray-700">
+                        <a href="https://t.me/TimLabs_bot?start=website" target="_blank" class="btn-animate bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-xl text-sm font-semibold flex items-center transition-colors border border-gray-700">
                             Написать ИИ-эксперту <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
@@ -173,16 +187,17 @@
             return str.replace(/\*\*/g, '').replace(/\*/g, '');
         };
 
-        // Хак: Умный шифратор. Склеивает Нишу и Идею в ссылку для ТГ-бота
-        function encodeForTelegram(niche, ideaTitle) {
-            const shortNiche = niche.substring(0, 15);
-            const shortTitle = ideaTitle.substring(0, 20);
+        // НАДЕЖНЫЙ ШИФРАТОР С ПОДДЕРЖКОЙ UTF-8 (Кириллицы)
+        function safeEncode(niche, ideaTitle) {
+            // Лимиты подогнаны под ограничения Telegram (64 символа)
+            const shortNiche = niche.substring(0, 12);
+            const shortTitle = ideaTitle.substring(0, 30);
             const data = `${shortNiche}|${shortTitle}`; 
             try {
-                return btoa(unescape(encodeURIComponent(data)))
-                    .replace(/\+/g, '-')
-                    .replace(/\//g, '_')
-                    .replace(/=+$/, '');
+                const utf8Bytes = new TextEncoder().encode(data);
+                let binary = "";
+                for (let i = 0; i < utf8Bytes.length; i++) binary += String.fromCharCode(utf8Bytes[i]);
+                return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
             } catch (e) {
                 return 'website';
             }
@@ -227,16 +242,16 @@
                 let htmlOutput = '';
                 ideas.forEach((idea, index) => {
                     // Генерируем уникальную ссылку для бота под КАЖДУЮ карточку
-                    const botLink = `https://t.me/TimLabs_bot?start=${encodeForTelegram(niche, idea.title)}`;
+                    const botLink = `https://t.me/TimLabs_bot?start=${safeEncode(niche, idea.title)}`;
                     
                     htmlOutput += `
-                    <div class="relative bg-black/40 border border-gray-800 hover:border-[#00b4ff]/50 p-6 md:p-8 rounded-2xl transition-all duration-300 group overflow-hidden backdrop-blur-md mb-4 flex flex-col">
+                    <div class="service-card relative bg-black/40 border border-gray-800 p-6 md:p-8 rounded-2xl flex flex-col h-full overflow-hidden backdrop-blur-sm">
                         <div class="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-[#00b4ff] to-[#d100ff] opacity-80"></div>
                         <h4 class="text-xl md:text-2xl font-bold text-white mb-3 flex items-center gap-3">
                             <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00b4ff] to-[#d100ff] font-black text-2xl md:text-3xl opacity-80">0${index + 1}</span>
                             ${cleanText(idea.title)}
                         </h4>
-                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 pl-10 md:pl-12">
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6 pl-10 md:pl-12 flex-grow">
                             ${cleanText(idea.description)}
                         </p>
                         
@@ -249,8 +264,8 @@
                         </div>
 
                         <!-- НОВАЯ ЯРКАЯ КНОПКА ВНУТРИ КАРТОЧКИ -->
-                        <div class="ml-10 md:ml-12 mt-2">
-                            <a href="${botLink}" target="_blank" class="inline-flex items-center justify-center bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:opacity-90 text-white px-6 py-3 rounded-xl text-sm font-bold transition-all shadow-lg shadow-[#00b4ff]/20 w-full sm:w-auto text-center">
+                        <div class="ml-10 md:ml-12 mt-auto">
+                            <a href="${botLink}" target="_blank" class="btn-animate inline-flex items-center justify-center bg-gray-800 hover:bg-white hover:text-black text-white px-6 py-3 rounded-xl text-sm font-bold transition-colors border border-gray-700 w-full sm:w-auto text-center uppercase tracking-wide">
                                 🔥 Внедрить это решение <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </a>
                         </div>
@@ -259,6 +274,9 @@
 
                 resultContent.innerHTML = htmlOutput;
                 resultBox.classList.remove('hidden');
+                
+                // Плавный скролл к результатам
+                resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             } catch (error) {
                 console.error(error);
