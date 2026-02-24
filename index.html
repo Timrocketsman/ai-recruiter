@@ -22,8 +22,6 @@
     <meta property="og:url" content="https://timlabs.online/">
     <meta property="og:title" content="Внедрение ИИ и нейросетей в бизнес | TimLabs">
     <meta property="og:description" content="Автоматизируем продажи, найм и рутину с помощью ИИ. Решения для малого, среднего и крупного бизнеса.">
-    
-    <!-- Ссылка на preview2.jpg с параметром и строгими размерами -->
     <meta property="og:image" content="https://timlabs.online/preview2.jpg?v=superfinal">
     <meta property="og:image:secure_url" content="https://timlabs.online/preview2.jpg?v=superfinal">
     <meta property="og:image:width" content="1200">
@@ -183,7 +181,8 @@
     </footer>
 
     <script>
-        const CLOUDFLARE_WORKER_URL = "https://timlabs-ai-proxy.timrocketsman.workers.dev"; 
+        // ИМЕННО ЭТА СТРОЧКА ТЕПЕРЬ ПРОБИВАЕТ ЛЮБЫЕ БЛОКИРОВКИ РКН!
+        const CLOUDFLARE_WORKER_URL = "https://api.timlabs.online"; 
 
         const cleanText = (str) => {
             if(!str) return "";
@@ -233,7 +232,10 @@
                     body: JSON.stringify({ niche: niche })
                 });
 
-                if (!response.ok) throw new Error("Ошибка сервера");
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Ошибка сервера (${response.status}): ${errorText}`);
+                }
                 
                 const parsedData = await response.json();
                 const ideas = parsedData.ideas || [];
@@ -277,7 +279,7 @@
 
             } catch (error) {
                 console.error(error);
-                errorModal.textContent = "Ошибка связи с ИИ. Напишите нашему инженеру в Telegram.";
+                errorModal.textContent = "Ошибка связи с ИИ. Если вы используете VPN, попробуйте отключить его, либо напишите в поддержку: @timrockets";
                 errorModal.classList.remove('hidden');
             } finally {
                 loading.classList.add('hidden');
