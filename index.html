@@ -11,6 +11,7 @@
     <meta name="author" content="Тим Гуцев (TimLabs)">
     <meta name="robots" content="index, follow">
     
+    <!-- Иконки для вкладок и рабочего стола -->
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
     
@@ -429,7 +430,7 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 50; // Сделал появление чуть раньше для мобилок
+                var elementVisible = 50; 
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
@@ -438,9 +439,8 @@
         window.addEventListener("scroll", reveal);
         reveal();
 
-        // --- 2. Эффекты ПК (Отключаем на мобилках для плавности и экономии батареи) ---
+        // --- 2. Эффекты ПК (Отключаем на мобилках) ---
         if (!isTouchDevice) {
-            // Эффект Parallax (Облака на главном экране)
             const heroScene = document.getElementById('hero-scene');
             const parallaxLayers = document.querySelectorAll('.parallax-layer');
 
@@ -462,7 +462,6 @@
                 });
             }
 
-            // Эффект 3D Parallax Tilt для карточек
             function initTilt(cardsNodeList) {
                 cardsNodeList.forEach(card => {
                     const glare = card.querySelector('.glare-layer');
@@ -493,11 +492,8 @@
                 });
             }
             initTilt(document.querySelectorAll('.tilt-card'));
-            
-            // Сохраняем функцию в window, чтобы вызвать её после генерации ИИ
             window.initTiltEffect = initTilt; 
         } else {
-            // Заглушка для мобилок, чтобы не было ошибки вызова
             window.initTiltEffect = function() {}; 
         }
 
