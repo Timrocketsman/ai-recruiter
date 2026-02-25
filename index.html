@@ -1,17 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru" style="background-color: #030712;">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <!-- PWA & Theme Colors -->
-    <meta name="theme-color" content="#030712">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="TimLabs">
-    
-    <!-- Ссылка на реальный файл манифеста (защита от белого экрана) -->
-    <link rel="manifest" href="manifest.json">
     
     <!-- SEO & Meta -->
     <title>Внедрение нейросетей и ИИ в бизнес | Автоматизация от TimLabs</title>
@@ -40,45 +31,6 @@
             color: #e5e7eb; 
             overflow-x: hidden; 
             scroll-behavior: smooth;
-        }
-
-        /* --- PRELOADER ANIMATIONS --- */
-        #preloader {
-            position: fixed;
-            inset: 0;
-            background-color: #030712;
-            z-index: 999999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-        .loader-ring {
-            position: absolute;
-            width: 130px; 
-            height: 130px;
-            border-radius: 50%;
-            border: 3px solid transparent;
-            border-top-color: #00b4ff;
-            border-bottom-color: #d100ff;
-            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-        }
-        .loader-logo {
-            width: 80px; 
-            height: 80px;
-            border-radius: 50%;
-            z-index: 10;
-            box-shadow: 0 0 30px rgba(0, 180, 255, 0.4);
-            animation: pulse-logo 2s ease-in-out infinite;
-        }
-        @keyframes spin { 
-            0% { transform: rotate(0deg); } 
-            100% { transform: rotate(360deg); } 
-        }
-        @keyframes pulse-logo { 
-            0%, 100% { transform: scale(1); opacity: 1; } 
-            50% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 15px rgba(209, 0, 255, 0.4); } 
         }
 
         /* Текстовые градиенты */
@@ -218,18 +170,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-200 flex flex-col min-h-screen selection:bg-[#d100ff] selection:text-white overflow-hidden">
-
-    <!-- Красивый Preloader для загрузки (PWA / Mobile) -->
-    <div id="preloader">
-        <div class="relative flex items-center justify-center">
-            <div class="loader-ring"></div>
-            <img src="logo.jpg" alt="TimLabs Logo" class="loader-logo object-cover border-2 border-[#030712]">
-        </div>
-        <div class="mt-10 text-transparent bg-clip-text bg-gradient-to-r from-[#00b4ff] to-[#d100ff] font-extrabold tracking-[0.2em] uppercase text-xs sm:text-sm animate-pulse">
-            Инициализация систем ИИ...
-        </div>
-    </div>
+<body class="bg-gray-950 text-gray-200 flex flex-col min-h-screen selection:bg-[#d100ff] selection:text-white">
 
     <!-- Навигация -->
     <nav class="fixed w-full z-50 top-0 glass-panel border-b border-gray-800/50">
@@ -450,7 +391,7 @@
         </div>
     </div>
 
-    <!-- Мобильная версия виджета -->
+    <!-- Мобильная версия виджета (Открывает красивый модал вместо alert) -->
     <div class="fixed bottom-4 left-4 z-[100] md:hidden">
         <button onclick="document.getElementById('mobile-rd-modal').classList.remove('hidden')" class="bg-gray-900/90 backdrop-blur-md border border-white/10 p-3 rounded-full shadow-[0_0_15px_rgba(0,180,255,0.2)] active:scale-95 transition-transform focus:outline-none">
             <svg class="w-5 h-5 text-[#00b4ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -479,18 +420,6 @@
     </div>
 
     <script>
-        // --- 0. Скрипт удаления Preloader'а при загрузке ---
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            // Восстанавливаем скролл
-            document.body.style.overflow = 'auto';
-            if (preloader) {
-                preloader.style.opacity = '0';
-                preloader.style.visibility = 'hidden';
-                setTimeout(() => preloader.remove(), 800); // Удаляем из DOM после плавного исчезновения
-            }
-        });
-
         // Проверка: это мобильное/сенсорное устройство или ПК?
         const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.innerWidth < 768);
 
@@ -500,7 +429,7 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 50; 
+                var elementVisible = 50; // Сделал появление чуть раньше для мобилок
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
@@ -509,8 +438,9 @@
         window.addEventListener("scroll", reveal);
         reveal();
 
-        // --- 2. Эффекты ПК (Отключаем на мобилках) ---
+        // --- 2. Эффекты ПК (Отключаем на мобилках для плавности и экономии батареи) ---
         if (!isTouchDevice) {
+            // Эффект Parallax (Облака на главном экране)
             const heroScene = document.getElementById('hero-scene');
             const parallaxLayers = document.querySelectorAll('.parallax-layer');
 
@@ -532,6 +462,7 @@
                 });
             }
 
+            // Эффект 3D Parallax Tilt для карточек
             function initTilt(cardsNodeList) {
                 cardsNodeList.forEach(card => {
                     const glare = card.querySelector('.glare-layer');
@@ -562,8 +493,11 @@
                 });
             }
             initTilt(document.querySelectorAll('.tilt-card'));
+            
+            // Сохраняем функцию в window, чтобы вызвать её после генерации ИИ
             window.initTiltEffect = initTilt; 
         } else {
+            // Заглушка для мобилок, чтобы не было ошибки вызова
             window.initTiltEffect = function() {}; 
         }
 
