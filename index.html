@@ -50,7 +50,7 @@
             animation: shine 4s linear infinite;
         }
 
-        /* 3D Сцена на главном экране */
+        /* 3D Сцена на главном экране (для ПК) */
         #hero-scene {
             perspective: 1000px;
             transform-style: preserve-3d;
@@ -111,11 +111,11 @@
             transform: translateY(0) scale(1);
         }
 
-        /* 3D Карточки модулей */
+        /* 3D Карточки модулей (Базовые настройки, активируются через JS на ПК) */
         .tilt-wrapper { perspective: 1200px; }
         .tilt-card {
             transform-style: preserve-3d;
-            transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             will-change: transform;
         }
         .tilt-content { transform: translateZ(50px); }
@@ -138,14 +138,14 @@
         }
         .animated-border:focus-within::before { opacity: 1; }
 
-        /* Стили для 3D R&D виджета (Исправленные шторки) */
+        /* Стили для 3D R&D виджета (Шторка для ПК) */
         .rd-widget-wrapper { perspective: 1000px; z-index: 100;}
         .rd-widget {
             transform-style: preserve-3d;
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
             transform-origin: bottom left;
             display: flex;
-            align-items: center; /* Центрируем иконку и текст по вертикали */
+            align-items: center; 
         }
         .rd-widget-wrapper:hover .rd-widget {
             transform: rotateX(5deg) rotateY(10deg) scale(1.02);
@@ -157,16 +157,16 @@
             opacity: 0;
             overflow: hidden;
             transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            white-space: nowrap; /* Важно: запрещаем перенос строк пока контейнер сжат */
+            white-space: nowrap; 
         }
         .rd-widget-wrapper:hover .rd-text {
-            width: 320px; /* Раскрываем плашку как шторку */
+            width: 320px; 
             opacity: 1;
             margin-left: 1rem;
         }
         .rd-inner-p {
-            width: 320px; /* Жесткая ширина текста, чтобы он не ломал высоту при анимации */
-            white-space: normal; /* Возвращаем нормальный перенос строк внутри фиксированного блока */
+            width: 320px; 
+            white-space: normal; 
         }
     </style>
 </head>
@@ -174,50 +174,51 @@
 
     <!-- Навигация -->
     <nav class="fixed w-full z-50 top-0 glass-panel border-b border-gray-800/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex justify-between items-center relative">
             <div class="hidden sm:flex gap-6 z-10 text-sm font-semibold text-gray-400">
                 <a href="#modules" class="hover:text-white transition">Модули</a>
                 <a href="#analyzer" class="hover:text-white transition">Анализ ниши</a>
             </div>
-            <a href="index.html" class="text-2xl font-extrabold text-white absolute left-1/2 -translate-x-1/2 z-0 flex items-center gap-3 hover:scale-105 transition transform duration-300">
-                <img src="logo.jpg" alt="TimLabs Logo" class="w-10 h-10 rounded-full border border-gray-800 hidden sm:block object-cover shadow-[0_0_15px_rgba(0,180,255,0.4)]">
+            <a href="index.html" class="text-xl md:text-2xl font-extrabold text-white absolute left-1/2 -translate-x-1/2 z-0 flex items-center gap-2 hover:scale-105 transition transform duration-300">
+                <img src="logo.jpg" alt="TimLabs Logo" class="w-8 h-8 md:w-10 md:h-10 rounded-full border border-gray-800 hidden sm:block object-cover shadow-[0_0_15px_rgba(0,180,255,0.4)]">
                 Tim<span class="text-gradient">Labs</span>
             </a>
-            <a href="https://t.me/TimLabs_bot" target="_blank" class="text-sm bg-gray-800 hover:bg-gray-700 text-white px-5 py-2 rounded-full border border-gray-700 z-10 transition font-bold flex items-center gap-2 hover:shadow-[0_0_15px_rgba(209,0,255,0.3)]">
-                Связаться с ИИ
+            <a href="https://t.me/TimLabs_bot" target="_blank" class="text-xs md:text-sm bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 md:px-5 md:py-2 rounded-full border border-gray-700 z-10 transition font-bold flex items-center hover:shadow-[0_0_15px_rgba(209,0,255,0.3)]">
+                Связаться
             </a>
         </div>
     </nav>
 
     <main class="flex-grow">
         <!-- Главный экран (Hero Section) -->
-        <header id="hero-scene" class="relative pt-40 pb-24 px-5 border-b border-gray-900/50 overflow-hidden min-h-[90vh] flex items-center justify-center">
+        <header id="hero-scene" class="relative pt-32 pb-16 md:pt-40 md:pb-24 px-4 md:px-5 border-b border-gray-900/50 overflow-hidden min-h-[85vh] md:min-h-[90vh] flex items-center justify-center">
             
             <div class="absolute inset-0 pointer-events-none z-0 flex items-center justify-center">
-                <div class="cloud parallax-layer" data-speed="40" style="width: 60vw; height: 60vw; background: #00b4ff; top: -10%; left: -10%;"></div>
-                <div class="cloud parallax-layer" data-speed="-50" style="width: 50vw; height: 50vw; background: #d100ff; bottom: -10%; right: -10%;"></div>
-                <div class="cloud parallax-layer" data-speed="20" style="width: 40vw; height: 40vw; background: #4f46e5; top: 20%; left: 30%; opacity: 0.4;"></div>
+                <div class="cloud parallax-layer" data-speed="40" style="width: 80vw; height: 80vw; max-width: 600px; max-height: 600px; background: #00b4ff; top: -10%; left: -10%;"></div>
+                <div class="cloud parallax-layer" data-speed="-50" style="width: 70vw; height: 70vw; max-width: 500px; max-height: 500px; background: #d100ff; bottom: -10%; right: -10%;"></div>
+                <div class="cloud parallax-layer hidden md:block" data-speed="20" style="width: 40vw; height: 40vw; background: #4f46e5; top: 20%; left: 30%; opacity: 0.4;"></div>
             </div>
 
-            <div class="absolute inset-0 pointer-events-none z-0">
+            <!-- Стеклянные элементы скроем на мобилках для чистоты -->
+            <div class="absolute inset-0 pointer-events-none z-0 hidden md:block">
                 <div class="floating-obj parallax-layer anim-float-1 rounded-2xl w-24 h-24 top-[20%] left-[15%]" data-speed="80"></div>
                 <div class="floating-obj parallax-layer anim-float-2 rounded-full w-16 h-16 bottom-[30%] right-[20%]" data-speed="-60"></div>
                 <div class="floating-obj parallax-layer anim-float-1 rounded-lg w-12 h-12 top-[40%] right-[10%] rotate-45" data-speed="100"></div>
-                <div class="absolute inset-0" style="background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 40px 40px; mask-image: radial-gradient(circle, black 40%, transparent 80%); -webkit-mask-image: radial-gradient(circle, black 40%, transparent 80%);"></div>
             </div>
+            <div class="absolute inset-0 hidden md:block" style="background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 40px 40px; mask-image: radial-gradient(circle, black 40%, transparent 80%); -webkit-mask-image: radial-gradient(circle, black 40%, transparent 80%);"></div>
 
             <div class="relative z-10 max-w-5xl mx-auto text-center parallax-layer" data-speed="10">
-                <div class="inline-block mb-6 px-5 py-2 rounded-full border border-white/10 glass-panel text-xs font-bold uppercase tracking-widest text-gray-300 shadow-xl">
+                <div class="inline-block mb-4 md:mb-6 px-4 py-1.5 md:px-5 md:py-2 rounded-full border border-white/10 glass-panel text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-300 shadow-xl">
                     Для малого, среднего и крупного бизнеса
                 </div>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-6 text-white tracking-tight drop-shadow-2xl">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-4 md:mb-6 text-white tracking-tight drop-shadow-2xl">
                     Автоматизация <br/> через <span class="text-gradient">нейросети</span>
                 </h1>
-                <p class="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-                    Проектируем и внедряем интеллектуальные системы, которые работают 24/7. <strong class="text-white font-semibold">Полное соблюдение 152-ФЗ</strong> и защита корпоративных данных.
+                <p class="text-base sm:text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed font-light px-2">
+                    Проектируем и внедряем интеллектуальные системы, которые работают 24/7. <strong class="text-white font-semibold">Полное соблюдение 152-ФЗ</strong>.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="#analyzer" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white text-lg font-bold py-4 px-12 rounded-xl hover:scale-105 transition-transform shadow-[0_0_40px_rgba(209,0,255,0.4)]">
+                <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6 px-4">
+                    <a href="#analyzer" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white text-base md:text-lg font-bold py-3 md:py-4 px-8 md:px-12 rounded-xl hover:scale-105 transition-transform shadow-[0_0_30px_rgba(209,0,255,0.4)] w-full sm:w-auto">
                         Сгенерировать план
                     </a>
                 </div>
@@ -225,37 +226,37 @@
         </header>
 
         <!-- Разработанные Модули (3D Витрина) -->
-        <section id="modules" class="py-24 px-5 relative z-10 overflow-hidden bg-black">
+        <section id="modules" class="py-16 md:py-24 px-4 md:px-5 relative z-10 overflow-hidden bg-black">
             <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">Готовые ИИ-решения</h2>
-                    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">Модули, которые мы разрабатываем и тестируем в рамках наших исследований процессов.</p>
+                <div class="text-center mb-12 md:mb-16 reveal">
+                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 md:mb-6 tracking-tight">Готовые ИИ-решения</h2>
+                    <p class="text-base md:text-xl text-gray-400 max-w-2xl mx-auto">Модули, которые мы разрабатываем и тестируем в рамках наших исследований процессов.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
                     
                     <!-- Модуль 1: HR -->
                     <div class="tilt-wrapper reveal">
-                        <div class="tilt-card relative rounded-3xl h-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
-                            <div class="absolute inset-[-2px] rounded-[1.6rem] bg-gradient-to-r from-[#00b4ff] via-[#0055ff] to-[#00b4ff] bg-[length:200%_auto] animate-shine opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="tilt-card relative rounded-3xl h-full shadow-lg md:shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
+                            <div class="absolute inset-[-2px] rounded-[1.6rem] bg-gradient-to-r from-[#00b4ff] via-[#0055ff] to-[#00b4ff] bg-[length:200%_auto] animate-shine opacity-30 md:group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute inset-0 bg-gray-900/95 backdrop-blur-xl rounded-3xl border border-white/10"></div>
-                            <div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+                            <div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none hidden md:block">
                                 <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#00b4ff] blur-[80px] rounded-full opacity-20 group-hover:opacity-50 transition-opacity duration-700 animate-pulse"></div>
                             </div>
-                            <div class="glare-layer absolute inset-0 rounded-3xl pointer-events-none"></div>
+                            <div class="glare-layer absolute inset-0 rounded-3xl pointer-events-none hidden md:block"></div>
 
-                            <div class="tilt-content p-8 flex flex-col h-full relative z-10">
-                                <div class="tilt-icon absolute top-6 right-6 p-4 text-[#00b4ff] bg-[#00b4ff]/10 rounded-2xl border border-[#00b4ff]/20 shadow-[0_0_15px_rgba(0,180,255,0.2)]">
+                            <div class="tilt-content p-6 md:p-8 flex flex-col h-full relative z-10">
+                                <div class="tilt-icon absolute top-6 right-6 p-3 md:p-4 text-[#00b4ff] bg-[#00b4ff]/10 rounded-2xl border border-[#00b4ff]/20 shadow-[0_0_15px_rgba(0,180,255,0.2)]">
                                     <div class="float-icon">
-                                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                        <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                                     </div>
                                 </div>
-                                <div class="text-[#00b4ff] text-sm font-black uppercase tracking-widest mb-4">HR & Масс-найм</div>
-                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">ИИ-Рекрутер</h3>
-                                <p class="text-gray-400 mb-6 flex-grow leading-relaxed relative z-10">Демонстрация системы связи с кандидатами. Нейросеть способна проводить первичное аудио-собеседование и формировать таблицы откликов.</p>
+                                <div class="text-[#00b4ff] text-xs md:text-sm font-black uppercase tracking-widest mb-3 md:mb-4 pr-16">HR & Масс-найм</div>
+                                <h3 class="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4">ИИ-Рекрутер</h3>
+                                <p class="text-sm md:text-base text-gray-400 mb-6 flex-grow leading-relaxed relative z-10">Демонстрация системы связи с кандидатами. Нейросеть способна проводить первичное аудио-собеседование и формировать таблицы откликов.</p>
                                 
                                 <div class="mt-auto pt-4 border-t border-gray-800/50 relative z-10">
-                                    <a href="recruiter.html" class="inline-flex items-center text-[#00b4ff] hover:text-white font-bold transition-colors group/link text-sm uppercase tracking-wide">
+                                    <a href="recruiter.html" class="inline-flex items-center text-[#00b4ff] hover:text-white font-bold transition-colors group/link text-xs md:text-sm uppercase tracking-wide">
                                         Смотреть демо
                                         <svg class="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </a>
@@ -265,27 +266,27 @@
                     </div>
 
                     <!-- Модуль 2: Продажи -->
-                    <div class="tilt-wrapper reveal" style="transition-delay: 150ms;">
-                        <div class="tilt-card relative rounded-3xl h-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
-                            <div class="absolute inset-[-2px] rounded-[1.6rem] bg-gradient-to-r from-[#d100ff] via-[#7a00ff] to-[#d100ff] bg-[length:200%_auto] animate-shine opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="tilt-wrapper reveal" style="transition-delay: 100ms;">
+                        <div class="tilt-card relative rounded-3xl h-full shadow-lg md:shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
+                            <div class="absolute inset-[-2px] rounded-[1.6rem] bg-gradient-to-r from-[#d100ff] via-[#7a00ff] to-[#d100ff] bg-[length:200%_auto] animate-shine opacity-30 md:group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute inset-0 bg-gray-900/95 backdrop-blur-xl rounded-3xl border border-white/10"></div>
-                            <div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+                            <div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none hidden md:block">
                                 <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#d100ff] blur-[80px] rounded-full opacity-20 group-hover:opacity-50 transition-opacity duration-700 animate-pulse"></div>
                             </div>
-                            <div class="glare-layer absolute inset-0 rounded-3xl pointer-events-none"></div>
+                            <div class="glare-layer absolute inset-0 rounded-3xl pointer-events-none hidden md:block"></div>
 
-                            <div class="tilt-content p-8 flex flex-col h-full relative z-10">
-                                <div class="tilt-icon absolute top-6 right-6 p-4 text-[#d100ff] bg-[#d100ff]/10 rounded-2xl border border-[#d100ff]/20 shadow-[0_0_15px_rgba(209,0,255,0.2)]">
+                            <div class="tilt-content p-6 md:p-8 flex flex-col h-full relative z-10">
+                                <div class="tilt-icon absolute top-6 right-6 p-3 md:p-4 text-[#d100ff] bg-[#d100ff]/10 rounded-2xl border border-[#d100ff]/20 shadow-[0_0_15px_rgba(209,0,255,0.2)]">
                                     <div class="float-icon">
-                                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                                        <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
                                     </div>
                                 </div>
-                                <div class="text-[#d100ff] text-sm font-black uppercase tracking-widest mb-4">Отдел продаж</div>
-                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">ИИ-Ассистент</h3>
-                                <p class="text-gray-400 mb-6 flex-grow leading-relaxed relative z-10">Шоукейс умного агента для CRM. Показывает возможности моментального ответа 24/7 и квалификации лидов по степени теплоты.</p>
+                                <div class="text-[#d100ff] text-xs md:text-sm font-black uppercase tracking-widest mb-3 md:mb-4 pr-16">Отдел продаж</div>
+                                <h3 class="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4">ИИ-Ассистент</h3>
+                                <p class="text-sm md:text-base text-gray-400 mb-6 flex-grow leading-relaxed relative z-10">Шоукейс умного агента для CRM. Показывает возможности моментального ответа 24/7 и квалификации лидов по степени теплоты.</p>
                                 
                                 <div class="mt-auto pt-4 border-t border-gray-800/50 relative z-10">
-                                    <a href="sales.html" class="inline-flex items-center text-[#d100ff] hover:text-white font-bold transition-colors group/link text-sm uppercase tracking-wide">
+                                    <a href="sales.html" class="inline-flex items-center text-[#d100ff] hover:text-white font-bold transition-colors group/link text-xs md:text-sm uppercase tracking-wide">
                                         Смотреть демо
                                         <svg class="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </a>
@@ -295,27 +296,27 @@
                     </div>
 
                     <!-- Модуль 3: Базы знаний -->
-                    <div class="tilt-wrapper reveal" style="transition-delay: 300ms;">
-                        <div class="tilt-card relative rounded-3xl h-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
-                            <div class="absolute inset-[-2px] rounded-[1.6rem] bg-gradient-to-r from-blue-400 via-indigo-600 to-blue-400 bg-[length:200%_auto] animate-shine opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="tilt-wrapper reveal" style="transition-delay: 200ms;">
+                        <div class="tilt-card relative rounded-3xl h-full shadow-lg md:shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
+                            <div class="absolute inset-[-2px] rounded-[1.6rem] bg-gradient-to-r from-blue-400 via-indigo-600 to-blue-400 bg-[length:200%_auto] animate-shine opacity-30 md:group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute inset-0 bg-gray-900/95 backdrop-blur-xl rounded-3xl border border-white/10"></div>
-                            <div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+                            <div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none hidden md:block">
                                 <div class="absolute -top-20 -right-20 w-64 h-64 bg-blue-500 blur-[80px] rounded-full opacity-20 group-hover:opacity-50 transition-opacity duration-700 animate-pulse"></div>
                             </div>
-                            <div class="glare-layer absolute inset-0 rounded-3xl pointer-events-none"></div>
+                            <div class="glare-layer absolute inset-0 rounded-3xl pointer-events-none hidden md:block"></div>
 
-                            <div class="tilt-content p-8 flex flex-col h-full relative z-10">
-                                <div class="tilt-icon absolute top-6 right-6 p-4 text-blue-400 bg-blue-500/10 rounded-2xl border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                            <div class="tilt-content p-6 md:p-8 flex flex-col h-full relative z-10">
+                                <div class="tilt-icon absolute top-6 right-6 p-3 md:p-4 text-blue-400 bg-blue-500/10 rounded-2xl border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.2)]">
                                     <div class="float-icon">
-                                        <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2zm0-10h2v8h-2z"/></svg>
+                                        <svg class="w-8 h-8 md:w-10 md:h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v2h-2zm0-10h2v8h-2z"/></svg>
                                     </div>
                                 </div>
-                                <div class="text-blue-400 text-sm font-black uppercase tracking-widest mb-4">Поддержка</div>
-                                <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">RAG-Базы</h3>
-                                <p class="text-gray-400 mb-6 flex-grow leading-relaxed relative z-10">Экспериментальный корпоративный ИИ-поисковик. Способен анализировать загруженные регламенты и выдавать точные ответы сотрудникам.</p>
+                                <div class="text-blue-400 text-xs md:text-sm font-black uppercase tracking-widest mb-3 md:mb-4 pr-16">Поддержка</div>
+                                <h3 class="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4">RAG-Базы</h3>
+                                <p class="text-sm md:text-base text-gray-400 mb-6 flex-grow leading-relaxed relative z-10">Экспериментальный корпоративный ИИ-поисковик. Способен анализировать загруженные регламенты и выдавать точные ответы сотрудникам.</p>
                                 
                                 <div class="mt-auto pt-4 border-t border-gray-800/50 relative z-10">
-                                    <a href="https://t.me/timlabs" target="_blank" class="inline-flex items-center text-blue-400 hover:text-white font-bold transition-colors group/link text-sm uppercase tracking-wide">
+                                    <a href="https://t.me/timlabs" target="_blank" class="inline-flex items-center text-blue-400 hover:text-white font-bold transition-colors group/link text-xs md:text-sm uppercase tracking-wide">
                                         Смотреть демо
                                         <svg class="w-4 h-4 ml-2 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </a>
@@ -329,32 +330,33 @@
         </section>
 
         <!-- Блок ИИ-Анализатора (Генератор Лидов) -->
-        <section id="analyzer" class="py-24 px-5 relative z-10 border-y border-gray-900 bg-gray-950/50">
-            <div class="max-w-4xl mx-auto glass-panel p-8 md:p-14 rounded-[2rem] shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden reveal">
+        <section id="analyzer" class="py-16 md:py-24 px-4 md:px-5 relative z-10 border-y border-gray-900 bg-gray-950/50">
+            <div class="max-w-4xl mx-auto glass-panel p-6 md:p-14 rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.5)] md:shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden reveal">
                 <div class="relative z-10">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#00b4ff] to-[#d100ff] flex items-center justify-center text-white font-black text-2xl shadow-[0_0_20px_rgba(0,180,255,0.5)]">AI</div>
-                        <h2 class="text-3xl md:text-4xl font-bold text-white tracking-tight">Исследование ниши</h2>
+                    <div class="flex items-center gap-3 md:gap-4 mb-4">
+                        <div class="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br from-[#00b4ff] to-[#d100ff] flex items-center justify-center text-white font-black text-xl md:text-2xl shadow-[0_0_20px_rgba(0,180,255,0.5)]">AI</div>
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">Исследование ниши</h2>
                     </div>
-                    <p class="text-gray-400 mb-10 text-lg">Впишите отрасль бизнеса, чтобы запустить тестовую генерацию 3 вариантов применения ИИ-технологий на базе наших наработок.</p>
+                    <p class="text-sm md:text-lg text-gray-400 mb-8 md:mb-10">Впишите отрасль бизнеса, чтобы запустить тестовую генерацию 3 вариантов применения ИИ-технологий на базе наших наработок.</p>
                     
-                    <div class="flex flex-col sm:flex-row gap-5 mb-6 relative">
+                    <div class="flex flex-col sm:flex-row gap-4 md:gap-5 mb-6 relative">
                         <div class="flex-1 animated-border">
-                            <input type="text" id="nicheInput" placeholder="Например: Производство мебели, Сеть клиник..." class="w-full bg-black/80 border border-transparent rounded-xl px-6 py-5 text-white focus:outline-none text-lg relative z-10">
+                            <!-- text-base (16px) предотвращает авто-зум на iOS -->
+                            <input type="text" id="nicheInput" placeholder="Например: Производство мебели, Сеть клиник..." class="w-full bg-black/80 border border-transparent rounded-xl px-5 py-4 md:px-6 md:py-5 text-white focus:outline-none text-base md:text-lg relative z-10">
                         </div>
-                        <button id="generateBtn" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white font-black uppercase tracking-widest py-5 px-10 rounded-xl disabled:opacity-50 transition hover:scale-105 shadow-lg z-10 flex-shrink-0">
+                        <button id="generateBtn" class="bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white font-black uppercase tracking-widest py-4 px-8 md:py-5 md:px-10 rounded-xl disabled:opacity-50 transition hover:scale-105 shadow-lg z-10 flex-shrink-0">
                             Анализ
                         </button>
                     </div>
 
-                    <div id="errorModal" class="hidden text-red-400 bg-red-500/10 border border-red-500/20 p-5 rounded-xl mb-4 text-sm font-medium backdrop-blur-sm"></div>
-                    <div id="loadingIndicator" class="hidden animate-pulse text-[#00b4ff] font-semibold p-5 bg-[#00b4ff]/10 rounded-xl border border-[#00b4ff]/20 flex items-center gap-4">
-                        <div class="w-6 h-6 border-4 border-[#00b4ff] border-t-transparent rounded-full animate-spin"></div>
+                    <div id="errorModal" class="hidden text-red-400 bg-red-500/10 border border-red-500/20 p-4 md:p-5 rounded-xl mb-4 text-xs md:text-sm font-medium backdrop-blur-sm"></div>
+                    <div id="loadingIndicator" class="hidden animate-pulse text-[#00b4ff] font-semibold p-4 md:p-5 bg-[#00b4ff]/10 rounded-xl border border-[#00b4ff]/20 flex items-center gap-3 md:gap-4 text-sm md:text-base">
+                        <div class="w-5 h-5 md:w-6 md:h-6 border-4 border-[#00b4ff] border-t-transparent rounded-full animate-spin"></div>
                         Лабораторный ИИ анализирует данные...
                     </div>
 
-                    <div id="resultContainer" class="hidden mt-12 reveal">
-                        <h3 class="text-2xl font-bold text-white mb-8 border-b border-gray-800 pb-4">Результат генерации:</h3>
+                    <div id="resultContainer" class="hidden mt-10 md:mt-12 reveal">
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8 border-b border-gray-800 pb-3 md:pb-4">Результат генерации:</h3>
                         <div id="resultContent" class="space-y-6"></div>
                     </div>
                 </div>
@@ -362,26 +364,24 @@
         </section>
     </main>
 
-    <footer class="bg-black text-gray-500 py-12 text-center border-t border-gray-900 relative z-10">
-        <div class="max-w-6xl mx-auto px-5">
-            <div class="text-3xl font-extrabold mb-4 text-gradient inline-block">TimLabs</div>
-            <p class="text-sm mb-6 max-w-lg mx-auto">Исследовательская лаборатория и шоукейс ИИ-технологий.</p>
-            <div class="flex justify-center gap-8 mb-8 text-sm font-medium">
+    <footer class="bg-black text-gray-500 py-10 md:py-12 text-center border-t border-gray-900 relative z-10 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-2xl md:text-3xl font-extrabold mb-3 md:mb-4 text-gradient inline-block">TimLabs</div>
+            <p class="text-xs md:text-sm mb-6 max-w-lg mx-auto">Исследовательская лаборатория и шоукейс ИИ-технологий.</p>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8 mb-6 md:mb-8 text-xs md:text-sm font-medium">
                 <a href="https://t.me/timrockets" target="_blank" class="hover:text-[#00b4ff] transition">Telegram Канал</a>
                 <a href="https://t.me/timlabs" target="_blank" class="hover:text-[#d100ff] transition">Наши исследования</a>
             </div>
-            <p class="text-xs border-t border-gray-900 pt-8">&copy; 2026 TimLabs. Создано Тимом Гуцевым. Open Portfolio Project.</p>
+            <p class="text-[10px] md:text-xs border-t border-gray-900 pt-6 md:pt-8">&copy; 2026 TimLabs. Создано Тимом Гуцевым. Open Portfolio Project.</p>
         </div>
     </footer>
 
-    <!-- 3D Виджет R&D (Алиби для GitHub) - ИСПРАВЛЕННЫЙ ВАРИАНТ -->
+    <!-- 3D Виджет R&D (Алиби для GitHub) - ПК Версия -->
     <div class="rd-widget-wrapper fixed bottom-6 left-6 cursor-help hidden md:block">
         <div class="rd-widget bg-gray-900/80 backdrop-blur-md border border-white/10 p-3 rounded-2xl shadow-[0_0_20px_rgba(0,180,255,0.15)]">
-            <!-- Иконка колбы (Лаборатория) -->
             <div class="flex-shrink-0 text-[#00b4ff] bg-[#00b4ff]/10 p-2.5 rounded-xl flex items-center justify-center">
                 <svg class="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
             </div>
-            <!-- Скрытый текст, выезжающий как шторка (пофиксил баг с высотой) -->
             <div class="rd-text">
                 <p class="rd-inner-p text-[11px] text-gray-300 leading-relaxed pr-2">
                     <strong class="text-white text-xs block mb-1 uppercase tracking-wider">R&D Portfolio Showroom</strong>
@@ -391,21 +391,45 @@
         </div>
     </div>
 
-    <!-- Мобильная версия виджета (Просто иконка) -->
+    <!-- Мобильная версия виджета (Открывает красивый модал вместо alert) -->
     <div class="fixed bottom-4 left-4 z-[100] md:hidden">
-        <div class="bg-gray-900/90 backdrop-blur-md border border-white/10 p-2 rounded-full shadow-[0_0_15px_rgba(0,180,255,0.2)]" onclick="alert('TimLabs — открытая исследовательская лаборатория. Данный ресурс является технологическим портфолио, демонстрирующим возможности нейросетей. Сайт не осуществляет прием платежей и носит образовательный характер.')">
+        <button onclick="document.getElementById('mobile-rd-modal').classList.remove('hidden')" class="bg-gray-900/90 backdrop-blur-md border border-white/10 p-3 rounded-full shadow-[0_0_15px_rgba(0,180,255,0.2)] active:scale-95 transition-transform focus:outline-none">
             <svg class="w-5 h-5 text-[#00b4ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </button>
+    </div>
+
+    <!-- Модальное окно для мобильного виджета -->
+    <div id="mobile-rd-modal" class="fixed inset-0 z-[200] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity">
+        <div class="bg-gray-900 border border-gray-700 p-6 rounded-3xl shadow-2xl max-w-sm w-full relative">
+            <button onclick="document.getElementById('mobile-rd-modal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="text-[#00b4ff] bg-[#00b4ff]/10 p-2 rounded-xl">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                </div>
+                <h3 class="text-white font-bold uppercase tracking-wide text-sm">R&D Portfolio</h3>
+            </div>
+            <p class="text-sm text-gray-300 leading-relaxed mb-6">
+                TimLabs — открытая исследовательская лаборатория. Данный ресурс является технологическим портфолио, демонстрирующим возможности нейросетей. Сайт не осуществляет прием платежей и носит образовательный характер.
+            </p>
+            <button onclick="document.getElementById('mobile-rd-modal').classList.add('hidden')" class="w-full bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 rounded-xl transition-colors active:scale-95">
+                Понятно
+            </button>
         </div>
     </div>
 
     <script>
+        // Проверка: это мобильное/сенсорное устройство или ПК?
+        const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (window.innerWidth < 768);
+
         // --- 1. Анимации при скролле (Reveal) ---
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
+                var elementVisible = 50; // Сделал появление чуть раньше для мобилок
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
@@ -414,60 +438,71 @@
         window.addEventListener("scroll", reveal);
         reveal();
 
-        // --- 2. Эффект Parallax (Облака и парящие объекты на главном экране) ---
-        const heroScene = document.getElementById('hero-scene');
-        const parallaxLayers = document.querySelectorAll('.parallax-layer');
+        // --- 2. Эффекты ПК (Отключаем на мобилках для плавности и экономии батареи) ---
+        if (!isTouchDevice) {
+            // Эффект Parallax (Облака на главном экране)
+            const heroScene = document.getElementById('hero-scene');
+            const parallaxLayers = document.querySelectorAll('.parallax-layer');
 
-        heroScene.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 2;
-            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+            if(heroScene) {
+                heroScene.addEventListener('mousemove', (e) => {
+                    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+                    const y = (e.clientY / window.innerHeight - 0.5) * 2;
 
-            parallaxLayers.forEach(layer => {
-                const speed = layer.getAttribute('data-speed');
-                layer.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-            });
-        });
-
-        heroScene.addEventListener('mouseleave', () => {
-            parallaxLayers.forEach(layer => {
-                layer.style.transform = `translate(0px, 0px)`;
-            });
-        });
-
-
-        // --- 3. Эффект 3D Parallax Tilt для карточек модулей ---
-        function initTilt(cardsNodeList) {
-            cardsNodeList.forEach(card => {
-                const glare = card.querySelector('.glare-layer');
-                
-                card.addEventListener('mousemove', e => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const rotateX = ((y - centerY) / centerY) * -10;
-                    const rotateY = ((x - centerX) / centerX) * 10;
-                    
-                    card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-                    
-                    if(glare) {
-                        glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.12) 0%, transparent 60%)`;
-                    }
+                    parallaxLayers.forEach(layer => {
+                        const speed = layer.getAttribute('data-speed');
+                        layer.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+                    });
                 });
-                
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = `perspective(1200px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
-                    if(glare) {
-                        glare.style.background = `transparent`;
-                    }
+
+                heroScene.addEventListener('mouseleave', () => {
+                    parallaxLayers.forEach(layer => {
+                        layer.style.transform = `translate(0px, 0px)`;
+                    });
                 });
-            });
+            }
+
+            // Эффект 3D Parallax Tilt для карточек
+            function initTilt(cardsNodeList) {
+                cardsNodeList.forEach(card => {
+                    const glare = card.querySelector('.glare-layer');
+                    
+                    card.addEventListener('mousemove', e => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+                        
+                        const rotateX = ((y - centerY) / centerY) * -8;
+                        const rotateY = ((x - centerX) / centerX) * 8;
+                        
+                        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                        
+                        if(glare) {
+                            glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.1) 0%, transparent 60%)`;
+                        }
+                    });
+                    
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = `perspective(1200px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
+                        if(glare) {
+                            glare.style.background = `transparent`;
+                        }
+                    });
+                });
+            }
+            initTilt(document.querySelectorAll('.tilt-card'));
+            
+            // Сохраняем функцию в window, чтобы вызвать её после генерации ИИ
+            window.initTiltEffect = initTilt; 
+        } else {
+            // Заглушка для мобилок, чтобы не было ошибки вызова
+            window.initTiltEffect = function() {}; 
         }
-        initTilt(document.querySelectorAll('.tilt-card'));
 
-        // --- 4. Логика генератора (Связь с Cloudflare Worker) ---
+
+        // --- 3. Логика генератора (Связь с Cloudflare Worker) ---
         function safeEncode(niche, ideaTitle) {
             let shortNiche = niche.substring(0, 12);
             let shortIdea = ideaTitle.substring(0, 15);
@@ -533,35 +568,35 @@
                     const botLink = `https://t.me/TimLabs_bot?start=${safeEncode(niche, idea.title)}`;
                     
                     htmlOutput += `
-                    <div class="tilt-wrapper reveal active" style="transition-delay: ${index * 150}ms">
-                        <div class="tilt-card relative rounded-3xl h-full shadow-[0_20px_50px_rgba(0,0,0,0.5)] group mb-6">
+                    <div class="tilt-wrapper reveal active" style="transition-delay: ${index * 100}ms">
+                        <div class="tilt-card relative rounded-3xl h-full shadow-lg md:shadow-[0_20px_50px_rgba(0,0,0,0.5)] group mb-6 md:mb-8">
                             
-                            <div class="absolute inset-[-2px] rounded-[1.6rem] bg-gradient-to-r from-[#00b4ff] via-[#d100ff] to-[#00b4ff] bg-[length:200%_auto] animate-shine opacity-40 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="absolute inset-[-2px] rounded-[1.6rem] bg-gradient-to-r from-[#00b4ff] via-[#d100ff] to-[#00b4ff] bg-[length:200%_auto] animate-shine opacity-40 md:group-hover:opacity-100 transition-opacity duration-500"></div>
                             <div class="absolute inset-0 bg-gray-900/95 backdrop-blur-xl rounded-3xl border border-white/10"></div>
                             
-                            <div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+                            <div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none hidden md:block">
                                 <div class="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-[#00b4ff] to-[#d100ff] blur-[80px] rounded-full opacity-20 group-hover:opacity-50 transition-opacity duration-700 animate-pulse"></div>
                             </div>
                             
-                            <div class="glare-layer absolute inset-0 rounded-3xl pointer-events-none"></div>
+                            <div class="glare-layer absolute inset-0 rounded-3xl pointer-events-none hidden md:block"></div>
 
-                            <div class="tilt-content p-8 flex flex-col h-full relative z-10">
-                                <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#00b4ff] to-[#d100ff] rounded-l-3xl"></div>
-                                <h4 class="text-3xl font-bold text-white mb-4 pl-4">${idea.title}</h4>
-                                <p class="text-gray-300 text-lg mb-6 pl-4 flex-grow leading-relaxed">${idea.description}</p>
+                            <div class="tilt-content p-6 md:p-8 flex flex-col h-full relative z-10">
+                                <div class="absolute top-0 left-0 w-1.5 md:w-2 h-full bg-gradient-to-b from-[#00b4ff] to-[#d100ff] rounded-l-3xl"></div>
+                                <h4 class="text-xl md:text-3xl font-bold text-white mb-3 md:mb-4 pl-3 md:pl-4">${idea.title}</h4>
+                                <p class="text-sm md:text-lg text-gray-300 mb-6 pl-3 md:pl-4 flex-grow leading-relaxed">${idea.description}</p>
                                 
-                                <div class="ml-4 mb-8 bg-gray-900/90 p-5 rounded-2xl border border-white/5 shadow-inner">
+                                <div class="ml-3 md:ml-4 mb-6 md:mb-8 bg-gray-900/90 p-4 md:p-5 rounded-2xl border border-white/5 shadow-inner">
                                     <div class="flex items-center gap-2 mb-2">
-                                        <svg class="w-5 h-5 text-[#d100ff]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                                        <div class="text-[#d100ff] text-sm font-black uppercase tracking-widest">Целевой результат</div>
+                                        <svg class="w-4 h-4 md:w-5 md:h-5 text-[#d100ff]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                        <div class="text-[#d100ff] text-xs md:text-sm font-black uppercase tracking-widest">Целевой результат</div>
                                     </div>
-                                    <div class="text-white text-base font-medium">${idea.benefit}</div>
+                                    <div class="text-white text-sm md:text-base font-medium">${idea.benefit}</div>
                                 </div>
 
-                                <div class="ml-4 mt-auto">
-                                    <a href="${botLink}" target="_blank" class="inline-flex items-center justify-center bg-white text-black hover:bg-gray-200 px-8 py-4 rounded-xl text-sm font-extrabold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)] uppercase tracking-wider group/btn">
+                                <div class="ml-3 md:ml-4 mt-auto">
+                                    <a href="${botLink}" target="_blank" class="inline-flex w-full sm:w-auto items-center justify-center bg-white text-black hover:bg-gray-200 px-6 py-3 md:px-8 md:py-4 rounded-xl text-xs md:text-sm font-extrabold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)] uppercase tracking-wider group/btn">
                                         Обсудить интеграцию
-                                        <svg class="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        <svg class="w-4 h-4 md:w-5 md:h-5 ml-2 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </a>
                                 </div>
                             </div>
@@ -572,10 +607,11 @@
                 resultContent.innerHTML = htmlOutput;
                 resultBox.classList.remove('hidden');
 
-                initTilt(resultBox.querySelectorAll('.tilt-card'));
+                // Инициализируем 3D эффект для новых карточек (сработает только на ПК)
+                window.initTiltEffect(resultBox.querySelectorAll('.tilt-card'));
 
             } catch (error) {
-                errorModal.innerHTML = `<strong>Ошибка лаборатории.</strong><br>Сервер недоступен, проверьте подключение или VPN.<br><span class="text-xs text-gray-500 mt-2 block">${error.message}</span>`;
+                errorModal.innerHTML = `<strong>Ошибка лаборатории.</strong><br>Сервер недоступен, проверьте подключение или VPN.<br><span class="text-[10px] md:text-xs text-gray-500 mt-2 block">${error.message}</span>`;
                 errorModal.classList.remove('hidden');
             } finally {
                 loading.classList.add('hidden');
