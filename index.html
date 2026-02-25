@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" style="background-color: #030712;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- PWA & Theme Colors (Убираем белый экран при запуске с рабочего стола) -->
+    <!-- PWA & Theme Colors (Убиваем белый системный экран при запуске с рабочего стола) -->
     <meta name="theme-color" content="#030712">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Вшитый манифест, который заставляет ОС телефона делать темный фон ДО загрузки сайта -->
+    <link rel="manifest" href='data:application/manifest+json;charset=utf-8,{"name":"TimLabs","short_name":"TimLabs","start_url":".","display":"standalone","background_color":"#030712","theme_color":"#030712","icons":[{"src":"logo.jpg","sizes":"512x512","type":"image/jpeg"}]}'>
     
     <!-- SEO & Meta -->
     <title>Внедрение нейросетей и ИИ в бизнес | Автоматизация от TimLabs</title>
