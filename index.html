@@ -61,6 +61,7 @@
             display: block;
             margin: 0 auto;
             max-width: 100%;
+            touch-action: none; /* КРИТИЧНО ДЛЯ МОБИЛОК: блокирует скролл при касании холста */
         }
 
         /* Декоративная сетка на фоне */
@@ -94,59 +95,78 @@
     <div class="bg-grid"></div>
 
     <!-- Навигация (мини-версия) -->
-    <nav class="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-50">
-        <div class="flex items-center gap-3">
-            <img src="logo.jpg" alt="TimLabs Logo" class="w-10 h-10 rounded-full object-cover border border-[#00b4ff]/50 shadow-[0_0_15px_rgba(0,180,255,0.4)]">
-            <span class="text-xl font-extrabold tracking-tight text-white">
+    <nav class="absolute top-0 left-0 w-full p-4 sm:p-6 flex justify-between items-center z-50">
+        <div class="flex items-center gap-2 sm:gap-3">
+            <img src="logo.jpg" alt="TimLabs Logo" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border border-[#00b4ff]/50 shadow-[0_0_15px_rgba(0,180,255,0.4)]">
+            <span class="text-lg sm:text-xl font-extrabold tracking-tight text-white">
                 Tim<span class="text-gradient">Labs</span>
             </span>
         </div>
-        <a href="https://t.me/AiRocketsManager" target="_blank" class="text-xs md:text-sm bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-full transition-colors border border-gray-700">
+        <a href="https://t.me/AiRocketsManager" target="_blank" class="text-xs sm:text-sm bg-gray-800 hover:bg-gray-700 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-colors border border-gray-700">
             Связь с Тимом
         </a>
     </nav>
 
-    <main class="max-w-5xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-grow mt-16 z-10 relative">
+    <main class="max-w-5xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center flex-grow mt-16 z-10 relative">
         
         <!-- Текстовый блок -->
         <div class="text-center lg:text-left">
-            <div class="inline-block px-4 py-1.5 mb-6 rounded-full border border-[#00b4ff]/30 bg-gray-900/50 text-[#00b4ff] text-xs md:text-sm font-semibold tracking-wide uppercase">
+            <div class="inline-block px-4 py-1.5 mb-4 sm:mb-6 rounded-full border border-[#00b4ff]/30 bg-gray-900/50 text-[#00b4ff] text-xs sm:text-sm font-semibold tracking-wide uppercase">
                 Обновление ядра
             </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-white leading-tight">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight text-white leading-tight">
                 Система на <br/><span class="text-gradient">апгрейде</span>
             </h1>
-            <p class="text-gray-300 mb-8 leading-relaxed text-base sm:text-lg max-w-lg mx-auto lg:mx-0 border-l-4 border-[#d100ff] pl-4">
+            <p class="text-gray-300 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-lg max-w-lg mx-auto lg:mx-0 border-l-4 border-[#d100ff] pl-4">
                 Наши нейросети компилируют будущее. Мы внедряем новые ИИ-модули в архитектуру сервера. 
             </p>
-            <p class="text-gray-400 mb-10 text-sm sm:text-base">
+            <p class="text-gray-400 mb-8 sm:mb-10 text-xs sm:text-base px-2 sm:px-0">
                 Пока мы настраиваем железо, вы можете скоротать время в нашей кибер-змейке или перейти в Telegram — там работа кипит без остановок.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="https://t.me/timlabs" target="_blank" class="px-8 py-4 rounded-full bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:from-[#0090cc] hover:to-[#a600cc] text-white font-bold transition-all transform hover:scale-105 neon-glow flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.62-.2-1.12-.31-1.1-.66.01-.18.27-.36.78-.55 3.05-1.33 5.09-2.21 6.12-2.64 2.91-1.21 3.51-1.42 3.91-1.43.09 0 .28.02.39.1.09.07.13.18.14.31-.01.07 0 .14-.01.2z"/></svg>
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                <a href="https://t.me/timlabs" target="_blank" class="px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-gradient-to-r from-[#00b4ff] to-[#d100ff] hover:from-[#0090cc] hover:to-[#a600cc] text-white text-sm sm:text-base font-bold transition-all transform hover:scale-105 neon-glow flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.62-.2-1.12-.31-1.1-.66.01-.18.27-.36.78-.55 3.05-1.33 5.09-2.21 6.12-2.64 2.91-1.21 3.51-1.42 3.91-1.43.09 0 .28.02.39.1.09.07.13.18.14.31-.01.07 0 .14-.01.2z"/></svg>
                     Канал TimLabs
                 </a>
-                <a href="https://t.me/timrockets" target="_blank" class="px-8 py-4 rounded-full border border-gray-700 bg-gray-900 text-gray-300 font-semibold hover:bg-gray-800 hover:border-[#00b4ff]/50 transition-colors flex items-center justify-center gap-2">
+                <a href="https://t.me/timrockets" target="_blank" class="px-6 py-3 sm:px-8 sm:py-4 rounded-full border border-gray-700 bg-gray-900 text-gray-300 text-sm sm:text-base font-semibold hover:bg-gray-800 hover:border-[#00b4ff]/50 transition-colors flex items-center justify-center gap-2">
                     TimRockets
                 </a>
             </div>
         </div>
 
         <!-- Игровой блок (Змейка) -->
-        <div class="game-container w-full max-w-[400px] mx-auto lg:ml-auto">
+        <div class="game-container w-full max-w-[360px] mx-auto lg:ml-auto p-4 sm:p-6">
             <div class="flex justify-between items-center mb-4">
-                <span class="font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-lg font-bold tracking-wider">CYBER_SNAKE</span>
-                <span class="text-sm text-gray-400 bg-gray-950 px-3 py-1 rounded-full border border-gray-800">Счет: <span id="score" class="text-white font-bold">0</span></span>
+                <span class="font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-base sm:text-lg font-bold tracking-wider">CYBER_SNAKE</span>
+                <span class="text-xs sm:text-sm text-gray-400 bg-gray-950 px-2 sm:px-3 py-1 rounded-full border border-gray-800">Счет: <span id="score" class="text-white font-bold">0</span></span>
             </div>
             
-            <canvas id="gameCanvas" width="340" height="340"></canvas>
+            <!-- Уменьшенный размер холста для мобилок (300px) -->
+            <canvas id="gameCanvas" width="300" height="300"></canvas>
             
-            <div class="mt-5 text-center">
+            <!-- Виртуальный джойстик (Только на смартфонах) -->
+            <div class="grid grid-cols-3 gap-2 mt-5 sm:hidden max-w-[160px] mx-auto">
+                <div></div>
+                <button id="btnUp" class="bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-xl p-3 flex justify-center items-center active:scale-95 active:bg-gray-600 transition-transform">
+                    <svg class="w-6 h-6 text-[#00b4ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+                </button>
+                <div></div>
+                <button id="btnLeft" class="bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-xl p-3 flex justify-center items-center active:scale-95 active:bg-gray-600 transition-transform">
+                    <svg class="w-6 h-6 text-[#00b4ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button id="btnDown" class="bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-xl p-3 flex justify-center items-center active:scale-95 active:bg-gray-600 transition-transform">
+                    <svg class="w-6 h-6 text-[#00b4ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <button id="btnRight" class="bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-xl p-3 flex justify-center items-center active:scale-95 active:bg-gray-600 transition-transform">
+                    <svg class="w-6 h-6 text-[#00b4ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <div class="mt-4 sm:mt-5 text-center">
                 <p class="text-xs text-gray-500 mb-3 hidden sm:block">Управление: Стрелки на клавиатуре</p>
-                <p class="text-xs text-gray-500 mb-3 sm:hidden">Управление: Свайпы по экрану</p>
-                <button id="restartBtn" class="w-full py-2.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-xl text-sm font-semibold text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-[#00b4ff]/50">
+                <p class="text-[10px] text-gray-500 mb-3 sm:hidden">Используйте стрелки или свайпы по полю</p>
+                <button id="restartBtn" class="w-full py-2.5 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-xl text-xs sm:text-sm font-semibold text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-[#00b4ff]/50">
                     Начать заново
                 </button>
             </div>
@@ -154,14 +174,14 @@
     </main>
 
     <script>
-        // --- ЛОГИКА ИГРЫ ЗМЕЙКА (В фирменных цветах) ---
+        // --- ЛОГИКА ИГРЫ ЗМЕЙКА ---
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
         const scoreElement = document.getElementById('score');
         const restartBtn = document.getElementById('restartBtn');
 
         const gridSize = 20;
-        const tileCount = Math.floor(canvas.width / gridSize);
+        const tileCount = Math.floor(canvas.width / gridSize); // 300 / 20 = 15
         
         let snake = [];
         let dx = 0;
@@ -178,10 +198,11 @@
         const COLOR_FOOD = '#d100ff';
 
         function initGame() {
+            // Центрируем змейку (сетка 15x15)
             snake = [
-                {x: 8, y: 10},
-                {x: 8, y: 11},
-                {x: 8, y: 12}
+                {x: 7, y: 10},
+                {x: 7, y: 11},
+                {x: 7, y: 12}
             ];
             dx = 0;
             dy = -1;
@@ -191,7 +212,7 @@
             placeFood();
             
             if(gameLoop) clearInterval(gameLoop);
-            gameLoop = setInterval(drawGame, 100);
+            gameLoop = setInterval(drawGame, 110); // Чуть замедлил для мобилок (было 100)
         }
 
         function placeFood() {
@@ -219,7 +240,7 @@
         }
 
         function clearScreen() {
-            ctx.fillStyle = '#111827'; // gray-900
+            ctx.fillStyle = '#111827';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
 
@@ -248,7 +269,6 @@
                     ctx.fillStyle = COLOR_SNAKE_BODY;
                     ctx.shadowBlur = 0;
                 }
-                // Округлые сегменты змейки
                 ctx.beginPath();
                 ctx.roundRect(snake[i].x * gridSize + 2, snake[i].y * gridSize + 2, gridSize - 4, gridSize - 4, 4);
                 ctx.fill();
@@ -295,11 +315,11 @@
             isGameOver = true;
             clearInterval(gameLoop);
             
-            ctx.fillStyle = 'rgba(3, 7, 18, 0.8)'; // gray-950
+            ctx.fillStyle = 'rgba(3, 7, 18, 0.8)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             
             ctx.fillStyle = COLOR_FOOD;
-            ctx.font = 'bold 28px Orbitron';
+            ctx.font = 'bold 24px Orbitron';
             ctx.textAlign = 'center';
             ctx.shadowBlur = 15;
             ctx.shadowColor = COLOR_FOOD;
@@ -311,23 +331,53 @@
             ctx.fillText(`Ваш счет: ${score}`, canvas.width / 2, canvas.height / 2 + 25);
         }
 
-        // Клавиатура
+        // Централизованная функция смены направления
+        function setDirection(newDx, newDy) {
+            // Исключаем разворот на 180 градусов
+            if (newDx !== 0 && dx === 0) {
+                dx = newDx; dy = 0;
+            } else if (newDy !== 0 && dy === 0) {
+                dx = 0; dy = newDy;
+            }
+        }
+
+        // Управление клавиатурой (ПК)
         document.addEventListener('keydown', (e) => {
             if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
                 e.preventDefault();
             }
-            if (e.key === 'ArrowUp' && dy === 0) { dx = 0; dy = -1; }
-            if (e.key === 'ArrowDown' && dy === 0) { dx = 0; dy = 1; }
-            if (e.key === 'ArrowLeft' && dx === 0) { dx = -1; dy = 0; }
-            if (e.key === 'ArrowRight' && dx === 0) { dx = 1; dy = 0; }
+            if (e.key === 'ArrowUp') setDirection(0, -1);
+            if (e.key === 'ArrowDown') setDirection(0, 1);
+            if (e.key === 'ArrowLeft') setDirection(-1, 0);
+            if (e.key === 'ArrowRight') setDirection(1, 0);
         });
 
-        // Свайпы (Mobile)
+        // --- НОВОЕ: Виртуальный джойстик (Mobile) ---
+        const bindButton = (id, newDx, newDy) => {
+            const btn = document.getElementById(id);
+            if(!btn) return;
+            
+            // touchstart дает мгновенный отклик без 300ms задержки клика на мобилках
+            const handler = (e) => {
+                e.preventDefault(); // Предотвращаем двойные клики
+                setDirection(newDx, newDy);
+            };
+            btn.addEventListener('touchstart', handler, {passive: false});
+            btn.addEventListener('mousedown', handler); // Запасной для клика мышкой по кнопкам
+        };
+
+        bindButton('btnUp', 0, -1);
+        bindButton('btnDown', 0, 1);
+        bindButton('btnLeft', -1, 0);
+        bindButton('btnRight', 1, 0);
+
+        // --- УЛУЧШЕННЫЕ СВАЙПЫ (Mobile) ---
         let touchStartX = 0; let touchStartY = 0;
+        
         canvas.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
             touchStartY = e.changedTouches[0].screenY;
-            e.preventDefault(); 
+            e.preventDefault(); // Теперь сработает идеально благодаря css touch-action: none
         }, {passive: false});
 
         canvas.addEventListener('touchmove', (e) => { e.preventDefault(); }, {passive: false});
@@ -341,15 +391,19 @@
         function handleSwipe(startX, startY, endX, endY) {
             let diffX = endX - startX;
             let diffY = endY - startY;
+            
+            // Порог чувствительности свайпа (защита от случайных дрожаний пальца)
+            const threshold = 30; 
+
             if (Math.abs(diffX) > Math.abs(diffY)) {
-                if (Math.abs(diffX) > 30) { 
-                    if (diffX > 0 && dx === 0) { dx = 1; dy = 0; } 
-                    else if (diffX < 0 && dx === 0) { dx = -1; dy = 0; } 
+                if (Math.abs(diffX) > threshold) { 
+                    if (diffX > 0) setDirection(1, 0); // Свайп вправо
+                    else setDirection(-1, 0); // Свайп влево
                 }
             } else {
-                if (Math.abs(diffY) > 30) {
-                    if (diffY > 0 && dy === 0) { dx = 0; dy = 1; } 
-                    else if (diffY < 0 && dy === 0) { dx = 0; dy = -1; } 
+                if (Math.abs(diffY) > threshold) {
+                    if (diffY > 0) setDirection(0, 1); // Свайп вниз
+                    else setDirection(0, -1); // Свайп вверх
                 }
             }
         }
