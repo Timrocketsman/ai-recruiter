@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TimLabs | Технические работы</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -94,24 +96,7 @@
     <!-- Навигация (мини-версия) -->
     <nav class="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-50">
         <div class="flex items-center gap-3">
-            <div class="relative flex items-center justify-center w-10 h-10">
-                <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
-                    <defs>
-                        <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#00b4ff"/>
-                            <stop offset="100%" stop-color="#d100ff"/>
-                        </linearGradient>
-                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                            <feMerge>
-                                <feMergeNode in="coloredBlur"/>
-                                <feMergeNode in="SourceGraphic"/>
-                            </feMerge>
-                        </filter>
-                    </defs>
-                    <circle cx="50" cy="50" r="44" fill="none" stroke="url(#ringGrad)" stroke-width="4" filter="url(#glow)"/>
-                </svg>
-            </div>
+            <img src="logo.jpg" alt="TimLabs Logo" class="w-10 h-10 rounded-full object-cover border border-[#00b4ff]/50 shadow-[0_0_15px_rgba(0,180,255,0.4)]">
             <span class="text-xl font-extrabold tracking-tight text-white">
                 Tim<span class="text-gradient">Labs</span>
             </span>
