@@ -94,20 +94,39 @@
     
     <div class="bg-grid"></div>
 
-    <!-- Навигация (мини-версия) -->
+    <!-- ============================================== -->
+    <!-- НОВАЯ ЛЕГАЛЬНАЯ НАВИГАЦИЯ (Картинка Лого + Домен + Дескриптор) -->
+    <!-- ============================================== -->
     <nav class="absolute top-0 left-0 w-full p-4 sm:p-6 flex justify-between items-center z-50">
-        <div class="flex items-center gap-2 sm:gap-3">
-            <img src="logo.jpg" alt="TimLabs Logo" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover border border-[#00b4ff]/50 shadow-[0_0_15px_rgba(0,180,255,0.4)]">
-            <span class="text-lg sm:text-xl font-extrabold tracking-tight text-white">
-                Tim<span class="text-gradient">Labs</span>
-            </span>
+        <div class="flex items-center gap-3 sm:gap-4">
+            
+            <!-- Оригинальная картинка логотипа -->
+            <img src="logo.jpg" alt="TimLabs Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border border-[#00b4ff]/50 shadow-[0_0_15px_rgba(0,180,255,0.4)] shrink-0">
+
+            <!-- Легализованный текстовый блок -->
+            <div class="flex flex-col justify-center mt-1">
+                <div class="flex items-baseline">
+                    <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white leading-none">
+                        Tim<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00b4ff] to-[#d100ff]">Labs</span>
+                    </span>
+                    <!-- Маскировка под домен -->
+                    <span class="text-[#00b4ff] font-orbitron font-bold text-sm sm:text-base ml-1 leading-none drop-shadow-[0_0_8px_rgba(0,180,255,0.6)]">.online</span>
+                </div>
+                <!-- Русский дескриптор для инспекторов -->
+                <span class="text-[7.5px] sm:text-[9.5px] text-gray-400 font-semibold uppercase tracking-widest mt-1 leading-none sm:whitespace-nowrap">
+                    Лаборатория ИИ и автоматизации
+                </span>
+            </div>
+
         </div>
-        <a href="https://t.me/AiRocketsManager" target="_blank" class="text-xs sm:text-sm bg-gray-800 hover:bg-gray-700 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-colors border border-gray-700">
+        
+        <a href="https://t.me/AiRocketsManager" target="_blank" class="hidden sm:flex text-xs sm:text-sm bg-gray-800 hover:bg-gray-700 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full transition-colors border border-gray-700">
             Связь с Тимом
         </a>
     </nav>
+    <!-- ============================================== -->
 
-    <main class="max-w-5xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center flex-grow mt-16 z-10 relative">
+    <main class="max-w-5xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center flex-grow mt-20 z-10 relative">
         
         <!-- Текстовый блок -->
         <div class="text-center lg:text-left">
@@ -142,7 +161,6 @@
                 <span class="text-xs sm:text-sm text-gray-400 bg-gray-950 px-2 sm:px-3 py-1 rounded-full border border-gray-800">Счет: <span id="score" class="text-white font-bold">0</span></span>
             </div>
             
-            <!-- Уменьшенный размер холста для мобилок (300px) -->
             <canvas id="gameCanvas" width="300" height="300"></canvas>
             
             <!-- Виртуальный джойстик (Только на смартфонах) -->
@@ -181,7 +199,7 @@
         const restartBtn = document.getElementById('restartBtn');
 
         const gridSize = 20;
-        const tileCount = Math.floor(canvas.width / gridSize); // 300 / 20 = 15
+        const tileCount = Math.floor(canvas.width / gridSize); 
         
         let snake = [];
         let dx = 0;
@@ -192,13 +210,11 @@
         let gameLoop;
         let isGameOver = false;
 
-        // Фирменные цвета TimLabs
         const COLOR_SNAKE_HEAD = '#00b4ff';
         const COLOR_SNAKE_BODY = 'rgba(0, 180, 255, 0.6)';
         const COLOR_FOOD = '#d100ff';
 
         function initGame() {
-            // Центрируем змейку (сетка 15x15)
             snake = [
                 {x: 7, y: 10},
                 {x: 7, y: 11},
@@ -212,7 +228,7 @@
             placeFood();
             
             if(gameLoop) clearInterval(gameLoop);
-            gameLoop = setInterval(drawGame, 110); // Чуть замедлил для мобилок (было 100)
+            gameLoop = setInterval(drawGame, 110); 
         }
 
         function placeFood() {
@@ -228,7 +244,6 @@
 
         function drawGame() {
             if (isGameOver) return;
-            
             clearScreen();
             drawGrid();
             moveSnake();
@@ -331,9 +346,7 @@
             ctx.fillText(`Ваш счет: ${score}`, canvas.width / 2, canvas.height / 2 + 25);
         }
 
-        // Централизованная функция смены направления
         function setDirection(newDx, newDy) {
-            // Исключаем разворот на 180 градусов
             if (newDx !== 0 && dx === 0) {
                 dx = newDx; dy = 0;
             } else if (newDy !== 0 && dy === 0) {
@@ -352,18 +365,16 @@
             if (e.key === 'ArrowRight') setDirection(1, 0);
         });
 
-        // --- НОВОЕ: Виртуальный джойстик (Mobile) ---
+        // Виртуальный джойстик (Mobile)
         const bindButton = (id, newDx, newDy) => {
             const btn = document.getElementById(id);
             if(!btn) return;
-            
-            // touchstart дает мгновенный отклик без 300ms задержки клика на мобилках
             const handler = (e) => {
-                e.preventDefault(); // Предотвращаем двойные клики
+                e.preventDefault();
                 setDirection(newDx, newDy);
             };
             btn.addEventListener('touchstart', handler, {passive: false});
-            btn.addEventListener('mousedown', handler); // Запасной для клика мышкой по кнопкам
+            btn.addEventListener('mousedown', handler);
         };
 
         bindButton('btnUp', 0, -1);
@@ -371,13 +382,13 @@
         bindButton('btnLeft', -1, 0);
         bindButton('btnRight', 1, 0);
 
-        // --- УЛУЧШЕННЫЕ СВАЙПЫ (Mobile) ---
+        // Улучшенные свайпы (Mobile)
         let touchStartX = 0; let touchStartY = 0;
         
         canvas.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
             touchStartY = e.changedTouches[0].screenY;
-            e.preventDefault(); // Теперь сработает идеально благодаря css touch-action: none
+            e.preventDefault(); 
         }, {passive: false});
 
         canvas.addEventListener('touchmove', (e) => { e.preventDefault(); }, {passive: false});
@@ -391,19 +402,17 @@
         function handleSwipe(startX, startY, endX, endY) {
             let diffX = endX - startX;
             let diffY = endY - startY;
-            
-            // Порог чувствительности свайпа (защита от случайных дрожаний пальца)
             const threshold = 30; 
 
             if (Math.abs(diffX) > Math.abs(diffY)) {
                 if (Math.abs(diffX) > threshold) { 
-                    if (diffX > 0) setDirection(1, 0); // Свайп вправо
-                    else setDirection(-1, 0); // Свайп влево
+                    if (diffX > 0) setDirection(1, 0); 
+                    else setDirection(-1, 0); 
                 }
             } else {
                 if (Math.abs(diffY) > threshold) {
-                    if (diffY > 0) setDirection(0, 1); // Свайп вниз
-                    else setDirection(0, -1); // Свайп вверх
+                    if (diffY > 0) setDirection(0, 1); 
+                    else setDirection(0, -1); 
                 }
             }
         }
