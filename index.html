@@ -153,11 +153,11 @@
                         <div class="h-px w-full bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-8"></div>
                         <div id="ideas-list" class="grid gap-6"></div>
                         
-                        <div class="mt-8 text-center bg-black/40 border border-[#00b4ff]/30 p-6 rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.5)]">
-                            <p class="text-white font-bold mb-3 text-lg">Увидели потенциал для своей компании?</p>
-                            <a href="https://t.me/AiRocketsManager" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-[#00b4ff] hover:text-[#d100ff] font-semibold transition-colors group drop-shadow-[0_0_8px_rgba(0,180,255,0.4)]">
-                                Обсудить внедрение с Тимом 
-                                <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <div class="mt-8 text-center bg-black/40 border border-[#00b4ff]/30 p-6 rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] flex flex-col items-center">
+                            <p class="text-white font-bold mb-3 text-lg">Готовы масштабировать компанию?</p>
+                            <a href="https://t.me/AiRocketsManager" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-gray-400 hover:text-white font-semibold transition-colors group">
+                                Обсудить свой проект с Тимом напрямую
+                                <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </a>
                         </div>
                     </div>
@@ -199,7 +199,7 @@
     </main>
 
     <footer class="bg-gray-950 text-gray-500 py-12 px-4 border-t border-gray-900 text-center relative z-10 mt-10">
-        <div class="max-w-4xl mx-auto flex flex-col items-center pb-20 sm:pb-0"> <!-- padding-bottom added for mobile widgets -->
+        <div class="max-w-4xl mx-auto flex flex-col items-center pb-20 sm:pb-0"> 
             <div class="text-2xl font-extrabold mb-4 tracking-tight text-gradient font-orbitron">TimLabs</div>
             <p class="mb-6 max-w-md mx-auto text-sm text-gray-400">Обучение ИИ и системная автоматизация бизнес-процессов в России.</p>
             <div class="flex gap-4 justify-center mb-8">
@@ -216,13 +216,11 @@
         </div>
     </footer>
 
-    <!-- УЛЬТРАСОВРЕМЕННЫЙ ВИДЖЕТ GITHUB (3D Glassmorphism) -->
+    <!-- УЛЬТРАСОВРЕМЕННЫЙ ВИДЖЕТ GITHUB -->
     <div class="fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-[105] group flex flex-col items-end">
-        <!-- Иконка-триггер (объемная кнопка) -->
         <button id="github-trigger" class="w-12 h-12 rounded-full bg-gradient-to-br from-gray-800 to-black border border-gray-600 shadow-[0_10px_20px_rgba(0,0,0,0.8),inset_0_2px_2px_rgba(255,255,255,0.2)] hover:border-[#00b4ff] hover:shadow-[0_0_25px_rgba(0,180,255,0.4),inset_0_2px_2px_rgba(255,255,255,0.3)] transition-all duration-300 transform group-hover:-translate-y-1 flex items-center justify-center text-gray-400 group-hover:text-[#00b4ff] cursor-pointer focus:outline-none" aria-label="Информация">
             <svg class="w-6 h-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
         </button>
-        <!-- Всплывающий контент (3D Glass) -->
         <div id="github-popup" class="absolute bottom-16 right-0 w-72 sm:w-80 volumetric-glass p-5 rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 transform translate-y-4 group-hover:translate-y-0 origin-bottom-right pointer-events-none sm:pointer-events-auto">
             <h4 class="text-[12px] font-extrabold text-[#00b4ff] mb-2 uppercase tracking-widest drop-shadow-[0_0_8px_rgba(0,180,255,0.4)]">GitHub Moderation</h4>
             <p class="text-xs text-gray-300 leading-relaxed font-medium">This website serves as a non-commercial educational portfolio demonstrating AI integrations. No direct commercial transactions are processed here.</p>
@@ -247,7 +245,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Анимация при скролле
             const reveals = document.querySelectorAll('.reveal');
             const revealOnScroll = () => {
                 const windowHeight = window.innerHeight;
@@ -262,10 +259,8 @@
             window.addEventListener('scroll', revealOnScroll);
             setTimeout(revealOnScroll, 100);
 
-            // Логика виджета 152-ФЗ (Выезд снизу)
             if (!localStorage.getItem('fz152_accepted')) {
                 const widget = document.getElementById('fz152-widget');
-                // Даем браузеру отрендерить DOM, затем запускаем анимацию выезда
                 requestAnimationFrame(() => {
                     setTimeout(() => {
                         widget.classList.remove('translate-y-full', 'opacity-0');
@@ -273,11 +268,9 @@
                 });
             }
 
-            // Управление GitHub виджетом на мобильных (по тапу)
             const ghTrigger = document.getElementById('github-trigger');
             const ghPopup = document.getElementById('github-popup');
             
-            // Если устройство поддерживает тач, добавляем тоггл по клику
             if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
                 ghTrigger.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -292,7 +285,6 @@
                     }
                 });
                 
-                // Закрытие при клике мимо
                 document.addEventListener('click', (e) => {
                     if (!ghTrigger.contains(e.target) && !ghPopup.contains(e.target)) {
                         ghPopup.style.opacity = '0';
@@ -303,15 +295,26 @@
             }
         });
 
-        // Функция принятия 152-ФЗ (с анимацией ухода вниз)
         function acceptFZ152() {
             localStorage.setItem('fz152_accepted', 'true');
             const widget = document.getElementById('fz152-widget');
             widget.classList.add('translate-y-full', 'opacity-0');
-            setTimeout(() => widget.remove(), 700); // Полностью удаляем из DOM после анимации
+            setTimeout(() => widget.remove(), 700); 
         }
 
-        // API ГЕНЕРАТОРА (Интеграция с Cloudflare Worker)
+        // ФУНКЦИЯ ДЛЯ КОДИРОВАНИЯ ДАННЫХ ДЛЯ ТЕЛЕГРАМ-БОТА
+        function encodeForTelegram(niche, ideaTitle) {
+            const text = `${niche}|${ideaTitle}`;
+            // Безопасное кодирование кириллицы в Base64
+            const encodedText = encodeURIComponent(text).replace(/%([0-9A-F]{2})/g,
+                function toSolidBytes(match, p1) {
+                    return String.fromCharCode('0x' + p1);
+            });
+            const base64String = btoa(encodedText);
+            // Делаем строку URL-safe (заменяем символы, которые ломают ссылки)
+            return base64String.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        }
+
         const CLOUDFLARE_WORKER_URL = "https://api.timlabs.online";
 
         document.getElementById('ai-form').addEventListener('submit', async (e) => {
@@ -352,25 +355,37 @@
                     throw new Error('ИИ вернул неверный формат. Повторите запрос.');
                 }
 
-                // Рендер результатов
+                // Рендер результатов с кнопками
                 data.ideas.forEach((idea, index) => {
                     const card = document.createElement('div');
-                    // Volumetric дизайн карточек ответа
-                    card.className = `p-6 rounded-2xl volumetric-glass transform transition-all duration-500 opacity-0 translate-y-4 hover:border-[#00b4ff]/50 hover:shadow-[0_10px_30px_rgba(0,180,255,0.15)]`;
+                    card.className = `p-6 rounded-2xl volumetric-glass transform transition-all duration-500 opacity-0 translate-y-4 hover:border-[#00b4ff]/50 hover:shadow-[0_10px_30px_rgba(0,180,255,0.15)] flex flex-col justify-between`;
                     
+                    // Генерируем уникальную ссылку для каждой карточки
+                    const tgLink = `https://t.me/AiRocketsManager?start=${encodeForTelegram(niche, idea.title)}`;
+
                     card.innerHTML = `
-                        <div class="flex items-start gap-4">
-                            <div class="mt-1 text-[#00b4ff] drop-shadow-[0_0_8px_rgba(0,180,255,0.6)]">
-                                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <div>
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1 text-[#00b4ff] drop-shadow-[0_0_8px_rgba(0,180,255,0.6)]">
+                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-white mb-2 font-orbitron tracking-wide leading-tight">${idea.title}</h3>
+                                    <p class="text-gray-300 text-sm mb-4 leading-relaxed font-medium">${idea.description}</p>
+                                </div>
                             </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-white mb-2 font-orbitron tracking-wide">${idea.title}</h3>
-                                <p class="text-gray-300 text-sm mb-4 leading-relaxed font-medium">${idea.description}</p>
+                            <div class="mb-5 ml-11">
                                 <div class="inline-block px-3 py-1.5 rounded-lg bg-black/60 border border-[#00b4ff]/30 text-xs font-bold text-[#00b4ff] uppercase tracking-wider shadow-[inset_0_0_10px_rgba(0,180,255,0.1)]">
                                     Результат: ${idea.benefit}
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Кнопка перехода в бота с параметрами -->
+                        <a href="${tgLink}" target="_blank" rel="noopener noreferrer" class="mt-auto w-full py-3 bg-[#00b4ff]/10 hover:bg-[#00b4ff] border border-[#00b4ff]/50 rounded-xl text-sm font-bold text-white tracking-wide transition-all flex items-center justify-center group shadow-[0_0_15px_rgba(0,180,255,0.1)] hover:shadow-[0_0_20px_rgba(0,180,255,0.4)]">
+                            Внедрить эту систему
+                            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </a>
                     `;
                     ideasList.appendChild(card);
 
