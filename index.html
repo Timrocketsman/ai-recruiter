@@ -315,7 +315,7 @@
             return base64String.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
         }
 
-        const CLOUDFLARE_WORKER_URL = "timlabs-ai-proxy.timrocketsman.workers.dev";
+        const CLOUDFLARE_WORKER_URL = "https://timlabs-ai-proxy.timrocketsman.workers.dev";
 
         document.getElementById('ai-form').addEventListener('submit', async (e) => {
             e.preventDefault();
