@@ -9,26 +9,13 @@
     <meta name="description" content="TimLabs — системный интегратор нейросетей. Внедряем автономных ИИ-агентов (ИИ-продавец, ИИ-рекрутер) для вывода бизнеса из операционки. Строго по 152-ФЗ.">
     <meta name="keywords" content="ИИ для бизнеса, нейросети, автоматизация продаж, ИИ-рекрутер, автоматизация бизнеса, TimLabs, Тим Гуцев">
     
-    <!-- OpenGraph для красивых ссылок в Telegram/WhatsApp -->
+    <!-- OpenGraph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="TimLabs | Лаборатория ИИ и автоматизации бизнеса">
     <meta property="og:description" content="Внедряем автономных ИИ-агентов. Они продают, нанимают сотрудников и ведут CRM за вас — 24/7.">
     <meta property="og:image" content="splash.jpeg">
     <meta property="og:url" content="https://timlabs.online/">
     
-    <!-- Schema.org разметка для поисковиков -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "TimLabs",
-      "url": "https://timlabs.online/",
-      "logo": "https://timlabs.online/logo.jpg",
-      "founder": "Тимур Гуцев",
-      "description": "Лаборатория ИИ и системная автоматизация бизнес-процессов в России."
-    }
-    </script>
-
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,9 +25,6 @@
         .font-orbitron { font-family: 'Orbitron', sans-serif; }
         .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(90deg, #00b4ff, #d100ff); }
         .neon-glow { box-shadow: 0 0 20px rgba(0, 180, 255, 0.3), 0 0 40px rgba(209, 0, 255, 0.2); }
-        .glass-panel { background: rgba(17, 24, 39, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); border-top: 1px solid rgba(255, 255, 255, 0.1); }
-        
-        /* Ультра-современные 3D виджеты */
         .volumetric-glass {
             background: rgba(10, 15, 30, 0.75);
             backdrop-filter: blur(20px);
@@ -58,140 +42,98 @@
             box-shadow: 0 10px 25px rgba(209, 0, 255, 0.5), inset 0 2px 2px rgba(255, 255, 255, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.4);
             transform: translateY(-2px) scale(1.02);
         }
-        .volumetric-button:active {
-            transform: translateY(1px) scale(0.98);
-            box-shadow: 0 2px 5px rgba(0, 180, 255, 0.2), inset 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
         .loader { border: 3px solid rgba(0, 180, 255, 0.1); border-top: 3px solid #00b4ff; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; display: inline-block; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .bg-grid { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px); background-size: 40px 40px; z-index: 0; pointer-events: none; mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%); }
+        .bg-grid { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px); background-size: 40px 40px; z-index: 0; pointer-events: none; mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%); }
     </style>
 </head>
 <body class="antialiased selection:bg-[#00b4ff] selection:text-black">
 
-    <nav class="fixed top-0 left-0 w-full p-4 sm:p-5 flex justify-between items-center z-50 bg-[#030712]/80 backdrop-blur-md border-b border-gray-800/50" aria-label="Main Navigation">
+    <nav class="fixed top-0 left-0 w-full p-4 sm:p-5 flex justify-between items-center z-50 bg-[#030712]/80 backdrop-blur-md border-b border-gray-800/50">
         <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-3 sm:gap-4 cursor-pointer group" title="TimLabs Главная">
-                <div class="relative">
-                    <img src="logo.jpg" alt="Логотип TimLabs" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border border-[#00b4ff]/50 shadow-[0_0_15px_rgba(0,180,255,0.4)] shrink-0 transition-transform group-hover:scale-105">
-                </div>
-                <div class="flex flex-col justify-center mt-1">
+            <a href="index.html" class="flex items-center gap-3 sm:gap-4 cursor-pointer group">
+                <img src="logo.jpg" alt="Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover border border-[#00b4ff]/50 shadow-[0_0_15px_rgba(0,180,255,0.4)] transition-transform group-hover:scale-105">
+                <div class="flex flex-col justify-center">
                     <div class="flex items-baseline">
                         <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white leading-none">
                             Tim<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00b4ff] to-[#d100ff]">Labs</span>
                         </span>
-                        <span class="text-[#00b4ff] font-orbitron font-bold text-sm sm:text-base ml-1 leading-none drop-shadow-[0_0_8px_rgba(0,180,255,0.6)]">.online</span>
+                        <span class="text-[#00b4ff] font-orbitron font-bold text-sm ml-1 leading-none">.online</span>
                     </div>
-                    <span class="text-[7.5px] sm:text-[9.5px] text-gray-400 font-semibold uppercase tracking-widest mt-1 leading-none">
-                        Лаборатория ИИ и автоматизации
-                    </span>
+                    <span class="text-[7.5px] sm:text-[9.5px] text-gray-400 font-semibold uppercase tracking-widest mt-1">Лаборатория ИИ и автоматизации</span>
                 </div>
             </a>
-            
-            <a href="https://t.me/TimLabs_bot" target="_blank" rel="noopener noreferrer" class="hidden sm:flex text-sm bg-gray-800 hover:bg-gray-700 text-white px-5 py-2.5 rounded-full transition-colors border border-gray-700 shadow-lg font-semibold">
-                Связаться с Тимом
-            </a>
+            <a href="https://t.me/TimLabs_bot" target="_blank" class="hidden sm:flex text-sm bg-gray-800 hover:bg-gray-700 text-white px-5 py-2.5 rounded-full transition-colors border border-gray-700 font-semibold">Связаться с Тимом</a>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Экран -->
         <header class="relative pt-32 pb-20 sm:pt-40 sm:pb-32 px-4 overflow-hidden flex flex-col items-center justify-center min-h-[85vh]">
             <div class="absolute inset-0 opacity-20 pointer-events-none z-0">
                 <div class="absolute top-[-10%] -left-1/4 w-[70%] h-[70%] bg-[#00b4ff] blur-[150px] rounded-full"></div>
                 <div class="absolute bottom-[-10%] -right-1/4 w-[70%] h-[70%] bg-[#d100ff] blur-[150px] rounded-full"></div>
             </div>
             <div class="bg-grid"></div>
-
             <div class="relative z-10 max-w-4xl mx-auto text-center reveal active">
-                <div class="inline-block px-4 py-1.5 rounded-full border border-[#00b4ff]/30 bg-[#00b4ff]/5 text-[#00b4ff] text-xs sm:text-sm font-bold tracking-widest uppercase mb-6 shadow-[0_0_20px_rgba(0,180,255,0.15)]">
-                    B2B Интеграция Нейросетей
-                </div>
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 tracking-tight text-white leading-[1.1]">
-                    АВТОНОМНЫЕ ИИ-АГЕНТЫ ДЛЯ <span class="text-gradient font-orbitron tracking-wider">ВАШЕГО БИЗНЕСА</span>
-                </h1>
-                <p class="text-gray-300 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10 font-light">
-                    Выводим компании из операционки. Внедряем системы, которые продают, нанимают и консультируют за вас — быстрее, точнее и без человеческого фактора.
-                </p>
-                
+                <div class="inline-block px-4 py-1.5 rounded-full border border-[#00b4ff]/30 bg-[#00b4ff]/5 text-[#00b4ff] text-xs sm:text-sm font-bold tracking-widest uppercase mb-6">B2B Интеграция Нейросетей</div>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 tracking-tight text-white leading-[1.1]">АВТОНОМНЫЕ ИИ-АГЕНТЫ ДЛЯ <span class="text-gradient font-orbitron tracking-wider">ВАШЕГО БИЗНЕСА</span></h1>
+                <p class="text-gray-300 text-base sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10 font-light">Выводим компании из операционки. Внедряем системы, которые продают, нанимают и консультируют за вас — быстрее, точнее и без человеческого фактора.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#generator" class="px-8 py-4 rounded-full bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white text-base font-bold transition-all hover:scale-105 neon-glow text-center">
-                        Пройти ИИ-аудит ниши
-                    </a>
-                    <a href="https://t.me/timlabs" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-full border border-gray-600 bg-gray-900/50 hover:bg-gray-800 text-white text-base font-semibold transition-colors text-center backdrop-blur-sm">
-                        Наш Telegram-канал
-                    </a>
+                    <a href="#generator" class="px-8 py-4 rounded-full bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white text-base font-bold transition-all hover:scale-105 neon-glow text-center">Пройти ИИ-аудит ниши</a>
+                    <a href="https://t.me/timlabs" target="_blank" class="px-8 py-4 rounded-full border border-gray-600 bg-gray-900/50 hover:bg-gray-800 text-white text-base font-semibold transition-colors text-center backdrop-blur-sm">Наш Telegram-канал</a>
                 </div>
             </div>
         </header>
 
-        <!-- API Генератор -->
-        <section id="generator" class="py-20 px-4 relative z-10" aria-label="Генератор ИИ-стратегий">
+        <section id="generator" class="py-20 px-4 relative z-10">
             <div class="max-w-4xl mx-auto reveal">
                 <div class="text-center mb-10">
                     <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 font-orbitron">ПРОВЕРЬТЕ ИИ В ДЕЛЕ</h2>
-                    <p class="text-gray-400">Введите сферу вашего бизнеса, и наш алгоритм в реальном времени сгенерирует 3 точки роста с помощью нейросетей.</p>
+                    <p class="text-gray-400">Введите сферу вашего бизнеса, и наш алгоритм сгенерирует 3 точки роста с помощью нейросетей.</p>
                 </div>
-
                 <div class="volumetric-glass p-6 sm:p-10 rounded-3xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-[#00b4ff]/20 blur-[50px] rounded-full"></div>
-                    
                     <form id="ai-form" class="relative z-10">
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <input type="text" id="niche-input" required placeholder="Например: Сеть кофеен, Завод, Стоматология..." class="flex-grow bg-gray-950/80 border border-gray-700 text-white text-lg rounded-xl md:rounded-full px-6 py-4 focus:outline-none focus:border-[#00b4ff] focus:ring-1 focus:ring-[#00b4ff] shadow-[inset_0_2px_4px_rgba(0,0,0,0.5)] transition-all placeholder-gray-600" aria-label="Сфера бизнеса">
+                            <input type="text" id="niche-input" required placeholder="Например: Сеть кофеен, Завод..." class="flex-grow bg-gray-950/80 border border-gray-700 text-white text-lg rounded-xl md:rounded-full px-6 py-4 focus:outline-none focus:border-[#00b4ff] transition-all">
                             <button type="submit" id="submit-btn" class="volumetric-button bg-gradient-to-r from-[#00b4ff] to-[#d100ff] text-white font-bold px-8 py-4 rounded-xl md:rounded-full flex items-center justify-center min-w-[220px]">
                                 <span id="btn-text">Сгенерировать</span>
-                                <div id="btn-loader" class="loader ml-2 hidden border-gray-950 border-t-white"></div>
+                                <div id="btn-loader" class="loader ml-2 hidden"></div>
                             </button>
                         </div>
                     </form>
-
-                    <div id="result-container" class="mt-8 hidden relative z-10" aria-live="polite">
+                    <div id="result-container" class="mt-8 hidden relative z-10">
                         <div class="h-px w-full bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-8"></div>
                         <div id="ideas-list" class="grid gap-6"></div>
-                        
-                        <div class="mt-8 text-center bg-black/40 border border-[#00b4ff]/30 p-6 rounded-2xl shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] flex flex-col items-center">
+                        <div class="mt-8 text-center bg-black/40 border border-[#00b4ff]/30 p-6 rounded-2xl flex flex-col items-center">
                             <p class="text-white font-bold mb-3 text-lg">Готовы масштабировать компанию?</p>
-                            <a href="https://t.me/TimLabs_bot" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-gray-400 hover:text-white font-semibold transition-colors group">
-                                Обсудить свой проект с Тимом напрямую
-                                <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </a>
+                            <a href="https://t.me/TimLabs_bot" target="_blank" class="inline-flex items-center text-gray-400 hover:text-white font-semibold group">Обсудить проект напрямую <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Кейсы / Арсенал -->
         <section id="products" class="py-20 px-4 relative z-10">
             <div class="max-w-6xl mx-auto reveal">
                 <h2 class="text-3xl sm:text-4xl font-bold text-center text-white mb-12 font-orbitron">НАШ АРСЕНАЛ</h2>
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Карточка Продавец -->
-                    <article class="volumetric-glass p-8 rounded-3xl hover:border-[#00b4ff]/50 hover:shadow-[0_20px_50px_rgba(0,180,255,0.15)] transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full group">
-                        <div class="w-16 h-16 bg-[#00b4ff]/10 rounded-2xl flex items-center justify-center mb-6 border border-[#00b4ff]/30 text-[#00b4ff] shadow-[inset_0_2px_5px_rgba(0,180,255,0.2)] group-hover:shadow-[0_0_20px_rgba(0,180,255,0.4)] transition-all">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <article class="volumetric-glass p-8 rounded-3xl hover:border-[#00b4ff]/50 transition-all transform hover:-translate-y-1 group">
+                        <div class="w-16 h-16 bg-[#00b4ff]/10 rounded-2xl flex items-center justify-center mb-6 border border-[#00b4ff]/30 text-[#00b4ff] group-hover:shadow-[0_0_20px_rgba(0,180,255,0.4)]">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-3">ИИ-Продавец</h3>
-                        <p class="text-gray-400 mb-6 flex-grow">Мгновенные ответы 24/7. Прогревает лидов и доводит до оплаты, закрывая первую линию продаж.</p>
-                        <a href="sales.html" class="inline-flex items-center font-bold text-[#00b4ff] hover:text-white transition-colors">
-                            Посмотреть кейс <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
+                        <p class="text-gray-400 mb-6">Мгновенные ответы 24/7. Прогревает лидов и доводит до оплаты, закрывая первую линию продаж.</p>
+                        <a href="sales.html" class="inline-flex items-center font-bold text-[#00b4ff] hover:text-white">Посмотреть кейс <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
                     </article>
-
-                    <!-- Карточка Рекрутер -->
-                    <article class="volumetric-glass p-8 rounded-3xl hover:border-[#d100ff]/50 hover:shadow-[0_20px_50px_rgba(209,0,255,0.15)] transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full group">
-                        <div class="w-16 h-16 bg-[#d100ff]/10 rounded-2xl flex items-center justify-center mb-6 border border-[#d100ff]/30 text-[#d100ff] shadow-[inset_0_2px_5px_rgba(209,0,255,0.2)] group-hover:shadow-[0_0_20px_rgba(209,0,255,0.4)] transition-all">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <article class="volumetric-glass p-8 rounded-3xl hover:border-[#d100ff]/50 transition-all transform hover:-translate-y-1 group">
+                        <div class="w-16 h-16 bg-[#d100ff]/10 rounded-2xl flex items-center justify-center mb-6 border border-[#d100ff]/30 text-[#d100ff] group-hover:shadow-[0_0_20px_rgba(209,0,255,0.4)]">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                         </div>
                         <h3 class="text-2xl font-bold text-white mb-3">ИИ-Рекрутер</h3>
-                        <p class="text-gray-400 mb-6 flex-grow">Автоматический найм. Сам связывается с откликами на HH/Авито и проводит аудио-собеседования.</p>
-                        <a href="recruiter.html" class="inline-flex items-center font-bold text-[#d100ff] hover:text-white transition-colors">
-                            Посмотреть кейс <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
+                        <p class="text-gray-400 mb-6">Автоматический найм. Сам связывается с откликами на HH/Авито и проводит аудио-собеседования.</p>
+                        <a href="recruiter.html" class="inline-flex items-center font-bold text-[#d100ff] hover:text-white">Посмотреть кейс <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
                     </article>
                 </div>
             </div>
@@ -199,48 +141,28 @@
     </main>
 
     <footer class="bg-gray-950 text-gray-500 py-12 px-4 border-t border-gray-900 text-center relative z-10 mt-10">
-        <div class="max-w-4xl mx-auto flex flex-col items-center pb-20 sm:pb-0"> 
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
             <div class="text-2xl font-extrabold mb-4 tracking-tight text-gradient font-orbitron">TimLabs</div>
             <p class="mb-6 max-w-md mx-auto text-sm text-gray-400">Обучение ИИ и системная автоматизация бизнес-процессов в России.</p>
-            <div class="flex gap-4 justify-center mb-8">
-                <a href="https://t.me/timlabs" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-[#00b4ff] transition-colors hover:scale-110 transform duration-300" aria-label="Telegram Канал">
-                    <svg class="w-6 h-6 drop-shadow-[0_0_8px_rgba(0,180,255,0)] hover:drop-shadow-[0_0_8px_rgba(0,180,255,0.5)] transition-all" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.62-.2-1.12-.31-1.1-.66.01-.18.27-.36.78-.55 3.05-1.33 5.09-2.21 6.12-2.64 2.91-1.21 3.51-1.42 3.91-1.43.09 0 .28.02.39.1.09.07.13.18.14.31-.01.07 0 .14-.01.2z"/></svg>
-                </a>
-            </div>
-            
-            <div class="text-xs border-t border-gray-900 pt-8 w-full flex flex-col sm:flex-row justify-center gap-4 text-gray-600">
+            <div class="text-xs border-t border-gray-900 pt-8 w-full flex flex-col sm:flex-row justify-center gap-4">
                 <span>&copy; 2026 TimLabs. Все права защищены.</span>
-                <span class="hidden sm:inline">•</span>
                 <a href="legal.html" class="hover:text-[#d100ff] transition-colors underline decoration-dashed">Политика 152-ФЗ и Оферта</a>
             </div>
         </div>
     </footer>
 
-    <!-- УЛЬТРАСОВРЕМЕННЫЙ ВИДЖЕТ GITHUB -->
-    <div class="fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-[105] group flex flex-col items-end">
-        <button id="github-trigger" class="w-12 h-12 rounded-full bg-gradient-to-br from-gray-800 to-black border border-gray-600 shadow-[0_10px_20px_rgba(0,0,0,0.8),inset_0_2px_2px_rgba(255,255,255,0.2)] hover:border-[#00b4ff] hover:shadow-[0_0_25px_rgba(0,180,255,0.4),inset_0_2px_2px_rgba(255,255,255,0.3)] transition-all duration-300 transform group-hover:-translate-y-1 flex items-center justify-center text-gray-400 group-hover:text-[#00b4ff] cursor-pointer focus:outline-none" aria-label="Информация">
-            <svg class="w-6 h-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
-        </button>
-        <div id="github-popup" class="absolute bottom-16 right-0 w-72 sm:w-80 volumetric-glass p-5 rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 transform translate-y-4 group-hover:translate-y-0 origin-bottom-right pointer-events-none sm:pointer-events-auto">
-            <h4 class="text-[12px] font-extrabold text-[#00b4ff] mb-2 uppercase tracking-widest drop-shadow-[0_0_8px_rgba(0,180,255,0.4)]">GitHub Moderation</h4>
-            <p class="text-xs text-gray-300 leading-relaxed font-medium">This website serves as a non-commercial educational portfolio demonstrating AI integrations. No direct commercial transactions are processed here.</p>
-        </div>
-    </div>
-
-    <!-- УЛЬТРАСОВРЕМЕННЫЙ ВИДЖЕТ СОГЛАСИЯ 152-ФЗ -->
+    <!-- Widgets -->
     <div id="fz152-widget" class="fixed bottom-0 left-0 w-full sm:bottom-6 sm:left-6 sm:w-[420px] z-[100] volumetric-glass p-5 sm:rounded-2xl rounded-t-2xl flex flex-col gap-4 transition-all duration-700 transform translate-y-full opacity-0">
         <div class="flex items-start gap-4">
-            <div class="text-[#d100ff] mt-1 p-2 bg-[#d100ff]/10 rounded-xl border border-[#d100ff]/30 shadow-[0_0_15px_rgba(209,0,255,0.2)]">
-                <svg class="w-6 h-6 drop-shadow-[0_0_8px_rgba(209,0,255,0.6)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <div class="text-[#d100ff] p-2 bg-[#d100ff]/10 rounded-xl border border-[#d100ff]/30">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             </div>
-            <div class="pr-2 pt-1">
-                <h4 class="text-sm font-extrabold text-white mb-1.5 tracking-wide shadow-black drop-shadow-md">Защита данных (152-ФЗ)</h4>
-                <p class="text-xs text-gray-300 leading-relaxed font-medium">Оставаясь на сайте, вы даете согласие на сбор cookie и обработку данных согласно <a href="legal.html" class="text-[#00b4ff] hover:text-[#d100ff] underline decoration-dashed transition-colors">Политике</a>.</p>
+            <div class="pr-2">
+                <h4 class="text-sm font-extrabold text-white mb-1">Защита данных (152-ФЗ)</h4>
+                <p class="text-xs text-gray-300 leading-relaxed">Оставаясь на сайте, вы даете согласие на сбор cookie согласно <a href="legal.html" class="text-[#00b4ff] underline">Политике</a>.</p>
             </div>
         </div>
-        <button onclick="acceptFZ152()" class="volumetric-button w-full py-3 bg-gradient-to-r from-[#00b4ff] to-[#d100ff] rounded-xl text-sm font-bold text-white tracking-wide">
-            Я принимаю условия
-        </button>
+        <button onclick="acceptFZ152()" class="volumetric-button w-full py-3 bg-gradient-to-r from-[#00b4ff] to-[#d100ff] rounded-xl text-sm font-bold text-white">Я принимаю условия</button>
     </div>
 
     <script>
@@ -248,12 +170,9 @@
             const reveals = document.querySelectorAll('.reveal');
             const revealOnScroll = () => {
                 const windowHeight = window.innerHeight;
-                const elementVisible = 100;
                 reveals.forEach((reveal) => {
                     const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveal.classList.add('active');
-                    }
+                    if (elementTop < windowHeight - 100) { reveal.classList.add('active'); }
                 });
             };
             window.addEventListener('scroll', revealOnScroll);
@@ -261,37 +180,7 @@
 
             if (!localStorage.getItem('fz152_accepted')) {
                 const widget = document.getElementById('fz152-widget');
-                requestAnimationFrame(() => {
-                    setTimeout(() => {
-                        widget.classList.remove('translate-y-full', 'opacity-0');
-                    }, 500);
-                });
-            }
-
-            const ghTrigger = document.getElementById('github-trigger');
-            const ghPopup = document.getElementById('github-popup');
-            
-            if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-                ghTrigger.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (ghPopup.style.opacity === '1') {
-                        ghPopup.style.opacity = '0';
-                        ghPopup.style.visibility = 'hidden';
-                        ghPopup.style.transform = 'translateY(1rem)';
-                    } else {
-                        ghPopup.style.opacity = '1';
-                        ghPopup.style.visibility = 'visible';
-                        ghPopup.style.transform = 'translateY(0)';
-                    }
-                });
-                
-                document.addEventListener('click', (e) => {
-                    if (!ghTrigger.contains(e.target) && !ghPopup.contains(e.target)) {
-                        ghPopup.style.opacity = '0';
-                        ghPopup.style.visibility = 'hidden';
-                        ghPopup.style.transform = 'translateY(1rem)';
-                    }
-                });
+                setTimeout(() => { widget.classList.remove('translate-y-full', 'opacity-0'); }, 1000);
             }
         });
 
@@ -299,122 +188,70 @@
             localStorage.setItem('fz152_accepted', 'true');
             const widget = document.getElementById('fz152-widget');
             widget.classList.add('translate-y-full', 'opacity-0');
-            setTimeout(() => widget.remove(), 700); 
         }
 
-        // ФУНКЦИЯ ДЛЯ КОДИРОВАНИЯ ДАННЫХ ДЛЯ ТЕЛЕГРАМ-БОТА
-        function encodeForTelegram(niche, ideaTitle) {
-            const text = `${niche}|${ideaTitle}`;
-            // Безопасное кодирование кириллицы в Base64
-            const encodedText = encodeURIComponent(text).replace(/%([0-9A-F]{2})/g,
-                function toSolidBytes(match, p1) {
-                    return String.fromCharCode('0x' + p1);
-            });
-            const base64String = btoa(encodedText);
-            // Делаем строку URL-safe (заменяем символы, которые ломают ссылки)
-            return base64String.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        // УМНОЕ КОДИРОВАНИЕ ДЛЯ ТЕЛЕГРАМА (Лимит 64 символа)
+        function encodeForTelegram(niche) {
+            const text = niche.substring(0, 20); // Строго урезаем, чтобы 100% влезть в лимит
+            const encodedText = encodeURIComponent(text).replace(/%([0-9A-F]{2})/g, (match, p1) => String.fromCharCode('0x' + p1));
+            return btoa(encodedText).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
         }
 
-        const CLOUDFLARE_WORKER_URL = "https://timlabs-ai-proxy.timrocketsman.workers.dev";
+        const API_URL = "https://timlabs-ai-proxy.timrocketsman.workers.dev";
 
         document.getElementById('ai-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            
             const niche = document.getElementById('niche-input').value.trim();
             if (!niche) return;
 
             const btnText = document.getElementById('btn-text');
             const btnLoader = document.getElementById('btn-loader');
-            const submitBtn = document.getElementById('submit-btn');
             const resultContainer = document.getElementById('result-container');
             const ideasList = document.getElementById('ideas-list');
 
-            // UX Loading
             btnText.textContent = 'Анализ...';
             btnLoader.classList.remove('hidden');
-            submitBtn.disabled = true;
-            submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
-            
             resultContainer.classList.add('hidden');
             ideasList.innerHTML = '';
 
             try {
-                const response = await fetch(CLOUDFLARE_WORKER_URL, {
+                const response = await fetch(API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ niche: niche })
                 });
 
-                if (!response.ok) throw new Error('Ошибка сервера. Попробуйте позже.');
-                
-                const rawText = await response.text();
-                const cleanJson = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
-                const data = JSON.parse(cleanJson);
+                if (!response.ok) throw new Error('API Error');
+                const raw = await response.text();
+                const data = JSON.parse(raw.replace(/```json/g, '').replace(/```/g, '').trim());
 
-                if (!data.ideas || !Array.isArray(data.ideas)) {
-                    throw new Error('ИИ вернул неверный формат. Повторите запрос.');
-                }
-
-                // Рендер результатов с кнопками
                 data.ideas.forEach((idea, index) => {
                     const card = document.createElement('div');
-                    card.className = `p-6 rounded-2xl volumetric-glass transform transition-all duration-500 opacity-0 translate-y-4 hover:border-[#00b4ff]/50 hover:shadow-[0_10px_30px_rgba(0,180,255,0.15)] flex flex-col justify-between`;
+                    card.className = "p-6 rounded-2xl volumetric-glass opacity-0 translate-y-4 transition-all duration-500 hover:border-[#00b4ff]/50";
+                    const tgLink = `https://t.me/TimLabs_bot?start=${encodeForTelegram(niche)}`;
                     
-                    // Генерируем уникальную ссылку для каждой карточки с новым ботом @TimLabs_bot
-                    const tgLink = `https://t.me/TimLabs_bot?start=${encodeForTelegram(niche, idea.title)}`;
-
                     card.innerHTML = `
-                        <div>
-                            <div class="flex items-start gap-4">
-                                <div class="mt-1 text-[#00b4ff] drop-shadow-[0_0_8px_rgba(0,180,255,0.6)]">
-                                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="text-xl font-bold text-white mb-2 font-orbitron tracking-wide leading-tight">${idea.title}</h3>
-                                    <p class="text-gray-300 text-sm mb-4 leading-relaxed font-medium">${idea.description}</p>
-                                </div>
-                            </div>
-                            <div class="mb-5 ml-11">
-                                <div class="inline-block px-3 py-1.5 rounded-lg bg-black/60 border border-[#00b4ff]/30 text-xs font-bold text-[#00b4ff] uppercase tracking-wider shadow-[inset_0_0_10px_rgba(0,180,255,0.1)]">
-                                    Результат: ${idea.benefit}
-                                </div>
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="text-[#00b4ff]"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white mb-2 font-orbitron">${idea.title}</h3>
+                                <p class="text-gray-300 text-sm leading-relaxed">${idea.description}</p>
                             </div>
                         </div>
-                        
-                        <!-- Кнопка перехода в бота с параметрами -->
-                        <a href="${tgLink}" target="_blank" rel="noopener noreferrer" class="mt-auto w-full py-3 bg-[#00b4ff]/10 hover:bg-[#00b4ff] border border-[#00b4ff]/50 rounded-xl text-sm font-bold text-white tracking-wide transition-all flex items-center justify-center group shadow-[0_0_15px_rgba(0,180,255,0.1)] hover:shadow-[0_0_20px_rgba(0,180,255,0.4)]">
-                            Внедрить эту систему
-                            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
+                        <div class="mb-5 ml-11"><span class="text-xs font-bold text-[#00b4ff] uppercase tracking-wider">Результат: ${idea.benefit}</span></div>
+                        <a href="${tgLink}" target="_blank" class="w-full py-3 bg-[#00b4ff]/10 hover:bg-[#00b4ff] border border-[#00b4ff]/50 rounded-xl text-sm font-bold text-white transition-all flex items-center justify-center group">Внедрить систему <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
                     `;
                     ideasList.appendChild(card);
-
-                    // Каскадное появление
-                    setTimeout(() => {
-                        card.classList.remove('opacity-0', 'translate-y-4');
-                    }, 150 * (index + 1));
+                    setTimeout(() => card.classList.remove('opacity-0', 'translate-y-4'), 150 * (index + 1));
                 });
-
                 resultContainer.classList.remove('hidden');
-                
-                setTimeout(() => {
-                    resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }, 200);
-
-            } catch (error) {
-                console.error(error);
-                ideasList.innerHTML = `
-                    <div class="p-6 rounded-2xl border border-red-500/40 bg-red-500/10 text-center shadow-[0_0_20px_rgba(239,68,68,0.2)]">
-                        <p class="text-red-400 font-bold mb-2 tracking-wide">Произошла ошибка при анализе.</p>
-                        <p class="text-sm text-gray-300">Пожалуйста, попробуйте еще раз чуть позже.</p>
-                    </div>
-                `;
+                setTimeout(() => resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
+            } catch (err) {
+                ideasList.innerHTML = '<div class="p-6 text-red-400 text-center font-bold">Ошибка сервера. Попробуйте еще раз.</div>';
                 resultContainer.classList.remove('hidden');
             } finally {
                 btnText.textContent = 'Сгенерировать';
                 btnLoader.classList.add('hidden');
-                submitBtn.disabled = false;
-                submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
             }
         });
     </script>
