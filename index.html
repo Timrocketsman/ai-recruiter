@@ -302,13 +302,17 @@
             setTimeout(() => widget.remove(), 700); 
         }
 
-        // ФУНКЦИЯ ДЛЯ КОДИРОВАНИЯ ДАННЫХ ДЛЯ ТЕЛЕГРАМ-БОТА
+       // ФУНКЦИЯ ДЛЯ КОДИРОВАНИЯ ДАННЫХ ДЛЯ ТЕЛЕГРАМ-БОТА
         function encodeForTelegram(niche, ideaTitle) {
-            const text = `${niche}|${ideaTitle}`;
-            // Безопасное кодирование кириллицы в Base64
+            // Оставляем только нишу и обрезаем до 22 символов, чтобы 100% влезть в лимит Telegram (64 байта)
+            const text = niche.substring(0, 22);
             const encodedText = encodeURIComponent(text).replace(/%([0-9A-F]{2})/g,
                 function toSolidBytes(match, p1) {
                     return String.fromCharCode('0x' + p1);
+            });
+            const base64String = btoa(encodedText);
+            return base64String.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        }
             });
             const base64String = btoa(encodedText);
             // Делаем строку URL-safe (заменяем символы, которые ломают ссылки)
