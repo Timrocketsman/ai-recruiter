@@ -38,36 +38,42 @@
             100% { background-position: 0% 50%; }
         }
 
-        .animate-float-1 { animation: float1 15s ease-in-out infinite; }
-        .animate-float-2 { animation: float2 20s ease-in-out infinite; }
+        /* Медленное фоновое хаотичное движение */
+        .animate-float-1 { animation: float1 25s ease-in-out infinite; }
+        .animate-float-2 { animation: float2 30s ease-in-out infinite; }
         
         @keyframes float1 {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(3%, 8%) scale(1.1); }
+            50% { transform: translate(2%, 5%) scale(1.05); }
         }
         @keyframes float2 {
             0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-3%, -8%) scale(1.05); }
+            50% { transform: translate(-2%, -5%) scale(1.02); }
         }
 
         .loader { border: 3px solid rgba(0, 180, 255, 0.1); border-top: 3px solid #00b4ff; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; display: inline-block; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         
-        .bg-grid { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px); background-size: 40px 40px; z-index: 0; pointer-events: none; mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 100%); }
+        /* Фон сетка */
+        .bg-grid { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px); background-size: 50px 50px; z-index: 0; pointer-events: none; mask-image: radial-gradient(circle at center, black 30%, transparent 80%); }
 
-        /* Контейнер для параллакса */
-        #tilt-container {
-            transition: transform 0.1s ease-out;
-            transform-style: preserve-3d;
-        }
+        /* Контейнеры для параллакса */
+        #tilt-container { transition: transform 0.1s ease-out; transform-style: preserve-3d; }
+        #background-parallax-inner { transition: transform 0.15s ease-out; }
     </style>
 </head>
 <body class="antialiased selection:bg-[#00b4ff] selection:text-black">
-    <div class="absolute inset-0 opacity-40 pointer-events-none z-0 overflow-hidden fixed">
-        <div class="absolute top-[-10%] -left-1/4 w-[70%] h-[70%] bg-[#00b4ff] blur-[150px] rounded-full animate-float-1"></div>
-        <div class="absolute bottom-[-10%] -right-1/4 w-[70%] h-[70%] bg-[#d100ff] blur-[150px] rounded-full animate-float-2"></div>
+
+    <div id="background-parallax-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div id="background-parallax-inner" class="absolute inset-0">
+            <div class="bg-grid absolute inset-0 opactiy-60"></div>
+            
+            <div class="absolute inset-0 opacity-40">
+                <div class="absolute top-[-15%] -left-1/4 w-[80%] h-[80%] bg-[#00b4ff] blur-[150px] rounded-full animate-float-1"></div>
+                <div class="absolute bottom-[-15%] -right-1/4 w-[80%] h-[80%] bg-[#d100ff] blur-[150px] rounded-full animate-float-2"></div>
+            </div>
+        </div>
     </div>
-    <div class="bg-grid fixed inset-0 opacity-50"></div>
 
     <canvas id="neuro-canvas" class="fixed inset-0 z-[5] pointer-events-none opacity-60"></canvas>
 
@@ -100,75 +106,79 @@
     </main>
 
     <script>
-        // 1. Эффект параллакса (3D наклон) для текста
+        // 1. ЕДИНЫЙ ТРЕКЕР МЫШИ для всех эффектов параллакса
         document.addEventListener('mousemove', (e) => {
+            const { innerWidth, innerHeight } = window;
+            const mouseX = e.pageX;
+            const mouseY = e.pageY;
+
+            // Центрируем координаты мыши (-0.5 до 0.5)
+            const normX = (mouseX / innerWidth) - 0.5;
+            const normY = (mouseY / innerHeight) - 0.5;
+
+            // А) Эффект наклона (3D Tilt) для центрального текста
             const container = document.getElementById('tilt-container');
-            const x = (window.innerWidth / 2 - e.pageX) / 40; 
-            const y = (window.innerHeight / 2 - e.pageY) / 40;
-            container.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+            if (container) {
+                const tiltStrength = 15; // Сила наклона
+                const tiltX = normY * tiltStrength * -1; // Инверсия по X для естественности
+                const tiltY = normX * tiltStrength;
+                container.style.transform = `rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
+            }
+
+            // Б) Эффект глубокого параллакса для ФОНА (пятна и сетка)
+            const bgInner = document.getElementById('background-parallax-inner');
+            if (bgInner) {
+                const bgStrength = 40; // Сила смещения фона (px)
+                const bgX = normX * bgStrength;
+                const bgY = normY * bgStrength;
+                // Смещаем фон в ту же сторону, что и мышь, создавая ощущение глубины
+                bgInner.style.transform = `translate(${bgX}px, ${bgY}px)`;
+            }
         });
 
-        // 2. Интерактивная нейронная сеть на Canvas
+        // 2. Интерактивная нейронная сеть на Canvas (Частицы)
         const canvas = document.getElementById('neuro-canvas');
         const ctx = canvas.getContext('2d');
         let width, height;
         let particles = [];
         
         // Отслеживание мыши для частиц
-        let mouse = { x: null, y: null, radius: 150 };
+        let neuroMouse = { x: null, y: null, radius: 150 };
 
         window.addEventListener('mousemove', (event) => {
-            mouse.x = event.x;
-            mouse.y = event.y;
+            neuroMouse.x = event.x;
+            neuroMouse.y = event.y;
         });
 
         window.addEventListener('mouseout', () => {
-            mouse.x = undefined;
-            mouse.y = undefined;
+            neuroMouse.x = undefined;
+            neuroMouse.y = undefined;
         });
 
-        function resize() {
+        function resizeCanvas() {
             width = canvas.width = window.innerWidth;
             height = canvas.height = window.innerHeight;
             initParticles();
         }
-        window.addEventListener('resize', resize);
+        window.addEventListener('resize', resizeCanvas);
 
         class Particle {
             constructor(x, y, dx, dy, size, color) {
-                this.x = x;
-                this.y = y;
-                this.dx = dx;
-                this.dy = dy;
-                this.size = size;
-                this.color = color;
-                this.baseX = this.x;
-                this.baseY = this.y;
+                this.x = x; this.y = y;
+                this.dx = dx; this.dy = dy;
+                this.size = size; this.color = color;
             }
             draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                ctx.fillStyle = this.color;
-                ctx.fill();
+                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctx.fillStyle = this.color; ctx.fill();
             }
             update() {
-                // Движение
-                if (this.x > width || this.x < 0) this.dx = -this.dx;
-                if (this.y > height || this.y < 0) this.dy = -this.dy;
-                this.x += this.dx;
-                this.y += this.dy;
-
-                // Взаимодействие с мышью (притяжение)
-                if (mouse.x != null) {
-                    let dx = mouse.x - this.x;
-                    let dy = mouse.y - this.y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < mouse.radius) {
-                        const forceDirectionX = dx / distance;
-                        const forceDirectionY = dy / distance;
-                        const force = (mouse.radius - distance) / mouse.radius;
-                        this.x += forceDirectionX * force * 2;
-                        this.y += forceDirectionY * force * 2;
+                if (this.x > width || this.x < 0) this.dx = -this.dx; if (this.y > height || this.y < 0) this.dy = -this.dy;
+                this.x += this.dx; this.y += this.dy;
+                if (neuroMouse.x != null) {
+                    let dx = neuroMouse.x - this.x; let dy = neuroMouse.y - this.y; let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < neuroMouse.radius) {
+                        const forceDirectionX = dx / distance; const forceDirectionY = dy / distance; const force = (neuroMouse.radius - distance) / neuroMouse.radius;
+                        this.x += forceDirectionX * force * 2.5; this.y += forceDirectionY * force * 2.5;
                     }
                 }
                 this.draw();
@@ -176,51 +186,34 @@
         }
 
         function initParticles() {
-            particles = [];
-            const numberOfParticles = (width * height) / 12000; // Плотность частиц
-            const colors = ['#00b4ff', '#d100ff']; // Фирменные цвета
-            
+            particles = []; const numberOfParticles = (width * height) / 10000;
+            const colors = ['#00b4ff', '#d100ff'];
             for (let i = 0; i < numberOfParticles; i++) {
                 let size = (Math.random() * 2) + 0.5;
-                let x = Math.random() * (innerWidth - size * 2) + size * 2;
-                let y = Math.random() * (innerHeight - size * 2) + size * 2;
-                let dx = (Math.random() - 0.5) * 1;
-                let dy = (Math.random() - 0.5) * 1;
+                let x = Math.random() * width; let y = Math.random() * height;
+                let dx = (Math.random() - 0.5) * 0.8; let dy = (Math.random() - 0.5) * 0.8;
                 let color = colors[Math.floor(Math.random() * colors.length)];
                 particles.push(new Particle(x, y, dx, dy, size, color));
             }
         }
 
-        function animate() {
-            requestAnimationFrame(animate);
-            ctx.clearRect(0, 0, width, height);
-
+        function animateCanvas() {
+            requestAnimationFrame(animateCanvas); ctx.clearRect(0, 0, width, height);
             for (let i = 0; i < particles.length; i++) {
                 particles[i].update();
-                
-                // Рисуем линии (нейронные связи)
                 for (let j = i; j < particles.length; j++) {
-                    let dx = particles[i].x - particles[j].x;
-                    let dy = particles[i].y - particles[j].y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    
+                    let dx = particles[i].x - particles[j].x; let dy = particles[i].y - particles[j].y; let distance = Math.sqrt(dx * dx + dy * dy);
                     if (distance < 120) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 180, 255, ${1 - distance/120})`;
-                        if(particles[i].color === '#d100ff') {
-                            ctx.strokeStyle = `rgba(209, 0, 255, ${1 - distance/120})`;
-                        }
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
+                        ctx.strokeStyle = (particles[i].color === '#d100ff') ? `rgba(209, 0, 255, ${1 - distance/120})` : `rgba(0, 180, 255, ${1 - distance/120})`;
+                        ctx.lineWidth = 0.5; ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke();
                     }
                 }
             }
         }
 
-        resize();
-        animate();
+        resizeCanvas();
+        animateCanvas();
     </script>
 
    </body>
