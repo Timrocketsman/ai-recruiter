@@ -4,27 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>TimLabs | Лаборатория ИИ и системная автоматизация бизнеса</title>
-    <meta name="description" content="TimLabs — системный интегратор нейросетей. Внедряем автономных ИИ-агентов (ИИ-продавец, ИИ-рекрутер) для вывода бизнеса из операционки. Строго по 152-ФЗ.">
-    <meta name="keywords" content="ИИ для бизнеса, нейросети, автоматизация продаж, ИИ-рекрутер, автоматизация бизнеса, TimLabs, Тим Гуцев">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="TimLabs | Лаборатория ИИ и автоматизации бизнеса">
-    <meta property="og:description" content="Внедряем автономных ИИ-агентов. Они продают, нанимают сотрудников и ведут CRM за вас — 24/7.">
-    <meta property="og:image" content="splash.jpeg">
-    <meta property="og:url" content="https://timlabs.online/">
+    <title>TimLabs | Экосистема и Проекты</title>
+    <meta name="description" content="TimLabs — системный интегратор нейросетей. Внедряем автономных ИИ-агентов. Мои ресурсы, проекты и рекомендации.">
     
     <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
+    
+    <!-- Подключение Tailwind и Шрифтов -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Подключение иконок FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        body { background-color: #030712; color: #e5e7eb; font-family: 'Inter', sans-serif; overflow: hidden; scroll-behavior: smooth; margin: 0; padding: 0; }
+        body { background-color: #030712; color: #e5e7eb; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; margin: 0; padding: 0; }
         .font-orbitron { font-family: 'Orbitron', sans-serif; }
-        .text-gradient { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-image: linear-gradient(90deg, #00b4ff, #d100ff); }
-        .neon-glow { box-shadow: 0 0 20px rgba(0, 180, 255, 0.3), 0 0 40px rgba(209, 0, 255, 0.2); }
         
-        /* Залипательные анимации */
+        /* Градиенты и свечение */
         .text-gradient-animated {
             background: linear-gradient(270deg, #00b4ff, #d100ff, #00b4ff);
             background-size: 200% auto;
@@ -32,44 +29,71 @@
             -webkit-text-fill-color: transparent;
             animation: gradient-flow 4s ease infinite;
         }
-        @keyframes gradient-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+        @keyframes gradient-flow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
 
-        /* Медленное фоновое хаотичное движение */
+        /* Фоновые эффекты */
         .animate-float-1 { animation: float1 25s ease-in-out infinite; }
         .animate-float-2 { animation: float2 30s ease-in-out infinite; }
-        
-        @keyframes float1 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(2%, 5%) scale(1.05); }
-        }
-        @keyframes float2 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(-2%, -5%) scale(1.02); }
-        }
-
-        .loader { border: 3px solid rgba(0, 180, 255, 0.1); border-top: 3px solid #00b4ff; border-radius: 50%; width: 24px; height: 24px; animation: spin 1s linear infinite; display: inline-block; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
-        /* Фон сетка */
+        @keyframes float1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(2%, 5%) scale(1.05); } }
+        @keyframes float2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-2%, -5%) scale(1.02); } }
         .bg-grid { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px); background-size: 50px 50px; z-index: 0; pointer-events: none; mask-image: radial-gradient(circle at center, black 30%, transparent 80%); }
 
         /* Контейнеры для параллакса */
         #tilt-container { transition: transform 0.1s ease-out; transform-style: preserve-3d; }
         #background-parallax-inner { transition: transform 0.15s ease-out; }
+
+        /* --- СТИЛИ СТЕКЛЯННОЙ ВИТРИНЫ --- */
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 180, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(0, 180, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-btn:hover, .glass-btn.active {
+            background: rgba(0, 180, 255, 0.1);
+            border-color: rgba(0, 180, 255, 0.6);
+            box-shadow: 0 0 25px rgba(0, 180, 255, 0.2), inset 0 0 15px rgba(0, 180, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* --- ОБЛАКО ТЕГОВ --- */
+        .tag-cloud-container {
+            display: none; /* Скрыто по умолчанию */
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .tag-cloud-container.active {
+            display: flex;
+            opacity: 1;
+        }
+        .glass-tag {
+            background: rgba(20, 25, 40, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0; /* Для анимации вылета */
+            transform: translateY(20px) scale(0.9);
+        }
+        .glass-tag:hover {
+            border-color: #d100ff;
+            background: rgba(209, 0, 255, 0.1);
+            box-shadow: 0 0 15px rgba(209, 0, 255, 0.3);
+            transform: translateY(-3px) scale(1.05) !important;
+            z-index: 10;
+        }
+        .tag-category-title {
+            color: #00b4ff;
+            text-shadow: 0 0 10px rgba(0, 180, 255, 0.5);
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-[#00b4ff] selection:text-black">
 
-    <div style="display: none;">08i3xnthgcnnjqb9</div>
-
     <div id="background-parallax-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div id="background-parallax-inner" class="absolute inset-0">
-            <div class="bg-grid absolute inset-0 opactiy-60"></div>
-            
+            <div class="bg-grid absolute inset-0 opacity-60"></div>
             <div class="absolute inset-0 opacity-40">
                 <div class="absolute top-[-15%] -left-1/4 w-[80%] h-[80%] bg-[#00b4ff] blur-[150px] rounded-full animate-float-1"></div>
                 <div class="absolute bottom-[-15%] -right-1/4 w-[80%] h-[80%] bg-[#d100ff] blur-[150px] rounded-full animate-float-2"></div>
@@ -79,83 +103,214 @@
 
     <canvas id="neuro-canvas" class="fixed inset-0 z-[5] pointer-events-none opacity-60"></canvas>
 
-    <main class="relative z-10 w-full min-h-screen mx-auto px-4 text-center flex flex-col items-center justify-center pointer-events-none">
-        <div id="tilt-container">
-            <div class="mb-8">
-                <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-none">
+    <!-- MAIN теперь кликабелен (убрали pointer-events-none) -->
+    <main class="relative z-10 w-full min-h-screen mx-auto px-4 py-12 text-center flex flex-col items-center justify-center">
+        <div id="tilt-container" class="w-full max-w-5xl">
+            
+            <!-- Шапка -->
+            <div class="mb-10 pointer-events-none">
+                <span class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-none">
                     Tim<span class="text-gradient-animated">Labs</span>
                 </span>
+                <p class="text-gray-400 text-sm sm:text-base mt-2 font-light">Архитектура мира • ИИ-технологии • Забота о человеке</p>
             </div>
 
-            <div class="inline-flex items-center px-4 py-2 rounded-full border border-[#00b4ff]/30 bg-[#00b4ff]/10 text-[#00b4ff] text-xs sm:text-sm font-bold tracking-widest uppercase mb-8 backdrop-blur-sm shadow-[0_0_15px_rgba(0,180,255,0.2)]">
-                <span class="w-2 h-2 rounded-full bg-[#00b4ff] mr-2 animate-pulse"></span>
-                Обновление ИИ-ядра
+            <!-- Главные кнопки витрин -->
+            <div class="flex flex-wrap justify-center gap-4 mb-10 relative z-20">
+                <button onclick="openCloud('cloud-resources', this)" class="glass-btn active px-6 py-3 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider text-white">
+                    <i class="fas fa-network-wired mr-2"></i> Мои ресурсы
+                </button>
+                <button onclick="openCloud('cloud-projects', this)" class="glass-btn px-6 py-3 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider text-white">
+                    <i class="fas fa-project-diagram mr-2"></i> Проекты
+                </button>
+                <button onclick="openCloud('cloud-private', this)" class="glass-btn px-6 py-3 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider text-white">
+                    <i class="fas fa-user-shield mr-2"></i> Рекомендации
+                </button>
             </div>
 
-            <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-8 tracking-widest uppercase font-orbitron leading-tight text-white" style="text-shadow: 0 0 30px rgba(0, 180, 255, 0.4), 0 0 60px rgba(209, 0, 255, 0.2);">
-                <span class="text-gradient-animated">Технические</span><br>
-                работы
-            </h1>
+            <!-- ЗОНА ОБЛАКА ТЕГОВ -->
+            <div class="min-h-[400px] relative z-20">
+                
+                <!-- ОБЛАКО 1: Мои ресурсы -->
+                <div id="cloud-resources" class="tag-cloud-container active flex-col items-center gap-4">
+                    <div class="flex flex-wrap justify-center gap-3 w-full">
+                        <a href="https://t.me/+_fmorncBxqA4ZmVi" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
+                            <i class="fas fa-graduation-cap text-[#00b4ff] text-xl"></i> Школа лаборатории
+                        </a>
+                        <a href="https://t.me/+0AB4I1b__1k2OWRi" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
+                            <i class="fas fa-flask text-[#d100ff] text-xl"></i> Творческая лаборатория
+                        </a>
+                        <a href="https://t.me/+Gcap-DtBzeRhMmYy" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
+                            <i class="fas fa-id-badge text-[#00b4ff] text-xl"></i> Карточка артиста
+                        </a>
+                        <a href="https://t.me/tim_rockets" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
+                            <i class="fab fa-telegram text-[#0088cc] text-xl"></i> Личный аккаунт
+                        </a>
+                        <a href="https://www.instagram.com/tim__rockets" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
+                            <i class="fab fa-instagram text-[#E1306C] text-xl"></i> Instagram*
+                        </a>
+                        <a href="https://wa.me/79938917761" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-[#25D366] text-xl"></i> WhatsApp
+                        </a>
+                        <a href="https://vk.ru/tim.rockets" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
+                            <i class="fab fa-vk text-[#0077FF] text-xl"></i> ВКонтакте
+                        </a>
+                        <a href="https://suno.com/@timrockets" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
+                            <i class="fas fa-music text-[#d100ff] text-xl"></i> Suno AI
+                        </a>
+                    </div>
+                </div>
 
-            <p class="text-gray-300 text-base sm:text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed mb-12 font-light">
-                Мы улучшаем инфраструктуру нейросетей и внедряем новые алгоритмы. Лаборатория вернется в онлайн совсем скоро.
-            </p>
+                <!-- ОБЛАКО 2: Проекты -->
+                <div id="cloud-projects" class="tag-cloud-container flex-col items-center w-full gap-8">
+                    
+                    <!-- Блок: Братство -->
+                    <div class="w-full flex flex-col items-center">
+                        <h3 class="tag-category-title text-sm font-bold uppercase tracking-widest mb-3 font-orbitron">Поддержка братства</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="https://ramagor.ru" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fas fa-globe text-[#00b4ff] mr-2"></i>Сайт</a>
+                            <a href="https://t.me/+4qrf2OSG0oFiOGJi" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fab fa-telegram text-[#0088cc] mr-2"></i>Telegram</a>
+                            <a href="https://www.instagram.com/ramagor1331" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fab fa-instagram text-[#E1306C] mr-2"></i>Instagram*</a>
+                        </div>
+                    </div>
 
-            <div class="mb-12">
-                <div class="loader" style="width: 40px; height: 40px;"></div>
+                    <!-- Блок: Пересоздание -->
+                    <div class="w-full flex flex-col items-center">
+                        <h3 class="tag-category-title text-sm font-bold uppercase tracking-widest mb-3 font-orbitron">Пересоздание человека</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="https://peresozdanie.ru" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fas fa-dna text-[#d100ff] mr-2"></i>Сайт</a>
+                            <a href="https://t.me/+uH0m5BE0byc4M2Yy" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fab fa-telegram text-[#0088cc] mr-2"></i>Telegram</a>
+                        </div>
+                    </div>
+
+                    <!-- Блок: Массаж -->
+                    <div class="w-full flex flex-col items-center">
+                        <h3 class="tag-category-title text-sm font-bold uppercase tracking-widest mb-3 font-orbitron">Поддержка тела (Marafdy)</h3>
+                        <div class="flex flex-wrap justify-center gap-2 max-w-3xl">
+                            <a href="https://marafdi.clients.site/" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fas fa-globe text-[#00b4ff] mr-1"></i>Сайт</a>
+                            <a href="https://t.me/+fmV9MMwurJpjNDQy" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fab fa-telegram text-[#0088cc] mr-1"></i>TG</a>
+                            <a href="https://www.instagram.com/marafdy.telo" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fab fa-instagram text-[#E1306C] mr-1"></i>Insta*</a>
+                            <a href="https://vk.ru/marafdy" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fab fa-vk text-[#0077FF] mr-1"></i>VK</a>
+                            <a href="https://dzen.ru/marafdy" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fas fa-yin-yang text-[#FF0000] mr-1"></i>Дзен</a>
+                            <a href="https://www.youtube.com/@MARAFDY" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fab fa-youtube text-[#FF0000] mr-1"></i>YouTube</a>
+                            <a href="https://rutube.ru/channel/80161815" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fas fa-play text-blue-400 mr-1"></i>RuTube</a>
+                            <a href="https://ok.ru/group/70000055647438" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fab fa-odnoklassniki text-[#F97A12] mr-1"></i>OK</a>
+                            <a href="https://www.avito.ru/kislovodsk/predlozheniya_uslug/ozdorovitelnyy_massazh_s_vyezdom_8332887241" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fas fa-tag text-[#94D500] mr-1"></i>Avito</a>
+                            <a href="https://max.ru/join/wx4uSFOnNLDXURYekrTwDSmOzpnYLC0-Qi_DtRzOH2w" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fas fa-link text-gray-400 mr-1"></i>Max.ru</a>
+                        </div>
+                    </div>
+
+                    <!-- Блок: Ретрит -->
+                    <div class="w-full flex flex-col items-center">
+                        <h3 class="tag-category-title text-sm font-bold uppercase tracking-widest mb-3 font-orbitron">Ретрит центр</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <a href="https://t.me/+z3bcvWARYT00YTVi" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fab fa-telegram text-[#0088cc] mr-2"></i>Telegram</a>
+                            <a href="https://www.instagram.com/umas_osoznanie" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fab fa-instagram text-[#E1306C] mr-2"></i>Instagram*</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ОБЛАКО 3: Рекомендации -->
+                <div id="cloud-private" class="tag-cloud-container flex-col items-center gap-6 max-w-2xl mx-auto">
+                    <div class="glass-btn p-6 rounded-2xl w-full text-left">
+                        <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-lock text-[#d100ff] mr-2"></i>Закрытая информация</h3>
+                        <p class="text-gray-300 text-sm mb-4 leading-relaxed">Узнавайте в личной переписке полный список рекомендаций на все случаи жизни:</p>
+                        <ul class="text-gray-400 text-sm space-y-3 mb-6">
+                            <li class="flex items-start"><i class="fas fa-heartbeat mt-1 mr-3 text-[#00b4ff]"></i> Поддержка: от планирования беременности до послеродового периода.</li>
+                            <li class="flex items-start"><i class="fas fa-dove mt-1 mr-3 text-[#00b4ff]"></i> Информационное бюро ритуальных услуг.</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-4 mt-6">
+                            <a href="https://wa.me/79938917761" target="_blank" class="glass-tag px-6 py-3 rounded-xl text-white font-bold flex items-center gap-2">
+                                <i class="fab fa-whatsapp text-[#25D366] text-xl"></i> Написать в WhatsApp
+                            </a>
+                            <a href="tel:+79938917761" class="glass-tag px-6 py-3 rounded-xl text-white font-bold flex items-center gap-2">
+                                <i class="fas fa-phone-alt text-gray-300"></i> +7 (993) 891-77-61
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
 
+    <!-- Юридическая сноска -->
+    <div class="fixed bottom-2 left-0 w-full text-center text-[10px] sm:text-xs text-gray-600 z-50 pointer-events-none px-4 opacity-70">
+        * Компания Meta (социальная сеть Instagram) признана экстремистской организацией и ее деятельность запрещена на территории РФ.
+    </div>
+
     <script>
-        // 1. ЕДИНЫЙ ТРЕКЕР МЫШИ для всех эффектов параллакса
+        // --- 1. АНИМАЦИЯ РАССЫПАНИЯ ОБЛАКА ТЕГОВ ---
+        function openCloud(cloudId, btnElement) {
+            // Убираем активность со всех кнопок
+            document.querySelectorAll('.glass-btn').forEach(btn => btn.classList.remove('active'));
+            if(btnElement) btnElement.classList.add('active');
+
+            // Прячем все облака
+            document.querySelectorAll('.tag-cloud-container').forEach(cloud => {
+                cloud.classList.remove('active');
+                // Сбрасываем теги для повторной анимации при следующем открытии
+                const tags = cloud.querySelectorAll('.glass-tag');
+                tags.forEach(tag => {
+                    tag.style.opacity = '0';
+                    tag.style.transform = 'translateY(20px) scale(0.9)';
+                });
+            });
+
+            // Показываем нужное облако
+            const targetCloud = document.getElementById(cloudId);
+            if(targetCloud) {
+                targetCloud.classList.add('active');
+                
+                // Находим все теги в активном облаке и анимируем их с задержкой (Stagger effect)
+                const tags = targetCloud.querySelectorAll('.glass-tag');
+                tags.forEach((tag, index) => {
+                    setTimeout(() => {
+                        tag.style.opacity = '1';
+                        tag.style.transform = 'translateY(0) scale(1)';
+                    }, index * 40); // Задержка вылета каждого следующего элемента
+                });
+            }
+        }
+
+        // Запуск первого облака по умолчанию при загрузке страницы
+        window.addEventListener('DOMContentLoaded', () => {
+            openCloud('cloud-resources', document.querySelector('.glass-btn'));
+        });
+
+
+        // --- 2. ЕДИНЫЙ ТРЕКЕР МЫШИ (Оставлен без изменений) ---
         document.addEventListener('mousemove', (e) => {
             const { innerWidth, innerHeight } = window;
-            const mouseX = e.pageX;
-            const mouseY = e.pageY;
-
-            // Центрируем координаты мыши (-0.5 до 0.5)
+            const mouseX = e.pageX; const mouseY = e.pageY;
             const normX = (mouseX / innerWidth) - 0.5;
             const normY = (mouseY / innerHeight) - 0.5;
 
-            // А) Эффект наклона (3D Tilt) для центрального текста
             const container = document.getElementById('tilt-container');
             if (container) {
-                const tiltStrength = 15; // Сила наклона
-                const tiltX = normY * tiltStrength * -1; // Инверсия по X для естественности
+                const tiltStrength = 10; // Немного уменьшил наклон для удобства клика по мелким тегам
+                const tiltX = normY * tiltStrength * -1; 
                 const tiltY = normX * tiltStrength;
                 container.style.transform = `rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
             }
 
-            // Б) Эффект глубокого параллакса для ФОНА (пятна и сетка)
             const bgInner = document.getElementById('background-parallax-inner');
             if (bgInner) {
-                const bgStrength = 40; // Сила смещения фона (px)
-                const bgX = normX * bgStrength;
-                const bgY = normY * bgStrength;
-                // Смещаем фон в ту же сторону, что и мышь, создавая ощущение глубины
+                const bgStrength = 40; 
+                const bgX = normX * bgStrength; const bgY = normY * bgStrength;
                 bgInner.style.transform = `translate(${bgX}px, ${bgY}px)`;
             }
         });
 
-        // 2. Интерактивная нейронная сеть на Canvas (Частицы)
+        // --- 3. ИНТЕРАКТИВНАЯ НЕЙРОСЕТЬ (Оставлена без изменений) ---
         const canvas = document.getElementById('neuro-canvas');
         const ctx = canvas.getContext('2d');
         let width, height;
         let particles = [];
-        
-        // Отслеживание мыши для частиц
         let neuroMouse = { x: null, y: null, radius: 150 };
 
-        window.addEventListener('mousemove', (event) => {
-            neuroMouse.x = event.x;
-            neuroMouse.y = event.y;
-        });
-
-        window.addEventListener('mouseout', () => {
-            neuroMouse.x = undefined;
-            neuroMouse.y = undefined;
-        });
+        window.addEventListener('mousemove', (event) => { neuroMouse.x = event.x; neuroMouse.y = event.y; });
+        window.addEventListener('mouseout', () => { neuroMouse.x = undefined; neuroMouse.y = undefined; });
 
         function resizeCanvas() {
             width = canvas.width = window.innerWidth;
@@ -166,9 +321,7 @@
 
         class Particle {
             constructor(x, y, dx, dy, size, color) {
-                this.x = x; this.y = y;
-                this.dx = dx; this.dy = dy;
-                this.size = size; this.color = color;
+                this.x = x; this.y = y; this.dx = dx; this.dy = dy; this.size = size; this.color = color;
             }
             draw() {
                 ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctx.fillStyle = this.color; ctx.fill();
@@ -217,6 +370,5 @@
         resizeCanvas();
         animateCanvas();
     </script>
-
-   </body>
+</body>
 </html>
