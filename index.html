@@ -1,374 +1,524 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <title>TimLabs | Экосистема и Проекты</title>
-    <meta name="description" content="TimLabs — системный интегратор нейросетей. Внедряем автономных ИИ-агентов. Мои ресурсы, проекты и рекомендации.">
-    
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
-    <link rel="apple-touch-icon" href="logo.jpg">
-    
-    <!-- Подключение Tailwind и Шрифтов -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Подключение иконок FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="apple-touch-icon" href="logo.jpg">
+<link rel="manifest" href="manifest.json">
+<title>TimLabs</title>
+<meta name="description" content="TimLabs — проводник по проверенным мастерам жизни: от замысла и рождения до тела, духа и достойных проводов. Найдите нужного специалиста под вашу задачу." />
+<link rel="canonical" href="https://timlabs.online/" />
+<meta name="yandex-verification" content="0934835e01204185" />
+<meta name="theme-color" content="#05070e" />
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="TimLabs" />
+<meta property="og:title" content="TimLabs — проводник по мастерам жизни" />
+<meta property="og:description" content="Помогу пройти каждый этап жизни рядом с проверенными мастерами — от рождения ребёнка до проводов близких." />
+<meta property="og:url" content="https://timlabs.online/" />
+<meta property="og:image" content="https://timlabs.online/avatar.jpg" />
+<meta property="og:locale" content="ru_RU" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="TimLabs — проводник по мастерам жизни" />
+<meta name="twitter:description" content="Проверенные мастера на каждом этапе жизни: тело, роды, дух, трудные моменты." />
+<meta name="twitter:image" content="https://timlabs.online/avatar.jpg" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://timlabs.online/#tim",
+      "name": "Тим",
+      "alternateName": ["TimLabs", "Tim Rockets"],
+      "url": "https://timlabs.online/",
+      "image": "https://timlabs.online/avatar.jpg",
+      "jobTitle": "Проводник по мастерам жизни · системный интегратор нейросетей",
+      "description": "Знакомлю людей с проверенными мастерами на каждом этапе жизни — от перинатального сопровождения до деликатной помощи в трудные моменты — и внедряю автономных ИИ-агентов.",
+      "telephone": "+7-993-891-77-61",
+      "knowsAbout": ["перинатальное сопровождение", "оздоровительный массаж", "ретриты и осознанность", "ритуальные услуги", "нейросети и ИИ-агенты"],
+      "sameAs": [
+        "https://t.me/tim_rockets",
+        "https://vk.ru/tim.rockets",
+        "https://suno.com/@timrockets",
+        "https://www.instagram.com/tim__rockets"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://timlabs.online/#site",
+      "url": "https://timlabs.online/",
+      "name": "TimLabs",
+      "inLanguage": "ru",
+      "publisher": { "@id": "https://timlabs.online/#tim" }
+    }
+  ]
+}
+</script>
 
-    <style>
-        body { background-color: #030712; color: #e5e7eb; font-family: 'Inter', sans-serif; overflow-x: hidden; scroll-behavior: smooth; margin: 0; padding: 0; }
-        .font-orbitron { font-family: 'Orbitron', sans-serif; }
-        
-        /* Градиенты и свечение */
-        .text-gradient-animated {
-            background: linear-gradient(270deg, #00b4ff, #d100ff, #00b4ff);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-flow 4s ease infinite;
-        }
-        @keyframes gradient-flow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+<style>
+  :root{
+    --bg:#05070e; --bg-2:#0a0f1c;
+    --panel:rgba(255,255,255,.035);
+    --panel-2:rgba(14,20,36,.55);
+    --stroke:rgba(0,180,255,.18);
+    --stroke-hi:rgba(0,180,255,.55);
+    --cyan:#00b4ff; --magenta:#d100ff;
+    --text:#e7ecf7; --muted:#8b93a9; --dim:#5c6478;
+    --tg:#2aabee; --ig:#e1306c; --wa:#25d366; --yt:#ff2d2d; --vk:#4c8bf5;
+    --radius:16px;
+    --font-body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --font-disp:ui-sans-serif,"SF Pro Display",system-ui,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; min-height:100vh; background:var(--bg); color:var(--text);
+    font-family:var(--font-body); line-height:1.55;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    background-image:
+      radial-gradient(60% 55% at 18% 6%, rgba(0,180,255,.14), transparent 60%),
+      radial-gradient(55% 55% at 85% 94%, rgba(209,0,255,.14), transparent 60%),
+      linear-gradient(180deg,var(--bg),var(--bg-2));
+    background-attachment:fixed;
+  }
+  ::selection{background:var(--cyan);color:#00131f}
+  a{color:inherit}
 
-        /* Фоновые эффекты */
-        .animate-float-1 { animation: float1 25s ease-in-out infinite; }
-        .animate-float-2 { animation: float2 30s ease-in-out infinite; }
-        @keyframes float1 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(2%, 5%) scale(1.05); } }
-        @keyframes float2 { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-2%, -5%) scale(1.02); } }
-        .bg-grid { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px); background-size: 50px 50px; z-index: 0; pointer-events: none; mask-image: radial-gradient(circle at center, black 30%, transparent 80%); }
+  #neuro{position:fixed;inset:0;z-index:0;opacity:.5;pointer-events:none}
+  .grid-fade{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.45;
+    background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+    background-size:52px 52px;
+    -webkit-mask-image:radial-gradient(circle at 50% 25%,#000 22%,transparent 75%);
+            mask-image:radial-gradient(circle at 50% 25%,#000 22%,transparent 75%);}
 
-        /* Контейнеры для параллакса */
-        #tilt-container { transition: transform 0.1s ease-out; transform-style: preserve-3d; }
-        #background-parallax-inner { transition: transform 0.15s ease-out; }
+  main{position:relative;z-index:2;max-width:900px;margin:0 auto;
+    padding:clamp(30px,6vw,60px) 20px 70px;text-align:center;
+    display:flex;flex-direction:column;align-items:center}
 
-        /* --- СТИЛИ СТЕКЛЯННОЙ ВИТРИНЫ --- */
-        .glass-btn {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(0, 180, 255, 0.2);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(0, 180, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-        .glass-btn:hover, .glass-btn.active {
-            background: rgba(0, 180, 255, 0.1);
-            border-color: rgba(0, 180, 255, 0.6);
-            box-shadow: 0 0 25px rgba(0, 180, 255, 0.2), inset 0 0 15px rgba(0, 180, 255, 0.2);
-            transform: translateY(-2px);
-        }
+  /* ---------- HERO ---------- */
+  .hero{margin-bottom:clamp(30px,5vw,48px);display:flex;flex-direction:column;align-items:center}
+  .avatar{width:112px;height:112px;border-radius:50%;display:grid;place-items:center;
+    font-family:var(--font-disp);font-weight:800;font-size:2.5rem;color:#fff;
+    background:linear-gradient(135deg,rgba(0,180,255,.25),rgba(209,0,255,.25));
+    border:1.5px solid var(--stroke-hi);position:relative;overflow:hidden;
+    box-shadow:0 0 40px rgba(0,180,255,.25),inset 0 0 22px rgba(209,0,255,.15)}
+  .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .eyebrow{display:inline-block;margin:24px 0 12px;padding:5px 14px;border-radius:999px;
+    font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+    color:var(--cyan);border:1px solid var(--stroke);background:var(--panel)}
+  .wordmark{font-family:var(--font-disp);font-weight:800;letter-spacing:.05em;
+    font-size:clamp(2.3rem,7vw,3.4rem);margin:0;line-height:1;color:#fff;text-wrap:balance}
+  .wordmark span{background:linear-gradient(270deg,var(--cyan),var(--magenta),var(--cyan));
+    background-size:200% auto;-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;animation:flow 5s ease infinite}
+  @keyframes flow{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+  .promise{color:var(--text);margin:16px auto 0;max-width:36ch;
+    font-size:clamp(1.05rem,3vw,1.35rem);font-weight:400;line-height:1.4;text-wrap:balance}
+  .promise b{color:#fff;font-weight:700}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}
 
-        /* --- ОБЛАКО ТЕГОВ --- */
-        .tag-cloud-container {
-            display: none; /* Скрыто по умолчанию */
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        .tag-cloud-container.active {
-            display: flex;
-            opacity: 1;
-        }
-        .glass-tag {
-            background: rgba(20, 25, 40, 0.6);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            opacity: 0; /* Для анимации вылета */
-            transform: translateY(20px) scale(0.9);
-        }
-        .glass-tag:hover {
-            border-color: #d100ff;
-            background: rgba(209, 0, 255, 0.1);
-            box-shadow: 0 0 15px rgba(209, 0, 255, 0.3);
-            transform: translateY(-3px) scale(1.05) !important;
-            z-index: 10;
-        }
-        .tag-category-title {
-            color: #00b4ff;
-            text-shadow: 0 0 10px rgba(0, 180, 255, 0.5);
-        }
-    </style>
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:13px;
+    text-decoration:none;font-weight:700;font-size:.92rem;cursor:pointer;font-family:var(--font-body);
+    border:1px solid var(--stroke-hi);color:#00131f;
+    background:linear-gradient(120deg,var(--cyan),#38c7ff);
+    box-shadow:0 6px 24px rgba(0,180,255,.28);transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,180,255,.4)}
+  .btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  .btn.ghost{background:var(--panel-2);color:#fff;border-color:rgba(255,255,255,.14);box-shadow:none}
+  .btn.ghost:hover{border-color:var(--wa);box-shadow:0 0 18px rgba(37,211,102,.3)}
+  .btn .icon{width:19px;height:19px}
+  .btn.ghost .icon{color:var(--wa)}
+
+  /* ---------- ABOUT ---------- */
+  .about{max-width:60ch;margin:0 auto clamp(30px,5vw,44px);padding:22px 26px;
+    background:var(--panel-2);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);
+    text-align:left;color:var(--muted);font-size:.95rem;line-height:1.65}
+  .about b{color:var(--text)}
+
+  /* ---------- DOORS ---------- */
+  .doors{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:0 0 10px}
+  .door{font-family:var(--font-disp);cursor:pointer;color:#fff;
+    padding:13px 22px;border-radius:999px;font-size:.8rem;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:9px;
+    background:var(--panel);border:1px solid var(--stroke);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    box-shadow:0 4px 22px rgba(0,0,0,.35),inset 0 0 16px rgba(0,180,255,.05);
+    transition:transform .25s,border-color .25s,background .25s,box-shadow .25s}
+  .door:hover{transform:translateY(-2px);border-color:var(--stroke-hi)}
+  .door:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+  .door[aria-selected="true"]{background:rgba(0,180,255,.1);border-color:var(--stroke-hi);
+    box-shadow:0 0 26px rgba(0,180,255,.22),inset 0 0 16px rgba(0,180,255,.2)}
+  .door .icon{width:1.05em;height:1.05em}
+
+  .stage{min-height:340px;width:100%;margin-top:22px}
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .intro{margin:0 auto 26px;max-width:54ch}
+  .intro h2{font-family:var(--font-disp);font-size:1.15rem;color:#fff;margin:0 0 6px}
+  .intro p{margin:0;color:var(--muted);font-size:.92rem}
+
+  /* ---------- life-stage cards ---------- */
+  .stages{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;max-width:720px;margin:0 auto}
+  .scard{--c:var(--cyan);text-align:left;cursor:pointer;color:var(--text);font-family:var(--font-body);
+    display:flex;flex-direction:column;gap:6px;padding:20px 18px;border-radius:var(--radius);
+    background:var(--panel-2);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;
+    opacity:0;transform:translateY(18px) scale(.96);
+    transition:transform .32s cubic-bezier(.18,.89,.32,1.28),border-color .25s,box-shadow .25s}
+  .panel.active .scard{opacity:1;transform:none}
+  .scard::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--c);opacity:.7}
+  .scard:hover,.scard:focus-visible{border-color:var(--c);transform:translateY(-4px) scale(1.02);
+    box-shadow:0 8px 26px color-mix(in srgb,var(--c) 30%,transparent);outline:none}
+  .scard .ic{font-size:1.7rem}
+  .scard .st{font-family:var(--font-disp);font-weight:700;font-size:1rem;color:#fff}
+  .scard .sd{font-size:.82rem;color:var(--muted);line-height:1.45}
+  .scard .more{margin-top:4px;font-size:.72rem;font-weight:700;letter-spacing:.03em;
+    color:var(--c);text-transform:uppercase}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+
+  /* ---------- trees ---------- */
+  .group{margin-bottom:26px}
+  .group-title{font-family:var(--font-disp);color:var(--cyan);font-size:.7rem;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;margin:0 0 4px;text-shadow:0 0 12px rgba(0,180,255,.4)}
+  .group-desc{color:var(--muted);font-size:.8rem;margin:0 auto 14px;max-width:48ch}
+  .tree{display:flex;flex-wrap:wrap;justify-content:center;gap:11px}
+  .leaf{--c:var(--cyan);display:inline-flex;align-items:center;gap:10px;
+    padding:11px 16px;border-radius:13px;text-decoration:none;color:var(--text);font-size:.9rem;font-weight:500;
+    background:var(--panel-2);border:1px solid rgba(255,255,255,.08);
+    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+    opacity:0;transform:translateY(18px) scale(.94);
+    transition:transform .32s cubic-bezier(.18,.89,.32,1.28),border-color .25s,background .25s,box-shadow .25s}
+  .panel.active .leaf{opacity:1;transform:none}
+  .leaf:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);
+    box-shadow:0 0 16px color-mix(in srgb,var(--c) 35%,transparent);transform:translateY(-3px) scale(1.04)}
+  .leaf:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+  .leaf .icon{width:19px;height:19px;color:var(--c);flex:none}
+  .leaf.sm{padding:9px 13px;font-size:.8rem;border-radius:11px}
+  .leaf .mono{display:grid;place-items:center;width:20px;height:20px;border-radius:6px;
+    font-size:.58rem;font-weight:800;color:#fff;background:color-mix(in srgb,var(--c) 55%,#0a0f1c);flex:none}
+  sup{color:var(--magenta);font-weight:700}
+
+  footer{margin-top:52px;font-size:.7rem;color:var(--dim);max-width:60ch;line-height:1.6}
+  footer .cop{margin-top:10px;color:var(--dim);letter-spacing:.06em}
+
+  /* ---------- DEEP overlay ---------- */
+  .overlay{position:fixed;inset:0;z-index:50;display:none;padding:24px;
+    align-items:center;justify-content:center;
+    background:rgba(3,5,12,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .overlay.open{display:flex;animation:fade .3s ease}
+  .sheet{--c:var(--cyan);position:relative;width:100%;max-width:560px;max-height:86vh;overflow-y:auto;
+    text-align:left;padding:34px clamp(22px,4vw,38px);border-radius:22px;
+    background:linear-gradient(180deg,rgba(16,22,40,.98),rgba(9,13,24,.98));
+    border:1px solid var(--c);box-shadow:0 0 60px color-mix(in srgb,var(--c) 30%,transparent);
+    animation:rise .35s cubic-bezier(.18,.89,.32,1.2)}
+  @keyframes rise{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
+  .sheet .close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;
+    display:grid;place-items:center;cursor:pointer;color:var(--text);font-size:1.1rem;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+  .sheet .close:hover{border-color:var(--c);color:#fff}
+  .sheet .close:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+  .sheet .d-ic{font-size:2.4rem;line-height:1}
+  .sheet h3{font-family:var(--font-disp);font-size:1.5rem;color:#fff;margin:12px 0 4px;text-wrap:balance}
+  .sheet .d-tag{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c);font-weight:700}
+  .sheet p{color:var(--muted);font-size:.95rem;line-height:1.7;margin:14px 0}
+  .sheet p b{color:var(--text)}
+  .sheet .d-list{list-style:none;padding:0;margin:14px 0;display:flex;flex-direction:column;gap:8px}
+  .sheet .d-list li{display:flex;gap:10px;align-items:flex-start;color:var(--text);font-size:.9rem}
+  .sheet .d-list li::before{content:"→";color:var(--c);font-weight:700}
+  .sheet .d-links{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+  .sheet .leaf{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .leaf,.scard{opacity:1;transform:none}
+  }
+</style>
 </head>
-<body class="antialiased selection:bg-[#00b4ff] selection:text-black">
+<body>
+<!-- ===== inline icon sprite ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="i-tg"><path d="M22 3 11.2 13.6M22 3 15.1 21.5 11.2 13.6 2.6 9.7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></g>
+  <g id="i-ig"><rect x="3.3" y="3.3" width="17.4" height="17.4" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.9" r="1.1" fill="currentColor"/></g>
+  <g id="i-wa"><path d="M20.4 12a8.4 8.4 0 0 1-12.3 7.4L4 20.8l1.5-4.1A8.4 8.4 0 1 1 20.4 12z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 9.4c.2 3 2.6 5.4 5.6 5.6.7 0 1.3-.8.8-1.4l-1.1-.6-1 .7c-1-.5-1.8-1.3-2.3-2.3l.7-1-.6-1.1C10.2 8.1 9 8.7 9 9.4z" fill="currentColor"/></g>
+  <g id="i-yt"><rect x="2.5" y="5.6" width="19" height="12.8" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.3 9.4 15.6 12l-5.3 2.6z" fill="currentColor"/></g>
+  <g id="i-web"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c3 3.4 3 14.6 0 18M12 3c-3 3.4-3 14.6 0 18" fill="none" stroke="currentColor" stroke-width="1.7"/></g>
+  <g id="i-music"><path d="M9 18V6.2l10-2.1V15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.4" cy="18" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="16.4" cy="15" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></g>
+  <g id="i-phone"><path d="M6.2 3H9l1.4 5-2 1.4a12 12 0 0 0 6.2 6.2l1.4-2 5 1.4v2.8a2 2 0 0 1-2.2 2A17 17 0 0 1 4.2 5.2 2 2 0 0 1 6.2 3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></g>
+  <g id="i-heart"><path d="M12 20S3.5 14.5 3.5 8.7A4.2 4.2 0 0 1 12 6a4.2 4.2 0 0 1 8.5 2.7C20.5 14.5 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></g>
+</defs></svg>
 
-    <div id="background-parallax-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div id="background-parallax-inner" class="absolute inset-0">
-            <div class="bg-grid absolute inset-0 opacity-60"></div>
-            <div class="absolute inset-0 opacity-40">
-                <div class="absolute top-[-15%] -left-1/4 w-[80%] h-[80%] bg-[#00b4ff] blur-[150px] rounded-full animate-float-1"></div>
-                <div class="absolute bottom-[-15%] -right-1/4 w-[80%] h-[80%] bg-[#d100ff] blur-[150px] rounded-full animate-float-2"></div>
-            </div>
-        </div>
+<main>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="avatar"><span aria-hidden="true">T</span><img src="avatar.jpg" alt="Тим — основатель TimLabs" onerror="this.remove()"></div>
+    <span class="eyebrow">Проводник по мастерам жизни</span>
+    <h1 class="wordmark">Tim<span>Labs</span></h1>
+    <p class="promise">Помогу пройти <b>каждый этап жизни</b> рядом с проверенными мастерами — от рождения ребёнка до проводов близких.</p>
+    <div class="hero-cta">
+      <button class="btn" data-goto="p-care"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Найти своего мастера</button>
+      <a class="btn ghost" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-wa"/></svg>Написать мне</a>
     </div>
+  </section>
 
-    <canvas id="neuro-canvas" class="fixed inset-0 z-[5] pointer-events-none opacity-60"></canvas>
+  <!-- ============ ABOUT ============ -->
+  <section class="about">
+    <b>Меня зовут Тим.</b> Годами я помогал расти чужим проектам и собрал вокруг себя круг мастеров, которым доверяю сам, — специалисты по телу, перинатальному сопровождению, духовным практикам и деликатной помощи в трудные моменты. TimLabs — это место, где я <b>знакомлю вас с нужным человеком под вашу задачу</b>, а технологии ИИ помогают делать это быстро и точно.
+  </section>
 
-    <!-- MAIN теперь кликабелен (убрали pointer-events-none) -->
-    <main class="relative z-10 w-full min-h-screen mx-auto px-4 py-12 text-center flex flex-col items-center justify-center">
-        <div id="tilt-container" class="w-full max-w-5xl">
-            
-            <!-- Шапка -->
-            <div class="mb-10 pointer-events-none">
-                <span class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-none">
-                    Tim<span class="text-gradient-animated">Labs</span>
-                </span>
-                <p class="text-gray-400 text-sm sm:text-base mt-2 font-light">Архитектура мира • ИИ-технологии • Забота о человеке</p>
-            </div>
+  <!-- ============ DOORS ============ -->
+  <nav class="doors" role="tablist" aria-label="Разделы">
+    <button class="door" role="tab" aria-selected="true"  aria-controls="p-care" id="t-care" data-target="p-care"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Сопровождение</button>
+    <button class="door" role="tab" aria-selected="false" aria-controls="p-proj" id="t-proj" data-target="p-proj"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Проекты</button>
+    <button class="door" role="tab" aria-selected="false" aria-controls="p-res"  id="t-res"  data-target="p-res"><svg class="icon" viewBox="0 0 24 24"><use href="#i-music"/></svg>Сообщество</button>
+  </nav>
 
-            <!-- Главные кнопки витрин -->
-            <div class="flex flex-wrap justify-center gap-4 mb-10 relative z-20">
-                <button onclick="openCloud('cloud-resources', this)" class="glass-btn active px-6 py-3 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider text-white">
-                    <i class="fas fa-network-wired mr-2"></i> Мои ресурсы
-                </button>
-                <button onclick="openCloud('cloud-projects', this)" class="glass-btn px-6 py-3 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider text-white">
-                    <i class="fas fa-project-diagram mr-2"></i> Проекты
-                </button>
-                <button onclick="openCloud('cloud-private', this)" class="glass-btn px-6 py-3 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider text-white">
-                    <i class="fas fa-user-shield mr-2"></i> Рекомендации
-                </button>
-            </div>
+  <div class="stage">
 
-            <!-- ЗОНА ОБЛАКА ТЕГОВ -->
-            <div class="min-h-[400px] relative z-20">
-                
-                <!-- ОБЛАКО 1: Мои ресурсы -->
-                <div id="cloud-resources" class="tag-cloud-container active flex-col items-center gap-4">
-                    <div class="flex flex-wrap justify-center gap-3 w-full">
-                        <a href="https://t.me/+_fmorncBxqA4ZmVi" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
-                            <i class="fas fa-graduation-cap text-[#00b4ff] text-xl"></i> Школа лаборатории
-                        </a>
-                        <a href="https://t.me/+0AB4I1b__1k2OWRi" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
-                            <i class="fas fa-flask text-[#d100ff] text-xl"></i> Творческая лаборатория
-                        </a>
-                        <a href="https://t.me/+Gcap-DtBzeRhMmYy" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
-                            <i class="fas fa-id-badge text-[#00b4ff] text-xl"></i> Карточка артиста
-                        </a>
-                        <a href="https://t.me/tim_rockets" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
-                            <i class="fab fa-telegram text-[#0088cc] text-xl"></i> Личный аккаунт
-                        </a>
-                        <a href="https://www.instagram.com/tim__rockets" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
-                            <i class="fab fa-instagram text-[#E1306C] text-xl"></i> Instagram*
-                        </a>
-                        <a href="https://wa.me/79938917761" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
-                            <i class="fab fa-whatsapp text-[#25D366] text-xl"></i> WhatsApp
-                        </a>
-                        <a href="https://vk.ru/tim.rockets" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
-                            <i class="fab fa-vk text-[#0077FF] text-xl"></i> ВКонтакте
-                        </a>
-                        <a href="https://suno.com/@timrockets" target="_blank" class="glass-tag px-5 py-3 rounded-xl text-white flex items-center gap-3">
-                            <i class="fas fa-music text-[#d100ff] text-xl"></i> Suno AI
-                        </a>
-                    </div>
-                </div>
+    <!-- ===== СОПРОВОЖДЕНИЕ ===== -->
+    <section class="panel active" id="p-care" role="tabpanel" aria-labelledby="t-care">
+      <div class="intro">
+        <h2>Путь длиною в жизнь</h2>
+        <p>От первого замысла до последних проводов — на каждом этапе есть проверенный мастер. Нажми на этап, чтобы провалиться в глубину.</p>
+      </div>
+      <div class="stages">
+        <button class="scard" data-stage="s1" style="--c:#00b4ff"><span class="ic">🌱</span><span class="st">Замысел и зачатие</span><span class="sd">Осознанный старт новой жизни</span><span class="more">Подробнее →</span></button>
+        <button class="scard" data-stage="s2" style="--c:#35b6ff"><span class="ic">🤍</span><span class="st">Беременность и роды</span><span class="sd">Спокойствие матери — здоровье ребёнка</span><span class="more">Подробнее →</span></button>
+        <button class="scard" data-stage="s3" style="--c:#6aa0ff"><span class="ic">🧸</span><span class="st">Детство</span><span class="sd">Расти в любви и внимании</span><span class="more">Подробнее →</span></button>
+        <button class="scard" data-stage="s4" style="--c:#9b6cff"><span class="ic">🌿</span><span class="st">Тело и здоровье</span><span class="sd">Дом, за которым ухаживают</span><span class="more">Подробнее →</span></button>
+        <button class="scard" data-stage="s5" style="--c:#d100ff"><span class="ic">🧘</span><span class="st">Дух и осознанность</span><span class="sd">Вернуться к себе настоящему</span><span class="more">Подробнее →</span></button>
+        <button class="scard" data-stage="s6" style="--c:#aeb6cc"><span class="ic">🕊️</span><span class="st">Проводы</span><span class="sd">Достойно и по-человечески</span><span class="more">Подробнее →</span></button>
+      </div>
+      <div class="cta-row">
+        <a class="btn ghost" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
+        <a class="btn ghost" href="tel:+79938917761" style="--wa:var(--cyan)"><svg class="icon" viewBox="0 0 24 24" style="color:var(--cyan)"><use href="#i-phone"/></svg>+7 993 891-77-61</a>
+      </div>
+    </section>
 
-                <!-- ОБЛАКО 2: Проекты -->
-                <div id="cloud-projects" class="tag-cloud-container flex-col items-center w-full gap-8">
-                    
-                    <!-- Блок: Братство -->
-                    <div class="w-full flex flex-col items-center">
-                        <h3 class="tag-category-title text-sm font-bold uppercase tracking-widest mb-3 font-orbitron">Поддержка братства</h3>
-                        <div class="flex flex-wrap justify-center gap-3">
-                            <a href="https://ramagor.ru" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fas fa-globe text-[#00b4ff] mr-2"></i>Сайт</a>
-                            <a href="https://t.me/+4qrf2OSG0oFiOGJi" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fab fa-telegram text-[#0088cc] mr-2"></i>Telegram</a>
-                            <a href="https://www.instagram.com/ramagor1331" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fab fa-instagram text-[#E1306C] mr-2"></i>Instagram*</a>
-                        </div>
-                    </div>
-
-                    <!-- Блок: Пересоздание -->
-                    <div class="w-full flex flex-col items-center">
-                        <h3 class="tag-category-title text-sm font-bold uppercase tracking-widest mb-3 font-orbitron">Пересоздание человека</h3>
-                        <div class="flex flex-wrap justify-center gap-3">
-                            <a href="https://peresozdanie.ru" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fas fa-dna text-[#d100ff] mr-2"></i>Сайт</a>
-                            <a href="https://t.me/+uH0m5BE0byc4M2Yy" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fab fa-telegram text-[#0088cc] mr-2"></i>Telegram</a>
-                        </div>
-                    </div>
-
-                    <!-- Блок: Массаж -->
-                    <div class="w-full flex flex-col items-center">
-                        <h3 class="tag-category-title text-sm font-bold uppercase tracking-widest mb-3 font-orbitron">Поддержка тела (Marafdy)</h3>
-                        <div class="flex flex-wrap justify-center gap-2 max-w-3xl">
-                            <a href="https://marafdi.clients.site/" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fas fa-globe text-[#00b4ff] mr-1"></i>Сайт</a>
-                            <a href="https://t.me/+fmV9MMwurJpjNDQy" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fab fa-telegram text-[#0088cc] mr-1"></i>TG</a>
-                            <a href="https://www.instagram.com/marafdy.telo" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fab fa-instagram text-[#E1306C] mr-1"></i>Insta*</a>
-                            <a href="https://vk.ru/marafdy" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fab fa-vk text-[#0077FF] mr-1"></i>VK</a>
-                            <a href="https://dzen.ru/marafdy" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fas fa-yin-yang text-[#FF0000] mr-1"></i>Дзен</a>
-                            <a href="https://www.youtube.com/@MARAFDY" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fab fa-youtube text-[#FF0000] mr-1"></i>YouTube</a>
-                            <a href="https://rutube.ru/channel/80161815" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fas fa-play text-blue-400 mr-1"></i>RuTube</a>
-                            <a href="https://ok.ru/group/70000055647438" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fab fa-odnoklassniki text-[#F97A12] mr-1"></i>OK</a>
-                            <a href="https://www.avito.ru/kislovodsk/predlozheniya_uslug/ozdorovitelnyy_massazh_s_vyezdom_8332887241" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fas fa-tag text-[#94D500] mr-1"></i>Avito</a>
-                            <a href="https://max.ru/join/wx4uSFOnNLDXURYekrTwDSmOzpnYLC0-Qi_DtRzOH2w" target="_blank" class="glass-tag px-3 py-2 rounded-lg text-xs text-gray-200"><i class="fas fa-link text-gray-400 mr-1"></i>Max.ru</a>
-                        </div>
-                    </div>
-
-                    <!-- Блок: Ретрит -->
-                    <div class="w-full flex flex-col items-center">
-                        <h3 class="tag-category-title text-sm font-bold uppercase tracking-widest mb-3 font-orbitron">Ретрит центр</h3>
-                        <div class="flex flex-wrap justify-center gap-3">
-                            <a href="https://t.me/+z3bcvWARYT00YTVi" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fab fa-telegram text-[#0088cc] mr-2"></i>Telegram</a>
-                            <a href="https://www.instagram.com/umas_osoznanie" target="_blank" class="glass-tag px-4 py-2 rounded-lg text-sm text-gray-200"><i class="fab fa-instagram text-[#E1306C] mr-2"></i>Instagram*</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ОБЛАКО 3: Рекомендации -->
-                <div id="cloud-private" class="tag-cloud-container flex-col items-center gap-6 max-w-2xl mx-auto">
-                    <div class="glass-btn p-6 rounded-2xl w-full text-left">
-                        <h3 class="text-xl font-bold text-white mb-4"><i class="fas fa-lock text-[#d100ff] mr-2"></i>Закрытая информация</h3>
-                        <p class="text-gray-300 text-sm mb-4 leading-relaxed">Узнавайте в личной переписке полный список рекомендаций на все случаи жизни:</p>
-                        <ul class="text-gray-400 text-sm space-y-3 mb-6">
-                            <li class="flex items-start"><i class="fas fa-heartbeat mt-1 mr-3 text-[#00b4ff]"></i> Поддержка: от планирования беременности до послеродового периода.</li>
-                            <li class="flex items-start"><i class="fas fa-dove mt-1 mr-3 text-[#00b4ff]"></i> Информационное бюро ритуальных услуг.</li>
-                        </ul>
-                        <div class="flex flex-wrap gap-4 mt-6">
-                            <a href="https://wa.me/79938917761" target="_blank" class="glass-tag px-6 py-3 rounded-xl text-white font-bold flex items-center gap-2">
-                                <i class="fab fa-whatsapp text-[#25D366] text-xl"></i> Написать в WhatsApp
-                            </a>
-                            <a href="tel:+79938917761" class="glass-tag px-6 py-3 rounded-xl text-white font-bold flex items-center gap-2">
-                                <i class="fas fa-phone-alt text-gray-300"></i> +7 (993) 891-77-61
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- ===== ПРОЕКТЫ ===== -->
+    <section class="panel" id="p-proj" role="tabpanel" aria-labelledby="t-proj">
+      <div class="intro">
+        <h2>Проекты, которые я развиваю</h2>
+        <p>Инициативы о теле, духе и сообществе, за которые я отвечаю лично.</p>
+      </div>
+      <div class="group">
+        <h3 class="group-title">Поддержка братства · Ramagor</h3>
+        <p class="group-desc">Сообщество взаимной поддержки, роста и мужского братства.</p>
+        <div class="tree">
+          <a class="leaf sm" style="--c:var(--cyan)" href="https://ramagor.ru" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Сайт</a>
+          <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+4qrf2OSG0oFiOGJi" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
+          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/ramagor1331" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-ig"/></svg>Instagram<sup>*</sup></a>
         </div>
-    </main>
+      </div>
+      <div class="group">
+        <h3 class="group-title">Пересоздание человека</h3>
+        <p class="group-desc">Практики глубинной трансформации: собрать себя заново.</p>
+        <div class="tree">
+          <a class="leaf sm" style="--c:var(--magenta)" href="https://peresozdanie.ru" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Сайт</a>
+          <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+uH0m5BE0byc4M2Yy" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
+        </div>
+      </div>
+      <div class="group">
+        <h3 class="group-title">Поддержка тела · Marafdy</h3>
+        <p class="group-desc">Телесные практики и оздоровительный массаж с выездом.</p>
+        <div class="tree">
+          <a class="leaf sm" style="--c:var(--cyan)" href="https://marafdi.clients.site/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Сайт</a>
+          <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+fmV9MMwurJpjNDQy" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
+          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/marafdy.telo" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-ig"/></svg>Instagram<sup>*</sup></a>
+          <a class="leaf sm" style="--c:var(--vk)" href="https://vk.ru/marafdy" target="_blank" rel="noopener"><span class="mono">VK</span>ВКонтакте</a>
+          <a class="leaf sm" style="--c:#ff7a00" href="https://dzen.ru/marafdy" target="_blank" rel="noopener"><span class="mono">Дз</span>Дзен</a>
+          <a class="leaf sm" style="--c:var(--yt)" href="https://www.youtube.com/@MARAFDY" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-yt"/></svg>YouTube</a>
+          <a class="leaf sm" style="--c:#2196f3" href="https://rutube.ru/channel/80161815" target="_blank" rel="noopener"><span class="mono">RT</span>RuTube</a>
+          <a class="leaf sm" style="--c:#ee8208" href="https://ok.ru/group/70000055647438" target="_blank" rel="noopener"><span class="mono">OK</span>OK</a>
+          <a class="leaf sm" style="--c:#97c50a" href="https://www.avito.ru/kislovodsk/predlozheniya_uslug/ozdorovitelnyy_massazh_s_vyezdom_8332887241" target="_blank" rel="noopener"><span class="mono">Av</span>Avito</a>
+          <a class="leaf sm" style="--c:#7d6cff" href="https://max.ru/join/wx4uSFOnNLDXURYekrTwDSmOzpnYLC0-Qi_DtRzOH2w" target="_blank" rel="noopener"><span class="mono">MAX</span>Max</a>
+        </div>
+      </div>
+      <div class="group">
+        <h3 class="group-title">Ретрит-центр · УМАС</h3>
+        <p class="group-desc">Ретриты для перезагрузки тела и духа, встреча с собой.</p>
+        <div class="tree">
+          <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+z3bcvWARYT00YTVi" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
+          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/umas_osoznanie" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-ig"/></svg>Instagram<sup>*</sup></a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Юридическая сноска -->
-    <div class="fixed bottom-2 left-0 w-full text-center text-[10px] sm:text-xs text-gray-600 z-50 pointer-events-none px-4 opacity-70">
-        * Компания Meta (социальная сеть Instagram) признана экстремистской организацией и ее деятельность запрещена на территории РФ.
+    <!-- ===== СООБЩЕСТВО ===== -->
+    <section class="panel" id="p-res" role="tabpanel" aria-labelledby="t-res">
+      <div class="intro">
+        <h2>Сообщество и творчество</h2>
+        <p>Мои каналы, школа-лаборатория и музыка. Заходите, оставайтесь на связи.</p>
+      </div>
+      <div class="tree">
+        <a class="leaf" style="--c:var(--tg)" href="https://t.me/+_fmorncBxqA4ZmVi" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Школа лаборатории</a>
+        <a class="leaf" style="--c:var(--tg)" href="https://t.me/+0AB4I1b__1k2OWRi" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Творческая лаборатория</a>
+        <a class="leaf" style="--c:var(--tg)" href="https://t.me/+Gcap-DtBzeRhMmYy" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Карточка артиста</a>
+        <a class="leaf" style="--c:var(--tg)" href="https://t.me/tim_rockets" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Личный аккаунт</a>
+        <a class="leaf" style="--c:var(--magenta)" href="https://suno.com/@timrockets" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-music"/></svg>Моя музыка · Suno</a>
+        <a class="leaf" style="--c:var(--vk)" href="https://vk.ru/tim.rockets" target="_blank" rel="noopener"><span class="mono">VK</span>ВКонтакте</a>
+        <a class="leaf" style="--c:var(--wa)" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-wa"/></svg>WhatsApp</a>
+        <a class="leaf" style="--c:var(--ig)" href="https://www.instagram.com/tim__rockets" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-ig"/></svg>Instagram<sup>*</sup></a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p><sup>*</sup> Instagram принадлежит компании Meta Platforms Inc., признанной в Российской Федерации экстремистской организацией; её деятельность на территории РФ запрещена.</p>
+    <p class="cop">© 2026 TimLabs · timlabs.online</p>
+  </footer>
+</main>
+
+<!-- ===== DEEP content (Слой 2) ===== -->
+<div id="deep" hidden>
+  <article id="d-s1" data-ic="🌱" data-tag="Этап 1 · Замысел" data-title="Замысел и зачатие">
+    <p>Появление ребёнка начинается задолго до двух полосок. На этом этапе я знакомлю с мастерами, которые помогают подготовить тело, отношения и внутреннее пространство к зачатию — мягко, бережно и без давления.</p>
+    <ul class="d-list"><li>Подготовка тела и восстановление ресурса</li><li>Осознанность и настрой пары</li><li>Проверенные специалисты, а не советы из интернета</li></ul>
+  </article>
+  <article id="d-s2" data-ic="🤍" data-tag="Этап 2 · Рождение" data-title="Беременность и роды">
+    <p>Беременность и роды — время, когда важно, кто рядом. Подберу проверенных специалистов сопровождения: тех, кто ведёт по-человечески, от подготовки к родам до первых недель дома.</p>
+    <ul class="d-list"><li>Перинатальное сопровождение и подготовка к родам</li><li>Поддержка мамы после рождения</li><li>Забота о теле в новом статусе</li></ul>
+  </article>
+  <article id="d-s3" data-ic="🧸" data-tag="Этап 3 · Детство" data-title="Детство">
+    <p>Ранние годы задают всё. Здесь — наставники и практики, которые помогают ребёнку и родителям расти вместе: тело, эмоции, творчество и здоровые опоры.</p>
+    <ul class="d-list"><li>Гармоничное развитие ребёнка</li><li>Опора и ресурс для родителей</li><li>Творческие и телесные практики</li></ul>
+  </article>
+  <article id="d-s4" data-ic="🌿" data-tag="Этап 4 · Тело" data-title="Тело и здоровье">
+    <p>Забота о теле — не роскошь, а основа всего. Проект <b>Marafdy</b> — мои проверенные мастера телесных практик и оздоровительного массажа с выездом. Восстановление, тонус, работа с напряжением.</p>
+    <ul class="d-list"><li>Оздоровительный массаж с выездом</li><li>Восстановление после нагрузок</li><li>Регулярная забота, а не «когда прижмёт»</li></ul>
+    <div class="d-links">
+      <a class="leaf sm" style="--c:var(--cyan)" href="https://marafdi.clients.site/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Сайт Marafdy</a>
+      <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+fmV9MMwurJpjNDQy" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
     </div>
+  </article>
+  <article id="d-s5" data-ic="🧘" data-tag="Этап 5 · Дух" data-title="Дух и осознанность">
+    <p>Когда тело в порядке, хочется глубины. Ретрит-центр <b>УМАС</b> и проект <b>«Пересоздание человека»</b> — пространства и практики для тех, кто хочет остановиться, услышать себя и измениться по-настоящему.</p>
+    <ul class="d-list"><li>Ретриты и перезагрузка</li><li>Глубинная трансформация личности</li><li>Осознанность как образ жизни</li></ul>
+    <div class="d-links">
+      <a class="leaf sm" style="--c:var(--magenta)" href="https://peresozdanie.ru" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Пересоздание</a>
+      <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+z3bcvWARYT00YTVi" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Ретрит УМАС</a>
+    </div>
+  </article>
+  <article id="d-s6" data-ic="🕊️" data-tag="Этап 6 · Проводы" data-title="Проводы">
+    <p>Уход близкого — момент, когда трудно думать о деталях. Информационное бюро ритуальных услуг подскажет понятный порядок действий и поддержит тактично, без суеты и навязывания. Вы не останетесь один на один с вопросами.</p>
+    <ul class="d-list"><li>Понятный порядок действий в первые часы</li><li>Тактичная информационная поддержка</li><li>Проверенные, честные исполнители</li></ul>
+  </article>
+</div>
 
-    <script>
-        // --- 1. АНИМАЦИЯ РАССЫПАНИЯ ОБЛАКА ТЕГОВ ---
-        function openCloud(cloudId, btnElement) {
-            // Убираем активность со всех кнопок
-            document.querySelectorAll('.glass-btn').forEach(btn => btn.classList.remove('active'));
-            if(btnElement) btnElement.classList.add('active');
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+  <div class="sheet" id="sheet" tabindex="-1">
+    <button class="close" id="sheetClose" aria-label="Закрыть">✕</button>
+    <div class="d-ic" id="sheet-ic"></div>
+    <span class="d-tag" id="sheet-tag"></span>
+    <h3 id="sheet-title"></h3>
+    <div id="sheet-body"></div>
+    <div class="cta-row" style="justify-content:flex-start">
+      <a class="btn" href="https://wa.me/79938917761" target="_blank" rel="noopener" style="color:#00131f"><svg class="icon" viewBox="0 0 24 24"><use href="#i-wa"/></svg>Обсудить лично</a>
+    </div>
+  </div>
+</div>
 
-            // Прячем все облака
-            document.querySelectorAll('.tag-cloud-container').forEach(cloud => {
-                cloud.classList.remove('active');
-                // Сбрасываем теги для повторной анимации при следующем открытии
-                const tags = cloud.querySelectorAll('.glass-tag');
-                tags.forEach(tag => {
-                    tag.style.opacity = '0';
-                    tag.style.transform = 'translateY(20px) scale(0.9)';
-                });
-            });
+<div class="grid-fade"></div>
+<canvas id="neuro" aria-hidden="true"></canvas>
 
-            // Показываем нужное облако
-            const targetCloud = document.getElementById(cloudId);
-            if(targetCloud) {
-                targetCloud.classList.add('active');
-                
-                // Находим все теги в активном облаке и анимируем их с задержкой (Stagger effect)
-                const tags = targetCloud.querySelectorAll('.glass-tag');
-                tags.forEach((tag, index) => {
-                    setTimeout(() => {
-                        tag.style.opacity = '1';
-                        tag.style.transform = 'translateY(0) scale(1)';
-                    }, index * 40); // Задержка вылета каждого следующего элемента
-                });
-            }
-        }
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.door'));
+  var panels = {};
+  document.querySelectorAll('.panel').forEach(function(p){panels[p.id]=p;});
 
-        // Запуск первого облака по умолчанию при загрузке страницы
-        window.addEventListener('DOMContentLoaded', () => {
-            openCloud('cloud-resources', document.querySelector('.glass-btn'));
-        });
+  function stagger(panel){
+    var items = panel.querySelectorAll('.leaf,.scard');
+    items.forEach(function(l){ l.style.opacity='0'; l.style.transform='translateY(18px) scale(.95)'; });
+    void panel.offsetWidth;
+    items.forEach(function(l,i){ setTimeout(function(){ l.style.opacity='1'; l.style.transform='none'; }, i*45); });
+  }
+  function activate(id){
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', t.dataset.target===id?'true':'false'); });
+    for(var k in panels){ panels[k].classList.toggle('active', k===id); }
+    stagger(panels[id]);
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ activate(t.dataset.target); });
+    t.addEventListener('keydown', function(e){
+      var i=tabs.indexOf(t);
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();
+        var n=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;tabs[n].focus();activate(tabs[n].dataset.target);}
+    });
+  });
+  document.querySelectorAll('[data-goto]').forEach(function(b){
+    b.addEventListener('click', function(){ activate(b.dataset.goto);
+      document.querySelector('.doors').scrollIntoView({behavior:'smooth',block:'center'}); });
+  });
+  stagger(panels['p-care']);
 
+  // ----- DEEP overlay + hash deep-links (прообраз URL Слоя 2) -----
+  var slugs={s1:'zamysel',s2:'rozhdenie',s3:'detstvo',s4:'telo',s5:'dukh',s6:'provody'};
+  var overlay=document.getElementById('overlay'), sheet=document.getElementById('sheet'), lastFocus=null;
 
-        // --- 2. ЕДИНЫЙ ТРЕКЕР МЫШИ (Оставлен без изменений) ---
-        document.addEventListener('mousemove', (e) => {
-            const { innerWidth, innerHeight } = window;
-            const mouseX = e.pageX; const mouseY = e.pageY;
-            const normX = (mouseX / innerWidth) - 0.5;
-            const normY = (mouseY / innerHeight) - 0.5;
+  function colorFor(id){
+    var el=document.querySelector('[data-stage="'+id+'"]');
+    return el?getComputedStyle(el).getPropertyValue('--c').trim():'#00b4ff';
+  }
+  function openDeep(id){
+    var src=document.getElementById('d-'+id); if(!src) return;
+    sheet.style.setProperty('--c', colorFor(id));
+    document.getElementById('sheet-ic').textContent=src.dataset.ic||'';
+    document.getElementById('sheet-tag').textContent=src.dataset.tag||'';
+    document.getElementById('sheet-title').textContent=src.dataset.title||'';
+    document.getElementById('sheet-body').innerHTML=src.innerHTML;
+    lastFocus=document.activeElement;
+    overlay.classList.add('open'); document.body.style.overflow='hidden';
+    sheet.focus();
+  }
+  function hideDeep(){
+    overlay.classList.remove('open'); document.body.style.overflow='';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  function uiClose(){ // закрытие из интерфейса: чистим hash без записи в историю
+    if(location.hash) history.replaceState(null,'',location.pathname+location.search);
+    hideDeep();
+  }
+  function route(){
+    var h=location.hash.slice(1), id=null;
+    for(var k in slugs){ if(slugs[k]===h) id=k; }
+    if(id){ activate('p-care'); openDeep(id); }
+    else if(overlay.classList.contains('open')) hideDeep();
+  }
+  document.querySelectorAll('.scard').forEach(function(c){
+    c.addEventListener('click', function(){
+      var slug=slugs[c.dataset.stage];
+      if(location.hash==='#'+slug){ openDeep(c.dataset.stage); } else { location.hash=slug; }
+    });
+  });
+  document.getElementById('sheetClose').addEventListener('click', uiClose);
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) uiClose(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && overlay.classList.contains('open')) uiClose(); });
+  addEventListener('hashchange', route);
+  route(); // прямой заход по ссылке #telo и т.п.
 
-            const container = document.getElementById('tilt-container');
-            if (container) {
-                const tiltStrength = 10; // Немного уменьшил наклон для удобства клика по мелким тегам
-                const tiltX = normY * tiltStrength * -1; 
-                const tiltY = normX * tiltStrength;
-                container.style.transform = `rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
-            }
-
-            const bgInner = document.getElementById('background-parallax-inner');
-            if (bgInner) {
-                const bgStrength = 40; 
-                const bgX = normX * bgStrength; const bgY = normY * bgStrength;
-                bgInner.style.transform = `translate(${bgX}px, ${bgY}px)`;
-            }
-        });
-
-        // --- 3. ИНТЕРАКТИВНАЯ НЕЙРОСЕТЬ (Оставлена без изменений) ---
-        const canvas = document.getElementById('neuro-canvas');
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
-        let neuroMouse = { x: null, y: null, radius: 150 };
-
-        window.addEventListener('mousemove', (event) => { neuroMouse.x = event.x; neuroMouse.y = event.y; });
-        window.addEventListener('mouseout', () => { neuroMouse.x = undefined; neuroMouse.y = undefined; });
-
-        function resizeCanvas() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            initParticles();
-        }
-        window.addEventListener('resize', resizeCanvas);
-
-        class Particle {
-            constructor(x, y, dx, dy, size, color) {
-                this.x = x; this.y = y; this.dx = dx; this.dy = dy; this.size = size; this.color = color;
-            }
-            draw() {
-                ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false); ctx.fillStyle = this.color; ctx.fill();
-            }
-            update() {
-                if (this.x > width || this.x < 0) this.dx = -this.dx; if (this.y > height || this.y < 0) this.dy = -this.dy;
-                this.x += this.dx; this.y += this.dy;
-                if (neuroMouse.x != null) {
-                    let dx = neuroMouse.x - this.x; let dy = neuroMouse.y - this.y; let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < neuroMouse.radius) {
-                        const forceDirectionX = dx / distance; const forceDirectionY = dy / distance; const force = (neuroMouse.radius - distance) / neuroMouse.radius;
-                        this.x += forceDirectionX * force * 2.5; this.y += forceDirectionY * force * 2.5;
-                    }
-                }
-                this.draw();
-            }
-        }
-
-        function initParticles() {
-            particles = []; const numberOfParticles = (width * height) / 10000;
-            const colors = ['#00b4ff', '#d100ff'];
-            for (let i = 0; i < numberOfParticles; i++) {
-                let size = (Math.random() * 2) + 0.5;
-                let x = Math.random() * width; let y = Math.random() * height;
-                let dx = (Math.random() - 0.5) * 0.8; let dy = (Math.random() - 0.5) * 0.8;
-                let color = colors[Math.floor(Math.random() * colors.length)];
-                particles.push(new Particle(x, y, dx, dy, size, color));
-            }
-        }
-
-        function animateCanvas() {
-            requestAnimationFrame(animateCanvas); ctx.clearRect(0, 0, width, height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                for (let j = i; j < particles.length; j++) {
-                    let dx = particles[i].x - particles[j].x; let dy = particles[i].y - particles[j].y; let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 120) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = (particles[i].color === '#d100ff') ? `rgba(209, 0, 255, ${1 - distance/120})` : `rgba(0, 180, 255, ${1 - distance/120})`;
-                        ctx.lineWidth = 0.5; ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke();
-                    }
-                }
-            }
-        }
-
-        resizeCanvas();
-        animateCanvas();
-    </script>
+  // ----- neural field -----
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var c=document.getElementById('neuro'), x=c.getContext('2d');
+  var W,H,P=[],mouse={x:null,y:null,r:150},COL=['#00b4ff','#d100ff'];
+  function size(){W=c.width=innerWidth;H=c.height=innerHeight;init();}
+  function init(){P=[];var n=Math.min(85,(W*H)/17000);
+    for(var i=0;i<n;i++){P.push({x:Math.random()*W,y:Math.random()*H,dx:(Math.random()-.5)*.5,dy:(Math.random()-.5)*.5,s:Math.random()*1.8+.5,c:COL[Math.random()*2|0]});}}
+  addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;});
+  addEventListener('mouseout',function(){mouse.x=mouse.y=null;});
+  addEventListener('resize',size);
+  function frame(){requestAnimationFrame(frame);x.clearRect(0,0,W,H);
+    for(var i=0;i<P.length;i++){var p=P[i];
+      if(p.x>W||p.x<0)p.dx=-p.dx;if(p.y>H||p.y<0)p.dy=-p.dy;p.x+=p.dx;p.y+=p.dy;
+      if(mouse.x!=null){var a=mouse.x-p.x,b=mouse.y-p.y,d=Math.hypot(a,b);if(d<mouse.r){var f=(mouse.r-d)/mouse.r;p.x+=(a/d)*f*2;p.y+=(b/d)*f*2;}}
+      x.beginPath();x.arc(p.x,p.y,p.s,0,6.283);x.fillStyle=p.c;x.fill();
+      for(var j=i+1;j<P.length;j++){var q=P[j],dx=p.x-q.x,dy=p.y-q.y,dd=Math.hypot(dx,dy);
+        if(dd<120){x.beginPath();x.strokeStyle=(p.c==='#d100ff'?'rgba(209,0,255,':'rgba(0,180,255,')+(1-dd/120)+')';x.lineWidth=.5;x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke();}}}}
+  size(); if(!reduce) frame(); else {for(var i=0;i<P.length;i++){var p=P[i];x.beginPath();x.arc(p.x,p.y,p.s,0,6.283);x.fillStyle=p.c;x.fill();}}
+})();
+</script>
 </body>
 </html>
