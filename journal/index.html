@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Журнал «Компас» — TimLabs</title>
+<meta name="description" content="Журнал «Компас» — навигатор по этапам жизни: честные ответы на важные вопросы о развитии, теле, эмоциях, осознанности, родительстве и практиках мастеров TimLabs." />
+<link rel="canonical" href="https://timlabs.online/journal/" />
+<link rel="icon" type="image/jpeg" href="/logo.jpg">
+<meta name="theme-color" content="#05070e">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Журнал «Компас» — TimLabs">
+<meta property="og:description" content="Навигатор по этапам жизни: честные ответы на важные вопросы и проверенные мастера TimLabs." />
+<meta property="og:url" content="https://timlabs.online/journal/" />
+<meta property="og:image" content="https://timlabs.online/avatar.jpg">
+<meta property="og:locale" content="ru_RU">
+<style>
+  :root{
+    --bg:#05070e; --bg-2:#0a0f1c;
+    --panel:rgba(255,255,255,.035); --panel-2:rgba(14,20,36,.55);
+    --stroke:rgba(0,180,255,.18); --stroke-hi:rgba(0,180,255,.55);
+    --cyan:#00b4ff; --magenta:#d100ff;
+    --text:#e7ecf7; --muted:#8b93a9; --dim:#5c6478;
+    --radius:16px;
+    --font-body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --font-disp:ui-sans-serif,"SF Pro Display",system-ui,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);
+    font-family:var(--font-body);line-height:1.55;-webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:radial-gradient(60% 55% at 18% 6%,rgba(0,180,255,.14),transparent 60%),
+      radial-gradient(55% 55% at 85% 94%,rgba(209,0,255,.14),transparent 60%),
+      linear-gradient(180deg,var(--bg),var(--bg-2));
+    background-attachment:fixed}
+  a{color:inherit}
+  main{position:relative;z-index:2;max-width:900px;margin:0 auto;
+    padding:clamp(30px,6vw,60px) 20px 70px;display:flex;flex-direction:column;align-items:center}
+  .crumb{font-size:.78rem;color:var(--dim);align-self:flex-start;padding:0 0 14px}
+  .crumb a{color:var(--muted);text-decoration:none}
+  .crumb a:hover{color:var(--cyan)}
+
+  header.hero{margin-bottom:clamp(26px,4vw,40px);display:flex;flex-direction:column;align-items:center;text-align:center}
+  .eyebrow{display:inline-block;margin-bottom:12px;padding:5px 14px;border-radius:999px;
+    font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+    color:var(--cyan);border:1px solid var(--stroke);background:var(--panel)}
+  h1{font-family:var(--font-disp);font-weight:800;letter-spacing:.05em;
+    font-size:clamp(2rem,6vw,3rem);margin:0;line-height:1.05;color:#fff;text-wrap:balance}
+  h1 span{background:linear-gradient(270deg,var(--cyan),var(--magenta),var(--cyan));
+    background-size:200% auto;-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;animation:flow 5s ease infinite}
+  @keyframes flow{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+  .subtitle{color:var(--muted);margin:16px auto 0;max-width:56ch;font-size:clamp(.98rem,2.6vw,1.1rem);line-height:1.5;text-wrap:balance}
+
+  nav.tabs{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin:0 0 26px}
+  .tab{cursor:pointer;color:var(--text);padding:10px 18px;border-radius:999px;
+    font-size:.82rem;font-weight:700;letter-spacing:.04em;font-family:var(--font-body);
+    background:var(--panel);border:1px solid var(--stroke);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    transition:transform .2s,border-color .2s,background .2s,color .2s}
+  .tab:hover{transform:translateY(-2px);border-color:var(--stroke-hi)}
+  .tab:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+  .tab.active{background:rgba(0,180,255,.12);border-color:var(--stroke-hi);color:#fff;
+    box-shadow:0 0 20px rgba(0,180,255,.22)}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;width:100%}
+  .card{text-align:left;display:flex;flex-direction:column;gap:10px;padding:20px 18px;
+    border-radius:var(--radius);background:var(--panel-2);border:1px solid rgba(255,255,255,.08);
+    position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+  .card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;
+    background:linear-gradient(180deg,var(--cyan),var(--magenta));opacity:.7}
+  .card:hover{border-color:var(--stroke-hi);transform:translateY(-4px);
+    box-shadow:0 8px 26px rgba(0,180,255,.18)}
+  .card-link{text-decoration:none}
+  .card-title{font-family:var(--font-disp);font-weight:700;font-size:1.02rem;color:#fff;
+    margin:0;line-height:1.35}
+  .card-link:hover .card-title{color:var(--cyan)}
+  .card-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;
+    font-size:.74rem;margin-top:auto}
+  .card-rubric{color:var(--cyan);font-weight:700;letter-spacing:.03em}
+  .card-date{color:var(--dim)}
+  .empty-hint{grid-column:1/-1;text-align:center;color:var(--muted);font-size:.95rem;
+    padding:34px 20px;background:var(--panel-2);border:1px dashed rgba(255,255,255,.1);
+    border-radius:var(--radius)}
+
+  footer{margin-top:48px;font-size:.72rem;color:var(--dim);max-width:60ch;line-height:1.6;text-align:center}
+  footer a{color:var(--muted)}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <nav class="crumb"><a href="/">TimLabs</a> → <span>Журнал</span></nav>
+
+  <header class="hero">
+    <span class="eyebrow">Навигатор по этапам жизни</span>
+    <h1>Журнал <span>«Компас»</span></h1>
+    <p class="subtitle">Ясные и честные ответы на важные вопросы — о развитии, теле, эмоциях,
+    осознанности, родительстве и проверенных практиках мастеров TimLabs.</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Рубрики журнала">
+    <button class="tab class="active"" data-rubric="Все" role="tab" aria-selected="true">Все</button>
+<button class="tab" data-rubric="Развитие" role="tab" aria-selected="false">Развитие</button>
+<button class="tab" data-rubric="Тело и здоровье" role="tab" aria-selected="false">Тело и здоровье</button>
+<button class="tab" data-rubric="Эмоции и психология" role="tab" aria-selected="false">Эмоции и психология</button>
+<button class="tab" data-rubric="Осознанность и ретриты" role="tab" aria-selected="false">Осознанность и ретриты</button>
+<button class="tab" data-rubric="Родителям" role="tab" aria-selected="false">Родителям</button>
+<button class="tab" data-rubric="Частые вопросы" role="tab" aria-selected="false">Частые вопросы</button>
+<button class="tab" data-rubric="Рекомендации от мастера" role="tab" aria-selected="false">Рекомендации от мастера</button>
+  </nav>
+
+  <div class="cards">
+    <p class="empty-hint">Пока пусто — первые статьи журнала появятся здесь совсем скоро.</p>
+    <p class="empty-hint" id="empty" style="display:none">В этой рубрике материалы скоро появятся.</p>
+  </div>
+
+  <footer>
+    <p><a href="/">← Вернуться на главную TimLabs</a></p>
+    <p class="cop">© 2026 TimLabs · журнал «Компас»</p>
+  </footer>
+</main>
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+  var empty = document.getElementById('empty');
+  function filter(rubric){
+    var visible = 0;
+    cards.forEach(function(c){
+      var show = (rubric === 'Все' || c.getAttribute('data-rubric') === rubric);
+      c.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    if(empty) empty.style.display = visible ? 'none' : '';
+    tabs.forEach(function(t){
+      var on = t.getAttribute('data-rubric') === rubric;
+      t.classList.toggle('active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ filter(t.getAttribute('data-rubric')); });
+  });
+  filter('Все');
+})();
+</script>
+</body>
+</html>
