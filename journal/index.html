@@ -74,6 +74,7 @@
   .card:hover{border-color:var(--stroke-hi);transform:translateY(-4px);
     box-shadow:0 8px 26px rgba(0,180,255,.18)}
   .card-link{text-decoration:none}
+  .card-link::after{content:"";position:absolute;inset:0;z-index:1}
   .card-title{font-family:var(--font-disp);font-weight:700;font-size:1.02rem;color:#fff;
     margin:0;line-height:1.35}
   .card-link:hover .card-title{color:var(--cyan)}
