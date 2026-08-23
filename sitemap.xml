@@ -228,4 +228,10 @@
     <loc>https://timlabs.online/journal/alanskie-vorota/</loc>
     <lastmod>2026-08-23</lastmod>
   </url>
+  <url>
+    <loc>https://timlabs.online/transformacionnyj-retrit/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
