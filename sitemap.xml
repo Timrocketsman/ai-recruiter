@@ -214,12 +214,6 @@
     <loc>https://timlabs.online/journal/kak-ponyat-svoi-emotsii-i-chuvstva/</loc>
     <lastmod>2026-08-23</lastmod>
   </url>
-<url>
-    <loc>https://timlabs.online/transformacionnyj-retrit/</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
   <url>
     <loc>https://timlabs.online/journal/kak-otdohnut-posle-raboty/</loc>
     <lastmod>2026-08-24</lastmod>
@@ -355,11 +349,5 @@
   <url>
     <loc>https://timlabs.online/journal/samootsenka-kak-faktor-uspeshnosti-profe/</loc>
     <lastmod>2026-08-29</lastmod>
-  </url>
-  <url>
-    <loc>https://timlabs.online/nejromeditacii/</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>
