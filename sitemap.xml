@@ -356,4 +356,10 @@
     <loc>https://timlabs.online/journal/samootsenka-kak-faktor-uspeshnosti-profe/</loc>
     <lastmod>2026-08-29</lastmod>
   </url>
+  <url>
+    <loc>https://timlabs.online/nejromeditacii/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
