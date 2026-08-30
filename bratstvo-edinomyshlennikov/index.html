@@ -374,7 +374,10 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
     if(t&&t.id==='tl-consent-settings') setTimeout(syncVisible,60);
   });
   var seen=null; try{seen=sessionStorage.getItem(KEY);}catch(e){}
-  if(!seen && consentAnswered()){
+  // На узких экранах автоподсказку не показываем: она перекрывает контент
+  // (поймано на живом тесте — закрывала первую карточку статьи в журнале).
+  var wideEnough = window.matchMedia('(min-width: 768px)').matches;
+  if(!seen && consentAnswered() && wideEnough){
     setTimeout(function(){
       bubble.classList.add('show');
       try{sessionStorage.setItem(KEY,'1');}catch(e){}
