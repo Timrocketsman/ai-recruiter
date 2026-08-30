@@ -167,6 +167,10 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 
 <!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
 <style>
+#tl-consent-veil{position:fixed;inset:0;z-index:9998;display:none;
+  background:rgba(3,6,14,.72);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+#tl-consent-veil.show{display:block}
+body.tl-consent-lock{overflow:hidden}
 #tl-consent{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;
   max-width:720px;margin:0 auto;display:none;
   background:rgba(10,15,28,.97);border:1px solid rgba(0,180,255,.35);
@@ -187,7 +191,8 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 #tl-consent .tl-ok:hover{filter:brightness(1.08)}
 @media (max-width:560px){#tl-consent .tl-btns{width:100%}#tl-consent button{flex:1 1 auto}}
 </style>
-<div id="tl-consent" role="region" aria-label="Согласие на обработку данных">
+<div id="tl-consent-veil"></div>
+<div id="tl-consent" role="dialog" aria-modal="true" aria-label="Согласие на обработку данных">
   <p>Мы используем cookie и веб-аналитику, чтобы понимать, как люди пользуются сайтом.
   Без них сайт тоже работает. Подробности — в
   <a href="/privacy/">политике обработки данных</a>.</p>
@@ -205,18 +210,23 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
   function show(){box.classList.add('show');}
   function hide(){box.classList.remove('show');}
-  if(!get()) show();
+  var veil=document.getElementById('tl-consent-veil');
+  function lock(on){
+    if(veil) veil.classList.toggle('show', on);
+    document.body.classList.toggle('tl-consent-lock', on);
+  }
+  if(!get()){ show(); lock(true); }
   var ok=document.getElementById('tl-consent-ok');
   var no=document.getElementById('tl-consent-no');
   if(ok) ok.addEventListener('click',function(){
-    set('accepted'); hide();
+    set('accepted'); hide(); lock(false);
     if(typeof window.tlLoadMetrika==='function') window.tlLoadMetrika();
   });
-  if(no) no.addEventListener('click',function(){ set('declined'); hide(); });
+  if(no) no.addEventListener('click',function(){ set('declined'); hide(); lock(false); });
   // «Настройки данных» в футере — можно передумать в любой момент
   document.addEventListener('click',function(e){
     var t=e.target;
-    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); }
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); lock(true); }
   });
 })();
 </script>
