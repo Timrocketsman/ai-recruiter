@@ -215,8 +215,51 @@ ym(111725024,"init",{ssr:true,webvisor:true,clickmap:true,accurateTrackBounce:tr
     <p>Экскурсии проводит мастер-партнёр; TimLabs выступает навигатором и рекомендателем.</p>
     <a class="back" href="/">← Вернуться на TimLabs</a>
     <p>© 2026 TimLabs · timlabs.online</p>
+    <p><a href="/privacy/">Политика обработки данных</a></p>
   </footer>
 
 </div>
+
+<!-- tl-consent: уведомление об обработке данных (152-ФЗ / cookie) -->
+<style>
+#tl-consent{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;
+  max-width:720px;margin:0 auto;display:none;
+  background:rgba(10,15,28,.97);border:1px solid rgba(0,180,255,.35);
+  border-radius:14px;padding:14px 16px;
+  box-shadow:0 10px 40px rgba(0,0,0,.5);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:#e7ecf7;font-size:.86rem;line-height:1.55;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+#tl-consent.show{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+#tl-consent p{margin:0;flex:1 1 340px}
+#tl-consent a{color:#00b4ff}
+#tl-consent button{flex:0 0 auto;cursor:pointer;border:0;border-radius:10px;
+  padding:10px 18px;font-weight:700;font-size:.85rem;font-family:inherit;
+  background:linear-gradient(120deg,#00b4ff,#38c7ff);color:#00131f}
+#tl-consent button:hover{filter:brightness(1.08)}
+@media (max-width:520px){#tl-consent button{width:100%}}
+</style>
+<div id="tl-consent" role="region" aria-label="Уведомление об обработке данных">
+  <p>Мы используем cookie и веб-аналитику, а данные, которые вы сами сообщаете в
+  переписке, — только чтобы подобрать вам мастера и ответить.
+  Продолжая пользоваться сайтом, вы соглашаетесь с
+  <a href="/privacy/">политикой обработки данных</a>.</p>
+  <button type="button" id="tl-consent-ok">Понятно</button>
+</div>
+<script>
+(function(){
+  var KEY='tl-consent-v1';
+  var box=document.getElementById('tl-consent');
+  var btn=document.getElementById('tl-consent-ok');
+  if(!box||!btn) return;
+  var seen=null;
+  try{seen=localStorage.getItem(KEY);}catch(e){seen=null;}
+  if(!seen){box.classList.add('show');}
+  btn.addEventListener('click',function(){
+    try{localStorage.setItem(KEY,'1');}catch(e){}
+    box.classList.remove('show');
+  });
+})();
+</script>
 </body>
 </html>
