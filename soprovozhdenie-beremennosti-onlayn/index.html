@@ -278,5 +278,104 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
   });
 })();
 </script>
+
+<!-- tl-clip: помощник-скрепка -> Telegram-бот -->
+<style>
+#tl-clip{position:fixed;right:18px;bottom:18px;z-index:9998;
+  display:flex;align-items:flex-end;gap:10px;flex-direction:row-reverse;
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+#tl-clip .tl-clip-btn{width:64px;height:76px;border:0;padding:0;background:transparent;
+  cursor:pointer;filter:drop-shadow(0 6px 18px rgba(0,180,255,.35));
+  animation:tl-float 3.6s ease-in-out infinite;transition:transform .25s}
+#tl-clip .tl-clip-btn:hover{transform:translateY(-4px) scale(1.06)}
+#tl-clip .tl-clip-btn:focus-visible{outline:2px solid #00b4ff;outline-offset:4px;border-radius:12px}
+@keyframes tl-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+#tl-clip .tl-eye{transform-origin:center;animation:tl-blink 5.2s infinite}
+@keyframes tl-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+#tl-clip .tl-bubble{max-width:220px;background:rgba(10,15,28,.97);
+  border:1px solid rgba(0,180,255,.35);border-radius:14px;padding:11px 13px;
+  color:#e7ecf7;font-size:.83rem;line-height:1.5;position:relative;
+  box-shadow:0 8px 28px rgba(0,0,0,.45);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  opacity:0;transform:translateY(6px);pointer-events:none;transition:opacity .28s,transform .28s}
+#tl-clip .tl-bubble.show{opacity:1;transform:translateY(0);pointer-events:auto}
+#tl-clip .tl-bubble b{color:#fff}
+#tl-clip .tl-bubble-close{position:absolute;top:4px;right:7px;background:none;border:0;
+  color:#5c6478;font-size:15px;line-height:1;cursor:pointer;padding:2px}
+#tl-clip .tl-bubble-close:hover{color:#e7ecf7}
+@media (max-width:520px){#tl-clip{right:12px;bottom:12px}
+  #tl-clip .tl-bubble{max-width:170px;font-size:.78rem}
+  #tl-clip .tl-clip-btn{width:54px;height:64px}}
+@media (prefers-reduced-motion:reduce){
+  #tl-clip .tl-clip-btn{animation:none}#tl-clip .tl-eye{animation:none}}
+</style>
+<div id="tl-clip">
+  <button class="tl-clip-btn" id="tl-clip-btn" type="button"
+          aria-label="Открыть помощника в Telegram" title="Помогу подобрать мастера">
+    <svg viewBox="0 0 64 76" width="100%" height="100%" aria-hidden="true">
+      <defs>
+        <linearGradient id="tlClipGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#5ad8ff"/>
+          <stop offset="1" stop-color="#c26bff"/>
+        </linearGradient>
+      </defs>
+      <path d="M20 60 V22 a12 12 0 0 1 24 0 v34 a7 7 0 0 1 -14 0 V26"
+            fill="none" stroke="url(#tlClipGrad)" stroke-width="7"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="tl-eye" cx="27" cy="27" r="3.4" fill="#0a0f1c"/>
+      <circle class="tl-eye" cx="38" cy="27" r="3.4" fill="#0a0f1c"/>
+      <circle cx="28.2" cy="25.9" r="1.1" fill="#fff"/>
+      <circle cx="39.2" cy="25.9" r="1.1" fill="#fff"/>
+      <path d="M28 35 q4.5 4 9 0" fill="none" stroke="#0a0f1c"
+            stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <div class="tl-bubble" id="tl-clip-bubble" role="status">
+    <button class="tl-bubble-close" id="tl-clip-bubble-close" type="button"
+            aria-label="Закрыть подсказку">×</button>
+    <b>Не знаете, к какому мастеру пойти?</b><br>
+    Задам пару вопросов и подберём — нажмите на меня.
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='tl-clip-hint-v1';
+  var btn=document.getElementById('tl-clip-btn');
+  var bubble=document.getElementById('tl-clip-bubble');
+  var close=document.getElementById('tl-clip-bubble-close');
+  if(!btn||!bubble) return;
+  // Пока человек не ответил на плашку согласия — скрепку не показываем:
+  // иначе два всплывающих блока перекрывают друг друга внизу экрана.
+  var wrap=document.getElementById('tl-clip');
+  function consentAnswered(){
+    try{return !!localStorage.getItem('tl-consent-v2');}catch(e){return true;}
+  }
+  function syncVisible(){
+    if(!wrap) return;
+    wrap.style.display = consentAnswered() ? 'flex' : 'none';
+  }
+  syncVisible();
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t&&(t.id==='tl-consent-ok'||t.id==='tl-consent-no')) setTimeout(syncVisible,60);
+    if(t&&t.id==='tl-consent-settings') setTimeout(syncVisible,60);
+  });
+  var seen=null; try{seen=sessionStorage.getItem(KEY);}catch(e){}
+  if(!seen && consentAnswered()){
+    setTimeout(function(){
+      bubble.classList.add('show');
+      try{sessionStorage.setItem(KEY,'1');}catch(e){}
+      setTimeout(function(){bubble.classList.remove('show');},9000);
+    },2500);
+  }
+  btn.addEventListener('mouseenter',function(){bubble.classList.add('show');});
+  btn.addEventListener('click',function(){
+    window.open('https://t.me/TimLabs_bot','_blank','noopener');
+  });
+  if(close) close.addEventListener('click',function(e){
+    e.stopPropagation(); bubble.classList.remove('show');
+  });
+})();
+</script>
 </body>
 </html>
