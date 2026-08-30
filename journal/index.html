@@ -93,6 +93,7 @@
   .search-input{width:100%;padding:14px 46px 14px 20px;border-radius:999px;
     background:var(--panel-2);border:1px solid var(--stroke);color:var(--text);
     font-family:var(--font-body);font-size:.96rem;outline:none;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
     -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
     transition:border-color .2s,box-shadow .2s}
   .search-input::placeholder{color:var(--dim)}
@@ -121,7 +122,7 @@
 
   <div class="search-wrap">
     <input type="text" id="journalSearch" class="search-input"
-           placeholder="Найти статью — например, «стресс»"
+           placeholder="Найти статью"
            autocomplete="off" aria-label="Поиск по журналу">
     <span class="search-icon" id="searchIcon">🔍</span>
     <button type="button" class="search-clear" id="searchClear" aria-label="Очистить поиск">✕</button>
