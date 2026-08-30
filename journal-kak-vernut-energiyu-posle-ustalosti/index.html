@@ -99,9 +99,18 @@
   .back{display:inline-block;margin-top:8px}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=111725024","ym");ym(111725024,"init",{ssr:true,webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/111725024" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
+<!-- Yandex.Metrika counter (загружается только при согласии) -->
+<script type="text/javascript">
+window.tlLoadMetrika=function(){
+  if(window.__tlMetrikaLoaded) return; window.__tlMetrikaLoaded=true;
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=111725024","ym");
+  ym(111725024,"init",{ssr:true,webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});
+};
+try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika();}}catch(e){}
+</script>
 <!-- /Yandex.Metrika counter -->
 </head>
 <body>
@@ -149,12 +158,12 @@
     <p>Обновлено: 2026-08-20. Материал журнала TimLabs — навигатора по проверенным велнес-мастерам и практикам.</p>
     <a class="back" href="/">← Вернуться на TimLabs</a>
     <p>© 2026 TimLabs · timlabs.online</p>
-    <p><a href="/privacy/">Политика обработки данных</a></p>
+    <p><a href="/privacy/">Политика обработки данных</a> · <a href="#" id="tl-consent-settings">Настройки данных</a></p>
   </footer>
 
 </div>
 
-<!-- tl-consent: уведомление об обработке данных (152-ФЗ / cookie) -->
+<!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
 <style>
 #tl-consent{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;
   max-width:720px;margin:0 auto;display:none;
@@ -164,34 +173,48 @@
   font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   color:#e7ecf7;font-size:.86rem;line-height:1.55;
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-#tl-consent.show{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-#tl-consent p{margin:0;flex:1 1 340px}
+#tl-consent.show{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#tl-consent p{margin:0;flex:1 1 320px}
 #tl-consent a{color:#00b4ff}
-#tl-consent button{flex:0 0 auto;cursor:pointer;border:0;border-radius:10px;
-  padding:10px 18px;font-weight:700;font-size:.85rem;font-family:inherit;
-  background:linear-gradient(120deg,#00b4ff,#38c7ff);color:#00131f}
-#tl-consent button:hover{filter:brightness(1.08)}
-@media (max-width:520px){#tl-consent button{width:100%}}
+#tl-consent .tl-btns{display:flex;gap:8px;flex-wrap:wrap;flex:0 0 auto}
+#tl-consent button{cursor:pointer;border-radius:10px;padding:10px 16px;
+  font-weight:700;font-size:.83rem;font-family:inherit;border:1px solid transparent}
+#tl-consent .tl-ok{background:linear-gradient(120deg,#00b4ff,#38c7ff);color:#00131f;border:0}
+#tl-consent .tl-no{background:transparent;color:#9aa3b8;border-color:rgba(255,255,255,.18)}
+#tl-consent .tl-no:hover{color:#e7ecf7;border-color:rgba(255,255,255,.35)}
+#tl-consent .tl-ok:hover{filter:brightness(1.08)}
+@media (max-width:560px){#tl-consent .tl-btns{width:100%}#tl-consent button{flex:1 1 auto}}
 </style>
-<div id="tl-consent" role="region" aria-label="Уведомление об обработке данных">
-  <p>Мы используем cookie и веб-аналитику, а данные, которые вы сами сообщаете в
-  переписке, — только чтобы подобрать вам мастера и ответить.
-  Продолжая пользоваться сайтом, вы соглашаетесь с
-  <a href="/privacy/">политикой обработки данных</a>.</p>
-  <button type="button" id="tl-consent-ok">Понятно</button>
+<div id="tl-consent" role="region" aria-label="Согласие на обработку данных">
+  <p>Мы используем cookie и веб-аналитику, чтобы понимать, как люди пользуются сайтом.
+  Без них сайт тоже работает. Подробности — в
+  <a href="/privacy/">политике обработки данных</a>.</p>
+  <div class="tl-btns">
+    <button type="button" class="tl-ok" id="tl-consent-ok">Принять</button>
+    <button type="button" class="tl-no" id="tl-consent-no">Только необходимые</button>
+  </div>
 </div>
 <script>
 (function(){
-  var KEY='tl-consent-v1';
+  var KEY='tl-consent-v2';
   var box=document.getElementById('tl-consent');
-  var btn=document.getElementById('tl-consent-ok');
-  if(!box||!btn) return;
-  var seen=null;
-  try{seen=localStorage.getItem(KEY);}catch(e){seen=null;}
-  if(!seen){box.classList.add('show');}
-  btn.addEventListener('click',function(){
-    try{localStorage.setItem(KEY,'1');}catch(e){}
-    box.classList.remove('show');
+  if(!box) return;
+  function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  function show(){box.classList.add('show');}
+  function hide(){box.classList.remove('show');}
+  if(!get()) show();
+  var ok=document.getElementById('tl-consent-ok');
+  var no=document.getElementById('tl-consent-no');
+  if(ok) ok.addEventListener('click',function(){
+    set('accepted'); hide();
+    if(typeof window.tlLoadMetrika==='function') window.tlLoadMetrika();
+  });
+  if(no) no.addEventListener('click',function(){ set('declined'); hide(); });
+  // «Настройки данных» в футере — можно передумать в любой момент
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); }
   });
 })();
 </script>
