@@ -242,31 +242,76 @@
   var query = '';
 
   function norm(s){ return (s || '').toLowerCase(); }
+  var WORD_RE = /[a-zа-яё0-9]+/gi;
+  function words(s){ return norm(s).match(WORD_RE) || []; }
 
-  function highlight(el, q){
+  // Упрощённый стеммер для русского — отсекает частые окончания склонений/
+  // спряжений (не полноценный Snowball, но покрывает подавляющее большинство
+  // падежных форм в заголовках статей: доула/доулы/доуле/доулу/доулой и т.п.),
+  // чтобы поиск находил статьи независимо от словоформы запроса.
+  var RU_ENDINGS = ['иями','иях','ями','ами','ыми','ими','его','ому','ему','ого',
+    'ами','ями','иях','иями','ов','ев','ей','ах','ях','ам','ям','ою','ею',
+    'ой','ей','ом','ем','ии','ие','ых','их','ый','ий','ая','яя','ое','ее',
+    'у','ю','е','ы','и','а','я','о','ь'];
+  RU_ENDINGS.sort(function(a,b){ return b.length - a.length; });
+  function stemRu(w){
+    if (w.length <= 3) return w;
+    for (var i = 0; i < RU_ENDINGS.length; i++){
+      var e = RU_ENDINGS[i];
+      if (w.length - e.length >= 3 && w.slice(-e.length) === e) return w.slice(0, -e.length);
+    }
+    return w;
+  }
+  function wordMatch(qw, tw){
+    if (!qw) return false;
+    if (tw.indexOf(qw) !== -1) return true; // прямое совпадение/подстрока — быстрый путь
+    var qs = stemRu(qw);
+    if (qs.length < 3) return false;
+    // стем должен быть НАЧАЛОМ слова (не где угодно) — иначе короткие стемы вроде
+    // «род» ложно совпадают с «природе», «народ» и т.п. (проверено вживую 30 авг)
+    return tw.indexOf(qs) === 0 || stemRu(tw) === qs;
+  }
+
+  var titleWordsList = titles.map(words);
+
+  function highlight(el, qWords){
     var raw = el.getAttribute('data-raw') || el.textContent;
     if (!el.hasAttribute('data-raw')) el.setAttribute('data-raw', raw);
-    if (!q){ el.textContent = raw; return; }
-    var i = norm(raw).indexOf(norm(q));
-    if (i === -1){ el.textContent = raw; return; }
+    if (!qWords.length){ el.textContent = raw; return; }
     el.textContent = '';
-    el.appendChild(document.createTextNode(raw.slice(0, i)));
-    var m = document.createElement('mark');
-    m.textContent = raw.slice(i, i + q.length);
-    el.appendChild(m);
-    el.appendChild(document.createTextNode(raw.slice(i + q.length)));
+    WORD_RE.lastIndex = 0;
+    var lastIndex = 0, m;
+    while ((m = WORD_RE.exec(raw))) {
+      var w = m[0];
+      if (m.index > lastIndex) el.appendChild(document.createTextNode(raw.slice(lastIndex, m.index)));
+      var wl = norm(w);
+      var isMatch = qWords.some(function(qw){ return wordMatch(qw, wl); });
+      if (isMatch) {
+        var mark = document.createElement('mark');
+        mark.textContent = w;
+        el.appendChild(mark);
+      } else {
+        el.appendChild(document.createTextNode(w));
+      }
+      lastIndex = m.index + w.length;
+    }
+    if (lastIndex < raw.length) el.appendChild(document.createTextNode(raw.slice(lastIndex)));
   }
 
   function apply(){
     var visible = 0;
     var q = query.trim();
+    var qWords = words(q);
     cards.forEach(function(c, idx){
       var rubricOk = (rubric === 'Все' || c.getAttribute('data-rubric') === rubric);
-      var textOk = !q || norm(titles[idx]).indexOf(norm(q)) !== -1;
+      var tWords = titleWordsList[idx];
+      var textOk = !qWords.length || qWords.every(function(qw){
+        return tWords.some(function(tw){ return wordMatch(qw, tw); });
+      });
       var show = rubricOk && textOk;
       c.style.display = show ? '' : 'none';
       var h2 = c.querySelector('.card-title');
-      if (h2) highlight(h2, show ? q : '');
+      if (h2) highlight(h2, show ? qWords : []);
       if (show) visible++;
     });
     if (empty) empty.style.display = visible ? 'none' : '';
