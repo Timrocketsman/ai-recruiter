@@ -89,6 +89,23 @@
   footer{margin-top:48px;font-size:.72rem;color:var(--dim);max-width:60ch;line-height:1.6;text-align:center}
   footer a{color:var(--muted)}
   @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+  .search-wrap{width:100%;max-width:480px;margin:0 auto 18px;position:relative}
+  .search-input{width:100%;padding:14px 46px 14px 20px;border-radius:999px;
+    background:var(--panel-2);border:1px solid var(--stroke);color:var(--text);
+    font-family:var(--font-body);font-size:.96rem;outline:none;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+    transition:border-color .2s,box-shadow .2s}
+  .search-input::placeholder{color:var(--dim)}
+  .search-input:focus{border-color:var(--stroke-hi);box-shadow:0 0 0 3px rgba(0,180,255,.14)}
+  .search-icon{position:absolute;right:18px;top:50%;transform:translateY(-50%);
+    color:var(--dim);pointer-events:none;font-size:1rem;line-height:1}
+  .search-clear{position:absolute;right:16px;top:50%;transform:translateY(-50%);
+    color:var(--dim);background:none;border:0;font-size:1.1rem;line-height:1;
+    cursor:pointer;padding:4px;display:none}
+  .search-clear:hover{color:var(--cyan)}
+  .search-count{text-align:center;color:var(--dim);font-size:.78rem;margin:-6px 0 22px;min-height:1.2em}
 </style>
 </head>
 <body>
@@ -101,6 +118,15 @@
     <p class="subtitle">Ясные и честные ответы на важные вопросы — о развитии, теле, эмоциях,
     осознанности, родительстве и проверенных практиках мастеров TimLabs.</p>
   </header>
+
+  <div class="search-wrap">
+    <input type="text" id="journalSearch" class="search-input"
+           placeholder="Найти статью"
+           autocomplete="off" aria-label="Поиск по журналу">
+    <span class="search-icon" id="searchIcon">🔍</span>
+    <button type="button" class="search-clear" id="searchClear" aria-label="Очистить поиск">✕</button>
+  </div>
+  <p class="search-count" id="searchCount" role="status" aria-live="polite"></p>
 
   <nav class="tabs" role="tablist" aria-label="Рубрики журнала">
     <button class="tab active" data-rubric="Все" role="tab" aria-selected="true">Все</button>
@@ -212,24 +238,115 @@
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
   var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
   var empty = document.getElementById('empty');
-  function filter(rubric){
+  var input = document.getElementById('journalSearch');
+  var clearBtn = document.getElementById('searchClear');
+  var countEl = document.getElementById('searchCount');
+  var titles = cards.map(function(c){
+    var h2 = c.querySelector('.card-title');
+    return h2 ? h2.textContent : '';
+  });
+  var rubric = 'Все';
+  var query = '';
+
+  function norm(s){ return (s || '').toLowerCase(); }
+  var WORD_RE = /[a-zа-яё0-9]+/gi;
+  function words(s){ return norm(s).match(WORD_RE) || []; }
+
+  // Упрощённый стеммер для русского — отсекает частые окончания склонений/
+  // спряжений (не полноценный Snowball, но покрывает подавляющее большинство
+  // падежных форм в заголовках статей: доула/доулы/доуле/доулу/доулой и т.п.),
+  // чтобы поиск находил статьи независимо от словоформы запроса.
+  var RU_ENDINGS = ['иями','иях','ями','ами','ыми','ими','его','ому','ему','ого',
+    'ами','ями','иях','иями','ов','ев','ей','ах','ях','ам','ям','ою','ею',
+    'ой','ей','ом','ем','ии','ие','ых','их','ый','ий','ая','яя','ое','ее',
+    'у','ю','е','ы','и','а','я','о','ь'];
+  RU_ENDINGS.sort(function(a,b){ return b.length - a.length; });
+  function stemRu(w){
+    if (w.length <= 3) return w;
+    for (var i = 0; i < RU_ENDINGS.length; i++){
+      var e = RU_ENDINGS[i];
+      if (w.length - e.length >= 3 && w.slice(-e.length) === e) return w.slice(0, -e.length);
+    }
+    return w;
+  }
+  function wordMatch(qw, tw){
+    if (!qw) return false;
+    if (tw.indexOf(qw) !== -1) return true; // прямое совпадение/подстрока — быстрый путь
+    var qs = stemRu(qw);
+    if (qs.length < 3) return false;
+    // стем должен быть НАЧАЛОМ слова (не где угодно) — иначе короткие стемы вроде
+    // «род» ложно совпадают с «природе», «народ» и т.п. (проверено вживую 30 авг)
+    return tw.indexOf(qs) === 0 || stemRu(tw) === qs;
+  }
+
+  var titleWordsList = titles.map(words);
+
+  function highlight(el, qWords){
+    var raw = el.getAttribute('data-raw') || el.textContent;
+    if (!el.hasAttribute('data-raw')) el.setAttribute('data-raw', raw);
+    if (!qWords.length){ el.textContent = raw; return; }
+    el.textContent = '';
+    WORD_RE.lastIndex = 0;
+    var lastIndex = 0, m;
+    while ((m = WORD_RE.exec(raw))) {
+      var w = m[0];
+      if (m.index > lastIndex) el.appendChild(document.createTextNode(raw.slice(lastIndex, m.index)));
+      var wl = norm(w);
+      var isMatch = qWords.some(function(qw){ return wordMatch(qw, wl); });
+      if (isMatch) {
+        var mark = document.createElement('mark');
+        mark.textContent = w;
+        el.appendChild(mark);
+      } else {
+        el.appendChild(document.createTextNode(w));
+      }
+      lastIndex = m.index + w.length;
+    }
+    if (lastIndex < raw.length) el.appendChild(document.createTextNode(raw.slice(lastIndex)));
+  }
+
+  function apply(){
     var visible = 0;
-    cards.forEach(function(c){
-      var show = (rubric === 'Все' || c.getAttribute('data-rubric') === rubric);
+    var q = query.trim();
+    var qWords = words(q);
+    cards.forEach(function(c, idx){
+      var rubricOk = (rubric === 'Все' || c.getAttribute('data-rubric') === rubric);
+      var tWords = titleWordsList[idx];
+      var textOk = !qWords.length || qWords.every(function(qw){
+        return tWords.some(function(tw){ return wordMatch(qw, tw); });
+      });
+      var show = rubricOk && textOk;
       c.style.display = show ? '' : 'none';
-      if(show) visible++;
+      var h2 = c.querySelector('.card-title');
+      if (h2) highlight(h2, show ? qWords : []);
+      if (show) visible++;
     });
-    if(empty) empty.style.display = visible ? 'none' : '';
+    if (empty) empty.style.display = visible ? 'none' : '';
     tabs.forEach(function(t){
       var on = t.getAttribute('data-rubric') === rubric;
       t.classList.toggle('active', on);
       t.setAttribute('aria-selected', on ? 'true' : 'false');
     });
+    clearBtn.style.display = q ? 'block' : 'none';
+    document.getElementById('searchIcon').style.display = q ? 'none' : 'block';
+    if (q) {
+      countEl.textContent = visible
+        ? ('Найдено: ' + visible + (visible === 1 ? ' статья' : (visible < 5 ? ' статьи' : ' статей')))
+        : 'Ничего не нашлось — попробуйте другое слово';
+    } else {
+      countEl.textContent = '';
+    }
   }
+
   tabs.forEach(function(t){
-    t.addEventListener('click', function(){ filter(t.getAttribute('data-rubric')); });
+    t.addEventListener('click', function(){ rubric = t.getAttribute('data-rubric'); apply(); });
   });
-  filter('Все');
+  input.addEventListener('input', function(){ query = input.value; apply(); });
+  clearBtn.addEventListener('click', function(){ query = ''; input.value = ''; input.focus(); apply(); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === '/' && document.activeElement !== input) { e.preventDefault(); input.focus(); }
+  });
+  apply();
 })();
 </script>
 </body>
