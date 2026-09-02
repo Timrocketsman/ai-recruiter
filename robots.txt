@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://timlabs.online/sitemap.xml
+
+# Лента журнала
+Sitemap: https://timlabs.online/rss.xml
