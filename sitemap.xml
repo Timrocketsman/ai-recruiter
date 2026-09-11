@@ -590,4 +590,6 @@
     <loc>https://timlabs.online/journal/voprosy-lichnostnogo-rosta/</loc>
     <lastmod>2026-09-11</lastmod>
   </url>
+  <url><loc>https://timlabs.online/consent/</loc><changefreq>yearly</changefreq></url>
+  <url><loc>https://timlabs.online/terms/</loc><changefreq>yearly</changefreq></url>
 </urlset>
