@@ -97,7 +97,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 <ul>
 <li>Сайт статический: он ничего не сохраняет о посетителях.</li>
 <li>Страницы сайта размещены на хостинге GitHub Pages (GitHub, Inc., США). При открытии страницы хостинг технически получает IP-адрес и сведения о браузере — так работает любой хостинг; эти данные остаются в журналах GitHub, мы их не получаем и не используем. Это трансграничная передача: если вы этого не хотите, не открывайте сайт и свяжитесь по телефону.</li>
-<li>Бот работает на сервере в Российской Федерации (г. Москва): запись, хранение и обработка персональных данных граждан России ведутся с использованием баз данных, находящихся на территории России (ч. 5 ст. 18 Федерального закона № 152-ФЗ). Сообщения обрабатываются в оперативной памяти; на диск записывается только незавершённая анкета — до её завершения, но не дольше суток.</li>
+<li>Бот работает на сервере в Российской Федерации (Московская область): запись, хранение и обработка персональных данных граждан России ведутся с использованием баз данных, находящихся на территории России (ч. 5 ст. 18 Федерального закона № 152-ФЗ). Сообщения обрабатываются в оперативной памяти; на диск записывается только незавершённая анкета — до её завершения, но не дольше суток.</li>
 <li>Итог анкеты (суть запроса и контакт) передаётся владельцу сайта в Telegram, а по вашей просьбе — мастеру, чтобы он мог с вами связаться.</li>
 <li>Telegram и WhatsApp — иностранные сервисы: при переписке через них сообщения проходят через их серверы за рубежом (трансграничная передача). Если вы этого не хотите, позвоните по телефону.</li>
 <li>Данные веб-аналитики обрабатывает ООО «ЯНДЕКС».</li>
@@ -178,13 +178,15 @@ body.tl-consent-lock{overflow:hidden}
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
   function show(){box.classList.add('show');}
-  function hide(){box.classList.remove('show');}
+  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
   function lock(on){
     if(veil) veil.classList.toggle('show', on);
     document.body.classList.toggle('tl-consent-lock', on);
   }
-  if(!get()){ show(); lock(true); }
+  // (15 сен) на политике/согласии/соглашении не затемняем: документ читается ДО согласия
+  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
+  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
   var ok=document.getElementById('tl-consent-ok');
   var no=document.getElementById('tl-consent-no');
   if(ok) ok.addEventListener('click',function(){
@@ -195,7 +197,7 @@ body.tl-consent-lock{overflow:hidden}
   // «Настройки данных» в футере — можно передумать в любой момент
   document.addEventListener('click',function(e){
     var t=e.target;
-    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); lock(true); }
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
   });
 })();
 </script>
