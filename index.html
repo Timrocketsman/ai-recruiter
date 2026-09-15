@@ -64,7 +64,7 @@
     --stroke-hi:rgba(0,180,255,.55);
     --cyan:#00b4ff; --magenta:#d100ff;
     --text:#e7ecf7; --muted:#8b93a9; --dim:#5c6478;
-    --tg:#2aabee; --ig:#e1306c; --wa:#25d366; --yt:#ff2d2d; --vk:#4c8bf5;
+    --tg:#2aabee; --ig:#8b93a9; --wa:#8b93a9; --yt:#ff2d2d; --vk:#4c8bf5;
     --radius:16px;
     --font-body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
     --font-disp:ui-sans-serif,"SF Pro Display",system-ui,"Segoe UI",sans-serif;
@@ -126,7 +126,7 @@
   .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,180,255,.4)}
   .btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
   .btn.ghost{background:var(--panel-2);color:#fff;border-color:rgba(255,255,255,.14);box-shadow:none}
-  .btn.ghost:hover{border-color:var(--wa);box-shadow:0 0 18px rgba(37,211,102,.3)}
+  .btn.ghost:hover{border-color:var(--wa);box-shadow:0 0 18px rgba(0,180,255,.3)}
   .btn .icon{width:19px;height:19px}
   .btn.ghost .icon{color:var(--wa)}
 
@@ -259,8 +259,6 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 <!-- ===== inline icon sprite ===== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <g id="i-tg"><path d="M22 3 11.2 13.6M22 3 15.1 21.5 11.2 13.6 2.6 9.7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></g>
-  <g id="i-ig"><rect x="3.3" y="3.3" width="17.4" height="17.4" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.9" r="1.1" fill="currentColor"/></g>
-  <g id="i-wa"><path d="M20.4 12a8.4 8.4 0 0 1-12.3 7.4L4 20.8l1.5-4.1A8.4 8.4 0 1 1 20.4 12z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 9.4c.2 3 2.6 5.4 5.6 5.6.7 0 1.3-.8.8-1.4l-1.1-.6-1 .7c-1-.5-1.8-1.3-2.3-2.3l.7-1-.6-1.1C10.2 8.1 9 8.7 9 9.4z" fill="currentColor"/></g>
   <g id="i-yt"><rect x="2.5" y="5.6" width="19" height="12.8" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.3 9.4 15.6 12l-5.3 2.6z" fill="currentColor"/></g>
   <g id="i-web"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3 12h18M12 3c3 3.4 3 14.6 0 18M12 3c-3 3.4-3 14.6 0 18" fill="none" stroke="currentColor" stroke-width="1.7"/></g>
   <g id="i-music"><path d="M9 18V6.2l10-2.1V15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.4" cy="18" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="16.4" cy="15" r="2.6" fill="none" stroke="currentColor" stroke-width="1.7"/></g>
@@ -278,7 +276,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
     <div class="hero-cta">
       <button class="btn" data-goto="p-care"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Найти своего мастера</button>
       <a class="btn ghost" href="/journal/"><svg class="icon" viewBox="0 0 24 24" style="color:var(--magenta)"><use href="#i-heart"/></svg>📖 Журнал «Компас»</a>
-      <a class="btn ghost" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-wa"/></svg>Написать мне</a>
+      <a class="btn ghost" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-phone"/></svg>Написать мне</a>
     </div>
   </section>
 
@@ -311,7 +309,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
         <button class="scard" data-stage="s6" style="--c:#aeb6cc"><span class="ic">🕊️</span><span class="st">Проводы</span><span class="sd">Достойно и по-человечески</span><span class="more">Подробнее →</span></button>
       </div>
       <div class="cta-row">
-        <a class="btn ghost" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
+        <a class="btn ghost" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-phone"/></svg>Написать в WhatsApp</a>
         <a class="btn ghost" href="tel:+79938917761" style="--wa:var(--cyan)"><svg class="icon" viewBox="0 0 24 24" style="color:var(--cyan)"><use href="#i-phone"/></svg>+7 993 891-77-61</a>
       </div>
     </section>
@@ -328,7 +326,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
         <div class="tree">
           <a class="leaf sm" style="--c:var(--cyan)" href="https://ramagor.ru" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Сайт</a>
           <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+4qrf2OSG0oFiOGJi" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
-          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/ramagor1331" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-ig"/></svg>Instagram<sup>*</sup></a>
+          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/ramagor1331" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Instagram<sup>*</sup></a>
         </div>
       </div>
       <div class="group">
@@ -337,7 +335,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
         <div class="tree">
           <a class="leaf sm" style="--c:var(--cyan)" href="https://marafdi.clients.site/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Сайт</a>
           <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+fmV9MMwurJpjNDQy" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
-          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/marafdy.telo" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-ig"/></svg>Instagram<sup>*</sup></a>
+          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/marafdy.telo" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Instagram<sup>*</sup></a>
           <a class="leaf sm" style="--c:var(--vk)" href="https://vk.ru/marafdy" target="_blank" rel="noopener"><span class="mono">VK</span>ВКонтакте</a>
           <a class="leaf sm" style="--c:#ff7a00" href="https://dzen.ru/marafdy" target="_blank" rel="noopener"><span class="mono">Дз</span>Дзен</a>
           <a class="leaf sm" style="--c:var(--yt)" href="https://www.youtube.com/@MARAFDY" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-yt"/></svg>YouTube</a>
@@ -352,7 +350,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
         <p class="group-desc">Ретриты для перезагрузки тела и духа, встреча с собой.</p>
         <div class="tree">
           <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+yicTZB_ZcrU4NjQ6" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
-          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/umas_osoznanie" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-ig"/></svg>Instagram<sup>*</sup></a>
+          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/umas_osoznanie" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Instagram<sup>*</sup></a>
         </div>
       </div>
     </section>
@@ -370,8 +368,8 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
         <a class="leaf" style="--c:var(--tg)" href="https://t.me/tim_rockets" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Личный аккаунт</a>
         <a class="leaf" style="--c:var(--magenta)" href="https://suno.com/@timrockets" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-music"/></svg>Моя музыка · Suno</a>
         <a class="leaf" style="--c:var(--vk)" href="https://vk.ru/tim.rockets" target="_blank" rel="noopener"><span class="mono">VK</span>ВКонтакте</a>
-        <a class="leaf" style="--c:var(--wa)" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-wa"/></svg>WhatsApp</a>
-        <a class="leaf" style="--c:var(--ig)" href="https://www.instagram.com/tim__rockets" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-ig"/></svg>Instagram<sup>*</sup></a>
+        <a class="leaf" style="--c:var(--wa)" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-phone"/></svg>WhatsApp</a>
+        <a class="leaf" style="--c:var(--ig)" href="https://www.instagram.com/tim__rockets" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Instagram<sup>*</sup></a>
       </div>
     </section>
 
@@ -441,7 +439,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
     <h3 id="sheet-title"></h3>
     <div id="sheet-body"></div>
     <div class="cta-row" style="justify-content:flex-start">
-      <a class="btn" href="https://wa.me/79938917761" target="_blank" rel="noopener" style="color:#00131f"><svg class="icon" viewBox="0 0 24 24"><use href="#i-wa"/></svg>Обсудить лично</a>
+      <a class="btn" href="https://wa.me/79938917761" target="_blank" rel="noopener" style="color:#00131f"><svg class="icon" viewBox="0 0 24 24"><use href="#i-phone"/></svg>Обсудить лично</a>
     </div>
   </div>
 </div>
