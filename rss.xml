@@ -5,10 +5,10 @@
      xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Журнал «Компас» — TimLabs</title>
-    <link>https://timlabs.online/journal/</link>
+    <link>https://timlabs.online/</link>
     <description>Навигатор по этапам жизни: развитие, тело, эмоции, осознанность, родительство. Спокойные разборы и практики от проверенных мастеров.</description>
     <language>ru</language>
-    <lastBuildDate>Tue, 22 Sep 2026 17:20:43 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 21:09:10 +0300</lastBuildDate>
     <atom:link href="https://timlabs.online/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>7 шагов к стабильной самооценке: практичный план</title>
@@ -16,7 +16,9 @@
       <guid isPermaLink="true">https://timlabs.online/journal/7-samootsenka/</guid>
       <pubDate>Tue, 22 Sep 2026 10:00:00 +0300</pubDate>
       <description><![CDATA[Разбираем 7 шагов к стабильной самооценке из книги Бориса Литвака. Как понять свои мотивы и управлять решениями без самообмана.]]></description>
-      <category>Эмоции и психология</category>
+      <category>native-draft</category>
+      <enclosure url="https://timlabs.online/media/telegram/7-samootsenka.png" type="image/png" length="175288"/>
+      <media:content url="https://timlabs.online/media/telegram/7-samootsenka.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Почему самооценка скачет и что это значит</h2><p>Когда вы приходите к психологу или читаете книги по саморазвитию, проблема с самооценкой редко формулируется напрямую. Чаще люди говорят о тревоге, конфликтах или потере мотивации. Но за этим почти всегда стоит один и тот же вопрос: «А как я сам себя оцениваю?»</p><p>Самооценка — это не просто «я хороший» или «я плохой». Это внутренний масштаб, по которому вы меряете свои действия, слова и чувства. Если этот масштаб нестабильный, вы начинаете реагировать на чужие оценки слишком сильно. Хвалили — вы взлетели, критиковали — упали. Литвак называет это «типами присущей нам самооценки» и показывает, как они влияют на решения.</p><p>Важно понимать: стабильная самооценка — это не отсутствие сомнений. Это способность принимать решения, опираясь на свои ценности, а не на настроение дня. Вы всё равно можете сомневаться, но сомневаться спокойно, без паники и без самообмана.</p></section>
 <section id="s2" class="article"><h2>Суть метода: от осознания к управлению</h2><p>Книга Литвака построена не как набор советов, а как последовательность шагов. Автор выделяет типы самооценки, которые у каждого из нас уже есть, и предлагает варианты решения проблем. Но главное — задания. Без практики теория остаётся красивыми словами.</p><p>Суть метода проста: сначала вы учитесь видеть свои мотивы. Почему вы согласились на проект, который вас выматывает? Почему вы отказались от возможности, которая вам по силам? Литвак предлагает отследить эти решения и понять, что стоит за ними: страх, привычка, чужое ожидание или настоящая потребность.</p><p>Когда вы начинаете видеть свои мотивы, вы перестаёте быть заложником ситуации. Вы можете сказать: «Я сделал так, потому что боялся, а не потому что хотел». Это не приговор. Это точка отсчёта. Дальше вы выбираете иначе.</p></section>
 <section id="s3" class="article"><h2>Практические шаги из книги: как применять</h2><p>Литвак не даёт универсальной формулы «сделайте А — получите Б». Вместо этого он предлагает работу с собой. Вот что можно взять из книги для ежедневной практики:</p><ul><li><strong>Записывайте решения.</strong> Не только большие, но и маленькие. Согласились помочь коллеге, отказались от прогулки, купили ненужную вещь. Запишите: что вы сделали и почему.</li><li><strong>Ищите мотивы.</strong> Спросите себя: «Что я чувствовал в момент решения? Что я хотел получить? Чего я боялся потерять?»</li><li><strong>Отслеживайте реакцию на оценки.</strong> Когда вас похвалили или критиковали, что произошло внутри? Вы стали увереннее или хуже себя оценили? Запишите это.</li><li><strong>Сравнивайте с ценностями.</strong> Ваши решения соответствуют вашим ценностям или вы живёте по чужим сценариям?</li></ul><p>Эти шаги не требуют часов на день. Достаточно 10–15 минут вечером, чтобы проанализировать день. Со временем вы заметите паттерны: где вы теряете себя, а где действуете осознанно.</p></section>
@@ -28,7 +30,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/goulman-emotsionalnyy-intellekt/</guid>
       <pubDate>Mon, 21 Sep 2026 10:01:00 +0300</pubDate>
       <description><![CDATA[Разбираем книгу Дэниела Гоулмана «Эмоциональный интеллект»: что в ней действительно работает, как применять навыки на работе и в отношениях.]]></description>
-      <category>Эмоции и психология</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/goulman-emotsionalnyy-intellekt.png" type="image/png" length="172108"/>
       <media:content url="https://timlabs.online/media/telegram/goulman-emotsionalnyy-intellekt.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>О чём книга и почему её читают</h2><p>Книга Дэниела Гоулмана вышла в 1995 году и быстро стала бестселлером. Автор утверждает, что эмоции влияют на успех в семье и на работе сильнее, чем принято считать. Он опирается на исследования в области нейронауки и психологии, чтобы показать, как люди управляют своими чувствами.</p><p>В книге нет рецептов «как стать успешным за неделю». Зато есть разбор механизмов: почему мы злимся, когда не понимаем причину, и как умение замечать эмоции помогает принимать взвешенные решения. Читатели ценят книгу за доступный язык и реальные примеры из жизни.</p></section>
@@ -42,7 +44,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/1-samootsenka/</guid>
       <pubDate>Sat, 19 Sep 2026 10:02:00 +0300</pubDate>
       <description><![CDATA[Что значит самооценка на 1 балл и как пользоваться шкалой от 1 до 10. Простой способ понять своё отношение к себе и сдвинуть его в здоровую сторону.]]></description>
-      <category>Эмоции и психология</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/1-samootsenka.png" type="image/png" length="131640"/>
       <media:content url="https://timlabs.online/media/telegram/1-samootsenka.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Что значит «1 самооценка»</h2><p>Когда человек говорит «у меня самооценка 1», он обычно не меряет себя линейкой. Скорее передаёт ощущение: «я себя не ценю», «у меня ничего не получается», «я себе надоел». За этим часто стоит усталость, строгий внутренний голос или привычка сравнивать себя с другими.</p><p>Единица — крайняя точка шкалы. На другом конце десятка: «я справляюсь, я себя уважаю». Между ними большинство из нас и живёт: сегодня — четыре, завтра — семь. Самооценка — живое чувство, а не застывший факт.</p><p>Если вы поставили себе единицу — это не значит, что пора ставить на себе крест. Скорее это подсказка присмотреться, как вы к себе относитесь и что можно изменить.</p></section>
@@ -57,7 +59,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/meditatsiya-retrit/</guid>
       <pubDate>Fri, 18 Sep 2026 10:03:00 +0300</pubDate>
       <description><![CDATA[Ретрит по медитации — как устроен, кому подходит и чем отличается от йога-ретрита. Короткий чек-лист для первой поездки и ответы на частые вопросы.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/meditatsiya-retrit.png" type="image/png" length="153744"/>
       <media:content url="https://timlabs.online/media/telegram/meditatsiya-retrit.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Ретрит медитаций: чем он отличается от обычного ретрита</h2><p>Ретрит по медитации — это не просто отдых в тишине. В обычном ретрите в расписании бывают прогулки, творчество, телесные практики. Здесь же всё крутится вокруг сидячей медитации: прогулки, еда и даже сон подчинены тому, чтобы поддерживать практику.</p><p>Базовое понятие мы разбирали в статье <a href='https://timlabs.online/journal/retrit/'>Что такое ретрит простыми словами</a>: это время, намеренно выкроенное для размышлений, молитв или медитаций. В буддизме такие периоды практикуют много веков. Например, сэссин в дзэн-буддизме — это несколько дней непрерывной сидячей медитации, а випассана — формат, где внимание тренируют через наблюдение за дыханием и телесными ощущениями.</p><p>Главное отличие — в концентрации. На медитационном ретрите вы не развлекаете себя и не «разгружаетесь» пассивно. Вы тренируете внимание, и это может утомлять сильнее, чем работа. Зато спустя пару дней мысли часто замедляются, а в голове появляется больше тишины.</p><p>Чем меньше внешних раздражителей, тем громче внутренний голос. Он перебирает прошлые разговоры, планы, обиды. Это не «побочка», а часть процесса: вы учитесь быть с этим голосом, а не сбегать от него.</p></section>
@@ -72,7 +74,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/den-retrita/</guid>
       <pubDate>Thu, 17 Sep 2026 10:04:00 +0300</pubDate>
       <description><![CDATA[День ретрита — формат на 1 день: как проходит, кому подходит, чем отличается от ретрита выходного дня и как подготовиться к короткой перезагрузке.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/den-retrita.png" type="image/png" length="153501"/>
       <media:content url="https://timlabs.online/media/telegram/den-retrita.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Что такое ретрит на 1 день и чем он отличается от выходного</h2><p>В статье <a href='https://timlabs.online/journal/retrit/'>«Что такое ретрит простыми словами»</a> мы разобрали базу. Здесь поговорим о коротком формате: дне, когда вы выключаете уведомления, откладываете список дел и отдаёте несколько часов тишине и практике.</p><p>Однодневный ретрит — это не попытка ужать недельную программу в несколько часов. У него другая задача: сделать паузу, заметить своё состояние и вернуться к обычной жизни. За один день привычки не перестроить, зато можно понять, чего вам не хватает: сна, движения, тишины или просто разговора с собой.</p><p>От обычного выходного такой день отличается структурой и намерением. Вы заранее знаете, когда практика, когда прогулка, когда обед. Это освобождает — не нужно всё время решать, что делать дальше.</p></section>
@@ -87,7 +89,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/i-napravlena-na-razvitie-navykov/</guid>
       <pubDate>Wed, 16 Sep 2026 10:05:00 +0300</pubDate>
       <description><![CDATA[Разбираем, что такое развивающие игры, какие навыки они тренируют и как выбрать занятия по возрасту. Примеры и практические советы.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/i-napravlena-na-razvitie-navykov.png" type="image/png" length="154316"/>
       <media:content url="https://timlabs.online/media/telegram/i-napravlena-na-razvitie-navykov.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Что значит «игра направлена на развитие навыков»</h2><p>Когда об игре говорят, что она «развивает навыки», за этим стоит конкретная цель. Не просто развлечь, а научить чему-то: слышать друг друга, действовать сообща, понимать свои чувства. Такое описание выбирают не случайно. Родителям и педагогам оно помогает понять, чему будет посвящено занятие, и заметить результат после нескольких встреч.</p><p>В картотеках такие игры обычно делят на блоки по задачам. Коммуникативные игры, например, учат:</p><ul><li>общению, в котором никто не перебивает и не обижается;</li><li>радости от совместного дела;</li><li>умению слушать и слышать собеседника;</li><li>пониманию эмоций — своих и чужих.</li></ul><p>Игра при этом не становится уроком. Просто у неё появляется ясный ориентир: после занятий видно, чему ребёнок научился. Если цель — общение, упражнения строят так, чтобы дети разговаривали, спорили, возражали и находили общее решение.</p></section>
@@ -102,7 +104,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/znaniy-umeniy-i-navykov-razvitiya/</guid>
       <pubDate>Tue, 15 Sep 2026 10:06:00 +0300</pubDate>
       <description><![CDATA[Знания, умения и навыки в развитии: разница понятий, этапы формирования навыка и практические шаги без перегруза.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/znaniy-umeniy-i-navykov-razvitiya.png" type="image/png" length="137661"/>
       <media:content url="https://timlabs.online/media/telegram/znaniy-umeniy-i-navykov-razvitiya.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Чем знания, умения и навыки отличаются друг от друга</h2><p>Эти слова часто используют как синонимы, но на деле это разные ступени. Знание — то, что вы понимаете и можете объяснить. Умение — осознанное действие, когда вы следите за каждым шагом. Навык — автоматизм, когда движения получаются сами собой.</p><p>Вот простой пример. Вы прочитали правила дорожного движения — это знание. Потом учитесь трогаться с места, проверяете зеркала, следите за педалями — умение. Через месяц переключаете передачи, не задумываясь, — навык.</p><p>Каждой ступени нужна своя работа. Знание требует осмысления, умение — тренировки с обратной связью, навык — повторения в разных ситуациях. Если просто выучить книгу, навык не появится. Если бездумно повторять одно и то же, не разбираясь в смысле, — тоже.</p></section>
@@ -117,7 +119,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/den-poleznyh-privychek/</guid>
       <pubDate>Mon, 14 Sep 2026 10:07:00 +0300</pubDate>
       <description><![CDATA[День полезных привычек — это не строгий график, а забота о себе. Разбираем, какие привычки встроить в утро, день и вечер.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/den-poleznyh-privychek.png" type="image/png" length="162080"/>
       <media:content url="https://timlabs.online/media/telegram/den-poleznyh-privychek.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Полезные привычки днём: как встроить их в рабочий ритм</h2><p>Полезные привычки днём — это не список из двадцати пунктов, а несколько опор, которые помогают сохранять энергию и ясность. Частая ошибка — пытаться переделать весь график за один день. Маленькие изменения закрепляются легче, поэтому начните с трёх.</p><ul><li>Обед без экрана. Даже пятнадцать минут без новостей и сообщений дают мозгу паузу, а еде — внимание.</li><li>Прогулка после еды. Десять-пятнадцать минут спокойным шагом освежают лучше, чем лишняя чашка кофе.</li><li>Перерыв от сидячей работы. Раз в час вставайте, потянитесь, посмотрите в окно. Это помогает вернуться к делам с ясной головой.</li></ul><p>Если работаете из дома, выйдите на короткую прогулку до магазина или вокруг квартала. Привычки работают, когда повторяются изо дня в день, а не когда вы пытаетесь успеть всё сразу. Главное — регулярность, а не темп.</p></section>
@@ -132,7 +134,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/voprosy-lichnostnogo-rosta/</guid>
       <pubDate>Fri, 11 Sep 2026 10:08:00 +0300</pubDate>
       <description><![CDATA[Какие вопросы личностного роста стоит задать себе? Честный список для самоанализа, вопросы для педагогов и советы, как работать с ответами.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/voprosy-lichnostnogo-rosta.png" type="image/png" length="158797"/>
       <media:content url="https://timlabs.online/media/telegram/voprosy-lichnostnogo-rosta.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Почему вопросы личностного роста работают лучше готовых советов</h2><p>Когда перед нами сложный выбор, хочется получить готовую инструкцию. Но универсального рецепта нет: то, что помогло одному, может не подойти другому. Вопросы личностного роста работают иначе — они включают диалог с самим собой. Вместо ожидания совета вы начинаете замечать, что для вас действительно важно, а что вы делаете по привычке.</p><p>Специалисты используют такие вопросы в консультациях: не говорят, как поступить, а помогают увидеть варианты. Это снижает тревогу, потому что вы перестаёте ждать чужой оценки и учитесь опираться на свои ощущения.</p><p>Личностному росту часто мешают не отсутствие знаний, а внутренние барьеры: страх ошибки, привычка сравнивать себя с другими, размытые цели. Вопросы помогают их заметить и понять, с чем работать дальше.</p><p>Специальная подготовка не нужна — достаточно 10–15 минут в неделю и блокнота. Регулярность важнее количества: лучше один честный вопрос, чем десять формальных.</p><p>Разница между «надо» и «хочу» часто всплывает именно в вопросах. Например, «Что для меня сейчас действительно важно?» сразу показывает, где вы живёте своими желаниями, а где пытаетесь соответствовать чужим ожиданиям. Такой вопрос может быть неудобным, но именно он открывает путь к изменениям.</p></section>
@@ -146,7 +148,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/retrit-eto/</guid>
       <pubDate>Tue, 08 Sep 2026 10:09:00 +0300</pubDate>
       <description><![CDATA[Ретрит — это временной отрыв от повседневной жизни для духовного или физического восстановления, предоставляющий возможность сосредоточиться на себе и свои]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/retrit-eto.png" type="image/png" length="66437"/>
       <media:content url="https://timlabs.online/media/telegram/retrit-eto.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Что такое ретрит</h2><p>Ретрит — это время, когда вы сознательно уходите от привычной суеты и остаётесь наедине с собой. Вы останавливаетесь, чтобы понять, чего на самом деле хочется, и дать телу отдых. В Кисловодске или на КМВ можно снять домик в тихом месте: гулять по лесу, медитировать, читать. В такой обстановке мысли выстраиваются по-другому. Вы замечаете, что важнее, а что можно отпустить. Возвращаетесь домой с ясной головой и спокойствием.</p></section>
@@ -160,7 +162,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/samootsenka-podrostka/</guid>
       <pubDate>Mon, 07 Sep 2026 10:10:00 +0300</pubDate>
       <description><![CDATA[Что влияет на самооценку подростка, как распознать её снижение, что помогает родителям поддержать и какие фразы делают только хуже.]]></description>
-      <category>Эмоции и психология</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/samootsenka-podrostka.png" type="image/png" length="77685"/>
       <media:content url="https://timlabs.online/media/telegram/samootsenka-podrostka.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Почему в этом возрасте самооценка шатается</h2><p>Подросток впервые всерьёз строит представление о себе — и опирается при этом на реакцию сверстников. Мнение группы в этот период весит больше, чем мнение семьи, и это нормальный этап.</p><p>Добавьте быстрые изменения внешности и тела, к которым человек не успевает привыкнуть, — и получите естественную нестабильность.</p></section>
@@ -175,7 +177,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat/</guid>
       <pubDate>Mon, 07 Sep 2026 10:11:00 +0300</pubDate>
       <description><![CDATA[Как работает цикл «пять недель нагрузки — неделя восстановления», кому он подходит в учёбе и работе и как спланировать разгрузочную неделю, чтобы она сработала.]]></description>
-      <category>Частые вопросы</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat.png" type="image/png" length="62109"/>
       <media:content url="https://timlabs.online/media/telegram/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>В чём смысл цикла</h2><p>Непрерывная нагрузка без запланированных пауз рано или поздно приводит к спаду: продуктивность падает, ошибок больше, интерес гаснет. Цикличность решает это заранее, а не по факту истощения.</p><p>Схема «пять недель работы — неделя разгрузки» — один из вариантов. Числа не священны: кому-то ближе четыре к одному, кому-то шесть.</p></section>
@@ -190,7 +192,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/gora-sheludivaya/</guid>
       <pubDate>Mon, 07 Sep 2026 10:12:00 +0300</pubDate>
       <description><![CDATA[Гора Шелудивая на Кавминводах: высота 874 метра, один из 17 лакколитов, след старого карьера, короткий подъём примерно на час и панорама Бештау с вершины.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-sheludivaya.png" type="image/png" length="66615"/>
       <media:content url="https://timlabs.online/media/telegram/gora-sheludivaya.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Где находится гора Шелудивая</h2><p>Шелудивая стоит в Пятигорье — той части Кавказских Минеральных Вод, где горы поднимаются поодиночке прямо посреди равнины. Её высота — 874 метра. Ближайший ориентир — Бештау: Шелудивая находится примерно в полутора километрах западнее него, у южной окраины города Лермонтова.</p><p>Это одна из семнадцати гор-лакколитов Кавминвод. Лакколит — несостоявшийся вулкан: магма поднялась к поверхности, приподняла пласты над собой куполом, но так и не вышла наружу и застыла внутри. Поэтому у здешних гор такая узнаваемая форма купола, а извержений тут не было никогда.</p></section>
@@ -206,7 +208,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/gora-elbrus/</guid>
       <pubDate>Mon, 07 Sep 2026 10:13:00 +0300</pubDate>
       <description><![CDATA[Эльбрус — 5642 метра, высшая точка России и Европы, потухший вулкан в Кабардино-Балкарии. Чем поездка к подножию отличается от восхождения и как спланировать её с КМВ.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-elbrus.png" type="image/png" length="69409"/>
       <media:content url="https://timlabs.online/media/telegram/gora-elbrus.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Где находится и что это за гора</h2><p>Эльбрус стоит в Кабардино-Балкарии, на Боковом хребте Большого Кавказа, у границы с Карачаево-Черкесией. Его высота — 5642 метра, это высшая точка России и Европы.</p><p>По происхождению это потухший вулкан с двумя вершинами: западной (5642 м) и восточной (5621 м), между ними — седловина. К Кавказским Минеральным Водам гора не относится: от Кисловодска до Приэльбрусья несколько часов дороги.</p></section>
@@ -221,7 +223,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/zavyshennaya-samootsenka/</guid>
       <pubDate>Mon, 07 Sep 2026 10:14:00 +0300</pubDate>
       <description><![CDATA[Чем завышенная самооценка отличается от уверенности, откуда она берётся, чем мешает в работе и отношениях и как вернуть себе точный взгляд на себя.]]></description>
-      <category>Эмоции и психология</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/zavyshennaya-samootsenka.png" type="image/png" length="70336"/>
       <media:content url="https://timlabs.online/media/telegram/zavyshennaya-samootsenka.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Чем это отличается от уверенности</h2><p>Уверенность растёт из опыта: человек знает, что умеет, помнит, как справлялся раньше, и спокойно признаёт, когда нужна помощь. Завышенная самооценка опирается не на реальность, а на приятную картину о себе — всё, что в неё не вписывается, отбрасывается.</p><p>Главное отличие — реакция на обратную связь. Уверенный человек выслушивает замечания, берёт из них полезное и идёт дальше. При завышенной самооценке критика слышится как нападение: человек сразу защищается и обесценивает того, кто её высказал.</p></section>
@@ -236,7 +238,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/otdyhayu-kak-den/</guid>
       <pubDate>Mon, 07 Sep 2026 10:15:00 +0300</pubDate>
       <description><![CDATA[Как отдыхать в течение рабочего дня: зачем нужны короткие паузы, какие приёмы работают за пять минут и почему отдых с телефоном не восстанавливает.]]></description>
-      <category>Частые вопросы</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/otdyhayu-kak-den.png" type="image/png" length="74022"/>
       <media:content url="https://timlabs.online/media/telegram/otdyhayu-kak-den.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Зачем нужны паузы посреди дня</h2><p>Если к обеду вы ловите себя на том, что смотрите в экран и не видите текст, — это не лень, а усталость внимания. Чем дольше вы сидите без перерыва, тем ниже скорость и больше ошибок. Короткая пауза в такой момент — не потеря времени, а способ не работать вхолостую.</p><p>Небольшой перерыв каждый час-полтора обычно даёт больше, чем один длинный обед, после которого вы снова четыре часа подряд без остановки.</p></section>
@@ -251,7 +253,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/razvitie-samorazvitiya/</guid>
       <pubDate>Mon, 07 Sep 2026 10:16:00 +0300</pubDate>
       <description><![CDATA[Как начать саморазвитие и не бросить: почему не работает «развивать всё сразу», как выбрать одно направление и собрать простой план на месяц.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/razvitie-samorazvitiya.png" type="image/png" length="64265"/>
       <media:content url="https://timlabs.online/media/telegram/razvitie-samorazvitiya.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Почему «развивать всё сразу» не работает</h2><p>Когда мы берёмся за спорт, язык, чтение и режим одновременно, сил не хватает ни на что. Каждое новое дело в начале требует много внимания, поэтому все четыре быстро надоедают.</p><p>Одно дело, доведённое до привычки, принесёт больше пользы, чем четыре, брошенных на второй неделе.</p></section>
@@ -266,7 +268,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/samorazvitie-kakie-knigi/</guid>
       <pubDate>Mon, 07 Sep 2026 10:17:00 +0300</pubDate>
       <description><![CDATA[Подборка проверенных книг о привычках, мышлении, эмоциях и смысле — с реальными авторами. Как выбрать первую книгу и читать так, чтобы это меняло поведение.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/samorazvitie-kakie-knigi.png" type="image/png" length="71597"/>
       <media:content url="https://timlabs.online/media/telegram/samorazvitie-kakie-knigi.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Если хотите изменить привычки</h2><p><b>Джеймс Клир, «Атомные привычки»</b> — о том, почему маленькие шаги работают лучше, чем резкие обещания себе. С этой книги удобно начинать: после каждой главы появляется конкретная идея, которую можно попробовать уже сегодня.</p><p><b>Келли Макгонигал, «Сила воли»</b> — о том, почему самоконтроль иногда не срабатывает и что помогает восстановиться после срыва. Хорошо дополняет «Атомные привычки»: вы перестаёте винить себя и начинаете просто действовать дальше.</p></section>
@@ -281,7 +283,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/samorazvitie-besplatno/</guid>
       <pubDate>Mon, 07 Sep 2026 10:18:00 +0300</pubDate>
       <description><![CDATA[Как развиваться без вложений: бесплатные библиотеки и курсы, обучение через практику, сообщества по интересам и почему платное не всегда лучше.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/samorazvitie-besplatno.png" type="image/png" length="65152"/>
       <media:content url="https://timlabs.online/media/telegram/samorazvitie-besplatno.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Библиотеки и открытые материалы</h2><p>В городских библиотеках книги выдают бесплатно, а многие вузы и открытые платформы публикуют курсы и лекции без оплаты. Этого достаточно, чтобы познакомиться с основами почти любой темы.</p><p>Совет по выбору: не собирайте «библиотеку» из двадцати вкладок. Один курс или книга, доведённые до конца, дают больше, чем десять начатых и брошенных.</p></section>
@@ -296,7 +298,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/stabilnaya-samootsenki/</guid>
       <pubDate>Mon, 07 Sep 2026 10:19:00 +0300</pubDate>
       <description><![CDATA[Почему самооценка скачет от похвалы и критики, чем стабильная самооценка отличается от высокой и какие привычки помогают перестать зависеть от чужого мнения.]]></description>
-      <category>Эмоции и психология</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/stabilnaya-samootsenki.png" type="image/png" length="67507"/>
       <media:content url="https://timlabs.online/media/telegram/stabilnaya-samootsenki.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Что такое нестабильная самооценка</h2><p>Нестабильная самооценка — это когда ваше отношение к себе меняется вместе с внешними событиями. Похвалили — вы чувствуете себя способным. Сделали замечание — и вы уже «никуда не годитесь». При этом повод может быть пустяковым: один комментарий, взгляд, сообщение.</p><p>Высота самооценки тут ни при чём. Можно думать о себе хорошо и при этом быть очень шатким: уверенность держится до первой критики, а потом рассыпается. Именно поэтому люди, которые кажутся сильными, иногда так болезненно реагируют на чужое мнение.</p></section>
@@ -311,7 +313,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/zavys-samootsenku/</guid>
       <pubDate>Mon, 07 Sep 2026 10:20:00 +0300</pubDate>
       <description><![CDATA[Как поднять самооценку без самообмана: почему аффирмации не работают в одиночку, что делать с внутренним критиком и какие шаги дают результат.]]></description>
-      <category>Эмоции и психология</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/zavys-samootsenku.png" type="image/png" length="72997"/>
       <media:content url="https://timlabs.online/media/telegram/zavys-samootsenku.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Почему одни аффирмации не работают</h2><p>Повторять «я уверенный человек», не имея опыта, который это подтверждает, — всё равно что заклеивать пустой бак стикером «полный». Мозг замечает расхождение и пропускает утверждение мимо ушей.</p><p>Работает обратный порядок: сначала действие, потом факт, который его подтверждает. Не нужна большая победа — достаточно шага, который вы давно откладывали: отправить письмо, записаться к врачу, начать разговор. Сделанное становится опорой: «я справился». Такие опоры и создают самооценку.</p></section>
@@ -326,7 +328,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/medovye-vodopady-kak-doehat-iz-kislovods/</guid>
       <pubDate>Mon, 07 Sep 2026 10:21:00 +0300</pubDate>
       <description><![CDATA[Как доехать до Медовых водопадов из Кисловодска: расстояние, дорога через Аликоновское ущелье, варианты транспорта, когда лучше ехать и что взять с собой.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/medovye-vodopady-kak-doehat-iz-kislovods.png" type="image/png" length="69598"/>
       <media:content url="https://timlabs.online/media/telegram/medovye-vodopady-kak-doehat-iz-kislovods.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Где находятся и сколько ехать</h2><p>Медовые водопады — это группа из пяти каскадов на реке Аликоновке. По документам они относятся к Карачаево-Черкесии, но ближайший город к ним — именно Кисловодск: расстояние около 14 километров.</p><p>Дорога обычно занимает меньше часа. Если вы едете из Пятигорска, путь будет длиннее — порядка 30 километров.</p></section>
@@ -341,7 +343,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/gde-nahoditsya-gora-koltso-v-kislovodske/</guid>
       <pubDate>Mon, 07 Sep 2026 10:22:00 +0300</pubDate>
       <description><![CDATA[Гора Кольцо — скала со сквозной аркой на Боргустанском хребте под Кисловодском, памятник природы, упомянутый Лермонтовым. Как доехать и когда лучше приезжать.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gde-nahoditsya-gora-koltso-v-kislovodske.png" type="image/png" length="63547"/>
       <media:content url="https://timlabs.online/media/telegram/gde-nahoditsya-gora-koltso-v-kislovodske.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Где находится гора Кольцо</h2><p>Гора Кольцо находится на окраине Кисловодска, на склоне Боргустанского хребта, в нескольких километрах от центра города, по дороге в сторону станицы Боргустанской.</p><p>Её часто путают с горой Машук в Пятигорске, но это разные места.</p></section>
@@ -356,7 +358,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/vodopad-kozoda/</guid>
       <pubDate>Mon, 07 Sep 2026 10:23:00 +0300</pubDate>
       <description><![CDATA[Водопад Козода (Кичмалкинский) — около 15 метров, самый высокий в Ставропольском крае. Где находится, почему его нашли только в 2016 году и как спланировать поездку.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/vodopad-kozoda.png" type="image/png" length="67224"/>
       <media:content url="https://timlabs.online/media/telegram/vodopad-kozoda.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Что за водопад и где он</h2><p>Козода — водопад высотой около 15 метров, выше остальных водопадов Ставропольского края. Находится он в Предгорном округе, у границы с Кабардино-Балкарией. Второе название — Кичмалкинский, по реке.</p><p>Место труднодоступное, инфраструктуры рядом нет. Поэтому водопад долго оставался малоизвестным даже среди местных жителей.</p></section>
@@ -371,7 +373,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/otsenka-samootsenka/</guid>
       <pubDate>Mon, 07 Sep 2026 10:24:00 +0300</pubDate>
       <description><![CDATA[Чем внешняя оценка отличается от самооценки, как перестать зависеть от чужого мнения и какие методы помогают понять свой уровень самооценки.]]></description>
-      <category>Эмоции и психология</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/otsenka-samootsenka.png" type="image/png" length="62742"/>
       <media:content url="https://timlabs.online/media/telegram/otsenka-samootsenka.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>В чём разница между оценкой и самооценкой</h2><p>Оценка — это взгляд со стороны: что подумали коллеги о вашей работе, как отозвалась подруга о новом платье, что написали в комментариях. Самооценка — ваше собственное представление о себе, своих способностях и месте среди людей.</p><p>Полезно различать эти два голоса. Чужое мнение — это информация, которую можно принять к сведению или пропустить. Самооценка — то, что остаётся с вами, даже когда рядом никого нет. Проблемы начинаются, когда внешние оценки становятся громче внутреннего голоса и своё мнение о себе отходит на второй план.</p></section>
@@ -386,7 +388,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/kak-pravilno-otdyhat/</guid>
       <pubDate>Mon, 07 Sep 2026 10:25:00 +0300</pubDate>
       <description><![CDATA[Почему отдых не всегда восстанавливает, чем активный отдых отличается от пассивного, как отдыхать в течение дня и как спланировать отпуск без разочарования.]]></description>
-      <category>Частые вопросы</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-pravilno-otdyhat.png" type="image/png" length="59732"/>
       <media:content url="https://timlabs.online/media/telegram/kak-pravilno-otdyhat.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article">
@@ -420,7 +422,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/kak-pravilno-vosstanavlivat-sily/</guid>
       <pubDate>Mon, 07 Sep 2026 10:26:00 +0300</pubDate>
       <description><![CDATA[Как восстанавливать силы без сложных систем: почему сон важнее добавок, как есть и двигаться в период усталости и чем отличается отдых от простого безделья.]]></description>
-      <category>Частые вопросы</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-pravilno-vosstanavlivat-sily.png" type="image/png" length="73830"/>
       <media:content url="https://timlabs.online/media/telegram/kak-pravilno-vosstanavlivat-sily.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Сон — то, что нельзя заменить ничем</h2><p>Сон влияет на самочувствие сильнее остальных привычек: если он сбит, даже еда и движение не дают ощущения восстановления.</p><p>Начните не с продолжительности, а с регулярности. Попробуйте ложиться примерно в одно и то же время неделю подряд — это обычно работает лучше, чем один раз проспать двенадцать часов.</p></section>
@@ -435,7 +437,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/motivatsiya-samorazvitie/</guid>
       <pubDate>Mon, 07 Sep 2026 10:27:00 +0300</pubDate>
       <description><![CDATA[Почему мотивация исчезает через две недели, чем внутренняя мотивация отличается от внешней и какие механизмы работают, когда желания нет.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/motivatsiya-samorazvitie.png" type="image/png" length="65804"/>
       <media:content url="https://timlabs.online/media/telegram/motivatsiya-samorazvitie.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Почему мотивация не держится</h2><p>Мотивация — это эмоциональная волна, а не запас топлива, который можно заполнить один раз и ехать долго. В начале нового дела она поднимает: всё интересно, в новинку. Но когда занятие становится рутиной, волна уходит — и это нормально, а не ваш дефект.</p><p>Вывод простой: делать ставку в долгой работе только на мотивацию — плохая идея. Нужна опора, которая не зависит от настроения.</p></section>
@@ -450,7 +452,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/samootsenka-kniga/</guid>
       <pubDate>Mon, 07 Sep 2026 10:28:00 +0300</pubDate>
       <description><![CDATA[Как выбрать книгу о самооценке, чем практические пособия отличаются от мотивационных, почему одного чтения мало и как превратить книгу в реальные изменения.]]></description>
-      <category>Эмоции и психология</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/samootsenka-kniga.png" type="image/png" length="76780"/>
       <media:content url="https://timlabs.online/media/telegram/samootsenka-kniga.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Чего ждать от книги, а чего не стоит</h2><p>Книга по психологии не избавит от самокритики по щелчку, но может объяснить, откуда она берётся: почему вы сравниваете себя с другими, почему похвала не делает увереннее, почему ошибки запоминаются дольше удач. Хорошая книга даёт язык — вы начинаете понимать, что с вами происходит.</p><p>Но чтение само по себе ничего не меняет. Изменения начинаются, когда вы ловите себя на привычной мысли и пробуете поступить иначе.</p></section>
@@ -465,7 +467,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/kak-stavit-pered-soboy-tsel/</guid>
       <pubDate>Mon, 07 Sep 2026 10:29:00 +0300</pubDate>
       <description><![CDATA[Как превратить размытое желание в цель: формулировка, критерий выполнения, разбивка на шаги и что делать, когда план сбился.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-stavit-pered-soboy-tsel.png" type="image/png" length="51789"/>
       <media:content url="https://timlabs.online/media/telegram/kak-stavit-pered-soboy-tsel.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Почему размытые цели не работают</h2><p>«Больше двигаться», «начать учиться», «наладить режим» — это направления, а не цели. Вечером вы вряд ли поймёте, сделали сегодня что-то или нет: не записано, что именно нужно было сделать. Критерия нет, поэтому и появляется чувство «опять не сделал», хотя вы ничего не нарушали.</p><p>Дело не в лени и не в силе воли: расплывчатую формулировку невозможно выполнить, потому что у неё нет ни начала, ни конца. У конкретной цели они есть — и именно это позволяет в конце дня честно сказать «сделано».</p></section>
@@ -480,7 +482,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/belyy-vodopad/</guid>
       <pubDate>Mon, 07 Sep 2026 10:30:00 +0300</pubDate>
       <description><![CDATA[Куда съездить к воде из Кисловодска: Медовые водопады в Аликоновском ущелье в 14 км от города, Берёзовское ущелье рядом с курортом. Как добраться и что учесть.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/belyy-vodopad.png" type="image/png" length="67415"/>
       <media:content url="https://timlabs.online/media/telegram/belyy-vodopad.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Медовые водопады — самое близкое место к воде</h2><p>Медовые водопады — это пять каскадов на реке Аликоновке. Они находятся в Карачаево-Черкесии, примерно в 14 километрах от Кисловодска и в 30 километрах от Пятигорска. Формально это не Ставропольский край, но дорога занимает меньше часа — удобно для однодневной поездки.</p><p>Обычный план такой: утром выезжаете, гуляете у воды, к обеду возвращаетесь. Поэтому Медовые водопады и стали самой частой целью однодневных вылазок с Кавминвод.</p></section>
@@ -495,7 +497,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/vodopad-beyradi/</guid>
       <pubDate>Mon, 07 Sep 2026 10:31:00 +0300</pubDate>
       <description><![CDATA[Водопад Байради — в Дигорском ущелье Северной Осетии, а не на Кавминводах. Что это за место, чем оно интересно и как рассчитать поездку с КМВ.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/vodopad-beyradi.png" type="image/png" length="63444"/>
       <media:content url="https://timlabs.online/media/telegram/vodopad-beyradi.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Где на самом деле находится Байради</h2><p>Водопад Байради находится в Дигорском ущелье Северной Осетии — это не Кавказские Минеральные Воды, а соседний регион. Из-за того, что название часто пишут по-разному (встречается и «Бейради»), при поиске легко запутаться. Поэтому ищите не только по названию, но и по району: Дигория, Северная Осетия.</p></section>
@@ -510,7 +512,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/gora-belalakaya/</guid>
       <pubDate>Mon, 07 Sep 2026 10:32:00 +0300</pubDate>
       <description><![CDATA[Белалакая — гора высотой 3861 метр в Домбае, Карачаево-Черкесия. Почему она полосатая, откуда на неё лучше смотреть и чем поездка отличается от восхождения.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-belalakaya.png" type="image/png" length="68214"/>
       <media:content url="https://timlabs.online/media/telegram/gora-belalakaya.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Где находится и что это за гора</h2><p>Белалакая находится в Домбае — это Карачаево-Черкесия, Тебердинский район. Высота вершины — 3861 метр. К Кавминводам гора не относится: от Кисловодска до неё несколько часов дороги.</p><p>Название с карачаевского переводится как «полосатая скала» — тёмный склон рассечён светлыми жилами кварца, которые видно издалека.</p></section>
@@ -525,7 +527,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/gora-mehtygen/</guid>
       <pubDate>Mon, 07 Sep 2026 10:33:00 +0300</pubDate>
       <description><![CDATA[Мехтыген — вершина Скалистого хребта в Кабардино-Балкарии, в районе Верхней Балкарии. Что это за место, чем оно интересно и почему это маршрут для подготовленных.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-mehtygen.png" type="image/png" length="71350"/>
       <media:content url="https://timlabs.online/media/telegram/gora-mehtygen.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Где находится Мехтыген</h2><p>Мехтыген — вершина Скалистого хребта в Кабардино-Балкарии, в районе Верхней Балкарии. Это горная местность в стороне от курортной жизни Кавминвод.</p><p>К Кисловодску и КМВ гора прямого отношения не имеет: если вы живёте в санатории и хотите лёгкую прогулку на полдня, Мехтыген — не тот вариант. Сюда планируют отдельную поездку, закладывая время на дорогу и возвращение.</p></section>
@@ -540,7 +542,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/gora-naudzhidza/</guid>
       <pubDate>Mon, 07 Sep 2026 10:34:00 +0300</pubDate>
       <description><![CDATA[Куда подняться рядом с Кисловодском, если нет опыта походов: гора Кольцо, Шелудивая, Берёзовское ущелье. Сколько занимает подъём и что взять с собой.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-naudzhidza.png" type="image/png" length="65859"/>
       <media:content url="https://timlabs.online/media/telegram/gora-naudzhidza.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Гора Кольцо — пятнадцать минут от города</h2><p>Скала со сквозной аркой на Боргустанском хребте стоит на окраине Кисловодска. От города на такси — около пятнадцати минут, дальше короткая тропа.</p><p>Это самый лёгкий вариант: подойдёт, если вы приехали на воды, не хотите длинных переходов и мечтаете о виде и воздухе.</p></section>
@@ -555,7 +557,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/kak-stavit-tsel-zhizni/</guid>
       <pubDate>Mon, 07 Sep 2026 10:35:00 +0300</pubDate>
       <description><![CDATA[Что делать, если не знаете, чего хотите от жизни: почему поиск «главной цели» заводит в тупик, как двигаться через пробы и на что опираться вместо готового ответа.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-stavit-tsel-zhizni.png" type="image/png" length="59128"/>
       <media:content url="https://timlabs.online/media/telegram/kak-stavit-tsel-zhizni.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Почему поиск «главной цели» часто заходит в тупик</h2><p>Мысль «я должен найти своё предназначение» звучит так, будто ответ уже существует и осталось лишь угадать его. В жизни чаще бывает наоборот: направление проясняется, когда вы пробуете, а не когда размышляете.</p><p>Пока вы ждёте озарения, вы не пробуете. А без проб не появляется опыта, из которого и рождается понимание.</p></section>
@@ -570,7 +572,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/kak-stavit-tsel-uroka/</guid>
       <pubDate>Mon, 07 Sep 2026 10:36:00 +0300</pubDate>
       <description><![CDATA[Как ставить цель занятия или урока: чем цель отличается от темы, как сформулировать её через результат участника и как проверить, достигнута ли она.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-stavit-tsel-uroka.png" type="image/png" length="77822"/>
       <media:content url="https://timlabs.online/media/telegram/kak-stavit-tsel-uroka.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Цель — это про участника, а не про ведущего</h2><p>Частая ошибка — записывать цель через действия ведущего: рассказать, показать, объяснить. Но рассказать можно и в пустоту.</p><p>Рабочая цель формулируется через участника: что он сможет сделать или понять к концу занятия. Например, не «рассказать о дыхании», а «участник сам выполняет дыхательное упражнение».</p></section>
@@ -585,7 +587,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/kak-sformulirovat-tseli-i-zadachi-proekt/</guid>
       <pubDate>Mon, 07 Sep 2026 10:37:00 +0300</pubDate>
       <description><![CDATA[Чем цель проекта отличается от задач, как сформулировать результат измеримо, как разложить его на задачи и договориться о них с командой.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-sformulirovat-tseli-i-zadachi-proekt.png" type="image/png" length="70250"/>
       <media:content url="https://timlabs.online/media/telegram/kak-sformulirovat-tseli-i-zadachi-proekt.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Чем цель отличается от задач</h2><p>Цель — результат, ради которого всё затевается. Задачи — шаги, из которых этот результат складывается. Их часто путают — и тогда план превращается в список дел без общего смысла.</p><p>Проверка простая: цель отвечает на вопрос «зачем», задача — на вопрос «что сделать». Например, «открыть свой кабинет» — цель, а «найти помещение, сделать ремонт, закупить оборудование» — задачи.</p></section>
@@ -613,7 +615,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/zhiznennaya-sila-kak-vosstanavlivat/</guid>
       <pubDate>Mon, 07 Sep 2026 10:38:00 +0300</pubDate>
       <description><![CDATA[Что делать, когда нет сил и ничего не хочется: как отличить усталость от выгорания, с чего начать восстановление и когда пора к специалисту.]]></description>
-      <category>Частые вопросы</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/zhiznennaya-sila-kak-vosstanavlivat.png" type="image/png" length="65333"/>
       <media:content url="https://timlabs.online/media/telegram/zhiznennaya-sila-kak-vosstanavlivat.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Усталость или выгорание: как отличить</h2><p>Обычная усталость проходит после отдыха: выспались — стало легче. Выгорание отдыхом не снимается: человек возвращается из отпуска и через два дня чувствует то же самое.</p><p>Второй важный признак — исчезает интерес к тому, что раньше радовало. Это уже не про нехватку сна, а про то, что жизнь долго шла на износ.</p></section>
@@ -628,7 +630,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/vosstanovitsya-kak-pravilno/</guid>
       <pubDate>Mon, 07 Sep 2026 10:39:00 +0300</pubDate>
       <description><![CDATA[Как восстанавливаться после физической и умственной нагрузки: этапы, роль сна и питания, когда возвращать активность и почему единого срока не существует.]]></description>
-      <category>Частые вопросы</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/vosstanovitsya-kak-pravilno.png" type="image/png" length="76259"/>
       <media:content url="https://timlabs.online/media/telegram/vosstanovitsya-kak-pravilno.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article">
@@ -667,7 +669,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/gora-cheget/</guid>
       <pubDate>Mon, 07 Sep 2026 10:40:00 +0300</pubDate>
       <description><![CDATA[Чегет — гора в Приэльбрусье, Кабардино-Балкария, рядом с Эльбрусом. Канатная дорога, виды на Донгузорун и Эльбрус, что учесть при поездке с Кавминвод.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-cheget.png" type="image/png" length="63345"/>
       <media:content url="https://timlabs.online/media/telegram/gora-cheget.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Где находится Чегет</h2><p>Чегет находится в Приэльбрусье — в Эльбрусском районе Кабардино-Балкарии, рядом с посёлком Терскол. От Кисловодска и Кавминвод сюда далеко: дорога занимает несколько часов.</p><p>Полное название вершины — Донгуз-Орун-Чегет-Карабаши, но в обиходе закрепилось короткое «Чегет». Это имя носит и один из известных горнолыжных курортов страны.</p></section>
@@ -682,7 +684,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/kak-vosstanovit-silu-organizma/</guid>
       <pubDate>Mon, 07 Sep 2026 10:41:00 +0300</pubDate>
       <description><![CDATA[Как вернуть силы: почему не работают резкие схемы, как связаны сон, еда и движение и какие простые шаги дают результат в обычной жизни.]]></description>
-      <category>Частые вопросы</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-vosstanovit-silu-organizma.png" type="image/png" length="75216"/>
       <media:content url="https://timlabs.online/media/telegram/kak-vosstanovit-silu-organizma.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Почему не работают резкие схемы</h2><p>Строгая диета, изнурительные тренировки, расписанный по минутам день — всё это даёт короткий всплеск. Через пару недель вы выдыхаетесь, срываетесь и чувствуете себя хуже, чем до начала.</p><p>А вот маленькие изменения, которые не требуют героизма, дают устойчивый результат. Их можно делать каждый день, не выпадая из жизни.</p></section>
@@ -697,7 +699,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/gora-dzhantugan/</guid>
       <pubDate>Sun, 06 Sep 2026 10:42:00 +0300</pubDate>
       <description><![CDATA[Гора Джантуган — высота 4012 м, расположение, история названия, ледники и как добраться. Информационный гид для тех, кто ищет тишину в горах.]]></description>
-      <category>Осознанность и ретриты</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-dzhantugan.png" type="image/png" length="65250"/>
       <media:content url="https://timlabs.online/media/telegram/gora-dzhantugan.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Что такое Джантуган и почему его так называют</h2><p>Джантуган-Баши — вершина высотой 4012 метров на Центральном Кавказе. Она стоит в верховьях реки Адылсу, между горами Башкара и Гумачи, на границе с Грузией. С южного склона спускаются два ледника — Джантуган и Джанкуат. На Джанкуате больше 55 лет работает гляциологическая станция Московского государственного университета.</p><p>Название горы уходит корнями в карачаево-балкарский язык, и у него две версии. Первая — «вершина, стоящая в стороне»: джан — «сторона», турган — «стоящий», баши — «вершина». Вторая, более поэтичная, связана с охотником по имени Джантуган. Он нарушил законы общества и поселился в верхней части ущелья, а позже раскаялся. Так гора получила имя «гора, под которой родилась душа», или «гора забытой души».</p><p>Обе версии говорят об одном: Джантуган — место, где человек остаётся наедине с собой. Поэтому сюда идут не только опытные альпинисты, но и те, кто ищет пространство для внутренней работы.</p></section>
@@ -712,7 +714,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/deyatelnost-samorazvitiya/</guid>
       <pubDate>Sat, 05 Sep 2026 10:43:00 +0300</pubDate>
       <description><![CDATA[Деятельность для саморазвития — это конкретные действия, которые помогают расти. Разбираемся, какие виды бывают и как выбрать свой.]]></description>
-      <category>Развитие</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/deyatelnost-samorazvitiya.png" type="image/png" length="69751"/>
       <media:content url="https://timlabs.online/media/telegram/deyatelnost-samorazvitiya.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Что такое деятельность для саморазвития</h2><p>Саморазвитие — это не случайные попытки «что-то почитать» или «сходить на курс», а осознанная работа над собой. Она помогает лучше понимать свои сильные стороны, осваивать новые навыки и чувствовать больше уверенности в жизни.</p><p>В психологии такой рост называют деятельностью, в которой человек сам берёт ответственность за своё развитие. Здесь нет внешнего учителя, который ставит оценки: вы сами решаете, что для вас важно, и выбираете, как это развивать. Именно это отличает саморазвитие от обучения по чужой программе или выполнения указаний.</p><p>Всё начинается с простого вопроса: «Что я хочу изменить или понять в себе глубже?». Ответ на него становится ориентиром, который направляет дальнейшие шаги.</p><p>Такая работа охватывает разные сферы жизни: чтение, рефлексию, творчество, физическую активность, общение. Главное — каждое действие помогает вам лучше понимать себя и свои потребности.</p></section>
@@ -727,7 +729,7 @@
       <guid isPermaLink="true">https://timlabs.online/journal/sut-samootsenki/</guid>
       <pubDate>Thu, 03 Sep 2026 10:44:00 +0300</pubDate>
       <description><![CDATA[Самооценка — это как вы себя цените. Разбираемся, откуда она берётся, как работает и что с ней делать, чтобы жить спокойнее.]]></description>
-      <category>Эмоции и психология</category>
+      <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/sut-samootsenki.png" type="image/png" length="64432"/>
       <media:content url="https://timlabs.online/media/telegram/sut-samootsenki.png" medium="image"/>
       <content:encoded><![CDATA[<section id="s1" class="article"><h2>Что такое самооценка простыми словами</h2><p>Самооценка — это внутренняя оценка самого себя. Не та, которую дают окружающие, а та, которая живёт внутри: как вы себя видите, чувствуете и оцениваете. Это как внутренний компас, который подсказывает, насколько вы достойны любви, успеха и хорошего отношения.</p><p>Представьте, что у вас есть невидимый фильтр, через который вы пропускаете всё, что происходит в жизни. Этот фильтр и есть самооценка. Когда она здоровая, вы спокойно принимаете комплименты, не боитесь ошибаться и можете сказать «нет» без чувства вины. Когда она занижена — даже похвала вызывает сомнения, а критика ранит глубоко.</p><p>Самооценка — это не черта характера и не врождённое свойство. Это набор убеждений о себе, которые складывались годами. Хорошая новость: эти убеждения можно осознать и изменить, если понять, как они работают.</p><p>Важно различать самооценку и самомнение. Самомнение — это завышенное представление о своих возможностях, часто не подкреплённое реальными действиями. Здоровая самооценка — это честный взгляд на себя: вы видите свои сильные стороны и принимаете свои ограничения без драматизации.</p></section>
