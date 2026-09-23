@@ -181,12 +181,11 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 
   <div class="callout">
     <h2>Записаться на экскурсию</h2>
-    <p>Напишите в Telegram — согласуем маршрут, время и компанию. Запись также по телефону: WhatsApp или Telegram.</p>
+    <p>Загляните в Telegram-канал «Экскурсии в Кисловодске» — в закреплённом сообщении связь с экскурсоводом, там же маршруты.</p>
     <div class="cta-row" style="justify-content:center">
-      <a class="btn tg" href="https://t.me/+ij1hVPC1qEJiYjIy" target="_blank" rel="noopener">Записаться в Telegram</a>
-      <a class="btn max" href="tel:+79938917761">+7 993 891-77-61</a>
+      <a class="btn tg" href="https://t.me/+ij1hVPC1qEJiYjIy" target="_blank" rel="noopener">Канал в Telegram</a>
     </div>
-    <p class="personal">WhatsApp / Telegram · <a href="tel:+79938917761">+7 993 891-77-61</a></p>
+    <p class="personal">Сомневаетесь, какой мастер подойдёт? <a href="https://t.me/+79938917761" target="_blank" rel="noopener">Поможем подобрать — ТимЛабс</a></p>
   </div>
 
   <section>
@@ -211,7 +210,6 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
     <h2>Ещё на ТимЛабс</h2>
     <div class="trust">
       <a href="https://timlabs.online/massage-kislovodsk/">Аппаратный массаж на дому в Кисловодске</a>
-      <a href="https://timlabs.online/massage-kislovodsk/">Массаж MARAFDY в Кисловодске</a>
       <a href="https://timlabs.online/transformacionnyj-retrit/">Трансформационный ретрит</a>
       <a href="https://timlabs.online/journal/">Журнал «Компас»</a>
     </div>
@@ -272,13 +270,15 @@ body.tl-consent-lock{overflow:hidden}
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
   function show(){box.classList.add('show');}
-  function hide(){box.classList.remove('show');}
+  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
   function lock(on){
     if(veil) veil.classList.toggle('show', on);
     document.body.classList.toggle('tl-consent-lock', on);
   }
-  if(!get()){ show(); lock(true); }
+  // (15 сен) на политике/согласии/соглашении не затемняем: документ читается ДО согласия
+  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
+  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
   var ok=document.getElementById('tl-consent-ok');
   var no=document.getElementById('tl-consent-no');
   if(ok) ok.addEventListener('click',function(){
@@ -289,7 +289,7 @@ body.tl-consent-lock{overflow:hidden}
   // «Настройки данных» в футере — можно передумать в любой момент
   document.addEventListener('click',function(e){
     var t=e.target;
-    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); lock(true); }
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
   });
 })();
 </script>

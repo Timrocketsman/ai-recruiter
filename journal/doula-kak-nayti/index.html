@@ -146,7 +146,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 
   <section class="faq-wrap">
     <h2>Частые вопросы</h2>
-    <details><summary>Доула — это врач или акушерка?</summary><p>Нет. Доула не оказывает медицинскую помощь, не ставит диагнозы и не принимает роды. Её задача — поддержка: информация, эмоции, практическая помощь рядом с врачом.</p></details>
+    <details><summary>Доула — это врач или акушерка?</summary><p>Нет. Доула не оказывает медицинскую помощь, не ставит диагнозов и не принимает роды. Её задача — поддержка: информация, эмоции, практическая помощь рядом с врачом.</p></details>
 <details><summary>Можно ли найти доулу онлайн?</summary><p>Да. Многие доулы работают онлайн: консультации, подготовка к родам, поддержка по грудному вскармливанию. Это удобно, даже если вы в другом городе.</p></details>
 <details><summary>Когда начинать искать доулу?</summary><p>Лучше заранее — во втором триместре или в начале третьего. Так будет время познакомиться, подготовиться и спокойно выбрать того, кому доверяете.</p></details>
 <details><summary>Сколько стоят услуги доулы?</summary><p>Цена зависит от формата, опыта и региона: разовая консультация обычно дешевле полного сопровождения. Точную стоимость лучше уточнить на первой встрече.</p></details>
@@ -158,7 +158,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
     <div class="rel-list"><a href="https://timlabs.online/soprovozhdenie-beremennosti-onlayn/">Сопровождение беременности онлайн</a><a href="https://timlabs.online/podgotovka-k-rodam/">Подготовка к родам в Кисловодске и онлайн</a><a href="https://timlabs.online/konsultaciya-grudnoe-vskarmlivanie/">Консультация по грудному вскармливанию</a><a href="https://timlabs.online/vosstanovlenie-posle-rodov/">Восстановление после родов в Кисловодске</a></div>
   </section>
 
-  <div class="cta"><p>Если вы ищете доулу, присмотритесь к Маре — практикующей доуле из Кисловодска и КМВ, которая работает также онлайн. Она сопровождает беременность, помогает с подготовкой к родам, грудным вскармливанием и мягким восстановлением после родов, а сама трижды мама. Напишите ей, чтобы познакомиться и задать вопросы.</p><a href="https://t.me/+d7JxvGJWeaJlYWQy" class="btn">Написать Маре в Telegram</a><p class="note">Подход Мары — забота о самочувствии, она не заменяет врача. По вопросам здоровья обращайтесь к медицинским специалистам.</p></div>
+  <div class="cta"><p>Если вы ищете доулу, присмотритесь к Маре — практикующей доуле из Кисловодска и КМВ, которая работает также онлайн. Она сопровождает беременность, помогает с подготовкой к родам, грудным вскармливанием и мягким восстановлением после родов, а сама трижды мама. Напишите ей, чтобы познакомиться и задать вопросы.</p><a href="https://t.me/+d7JxvGJWeaJlYWQy" class="btn">Канал в Telegram</a><p class="note">Подход Мары — забота о самочувствии, она не заменяет врача. По вопросам здоровья обращайтесь к медицинским специалистам.</p></div>
 
   <p class="disclaimer">Материал носит информационный характер и не является медицинской услугой. При вопросах о здоровье проконсультируйтесь со специалистом.</p>
 
@@ -215,13 +215,15 @@ body.tl-consent-lock{overflow:hidden}
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
   function show(){box.classList.add('show');}
-  function hide(){box.classList.remove('show');}
+  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
   function lock(on){
     if(veil) veil.classList.toggle('show', on);
     document.body.classList.toggle('tl-consent-lock', on);
   }
-  if(!get()){ show(); lock(true); }
+  // (15 сен) на политике/согласии/соглашении не затемняем: документ читается ДО согласия
+  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
+  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
   var ok=document.getElementById('tl-consent-ok');
   var no=document.getElementById('tl-consent-no');
   if(ok) ok.addEventListener('click',function(){
@@ -232,7 +234,7 @@ body.tl-consent-lock{overflow:hidden}
   // «Настройки данных» в футере — можно передумать в любой момент
   document.addEventListener('click',function(e){
     var t=e.target;
-    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); lock(true); }
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
   });
 })();
 </script>

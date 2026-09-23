@@ -156,7 +156,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
  <div class="rel-list"><a href="https://timlabs.online/journal/samootsenka-kak-psihologicheskiy-fenomen/">Как устроена самооценка: психология и механизмы формирования</a><a href="https://timlabs.online/journal/samootsenka-kak-formiruetsya/">Как формируется самооценка: от первых оценок до взрослых выборов</a><a href="https://timlabs.online/journal/samootsenka-kak-povysit-zhenschine/">Самооценка женщины: как перестать себя обесценивать</a><a href="https://timlabs.online/journal/povyshennaya-samootsenka/">Повышенная самооценка: как распознать и что с ней делать</a></div>
  </section>
 
- <div class="callout"><h2>Хотите разобраться глубже?</h2><p>Если тема самооценки отзывается лично и привычка сравнивать себя с другими мешает жить — это нормально, и с этим можно работать. Наш специалист поможет разобраться в причинах и выстроить внутреннюю опору.</p><div class="cta-row"><a class="btn" href="https://timlabs.online/massage-kislovodsk/">Массаж на дому в Кисловодске — MARAFDY</a></div><p>Без давления и обязательств — просто разговор о том, что важно для вас.</p></div>
+ <div class="callout"><h2>Хотите разобраться глубже?</h2><p>Если тема самооценки отзывается лично и привычка сравнивать себя с другими мешает жить — это нормально, и с этим можно работать. Наш специалист поможет разобраться в причинах и выстроить внутреннюю опору.</p><div class="cta-row"><a class="btn" href="https://t.me/+79938917761">Написать в Telegram</a><a class="btn" href="https://wa.me/79938917761">Написать в WhatsApp</a></div><p>Без давления и обязательств — просто разговор о том, что важно для вас.</p></div>
 
  <p class="disclaimer">Материал носит информационный характер. Актуальность деталей уточняйте самостоятельно.</p>
 
@@ -212,13 +212,15 @@ body.tl-consent-lock{overflow:hidden}
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
   function show(){box.classList.add('show');}
-  function hide(){box.classList.remove('show');}
+  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
   function lock(on){
     if(veil) veil.classList.toggle('show', on);
     document.body.classList.toggle('tl-consent-lock', on);
   }
-  if(!get()){ show(); lock(true); }
+  // (15 сен) на политике/согласии/соглашении не затемняем: документ читается ДО согласия
+  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
+  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
   var ok=document.getElementById('tl-consent-ok');
   var no=document.getElementById('tl-consent-no');
   if(ok) ok.addEventListener('click',function(){
@@ -229,7 +231,7 @@ body.tl-consent-lock{overflow:hidden}
   // «Настройки данных» в футере — можно передумать в любой момент
   document.addEventListener('click',function(e){
     var t=e.target;
-    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); lock(true); }
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
   });
 })();
 </script>

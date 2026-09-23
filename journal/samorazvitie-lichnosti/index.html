@@ -154,7 +154,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
  <div class="rel-list"><a href="https://timlabs.online/journal/samorazvitie/">Саморазвитие: с чего начать и как выстроить свою систему</a><a href="https://timlabs.online/journal/psihologiya-samorazvitie/">Психология саморазвития: что мешает и что помогает расти</a><a href="https://timlabs.online/journal/lichnostnyy-rost/">Как понять, что вы растёте как личность</a><a href="https://timlabs.online/journal/pro-samorazvitie/">Саморазвитие без выгорания: как расти без перегруза</a></div>
  </section>
 
- <div class="callout"><h2>Хотите расти осознанно?</h2><p>Помогаем найти проверенного мастера, который поддержит ваш путь — без шаблонов и давления.</p><div class="cta-row"><a class="btn" href="https://timlabs.online/massage-kislovodsk/">Массаж на дому в Кисловодске — MARAFDY</a></div><p>Бесплатно подберём формат под ваш запрос.</p></div>
+ <div class="callout"><h2>Хотите расти осознанно?</h2><p>Помогаем найти проверенного мастера, который поддержит ваш путь — без шаблонов и давления.</p><div class="cta-row"><a class="btn" href="https://t.me/+79938917761">Написать в Telegram</a><a class="btn" href="https://wa.me/79938917761">Написать в WhatsApp</a></div><p>Бесплатно подберём формат под ваш запрос.</p></div>
 
  <p class="disclaimer">Материал носит информационный характер. Актуальность деталей уточняйте самостоятельно.</p>
 
@@ -210,13 +210,15 @@ body.tl-consent-lock{overflow:hidden}
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
   function show(){box.classList.add('show');}
-  function hide(){box.classList.remove('show');}
+  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
   function lock(on){
     if(veil) veil.classList.toggle('show', on);
     document.body.classList.toggle('tl-consent-lock', on);
   }
-  if(!get()){ show(); lock(true); }
+  // (15 сен) на политике/согласии/соглашении не затемняем: документ читается ДО согласия
+  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
+  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
   var ok=document.getElementById('tl-consent-ok');
   var no=document.getElementById('tl-consent-no');
   if(ok) ok.addEventListener('click',function(){
@@ -227,7 +229,7 @@ body.tl-consent-lock{overflow:hidden}
   // «Настройки данных» в футере — можно передумать в любой момент
   document.addEventListener('click',function(e){
     var t=e.target;
-    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); lock(true); }
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
   });
 })();
 </script>

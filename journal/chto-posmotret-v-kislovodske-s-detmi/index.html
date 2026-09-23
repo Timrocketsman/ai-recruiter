@@ -157,7 +157,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
     <div class="rel-list"><a href="https://timlabs.online/ekskursii-kislovodsk/">Экскурсии в Кисловодске: тайные тропы и легенды Кавминвод</a><a href="https://timlabs.online/journal/kislovodsk-sanatoriy-kakoy-luchshe/">Какой санаторий в Кисловодске выбрать: на что смотреть перед бронью</a><a href="https://timlabs.online/journal/spa-kislovodsk/">СПА в Кисловодске: полный гид по процедурам и отдыху</a><a href="https://timlabs.online/journal/kislovodsk-massazh/">Массаж в Кисловодске: расслабление, тонус и забота о теле</a></div>
   </section>
 
-  <div class="callout"><h2>Провести день в Кисловодске с пользой</h2><p>Если хотите, чтобы маршрут составил местный гид и учёл возраст и темп ребёнка, — напишите организатору авторских экскурсий по Кисловодску и Кавминводам. Он подберёт прогулку под вашу семью.</p><div class="cta-row"><a class="btn" href="https://t.me/+yicTZB_ZcrU4NjQ6">Написать в Telegram УМАС</a></div></div>
+  <div class="callout"><h2>Провести день в Кисловодске с пользой</h2><p>Если хотите, чтобы маршрут составил местный гид и учёл возраст и темп ребёнка, — напишите организатору авторских экскурсий по Кисловодску и Кавминводам. Он подберёт прогулку под вашу семью.</p><div class="cta-row"><a class="btn" href="https://t.me/+ij1hVPC1qEJiYjIy">Канал в Telegram</a></div></div>
 
   <p class="disclaimer">Материал носит информационный характер. Актуальность деталей уточняйте самостоятельно.</p>
 
@@ -214,13 +214,15 @@ body.tl-consent-lock{overflow:hidden}
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
   function show(){box.classList.add('show');}
-  function hide(){box.classList.remove('show');}
+  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
   function lock(on){
     if(veil) veil.classList.toggle('show', on);
     document.body.classList.toggle('tl-consent-lock', on);
   }
-  if(!get()){ show(); lock(true); }
+  // (15 сен) на политике/согласии/соглашении не затемняем: документ читается ДО согласия
+  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
+  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
   var ok=document.getElementById('tl-consent-ok');
   var no=document.getElementById('tl-consent-no');
   if(ok) ok.addEventListener('click',function(){
@@ -231,7 +233,7 @@ body.tl-consent-lock{overflow:hidden}
   // «Настройки данных» в футере — можно передумать в любой момент
   document.addEventListener('click',function(e){
     var t=e.target;
-    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); lock(true); }
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
   });
 })();
 </script>

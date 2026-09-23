@@ -158,7 +158,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
     <div class="rel-list"><a href="https://timlabs.online/journal/doula/">Доула: поддержка мамы до и после родов</a><a href="https://timlabs.online/journal/doula-kak-nayti/">Как найти доулу: с чего начать и на что смотреть</a><a href="https://timlabs.online/journal/doula-kakoe-obrazovanie-nuzhno/">Доула: какое образование нужно</a><a href="https://timlabs.online/soprovozhdenie-beremennosti-onlayn/">Сопровождение беременности онлайн</a></div>
   </section>
 
-  <div class="callout"><h2>Спокойная подготовка к родам с доулой Мары</h2><p>Мара (ТаMara) — практикующая доула с медицинским образованием и опытом трёх родов. Сопровождает беременность, готовит к родам и поддерживает после них — в Кисловодске, на КМВ и онлайн.</p><div class="cta-row"><a class="btn" href="https://t.me/+d7JxvGJWeaJlYWQy">Написать Маре в Telegram</a></div><p>Поддержка доулы — это не медицинская услуга. При вопросах о здоровье обращайтесь к специалисту.</p></div>
+  <div class="callout"><h2>Спокойная подготовка к родам с доулой Мары</h2><p>Мара (ТаMara) — практикующая доула с медицинским образованием и опытом трёх родов. Сопровождает беременность, готовит к родам и поддерживает после них — в Кисловодске, на КМВ и онлайн.</p><div class="cta-row"><a class="btn" href="https://t.me/+d7JxvGJWeaJlYWQy">Канал в Telegram</a></div><p>Поддержка доулы — это не медицинская услуга. При вопросах о здоровье обращайтесь к специалисту.</p></div>
 
   <p class="disclaimer">Материал носит информационный характер и не является медицинской услугой. При вопросах о здоровье проконсультируйтесь со специалистом.</p>
 
@@ -215,13 +215,15 @@ body.tl-consent-lock{overflow:hidden}
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
   function show(){box.classList.add('show');}
-  function hide(){box.classList.remove('show');}
+  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
   function lock(on){
     if(veil) veil.classList.toggle('show', on);
     document.body.classList.toggle('tl-consent-lock', on);
   }
-  if(!get()){ show(); lock(true); }
+  // (15 сен) на политике/согласии/соглашении не затемняем: документ читается ДО согласия
+  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
+  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
   var ok=document.getElementById('tl-consent-ok');
   var no=document.getElementById('tl-consent-no');
   if(ok) ok.addEventListener('click',function(){
@@ -232,7 +234,7 @@ body.tl-consent-lock{overflow:hidden}
   // «Настройки данных» в футере — можно передумать в любой момент
   document.addEventListener('click',function(e){
     var t=e.target;
-    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); lock(true); }
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
   });
 })();
 </script>

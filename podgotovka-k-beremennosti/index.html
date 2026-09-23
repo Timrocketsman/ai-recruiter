@@ -184,12 +184,11 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 
   <div class="callout">
     <h2>Рядом — бережно и без осуждения</h2>
-    <p>Напишите мне — договоримся о формате: онлайн из любого места или очно в Кисловодске и на Кавминводах.</p>
+    <p>Загляните в мой Telegram-канал — в закреплённом сообщении связь со мной. Онлайн из любого места или очно в Кисловодске и на Кавминводах.</p>
     <div class="cta-row" style="justify-content:center">
-      <a class="btn" style="background:linear-gradient(120deg,#2aabee,#1c8fd6);border-color:rgba(42,171,238,.5);color:#fff;box-shadow:0 6px 24px rgba(42,171,238,.22)" href="https://t.me/+d7JxvGJWeaJlYWQy" target="_blank" rel="noopener">Канал мастера в Telegram</a>
-      <a class="btn" style="background:linear-gradient(120deg,#25d366,#1faa52);border-color:rgba(37,211,102,.5);color:#fff;box-shadow:0 6px 24px rgba(37,211,102,.25)" href="https://wa.me/79938917761" target="_blank" rel="noopener">Написать в WhatsApp</a>
-      <a class="btn ghost" href="tel:+79938917761">Позвонить: +7 993 891-77-61</a>
+      <a class="btn" style="background:linear-gradient(120deg,#2aabee,#1c8fd6);border-color:rgba(42,171,238,.5);color:#fff;box-shadow:0 6px 24px rgba(42,171,238,.22)" href="https://t.me/+d7JxvGJWeaJlYWQy" target="_blank" rel="noopener">Канал в Telegram</a>
     </div>
+    <p class="personal">Сомневаетесь, какой мастер подойдёт? <a href="https://t.me/+79938917761" target="_blank" rel="noopener">Поможем подобрать — ТимЛабс</a></p>
   </div>
 
   <section>
@@ -204,7 +203,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 
   <section>
     <h2>О мастере</h2>
-    <p><b>Мара (ТаMara)</b> — практикующая доула, бережно сопровождаю на пути к материнству. У меня медицинское образование и опыт, я сертифицированный фитнес-инструктор (ZUMBA), практикую массаж и ЛФК, обучаюсь на доулу и консультанта по грудному вскармливанию. Сама трижды прошла путь беременности и материнства — поэтому понимаю вас без лишних слов. Помимо подготовки к материнству, провожу <a href="/massage-kislovodsk/">аппаратный массаж на дому в Кисловодске</a> для заботы о теле и расслабления. Живые отзывы и работы — на площадках ниже.</p>
+    <p><b>Мара (ТаMara)</b> — практикующая доула, бережно сопровождаю на пути к материнству. У меня медицинское образование и опыт, я сертифицированный фитнес-инструктор (ZUMBA), практикую массаж и ЛФК, обучаюсь на доулу и консультанта по грудному вскармливанию. Сама трижды прошла путь беременности и материнства — поэтому понимаю вас без лишних слов. Помимо подготовки к материнству, я — одна из мастеров массажа в команде MARAFDY: <a href="/massage-kislovodsk/">аппаратный массаж на дому в Кисловодске</a> для заботы о теле и расслабления. Отзывы и работы команды MARAFDY — на площадках ниже.</p>
     <div class="trust">
       <a href="https://marafdi.clients.site/" target="_blank" rel="noopener">Сайт Marafdy</a>
       <a href="https://www.avito.ru/kislovodsk/predlozheniya_uslug/ozdorovitelnyy_massazh_s_vyezdom_8332887241" target="_blank" rel="noopener">Отзывы на Avito</a>
@@ -277,13 +276,15 @@ body.tl-consent-lock{overflow:hidden}
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
   function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
   function show(){box.classList.add('show');}
-  function hide(){box.classList.remove('show');}
+  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
   function lock(on){
     if(veil) veil.classList.toggle('show', on);
     document.body.classList.toggle('tl-consent-lock', on);
   }
-  if(!get()){ show(); lock(true); }
+  // (15 сен) на политике/согласии/соглашении не затемняем: документ читается ДО согласия
+  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
+  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
   var ok=document.getElementById('tl-consent-ok');
   var no=document.getElementById('tl-consent-no');
   if(ok) ok.addEventListener('click',function(){
@@ -294,7 +295,7 @@ body.tl-consent-lock{overflow:hidden}
   // «Настройки данных» в футере — можно передумать в любой момент
   document.addEventListener('click',function(e){
     var t=e.target;
-    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); lock(true); }
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
   });
 })();
 </script>
