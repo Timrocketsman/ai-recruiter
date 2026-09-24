@@ -209,7 +209,7 @@ body.tl-consent-lock{overflow:hidden}
   var box=document.getElementById('tl-consent');
   if(!box) return;
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
-  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  function set(v){try{localStorage.setItem(v,v);}catch(e){}}
   function show(){box.classList.add('show');}
   function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
