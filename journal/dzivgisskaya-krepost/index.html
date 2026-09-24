@@ -161,7 +161,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 
   <div class="callout"><h2>Хотите спокойную поездку без суеты?</h2><p>Если идея медленного путешествия по Кавказу вам близка, напишите нашему проверенному партнёру — поможем составить маршрут в комфортном темпе и ответить на вопросы по дороге.</p><div class="cta-row"><a class="btn" href="https://t.me/+79938917761">Написать в Telegram</a><a class="btn" href="https://wa.me/79938917761">Написать в WhatsApp</a></div></div>
 
-  <p class="disclaimer">Материал носит информационный характер. Актуальность деталей уточняйте самостоятельно.</p>
+  <p class="disclaimer">Услуга носит велнес-характер (расслабление, комфорт и общий тонус) и не является медицинской услугой, диагностикой или лечением. При наличии заболеваний проконсультируйтесь с врачом. Материал носит информационный характер. Актуальность деталей уточняйте самостоятельно.</p>
 
   <footer>
     <p>Обновлено: 2026-08-28. Материал журнала ТимЛабс (TimLabs) — навигатора по проверенным велнес-мастерам и практикам.</p>
@@ -214,7 +214,7 @@ body.tl-consent-lock{overflow:hidden}
   var box=document.getElementById('tl-consent');
   if(!box) return;
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
-  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  function set(v){try{localStorage.setItem(v,v);}catch(e){}}
   function show(){box.classList.add('show');}
   function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
