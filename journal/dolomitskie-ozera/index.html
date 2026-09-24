@@ -156,7 +156,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 
   <section class="related">
     <h2>Читайте также</h2>
-    <div class="rel-list"><a href="https://timlabs.online/retrit-otshelnik/">Ретрит «Отшельник»: уединение в деревне рядом с Железноводском</a><a href="https://timlabs.online/transformacionnyj-retrit/">Ретрит «Отшельник»: уединение в деревне рядом с Железноводском</a><a href="https://timlabs.online/massage-kislovodsk/">Аппаратный массаж на дому в Кисловодске</a><a href="https://timlabs.online/journal/">Журнал «Компас»</a></div>
+    <div class="rel-list"><a href="https://timlabs.online/retrit-otshelnik/">Ретрит «Отшельник»: уединение в деревне рядом с Железноводским</a><a href="https://timlabs.online/transformacionnyj-retrit/">Ретрит «Отшельник»: уединение в деревне рядом с Железноводским</a><a href="https://timlabs.online/massage-kislovodsk/">Аппаратный массаж на дому в Кисловодске</a><a href="https://timlabs.online/journal/">Журнал «Компас»</a></div>
   </section>
 
   <div class="callout"><h2>Хотите тишины без лишних забот?</h2><p>Если хотите провести отдых осознанно, подберём практики и маршруты под ваш темп. Напишите нам — и мы поможем составить план поездки.</p><div class="cta-row"><a class="btn tg" href="https://t.me/+79938917761">Написать в Telegram</a><a class="btn tg" href="https://wa.me/79938917761">Написать в WhatsApp</a></div><p>Материал носит информационный характер и не является медицинской услугой. Перед поездкой в горы оцените свою подготовку и погоду; при вопросах здоровья обратитесь к специалисту.</p></div>
@@ -214,7 +214,7 @@ body.tl-consent-lock{overflow:hidden}
   var box=document.getElementById('tl-consent');
   if(!box) return;
   function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
-  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  function set(v){try{localStorage.setItem(v,v);}catch(e){}}
   function show(){box.classList.add('show');}
   function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
   var veil=document.getElementById('tl-consent-veil');
