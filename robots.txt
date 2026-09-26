@@ -1,3 +1,27 @@
+Bingbot
+Allow: /
+
+GPTBot
+Allow: /
+
+OAI-SearchBot
+Allow: /
+
+ChatGPT-User
+Allow: /
+
+PerplexityBot
+Allow: /
+
+ClaudeBot
+Allow: /
+
+Google-Extended
+Allow: /
+
+YandexBot
+Allow: /
+
 User-agent: *
 Allow: /
 
