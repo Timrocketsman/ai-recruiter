@@ -125,17 +125,6 @@ body.tl-consent-lock{overflow:hidden}
   });
 })();
 </script>
-<!--tl-goals-v1--><script>/* цели Метрики: только после согласия (ym есть лишь после «Принять»), без личных данных */
-(function(){function g(id,p){try{if(typeof ym==='function')ym(111725024,'reachGoal',id,p||{page:location.pathname});}catch(e){}}
-document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
-if(/wa\.me|whatsapp\.com/.test(h))g('wa_click');
-else if(/t\.me\/timlabs_journal/i.test(h))g('channel_click');
-else if(/t\.me\/TimLabs_bot/i.test(h))g('bot_click');
-else if(/t\.me\//.test(h))g('tg_click');
-else if(/^tel:/.test(h))g('tel_click');
-else if(/^mailto:/.test(h))g('mail_click');
-else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshelnik|transformacionnyj-retrit|bratstvo|podgotovka|soprovozhdenie|vosstanovlenie|konsultaciya)/.test(a.href))g('service_click');
-else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>
 <!--tl-donate-v1--><a id="tl-donate" href="https://dzen.ru/timlabs.online?donate=true" target="_blank" rel="noopener" aria-label="Поддержать журнал донатом в Дзене">
 <span aria-hidden="true">💙</span><span class="tld-t">Поддержать журнал</span><button type="button" class="tld-x" aria-label="Скрыть">×</button></a>
 <style>
@@ -158,5 +147,16 @@ d.classList.toggle('on',ok()&&sc>.3&&sc<.97);}
 addEventListener('scroll',upd,{passive:true});addEventListener('click',function(){setTimeout(upd,80)});
 d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();try{sessionStorage.setItem('tl-donate-off','1')}catch(_){};d.classList.remove('on');});
 })();</script>
+<!--tl-goals-v1--><script>/* цели Метрики: только после согласия (ym есть лишь после «Принять»), без личных данных */
+(function(){function g(id,p){try{if(typeof ym==='function')ym(111725024,'reachGoal',id,p||{page:location.pathname});}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
+if(/wa\.me|whatsapp\.com/.test(h))g('wa_click');
+else if(/t\.me\/timlabs_journal/i.test(h))g('channel_click');
+else if(/t\.me\/TimLabs_bot/i.test(h))g('bot_click');
+else if(/t\.me\//.test(h))g('tg_click');
+else if(/^tel:/.test(h))g('tel_click');
+else if(/^mailto:/.test(h))g('mail_click');
+else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshelnik|transformacionnyj-retrit|bratstvo|podgotovka|soprovozhdenie|vosstanovlenie|konsultaciya)/.test(a.href))g('service_click');
+else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>
 </body>
 </html>
