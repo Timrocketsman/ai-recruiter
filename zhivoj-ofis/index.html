@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Живой офис ИИ-агентов TimLabs: журнал «Компас» в работе</title>
+<meta name="description" content="Как команда ИИ-агентов ведёт журнал «Компас» и сайт TimLabs: кто пишет статьи, собирает ролики и проверяет сайт. Данные из работы офиса.">
+<link rel="canonical" href="https://timlabs.online/zhivoj-ofis/">
+<meta name="theme-color" content="#05070e">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Живой офис ИИ-агентов TimLabs: журнал «Компас» в работе">
+<meta property="og:description" content="Как команда ИИ-агентов ведёт журнал «Компас» и сайт TimLabs: кто пишет статьи, собирает ролики и проверяет сайт. Данные из работы офиса.">
+<meta property="og:url" content="https://timlabs.online/zhivoj-ofis/">
+<meta property="og:image" content="https://timlabs.online/avatar.jpg">
+<meta property="og:locale" content="ru_RU">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "TimLabs",
+     "item": "https://timlabs.online/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Живой офис",
+     "item": "https://timlabs.online/zhivoj-ofis/"
+    }
+   ]
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://timlabs.online/zhivoj-ofis/#page",
+   "url": "https://timlabs.online/zhivoj-ofis/",
+   "name": "Живой офис ИИ-агентов TimLabs: журнал «Компас» в работе",
+   "description": "Как команда ИИ-агентов ведёт журнал «Компас» и сайт TimLabs: кто пишет статьи, собирает ролики и проверяет сайт. Данные из работы офиса.",
+   "inLanguage": "ru",
+   "isPartOf": {
+    "@id": "https://timlabs.online/#website"
+   },
+   "about": {
+    "@id": "https://timlabs.online/#org"
+   },
+   "author": {
+    "@id": "https://timlabs.online/#tim"
+   }
+  }
+ ]
+}
+</script>
+<style>
+  :root{
+    --bg:#05070e;--bg-2:#0a0f1c;--card:rgba(15,21,38,.6);--card-2:rgba(255,255,255,.035);
+    --stroke:rgba(255,255,255,.09);--stroke-hi:rgba(0,180,255,.5);
+    --cyan:#00b4ff;--magenta:#d100ff;--tg:#2aabee;--max:#7d6cff;--text:#e7ecf7;--muted:#9aa3b8;--dim:#5c6478;
+    --font-body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --font-disp:ui-sans-serif,"SF Pro Display",system-ui,"Segoe UI",sans-serif;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(55% 45% at 15% 0%,rgba(0,180,255,.1),transparent 60%),
+      radial-gradient(50% 45% at 90% 100%,rgba(209,0,255,.08),transparent 60%);
+    background-attachment:fixed;}
+  a{color:var(--cyan)}
+  .wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+
+  .crumb{font-size:.78rem;color:var(--dim);padding:14px 0}
+  .crumb a{color:var(--muted);text-decoration:none}
+  .crumb a:hover{color:var(--cyan)}
+
+  header.hero{padding:14px 0 8px}
+  .eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);font-weight:700}
+  h1{font-family:var(--font-disp);font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.12;margin:.35em 0 .3em;color:#fff;text-wrap:balance}
+  .lead{font-size:1.05rem;color:var(--muted);max-width:60ch}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 8px;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:13px;text-decoration:none;
+    font-weight:700;font-size:.95rem;border:1px solid var(--stroke-hi);color:#00131f;
+    background:linear-gradient(120deg,var(--cyan),#38c7ff);box-shadow:0 6px 24px rgba(0,180,255,.25);
+    transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,180,255,.4)}
+  .btn.tg{background:linear-gradient(120deg,#2aabee,#1f8fd0);border-color:rgba(42,171,238,.5);color:#00121f;box-shadow:0 6px 24px rgba(42,171,238,.22)}
+  .btn.max{background:linear-gradient(120deg,#7d6cff,#6250e6);border-color:rgba(125,108,255,.5);color:#fff;box-shadow:0 6px 24px rgba(125,108,255,.22)}
+  .btn.ghost{background:var(--card);color:#fff;border-color:var(--stroke)}
+  .btn.ghost:hover{border-color:var(--cyan)}
+  .personal{font-size:.82rem;color:var(--dim);margin-top:12px}
+  .personal a{color:var(--muted)}
+
+  section{margin:38px 0}
+  h2{font-family:var(--font-disp);font-size:1.35rem;color:#fff;margin:0 0 14px;text-wrap:balance}
+  p{margin:0 0 14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .tile{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:18px 20px;border-left:3px solid var(--c,var(--cyan))}
+  .tile h3{font-family:var(--font-disp);margin:0 0 6px;font-size:1.02rem;color:#fff}
+  .tile p{margin:0;font-size:.88rem;color:var(--muted)}
+  ul.check{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+  ul.check li{display:flex;gap:11px;align-items:flex-start}
+  ul.check li::before{content:"✓";color:#25d366;font-weight:800;flex:none}
+
+  .callout{background:linear-gradient(180deg,rgba(0,180,255,.08),rgba(209,0,255,.05));
+    border:1px solid var(--stroke-hi);border-radius:20px;padding:28px 26px;text-align:center;margin:40px 0}
+  .callout h2{margin-bottom:8px}
+  .callout p{color:var(--muted);max-width:52ch;margin:0 auto 20px}
+  .price-note{font-size:.9rem;color:var(--muted);background:var(--card);border:1px dashed var(--stroke);border-radius:12px;padding:14px 16px}
+
+  table.price{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--stroke);border-radius:12px;overflow:hidden;font-size:.9rem}
+  table.price th,table.price td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--stroke)}
+  table.price th{background:var(--card-2);color:#fff;font-weight:700}
+  table.price tr:last-child td{border-bottom:none}
+  .price-from{font-weight:700;color:var(--cyan);white-space:nowrap}
+  .price-mo{color:var(--muted);font-size:.85rem}
+
+  details{background:var(--card);border:1px solid var(--stroke);border-radius:12px;padding:2px 18px;margin-bottom:10px}
+  details[open]{border-color:var(--stroke-hi)}
+  summary{cursor:pointer;padding:15px 0;font-weight:600;color:#fff;list-style:none;position:relative;padding-right:28px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";position:absolute;right:2px;top:13px;color:var(--cyan);font-size:1.3rem;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{padding:0 0 16px;color:var(--muted);margin:0}
+
+  .trust{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+  .trust a{font-size:.82rem;padding:7px 13px;border-radius:9px;background:var(--card-2);border:1px solid var(--stroke);
+    color:var(--text);text-decoration:none}
+  .trust a:hover{border-color:var(--cyan)}
+
+  .disclaimer{margin-top:30px;font-size:.8rem;color:var(--dim);background:var(--card);border:1px solid var(--stroke);border-radius:12px;padding:14px 16px}
+  .fine{font-size:.78rem;color:var(--dim);margin-top:10px}
+
+  footer{margin-top:40px;border-top:1px solid var(--stroke);padding-top:20px;font-size:.72rem;color:var(--dim);line-height:1.6}
+  footer a{color:var(--muted)}
+  footer sup{color:var(--magenta)}
+  .back{display:inline-block;margin-top:8px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<!-- Yandex.Metrika counter (загружается только при согласии) -->
+<script type="text/javascript">
+window.tlLoadMetrika=function(){
+  if(window.__tlMetrikaLoaded) return; window.__tlMetrikaLoaded=true;
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=111725024","ym");
+  ym(111725024,"init",{ssr:true,webvisor:false,clickmap:true,accurateTrackBounce:true,trackLinks:true});
+};
+try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika();}}catch(e){}
+</script>
+<!-- /Yandex.Metrika counter -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="alternate" type="application/rss+xml" title="Журнал «Компас» — TimLabs" href="https://timlabs.online/rss.xml">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/tl-glass.css">
+<script src="/assets/tl-glass.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="crumb"><a href="/">ТимЛабс</a> → Живой офис</nav>
+
+  <header class="hero">
+    <div class="eyebrow">Офис ИИ-агентов · обновляется каждые 5 минут</div>
+    <h1>Живой офис ИИ-агентов TimLabs</h1>
+    <p class="lead">Журнал «Компас» и этот сайт ведёт команда ИИ-агентов. Здесь видно, чем они заняты: кто пишет статью, кто собирает ролик, кто проверяет сайт на ошибки. Всё, что происходит ниже, взято из настоящей работы офиса за последние сутки.</p>
+  </header>
+
+  <section class="zo-stats" aria-label="Работа офиса за сутки">
+    <div class="zo-stat"><b id="zo-n-articles">—</b><span>статей за сутки</span></div>
+    <div class="zo-stat"><b id="zo-n-video">—</b><span>событий с роликами за сутки</span></div>
+    <div class="zo-stat"><b id="zo-n-checks">—</b><span>проверок за сутки</span></div>
+    <div class="zo-stat"><b id="zo-n-agents">35</b><span>агентов в 10 отделах</span></div>
+  </section>
+
+  <section class="zo-scene-wrap" aria-label="Схема офиса">
+    <canvas id="zo-scene" width="960" height="460" role="img" aria-label="Схема офиса: отделы и агенты, подсвечиваются те, кто работает сейчас"></canvas>
+    <p class="zo-upd" id="zo-upd">Загружаю данные офиса…</p>
+  </section>
+
+  <section>
+    <h2>Сейчас в офисе</h2>
+    <ul class="zo-feed" id="zo-feed"><li>Лента появится через секунду.</li></ul>
+  </section>
+
+  <section>
+    <h2>Как это устроено</h2>
+    <p>Каждое утро аналитик смотрит, что люди ищут в Яндексе, и выбирает тему. Журналист пишет статью, юрист и редакторы проверяют её на ошибки, штампы и рекламные обещания. Публикатор выкладывает текст на сайт и сообщает о нём поисковикам, а распространители отправляют анонсы в Telegram, ВКонтакте и Дзен.</p>
+    <p>Ночью офис перечитывает старые статьи, чинит найденное и сохраняет резервную копию. Человек, Тимур Гуцев, читает отчёт и решает спорные вопросы. Остальное офис делает сам.</p>
+    <p><a href="/journal/">Почитать журнал «Компас»</a> — там результат этой работы.</p>
+  </section>
+
+  <section>
+    <h2>Кто работает в офисе</h2>
+    <div class="zo-seo">
+<!--tl-office-seo-v1-->
+<h3>🔍 Разведка и спрос</h3><ul><li><b>Аналитик семантики</b> — Слушает, что люди ищут в Яндексе, и собирает из этого темы для журнала</li><li><b>Аналитик трафика</b> — Смотрит, какие статьи находят и читают, и где журнал растёт</li><li><b>Архивариус</b> — Связывает темы и статьи между собой, чтобы читатель находил соседние материалы</li></ul>
+<h3>📖 Редакция «Компас»</h3><ul><li><b>Журналист</b> — Пишет статью дня по живому поисковому спросу</li><li><b>Редактор-аналитик</b> — Готовит план статьи: о чём спрашивают люди и что обязательно раскрыть</li><li><b>Управляющий редакцией</b> — Решает, какая рубрика выходит сегодня, и держит ритм журнала</li><li><b>Литературный редактор</b> — Шлифует уже вышедшие тексты по тому, как их читают</li><li><b>Выпускающий редактор</b> — Ведёт оглавление журнала и рубрики</li><li><b>Переписчик журнала</b> — Каждый день берёт одну старую статью и делает её живее и полезнее</li></ul>
+<h3>✅ Отдел качества</h3><ul><li><b>Аудитор</b> — Обходит страницы сайта и ищет ошибки и дубли</li><li><b>Корректор</b> — Исправляет то, что нашёл аудитор</li><li><b>Иммунитет движка</b> — Ищет в самом движке известные поломки раньше, чем они сработают</li><li><b>Медосмотр статей</b> — Перепроверяет вышедшие статьи по свежим правилам качества</li><li><b>Резервные копии</b> — Каждый день сохраняет резервную копию всей системы</li></ul>
+<h3>🚀 Отдел публикации</h3><ul><li><b>Публикатор</b> — Выкладывает страницы на сайт и сообщает о них поисковикам</li></ul>
+<h3>🛡 Служба безопасности</h3><ul><li><b>Сторож</b> — Следит за безопасностью сайта и движка</li><li><b>Белый хакер</b> — Проверяет сайт на уязвимости, ничего не ломая</li></ul>
+<h3>🎛 Дирекция</h3><ul><li><b>Директор-диспетчер</b> — Директор офиса: планирует и запускает работу всех отделов</li><li><b>Веб-дизайнер</b> — Следит за тем, как сайт выглядит на экране</li><li><b>Креативный директор</b> — Сверяет подачу журнала с тем, что сейчас работает в соцсетях</li><li><b>Аттестация</b> — Раз в неделю проверяет, кто из агентов работает хорошо, а кому нужна помощь</li><li><b>Регламент офиса</b> — Держит регламент: кто что делает и кому передаёт работу</li><li><b>Аналитик отделов</b> — Считает успехи и сбои отделов и выдаёт агентам уроки</li><li><b>Архитектор офиса</b> — Раз в неделю смотрит на офис целиком и предлагает улучшения</li></ul>
+<h3>⚖️ Юридическое сопровождение</h3><ul><li><b>Юрист-редактор</b> — Проверяет тексты на соответствие закону о рекламе и о персональных данных</li><li><b>Комплаенс</b> — Перепроверяет уже вышедшее, когда меняются правила</li></ul>
+<h3>🌐 Внешний рост</h3><ul><li><b>Аудитор присутствия</b> — Проверяет, что страницы журнала на внешних площадках живы</li><li><b>Дистрибьютор</b> — Публикует анонсы новых статей в Telegram-канале</li><li><b>Дистрибьютор · опросы</b> — Раз в неделю задаёт читателям вопрос в канале</li><li><b>Ассистент Тима</b> — Отвечает читателям в обсуждениях канала</li><li><b>Дистрибьютор · ВКонтакте</b> — Публикует анонсы статей во ВКонтакте</li><li><b>Разведчик ресурсов</b> — Ищет сообщества и площадки, где журнал будет полезен</li><li><b>Куратор площадок</b> — Собирает цифры по найденным площадкам, чтобы выбрать лучшие</li></ul>
+<h3>🎬 Продакшн</h3><ul><li><b>Промо-ролики</b> — Делает короткие ролики по статьям голосом Тима</li></ul>
+<h3>🗂 Отдел новых заказов</h3><ul><li><b>Менеджер новых заказов</b> — Принимает новые заказы и готовит проекты к запуску</li></ul>
+<!--/tl-office-seo-v1-->
+    </div>
+  </section>
+
+  <div class="callout">
+    <h2>Хотите такой офис для своего дела?</h2>
+    <p>Тимур собирает журналы и ИИ-агентов под бизнес: от одной задачи до целой редакции. Первый разбор бесплатный.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn tg" href="https://t.me/TimLabs_bot?start=ai" target="_blank" rel="noopener">Обсудить задачу в Telegram</a>
+      <a class="btn" href="/ii-avtomatizaciya/#zhurnal-pod-klyuch">Журнал под ключ</a>
+    </div>
+  </div>
+
+  <footer>
+        <a class="back" href="/">← Вернуться на ТимЛабс</a>
+    <p>© 2026 ТимЛабс (TimLabs) · timlabs.online</p>
+    <p><a href="/privacy/">Политика обработки данных</a> · <a href="/consent/">Согласие на обработку данных</a> · <a href="/terms/">Пользовательское соглашение</a> · <a href="#" id="tl-consent-settings">Настройки данных</a> · 16+</p>
+    <p>Владелец сайта: Гуцев Тимур Олегович (самозанятый), ИНН 460302385684, г. Краснодар, пр. Мира, 28 · <a href="mailto:timurgutsev@yandex.ru">timurgutsev@yandex.ru</a></p>
+  </footer>
+
+</div>
+
+<!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
+<style>
+#tl-consent-veil{position:fixed;inset:0;z-index:9998;display:none;
+  background:rgba(3,6,14,.72);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+#tl-consent-veil.show{display:block}
+body.tl-consent-lock{overflow:hidden}
+#tl-consent{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;
+  max-width:720px;margin:0 auto;display:none;
+  background:rgba(10,15,28,.97);border:1px solid rgba(0,180,255,.35);
+  border-radius:14px;padding:14px 16px;
+  box-shadow:0 10px 40px rgba(0,0,0,.5);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:#e7ecf7;font-size:.86rem;line-height:1.55;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+#tl-consent.show{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#tl-consent p{margin:0;flex:1 1 320px}
+#tl-consent a{color:#00b4ff}
+#tl-consent .tl-btns{display:flex;gap:8px;flex-wrap:wrap;flex:0 0 auto}
+#tl-consent button{cursor:pointer;border-radius:10px;padding:10px 16px;
+  font-weight:700;font-size:.83rem;font-family:inherit;border:1px solid transparent}
+#tl-consent .tl-ok{background:linear-gradient(120deg,#00b4ff,#38c7ff);color:#00131f;border:0}
+#tl-consent .tl-no{background:transparent;color:#9aa3b8;border-color:rgba(255,255,255,.18)}
+#tl-consent .tl-no:hover{color:#e7ecf7;border-color:rgba(255,255,255,.35)}
+#tl-consent .tl-ok:hover{filter:brightness(1.08)}
+@media (max-width:560px){#tl-consent .tl-btns{width:100%}#tl-consent button{flex:1 1 auto}}
+</style>
+<div id="tl-consent-veil"></div>
+<div id="tl-consent" role="dialog" aria-modal="true" aria-label="Согласие на обработку данных">
+  <p>Мы используем cookie и веб-аналитику, чтобы понимать, как люди пользуются сайтом.
+  Без них сайт тоже работает. Нажимая «Принять», вы даёте <a href="/consent/">согласие на обработку данных</a> веб-аналитики. Подробности — в <a href="/privacy/">политике обработки данных</a>.</p>
+  <div class="tl-btns">
+    <button type="button" class="tl-ok" id="tl-consent-ok">Принять</button>
+    <button type="button" class="tl-no" id="tl-consent-no">Только необходимые</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='tl-consent-v2';
+  var box=document.getElementById('tl-consent');
+  if(!box) return;
+  function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  function show(){box.classList.add('show');}
+  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
+  var veil=document.getElementById('tl-consent-veil');
+  function lock(on){
+    if(veil) veil.classList.toggle('show', on);
+    document.body.classList.toggle('tl-consent-lock', on);
+  }
+  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
+  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
+  var ok=document.getElementById('tl-consent-ok');
+  var no=document.getElementById('tl-consent-no');
+  if(ok) ok.addEventListener('click',function(){
+    set('accepted'); hide(); lock(false);
+    if(typeof window.tlLoadMetrika==='function') window.tlLoadMetrika();
+  });
+  if(no) no.addEventListener('click',function(){ set('declined'); hide(); lock(false); });
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
+  });
+})();
+</script>
+<!--tl-goals-v1--><script>/* цели Метрики: только после согласия (ym есть лишь после «Принять»), без личных данных */
+(function(){function g(id,p){try{if(typeof ym==='function')ym(111725024,'reachGoal',id,p||{page:location.pathname});}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
+ if(/wa\.me|whatsapp\.com/.test(h))g('wa_click');
+ else if(/t\.me\/timlabs_journal/i.test(h))g('channel_click');
+ else if(/t\.me\/TimLabs_bot/i.test(h))g('bot_click');
+ else if(/t\.me\//.test(h))g('tg_click');
+ else if(/^tel:/.test(h))g('tel_click');
+ else if(/^mailto:/.test(h))g('mail_click');
+ else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshelnik|transformacionnyj-retrit|bratstvo|podgotovka|soprovozhdenie|vosstanovlenie|konsultaciya|ii-avtomatizaciya)/.test(a.href))g('service_click');
+ else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>
+<!--tl-donate-v1--><a id="tl-donate" href="https://dzen.ru/timlabs.online?donate=true" target="_blank" rel="noopener" aria-label="Поддержать журнал донатом в Дзене">
+<span aria-hidden="true">💙</span><span class="tld-t">Поддержать журнал</span><button type="button" class="tld-x" aria-label="Скрыть">×</button></a>
+<style>
+#tl-donate{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;align-items:center;gap:8px;padding:9px 10px 9px 14px;border-radius:999px;
+  font:600 .82rem/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#e7ecf7;text-decoration:none;
+  background:rgba(12,17,32,.72);border:1px solid rgba(0,180,255,.35);box-shadow:0 8px 28px rgba(0,0,0,.4),0 0 18px rgba(0,180,255,.15);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .35s,transform .35s,border-color .2s}
+#tl-donate.on{opacity:1;transform:none;pointer-events:auto}
+#tl-donate:hover{border-color:#d100ff}
+#tl-donate:focus-visible{outline:2px solid #00b4ff;outline-offset:3px}
+#tl-donate .tld-x{all:unset;cursor:pointer;width:20px;height:20px;display:grid;place-items:center;border-radius:50%;color:#9aa3b8;font-size:1rem}
+#tl-donate .tld-x:hover{color:#fff;background:rgba(255,255,255,.1)}
+@media (max-width:480px){#tl-donate{font-size:.78rem;padding:8px 8px 8px 12px}}
+@media (prefers-reduced-motion:reduce){#tl-donate{transition:none}}
+</style>
+<script>(function(){var d=document.getElementById('tl-donate');if(!d)return;
+function ok(){try{return !!localStorage.getItem('tl-consent-v2')&&!sessionStorage.getItem('tl-donate-off');}catch(e){return true;}}
+function upd(){var h=document.documentElement,sc=(h.scrollTop||document.body.scrollTop)/Math.max(1,h.scrollHeight-innerHeight);
+d.classList.toggle('on',ok()&&sc>.3&&sc<.97);}
+addEventListener('scroll',upd,{passive:true});addEventListener('click',function(){setTimeout(upd,80)});
+d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();try{sessionStorage.setItem('tl-donate-off','1')}catch(_){};d.classList.remove('on');});
+})();</script>
+<style>
+.zo-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 22px}
+.zo-stat{padding:14px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.015));text-align:center}
+.zo-stat b{display:block;font-size:1.7rem;color:#fff;line-height:1.1}
+.zo-stat span{font-size:.8rem;color:#9aa3b8}
+.zo-scene-wrap{margin:0 0 28px}
+#zo-scene{display:block;width:100%;height:530px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:radial-gradient(120% 90% at 50% 0%,#0d1630 0%,#05070e 70%)}
+.zo-upd{margin:8px 2px 0;font-size:.8rem;color:#5c6478}
+.zo-feed{list-style:none;padding:0;margin:0}
+.zo-feed li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.93rem;color:#c9d1e3}
+.zo-feed time{flex:0 0 3.2em;color:#5c6478;font-variant-numeric:tabular-nums}
+.zo-feed a{color:#00b4ff}
+.zo-seo h3{font-size:1rem;margin:18px 0 6px;color:#fff}
+.zo-seo ul{margin:0;padding-left:18px;color:#9aa3b8;font-size:.9rem;line-height:1.55}
+@media (max-width:640px){.zo-stats{grid-template-columns:repeat(2,1fr)}#zo-scene{height:1480px}}
+</style>
+<script>
+(function(){
+"use strict";
+var LIVE="https://raw.githubusercontent.com/Timrocketsman/timlabs-live/main/office_live.json",
+    BACKUP="/data/office_live.json",
+    LINK_RE=/^\/journal\/[a-z0-9-]+\/$/,
+    KIND_COL={article:"#00b4ff",draft:"#35b6ff",edit:"#9b6cff",check:"#6aa0ff",plan:"#35d0c0",announce:"#d100ff",video:"#ff6ad5",search:"#ffb347",guard:"#7cff9b",system:"#aeb6cc"},
+    STATE_COL={working:"#00b4ff",due:"#ffb347",idle:"#4a5470",error:"#9b6cff",paused:"#2e3446"};
+var cv=document.getElementById("zo-scene"); if(!cv||!cv.getContext)return;
+var ctx=cv.getContext("2d"), data=null, rooms=[], agents={}, queue=[], active=[], bubbles=[], visible=false, running=false, last=0, nextEv=0;
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function txt(el,s){el.textContent=String(s==null?"":s);}
+function num(x){x=Number(x);return isFinite(x)?x:0;}
+function hhmm(ts){var d=new Date(num(ts)*1000);return ("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);}
+
+function layout(){
+  var dpr=Math.min(window.devicePixelRatio||1,2), w=cv.clientWidth, h=cv.clientHeight;
+  cv.width=Math.round(w*dpr); cv.height=Math.round(h*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);
+  if(!data)return;
+  var ds=data.departments||[], cols=w<640?2:5, rowsN=Math.ceil(ds.length/cols), pad=12,
+      rw=(w-pad*(cols+1))/cols, per0=Math.max(1,Math.floor((rw-16)/64)), rowH=[], ys=[], yy=pad;
+  for(var r0=0;r0<rowsN;r0++){var mx=1;for(var c0=0;c0<cols;c0++){var dd=ds[r0*cols+c0];if(dd)mx=Math.max(mx,Math.ceil(((dd.agents||[]).length||1)/per0));}rowH.push(58+mx*44);ys.push(yy);yy+=58+mx*44+pad;}
+  if(Math.abs(yy-h)>2){cv.style.height=yy+"px";h=yy;cv.height=Math.round(yy*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
+  rooms=[]; agents={};
+  ds.forEach(function(d,i){
+    var c=i%cols, r=Math.floor(i/cols), x=pad+c*(rw+pad), y=ys[r], rh=rowH[r];
+    var room={id:String(d.id||""),name:String(d.name||""),x:x,y:y,w:rw,h:rh};
+    rooms.push(room);
+    var ags=d.agents||[], per=Math.max(1,Math.min(ags.length,per0)), gx=(rw-16)/per;
+    ags.forEach(function(a,j){
+      var ax=x+8+(j%per)*gx+gx/2, ay=y+58+Math.floor(j/per)*44;
+      agents[String(a.id)]={name:String(a.short||a.name||""),state:String(a.state||"idle"),x:ax,y:ay,room:room,glow:0,col:null};
+    });
+  });
+}
+
+function fit(s,maxw){if(ctx.measureText(s).width<=maxw)return s;while(s.length>1&&ctx.measureText(s+"…").width>maxw)s=s.slice(0,-1);return s+"…";}
+function short(n){n=String(n||"").replace(/[«»"]/g,"");var w=n.split(/[\s·-]+/)[0];return w.length>11?w.slice(0,10)+"…":w;}
+function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+
+function draw(t){
+  var w=cv.clientWidth,h=cv.clientHeight; ctx.clearRect(0,0,w,h);
+  rooms.forEach(function(r){
+    rr(r.x,r.y,r.w,r.h,14); ctx.fillStyle="rgba(255,255,255,.035)"; ctx.fill();
+    ctx.strokeStyle="rgba(255,255,255,.09)"; ctx.lineWidth=1; ctx.stroke();
+    ctx.fillStyle="#c9d1e3"; ctx.font="600 12px system-ui,sans-serif";
+    ctx.fillText(fit(r.name,r.w-22), r.x+12, r.y+22);
+  });
+  var pulse=(Math.sin(t/400)+1)/2;
+  Object.keys(agents).forEach(function(k){
+    var a=agents[k], base=STATE_COL[a.state]||STATE_COL.idle, rad=9;
+    if(a.glow>0){ctx.beginPath();ctx.arc(a.x,a.y,rad+10*a.glow,0,6.283);ctx.fillStyle=(a.col||"#00b4ff")+"33";ctx.fill();}
+    if(a.state==="working"&&!reduce){ctx.beginPath();ctx.arc(a.x,a.y,rad+3+pulse*3,0,6.283);ctx.strokeStyle="rgba(0,180,255,.35)";ctx.stroke();}
+    ctx.beginPath();ctx.arc(a.x,a.y,rad,0,6.283);ctx.fillStyle=a.glow>0?(a.col||base):base;ctx.fill();
+    ctx.fillStyle=a.glow>0?"#e7ecf7":"#7d869c";ctx.font="10px system-ui,sans-serif";ctx.textAlign="center";
+    ctx.fillText(short(a.name),a.x,a.y+22);ctx.textAlign="left";
+  });
+  active.forEach(function(p){
+    var k=Math.min(1,p.t), x=p.x0+(p.x1-p.x0)*k, y=p.y0+(p.y1-p.y0)*k;
+    ctx.beginPath();ctx.arc(x,y,3.5,0,6.283);ctx.fillStyle=p.col;ctx.fill();
+  });
+  bubbles.forEach(function(b){
+    ctx.globalAlpha=Math.max(0,Math.min(1,b.life));
+    ctx.font="12px system-ui,sans-serif";
+    var s=b.text.length>46?b.text.slice(0,45)+"…":b.text, tw=ctx.measureText(s).width+16,
+        bx=Math.max(4,Math.min(w-tw-4,b.x-tw/2)), by=Math.max(4,b.y-34);
+    rr(bx,by,tw,22,11);ctx.fillStyle="rgba(10,15,28,.92)";ctx.fill();ctx.strokeStyle=b.col;ctx.stroke();
+    ctx.fillStyle="#e7ecf7";ctx.fillText(s,bx+8,by+15);ctx.globalAlpha=1;
+  });
+}
+
+function hub(){var r=rooms.filter(function(x){return x.id==="management";})[0]||rooms[0];return r?{x:r.x+r.w/2,y:r.y+r.h/2}:{x:0,y:0};}
+
+function play(ev){
+  var a=agents[String(ev.agent)]; if(!a)return;
+  var col=KIND_COL[ev.kind]||"#00b4ff", hb=hub();
+  a.glow=1; a.col=col;
+  bubbles.push({text:String(ev.label||""),x:a.x,y:a.y,col:col,life:3.2});
+  if(bubbles.length>3)bubbles.shift();
+  active.push({x0:a.x,y0:a.y,x1:hb.x,y1:hb.y,t:0,col:col});
+}
+
+function tick(t){
+  if(!running)return;
+  var dt=Math.min(0.1,(t-(last||t))/1000); last=t;
+  if(t>nextEv&&queue.length){play(queue.shift());nextEv=t+2600;}
+  if(!queue.length&&data)queue=(data.events||[]).slice(-30);
+  Object.keys(agents).forEach(function(k){var a=agents[k];if(a.glow>0)a.glow=Math.max(0,a.glow-dt*0.35);});
+  active=active.filter(function(p){p.t+=dt*0.7;return p.t<1.05;});
+  bubbles=bubbles.filter(function(b){b.life-=dt;return b.life>0;});
+  draw(t); requestAnimationFrame(tick);
+}
+function start(){if(reduce){draw(0);return;} if(!running&&visible&&!document.hidden&&data){running=true;last=0;requestAnimationFrame(tick);}}
+function stop(){running=false;}
+
+function feed(){
+  var ul=document.getElementById("zo-feed"); if(!ul)return;
+  while(ul.firstChild)ul.removeChild(ul.firstChild);
+  (data.events||[]).slice(-10).reverse().forEach(function(ev){
+    var li=document.createElement("li"), tm=document.createElement("time"), sp=document.createElement("span");
+    txt(tm,hhmm(ev.ts)); li.appendChild(tm);
+    var link=String(ev.link||"");
+    if(LINK_RE.test(link)){var a=document.createElement("a");a.href=link;txt(a,ev.label);sp.appendChild(a);} else txt(sp,ev.label);
+    li.appendChild(sp); ul.appendChild(li);
+  });
+}
+function stats(){
+  var c=data.counts||{}, t=c.day||c.today||{};
+  txt(document.getElementById("zo-n-articles"),num(t.articles)+num(t.updates));
+  txt(document.getElementById("zo-n-video"),num(t.video));
+  txt(document.getElementById("zo-n-checks"),num(t.check)+num(t.guard));
+  if(c.agents)txt(document.getElementById("zo-n-agents"),num(c.agents));
+  var m=Math.max(0,Math.round((Date.now()/1000-num(data.generated))/60));
+  txt(document.getElementById("zo-upd"),"Данные офиса обновлены "+(m<1?"только что":m+" мин назад")+". Точки — агенты: голубые работают, жёлтые скоро начнут, серые ждут задачу.");
+}
+function load(){
+  fetch(LIVE).then(function(r){if(!r.ok)throw 0;return r.json();})
+  .catch(function(){return fetch(BACKUP).then(function(r){return r.json();});})
+  .then(function(d){
+    if(!d||!Array.isArray(d.departments))return;
+    var first=!data; data=d; layout(); feed(); stats();
+    if(first)queue=(d.events||[]).slice(-30);
+    if(reduce)draw(0); else start();
+  }).catch(function(){});
+}
+if("IntersectionObserver" in window){new IntersectionObserver(function(es){visible=es[0].isIntersecting;visible?start():stop();}).observe(cv);} else visible=true;
+document.addEventListener("visibilitychange",function(){document.hidden?stop():start();});
+window.addEventListener("resize",function(){layout();if(reduce||!running)draw(0);});
+window.addEventListener("load",function(){load();setInterval(load,60000);});
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href*="start=ai"],a[href*="/ii-avtomatizaciya/"]');if(!a)return;try{if(typeof ym==="function")ym(111725024,"reachGoal","b2b_click",{from:location.pathname});}catch(_){}});
+})();
+</script>
+
+</body>
+</html>
