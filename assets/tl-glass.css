@@ -1,0 +1,108 @@
+/* TimLabs · стеклянные карточки (главная и страницы направлений). Один файл — кэшируется на всех страницах. */
+:root{
+  --bg:#05070e;--bg-2:#0a0f1c;--cyan:#00b4ff;--magenta:#d100ff;
+  --text:#e7ecf7;--muted:#9aa3b8;--dim:#5c6478;
+  --glass:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.018) 60%);
+  --glass-stroke:rgba(255,255,255,.1);
+  --radius:22px;--blur:14px;
+  --font-body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --font-disp:ui-sans-serif,"SF Pro Display",system-ui,"Segoe UI",sans-serif;
+}
+.tlg-sec{width:100%;max-width:1040px;margin:0 auto clamp(46px,8vw,84px);text-align:left;
+  content-visibility:auto;contain-intrinsic-size:auto 700px}
+.tlg-sec:first-of-type{content-visibility:visible}
+.tlg-head{max-width:62ch;margin:0 auto 26px;text-align:center}
+.tlg-kicker{display:inline-block;padding:5px 14px;border-radius:999px;font-size:.68rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);
+  border:1px solid rgba(0,180,255,.25);background:rgba(0,180,255,.06)}
+.tlg-head h2{font-family:var(--font-disp);font-size:clamp(1.45rem,4vw,2.1rem);line-height:1.15;color:#fff;
+  margin:14px 0 10px;text-wrap:balance;letter-spacing:-.01em}
+.tlg-head p{margin:0;color:var(--muted);font-size:.98rem;line-height:1.6;text-wrap:pretty}
+
+.tlg-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.tlg-grid.two{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))}
+
+/* ---- стеклянная карточка ---- */
+.gcard{--c:var(--cyan);--c2:var(--magenta);--mx:50%;--my:-20%;
+  position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;gap:10px;
+  padding:24px 22px 22px;border-radius:var(--radius);color:var(--text);
+  background:var(--glass),rgba(12,17,32,.55);
+  border:1px solid var(--glass-stroke);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 12px 40px rgba(0,0,0,.35);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
+@supports ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+  .gcard{background:var(--glass),rgba(12,17,32,.28);
+    -webkit-backdrop-filter:blur(var(--blur)) saturate(140%);backdrop-filter:blur(var(--blur)) saturate(140%)}
+}
+/* светящаяся градиентная рамка */
+.gcard::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;z-index:-1;pointer-events:none;
+  background:linear-gradient(135deg,var(--c),transparent 40%,transparent 60%,var(--c2));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:.45;transition:opacity .35s}
+/* зеркальный блик, следует за курсором */
+.gcard::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;
+  background:radial-gradient(420px circle at var(--mx) var(--my),color-mix(in srgb,var(--c) 22%,transparent),transparent 60%),
+    linear-gradient(115deg,transparent 30%,rgba(255,255,255,.06) 45%,transparent 55%);
+  opacity:.7;transition:opacity .35s}
+.gcard:hover,.gcard:focus-within{transform:translateY(-4px);border-color:color-mix(in srgb,var(--c) 45%,transparent);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 18px 50px color-mix(in srgb,var(--c) 22%,transparent)}
+.gcard:hover::before,.gcard:focus-within::before{opacity:1}
+.gcard:hover::after{opacity:1}
+
+.gcard .g-top{display:flex;align-items:center;gap:12px}
+.gcard .g-ic{width:46px;height:46px;flex:none;display:grid;place-items:center;font-size:1.45rem;border-radius:14px;
+  background:color-mix(in srgb,var(--c) 16%,rgba(255,255,255,.04));border:1px solid color-mix(in srgb,var(--c) 35%,transparent);
+  box-shadow:0 0 22px color-mix(in srgb,var(--c) 25%,transparent)}
+.gcard .g-tag{font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--c)}
+.gcard h3{font-family:var(--font-disp);font-size:1.18rem;line-height:1.25;margin:0;color:#fff;text-wrap:balance}
+.gcard h3 a{color:inherit;text-decoration:none}
+/* вся карточка кликабельна по главной ссылке, но чипы остаются отдельными ссылками */
+.gcard h3 a::after{content:"";position:absolute;inset:0;z-index:0}
+.gcard h3 a:focus-visible{outline:none}
+.gcard:has(h3 a:focus-visible){outline:2px solid var(--c);outline-offset:3px}
+.gcard p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.6}
+.gcard p b{color:var(--text)}
+.gcard .g-more{margin-top:auto;padding-top:6px;font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+
+.chips{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{--c:var(--cyan);display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:999px;
+  font-size:.8rem;font-weight:600;color:var(--text);text-decoration:none;white-space:nowrap;
+  background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);
+  transition:border-color .2s,background .2s,color .2s}
+.chip:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);color:#fff}
+.chip:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.chip sup{color:var(--magenta)}
+.chip.main{background:color-mix(in srgb,var(--c) 20%,transparent);border-color:color-mix(in srgb,var(--c) 55%,transparent);color:#fff}
+
+/* большая карточка проекта мастера */
+.gcard.proj{padding:26px 24px}
+.gcard.proj .g-who{font-size:.82rem;color:var(--dim)}
+
+/* раскрывающаяся карточка («Проводы») */
+details.gcard summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;gap:10px}
+details.gcard summary::-webkit-details-marker{display:none}
+details.gcard summary:focus-visible{outline:2px solid var(--c);outline-offset:3px;border-radius:12px}
+details.gcard[open] .g-more{display:none}
+details.gcard .g-body{color:var(--muted);font-size:.92rem;line-height:1.6}
+
+/* списки статей на страницах направлений */
+.alist{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));list-style:none;padding:0;margin:0}
+.alist a{display:block;height:100%;padding:14px 16px;border-radius:14px;text-decoration:none;color:var(--text);font-size:.92rem;line-height:1.45;
+  background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);transition:border-color .2s,background .2s,transform .2s}
+.alist a:hover{border-color:rgba(0,180,255,.5);background:rgba(0,180,255,.07);transform:translateY(-2px)}
+.alist a:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.alist small{display:block;margin-top:4px;color:var(--dim);font-size:.75rem}
+.alist-h{font-family:var(--font-disp);color:#fff;font-size:1.05rem;margin:28px 0 12px}
+
+/* появление при прокрутке (без JS всё видно сразу) */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (max-width:640px){:root{--blur:9px}.gcard{padding:20px 18px}}
+@media (prefers-reduced-motion:reduce){
+  .gcard,.gcard::before,.gcard::after,.chip,.alist a{transition:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+}
+@media (prefers-reduced-transparency:reduce){
+  .gcard{background:#0e1426;-webkit-backdrop-filter:none;backdrop-filter:none}
+}

@@ -55,6 +55,9 @@
 }
 </script>
 
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="/assets/tl-glass.css">
+<script src="/assets/tl-glass.js" defer></script>
 <style>
   :root{
     --bg:#05070e; --bg-2:#0a0f1c;
@@ -92,7 +95,7 @@
     -webkit-mask-image:radial-gradient(circle at 50% 25%,#000 22%,transparent 75%);
             mask-image:radial-gradient(circle at 50% 25%,#000 22%,transparent 75%);}
 
-  main{position:relative;z-index:2;max-width:900px;margin:0 auto;
+  main{position:relative;z-index:2;max-width:1080px;margin:0 auto;
     padding:clamp(30px,6vw,60px) 20px 70px;text-align:center;
     display:flex;flex-direction:column;align-items:center}
 
@@ -130,109 +133,13 @@
   .btn .icon{width:19px;height:19px}
   .btn.ghost .icon{color:var(--wa)}
 
-  /* ---------- ABOUT ---------- */
-  .about{max-width:60ch;margin:0 auto clamp(30px,5vw,44px);padding:22px 26px;
-    background:var(--panel-2);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);
-    text-align:left;color:var(--muted);font-size:.95rem;line-height:1.65}
-  .about b{color:var(--text)}
-
-  /* ---------- DOORS ---------- */
-  .doors{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:0 0 10px}
-  .door{font-family:var(--font-disp);cursor:pointer;color:#fff;
-    padding:13px 22px;border-radius:999px;font-size:.8rem;font-weight:700;
-    letter-spacing:.08em;text-transform:uppercase;display:inline-flex;align-items:center;gap:9px;
-    background:var(--panel);border:1px solid var(--stroke);
-    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
-    box-shadow:0 4px 22px rgba(0,0,0,.35),inset 0 0 16px rgba(0,180,255,.05);
-    transition:transform .25s,border-color .25s,background .25s,box-shadow .25s}
-  .door:hover{transform:translateY(-2px);border-color:var(--stroke-hi)}
-  .door:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-  .door[aria-selected="true"]{background:rgba(0,180,255,.1);border-color:var(--stroke-hi);
-    box-shadow:0 0 26px rgba(0,180,255,.22),inset 0 0 16px rgba(0,180,255,.2)}
-  .door .icon{width:1.05em;height:1.05em}
-
-  .stage{min-height:340px;width:100%;margin-top:22px}
-  .panel{display:none}
-  .panel.active{display:block;animation:fade .5s ease}
-  @keyframes fade{from{opacity:0}to{opacity:1}}
-  .intro{margin:0 auto 26px;max-width:54ch}
-  .intro h2{font-family:var(--font-disp);font-size:1.15rem;color:#fff;margin:0 0 6px}
-  .intro p{margin:0;color:var(--muted);font-size:.92rem}
-
-  /* ---------- life-stage cards ---------- */
-  .stages{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;max-width:720px;margin:0 auto}
-  .scard{--c:var(--cyan);text-align:left;cursor:pointer;color:var(--text);font-family:var(--font-body);
-    display:flex;flex-direction:column;gap:6px;padding:20px 18px;border-radius:var(--radius);
-    background:var(--panel-2);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;
-    opacity:0;transform:translateY(18px) scale(.96);
-    transition:transform .32s cubic-bezier(.18,.89,.32,1.28),border-color .25s,box-shadow .25s}
-  .panel.active .scard{opacity:1;transform:none}
-  .scard::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--c);opacity:.7}
-  .scard:hover,.scard:focus-visible{border-color:var(--c);transform:translateY(-4px) scale(1.02);
-    box-shadow:0 8px 26px color-mix(in srgb,var(--c) 30%,transparent);outline:none}
-  .scard .ic{font-size:1.7rem}
-  .scard .st{font-family:var(--font-disp);font-weight:700;font-size:1rem;color:#fff}
-  .scard .sd{font-size:.82rem;color:var(--muted);line-height:1.45}
-  .scard .more{margin-top:4px;font-size:.72rem;font-weight:700;letter-spacing:.03em;
-    color:var(--c);text-transform:uppercase}
-
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
-
-  /* ---------- trees ---------- */
-  .group{margin-bottom:26px}
-  .group-title{font-family:var(--font-disp);color:var(--cyan);font-size:.7rem;font-weight:700;
-    letter-spacing:.2em;text-transform:uppercase;margin:0 0 4px;text-shadow:0 0 12px rgba(0,180,255,.4)}
-  .group-desc{color:var(--muted);font-size:.8rem;margin:0 auto 14px;max-width:48ch}
-  .tree{display:flex;flex-wrap:wrap;justify-content:center;gap:11px}
-  .leaf{--c:var(--cyan);display:inline-flex;align-items:center;gap:10px;
-    padding:11px 16px;border-radius:13px;text-decoration:none;color:var(--text);font-size:.9rem;font-weight:500;
-    background:var(--panel-2);border:1px solid rgba(255,255,255,.08);
-    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
-    opacity:0;transform:translateY(18px) scale(.94);
-    transition:transform .32s cubic-bezier(.18,.89,.32,1.28),border-color .25s,background .25s,box-shadow .25s}
-  .panel.active .leaf{opacity:1;transform:none}
-  .leaf:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);
-    box-shadow:0 0 16px color-mix(in srgb,var(--c) 35%,transparent);transform:translateY(-3px) scale(1.04)}
-  .leaf:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
-  .leaf .icon{width:19px;height:19px;color:var(--c);flex:none}
-  .leaf.sm{padding:9px 13px;font-size:.8rem;border-radius:11px}
-  .leaf .mono{display:grid;place-items:center;width:20px;height:20px;border-radius:6px;
-    font-size:.58rem;font-weight:800;color:#fff;background:color-mix(in srgb,var(--c) 55%,#0a0f1c);flex:none}
   sup{color:var(--magenta);font-weight:700}
 
-  footer{margin-top:52px;font-size:.7rem;color:var(--dim);max-width:60ch;line-height:1.6}
+  footer{margin-top:10px;font-size:.7rem;color:var(--dim);max-width:60ch;line-height:1.6}
   footer .cop{margin-top:10px;color:var(--dim);letter-spacing:.06em}
-
-  /* ---------- DEEP overlay ---------- */
-  .overlay{position:fixed;inset:0;z-index:50;display:none;padding:24px;
-    align-items:center;justify-content:center;
-    background:rgba(3,5,12,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-  .overlay.open{display:flex;animation:fade .3s ease}
-  .sheet{--c:var(--cyan);position:relative;width:100%;max-width:560px;max-height:86vh;overflow-y:auto;
-    text-align:left;padding:34px clamp(22px,4vw,38px);border-radius:22px;
-    background:linear-gradient(180deg,rgba(16,22,40,.98),rgba(9,13,24,.98));
-    border:1px solid var(--c);box-shadow:0 0 60px color-mix(in srgb,var(--c) 30%,transparent);
-    animation:rise .35s cubic-bezier(.18,.89,.32,1.2)}
-  @keyframes rise{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
-  .sheet .close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;
-    display:grid;place-items:center;cursor:pointer;color:var(--text);font-size:1.1rem;
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
-  .sheet .close:hover{border-color:var(--c);color:#fff}
-  .sheet .close:focus-visible{outline:2px solid var(--c);outline-offset:2px}
-  .sheet .d-ic{font-size:2.4rem;line-height:1}
-  .sheet h3{font-family:var(--font-disp);font-size:1.5rem;color:#fff;margin:12px 0 4px;text-wrap:balance}
-  .sheet .d-tag{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--c);font-weight:700}
-  .sheet p{color:var(--muted);font-size:.95rem;line-height:1.7;margin:14px 0}
-  .sheet p b{color:var(--text)}
-  .sheet .d-list{list-style:none;padding:0;margin:14px 0;display:flex;flex-direction:column;gap:8px}
-  .sheet .d-list li{display:flex;gap:10px;align-items:flex-start;color:var(--text);font-size:.9rem}
-  .sheet .d-list li::before{content:"→";color:var(--c);font-weight:700}
-  .sheet .d-links{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
-  .sheet .leaf{opacity:1;transform:none}
 
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
-    .leaf,.scard{opacity:1;transform:none}
   }
 </style>
 <style id="timlabs-frame-guard">body{display:none!important}</style>
@@ -275,41 +182,80 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
     <p class="promise">Помогу пройти <b>каждый этап жизни</b> рядом с проверенными мастерами — от рождения ребёнка до проводов близких.</p>
     <div class="hero-cta">
       <a class="btn" href="#tl-podbor">Подобрать мастера за минуту</a>
-      <button class="btn" data-goto="p-care"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Найти своего мастера</button>
-      <a class="btn ghost" href="/journal/"><svg class="icon" viewBox="0 0 24 24" style="color:var(--magenta)"><use href="#i-heart"/></svg>📖 Журнал «Компас»</a>
+      <a class="btn ghost" href="#put">Все направления</a>
+      <a class="btn ghost" href="/journal/">📖 Журнал «Компас»</a>
       <a class="btn ghost" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-phone"/></svg>Написать мне</a>
     </div>
   </section>
 
-  <!-- ============ ABOUT ============ -->
-  <section class="about">
-    <b>Меня зовут Тим.</b> Годами я помогал расти чужим проектам и собрал вокруг себя круг мастеров, которым доверяю сам, — специалисты по телу, перинатальному сопровождению, духовным практикам и деликатной помощи в трудные моменты. TimLabs — это место, где я <b>знакомлю вас с нужным человеком под вашу задачу</b>, а технологии ИИ помогают делать это быстро и точно.
+  <!-- ============ ПУТЬ: направления сопровождения ============ -->
+  <section class="tlg-sec" id="put" aria-labelledby="put-h">
+    <div class="tlg-head rv">
+      <span class="tlg-kicker">Путь длиною в жизнь</span>
+      <h2 id="put-h">На каждом этапе — проверенный мастер</h2>
+      <p>Выберите, что для вас важно сейчас. Внутри — мастера, которых я знаю лично, и статьи журнала по теме.</p>
+    </div>
+    <div class="tlg-grid">
+      <article class="gcard rv" style="--c:#35b6ff;--c2:#d100ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🤍</span><span class="g-tag">Замысел · беременность · роды</span></div>
+        <h3><a href="/beremennost-i-rody/">Беременность и роды</a></h3>
+        <p>От подготовки к зачатию до первых недель дома: доула рядом, бережно и без давления.</p>
+        <div class="chips">
+          <a class="chip" href="/podgotovka-k-beremennosti/">Подготовка к беременности</a>
+          <a class="chip" href="/soprovozhdenie-beremennosti-onlayn/">Сопровождение онлайн</a>
+          <a class="chip" href="/podgotovka-k-rodam/">Подготовка к родам</a>
+          <a class="chip" href="/vosstanovlenie-posle-rodov/">После родов</a>
+        </div>
+        <span class="g-more">Открыть направление →</span>
+      </article>
+      <article class="gcard rv" style="--c:#9b6cff;--c2:#00b4ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🌿</span><span class="g-tag">Тело</span></div>
+        <h3><a href="/telo-i-vosstanovlenie/">Тело и восстановление</a></h3>
+        <p>Велнес-массаж с выездом по Кавминводам и понятные способы вернуть силы после нагрузок.</p>
+        <div class="chips">
+          <a class="chip" href="/massage-kislovodsk/">Массаж на дому</a>
+          <a class="chip" href="/journal/zhiznennaya-sila-kak-vosstanavlivat/">Как вернуть энергию</a>
+        </div>
+        <span class="g-more">Открыть направление →</span>
+      </article>
+      <article class="gcard rv" style="--c:#d100ff;--c2:#00b4ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🧘</span><span class="g-tag">Дух · природа Кавказа</span></div>
+        <h3><a href="/retrity-i-kmv/">Ретриты и Кавминводы</a></h3>
+        <p>Уединение, тишина и авторские маршруты: ретриты у Железноводска и тайные тропы Кисловодска.</p>
+        <div class="chips">
+          <a class="chip" href="/retrit-otshelnik/">Ретрит «Отшельник»</a>
+          <a class="chip" href="/ekskursii-kislovodsk/">Авторские экскурсии</a>
+        </div>
+        <span class="g-more">Открыть направление →</span>
+      </article>
+      <article class="gcard rv" style="--c:#6aa0ff;--c2:#35b6ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🧭</span><span class="g-tag">Знания</span></div>
+        <h3><a href="/journal/">Детство, эмоции и развитие</a></h3>
+        <p>Журнал «Компас»: честные ответы про эмоции, самооценку, привычки и заботу о семье — простым языком.</p>
+        <div class="chips">
+          <a class="chip" href="/journal/kak-povysit-samootsenku/">Самооценка</a>
+          <a class="chip" href="/journal/kak-spravlyatsya-so-stressom-i-trevozhno/">Стресс и тревога</a>
+        </div>
+        <span class="g-more">Читать журнал →</span>
+      </article>
+      <details class="gcard rv" id="provody" style="--c:#aeb6cc;--c2:#6aa0ff">
+        <summary>
+          <div class="g-top"><span class="g-ic" aria-hidden="true">🕊️</span><span class="g-tag">Трудный момент</span></div>
+          <h3>Проводы</h3>
+          <p>Когда уходит близкий, трудно думать о деталях. Подскажу, к кому обратиться.</p>
+          <span class="g-more">Подробнее ↓</span>
+        </summary>
+        <div class="g-body">
+          <p>Информационное бюро ритуальных услуг подскажет понятный порядок действий в первые часы и поддержит тактично, без суеты и навязывания. Вы не останетесь один на один с вопросами.</p>
+          <div class="chips"><a class="chip main" href="https://wa.me/79938917761" target="_blank" rel="noopener">Написать мне в WhatsApp</a><a class="chip" href="tel:+79938917761">+7 993 891-77-61</a></div>
+        </div>
+      </details>
+    </div>
   </section>
 
-  <!-- ============ DOORS ============ -->
-  <nav class="doors" role="tablist" aria-label="Разделы">
-    <button class="door" role="tab" aria-selected="true"  aria-controls="p-care" id="t-care" data-target="p-care"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Сопровождение</button>
-    <button class="door" role="tab" aria-selected="false" aria-controls="p-proj" id="t-proj" data-target="p-proj"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Проекты</button>
-    <button class="door" role="tab" aria-selected="false" aria-controls="p-res"  id="t-res"  data-target="p-res"><svg class="icon" viewBox="0 0 24 24"><use href="#i-music"/></svg>Сообщество</button>
-  </nav>
-
-  <div class="stage">
-
-    <!-- ===== СОПРОВОЖДЕНИЕ ===== -->
-    <section class="panel active" id="p-care" role="tabpanel" aria-labelledby="t-care">
-      <div class="intro">
-        <h2>Путь длиною в жизнь</h2>
-        <p>От первого замысла до последних проводов — на каждом этапе есть проверенный мастер. Нажми на этап, чтобы провалиться в глубину.</p>
-      </div>
-      <div class="stages">
-        <button class="scard" data-stage="s1" style="--c:#00b4ff"><span class="ic">🌱</span><span class="st">Замысел и зачатие</span><span class="sd">Осознанный старт новой жизни</span><span class="more">Подробнее →</span></button>
-        <button class="scard" data-stage="s2" style="--c:#35b6ff"><span class="ic">🤍</span><span class="st">Беременность и роды</span><span class="sd">Спокойствие матери — здоровье ребёнка</span><span class="more">Подробнее →</span></button>
-        <button class="scard" data-stage="s3" style="--c:#6aa0ff"><span class="ic">🧸</span><span class="st">Детство</span><span class="sd">Расти в любви и внимании</span><span class="more">Подробнее →</span></button>
-        <button class="scard" data-stage="s4" style="--c:#9b6cff"><span class="ic">🌿</span><span class="st">Тело и здоровье</span><span class="sd">Дом, за которым ухаживают</span><span class="more">Подробнее →</span></button>
-        <button class="scard" data-stage="s5" style="--c:#d100ff"><span class="ic">🧘</span><span class="st">Дух и осознанность</span><span class="sd">Вернуться к себе настоящему</span><span class="more">Подробнее →</span></button>
-        <button class="scard" data-stage="s6" style="--c:#aeb6cc"><span class="ic">🕊️</span><span class="st">Проводы</span><span class="sd">Достойно и по-человечески</span><span class="more">Подробнее →</span></button>
-      </div>
-      <!--tl-podbor-v1--><section class="tlp" id="tl-podbor" aria-labelledby="tlp-h">
+  <!-- ============ ПОДБОР ============ -->
+  <section class="tlg-sec" aria-label="Подбор мастера">
+<!--tl-podbor-v1--><section class="tlp" id="tl-podbor" aria-labelledby="tlp-h">
 <style>
 .tlp{margin:28px 0;padding:22px 20px;border:1px solid var(--stroke-hi,rgba(0,180,255,.5));border-radius:16px;background:rgba(0,180,255,.05);color:var(--text,#e7ecf7);text-align:left}
 .tlp h2{margin:0 0 6px;font-size:1.25rem}
@@ -363,72 +309,113 @@ box.addEventListener('click',function(e){var a=e.target.closest&&e.target.closes
 try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getAttribute('data-tlp'),page:location.pathname});}catch(_){}});
 })();</script>
 </section>
-      <div class="cta-row">
-        <a class="btn ghost" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-phone"/></svg>Написать в WhatsApp</a>
-        <a class="btn ghost" href="tel:+79938917761" style="--wa:var(--cyan)"><svg class="icon" viewBox="0 0 24 24" style="color:var(--cyan)"><use href="#i-phone"/></svg>+7 993 891-77-61</a>
-      </div>
-    </section>
+  </section>
 
-    <!-- ===== ПРОЕКТЫ ===== -->
-    <section class="panel" id="p-proj" role="tabpanel" aria-labelledby="t-proj">
-      <div class="intro">
-        <h2>Проекты, которые я развиваю</h2>
-        <p>Инициативы о теле, духе и сообществе, за которые я отвечаю лично.</p>
-      </div>
-      <div class="group">
-        <h3 class="group-title">Поддержка братства · Ramagor</h3>
-        <p class="group-desc">Сообщество взаимной поддержки, роста и мужского братства.</p>
-        <div class="tree">
-          <a class="leaf sm" style="--c:var(--cyan)" href="https://ramagor.ru?utm_source=timlabs&utm_medium=referral&utm_campaign=home" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Сайт</a>
-          <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+4qrf2OSG0oFiOGJi" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
-          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/ramagor1331" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Instagram<sup>*</sup></a>
+  <!-- ============ ПРОЕКТЫ МАСТЕРОВ ============ -->
+  <section class="tlg-sec" id="mastera" aria-labelledby="mastera-h">
+    <div class="tlg-head rv">
+      <span class="tlg-kicker">Проекты мастеров</span>
+      <h2 id="mastera-h">Мастера, чьи проекты я веду</h2>
+      <p>Я знаю этих людей лично и отвечаю за то, как их представляю. Каждый работает самостоятельно — со своими правилами записи.</p>
+    </div>
+    <div class="tlg-grid two">
+      <article class="gcard proj rv" style="--c:#35b6ff;--c2:#9b6cff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🌸</span><div><span class="g-tag">Тело · материнство</span><div class="g-who">Мара — мастер телесных практик и доула</div></div></div>
+        <h3><a href="/massage-kislovodsk/">MARAFDY</a></h3>
+        <p>Велнес-массаж с выездом на дом по Кавминводам и бережное сопровождение женщины: от подготовки к беременности до восстановления после родов.</p>
+        <div class="chips">
+          <a class="chip main" href="/massage-kislovodsk/">Массаж на дому</a>
+          <a class="chip main" href="/beremennost-i-rody/">Сопровождение доулы</a>
+          <a class="chip" style="--c:#2aabee" href="https://t.me/+fmV9MMwurJpjNDQy" target="_blank" rel="noopener">Telegram</a>
+          <a class="chip" style="--c:#4c8bf5" href="https://vk.ru/marafdy" target="_blank" rel="noopener">ВКонтакте</a>
+          <a class="chip" style="--c:#ff7a00" href="https://dzen.ru/marafdy" target="_blank" rel="noopener">Дзен</a>
+          <a class="chip" style="--c:#2196f3" href="https://rutube.ru/channel/80161815" target="_blank" rel="noopener">RuTube</a>
+          <a class="chip" style="--c:#ff2d2d" href="https://www.youtube.com/@MARAFDY" target="_blank" rel="noopener">YouTube</a>
+          <a class="chip" style="--c:#97c50a" href="https://www.avito.ru/kislovodsk/predlozheniya_uslug/ozdorovitelnyy_massazh_s_vyezdom_8332887241" target="_blank" rel="noopener">Авито</a>
+          <a class="chip" style="--c:#7d6cff" href="https://max.ru/join/wx4uSFOnNLDXURYekrTwDSmOzpnYLC0-Qi_DtRzOH2w" target="_blank" rel="noopener">Max</a>
+          <a class="chip" href="https://www.instagram.com/marafdy.telo" target="_blank" rel="noopener">Instagram<sup>*</sup></a>
+          <a class="chip" href="https://marafdi.clients.site/?utm_source=timlabs&amp;utm_medium=referral&amp;utm_campaign=home" target="_blank" rel="noopener">Сайт</a>
         </div>
-      </div>
-      <div class="group">
-        <h3 class="group-title">Поддержка тела · Marafdy</h3>
-        <p class="group-desc">Телесные практики и оздоровительный массаж с выездом.</p>
-        <div class="tree">
-          <a class="leaf sm" style="--c:var(--cyan)" href="https://marafdi.clients.site/?utm_source=timlabs&utm_medium=referral&utm_campaign=home" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Сайт</a>
-          <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+fmV9MMwurJpjNDQy" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
-          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/marafdy.telo" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Instagram<sup>*</sup></a>
-          <a class="leaf sm" style="--c:var(--vk)" href="https://vk.ru/marafdy" target="_blank" rel="noopener"><span class="mono">VK</span>ВКонтакте</a>
-          <a class="leaf sm" style="--c:#ff7a00" href="https://dzen.ru/marafdy" target="_blank" rel="noopener"><span class="mono">Дз</span>Дзен</a>
-          <a class="leaf sm" style="--c:var(--yt)" href="https://www.youtube.com/@MARAFDY" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-yt"/></svg>YouTube</a>
-          <a class="leaf sm" style="--c:#2196f3" href="https://rutube.ru/channel/80161815" target="_blank" rel="noopener"><span class="mono">RT</span>RuTube</a>
-          <a class="leaf sm" style="--c:#ee8208" href="https://ok.ru/group/70000055647438" target="_blank" rel="noopener"><span class="mono">OK</span>OK</a>
-          <a class="leaf sm" style="--c:#97c50a" href="https://www.avito.ru/kislovodsk/predlozheniya_uslug/ozdorovitelnyy_massazh_s_vyezdom_8332887241" target="_blank" rel="noopener"><span class="mono">Av</span>Avito</a>
-          <a class="leaf sm" style="--c:#7d6cff" href="https://max.ru/join/wx4uSFOnNLDXURYekrTwDSmOzpnYLC0-Qi_DtRzOH2w" target="_blank" rel="noopener"><span class="mono">MAX</span>Max</a>
+      </article>
+      <article class="gcard proj rv" style="--c:#d100ff;--c2:#35b6ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🏔️</span><div><span class="g-tag">Ретриты · КМВ</span><div class="g-who">Ретрит-центр УМАС</div></div></div>
+        <h3><a href="/transformacionnyj-retrit/">УМАС</a></h3>
+        <p>Ретриты для перезагрузки тела и ума: тишина, медитации и природа. Программа «Отшельник» — уединение в деревенском доме у Железноводска.</p>
+        <div class="chips">
+          <a class="chip main" href="/retrit-otshelnik/">Ретрит «Отшельник»</a>
+          <a class="chip" style="--c:#2aabee" href="https://t.me/+yicTZB_ZcrU4NjQ6" target="_blank" rel="noopener">Telegram</a>
+          <a class="chip" href="https://www.instagram.com/umas_osoznanie" target="_blank" rel="noopener">Instagram<sup>*</sup></a>
         </div>
-      </div>
-      <div class="group">
-        <h3 class="group-title">Ретрит-центр · УМАС</h3>
-        <p class="group-desc">Ретриты для перезагрузки тела и духа, встреча с собой.</p>
-        <div class="tree">
-          <a class="leaf sm" style="--c:var(--tg)" href="https://t.me/+yicTZB_ZcrU4NjQ6" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Telegram</a>
-          <a class="leaf sm" style="--c:var(--ig)" href="https://www.instagram.com/umas_osoznanie" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Instagram<sup>*</sup></a>
+      </article>
+      <article class="gcard proj rv" style="--c:#00b4ff;--c2:#d100ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🔥</span><div><span class="g-tag">Сообщество</span><div class="g-who">Братство и клуб 1331</div></div></div>
+        <h3><a href="/bratstvo-1331/">Рамагор</a></h3>
+        <p>Сообщество взаимной поддержки и духовного роста — онлайн и на живых встречах. Для тех, кто ищет внутреннюю опору и своих людей.</p>
+        <div class="chips">
+          <a class="chip main" href="/bratstvo-edinomyshlennikov/">Клуб единомышленников</a>
+          <a class="chip" style="--c:#2aabee" href="https://t.me/+4qrf2OSG0oFiOGJi" target="_blank" rel="noopener">Telegram</a>
+          <a class="chip" href="https://www.instagram.com/ramagor1331" target="_blank" rel="noopener">Instagram<sup>*</sup></a>
+          <a class="chip" href="https://ramagor.ru?utm_source=timlabs&amp;utm_medium=referral&amp;utm_campaign=home" target="_blank" rel="noopener">Сайт</a>
         </div>
-      </div>
-    </section>
+      </article>
+      <article class="gcard proj rv" style="--c:#35b6ff;--c2:#97c50a">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🗺️</span><div><span class="g-tag">Кисловодск</span><div class="g-who">Проводник по Кавминводам</div></div></div>
+        <h3><a href="/ekskursii-kislovodsk/">Авторские экскурсии</a></h3>
+        <p>Благородный проводник, потомок славного рода, покажет заповедные места, тайные тропы и легендарные факты Кавминвод.</p>
+        <div class="chips"><a class="chip main" href="/ekskursii-kislovodsk/">Маршруты и запись</a><a class="chip" href="/retrity-i-kmv/">Места Кавказа в журнале</a></div>
+      </article>
+    </div>
+  </section>
 
-    <!-- ===== СООБЩЕСТВО ===== -->
-    <section class="panel" id="p-res" role="tabpanel" aria-labelledby="t-res">
-      <div class="intro">
-        <h2>Сообщество и творчество</h2>
-        <p>Мои каналы, школа-лаборатория и музыка. Заходите, оставайтесь на связи.</p>
-      </div>
-      <div class="tree">
-        <a class="leaf" style="--c:var(--tg)" href="https://t.me/+_fmorncBxqA4ZmVi" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Школа лаборатории</a>
-        <a class="leaf" style="--c:var(--tg)" href="https://t.me/+0AB4I1b__1k2OWRi" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Творческая лаборатория</a>
-        <a class="leaf" style="--c:var(--tg)" href="https://t.me/+Gcap-DtBzeRhMmYy" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Карточка артиста</a>
-        <a class="leaf" style="--c:var(--tg)" href="https://t.me/tim_rockets" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-tg"/></svg>Личный аккаунт</a>
-        <a class="leaf" style="--c:var(--magenta)" href="https://suno.com/@timrockets" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-music"/></svg>Моя музыка · Suno</a>
-        <a class="leaf" style="--c:var(--vk)" href="https://vk.ru/tim.rockets" target="_blank" rel="noopener"><span class="mono">VK</span>ВКонтакте</a>
-        <a class="leaf" style="--c:var(--wa)" href="https://wa.me/79938917761" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-phone"/></svg>WhatsApp</a>
-        <a class="leaf" style="--c:var(--ig)" href="https://www.instagram.com/tim__rockets" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24"><use href="#i-web"/></svg>Instagram<sup>*</sup></a>
-      </div>
-    </section>
+  <!-- ============ МОИ ПРОЕКТЫ ============ -->
+  <section class="tlg-sec" id="moi" aria-labelledby="moi-h">
+    <div class="tlg-head rv">
+      <span class="tlg-kicker">Обо мне</span>
+      <h2 id="moi-h">Мои проекты</h2>
+      <p><b style="color:#fff">Меня зовут Тим.</b> Годами я помогал расти чужим проектам и собрал круг мастеров, которым доверяю сам. Параллельно строю собственное: журнал, лабораторию и музыку. ИИ помогает мне делать это быстро и точно.</p>
+    </div>
+    <div class="tlg-grid">
+      <article class="gcard rv" style="--c:#00b4ff;--c2:#6aa0ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">📖</span><span class="g-tag">Журнал</span></div>
+        <h3><a href="/journal/">Журнал «Компас»</a></h3>
+        <p>Больше 140 статей о развитии, эмоциях, теле, материнстве и местах Кавказа. Новые выходят каждый день.</p>
+        <div class="chips"><a class="chip main" style="--c:#2aabee" href="https://t.me/timlabs_journal" target="_blank" rel="noopener">Канал журнала</a><a class="chip" href="/rss.xml">RSS</a></div>
+      </article>
+      <article class="gcard rv" style="--c:#d100ff;--c2:#00b4ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🧪</span><span class="g-tag">Лаборатория</span></div>
+        <h3><a href="https://t.me/+_fmorncBxqA4ZmVi" target="_blank" rel="noopener">Лаборатория TimLabs</a></h3>
+        <p>Школа и творческая мастерская: автоматизация, нейросети и ИИ-агенты на практике.</p>
+        <div class="chips"><a class="chip" style="--c:#2aabee" href="https://t.me/+_fmorncBxqA4ZmVi" target="_blank" rel="noopener">Школа лаборатории</a><a class="chip" style="--c:#2aabee" href="https://t.me/+0AB4I1b__1k2OWRi" target="_blank" rel="noopener">Творческая лаборатория</a></div>
+      </article>
+      <article class="gcard rv" style="--c:#ff4fd8;--c2:#00b4ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🎧</span><span class="g-tag">Музыка</span></div>
+        <h3><a href="https://suno.com/@timrockets" target="_blank" rel="noopener">Tim Rockets</a></h3>
+        <p>Моя музыка, созданная вместе с ИИ: треки, эксперименты и карточка артиста.</p>
+        <div class="chips"><a class="chip main" href="https://suno.com/@timrockets" target="_blank" rel="noopener">Слушать</a><a class="chip" style="--c:#2aabee" href="https://t.me/+Gcap-DtBzeRhMmYy" target="_blank" rel="noopener">Карточка артиста</a></div>
+      </article>
+      <article class="gcard rv" style="--c:#35b6ff;--c2:#d100ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🤖</span><span class="g-tag">Помощник</span></div>
+        <h3><a href="https://t.me/TimLabs_bot" target="_blank" rel="noopener">Бот @TimLabs_bot</a></h3>
+        <p>Задаст пару вопросов и передаст мне ваш запрос — если удобнее в Telegram, чем в форме подбора выше.</p>
+        <div class="chips"><a class="chip main" style="--c:#2aabee" href="https://t.me/TimLabs_bot" target="_blank" rel="noopener">Открыть бота</a></div>
+      </article>
+    </div>
+  </section>
 
-  </div>
+  <!-- ============ СВЯЗЬ ============ -->
+  <section class="tlg-sec" id="svyaz" aria-labelledby="svyaz-h">
+    <div class="gcard rv" style="--c:#00b4ff;--c2:#d100ff;text-align:center;align-items:center">
+      <h2 id="svyaz-h" style="font-family:var(--font-disp);color:#fff;margin:0;font-size:1.3rem">Написать мне лично</h2>
+      <p>Отвечаю сам. Расскажите, что происходит, — подскажу, к кому идти.</p>
+      <div class="chips" style="justify-content:center">
+        <a class="chip main" href="https://wa.me/79938917761" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="chip" href="tel:+79938917761">+7 993 891-77-61</a>
+        <a class="chip" style="--c:#2aabee" href="https://t.me/tim_rockets" target="_blank" rel="noopener">Telegram</a>
+        <a class="chip" style="--c:#4c8bf5" href="https://vk.ru/tim.rockets" target="_blank" rel="noopener">ВКонтакте</a>
+        <a class="chip" href="https://www.instagram.com/tim__rockets" target="_blank" rel="noopener">Instagram<sup>*</sup></a>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <p><sup>*</sup> Instagram принадлежит компании Meta Platforms Inc., признанной в Российской Федерации экстремистской организацией; её деятельность на территории РФ запрещена.</p>
@@ -438,157 +425,26 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
   </footer>
 </main>
 
-<!-- ===== DEEP content (Слой 2) ===== -->
-<div id="deep" hidden>
-  <article id="d-s1" data-ic="🌱" data-tag="Этап 1 · Замысел" data-title="Замысел и зачатие">
-    <p>Появление ребёнка начинается задолго до двух полосок. На этом этапе я знакомлю с мастерами, которые помогают подготовить тело, отношения и внутреннее пространство к зачатию — мягко, бережно и без давления.</p>
-    <ul class="d-list"><li>Подготовка тела и восстановление ресурса</li><li>Осознанность и настрой пары</li><li>Проверенные специалисты, а не советы из интернета</li></ul>
-    <div class="d-links">
-      <a class="leaf sm" style="--c:var(--magenta)" href="https://timlabs.online/podgotovka-k-beremennosti/"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Подготовка к беременности →</a>
-    </div>
-  </article>
-  <article id="d-s2" data-ic="🤍" data-tag="Этап 2 · Рождение" data-title="Беременность и роды">
-    <p>Беременность и роды — время, когда важно, кто рядом. Подберу проверенных специалистов сопровождения: тех, кто ведёт по-человечески, от подготовки к родам до первых недель дома.</p>
-    <ul class="d-list"><li>Перинатальное сопровождение и подготовка к родам</li><li>Поддержка мамы после рождения</li><li>Забота о теле в новом статусе</li></ul>
-    <div class="d-links">
-      <a class="leaf sm" style="--c:var(--magenta)" href="https://timlabs.online/soprovozhdenie-beremennosti-onlayn/"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Сопровождение беременности онлайн →</a>
-      <a class="leaf sm" style="--c:var(--cyan)" href="https://timlabs.online/podgotovka-k-rodam/"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Подготовка к родам →</a>
-      <a class="leaf sm" style="--c:var(--magenta)" href="https://timlabs.online/vosstanovlenie-posle-rodov/"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Восстановление после родов →</a>
-      <a class="leaf sm" style="--c:var(--cyan)" href="https://timlabs.online/konsultaciya-grudnoe-vskarmlivanie/"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Грудное вскармливание →</a>
-    </div>
-  </article>
-  <article id="d-s3" data-ic="🧸" data-tag="Этап 3 · Детство и развитие" data-title="Детство и развитие">
-    <p>Ранние годы формируют личность на всю жизнь — но забота о гармоничном развитии тела, эмоций и мышления важна в любом возрасте: и ребёнку, и «внутреннему ребёнку» взрослого. Здесь — полезные знания простым языком и честные ответы на частые вопросы, которые помогают расти цельным человеком.</p>
-    <ul class="d-list"><li>Гармоничное развитие — от детства и в любом возрасте</li><li>Ответы на частые вопросы: честно, по делу, без воды</li><li>Полезный журнал: статьи, рубрики и практики</li></ul>
-    <div class="d-links">
-      <a class="leaf sm" style="--c:var(--cyan)" href="https://timlabs.online/journal/"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Журнал «Компас» →</a>
-    </div>
-  </article>
-  <article id="d-s4" data-ic="🌿" data-tag="Этап 4 · Тело" data-title="Тело и здоровье">
-    <p>Забота о теле — не роскошь, а основа всего. Проект <b>Marafdy</b> — мои проверенные мастера телесных практик и оздоровительного массажа с выездом. Восстановление, тонус, работа с напряжением.</p>
-    <ul class="d-list"><li>Оздоровительный массаж с выездом</li><li>Восстановление после нагрузок</li><li>Регулярная забота, а не «когда прижмёт»</li></ul>
-    <div class="d-links">
-      <a class="leaf sm" style="--c:var(--magenta)" href="https://timlabs.online/massage-kislovodsk/"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Массаж на дому в Кисловодске →</a>
-    </div>
-  </article>
-  <article id="d-s5" data-ic="🧘" data-tag="Этап 5 · Дух" data-title="Дух и осознанность">
-    <p>Когда тело в порядке, хочется глубины. Ретрит-центр <b>УМАС</b> и авторские <b>экскурсии по Кисловодску</b>: благородный проводник, потомок славного рода, покажет заповедные места, тайные тропы и легендарные факты удивительного ландшафта Кавминвод.</p>
-    <ul class="d-list"><li>Ретриты и перезагрузка</li><li>Авторские экскурсии по Кисловодску</li><li>Осознанность как образ жизни</li></ul>
-    <div class="d-links">
-      <a class="leaf sm" style="--c:var(--cyan)" href="https://timlabs.online/ekskursii-kislovodsk/"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Экскурсии в Кисловодске →</a>
-      <a class="leaf sm" style="--c:var(--cyan)" href="https://timlabs.online/retrit-otshelnik/"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Ретрит «Отшельник» · КМВ →</a>
-      <a class="leaf sm" style="--c:var(--cyan)" href="https://timlabs.online/bratstvo-1331/"><svg class="icon" viewBox="0 0 24 24"><use href="#i-heart"/></svg>Братство Рамагора →</a>
-    </div>
-  </article>
-  <article id="d-s6" data-ic="🕊️" data-tag="Этап 6 · Проводы" data-title="Проводы">
-    <p>Уход близкого — момент, когда трудно думать о деталях. Информационное бюро ритуальных услуг подскажет понятный порядок действий и поддержит тактично, без суеты и навязывания. Вы не останетесь один на один с вопросами.</p>
-    <ul class="d-list"><li>Понятный порядок действий в первые часы</li><li>Тактичная информационная поддержка</li><li>Проверенные, честные исполнители</li></ul>
-  </article>
-</div>
-
-<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
-  <div class="sheet" id="sheet" tabindex="-1">
-    <button class="close" id="sheetClose" aria-label="Закрыть">✕</button>
-    <div class="d-ic" id="sheet-ic"></div>
-    <span class="d-tag" id="sheet-tag"></span>
-    <h3 id="sheet-title"></h3>
-    <div id="sheet-body"></div>
-    <div class="cta-row" style="justify-content:flex-start">
-      <a class="btn" href="https://wa.me/79938917761" target="_blank" rel="noopener" style="color:#00131f"><svg class="icon" viewBox="0 0 24 24"><use href="#i-phone"/></svg>Обсудить лично</a>
-    </div>
-  </div>
-</div>
-
 <div class="grid-fade"></div>
 <canvas id="neuro" aria-hidden="true"></canvas>
 
 <script>
 (function(){
-  var tabs = Array.prototype.slice.call(document.querySelectorAll('.door'));
-  var panels = {};
-  document.querySelectorAll('.panel').forEach(function(p){panels[p.id]=p;});
-
-  function stagger(panel){
-    var items = panel.querySelectorAll('.leaf,.scard');
-    items.forEach(function(l){ l.style.opacity='0'; l.style.transform='translateY(18px) scale(.95)'; });
-    void panel.offsetWidth;
-    items.forEach(function(l,i){ setTimeout(function(){ l.style.opacity='1'; l.style.transform='none'; }, i*45); });
-  }
-  function activate(id){
-    tabs.forEach(function(t){ t.setAttribute('aria-selected', t.dataset.target===id?'true':'false'); });
-    for(var k in panels){ panels[k].classList.toggle('active', k===id); }
-    stagger(panels[id]);
-  }
-  tabs.forEach(function(t){
-    t.addEventListener('click', function(){ activate(t.dataset.target); });
-    t.addEventListener('keydown', function(e){
-      var i=tabs.indexOf(t);
-      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();
-        var n=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;tabs[n].focus();activate(tabs[n].dataset.target);}
-    });
-  });
-  document.querySelectorAll('[data-goto]').forEach(function(b){
-    b.addEventListener('click', function(){ activate(b.dataset.goto);
-      document.querySelector('.doors').scrollIntoView({behavior:'smooth',block:'center'}); });
-  });
-  stagger(panels['p-care']);
-
-  // ----- DEEP overlay + hash deep-links (прообраз URL Слоя 2) -----
-  var slugs={s1:'zamysel',s2:'rozhdenie',s3:'detstvo',s4:'telo',s5:'dukh',s6:'provody'};
-  var overlay=document.getElementById('overlay'), sheet=document.getElementById('sheet'), lastFocus=null;
-
-  function colorFor(id){
-    var el=document.querySelector('[data-stage="'+id+'"]');
-    return el?getComputedStyle(el).getPropertyValue('--c').trim():'#00b4ff';
-  }
-  function openDeep(id){
-    var src=document.getElementById('d-'+id); if(!src) return;
-    sheet.style.setProperty('--c', colorFor(id));
-    document.getElementById('sheet-ic').textContent=src.dataset.ic||'';
-    document.getElementById('sheet-tag').textContent=src.dataset.tag||'';
-    document.getElementById('sheet-title').textContent=src.dataset.title||'';
-    document.getElementById('sheet-body').innerHTML=src.innerHTML;
-    lastFocus=document.activeElement;
-    overlay.classList.add('open'); document.body.style.overflow='hidden';
-    sheet.focus();
-  }
-  function hideDeep(){
-    overlay.classList.remove('open'); document.body.style.overflow='';
-    if(lastFocus && lastFocus.focus) lastFocus.focus();
-  }
-  function uiClose(){ // закрытие из интерфейса: чистим hash без записи в историю
-    if(location.hash) history.replaceState(null,'',location.pathname+location.search);
-    hideDeep();
-  }
-  function route(){
-    var h=location.hash.slice(1), id=null;
-    for(var k in slugs){ if(slugs[k]===h) id=k; }
-    if(id){ activate('p-care'); openDeep(id); }
-    else if(overlay.classList.contains('open')) hideDeep();
-  }
-  document.querySelectorAll('.scard').forEach(function(c){
-    c.addEventListener('click', function(){
-      var slug=slugs[c.dataset.stage];
-      if(location.hash==='#'+slug){ openDeep(c.dataset.stage); } else { location.hash=slug; }
-    });
-  });
-  document.getElementById('sheetClose').addEventListener('click', uiClose);
-  overlay.addEventListener('click', function(e){ if(e.target===overlay) uiClose(); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && overlay.classList.contains('open')) uiClose(); });
-  addEventListener('hashchange', route);
-  route(); // прямой заход по ссылке #telo и т.п.
-
+  // старые ссылки вида /#telo ведут на страницы направлений
+  var go={zamysel:'/beremennost-i-rody/',rozhdenie:'/beremennost-i-rody/',telo:'/telo-i-vosstanovlenie/',dukh:'/retrity-i-kmv/',detstvo:'/journal/'};
+  var hh=location.hash.slice(1); if(go[hh]){location.replace(go[hh]);return;}
+  if(hh==='provody'){var pv=document.getElementById('provody'); if(pv) pv.open=true;}
   // ----- neural field -----
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var c=document.getElementById('neuro'), x=c.getContext('2d');
   var W,H,P=[],mouse={x:null,y:null,r:150},COL=['#00b4ff','#d100ff'];
   function size(){W=c.width=innerWidth;H=c.height=innerHeight;init();}
-  function init(){P=[];var n=Math.min(85,(W*H)/17000);
+  function init(){P=[];var n=Math.min(W<700?40:85,(W*H)/17000);
     for(var i=0;i<n;i++){P.push({x:Math.random()*W,y:Math.random()*H,dx:(Math.random()-.5)*.5,dy:(Math.random()-.5)*.5,s:Math.random()*1.8+.5,c:COL[Math.random()*2|0]});}}
   addEventListener('mousemove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;});
   addEventListener('mouseout',function(){mouse.x=mouse.y=null;});
   addEventListener('resize',size);
-  function frame(){requestAnimationFrame(frame);x.clearRect(0,0,W,H);
+  function frame(){requestAnimationFrame(frame);if(document.hidden)return;x.clearRect(0,0,W,H);
     for(var i=0;i<P.length;i++){var p=P[i];
       if(p.x>W||p.x<0)p.dx=-p.dx;if(p.y>H||p.y<0)p.dy=-p.dy;p.x+=p.dx;p.y+=p.dy;
       if(mouse.x!=null){var a=mouse.x-p.x,b=mouse.y-p.y,d=Math.hypot(a,b);if(d<mouse.r){var f=(mouse.r-d)/mouse.r;p.x+=(a/d)*f*2;p.y+=(b/d)*f*2;}}
