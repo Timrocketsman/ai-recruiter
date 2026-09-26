@@ -147,6 +147,8 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="alternate" type="application/rss+xml" title="Журнал «Компас» — TimLabs" href="https://timlabs.online/rss.xml">
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/assets/tl-glass.css">
+<script src="/assets/tl-glass.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -157,27 +159,31 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
     <div class="eyebrow">ИИ-агенты и боты · онлайн по всей России</div>
     <h1>ИИ-автоматизация рутины для людей и бизнеса</h1>
     <p class="lead">Тимур Гуцев, основатель TimLabs, помогает убрать рутину с помощью ИИ-агентов и ботов — онлайн, по всей России. Разбираем вашу задачу, настраиваем помощников и запускаем решение.</p>
+    <div class="cta-row">
+      <a class="btn tg" href="https://t.me/TimLabs_bot?start=ai" target="_blank" rel="noopener">Обсудить задачу — бесплатно</a>
+      <a class="btn" href="#stoimost">Стоимость</a>
+    </div>
   </header>
 
   <section>
     <h2 id="chastnym">Для частных лиц</h2>
     <p>Разбираем вашу рутину: почта, записи, учёба, дом, личные проекты. Настроим помощников на нейросетях, которые берут на себя повторяющиеся дела — чтобы вы тратили время на важное.</p>
-    <div class="grid">
-      <div class="tile" style="--c:#00b4ff"><h3>Почта и записи</h3><p>Сортировка писем, напоминания, ведение записей и расписания без ручного ввода.</p></div>
-      <div class="tile" style="--c:#35b6ff"><h3>Учёба и проекты</h3><p>Помощники для учёбы, конспектов и личных проектов: собирают, структурируют, напоминают.</p></div>
-      <div class="tile" style="--c:#9b6cff"><h3>Дом и быт</h3><p>Списки, напоминания, планирование дел — всё в одном месте, без потери по пути.</p></div>
+    <div class="tlg-grid">
+      <div class="gcard rv" style="--c:#00b4ff;--c2:#d100ff"><h3>Почта и записи</h3><p>Сортировка писем, напоминания, ведение записей и расписания без ручного ввода.</p></div>
+      <div class="gcard rv" style="--c:#35b6ff;--c2:#d100ff"><h3>Учёба и проекты</h3><p>Помощники для учёбы, конспектов и личных проектов: собирают, структурируют, напоминают.</p></div>
+      <div class="gcard rv" style="--c:#9b6cff;--c2:#d100ff"><h3>Дом и быт</h3><p>Списки, напоминания, планирование дел — всё в одном месте, без потери по пути.</p></div>
     </div>
   </section>
 
   <section>
     <h2 id="biznesu">Для бизнеса</h2>
     <p>Автоматизируем процессы, которые съедают время: заявки, ответы клиентам, контент, отчёты и документы. ИИ-агенты работают на ваших данных и в ваших каналах.</p>
-    <div class="grid">
-      <div class="tile" style="--c:#00b4ff"><h3>Заявки и ответы</h3><p>Приём заявок и автоматические ответы клиентам — без пропусков и задержек.</p></div>
-      <div class="tile" style="--c:#35b6ff"><h3>Чат-боты</h3><p>Боты в Telegram и на сайте: база знаний компании, ответы и передача заявок.</p></div>
-      <div class="tile" style="--c:#9b6cff"><h3>Контент и соцсети</h3><p>Подготовка контента и публикаций по вашему контент-плану.</p></div>
-      <div class="tile" style="--c:#d100ff"><h3>Отчёты и документы</h3><p>Сбор данных, формирование отчётов и документов по заданным шаблонам.</p></div>
-      <div class="tile" style="--c:#00b4ff"><h3>ИИ-агенты на своих данных</h3><p>Агенты, которые работают на ваших данных: аудит процесса, пилот, интеграции, запуск.</p></div>
+    <div class="tlg-grid">
+      <div class="gcard rv" style="--c:#00b4ff;--c2:#d100ff"><h3>Заявки и ответы</h3><p>Приём заявок и автоматические ответы клиентам — без пропусков и задержек.</p></div>
+      <div class="gcard rv" style="--c:#35b6ff;--c2:#d100ff"><h3>Чат-боты</h3><p>Боты в Telegram и на сайте: база знаний компании, ответы и передача заявок.</p></div>
+      <div class="gcard rv" style="--c:#9b6cff;--c2:#d100ff"><h3>Контент и соцсети</h3><p>Подготовка контента и публикаций по вашему контент-плану.</p></div>
+      <div class="gcard rv" style="--c:#d100ff;--c2:#00b4ff"><h3>Отчёты и документы</h3><p>Сбор данных, формирование отчётов и документов по заданным шаблонам.</p></div>
+      <div class="gcard rv" style="--c:#00b4ff;--c2:#d100ff"><h3>ИИ-агенты на своих данных</h3><p>Агенты, которые работают на ваших данных: аудит процесса, пилот, интеграции, запуск.</p></div>
     </div>
   </section>
 
@@ -204,8 +210,12 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
   </section>
 
   <section>
-    <h2>Живой пример — TimLabs</h2>
-    <p>Этот сайт и журнал ведёт офис ИИ-агентов на своей модели: статьи (в журнале больше 140), ролики, проверка сайта и поиска. Так выглядит работа в действии.</p>
+    <h2 id="kompas">Живой пример: журнал «Компас»</h2>
+    <!--tl-kompas-case-v1-->
+    <p>Журнал «Компас» с 19 августа ведёт офис ИИ-агентов на нашей собственной модели. Сейчас в нём 142 статьи в 5 рубриках, и каждая новая сразу уходит в Telegram-канал, ВКонтакте и Дзен.</p>
+    <p>Тему агенты выбирают по тому, что люди ищут в Яндексе. Текст проверяется на штампы, юридические риски и повторы, а старые статьи переписываются на тех же адресах, чтобы не терялись ссылки. Человек смотрит отчёт и решает спорное.</p>
+    <p><a href="/journal/">Открыть журнал</a> — так выглядит «журнал под ключ» в работе.</p>
+    <!--/tl-kompas-case-v1-->
   </section>
 
   <section>
@@ -360,5 +370,6 @@ d.classList.toggle('on',ok()&&sc>.3&&sc<.97);}
 addEventListener('scroll',upd,{passive:true});addEventListener('click',function(){setTimeout(upd,80)});
 d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();try{sessionStorage.setItem('tl-donate-off','1')}catch(_){};d.classList.remove('on');});
 })();</script>
+<script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="start=ai"]');if(!a)return;try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:location.pathname});}catch(_){}});</script>
 </body>
 </html>
