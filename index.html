@@ -367,6 +367,85 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
     </div>
   </section>
 
+<!--tl-ai-v1-->
+<style>
+.b2b{--c:#00b4ff;--c2:#d100ff;position:relative;isolation:isolate;overflow:hidden;border-radius:26px;margin-bottom:16px;
+  display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(18px,4vw,40px);align-items:center;padding:clamp(24px,4vw,40px);
+  background:radial-gradient(120% 140% at 0% 0%,rgba(0,180,255,.16),transparent 55%),radial-gradient(120% 140% at 100% 100%,rgba(209,0,255,.16),transparent 55%),rgba(12,17,32,.55);
+  border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.14),0 20px 60px rgba(0,0,0,.4)}
+@supports (backdrop-filter:blur(1px)){.b2b{backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%)}}
+/* медленно бегущая световая рамка — заметно, но не мигает */
+.b2b::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1.5px;z-index:-1;pointer-events:none;
+  background:conic-gradient(from var(--a,0deg),transparent 0 60%,var(--c) 75%,var(--c2) 85%,transparent 95%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+  animation:b2bspin 9s linear infinite}
+@property --a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes b2bspin{to{--a:360deg}}
+.b2b .k{display:inline-flex;gap:8px;align-items:center;font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#ffd166}
+.b2b .k i{width:7px;height:7px;border-radius:50%;background:#ffd166;box-shadow:0 0 10px #ffd166}
+.b2b h2{font-family:var(--font-disp);font-size:clamp(1.45rem,3.6vw,2.1rem);line-height:1.12;margin:12px 0 10px;color:#fff;text-wrap:balance;letter-spacing:-.01em}
+.b2b h2 span{background:linear-gradient(100deg,var(--c),var(--c2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.b2b p{margin:0 0 14px;color:var(--muted);font-size:.98rem;line-height:1.6;max-width:52ch}
+.b2b ul{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:8px}
+.b2b li{display:flex;gap:10px;color:var(--text);font-size:.92rem}
+.b2b li::before{content:"✓";color:var(--c);font-weight:800}
+.b2b .cta{display:flex;flex-wrap:wrap;gap:10px}
+.b2b .cta a{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:13px;font-weight:800;font-size:.92rem;text-decoration:none}
+.b2b .cta .p{color:#00131f;background:linear-gradient(120deg,var(--c),#38c7ff);box-shadow:0 8px 28px rgba(0,180,255,.35)}
+.b2b .cta .s{color:#fff;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04)}
+.b2b .cta a:hover{transform:translateY(-2px)}.b2b .cta a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+/* правая часть: стопка «статей» — показывает продукт, а не обещания */
+.b2b .vis{position:relative;height:220px}
+.b2b .sheet{position:absolute;left:8%;right:8%;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);box-shadow:0 10px 30px rgba(0,0,0,.35);backdrop-filter:blur(6px)}
+.b2b .sheet b{display:block;height:9px;border-radius:5px;background:linear-gradient(90deg,rgba(255,255,255,.55),rgba(255,255,255,.15));margin-bottom:8px}
+.b2b .sheet s{display:block;height:6px;border-radius:4px;background:rgba(255,255,255,.12);margin-top:6px;text-decoration:none}
+.b2b .s1{top:0;transform:rotate(-4deg);opacity:.55}.b2b .s2{top:34px;transform:rotate(2deg);opacity:.8}
+.b2b .s3{top:70px;animation:b2bfloat 6s ease-in-out infinite}
+@keyframes b2bfloat{50%{transform:translateY(-6px)}}
+.b2b .num{position:absolute;right:4%;bottom:0;padding:10px 14px;border-radius:14px;text-align:right;
+  background:rgba(5,7,14,.7);border:1px solid rgba(0,180,255,.35)}
+.b2b .num strong{display:block;font-family:var(--font-disp);font-size:1.7rem;color:#fff;line-height:1}
+.b2b .num small{font-size:.72rem;color:var(--muted)}
+@media (max-width:760px){.b2b{grid-template-columns:1fr}.b2b .vis{height:170px;order:-1}}
+@media (prefers-reduced-motion:reduce){.b2b::before,.b2b .s3{animation:none}}
+</style>
+  <section class="tlg-sec" id="uslugi" aria-labelledby="uslugi-h">
+    <div class="tlg-head rv">
+      <span class="tlg-kicker">Мои услуги</span>
+      <h2 id="uslugi-h">ИИ-автоматизация — моя собственная работа</h2>
+      <p>Здесь я не проводник, а мастер. Строю ИИ-агентов и автоматизацию — ту же, на которой работает этот сайт.</p>
+    </div>
+    <article class="b2b rv" aria-labelledby="b2b-h">
+      <div>
+        <span class="k"><i aria-hidden="true"></i>Для бизнеса и экспертов</span>
+        <h2 id="b2b-h">Журнал под ключ: <span>статьи, по которым вас находят в поиске</span></h2>
+        <p>Офис ИИ-агентов пишет статьи по реальному поисковому спросу, публикует их и следит за качеством. Вы получаете живой экспертный журнал без штата авторов.</p>
+        <ul>
+          <li>Уже работает здесь: журнал «Компас» — 141 статья</li>
+          <li>Тексты проверяются на «машинность» и чужие ссылки</li>
+          <li>Анонсы — в Telegram, Дзен и ВКонтакте</li>
+        </ul>
+        <div class="cta">
+          <a class="p" href="/ii-avtomatizaciya/#zhurnal-pod-klyuch">Подробнее и стоимость</a>
+          <a class="s" href="https://t.me/TimLabs_bot?start=ai" target="_blank" rel="noopener">Обсудить в боте</a>
+        </div>
+      </div>
+      <div class="vis" aria-hidden="true">
+        <div class="sheet s1"><b></b><s></s><s></s></div>
+        <div class="sheet s2"><b></b><s></s><s></s></div>
+        <div class="sheet s3"><b></b><s></s><s></s><s></s></div>
+        <div class="num"><strong>141</strong><small>статья в «Компасе»</small></div>
+      </div>
+    </article>
+    <div class="tlg-grid">
+      <article class="gcard rv" style="--c:#35b6ff;--c2:#00b4ff"><div class="g-top"><span class="g-ic" aria-hidden="true">🙋</span><span class="g-tag">Частным лицам</span></div><h3><a href="/ii-avtomatizaciya/#chastnym">Автоматизация рутины</a></h3><p>Разберу вашу рутину и настрою ИИ-помощников под почту, записи, учёбу и личные проекты.</p><span class="g-more">Подробнее →</span></article>
+      <article class="gcard rv" style="--c:#00b4ff;--c2:#d100ff"><div class="g-top"><span class="g-ic" aria-hidden="true">🏢</span><span class="g-tag">Бизнесу</span></div><h3><a href="/ii-avtomatizaciya/#biznesu">ИИ для бизнеса: боты и агенты</a></h3><p>Ответы клиентам и заявки, отчёты и документы, ИИ-агенты на данных компании.</p><span class="g-more">Подробнее →</span></article>
+      <article class="gcard rv" style="--c:#d100ff;--c2:#35b6ff"><div class="g-top"><span class="g-ic" aria-hidden="true">🌐</span><span class="g-tag">Бренду и эксперту</span></div><h3><a href="/ii-avtomatizaciya/#cifrovoj-sled">Экосистема цифрового следа</a></h3><p>Сайт, журнал, соцсети и ролики — и видимость в поиске и в ИИ-ассистентах.</p><span class="g-more">Подробнее →</span></article>
+    </div>
+  </section>
+<!--/tl-ai-v1-->
+
   <!-- ============ МОИ ПРОЕКТЫ ============ -->
   <section class="tlg-sec" id="moi" aria-labelledby="moi-h">
     <div class="tlg-head rv">
