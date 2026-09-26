@@ -193,7 +193,7 @@ function text(){var p=['Здравствуйте, Тим! Хочу подобр�
 if(a)p.push('Что важно: '+a+'.');if(b)p.push('Формат: '+b+'.');if(c)p.push('Когда: '+c+'.');
 p.push('Нашёл(ла) вас на странице: '+location.origin+location.pathname);return p.join('\n');}
 var wa=box.querySelector('[data-tlp="wa"]');
-function upd(){wa.href='https://wa.me/79938917761?text='+encodeURIComponent(text());}
+function ix(n){var l=box.querySelectorAll('input[name=\"'+n+'\"]');for(var i=0;i<l.length;i++)if(l[i].checked)return i+1;return 0;}var tg=box.querySelector('[data-tlp=\"tg\"]');function upd(){wa.href='https://wa.me/79938917761?text='+encodeURIComponent(text());if(tg){var s='podbor',w=ix('tlp-what'),f=ix('tlp-where'),t=ix('tlp-when');if(w)s+='_w'+w;if(f)s+='_f'+f;if(t)s+='_t'+t;tg.href='https://t.me/TimLabs_bot?start='+s;}}
 box.addEventListener('change',upd);upd();
 box.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-tlp]');if(!a)return;
 try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getAttribute('data-tlp'),page:location.pathname});}catch(_){}});
