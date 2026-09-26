@@ -333,7 +333,7 @@ d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault(
 .zo-stat b{display:block;font-size:1.7rem;color:#fff;line-height:1.1}
 .zo-stat span{font-size:.8rem;color:#9aa3b8}
 .zo-scene-wrap{margin:0 0 28px}
-#zo-scene{display:block;width:100%;height:530px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:radial-gradient(120% 90% at 50% 0%,#0d1630 0%,#05070e 70%)}
+#zo-scene{display:block;width:100%;height:460px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:radial-gradient(120% 90% at 50% 0%,#0d1630 0%,#05070e 70%)}
 .zo-upd{margin:8px 2px 0;font-size:.8rem;color:#5c6478}
 .zo-feed{list-style:none;padding:0;margin:0}
 .zo-feed li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.93rem;color:#c9d1e3}
@@ -341,7 +341,7 @@ d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault(
 .zo-feed a{color:#00b4ff}
 .zo-seo h3{font-size:1rem;margin:18px 0 6px;color:#fff}
 .zo-seo ul{margin:0;padding-left:18px;color:#9aa3b8;font-size:.9rem;line-height:1.55}
-@media (max-width:640px){.zo-stats{grid-template-columns:repeat(2,1fr)}#zo-scene{height:1480px}}
+@media (max-width:640px){.zo-stats{grid-template-columns:repeat(2,1fr)}#zo-scene{height:1022px}}
 </style>
 <script>
 (function(){
@@ -364,7 +364,7 @@ function layout(){
   cv.width=Math.round(w*dpr); cv.height=Math.round(h*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);
   if(!data)return;
   var ds=data.departments||[], cols=w<640?2:5, rowsN=Math.ceil(ds.length/cols), pad=12,
-      rw=(w-pad*(cols+1))/cols, per0=Math.max(1,Math.floor((rw-16)/64)), rowH=[], ys=[], yy=pad;
+      rw=(w-pad*(cols+1))/cols, per0=Math.max(1,Math.floor((rw-12)/58)), rowH=[], ys=[], yy=pad;
   for(var r0=0;r0<rowsN;r0++){var mx=1;for(var c0=0;c0<cols;c0++){var dd=ds[r0*cols+c0];if(dd)mx=Math.max(mx,Math.ceil(((dd.agents||[]).length||1)/per0));}rowH.push(58+mx*44);ys.push(yy);yy+=58+mx*44+pad;}
   if(Math.abs(yy-h)>2){cv.style.height=yy+"px";h=yy;cv.height=Math.round(yy*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
   rooms=[]; agents={};
@@ -466,10 +466,10 @@ function load(){
     if(!d||!Array.isArray(d.departments))return;
     var first=!data; data=d; layout(); feed(); stats();
     if(first)queue=(d.events||[]).slice(-30);
-    if(reduce)draw(0); else start();
+    draw(0); if(!reduce)start();
   }).catch(function(){});
 }
-if("IntersectionObserver" in window){new IntersectionObserver(function(es){visible=es[0].isIntersecting;visible?start():stop();}).observe(cv);} else visible=true;
+if("IntersectionObserver" in window){new IntersectionObserver(function(es){visible=es[es.length-1].isIntersecting;visible?start():stop();}).observe(cv);} else visible=true;
 document.addEventListener("visibilitychange",function(){document.hidden?stop():start();});
 window.addEventListener("resize",function(){layout();if(reduce||!running)draw(0);});
 window.addEventListener("load",function(){load();setInterval(load,60000);});
