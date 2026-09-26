@@ -387,5 +387,16 @@ body.tl-consent-lock{overflow:hidden}
 </script>
 <style>/* tl-clip-away 11sep */#tl-clip{transition:opacity .25s,transform .25s}#tl-clip.tl-away{opacity:0;transform:translateY(16px);pointer-events:none}</style>
 <script>/* tl-clip-away 11sep */(function(){var c=document.getElementById("tl-clip");if(!c||!("IntersectionObserver" in window))return;var t=document.querySelectorAll(".cta,.cta-row,.disclaimer,footer");if(!t.length)return;var v=new Set();var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.add(e.target)}else{v.delete(e.target)}});c.classList.toggle("tl-away",v.size>0)});t.forEach(function(n){o.observe(n)})})();</script>
+<!--tl-goals-v1--><script>/* цели Метрики: только после согласия (ym есть лишь после «Принять»), без личных данных */
+(function(){function g(id,p){try{if(typeof ym==='function')ym(111725024,'reachGoal',id,p||{page:location.pathname});}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
+if(/wa\.me|whatsapp\.com/.test(h))g('wa_click');
+else if(/t\.me\/timlabs_journal/i.test(h))g('channel_click');
+else if(/t\.me\/TimLabs_bot/i.test(h))g('bot_click');
+else if(/t\.me\//.test(h))g('tg_click');
+else if(/^tel:/.test(h))g('tel_click');
+else if(/^mailto:/.test(h))g('mail_click');
+else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshelnik|transformacionnyj-retrit|bratstvo|podgotovka|soprovozhdenie|vosstanovlenie|konsultaciya)/.test(a.href))g('service_click');
+else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>
 </body>
 </html>

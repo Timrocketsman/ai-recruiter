@@ -155,11 +155,15 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 
   <section class="related">
     <h2>Читайте также</h2>
-    <div class="rel-list"><a href="https://timlabs.online/journal/doula/">Доула: поддержка мамы до и после родов</a><a href="https://timlabs.online/journal/doula-kak-nayti/">Как найти доулу: с чего начать и на что смотреть</a><a href="https://timlabs.online/massage-kislovodsk/">Аппаратный массаж на дому в Кисловодске</a><a href="https://timlabs.online/journal/">Журнал «Компас»</a></div>
+    <div class="rel-list"><a href="https://timlabs.online/journal/doula/">Доула: поддержка мамы до и после родов</a><a href="https://timlabs.online/journal/doula-kak-nayti/">Как найти доулу: с чего начать и на что смотреть</a><a href="https://timlabs.online/journal/">Журнал «Компас»</a></div>
   </section>
 
   <div class="callout"><h2>Нужна бережная поддержка рядом?</h2><p>Тяжёлый период легче прожить, когда рядом есть человек, который умеет слушать и не оставит одного. TimLabs помогает находить проверенных мастеров жизни в разных ситуациях. Если вам нужен разговор или ориентир, напишите нам — подскажем, с чего начать.</p><div class="cta-row"><a class="btn" href="https://t.me/+79938917761">Написать в Telegram</a><a class="btn" href="https://wa.me/79938917761">Написать в WhatsApp</a></div><p>Статья носит информационный характер и не является медицинской услугой или заменой врача. При вопросах о здоровье обращайтесь к специалисту.</p></div>
 
+  <!--tl-sub-v1--><div class="tls" style="margin:24px 0;padding:16px 18px;border:1px solid var(--stroke,rgba(255,255,255,.12));border-radius:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+<span style="flex:1 1 240px;color:var(--text,#e7ecf7)">📬 Новые статьи журнала «Компас» — в Telegram-канале</span>
+<a href="https://t.me/timlabs_journal" target="_blank" rel="noopener" style="padding:10px 16px;border-radius:10px;background:var(--cyan,#00b4ff);color:#00121f;font-weight:600;text-decoration:none">Подписаться</a>
+</div>
   <p class="disclaimer">Материал носит информационный характер и не является медицинской услугой. При вопросах о здоровье проконсультируйтесь со специалистом.</p>
 
   <footer>
@@ -342,5 +346,16 @@ body.tl-consent-lock{overflow:hidden}
 </script>
 <style>/* tl-clip-away 11sep */#tl-clip{transition:opacity .25s,transform .25s}#tl-clip.tl-away{opacity:0;transform:translateY(16px);pointer-events:none}</style>
 <script>/* tl-clip-away 11sep */(function(){var c=document.getElementById("tl-clip");if(!c||!("IntersectionObserver" in window))return;var t=document.querySelectorAll(".cta,.cta-row,.disclaimer,footer");if(!t.length)return;var v=new Set();var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){v.add(e.target)}else{v.delete(e.target)}});c.classList.toggle("tl-away",v.size>0)});t.forEach(function(n){o.observe(n)})})();</script>
+<!--tl-goals-v1--><script>/* цели Метрики: только после согласия (ym есть лишь после «Принять»), без личных данных */
+(function(){function g(id,p){try{if(typeof ym==='function')ym(111725024,'reachGoal',id,p||{page:location.pathname});}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
+if(/wa\.me|whatsapp\.com/.test(h))g('wa_click');
+else if(/t\.me\/timlabs_journal/i.test(h))g('channel_click');
+else if(/t\.me\/TimLabs_bot/i.test(h))g('bot_click');
+else if(/t\.me\//.test(h))g('tg_click');
+else if(/^tel:/.test(h))g('tel_click');
+else if(/^mailto:/.test(h))g('mail_click');
+else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshelnik|transformacionnyj-retrit|bratstvo|podgotovka|soprovozhdenie|vosstanovlenie|konsultaciya)/.test(a.href))g('service_click');
+else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>
 </body>
 </html>

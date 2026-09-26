@@ -150,14 +150,73 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 <details><summary>Как отличить здоровое саморазвитие от навязчивого?</summary><p>Здоровое развитие приносит удовлетворение и ощущение движения. Навязчивое — тревогу, страх упустить, необходимость «всегда быть лучше». Если процесс вызывает больше стресса, чем радости, возможно, стоит пересмотреть подход.</p></details>
  </section>
 
- <section class="related">
+ <!--tl-podbor-v1--><section class="tlp" id="tl-podbor" aria-labelledby="tlp-h">
+<style>
+.tlp{margin:28px 0;padding:22px 20px;border:1px solid var(--stroke-hi,rgba(0,180,255,.5));border-radius:16px;background:rgba(0,180,255,.05);color:var(--text,#e7ecf7);text-align:left}
+.tlp h2{margin:0 0 6px;font-size:1.25rem}
+.tlp p{margin:0 0 12px;color:var(--muted,#9aa3b8);font-size:.95rem;line-height:1.5}
+.tlp fieldset{border:0;margin:0 0 12px;padding:0}
+.tlp legend{font-weight:600;margin-bottom:8px;font-size:.95rem}
+.tlp .tlp-ch{display:flex;flex-wrap:wrap;gap:8px}
+.tlp label{cursor:pointer}
+.tlp input{position:absolute;opacity:0;pointer-events:none}
+.tlp label span{display:inline-block;padding:8px 12px;border:1px solid var(--stroke,rgba(255,255,255,.12));border-radius:999px;font-size:.9rem;transition:border-color .15s,background .15s}
+.tlp input:checked+span{border-color:var(--cyan,#00b4ff);background:rgba(0,180,255,.16)}
+.tlp input:focus-visible+span{outline:2px solid var(--cyan,#00b4ff);outline-offset:2px}
+.tlp .tlp-go{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.tlp .tlp-go a{flex:1 1 200px;text-align:center;padding:12px 16px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--cyan,#00b4ff);color:var(--text,#e7ecf7)}
+.tlp .tlp-go a.tlp-main{background:var(--cyan,#00b4ff);color:#00121f}
+.tlp small{display:block;margin-top:10px;color:var(--dim,#5c6478);font-size:.8rem;line-height:1.4}
+</style>
+<h2 id="tlp-h">Подобрать мастера за минуту</h2>
+<p>Отметьте, что вам сейчас важно, — я лично посоветую проверенного специалиста или практику.</p>
+<fieldset><legend>Что важно сейчас?</legend><div class="tlp-ch">
+<label><input type="radio" name="tlp-what" value="беременность и роды"><span>Беременность и роды</span></label>
+<label><input type="radio" name="tlp-what" value="тело и восстановление"><span>Тело и восстановление</span></label>
+<label><input type="radio" name="tlp-what" value="ретрит или поездка по КМВ"><span>Ретрит или поездка по КМВ</span></label>
+<label><input type="radio" name="tlp-what" value="внутренняя опора и сообщество"><span>Внутренняя опора и сообщество</span></label>
+<label><input type="radio" name="tlp-what" value="другое"><span>Другое</span></label>
+</div></fieldset>
+<fieldset><legend>Формат</legend><div class="tlp-ch">
+<label><input type="radio" name="tlp-where" value="на месте, Кавминводы"><span>На месте, Кавминводы</span></label>
+<label><input type="radio" name="tlp-where" value="онлайн"><span>Онлайн</span></label>
+<label><input type="radio" name="tlp-where" value="пока не знаю"><span>Пока не знаю</span></label>
+</div></fieldset>
+<fieldset><legend>Когда</legend><div class="tlp-ch">
+<label><input type="radio" name="tlp-when" value="в ближайшие дни"><span>В ближайшие дни</span></label>
+<label><input type="radio" name="tlp-when" value="в этом месяце"><span>В этом месяце</span></label>
+<label><input type="radio" name="tlp-when" value="пока присматриваюсь"><span>Пока присматриваюсь</span></label>
+</div></fieldset>
+<div class="tlp-go">
+<a class="tlp-main" data-tlp="wa" href="https://wa.me/79938917761" target="_blank" rel="noopener">Отправить в WhatsApp</a>
+<a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener">Подобрать в Telegram-боте</a>
+</div>
+<small>Ответы не сохраняются на сайте: они только складываются в текст сообщения, и вы сами решаете, отправлять ли его. Не указывайте диагнозы и сведения о здоровье. Подробнее — в <a href="/privacy/">политике обработки данных</a>. Практики мастеров носят велнес-характер и не являются медицинской помощью.</small>
+<script>(function(){var box=document.getElementById('tl-podbor');if(!box)return;
+function v(n){var x=box.querySelector('input[name="'+n+'"]:checked');return x?x.value:'';}
+function text(){var p=['Здравствуйте, Тим! Хочу подобрать мастера.'],a=v('tlp-what'),b=v('tlp-where'),c=v('tlp-when');
+if(a)p.push('Что важно: '+a+'.');if(b)p.push('Формат: '+b+'.');if(c)p.push('Когда: '+c+'.');
+p.push('Нашёл(ла) вас на странице: '+location.origin+location.pathname);return p.join('\n');}
+var wa=box.querySelector('[data-tlp="wa"]');
+function upd(){wa.href='https://wa.me/79938917761?text='+encodeURIComponent(text());}
+box.addEventListener('change',upd);upd();
+box.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-tlp]');if(!a)return;
+try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getAttribute('data-tlp'),page:location.pathname});}catch(_){}});
+})();</script>
+</section>
+
+  <section class="related">
  <h2>Читайте также</h2>
  <div class="rel-list"><a href="https://timlabs.online/journal/samorazvitie/">Саморазвитие: с чего начать и как выстроить свою систему</a><a href="https://timlabs.online/journal/samootsenka-kak-psihologicheskiy-fenomen/">Как устроена самооценка: психология и механизмы формирования</a><a href="https://timlabs.online/journal/muzhchina-samorazvitie/">Саморазвитие мужчины: что реально работает и что мешает</a><a href="https://timlabs.online/journal/samorazvitie-ekosistemy/">Саморазвитие как экосистема: как выстроить систему, которая растёт сама</a></div>
  </section>
 
  <div class="callout"><h2>Хотите разобраться глубже?</h2><p>Персональная консультация поможет увидеть свои особенные барьеры и найти путь развития, который подходит именно вам.</p><div class="cta-row"><a class="btn" href="https://t.me/+79938917761">Написать в Telegram</a><a class="btn" href="https://wa.me/79938917761">Написать в WhatsApp</a></div><p>Без давления и обязательств — просто разговор о том, что важно для вас.</p></div>
 
- <p class="disclaimer">Материал носит информационный характер. Актуальность деталей уточняйте самостоятельно.</p>
+ <!--tl-sub-v1--><div class="tls" style="margin:24px 0;padding:16px 18px;border:1px solid var(--stroke,rgba(255,255,255,.12));border-radius:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+<span style="flex:1 1 240px;color:var(--text,#e7ecf7)">📬 Новые статьи журнала «Компас» — в Telegram-канале</span>
+<a href="https://t.me/timlabs_journal" target="_blank" rel="noopener" style="padding:10px 16px;border-radius:10px;background:var(--cyan,#00b4ff);color:#00121f;font-weight:600;text-decoration:none">Подписаться</a>
+</div>
+  <p class="disclaimer">Материал носит информационный характер. Актуальность деталей уточняйте самостоятельно.</p>
 
  <footer>
  <p>Обновлено: 2026-09-01. Материал журнала ТимЛабс (TimLabs) — навигатора по проверенным велнес-мастерам и практикам.</p>
@@ -234,5 +293,16 @@ body.tl-consent-lock{overflow:hidden}
   });
 })();
 </script>
+<!--tl-goals-v1--><script>/* цели Метрики: только после согласия (ym есть лишь после «Принять»), без личных данных */
+(function(){function g(id,p){try{if(typeof ym==='function')ym(111725024,'reachGoal',id,p||{page:location.pathname});}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
+if(/wa\.me|whatsapp\.com/.test(h))g('wa_click');
+else if(/t\.me\/timlabs_journal/i.test(h))g('channel_click');
+else if(/t\.me\/TimLabs_bot/i.test(h))g('bot_click');
+else if(/t\.me\//.test(h))g('tg_click');
+else if(/^tel:/.test(h))g('tel_click');
+else if(/^mailto:/.test(h))g('mail_click');
+else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshelnik|transformacionnyj-retrit|bratstvo|podgotovka|soprovozhdenie|vosstanovlenie|konsultaciya)/.test(a.href))g('service_click');
+else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>
 </body>
 </html>
