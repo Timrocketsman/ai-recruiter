@@ -1,31 +1,29 @@
-Bingbot
+# Поисковики и ИИ-ассистенты: сайт открыт целиком
+User-agent: YandexBot
 Allow: /
 
-GPTBot
+User-agent: Bingbot
 Allow: /
 
-OAI-SearchBot
+User-agent: GPTBot
 Allow: /
 
-ChatGPT-User
+User-agent: OAI-SearchBot
 Allow: /
 
-PerplexityBot
+User-agent: ChatGPT-User
 Allow: /
 
-ClaudeBot
+User-agent: PerplexityBot
 Allow: /
 
-Google-Extended
+User-agent: ClaudeBot
 Allow: /
 
-YandexBot
+User-agent: Google-Extended
 Allow: /
 
 User-agent: *
 Allow: /
 
 Sitemap: https://timlabs.online/sitemap.xml
-
-# Лента журнала
-Sitemap: https://timlabs.online/rss.xml
