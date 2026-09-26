@@ -114,6 +114,30 @@ else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshel
 else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>"""
 
 
+DONATE = r"""<!--tl-donate-v1--><a id="tl-donate" href="https://dzen.ru/timlabs.online?donate=true" target="_blank" rel="noopener" aria-label="Поддержать журнал донатом в Дзене">
+<span aria-hidden="true">💙</span><span class="tld-t">Поддержать журнал</span><button type="button" class="tld-x" aria-label="Скрыть">×</button></a>
+<style>
+#tl-donate{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;align-items:center;gap:8px;padding:9px 10px 9px 14px;border-radius:999px;
+  font:600 .82rem/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#e7ecf7;text-decoration:none;
+  background:rgba(12,17,32,.72);border:1px solid rgba(0,180,255,.35);box-shadow:0 8px 28px rgba(0,0,0,.4),0 0 18px rgba(0,180,255,.15);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .35s,transform .35s,border-color .2s}
+#tl-donate.on{opacity:1;transform:none;pointer-events:auto}
+#tl-donate:hover{border-color:#d100ff}
+#tl-donate:focus-visible{outline:2px solid #00b4ff;outline-offset:3px}
+#tl-donate .tld-x{all:unset;cursor:pointer;width:20px;height:20px;display:grid;place-items:center;border-radius:50%;color:#9aa3b8;font-size:1rem}
+#tl-donate .tld-x:hover{color:#fff;background:rgba(255,255,255,.1)}
+@media (max-width:480px){#tl-donate{font-size:.78rem;padding:8px 8px 8px 12px}}
+@media (prefers-reduced-motion:reduce){#tl-donate{transition:none}}
+</style>
+<script>(function(){var d=document.getElementById('tl-donate');if(!d)return;
+function ok(){try{return !!localStorage.getItem('tl-consent-v2')&&!sessionStorage.getItem('tl-donate-off');}catch(e){return true;}}
+function upd(){var h=document.documentElement,sc=(h.scrollTop||document.body.scrollTop)/Math.max(1,h.scrollHeight-innerHeight);
+d.classList.toggle('on',ok()&&sc>.3&&sc<.97);}
+addEventListener('scroll',upd,{passive:true});addEventListener('click',function(){setTimeout(upd,80)});
+d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();try{sessionStorage.setItem('tl-donate-off','1')}catch(_){};d.classList.remove('on');});
+})();</script>"""
+
+
 def rubrics():
     t = open(os.path.join(ROOT, "journal/index.html"), encoding="utf-8").read()
     return dict((s, r) for r, s in re.findall(
@@ -204,6 +228,9 @@ def main():
                 if 'href="%s"' % site in h:
                     h = h.replace('href="%s"' % site, 'href="%s"' % new)
                     stats["utm"] += 1
+        if "<!--tl-donate-v1-->" not in h:
+            h = insert_before_body(h, DONATE)
+            stats["donate"] = stats.get("donate", 0) + 1
         if "<!--tl-goals-v1-->" not in h:
             h = insert_before_body(h, GOALS)
             stats["goals"] += h != o
