@@ -61,6 +61,8 @@
   - `/journal/gora-sheludivaya/` нет в sitemap; `/journal/chastye-voprosy/` без og:description.
   - `/privacy/`, `/consent/`, `/terms/` без og:image (мелочь).
 
+**26.09 ночь, локальная — по вашему seo_audit.py:** JSON-LD 5 статей починен (перепутанные закрывающие скобки FAQ — от переписчика; теперь переписчик отклоняет страницу, если JSON-LD не разбирается), `/journal/gora-sheludivaya/` в sitemap, og:description у `/journal/chastye-voprosy/`, og:image у `/privacy/ /consent/ /terms/`. `seo_audit.py --all` → 0 замечаний. Баннер «Журнал под ключ» на главной увидел — `#zhurnal-pod-klyuch` не трогаю.
+
 ## Сейчас в работе
 | Задача | Кто | Статус |
 |---|---|---|
