@@ -116,11 +116,44 @@ def block(n):
 {cards}
     </div>
   </section>
+<script>/* цель b2b_click (Метрика id 664071713) — только после согласия */
+document.getElementById('uslugi').addEventListener('click',function(e){{var a=e.target.closest&&e.target.closest('a[href^="/ii-avtomatizaciya/"],a[href*="start=ai"]');
+if(a)try{{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{{from:location.pathname}});}}catch(_){{}}}});</script>
 {E}
 """.format(S=START, E=END, N=n, W=plural(n, "статья", "статьи", "статей"), P=PAGE, B=BOT, cards=cards)
 
 
+AS, AE = "<!--tl-ai-articles-v1-->", "<!--/tl-ai-articles-v1-->"
+
+
+def ai_articles():
+    """Автосписок статей рубрики «ИИ-автоматизация» на /ii-avtomatizaciya/ (перед подвалом)."""
+    p = os.path.join(ROOT, PAGE.strip("/"), "index.html")
+    if not os.path.exists(p):
+        return
+    t = open(os.path.join(ROOT, "journal/index.html"), encoding="utf-8").read()
+    items = re.findall(r'data-rubric="ИИ-автоматизация"><a class="card-link" href="https://timlabs\.online(/journal/[^"]+)"><h2 class="card-title">([^<]*)</h2>', t)
+    h = open(p, encoding="utf-8").read()
+    old = re.search(re.escape(AS) + ".*?" + re.escape(AE) + "\n?", h, re.S)
+    if not items:
+        new_h = h.replace(old.group(0), "") if old else h
+    else:
+        li = "".join('<li><a href="%s">%s</a></li>' % (u, t_) for u, t_ in items[:12])
+        blk = (AS + '<section class="tl-ai-art" aria-labelledby="tl-ai-art-h"><style>'
+               '.tl-ai-art{max-width:900px;margin:40px auto;padding:0 16px}.tl-ai-art h2{margin:0 0 14px}'
+               '.tl-ai-art ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}'
+               '.tl-ai-art a{display:block;height:100%;padding:14px 16px;border-radius:14px;text-decoration:none;color:inherit;'
+               'background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}.tl-ai-art a:hover{border-color:rgba(0,180,255,.5)}'
+               '</style><h2 id="tl-ai-art-h">Статьи рубрики «ИИ-автоматизация»</h2><ul>' + li + '</ul>'
+               '<p><a href="/journal/">Весь журнал «Компас» →</a></p></section>' + AE + "\n")
+        new_h = h.replace(old.group(0), blk) if old else h.replace("<footer", blk + "<footer", 1)
+    if new_h != h:
+        open(p, "w", encoding="utf-8").write(new_h)
+        print("статьи рубрики на странице услуг:", len(items))
+
+
 def main():
+    ai_articles()
     preview = "--preview" in sys.argv
     p = os.path.join(ROOT, "index.html")
     h = open(p, encoding="utf-8").read()

@@ -26,10 +26,14 @@ def articles():
         r'<div class="card-meta"><span class="card-rubric">[^<]*</span><span class="card-date">([^<]*)', t)
 
 
+# рубрики не про велнес — в страницы направлений не попадают (SESSIONS.md 26.09)
+SKIP_RUBRICS = {"ИИ-автоматизация"}
+
+
 def pick(arts, rubrics=(), include=(), exclude=()):
     out = []
     for r, slug, title, date in arts:
-        if slug in exclude:
+        if r in SKIP_RUBRICS or slug in exclude:
             continue
         if r in rubrics or any(k in slug for k in include):
             out.append((slug, html.unescape(title), date))
