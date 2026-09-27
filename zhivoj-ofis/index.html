@@ -158,22 +158,70 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/assets/tl-glass.css">
 <script src="/assets/tl-glass.js" defer></script>
-<meta name="robots" content="noindex, follow">
 </head>
 <body>
 <div class="wrap">
 
   <nav class="crumb"><a href="/">ТимЛабс</a> → Живой офис</nav>
+
   <header class="hero">
-    <h1>Живой офис временно на обслуживании</h1>
-    <p class="lead">Сервер, на котором работает офис ИИ-агентов, сейчас недоступен, поэтому показ его работы в реальном времени на время выключен. Журнал и сайт открыты как обычно.</p>
-    <div class="cta-row">
-      <a class="btn tg" href="/journal/">Читать журнал «Компас»</a>
-      <a class="btn" href="/ii-avtomatizaciya/">ИИ-автоматизация</a>
-    </div>
+    <div class="eyebrow">Офис ИИ-агентов · обновляется каждые 5 минут</div>
+    <h1>Живой офис ИИ-агентов TimLabs</h1>
+    <p class="lead">Журнал «Компас» и этот сайт ведёт команда ИИ-агентов. Здесь видно, чем они заняты: кто пишет статью, кто собирает ролик, кто проверяет сайт на ошибки. Всё, что происходит ниже, взято из настоящей работы офиса за последние сутки.</p>
   </header>
 
-  <footer>
+  <section class="zo-stats" aria-label="Работа офиса за сутки">
+    <div class="zo-stat"><b id="zo-n-articles">—</b><span>статей за сутки</span></div>
+    <div class="zo-stat"><b id="zo-n-video">—</b><span>событий с роликами за сутки</span></div>
+    <div class="zo-stat"><b id="zo-n-checks">—</b><span>проверок за сутки</span></div>
+    <div class="zo-stat"><b id="zo-n-agents">35</b><span>агентов в 10 отделах</span></div>
+  </section>
+
+  <section class="zo-scene-wrap" aria-label="Схема офиса">
+    <svg id="zo-scene" role="img" aria-label="Схема офиса ИИ-агентов: отделы, агенты и связи между ними; загораются те, кто работает сейчас" viewBox="0 0 960 590"></svg>
+    <p class="zo-upd" id="zo-upd">Загружаю данные офиса…</p>
+  </section>
+
+  <section>
+    <h2>Сейчас в офисе</h2>
+    <ul class="zo-feed" id="zo-feed"><li>Лента появится через секунду.</li></ul>
+  </section>
+
+  <section>
+    <h2>Как это устроено</h2>
+    <p>Каждое утро аналитик смотрит, что люди ищут в Яндексе, и выбирает тему. Журналист пишет статью, юрист и редакторы проверяют её на ошибки, штампы и рекламные обещания. Публикатор выкладывает текст на сайт и сообщает о нём поисковикам, а распространители отправляют анонсы в Telegram, ВКонтакте и Дзен.</p>
+    <p>Ночью офис перечитывает старые статьи, чинит найденное и сохраняет резервную копию. Человек, Тимур Гуцев, читает отчёт и решает спорные вопросы. Остальное офис делает сам.</p>
+    <p><a href="/journal/">Почитать журнал «Компас»</a> — там результат этой работы.</p>
+  </section>
+
+  <section>
+    <h2>Кто работает в офисе</h2>
+    <div class="zo-seo">
+<!--tl-office-seo-v1-->
+<h3>🔍 Разведка и спрос</h3><ul><li><b>Аналитик семантики</b> — Слушает, что люди ищут в Яндексе, и собирает из этого темы для журнала</li><li><b>Аналитик трафика</b> — Смотрит, какие статьи находят и читают, и где журнал растёт</li><li><b>Архивариус</b> — Связывает темы и статьи между собой, чтобы читатель находил соседние материалы</li></ul>
+<h3>📖 Редакция «Компас»</h3><ul><li><b>Журналист</b> — Пишет статью дня по живому поисковому спросу</li><li><b>Редактор-аналитик</b> — Готовит план статьи: о чём спрашивают люди и что обязательно раскрыть</li><li><b>Управляющий редакцией</b> — Решает, какая рубрика выходит сегодня, и держит ритм журнала</li><li><b>Литературный редактор</b> — Шлифует уже вышедшие тексты по тому, как их читают</li><li><b>Выпускающий редактор</b> — Ведёт оглавление журнала и рубрики</li><li><b>Переписчик журнала</b> — Каждый день берёт одну старую статью и делает её живее и полезнее</li></ul>
+<h3>✅ Отдел качества</h3><ul><li><b>Аудитор</b> — Обходит страницы сайта и ищет ошибки и дубли</li><li><b>Корректор</b> — Исправляет то, что нашёл аудитор</li><li><b>Иммунитет движка</b> — Ищет в самом движке известные поломки раньше, чем они сработают</li><li><b>Медосмотр статей</b> — Перепроверяет вышедшие статьи по свежим правилам качества</li><li><b>Резервные копии</b> — Каждый день сохраняет резервную копию всей системы</li></ul>
+<h3>🚀 Отдел публикации</h3><ul><li><b>Публикатор</b> — Выкладывает страницы на сайт и сообщает о них поисковикам</li></ul>
+<h3>🛡 Служба безопасности</h3><ul><li><b>Сторож</b> — Следит за безопасностью сайта и движка</li><li><b>Белый хакер</b> — Проверяет сайт на уязвимости, ничего не ломая</li></ul>
+<h3>🎛 Дирекция</h3><ul><li><b>Директор-диспетчер</b> — Директор офиса: планирует и запускает работу всех отделов</li><li><b>Веб-дизайнер</b> — Следит за тем, как сайт выглядит на экране</li><li><b>Креативный директор</b> — Сверяет подачу журнала с тем, что сейчас работает в соцсетях</li><li><b>Аттестация</b> — Раз в неделю проверяет, кто из агентов работает хорошо, а кому нужна помощь</li><li><b>Регламент офиса</b> — Держит регламент: кто что делает и кому передаёт работу</li><li><b>Аналитик отделов</b> — Считает успехи и сбои отделов и выдаёт агентам уроки</li><li><b>Архитектор офиса</b> — Раз в неделю смотрит на офис целиком и предлагает улучшения</li></ul>
+<h3>⚖️ Юридическое сопровождение</h3><ul><li><b>Юрист-редактор</b> — Проверяет тексты на соответствие закону о рекламе и о персональных данных</li><li><b>Комплаенс</b> — Перепроверяет уже вышедшее, когда меняются правила</li></ul>
+<h3>🌐 Внешний рост</h3><ul><li><b>Аудитор присутствия</b> — Проверяет, что страницы журнала на внешних площадках живы</li><li><b>Дистрибьютор</b> — Публикует анонсы новых статей в Telegram-канале</li><li><b>Дистрибьютор · опросы</b> — Раз в неделю задаёт читателям вопрос в канале</li><li><b>Ассистент Тима</b> — Отвечает читателям в обсуждениях канала</li><li><b>Дистрибьютор · ВКонтакте</b> — Публикует анонсы статей во ВКонтакте</li><li><b>Разведчик ресурсов</b> — Ищет сообщества и площадки, где журнал будет полезен</li><li><b>Куратор площадок</b> — Собирает цифры по найденным площадкам, чтобы выбрать лучшие</li></ul>
+<h3>🎬 Продакшн</h3><ul><li><b>Промо-ролики</b> — Делает короткие ролики по статьям голосом Тима</li></ul>
+<h3>🗂 Отдел новых заказов</h3><ul><li><b>Менеджер новых заказов</b> — Принимает новые заказы и готовит проекты к запуску</li></ul>
+<!--/tl-office-seo-v1-->
+    </div>
+  </section>
+
+  <div class="callout">
+    <h2>Хотите такой офис для своего дела?</h2>
+    <p>Тимур собирает журналы и ИИ-агентов под бизнес: от одной задачи до целой редакции. Первый разбор бесплатный.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn tg" href="https://t.me/TimLabs_bot?start=ai" target="_blank" rel="noopener">Обсудить задачу в Telegram</a>
+      <a class="btn" href="/ii-avtomatizaciya/#zhurnal-pod-klyuch">Журнал под ключ</a>
+    </div>
+  </div>
+
+<footer>
         <a class="back" href="/">← Вернуться на ТимЛабс</a>
     <p>© 2026 ТимЛабс (TimLabs) · timlabs.online</p>
     <p><a href="/privacy/">Политика обработки данных</a> · <a href="/consent/">Согласие на обработку данных</a> · <a href="/terms/">Пользовательское соглашение</a> · <a href="#" id="tl-consent-settings">Настройки данных</a> · 16+</p>
@@ -279,6 +327,216 @@ d.classList.toggle('on',ok()&&sc>.3&&sc<.97);}
 addEventListener('scroll',upd,{passive:true});addEventListener('click',function(){setTimeout(upd,80)});
 d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();try{sessionStorage.setItem('tl-donate-off','1')}catch(_){};d.classList.remove('on');});
 })();</script>
+<style>
+.zo-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:8px 0 22px}
+.zo-stat{padding:14px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.015));text-align:center}
+.zo-stat b{display:block;font-size:1.7rem;color:#fff;line-height:1.1}
+.zo-stat span{font-size:.8rem;color:#9aa3b8}
+.zo-scene-wrap{margin:0 0 28px;position:relative}
+#zo-scene{display:block;width:100%;aspect-ratio:1.62/1;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:radial-gradient(120% 90% at 50% 0%,#0d1630 0%,#05070e 70%)}
+.zo-upd{margin:8px 2px 0;font-size:.8rem;color:#5c6478}
+.zo-feed{list-style:none;padding:0;margin:0}
+.zo-feed li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.93rem;color:#c9d1e3}
+.zo-feed time{flex:0 0 3.2em;color:#5c6478;font-variant-numeric:tabular-nums}
+.zo-feed a{color:#00b4ff}
+.zo-seo h3{font-size:1rem;margin:18px 0 6px;color:#fff}
+.zo-seo ul{margin:0;padding-left:18px;color:#9aa3b8;font-size:.9rem;line-height:1.55}
+@media (max-width:640px){.zo-stats{grid-template-columns:repeat(2,1fr)}
+  .zo-scene-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -16px 28px;padding:0 16px}
+  #zo-scene{min-width:680px}
+  .zo-scene-wrap::after{content:"← листайте схему →";display:block;font-size:.72rem;color:#5c6478;text-align:center;margin-top:4px}}
+.iso-top{stroke:rgba(255,255,255,.12);stroke-width:1.2;transition:stroke .4s}
+.iso-room.live .iso-top{stroke:var(--tone);stroke-width:1.8}
+.iso-glow{opacity:0;transition:opacity .5s}
+.iso-room.live .iso-glow{opacity:1}
+.iso-sign{font-size:13px;text-anchor:middle}
+.iso-sign-sub{font:600 9.5px system-ui,sans-serif;fill:#c9d1e3;text-anchor:middle}
+.iso-emp .body{font-size:21px;text-anchor:middle;transform-box:fill-box;transform-origin:50% 100%;animation:empBob 2.8s ease-in-out infinite}
+.iso-emp .halo{fill:rgba(255,255,255,.04);stroke:var(--tc);stroke-width:1;stroke-dasharray:2 2}
+.iso-emp .ring{fill:none;stroke:#2fd07a;stroke-width:1.6;opacity:0;transition:opacity .4s}
+.iso-emp.live .ring{opacity:1;animation:isoPulse 1.4s ease-in-out infinite}
+.iso-emp.live .body{filter:drop-shadow(0 0 7px rgba(47,208,122,.8))}
+.iso-emp.due .body{filter:drop-shadow(0 0 6px var(--tc))}
+.iso-more .more-bg{fill:rgba(9,14,28,.9);stroke:var(--tc);stroke-width:1.2}
+.iso-more .more-txt{font:800 10px system-ui,sans-serif;fill:#eef2fb;text-anchor:middle}
+.iso-link{fill:none;stroke-width:2;stroke-linecap:round;stroke:rgba(139,147,169,.22);marker-end:url(#isoArrIdle);transition:stroke .3s}
+.iso-link-g.on .iso-link{stroke:rgba(0,180,255,.75);stroke-dasharray:6 5;marker-end:url(#isoArrLive);animation:ofFlow 1.2s linear infinite}
+.iso-link-g.flash .iso-link{stroke:var(--fc,#00b4ff);stroke-width:3;stroke-dasharray:none;filter:drop-shadow(0 0 4px var(--fc,#00b4ff))}
+.iso-pkt{fill:#00b4ff;display:none}
+.iso-link-g.on .iso-pkt,.iso-link-g.flash .iso-pkt{display:block}
+.iso-link-g.flash .iso-pkt{fill:var(--fc,#00b4ff)}
+.iso-bub rect{fill:rgba(10,15,28,.94);stroke-width:1.2}
+.iso-bub text{font:11px system-ui,sans-serif;fill:#e7ecf7}
+@keyframes empBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes isoPulse{0%,100%{opacity:.9}50%{opacity:.25}}
+@keyframes ofFlow{to{stroke-dashoffset:-12}}
+@media (prefers-reduced-motion:reduce){.iso-emp .body,.iso-link-g.on .iso-link,.iso-emp.live .ring{animation:none}}
+</style>
+<script>
+(function(){
+"use strict";
+var LIVE="https://raw.githubusercontent.com/Timrocketsman/timlabs-live/main/office_live.json",
+    BACKUP="/data/office_live.json", NS="http://www.w3.org/2000/svg",
+    LINK_RE=/^\/journal\/[a-z0-9-]+\/$/;
+// Та же сцена, что в панели управления офисом (изометрия, эмодзи агентов, связи отделов).
+var RW=2.6, RD=1.9, GX=0.9, GY=0.85, PX=40, WH=0.85, ROT=20*Math.PI/180, ACTIVE_SEC=900;
+var LAYOUT={research:[0,2],editorial:[0,1],quality:[0,0],publishing:[1,2],security:[1,1],management:[1,0],legal:[2,2],growth:[2,1],production:[2,0],clients:[0,3]};
+var SHORT={research:"Разведка",editorial:"Редакция",quality:"Качество",publishing:"Публикация",security:"Безопасность",management:"Дирекция",legal:"Юротдел",growth:"Охват",production:"Продакшн",clients:"Заказы"};
+var ICON={research:"🔍",editorial:"📖",quality:"✅",publishing:"🚀",security:"🛡️",management:"🎛️",legal:"⚖️",growth:"🌐",production:"🎬",clients:"📂"};
+var TONE={research:"#00b4ff",editorial:"#ff8fd0",quality:"#2fd07a",publishing:"#ffb020",security:"#ff5c6c",management:"#d100ff",legal:"#7d5cff",growth:"#17c3b2",production:"#ff6b35",clients:"#35b6ff"};
+var LINKS=[["research","editorial"],["editorial","quality"],["quality","publishing"],["editorial","publishing"],["editorial","legal"],["legal","publishing"],["security","management"],["management","security"],["research","growth"],["growth","legal"],["editorial","production"],["production","publishing"],["management","production"]];
+var AVA={semantic:"🔎",analytics:"📈",graph:"🕸",editorial_manager:"🗞",journalist:"✍️",refiner:"🪶",journal_index:"🗂",auditor:"🩺",fixer:"🔧",immunity:"🧬",content_medic:"🩹",backup:"💾",publisher:"🚀",secguard:"🛡",whitehacker:"🕵️",orchestrator:"🎛",web_designer:"🖌",creative_director:"🎬",attestation:"🏅",lawyer:"⚖️",compliance:"📜",presence_auditor:"🔗",distributor:"📣",distributor_poll:"🗳",assistant:"🧠",vk:"🗨",outreach_scout:"🧭",editor_brief:"🎯",rewriter:"♻️",charter:"📘",dept_analytics:"🧮",architect:"📐",resource_curator:"🏷️",promo_video:"🎞️",client_intake:"🤝"};
+var KIND_COL={article:"#00b4ff",draft:"#35b6ff",edit:"#9b6cff",check:"#2fd07a",plan:"#35d0c0",announce:"#d100ff",video:"#ff6b35",search:"#ffb347",guard:"#ff5c6c",system:"#aeb6cc"};
+
+var svg=document.getElementById("zo-scene"); if(!svg||!svg.createSVGPoint)return;
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var data=null, rooms={}, emps={}, links=[], queue=[], visible=false, running=false, nextEv=0, bubble=null, built="";
+
+function el(tag,attrs,parent){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+function txt(node,s){node.textContent=String(s==null?"":s);return node;}
+function num(x){x=Number(x);return isFinite(x)?x:0;}
+function P(x,y,z){var c=Math.cos(ROT),s=Math.sin(ROT),rx=x*c+y*s,ry=-x*s+y*c;return {x:(rx-ry)*PX,y:((rx+ry)*0.5-(z||0))*PX};}
+function path(pts){return "M"+pts.map(function(p){return p.x.toFixed(1)+" "+p.y.toFixed(1);}).join(" L")+" Z";}
+function hhmm(ts){var d=new Date(num(ts)*1000);return ("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);}
+function nowSec(){return Date.now()/1000;}
+
+function build(){
+  var deps=(data.departments||[]).filter(function(d){return LAYOUT[d.id];});
+  var sig=deps.map(function(d){return d.id+":"+(d.agents||[]).map(function(a){return a.id;}).join(",");}).join("|");
+  if(sig===built)return; built=sig;
+  while(svg.firstChild)svg.removeChild(svg.firstChild);
+  rooms={}; emps={}; links=[];
+  var minx=1e9,miny=1e9,maxx=-1e9,maxy=-1e9,wx0=1e9,wy0=1e9,wx1=-1e9,wy1=-1e9;
+  var rs=deps.map(function(d){var l=LAYOUT[d.id];return {d:d,ox:l[0]*(RW+GX),oy:l[1]*(RD+GY)};});
+  rs.forEach(function(r){wx0=Math.min(wx0,r.ox);wy0=Math.min(wy0,r.oy);wx1=Math.max(wx1,r.ox+RW);wy1=Math.max(wy1,r.oy+RD);
+    [[0,0],[RW,0],[RW,RD],[0,RD]].forEach(function(c){[0,WH+0.35].forEach(function(z){var p=P(r.ox+c[0],r.oy+c[1],z);minx=Math.min(minx,p.x);maxx=Math.max(maxx,p.x);miny=Math.min(miny,p.y);maxy=Math.max(maxy,p.y);});});});
+  var pad=14, vw=maxx-minx+pad*2, vh=maxy-miny+pad*2;
+  svg.setAttribute("viewBox",(minx-pad)+" "+(miny-pad)+" "+vw+" "+vh);
+  svg.style.aspectRatio=(vw/vh).toFixed(3)+"/1";
+  var defs=el("defs",{},svg);
+  var lg=el("linearGradient",{id:"isoFloorG",x1:0,y1:0,x2:0,y2:1},defs);el("stop",{offset:0,"stop-color":"#0d1730"},lg);el("stop",{offset:1,"stop-color":"#070b17"},lg);
+  var f=el("filter",{id:"isoBlur",x:"-40%",y:"-40%",width:"180%",height:"180%"},defs);el("feGaussianBlur",{stdDeviation:7},f);
+  [["isoArrIdle","rgba(139,147,169,.5)"],["isoArrLive","#00b4ff"]].forEach(function(m){var mk=el("marker",{id:m[0],markerWidth:10,markerHeight:10,refX:8,refY:5,orient:"auto",markerUnits:"userSpaceOnUse"},defs);el("path",{d:"M0,1 L9,5 L0,9 z",fill:m[1]},mk);});
+  el("path",{d:path([P(wx0,wy0,0),P(wx1,wy0,0),P(wx1,wy1,0),P(wx0,wy1,0)]),fill:"url(#isoFloorG)",stroke:"rgba(255,255,255,.05)"},svg);
+  for(var gx=Math.ceil(wx0);gx<=Math.floor(wx1);gx++){var a=P(gx,wy0,0),b=P(gx,wy1,0);el("line",{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:"rgba(255,255,255,.045)"},svg);}
+  for(var gy=Math.ceil(wy0);gy<=Math.floor(wy1);gy++){var a2=P(wx0,gy,0),b2=P(wx1,gy,0);el("line",{x1:a2.x,y1:a2.y,x2:b2.x,y2:b2.y,stroke:"rgba(255,255,255,.045)"},svg);}
+  rs.slice().sort(function(a,b){return (a.ox+a.oy)-(b.ox+b.oy);}).forEach(function(r){
+    var id=r.d.id, tone=TONE[id]||"#00b4ff", m=0.22, g=el("g",{"class":"iso-room",style:"--tone:"+tone},svg);
+    txt(el("title",{},g), r.d.name);
+    var ctr=P(r.ox+RW/2,r.oy+RD/2,WH);
+    el("ellipse",{"class":"iso-glow",cx:ctr.x,cy:ctr.y,rx:RW*PX*0.6,ry:RW*PX*0.3,fill:tone,"fill-opacity":".32",filter:"url(#isoBlur)"},g);
+    el("path",{d:path([P(r.ox+RW,r.oy,WH),P(r.ox+RW,r.oy,0),P(r.ox+RW,r.oy+RD,0),P(r.ox+RW,r.oy+RD,WH)]),fill:"#0a101e",stroke:"rgba(255,255,255,.04)"},g);
+    el("path",{d:path([P(r.ox+RW,r.oy+RD,WH),P(r.ox+RW,r.oy+RD,0),P(r.ox,r.oy+RD,0),P(r.ox,r.oy+RD,WH)]),fill:"#0c1526",stroke:"rgba(255,255,255,.04)"},g);
+    el("path",{"class":"iso-top",d:path([P(r.ox,r.oy,WH),P(r.ox+RW,r.oy,WH),P(r.ox+RW,r.oy+RD,WH),P(r.ox,r.oy+RD,WH)]),fill:"#16203a"},g);
+    el("path",{d:path([P(r.ox+m,r.oy+m,WH),P(r.ox+RW-m,r.oy+m,WH),P(r.ox+RW-m,r.oy+RD-m,WH),P(r.ox+m,r.oy+RD-m,WH)]),fill:tone,"fill-opacity":".07"},g);
+    var s=P(r.ox+RW/2,r.oy+0.4,WH);
+    txt(el("text",{"class":"iso-sign",x:s.x,y:s.y},g), ICON[id]||"");
+    txt(el("text",{"class":"iso-sign-sub",x:s.x,y:s.y+13},g), SHORT[id]||String(r.d.name).split(" ")[0]);
+    var ags=r.d.agents||[], shown=ags.slice(0,4), cols=shown.length<=1?1:2, rows=Math.ceil(shown.length/cols),
+        x0=r.ox+0.42,x1=r.ox+RW-0.42,y0=r.oy+1.06,y1=r.oy+RD-0.30;
+    shown.forEach(function(a,i){
+      var c=i%cols, rr=Math.floor(i/cols), x=cols===1?(x0+x1)/2:x0+(x1-x0)*(c/(cols-1)), y=rows===1?(y0+y1)/2:y0+(y1-y0)*(rr/(rows-1)), p=P(x,y,WH);
+      var eg=el("g",{"class":"iso-emp",style:"--tc:"+tone},g);
+      txt(el("title",{},eg), (a.name||"")+(a.role?" — "+a.role:""));
+      el("ellipse",{cx:p.x,cy:p.y+2,rx:11,ry:4,fill:"rgba(0,0,0,.5)"},eg);
+      el("ellipse",{"class":"halo",cx:p.x,cy:p.y-8,rx:14,ry:11},eg);
+      el("circle",{"class":"ring",cx:p.x,cy:p.y-11,r:15},eg);
+      txt(el("text",{"class":"body",x:p.x,y:p.y-2},eg), AVA[a.id]||"🤖");
+      emps[a.id]={g:eg,x:p.x,y:p.y-26,dept:id,until:0,state:"idle"};
+    });
+    if(ags.length>4){var mp=P(r.ox+RW-0.48,r.oy+0.58,WH), mg=el("g",{"class":"iso-more",style:"--tc:"+tone},g);
+      el("circle",{"class":"more-bg",cx:mp.x,cy:mp.y-5,r:9},mg); txt(el("text",{"class":"more-txt",x:mp.x,y:mp.y-2},mg),"+"+(ags.length-4));
+      ags.slice(4).forEach(function(a){emps[a.id]={g:null,x:mp.x,y:mp.y-18,dept:id,until:0,state:"idle"};});}
+    rooms[id]={g:g,until:0,ox:r.ox,oy:r.oy};
+  });
+  LINKS.forEach(function(l,li){
+    var a=rooms[l[0]], b=rooms[l[1]]; if(!a||!b)return;
+    var ca=P(a.ox+RW/2,a.oy+RD/2,WH+0.18), cb=P(b.ox+RW/2,b.oy+RD/2,WH+0.18), dx=cb.x-ca.x, dy=cb.y-ca.y, len=Math.sqrt(dx*dx+dy*dy)||1,
+        bow=Math.min(24,len*0.16), mx=(ca.x+cb.x)/2-dy/len*bow, my=(ca.y+cb.y)/2+dx/len*bow;
+    var g=el("g",{"class":"iso-link-g"},svg), p=el("path",{"class":"iso-link",d:"M"+ca.x.toFixed(1)+" "+ca.y.toFixed(1)+" Q"+mx.toFixed(1)+" "+my.toFixed(1)+" "+cb.x.toFixed(1)+" "+cb.y.toFixed(1)},g);
+    var dots=[el("circle",{"class":"iso-pkt",r:3},g),el("circle",{"class":"iso-pkt",r:2.4},g)];
+    links.push({g:g,path:p,len:p.getTotalLength?p.getTotalLength():1,dots:dots,src:l[0],dst:l[1],flashUntil:0,phase:li*0.37});
+  });
+  bubble=el("g",{"class":"iso-bub",style:"display:none"},svg);
+  bubble.rect=el("rect",{rx:10,ry:10,height:22},bubble); bubble.text=el("text",{},bubble); bubble.until=0;
+}
+
+function refreshStates(){
+  (data.departments||[]).forEach(function(d){(d.agents||[]).forEach(function(a){
+    var e=emps[a.id]; if(!e)return; e.state=String(a.state||"idle");
+    e.recent=num(a.last_ts)>0&&(nowSec()-num(a.last_ts))<=ACTIVE_SEC;
+  });});
+}
+function deptActive(id,t){return Object.keys(emps).some(function(k){var e=emps[k];return e.dept===id&&(e.recent||e.until>t);});}
+
+function play(ev,t){
+  var e=emps[String(ev.agent)]; if(!e)return;
+  var col=KIND_COL[ev.kind]||"#00b4ff";
+  e.until=t+6000; if(rooms[e.dept])rooms[e.dept].until=t+6000;
+  links.forEach(function(l){ if(l.src===e.dept){ l.flashUntil=t+3500; l.g.style.setProperty("--fc",col); if(rooms[l.dst])rooms[l.dst].until=Math.max(rooms[l.dst].until,t+3500); } });
+  var s=String(ev.label||""); if(s.length>48)s=s.slice(0,47)+"…";
+  txt(bubble.text,s); bubble.style.display="";
+  var w=(bubble.text.getComputedTextLength?bubble.text.getComputedTextLength():s.length*6)+16, vb=svg.viewBox.baseVal;
+  var bx=Math.max(vb.x+4,Math.min(vb.x+vb.width-w-4,e.x-w/2)), by=Math.max(vb.y+4,e.y-28);
+  bubble.rect.setAttribute("x",bx); bubble.rect.setAttribute("y",by); bubble.rect.setAttribute("width",w); bubble.rect.setAttribute("stroke",col);
+  bubble.text.setAttribute("x",bx+8); bubble.text.setAttribute("y",by+15); bubble.until=t+3200;
+}
+
+function frame(t){
+  if(!data)return;
+  if(!queue.length)queue=(data.events||[]).slice(-40);
+  if(t>nextEv&&queue.length){play(queue.shift(),t);nextEv=t+2800;}
+  Object.keys(emps).forEach(function(k){var e=emps[k];if(!e.g)return;
+    e.g.classList.toggle("live",e.until>t||!!e.recent); e.g.classList.toggle("due",e.state==="due");});
+  Object.keys(rooms).forEach(function(k){rooms[k].g.classList.toggle("live",rooms[k].until>t||deptActive(k,t));});
+  var ts=t/1000;
+  links.forEach(function(l){
+    var flash=l.flashUntil>t, on=!flash&&deptActive(l.src,t)&&deptActive(l.dst,t);
+    l.g.classList.toggle("flash",flash); l.g.classList.toggle("on",on);
+    if((flash||on)&&l.len>1&&!reduce){for(var i=0;i<l.dots.length;i++){var fr=((ts*(flash?140:80))/l.len+i/l.dots.length+l.phase)%1,p=l.path.getPointAtLength(fr*l.len);l.dots[i].setAttribute("cx",p.x.toFixed(1));l.dots[i].setAttribute("cy",p.y.toFixed(1));}}
+  });
+  if(bubble&&bubble.until<t)bubble.style.display="none";
+}
+function tick(t){if(!running)return;frame(t);requestAnimationFrame(tick);}
+function start(){if(reduce){frame(performance.now());return;} if(!running&&visible&&!document.hidden&&data){running=true;requestAnimationFrame(tick);}}
+function stop(){running=false;}
+
+function feed(){
+  var ul=document.getElementById("zo-feed"); if(!ul)return;
+  while(ul.firstChild)ul.removeChild(ul.firstChild);
+  (data.events||[]).slice(-10).reverse().forEach(function(ev){
+    var li=document.createElement("li"), tm=document.createElement("time"), sp=document.createElement("span");
+    txt(tm,hhmm(ev.ts)); li.appendChild(tm);
+    var link=String(ev.link||"");
+    if(LINK_RE.test(link)){var a=document.createElement("a");a.href=link;txt(a,ev.label);sp.appendChild(a);} else txt(sp,ev.label);
+    li.appendChild(sp); ul.appendChild(li);
+  });
+}
+function stats(){
+  var c=data.counts||{}, t=c.day||c.today||{};
+  txt(document.getElementById("zo-n-articles"),num(t.articles)+num(t.updates));
+  txt(document.getElementById("zo-n-video"),num(t.video));
+  txt(document.getElementById("zo-n-checks"),num(t.check)+num(t.guard));
+  if(c.agents)txt(document.getElementById("zo-n-agents"),num(c.agents));
+  var m=Math.max(0,Math.round((nowSec()-num(data.generated))/60));
+  txt(document.getElementById("zo-upd"),"Данные офиса обновлены "+(m<1?"только что":m+" мин назад")+". Отдел и стрелки загораются, когда агенты передают работу друг другу; зелёное кольцо — агент работает прямо сейчас.");
+}
+function load(){
+  fetch(LIVE).then(function(r){if(!r.ok)throw 0;return r.json();})
+  .catch(function(){return fetch(BACKUP).then(function(r){return r.json();});})
+  .then(function(d){
+    if(!d||!Array.isArray(d.departments))return;
+    var first=!data; data=d; build(); refreshStates(); feed(); stats();
+    if(first)queue=(d.events||[]).slice(-40);
+    frame(performance.now()); start();
+  }).catch(function(){});
+}
+if("IntersectionObserver" in window){new IntersectionObserver(function(es){visible=es[es.length-1].isIntersecting;visible?start():stop();}).observe(svg);} else visible=true;
+document.addEventListener("visibilitychange",function(){document.hidden?stop():start();});
+window.addEventListener("load",function(){load();setInterval(load,60000);});
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href*="start=ai"],a[href*="/ii-avtomatizaciya/"]');if(!a)return;try{if(typeof ym==="function")ym(111725024,"reachGoal","b2b_click",{from:location.pathname});}catch(_){}});
+})();
+</script>
 
 </body>
 </html>
