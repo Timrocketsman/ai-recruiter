@@ -165,20 +165,26 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
   <nav class="crumb"><a href="/">ТимЛабс</a> → Живой офис</nav>
 
   <header class="hero">
-    <div class="eyebrow">Офис ИИ-агентов · обновляется каждые 5 минут</div>
+    <div class="eyebrow">Офис ИИ-агентов · данные обновляются каждые 5 минут</div>
     <h1>Живой офис ИИ-агентов TimLabs</h1>
-    <p class="lead">Журнал «Компас» и этот сайт ведёт команда ИИ-агентов. Здесь видно, чем они заняты: кто пишет статью, кто собирает ролик, кто проверяет сайт на ошибки. Всё, что происходит ниже, взято из настоящей работы офиса за последние сутки.</p>
+    <p class="lead">Журнал «Компас» и этот сайт ведёт команда ИИ-агентов. Здесь видно, чем они заняты: кто пишет статью, кто собирает ролик, кто проверяет сайт на ошибки. Всё, что вы видите ниже, взято из работы офиса за последние сутки.</p>
   </header>
 
   <section class="zo-stats" aria-label="Работа офиса за сутки">
     <div class="zo-stat"><b id="zo-n-articles">—</b><span>статей за сутки</span></div>
-    <div class="zo-stat"><b id="zo-n-video">—</b><span>событий с роликами за сутки</span></div>
+    <div class="zo-stat"><b id="zo-n-video">—</b><span>действий с роликами за сутки</span></div>
     <div class="zo-stat"><b id="zo-n-checks">—</b><span>проверок за сутки</span></div>
     <div class="zo-stat"><b id="zo-n-agents">35</b><span>агентов в 10 отделах</span></div>
   </section>
 
-  <section class="zo-scene-wrap" aria-label="Схема офиса">
-    <canvas id="zo-scene" width="960" height="460" role="img" aria-label="Схема офиса: отделы и агенты, подсвечиваются те, кто работает сейчас"></canvas>
+  <section class="zo-scene-wrap" aria-labelledby="zo-map-h">
+    <div class="zo-bar"><h2 id="zo-map-h">Карта офиса</h2>
+      <div class="zo-mode" role="group" aria-label="Вид карты"><button type="button" data-m="2d" aria-pressed="false">2D</button><button type="button" data-m="3d" aria-pressed="false">3D</button></div></div>
+    <div class="zo-stage"><canvas id="zo-scene" width="1080" height="550" role="img" aria-label="Схема офиса: отделы и агенты, подсвечиваются те, кто работает сейчас"></canvas>
+      <div class="zo-tip" id="zo-tip" hidden><b></b><em></em><span></span></div></div>
+    <ul class="zo-legend" aria-label="Обозначения">
+      <li><i style="background:#00b4ff"></i>работает сейчас</li><li><i style="background:#ffb347"></i>скоро начнёт</li><li><i style="background:#4a5470"></i>ждёт задачу</li><li><i style="background:#9b6cff"></i>разбирается со сбоем</li>
+      <li class="zo-hint">Наведите на агента или коснитесь его, чтобы узнать, чем он занят.</li></ul>
     <p class="zo-upd" id="zo-upd">Загружаю данные офиса…</p>
   </section>
 
@@ -190,7 +196,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
   <section>
     <h2>Как это устроено</h2>
     <p>Каждое утро аналитик смотрит, что люди ищут в Яндексе, и выбирает тему. Журналист пишет статью, юрист и редакторы проверяют её на ошибки, штампы и рекламные обещания. Публикатор выкладывает текст на сайт и сообщает о нём поисковикам, а распространители отправляют анонсы в Telegram, ВКонтакте и Дзен.</p>
-    <p>Ночью офис перечитывает старые статьи, чинит найденное и сохраняет резервную копию. Человек, Тимур Гуцев, читает отчёт и решает спорные вопросы. Остальное офис делает сам.</p>
+    <p>Ночью офис перечитывает старые статьи, исправляет найденные ошибки и сохраняет резервную копию. Я читаю утренний отчёт и решаю спорные вопросы, остальное офис делает сам.</p>
     <p><a href="/journal/">Почитать журнал «Компас»</a> — там результат этой работы.</p>
   </section>
 
@@ -214,7 +220,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 
   <div class="callout">
     <h2>Хотите такой офис для своего дела?</h2>
-    <p>Тимур собирает журналы и ИИ-агентов под бизнес: от одной задачи до целой редакции. Первый разбор бесплатный.</p>
+    <p>Я собираю журналы и ИИ-агентов под ваше дело: от одной задачи до целой редакции. Первый разбор бесплатный.</p>
     <div class="cta-row" style="justify-content:center">
       <a class="btn tg" href="https://t.me/TimLabs_bot?start=ai" target="_blank" rel="noopener">Обсудить задачу в Telegram</a>
       <a class="btn" href="/ii-avtomatizaciya/#zhurnal-pod-klyuch">Журнал под ключ</a>
@@ -332,16 +338,26 @@ d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault(
 .zo-stat{padding:14px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.015));text-align:center}
 .zo-stat b{display:block;font-size:1.7rem;color:#fff;line-height:1.1}
 .zo-stat span{font-size:.8rem;color:#9aa3b8}
-.zo-scene-wrap{margin:0 0 28px}
-#zo-scene{display:block;width:100%;height:460px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:radial-gradient(120% 90% at 50% 0%,#0d1630 0%,#05070e 70%)}
+.zo-scene-wrap{margin:0 0 28px;position:relative;width:min(1080px,calc(100vw - 32px));left:50%;transform:translateX(-50%)}
+#zo-scene{display:block;width:100%;height:550px;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:radial-gradient(120% 90% at 50% 0%,#0d1630 0%,#05070e 70%)}
 .zo-upd{margin:8px 2px 0;font-size:.8rem;color:#5c6478}
+.zo-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px}.zo-bar h2{margin:0}
+.zo-mode{display:inline-flex;padding:4px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12)}
+.zo-mode button{all:unset;cursor:pointer;padding:7px 16px;border-radius:999px;font:700 .82rem system-ui,sans-serif;color:#9aa3b8;transition:background .2s,color .2s}
+.zo-mode button[aria-pressed="true"]{background:linear-gradient(120deg,#00b4ff,#7d6cff);color:#fff;box-shadow:0 4px 16px rgba(0,180,255,.3)}
+.zo-mode button:focus-visible{outline:2px solid #00b4ff;outline-offset:2px}
+.zo-stage{position:relative}
+.zo-tip{position:absolute;z-index:3;max-width:260px;padding:10px 12px;border-radius:12px;pointer-events:none;background:rgba(10,15,28,.95);border:1px solid rgba(0,180,255,.4);box-shadow:0 10px 30px rgba(0,0,0,.5);font-size:.82rem;line-height:1.4}
+.zo-tip b{display:block;color:#fff;font-size:.92rem}.zo-tip em{display:block;font-style:normal;color:#00b4ff;font-size:.74rem;margin:2px 0 4px}.zo-tip span{color:#c9d1e3}
+.zo-legend{list-style:none;display:flex;flex-wrap:wrap;gap:8px 16px;padding:0;margin:10px 2px 0;font-size:.8rem;color:#9aa3b8}
+.zo-legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}.zo-legend .zo-hint{flex-basis:100%;color:#5c6478}
 .zo-feed{list-style:none;padding:0;margin:0}
 .zo-feed li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.93rem;color:#c9d1e3}
 .zo-feed time{flex:0 0 3.2em;color:#5c6478;font-variant-numeric:tabular-nums}
 .zo-feed a{color:#00b4ff}
 .zo-seo h3{font-size:1rem;margin:18px 0 6px;color:#fff}
 .zo-seo ul{margin:0;padding-left:18px;color:#9aa3b8;font-size:.9rem;line-height:1.55}
-@media (max-width:640px){.zo-stats{grid-template-columns:repeat(2,1fr)}#zo-scene{height:1022px}}
+@media (max-width:640px){.zo-stats{grid-template-columns:repeat(2,1fr)}#zo-scene{height:1220px}}
 </style>
 <script>
 (function(){
@@ -359,58 +375,93 @@ function txt(el,s){el.textContent=String(s==null?"":s);}
 function num(x){x=Number(x);return isFinite(x)?x:0;}
 function hhmm(ts){var d=new Date(num(ts)*1000);return ("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);}
 
+var mode="2d", tip=document.getElementById("zo-tip"), W0=0, H0=0, P=null;
+try{mode=localStorage.getItem("zo-mode")||(cv.clientWidth>=700?"3d":"2d");}catch(e){mode=cv.clientWidth>=700?"3d":"2d";}
+var STATE_TXT={working:"работает сейчас",due:"скоро начнёт",idle:"ждёт задачу",error:"разбирается со сбоем",paused:"на паузе"};
+
 function layout(){
   var dpr=Math.min(window.devicePixelRatio||1,2), w=cv.clientWidth, h=cv.clientHeight;
   cv.width=Math.round(w*dpr); cv.height=Math.round(h*dpr); ctx.setTransform(dpr,0,0,dpr,0,0);
   if(!data)return;
   var ds=data.departments||[], cols=w<640?2:5, rowsN=Math.ceil(ds.length/cols), pad=12,
-      rw=(w-pad*(cols+1))/cols, per0=Math.max(1,Math.floor((rw-12)/58)), rowH=[], ys=[], yy=pad;
-  for(var r0=0;r0<rowsN;r0++){var mx=1;for(var c0=0;c0<cols;c0++){var dd=ds[r0*cols+c0];if(dd)mx=Math.max(mx,Math.ceil(((dd.agents||[]).length||1)/per0));}rowH.push(58+mx*44);ys.push(yy);yy+=58+mx*44+pad;}
-  if(Math.abs(yy-h)>2){cv.style.height=yy+"px";h=yy;cv.height=Math.round(yy*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
-  rooms=[]; agents={};
+      rw=(w-pad*(cols+1))/cols, per0=Math.max(1,Math.floor((rw-12)/72)), rowH=[], ys=[], yy=pad;
+  for(var r0=0;r0<rowsN;r0++){var mx=1;for(var c0=0;c0<cols;c0++){var dd=ds[r0*cols+c0];if(dd)mx=Math.max(mx,Math.ceil(((dd.agents||[]).length||1)/per0));}rowH.push(62+mx*56);ys.push(yy);yy+=62+mx*56+pad;}
+  if(yy>h+2){cv.style.height=yy+"px";h=yy;cv.height=Math.round(yy*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
+  W0=w; H0=Math.max(yy,1); rooms=[]; agents={};
   ds.forEach(function(d,i){
     var c=i%cols, r=Math.floor(i/cols), x=pad+c*(rw+pad), y=ys[r], rh=rowH[r];
     var room={id:String(d.id||""),name:String(d.name||""),x:x,y:y,w:rw,h:rh};
     rooms.push(room);
     var ags=d.agents||[], per=Math.max(1,Math.min(ags.length,per0)), gx=(rw-16)/per;
     ags.forEach(function(a,j){
-      var ax=x+8+(j%per)*gx+gx/2, ay=y+58+Math.floor(j/per)*44;
-      agents[String(a.id)]={name:String(a.short||a.name||""),state:String(a.state||"idle"),x:ax,y:ay,room:room,glow:0,col:null};
+      agents[String(a.id)]={name:String(a.name||a.short||""),role:String(a.role||""),state:String(a.state||"idle"),
+        x:x+8+(j%per)*gx+gx/2, y:y+62+Math.floor(j/per)*56, gx:gx, room:room, glow:0, col:null, sx:0, sy:0};
     });
   });
+  proj();
 }
-
+/* 3D: перспектива пола — дальний край уже и ниже, ближний шире; высота холста не меняется */
+function proj(){
+  var w=cv.clientWidth, h=cv.clientHeight;
+  if(mode!=="3d"||!W0){P=null;return;}
+  var sy=Math.min(0.92,(h-56)/H0), top=40;
+  P={f:function(x,y){var t=y/H0, k=0.84+0.16*t; return [w/2+(x-W0/2)*k, top+y*sy+t*14, k];}};
+}
+function pt(x,y){return P?P.f(x,y):[x,y,1];}
 function fit(s,maxw){if(ctx.measureText(s).width<=maxw)return s;while(s.length>1&&ctx.measureText(s+"…").width>maxw)s=s.slice(0,-1);return s+"…";}
-function short(n){n=String(n||"").replace(/[«»"]/g,"");var w=n.split(/[\s·-]+/)[0];return w.length>11?w.slice(0,10)+"…":w;}
+/* подпись в две строки: «Аналитик семантики» → «Аналитик» / «семантики» */
+function lines(n,maxw){n=String(n).replace(/\s*·\s*/g," ").replace(/-/g,"- ");var ws=n.split(" "),a=(ws[0]||"").replace(/- $/,"-"),b=ws.slice(1).join(" ");return [fit(a,maxw),b?fit(b,maxw):""];}
 function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function poly(ps){ctx.beginPath();ctx.moveTo(ps[0][0],ps[0][1]);for(var i=1;i<ps.length;i++)ctx.lineTo(ps[i][0],ps[i][1]);ctx.closePath();}
 
+function drawRoom(r){
+  if(!P){rr(r.x,r.y,r.w,r.h,14);ctx.fillStyle="rgba(255,255,255,.035)";ctx.fill();ctx.strokeStyle="rgba(255,255,255,.1)";ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle="#dfe6f3";ctx.font="600 12.5px system-ui,sans-serif";ctx.fillText(fit(r.name,r.w-22),r.x+12,r.y+24);return;}
+  var a=pt(r.x,r.y),b=pt(r.x+r.w,r.y),c=pt(r.x+r.w,r.y+r.h),d=pt(r.x,r.y+r.h),wh=16*a[2];
+  poly([[a[0],a[1]-wh],[b[0],b[1]-wh],b,a]);ctx.fillStyle="rgba(0,180,255,.07)";ctx.fill();ctx.strokeStyle="rgba(0,180,255,.25)";ctx.stroke(); /* задняя стеклянная стена */
+  poly([a,b,c,d]);var g=ctx.createLinearGradient(0,a[1],0,d[1]);g.addColorStop(0,"rgba(255,255,255,.03)");g.addColorStop(1,"rgba(255,255,255,.08)");ctx.fillStyle=g;ctx.fill();
+  ctx.strokeStyle="rgba(255,255,255,.14)";ctx.stroke();
+  poly([d,c,[c[0],c[1]+6],[d[0],d[1]+6]]);ctx.fillStyle="rgba(0,180,255,.18)";ctx.fill(); /* торец пола */
+  ctx.fillStyle="#dfe6f3";ctx.font="600 "+(11.5*a[2]).toFixed(1)+"px system-ui,sans-serif";ctx.fillText(fit(r.name,(b[0]-a[0])-14),a[0]+8,a[1]-wh+14*a[2]);
+}
+function drawAgent(a,t,pulse){
+  var p=pt(a.x,a.y), k=p[2], base=STATE_COL[a.state]||STATE_COL.idle, col=a.glow>0?(a.col||base):base, x=p[0], y=p[1];
+  if(P){ /* фигурка: тень, корпус, голова */
+    ctx.beginPath();ctx.ellipse(x,y+2,9*k,3.5*k,0,0,6.283);ctx.fillStyle="rgba(0,0,0,.45)";ctx.fill();
+    if(a.glow>0){ctx.beginPath();ctx.ellipse(x,y+2,(12+14*a.glow)*k,(5+5*a.glow)*k,0,0,6.283);ctx.fillStyle=(a.col||"#00b4ff")+"40";ctx.fill();}
+    var bh=15*k;rr(x-5.5*k,y-bh,11*k,bh,5*k);ctx.fillStyle=col;ctx.fill();
+    ctx.beginPath();ctx.arc(x,y-bh-5*k,5*k,0,6.283);ctx.fillStyle=a.glow>0?"#fff":"#c9d1e3";ctx.fill();
+    if(a.state==="working"&&!reduce){ctx.beginPath();ctx.arc(x,y-bh-5*k,(8+pulse*3)*k,0,6.283);ctx.strokeStyle="rgba(0,180,255,.45)";ctx.stroke();}
+    a.sx=x;a.sy=y-bh/2;
+  }else{
+    var rad=9;
+    if(a.glow>0){ctx.beginPath();ctx.arc(x,y,rad+10*a.glow,0,6.283);ctx.fillStyle=(a.col||"#00b4ff")+"33";ctx.fill();}
+    if(a.state==="working"&&!reduce){ctx.beginPath();ctx.arc(x,y,rad+3+pulse*3,0,6.283);ctx.strokeStyle="rgba(0,180,255,.4)";ctx.stroke();}
+    ctx.beginPath();ctx.arc(x,y,rad,0,6.283);ctx.fillStyle=col;ctx.fill();
+    a.sx=x;a.sy=y;
+  }
+  var fs=(P?Math.max(8.5,9.5*k):10.5), ly=P?y+11*k:y+22, mw=Math.max(40,a.gx*(P?k:1)-6), L;
+  ctx.font=fs.toFixed(1)+"px system-ui,sans-serif";L=lines(a.name,mw);
+  ctx.fillStyle=a.glow>0?"#ffffff":"#9aa3b8";ctx.textAlign="center";
+  ctx.fillText(L[0],x,ly);if(L[1])ctx.fillText(L[1],x,ly+fs+1.5);ctx.textAlign="left";
+}
 function draw(t){
   var w=cv.clientWidth,h=cv.clientHeight; ctx.clearRect(0,0,w,h);
-  rooms.forEach(function(r){
-    rr(r.x,r.y,r.w,r.h,14); ctx.fillStyle="rgba(255,255,255,.035)"; ctx.fill();
-    ctx.strokeStyle="rgba(255,255,255,.09)"; ctx.lineWidth=1; ctx.stroke();
-    ctx.fillStyle="#c9d1e3"; ctx.font="600 12px system-ui,sans-serif";
-    ctx.fillText(fit(r.name,r.w-22), r.x+12, r.y+22);
-  });
-  var pulse=(Math.sin(t/400)+1)/2;
-  Object.keys(agents).forEach(function(k){
-    var a=agents[k], base=STATE_COL[a.state]||STATE_COL.idle, rad=9;
-    if(a.glow>0){ctx.beginPath();ctx.arc(a.x,a.y,rad+10*a.glow,0,6.283);ctx.fillStyle=(a.col||"#00b4ff")+"33";ctx.fill();}
-    if(a.state==="working"&&!reduce){ctx.beginPath();ctx.arc(a.x,a.y,rad+3+pulse*3,0,6.283);ctx.strokeStyle="rgba(0,180,255,.35)";ctx.stroke();}
-    ctx.beginPath();ctx.arc(a.x,a.y,rad,0,6.283);ctx.fillStyle=a.glow>0?(a.col||base):base;ctx.fill();
-    ctx.fillStyle=a.glow>0?"#e7ecf7":"#7d869c";ctx.font="10px system-ui,sans-serif";ctx.textAlign="center";
-    ctx.fillText(short(a.name),a.x,a.y+22);ctx.textAlign="left";
-  });
+  rooms.forEach(drawRoom);
+  var pulse=(Math.sin(t/400)+1)/2, ks=Object.keys(agents);
+  if(P)ks.sort(function(i,j){return agents[i].y-agents[j].y;}); /* дальние рисуем первыми */
+  ks.forEach(function(k){drawAgent(agents[k],t,pulse);});
   active.forEach(function(p){
-    var k=Math.min(1,p.t), x=p.x0+(p.x1-p.x0)*k, y=p.y0+(p.y1-p.y0)*k;
-    ctx.beginPath();ctx.arc(x,y,3.5,0,6.283);ctx.fillStyle=p.col;ctx.fill();
+    var k=Math.min(1,p.t), q=pt(p.x0+(p.x1-p.x0)*k, p.y0+(p.y1-p.y0)*k);
+    ctx.beginPath();ctx.arc(q[0],q[1]-(P?10:0),3.5,0,6.283);ctx.fillStyle=p.col;ctx.fill();
   });
   bubbles.forEach(function(b){
+    var a=agents[b.id]; if(!a)return;
     ctx.globalAlpha=Math.max(0,Math.min(1,b.life));
     ctx.font="12px system-ui,sans-serif";
     var s=b.text.length>46?b.text.slice(0,45)+"…":b.text, tw=ctx.measureText(s).width+16,
-        bx=Math.max(4,Math.min(w-tw-4,b.x-tw/2)), by=Math.max(4,b.y-34);
-    rr(bx,by,tw,22,11);ctx.fillStyle="rgba(10,15,28,.92)";ctx.fill();ctx.strokeStyle=b.col;ctx.stroke();
+        bx=Math.max(4,Math.min(w-tw-4,a.sx-tw/2)), by=Math.max(4,a.sy-(P?40:34));
+    rr(bx,by,tw,22,11);ctx.fillStyle="rgba(10,15,28,.94)";ctx.fill();ctx.strokeStyle=b.col;ctx.stroke();
     ctx.fillStyle="#e7ecf7";ctx.fillText(s,bx+8,by+15);ctx.globalAlpha=1;
   });
 }
@@ -418,10 +469,10 @@ function draw(t){
 function hub(){var r=rooms.filter(function(x){return x.id==="management";})[0]||rooms[0];return r?{x:r.x+r.w/2,y:r.y+r.h/2}:{x:0,y:0};}
 
 function play(ev){
-  var a=agents[String(ev.agent)]; if(!a)return;
+  var id=String(ev.agent), a=agents[id]; if(!a)return;
   var col=KIND_COL[ev.kind]||"#00b4ff", hb=hub();
   a.glow=1; a.col=col;
-  bubbles.push({text:String(ev.label||""),x:a.x,y:a.y,col:col,life:3.2});
+  bubbles.push({id:id,text:String(ev.label||""),col:col,life:3.2});
   if(bubbles.length>3)bubbles.shift();
   active.push({x0:a.x,y0:a.y,x1:hb.x,y1:hb.y,t:0,col:col});
 }
@@ -438,6 +489,25 @@ function tick(t){
 }
 function start(){if(reduce){draw(0);return;} if(!running&&visible&&!document.hidden&&data){running=true;last=0;requestAnimationFrame(tick);}}
 function stop(){running=false;}
+
+/* переключатель 2D/3D */
+function setMode(m){mode=m;try{localStorage.setItem("zo-mode",m);}catch(e){}
+  document.querySelectorAll(".zo-mode button").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-m")===m?"true":"false");});
+  proj(); if(!running)draw(0);}
+document.querySelectorAll(".zo-mode button").forEach(function(b){b.addEventListener("click",function(){setMode(b.getAttribute("data-m"));});});
+setMode(mode);
+
+/* карточка агента при наведении или касании */
+function near(e){var r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,best=null,bd=22*22;
+  Object.keys(agents).forEach(function(k){var a=agents[k],dx=a.sx-x,dy=a.sy-y,d=dx*dx+dy*dy;if(d<bd){bd=d;best=a;}});return {a:best,x:x,y:y};}
+function showTip(e){if(!tip)return;var n=near(e);if(!n.a){tip.hidden=true;cv.style.cursor="";return;}
+  cv.style.cursor="help";tip.hidden=false;
+  txt(tip.querySelector("b"),n.a.name);txt(tip.querySelector("em"),n.a.room.name+" · "+(STATE_TXT[n.a.state]||""));txt(tip.querySelector("span"),n.a.role);
+  var W=cv.clientWidth,tw=tip.offsetWidth,th=tip.offsetHeight;
+  tip.style.left=Math.max(6,Math.min(W-tw-6,n.a.sx-tw/2))+"px";
+  tip.style.top=(n.a.sy-th-18<0?n.a.sy+22:n.a.sy-th-18)+"px";}
+cv.addEventListener("pointermove",showTip);cv.addEventListener("pointerdown",showTip);
+cv.addEventListener("pointerleave",function(){if(tip)tip.hidden=true;});
 
 function feed(){
   var ul=document.getElementById("zo-feed"); if(!ul)return;
@@ -457,7 +527,7 @@ function stats(){
   txt(document.getElementById("zo-n-checks"),num(t.check)+num(t.guard));
   if(c.agents)txt(document.getElementById("zo-n-agents"),num(c.agents));
   var m=Math.max(0,Math.round((Date.now()/1000-num(data.generated))/60));
-  txt(document.getElementById("zo-upd"),"Данные офиса обновлены "+(m<1?"только что":m+" мин назад")+". Точки — агенты: голубые работают, жёлтые скоро начнут, серые ждут задачу.");
+  txt(document.getElementById("zo-upd"),"Данные офиса обновлены "+(m<1?"только что":m+" мин назад")+".");
 }
 function load(){
   fetch(LIVE).then(function(r){if(!r.ok)throw 0;return r.json();})
