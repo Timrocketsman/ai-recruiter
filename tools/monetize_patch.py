@@ -39,6 +39,8 @@ RUBRIC_SVC = {
 RETREAT_SLUGS = ("retrit", "yoga")
 # Статьи, где предложение услуг неуместно совсем.
 NO_SVC = {"doula-smerti"}
+# Рубрики, где предложение услуг мастеров не к месту (ИИ-автоматизация — услуги Тимура).
+NO_SVC_RUBRICS = {"ИИ-автоматизация"}
 
 # ---------------------------------------------------------------- блоки
 PODBOR = r"""<!--tl-podbor-v1--><section class="tlp" id="tl-podbor" aria-labelledby="tlp-h">
@@ -207,7 +209,13 @@ def main():
                 if anchor > 0:
                     h = h[:anchor] + SUB + "\n  " + h[anchor:]
                     stats["sub"] += 1
-            if "<!--tl-podbor-v1-->" not in h and slug not in NO_SVC:
+            # (27 сен, локальная) рубрика «ИИ-автоматизация» — не про мастеров: подбор не ставим, уже вставленный снимаем
+            if rub.get(slug) in NO_SVC_RUBRICS:
+                h2 = re.sub(r'<!--tl-podbor-v1--><section class="tlp" id="tl-podbor".*?</section>\s*', "", h, flags=re.S)
+                if h2 != h:
+                    h = h2
+                    stats["podbor"] += 1
+            elif "<!--tl-podbor-v1-->" not in h and slug not in NO_SVC:
                 anchor = h.find('<section class="related">')
                 if anchor < 0:
                     anchor = h.find('<p class="disclaimer">')
