@@ -204,6 +204,32 @@ def ai_article_fix(slug, rub, html):
     return html if new == m.group(0) else html[:m.start()] + new + html[m.end():]
 
 
+CALLOUT_VOICE = [  # (27 сен) контакт в призывах — лично Тим: первое лицо единственного числа
+    ("Напишите нам", "Напишите мне"), ("напишите нам", "напишите мне"),
+    ("Подберём", "Подберу"), ("подберём", "подберу"), ("поможем", "помогу"), ("Поможем", "Помогу"),
+    ("Мы подскажем", "Я подскажу"), ("мы подскажем", "я подскажу"), ("подскажем", "подскажу"),
+    ("ответим", "отвечу"), ("покажем", "покажу"), ("расскажем", "расскажу"),
+]
+
+
+def article_voice_fix(html):
+    """Призывы статей — от лица Тима; «Читайте также» без ссылок на главную и юр. документы. Идемпотентно."""
+    def cal(m):
+        x = m.group(0)
+        for a, b in CALLOUT_VOICE:
+            x = re.sub(r"(?<![а-яёА-ЯЁ])" + re.escape(a) + r"(?![а-яё])", b, x)
+        return x
+    html = re.sub(r'<div class="callout">.*?</div></div>', cal, html, flags=re.S)
+    m = re.search(r'(<div class="rel-list">)(.*?)(</div>)', html, re.S)
+    if m:
+        inner = re.sub(r'<a href="https://timlabs\.online/(?:(?:privacy|consent|terms)/)?">[^<]*</a>', "", m.group(2))
+        if "timlabs.online/journal/\"" not in inner and 'timlabs.online/journal/"' not in inner:
+            inner = '<a href="%sjournal/">Журнал «Компас»</a>' % SITE + inner
+        if inner != m.group(2):
+            html = html[:m.start()] + m.group(1) + inner + m.group(3) + html[m.end():]
+    return html
+
+
 def insert_before_body(html, block):
     i = html.rfind("</body>")
     return html if i < 0 else html[:i] + block + "\n" + html[i:]
@@ -229,6 +255,10 @@ def main():
         is_article = rel.startswith("journal/") and rel != "journal/index.html"
         if is_article:
             slug = rel.split("/")[1]
+            h2 = article_voice_fix(h)
+            if h2 != h:
+                h = h2
+                stats["voice"] = stats.get("voice", 0) + 1
             h, ch = fix_related(slug, rub.get(slug, ""), h)
             stats["related"] += ch
             if "<!--tl-sub-v1-->" not in h:
