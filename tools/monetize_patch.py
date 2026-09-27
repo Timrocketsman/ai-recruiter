@@ -177,6 +177,33 @@ def fix_related(slug, rubric, html):
     return html[:m.start()] + new + html[m.end():], True
 
 
+AI_TEXT = [
+    ("напишите нам. Подберём формат под вашу ситуацию и покажем, что реально работает.",
+     "напишите мне. Подберу формат под вашу ситуацию и покажу, что работает на практике."),
+    ("Обсудить автоматизацию с Тимуром", "Обсудить автоматизацию"),
+]
+
+
+def ai_article_fix(slug, rub, html):
+    """Статьи рубрики «ИИ-автоматизация»: ссылки «Читайте также» — на соседние статьи рубрики и услуги,
+    а не на главную и политику; тексты призыва — от первого лица Тима. Идемпотентно."""
+    for a, b in AI_TEXT:
+        html = html.replace(a, b)
+    m = re.search(r'(<div class="rel-list">)(.*?)(</div>)', html, re.S)
+    if not m:
+        return html
+    t = open(os.path.join(ROOT, "journal/index.html"), encoding="utf-8").read()
+    same = [(s_, ti) for r_, s_, ti in re.findall(
+        r'data-rubric="([^"]*)"><a class="card-link" href="https://timlabs\.online/journal/([^"/]+)/"><h2 class="card-title">([^<]*)</h2>', t)
+        if r_ == rub.get(slug) and s_ != slug][:3]
+    links = ['<a href="%sjournal/%s/">%s</a>' % (SITE, s_, ti) for s_, ti in same]
+    links += ['<a href="%sii-avtomatizaciya/#zhurnal-pod-klyuch">Журнал под ключ: статьи по поисковому спросу</a>' % SITE,
+              '<a href="%sii-avtomatizaciya/#biznesu">ИИ для бизнеса: боты и агенты</a>' % SITE,
+              '<a href="%sjournal/">Журнал «Компас»</a>' % SITE]
+    new = m.group(1) + "".join(links) + m.group(3)
+    return html if new == m.group(0) else html[:m.start()] + new + html[m.end():]
+
+
 def insert_before_body(html, block):
     i = html.rfind("</body>")
     return html if i < 0 else html[:i] + block + "\n" + html[i:]
@@ -209,6 +236,12 @@ def main():
                 if anchor > 0:
                     h = h[:anchor] + SUB + "\n  " + h[anchor:]
                     stats["sub"] += 1
+            # (27 сен, облачная) статьи рубрики ИИ: «Читайте также» по теме и текст от первого лица Тима
+            if rub.get(slug) in NO_SVC_RUBRICS:
+                h2 = ai_article_fix(slug, rub, h)
+                if h2 != h:
+                    h = h2
+                    stats["related"] += 1
             # (27 сен, локальная) рубрика «ИИ-автоматизация» — не про мастеров: подбор не ставим, уже вставленный снимаем
             if rub.get(slug) in NO_SVC_RUBRICS:
                 h2 = re.sub(r'<!--tl-podbor-v1--><section class="tlp" id="tl-podbor".*?</section>\s*', "", h, flags=re.S)
