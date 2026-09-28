@@ -177,10 +177,16 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
     <div class="zo-stat"><b id="zo-n-agents">35</b><span>агентов в 10 отделах</span></div>
   </section>
 
-  <section class="zo-scene-wrap" aria-label="Схема офиса">
+  <div class="zo-bar"><h2 id="zo-map-h">Карта офиса</h2>
+    <div class="zo-mode" role="group" aria-label="Вид карты"><button type="button" data-m="3d" aria-pressed="true">3D</button><button type="button" data-m="2d" aria-pressed="false">2D</button></div></div>
+  <section class="zo-scene-wrap" aria-labelledby="zo-map-h">
     <svg id="zo-scene" role="img" aria-label="Схема офиса ИИ-агентов: отделы, агенты и связи между ними; загораются те, кто работает сейчас" viewBox="0 0 960 590"></svg>
+    <div class="zo-tip" id="zo-tip" hidden><b></b><em></em><span></span></div>
     <p class="zo-upd" id="zo-upd">Загружаю данные офиса…</p>
   </section>
+  <ul class="zo-legend" aria-label="Обозначения">
+    <li><i style="background:#2fd07a"></i>работает сейчас</li><li><i style="background:#ffb020"></i>скоро начнёт</li><li><i style="background:#4a5470"></i>ждёт задачу</li><li><i class="ln"></i>отделы передают работу</li>
+    <li class="zo-hint">Наведите на агента или коснитесь его, чтобы узнать, чем он занят. В режиме 2D подписаны все агенты.</li></ul>
 
   <section>
     <h2>Сейчас в офисе</h2>
@@ -332,7 +338,20 @@ d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault(
 .zo-stat{padding:14px 12px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.015));text-align:center}
 .zo-stat b{display:block;font-size:1.7rem;color:#fff;line-height:1.1}
 .zo-stat span{font-size:.8rem;color:#9aa3b8}
-.zo-scene-wrap{margin:0 0 28px;position:relative}
+.zo-scene-wrap{margin:0 0 10px;position:relative}
+.zo-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px}.zo-bar h2{margin:0}
+.zo-mode{display:inline-flex;padding:4px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12)}
+.zo-mode button{all:unset;cursor:pointer;padding:7px 16px;border-radius:999px;font:700 .82rem system-ui,sans-serif;color:#9aa3b8}
+.zo-mode button[aria-pressed="true"]{background:linear-gradient(120deg,#00b4ff,#7d6cff);color:#fff;box-shadow:0 4px 16px rgba(0,180,255,.3)}
+.zo-mode button:focus-visible{outline:2px solid #00b4ff;outline-offset:2px}
+.iso-name{display:none;font:600 8px system-ui,sans-serif;fill:#c9d1e3;text-anchor:middle;pointer-events:none}
+#zo-scene.flat .iso-name{display:block}
+.iso-emp{cursor:help;outline:none}.iso-emp:focus .halo{stroke-width:2}
+.zo-tip{position:absolute;z-index:3;max-width:260px;padding:10px 12px;border-radius:12px;pointer-events:none;background:rgba(10,15,28,.96);border:1px solid rgba(0,180,255,.4);box-shadow:0 10px 30px rgba(0,0,0,.5);font-size:.82rem;line-height:1.4}
+.zo-tip b{display:block;color:#fff;font-size:.92rem}.zo-tip em{display:block;font-style:normal;color:#00b4ff;font-size:.74rem;margin:2px 0 4px}.zo-tip span{color:#c9d1e3}
+.zo-legend{list-style:none;display:flex;flex-wrap:wrap;gap:8px 16px;padding:0;margin:0 2px 28px;font-size:.8rem;color:#9aa3b8}
+.zo-legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.zo-legend i.ln{width:18px;height:2px;border-radius:2px;background:#00b4ff;vertical-align:3px}.zo-legend .zo-hint{flex-basis:100%;color:#5c6478}
 #zo-scene{display:block;width:100%;aspect-ratio:1.62/1;border-radius:20px;border:1px solid rgba(255,255,255,.1);background:radial-gradient(120% 90% at 50% 0%,#0d1630 0%,#05070e 70%)}
 .zo-upd{margin:8px 2px 0;font-size:.8rem;color:#5c6478}
 .zo-feed{list-style:none;padding:0;margin:0}
@@ -395,7 +414,8 @@ var data=null, rooms={}, emps={}, links=[], queue=[], visible=false, running=fal
 function el(tag,attrs,parent){var e=document.createElementNS(NS,tag);for(var k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
 function txt(node,s){node.textContent=String(s==null?"":s);return node;}
 function num(x){x=Number(x);return isFinite(x)?x:0;}
-function P(x,y,z){var c=Math.cos(ROT),s=Math.sin(ROT),rx=x*c+y*s,ry=-x*s+y*c;return {x:(rx-ry)*PX,y:((rx+ry)*0.5-(z||0))*PX};}
+var MODE="3d";try{MODE=localStorage.getItem("zo-mode")||"3d";}catch(e){}
+function P(x,y,z){if(MODE==="2d")return {x:x*PX*1.25,y:y*PX*2.3};var c=Math.cos(ROT),s=Math.sin(ROT),rx=x*c+y*s,ry=-x*s+y*c;return {x:(rx-ry)*PX,y:((rx+ry)*0.5-(z||0))*PX};}
 function path(pts){return "M"+pts.map(function(p){return p.x.toFixed(1)+" "+p.y.toFixed(1);}).join(" L")+" Z";}
 function hhmm(ts){var d=new Date(num(ts)*1000);return ("0"+d.getHours()).slice(-2)+":"+("0"+d.getMinutes()).slice(-2);}
 function nowSec(){return Date.now()/1000;}
@@ -442,10 +462,13 @@ function build(){
       el("ellipse",{"class":"halo",cx:p.x,cy:p.y-8,rx:14,ry:11},eg);
       el("circle",{"class":"ring",cx:p.x,cy:p.y-11,r:15},eg);
       txt(el("text",{"class":"body",x:p.x,y:p.y-2},eg), AVA[a.id]||"🤖");
-      emps[a.id]={g:eg,x:p.x,y:p.y-26,dept:id,until:0,state:"idle"};
+      var nm=String(a.name||"").replace(/\s*·\s*/g," ").split(" "), nt=el("text",{"class":"iso-name",x:p.x,y:p.y+12},eg);
+      txt(el("tspan",{x:p.x,dy:0},nt), nm[0]||""); if(nm.length>1) txt(el("tspan",{x:p.x,dy:9},nt), nm.slice(1).join(" "));
+      eg.setAttribute("tabindex","0"); eg.zoInfo={name:String(a.name||""),role:String(a.role||""),dept:String(r.d.name||""),id:String(a.id)};
+      emps[a.id]={g:eg,x:p.x,y:p.y-26,dept:id,until:0,state:"idle"}; eg.zoInfo.e=emps[a.id];
     });
     if(ags.length>4){var mp=P(r.ox+RW-0.48,r.oy+0.58,WH), mg=el("g",{"class":"iso-more",style:"--tc:"+tone},g);
-      el("circle",{"class":"more-bg",cx:mp.x,cy:mp.y-5,r:9},mg); txt(el("text",{"class":"more-txt",x:mp.x,y:mp.y-2},mg),"+"+(ags.length-4));
+      el("circle",{"class":"more-bg",cx:mp.x,cy:mp.y-5,r:9},mg); txt(el("text",{"class":"more-txt",x:mp.x,y:mp.y-2},mg),"+"+(ags.length-4)); txt(el("title",{},mg),"Ещё в отделе: "+ags.slice(4).map(function(a){return String(a.name||"");}).join(", "));
       ags.slice(4).forEach(function(a){emps[a.id]={g:null,x:mp.x,y:mp.y-18,dept:id,until:0,state:"idle"};});}
     rooms[id]={g:g,until:0,ox:r.ox,oy:r.oy};
   });
@@ -521,6 +544,24 @@ function stats(){
   var m=Math.max(0,Math.round((nowSec()-num(data.generated))/60));
   txt(document.getElementById("zo-upd"),"Данные офиса обновлены "+(m<1?"только что":m+" мин назад")+". Отдел и стрелки загораются, когда агенты передают работу друг другу; зелёное кольцо — агент работает прямо сейчас.");
 }
+/* карточка агента, переключатель вида */
+var STATE_TXT={working:"работает сейчас",due:"скоро начнёт",idle:"ждёт задачу",error:"разбирается со сбоем",paused:"на паузе"};
+var tip=document.getElementById("zo-tip");
+function showTip(g){if(!tip||!g||!g.zoInfo)return;var i=g.zoInfo,e=i.e||{},wrap=svg.parentNode.getBoundingClientRect(),b=g.getBoundingClientRect();
+  txt(tip.querySelector("b"),i.name);txt(tip.querySelector("em"),i.dept+" · "+(e.recent?"работал(а) в последние 15 минут":(STATE_TXT[e.state]||"")));txt(tip.querySelector("span"),i.role);
+  tip.hidden=false;var tw=tip.offsetWidth,th=tip.offsetHeight,x=b.left-wrap.left+b.width/2-tw/2+svg.parentNode.scrollLeft,y=b.top-wrap.top-th-8;
+  tip.style.left=Math.max(4,Math.min(svg.parentNode.scrollWidth-tw-4,x))+"px";tip.style.top=(y<0?b.bottom-wrap.top+8:y)+"px";}
+function hideTip(){if(tip)tip.hidden=true;}
+function hit(ev){var g=ev.target.closest&&ev.target.closest(".iso-emp");g?showTip(g):hideTip();}
+svg.addEventListener("pointerover",hit);svg.addEventListener("pointerdown",hit);svg.addEventListener("focusin",hit);
+svg.addEventListener("pointerleave",hideTip);svg.addEventListener("focusout",hideTip);
+function setMode(m){MODE=m==="2d"?"2d":"3d";try{localStorage.setItem("zo-mode",MODE);}catch(e){}
+  document.querySelectorAll(".zo-mode button").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-m")===MODE?"true":"false");});
+  svg.classList.toggle("flat",MODE==="2d");
+  if(data){built="";build();refreshStates();frame(performance.now());}}
+document.querySelectorAll(".zo-mode button").forEach(function(b){b.addEventListener("click",function(){hideTip();setMode(b.getAttribute("data-m"));});});
+setMode(MODE);
+
 function load(){
   fetch(LIVE).then(function(r){if(!r.ok)throw 0;return r.json();})
   .catch(function(){return fetch(BACKUP).then(function(r){return r.json();});})
