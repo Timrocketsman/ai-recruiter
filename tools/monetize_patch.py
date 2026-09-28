@@ -252,6 +252,12 @@ def main():
         if "localStorage.setItem(v,v)" in h:
             h = h.replace("localStorage.setItem(v,v)", "localStorage.setItem(KEY,v)")
             stats["consent"] += 1
+        # (28 сен) og:description, если генератор его потерял — копия meta description
+        if 'property="og:description"' not in h and 'property="og:title"' in h:
+            md = re.search(r'<meta name="description" content="([^"]*)"', h)
+            if md:
+                i = h.find('<meta property="og:title"'); j = h.find(">", i) + 1
+                h = h[:j] + '\n<meta property="og:description" content="%s">' % md.group(1) + h[j:]
         is_article = rel.startswith("journal/") and rel != "journal/index.html"
         if is_article:
             slug = rel.split("/")[1]

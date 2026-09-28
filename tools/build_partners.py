@@ -19,13 +19,23 @@ from build_hubs import block, read  # noqa: E402
 SITE = "https://timlabs.online"
 URL = SITE + "/partners/"
 PARTNERS = [
-    {
-        "id": "marafdy", "name": "MARAFDY", "ic": "🌸", "c": "#35b6ff", "c2": "#9b6cff",
-        "who": "Мара — мастер телесных практик и доула",
-        "about": "Велнес-массаж с выездом на дом по Кавминводам и бережное сопровождение женщины: от подготовки к беременности до восстановления после родов.",
-        "page": "/massage-kislovodsk/", "page_label": "Массаж на дому в Кисловодске",
-        "more": [("/beremennost-i-rody/", "Сопровождение доулы")],
+    {   # решение Тима 28.09: MARAFDY — только аппаратный массаж, без беременности и доулы
+        "id": "marafdy", "name": "MARAFDY", "ic": "🌿", "c": "#35b6ff", "c2": "#9b6cff",
+        "tag": "Партнёр · аппаратный массаж",
+        "who": "Команда из трёх мастеров, Кисловодск и Кавминводы",
+        "about": "Аппаратный массаж с выездом на дом в Кисловодске и на Кавминводах: без масел, в удобное для вас время.",
+        "page": "/massage-kislovodsk/", "page_label": "Аппаратный массаж на дому",
+        "more": [("https://vk.ru/marafdy", "ВКонтакте"), ("https://dzen.ru/marafdy", "Дзен")],
         "contact": ("https://t.me/MARAFDY_manager", "Записаться у MARAFDY"),
+    },
+    {   # личная практика Мары — отдельно, без бренда MARAFDY
+        "id": "mara-doula", "name": "Доула Мара", "ic": "🤍", "c": "#ff8fd0", "c2": "#35b6ff",
+        "tag": "Партнёр · материнство",
+        "who": "Мара — доула, личная практика",
+        "about": "Подготовка к беременности и родам, сопровождение онлайн и в Кисловодске, восстановление после родов и помощь с кормлением.",
+        "page": "/beremennost-i-rody/", "page_label": "Беременность и роды",
+        "more": [],
+        "contact": ("https://t.me/+d7JxvGJWeaJlYWQy", "Канал Мары в Telegram"),
     },
 ]
 
@@ -46,7 +56,7 @@ def partner_articles(pid):
 def card(p):
     arts = partner_articles(p["id"])
     chips = ['<a class="chip main" href="%s">%s</a>' % (p["page"], html.escape(p["page_label"]))]
-    chips += ['<a class="chip" href="%s">%s</a>' % (u, html.escape(n)) for u, n in p["more"]]
+    chips += ['<a class="chip" href="%s"%s>%s</a>' % (u, ' target="_blank" rel="noopener"' if u.startswith("http") else "", html.escape(n)) for u, n in p["more"]]
     chips.append('<a class="chip" style="--c:#2aabee" href="%s" target="_blank" rel="noopener" data-partner="%s">%s</a>'
                  % (p["contact"][0], p["id"], html.escape(p["contact"][1])))
     lst = ""
@@ -54,9 +64,9 @@ def card(p):
         lst = '<ul class="alist" style="margin-top:8px">%s</ul>' % "".join(
             '<li><a href="%s">%s</a></li>' % (u, html.escape(n)) for u, n in arts[:6])
     return ('<article class="gcard proj rv" style="--c:{c};--c2:{c2}"><div class="g-top"><span class="g-ic" aria-hidden="true">{ic}</span>'
-            '<div><span class="g-tag">Партнёр TimLabs</span><div class="g-who">{who}</div></div></div>'
+            '<div><span class="g-tag">{tag}</span><div class="g-who">{who}</div></div></div>'
             '<h3><a href="{page}">{name}</a></h3><p>{about}</p><div class="chips">{chips}</div>{lst}</article>').format(
-        c=p["c"], c2=p["c2"], ic=p["ic"], who=html.escape(p["who"]), page=p["page"], name=html.escape(p["name"]),
+        c=p["c"], c2=p["c2"], ic=p["ic"], tag=html.escape(p["tag"]), who=html.escape(p["who"]), page=p["page"], name=html.escape(p["name"]),
         about=html.escape(p["about"]), chips="".join(chips), lst=lst)
 
 
@@ -68,7 +78,7 @@ def main():
     tail = re.sub(r"<!--tl-promo-v1-->.*?</script>\n?", "", tail, flags=re.S)  # всплывающий баннер — только на главной
     footer = block(home, "  <footer>", "</footer>")
     title = "Партнёры TimLabs: проверенные мастера на Кавминводах и онлайн"
-    desc = "Мастера, с которыми я работаю и о которых рассказываю: велнес-массаж на дому в Кисловодске, сопровождение доулы, статьи партнёров."
+    desc = "Мастера, с которыми я работаю и о которых рассказываю: аппаратный массаж на дому в Кисловодске от MARAFDY и сопровождение доулы Мары."
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "TimLabs", "item": SITE + "/"},
@@ -144,7 +154,7 @@ sup{{color:var(--magenta);font-weight:700}}
     <div class="tlg-grid two">
 {cards}
     </div>
-    <p class="note">Я рассказываю о партнёрах бесплатно и не получаю от них вознаграждения. Практики мастеров носят велнес-характер и не являются медицинской помощью.</p>
+    <p class="note">Я рассказываю о партнёрах бесплатно и не получаю от них вознаграждения. Услуги партнёров не являются медицинской помощью.</p>
   </section>
 {footer}
 </main>
