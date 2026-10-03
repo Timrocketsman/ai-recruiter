@@ -324,5 +324,13 @@ d.classList.toggle('on',ok()&&sc>.3&&sc<.97);}
 addEventListener('scroll',upd,{passive:true});addEventListener('click',function(){setTimeout(upd,80)});
 d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();try{sessionStorage.setItem('tl-donate-off','1')}catch(_){};d.classList.remove('on');});
 })();</script>
+<!--tl-ask-v1--><script>(function(){
+var slug=(location.pathname.replace(/\/$/,'').split('/').pop()||'home').replace(/[^a-z0-9-]/gi,'').slice(0,50);
+var url='https://t.me/TimLabs_bot?start=q_'+slug;
+var l=document.querySelectorAll('[data-tlp="ask"]');for(var i=0;i<l.length;i++)l[i].href=url;
+var b=document.getElementById('tl-clip-btn');
+if(b)b.addEventListener('click',function(e){e.stopImmediatePropagation();window.open(url,'_blank','noopener');
+try{if(typeof ym==='function')ym(111725024,'reachGoal','ask_click',{page:location.pathname});}catch(_){}} ,true);
+})();</script>
 </body>
 </html>

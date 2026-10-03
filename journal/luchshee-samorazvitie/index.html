@@ -325,5 +325,13 @@ else if(/^tel:/.test(h))g('tel_click');
 else if(/^mailto:/.test(h))g('mail_click');
 else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshelnik|transformacionnyj-retrit|bratstvo|podgotovka|soprovozhdenie|vosstanovlenie|konsultaciya)/.test(a.href))g('service_click');
 else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>
+<!--tl-ask-v1--><script>(function(){
+var slug=(location.pathname.replace(/\/$/,'').split('/').pop()||'home').replace(/[^a-z0-9-]/gi,'').slice(0,50);
+var url='https://t.me/TimLabs_bot?start=q_'+slug;
+var l=document.querySelectorAll('[data-tlp="ask"]');for(var i=0;i<l.length;i++)l[i].href=url;
+var b=document.getElementById('tl-clip-btn');
+if(b)b.addEventListener('click',function(e){e.stopImmediatePropagation();window.open(url,'_blank','noopener');
+try{if(typeof ym==='function')ym(111725024,'reachGoal','ask_click',{page:location.pathname});}catch(_){}} ,true);
+})();</script>
 </body>
 </html>

@@ -323,7 +323,7 @@ def main():
             if tgb in h:
                 h = h.replace(tgb, tgb + "\n" + ASK_BTN, 1)
                 stats["ask"] = stats.get("ask", 0) + 1
-        if "<!--tl-ask-v1-->" not in h and "tl-clip-btn" in h:
+        if "<!--tl-ask-v1-->" not in h and ("tl-clip-btn" in h or 'data-tlp="ask"' in h):
             h = insert_before_body(h, ASK_JS)
             stats["askjs"] = stats.get("askjs", 0) + 1
         if "<!--tl-donate-v1-->" not in h:
