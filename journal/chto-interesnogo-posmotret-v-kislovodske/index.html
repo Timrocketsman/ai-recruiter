@@ -191,6 +191,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 <div class="tlp-go">
 <a class="tlp-main" data-tlp="wa" href="https://wa.me/79938917761" target="_blank" rel="noopener">Отправить в WhatsApp</a>
 <a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener">Подобрать в Telegram-боте</a>
+<a data-tlp="ask" href="https://t.me/TimLabs_bot?start=q" target="_blank" rel="noopener">Задать вопрос в Telegram</a>
 </div>
 <small>Ответы не сохраняются на сайте: они только складываются в текст сообщения, и вы сами решаете, отправлять ли его. Не указывайте диагнозы и сведения о здоровье. Подробнее — в <a href="/privacy/">политике обработки данных</a>. Практики мастеров носят велнес-характер и не являются медицинской помощью.</small>
 <script>(function(){var box=document.getElementById('tl-podbor');if(!box)return;
@@ -431,6 +432,14 @@ function upd(){var h=document.documentElement,sc=(h.scrollTop||document.body.scr
 d.classList.toggle('on',ok()&&sc>.3&&sc<.97);}
 addEventListener('scroll',upd,{passive:true});addEventListener('click',function(){setTimeout(upd,80)});
 d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();try{sessionStorage.setItem('tl-donate-off','1')}catch(_){};d.classList.remove('on');});
+})();</script>
+<!--tl-ask-v1--><script>(function(){
+var slug=(location.pathname.replace(/\/$/,'').split('/').pop()||'home').replace(/[^a-z0-9-]/gi,'').slice(0,50);
+var url='https://t.me/TimLabs_bot?start=q_'+slug;
+var l=document.querySelectorAll('[data-tlp="ask"]');for(var i=0;i<l.length;i++)l[i].href=url;
+var b=document.getElementById('tl-clip-btn');
+if(b)b.addEventListener('click',function(e){e.stopImmediatePropagation();window.open(url,'_blank','noopener');
+try{if(typeof ym==='function')ym(111725024,'reachGoal','ask_click',{page:location.pathname});}catch(_){}} ,true);
 })();</script>
 </body>
 </html>

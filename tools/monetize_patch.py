@@ -43,6 +43,17 @@ NO_SVC = {"doula-smerti"}
 NO_SVC_RUBRICS = {"ИИ-автоматизация"}
 
 # ---------------------------------------------------------------- блоки
+# (3 окт, локальная) короткий путь к заявке: вопрос в боте без анкеты, бот знает страницу (start=q_<адрес>)
+ASK_BTN = '<a data-tlp="ask" href="https://t.me/TimLabs_bot?start=q" target="_blank" rel="noopener">Задать вопрос в Telegram</a>'
+ASK_JS = r'''<!--tl-ask-v1--><script>(function(){
+var slug=(location.pathname.replace(/\/$/,'').split('/').pop()||'home').replace(/[^a-z0-9-]/gi,'').slice(0,50);
+var url='https://t.me/TimLabs_bot?start=q_'+slug;
+var l=document.querySelectorAll('[data-tlp="ask"]');for(var i=0;i<l.length;i++)l[i].href=url;
+var b=document.getElementById('tl-clip-btn');
+if(b)b.addEventListener('click',function(e){e.stopImmediatePropagation();window.open(url,'_blank','noopener');
+try{if(typeof ym==='function')ym(111725024,'reachGoal','ask_click',{page:location.pathname});}catch(_){}} ,true);
+})();</script>'''
+
 PODBOR = r"""<!--tl-podbor-v1--><section class="tlp" id="tl-podbor" aria-labelledby="tlp-h">
 <style>
 .tlp{margin:28px 0;padding:22px 20px;border:1px solid var(--stroke-hi,rgba(0,180,255,.5));border-radius:16px;background:rgba(0,180,255,.05);color:var(--text,#e7ecf7);text-align:left}
@@ -83,6 +94,7 @@ PODBOR = r"""<!--tl-podbor-v1--><section class="tlp" id="tl-podbor" aria-labelle
 <div class="tlp-go">
 <a class="tlp-main" data-tlp="wa" href="https://wa.me/__WA__" target="_blank" rel="noopener">Отправить в WhatsApp</a>
 <a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener">Подобрать в Telegram-боте</a>
+__ASK__
 </div>
 <small>Ответы не сохраняются на сайте: они только складываются в текст сообщения, и вы сами решаете, отправлять ли его. Не указывайте диагнозы и сведения о здоровье. Подробнее — в <a href="/privacy/">политике обработки данных</a>. Практики мастеров носят велнес-характер и не являются медицинской помощью.</small>
 <script>(function(){var box=document.getElementById('tl-podbor');if(!box)return;
@@ -96,7 +108,7 @@ box.addEventListener('change',upd);upd();
 box.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-tlp]');if(!a)return;
 try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getAttribute('data-tlp'),page:location.pathname});}catch(_){}});
 })();</script>
-</section>""".replace("__WA__", WA)
+</section>""".replace("__WA__", WA).replace("__ASK__", ASK_BTN)
 
 SUB = """<!--tl-sub-v1--><div class="tls" style="margin:24px 0;padding:16px 18px;border:1px solid var(--stroke,rgba(255,255,255,.12));border-radius:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
 <span style="flex:1 1 240px;color:var(--text,#e7ecf7)">📬 Новые статьи журнала «Компас» — в Telegram-канале</span>
@@ -305,6 +317,15 @@ def main():
                 if 'href="%s"' % site in h:
                     h = h.replace('href="%s"' % site, 'href="%s"' % new)
                     stats["utm"] += 1
+        # (3 окт) кнопка «Задать вопрос» в блоках подбора; скрипт подставляет адрес страницы и ведёт скрепку туда же
+        if "<!--tl-podbor-v1-->" in h and 'data-tlp="ask"' not in h:
+            tgb = '<a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener">Подобрать в Telegram-боте</a>'
+            if tgb in h:
+                h = h.replace(tgb, tgb + "\n" + ASK_BTN, 1)
+                stats["ask"] = stats.get("ask", 0) + 1
+        if "<!--tl-ask-v1-->" not in h and "tl-clip-btn" in h:
+            h = insert_before_body(h, ASK_JS)
+            stats["askjs"] = stats.get("askjs", 0) + 1
         if "<!--tl-donate-v1-->" not in h:
             h = insert_before_body(h, DONATE)
             stats["donate"] = stats.get("donate", 0) + 1
