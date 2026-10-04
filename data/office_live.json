@@ -1,6 +1,6 @@
 {
- "generated": 1791000143,
- "updated": "2026-10-03T07:02",
+ "generated": 1791126144,
+ "updated": "2026-10-04T18:02",
  "departments": [
   {
    "id": "research",
@@ -14,7 +14,7 @@
      "short": "Спрос",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1791000139
+     "last_ts": 1791000138
     },
     {
      "id": "analytics",
@@ -23,7 +23,7 @@
      "short": "Трафик",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790719467
+     "last_ts": 1791000138
     },
     {
      "id": "graph",
@@ -32,7 +32,7 @@
      "short": "Связи",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790723072
+     "last_ts": 1791000138
     }
    ]
   },
@@ -48,7 +48,7 @@
      "short": "Журналист",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1790730361
+     "last_ts": 1791055362
     },
     {
      "id": "editor_brief",
@@ -57,7 +57,7 @@
      "short": "Бриф",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1790670838
+     "last_ts": 1791014949
     },
     {
      "id": "editorial_manager",
@@ -66,7 +66,7 @@
      "short": "Выпуск",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790738943
+     "last_ts": 1791059620
     },
     {
      "id": "refiner",
@@ -75,7 +75,7 @@
      "short": "Шлифовка",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1790730361
+     "last_ts": 1790730280
     },
     {
      "id": "journal_index",
@@ -84,7 +84,7 @@
      "short": "Оглавление",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1790730364
+     "last_ts": 1791055364
     },
     {
      "id": "rewriter",
@@ -93,7 +93,7 @@
      "short": "Переписчик",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790679101
+     "last_ts": 1791059019
     }
    ]
   },
@@ -109,7 +109,7 @@
      "short": "Аудитор",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790662355
+     "last_ts": 1791007763
     },
     {
      "id": "fixer",
@@ -118,7 +118,7 @@
      "short": "Корректор",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790666429
+     "last_ts": 1791010885
     },
     {
      "id": "immunity",
@@ -127,7 +127,7 @@
      "short": "Иммунитет",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790676023
+     "last_ts": 1791022546
     },
     {
      "id": "content_medic",
@@ -136,7 +136,7 @@
      "short": "Медосмотр",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790672537
+     "last_ts": 1791018439
     },
     {
      "id": "backup",
@@ -145,7 +145,7 @@
      "short": "Копии",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790741358
+     "last_ts": 1791000138
     }
    ]
   },
@@ -177,7 +177,7 @@
      "short": "Сторож",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790683702
+     "last_ts": 1791029347
     },
     {
      "id": "whitehacker",
@@ -186,7 +186,7 @@
      "short": "Белый хакер",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790688272
+     "last_ts": 1791032969
     }
    ]
   },
@@ -202,25 +202,25 @@
      "short": "Директор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1791000138
+     "last_ts": 1791126138
     },
     {
      "id": "web_designer",
      "name": "Веб-дизайнер",
      "role": "Следит за тем, как сайт выглядит на экране",
      "short": "Дизайнер",
-     "status": "скоро начнёт",
-     "state": "due",
-     "last_ts": 1790708458
+     "status": "ждёт задачу",
+     "state": "idle",
+     "last_ts": 1791054012
     },
     {
      "id": "creative_director",
      "name": "Креативный директор",
      "role": "Сверяет подачу журнала с тем, что сейчас работает в соцсетях",
      "short": "Креатив",
-     "status": "скоро начнёт",
-     "state": "due",
-     "last_ts": 1790704856
+     "status": "ждёт задачу",
+     "state": "idle",
+     "last_ts": 1791050535
     },
     {
      "id": "attestation",
@@ -229,25 +229,25 @@
      "short": "Аттестация",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790695487
+     "last_ts": 1791039686
     },
     {
      "id": "charter",
      "name": "Регламент офиса",
      "role": "Держит регламент: кто что делает и кому передаёт работу",
      "short": "Регламент",
-     "status": "скоро начнёт",
-     "state": "due",
-     "last_ts": 1790701247
+     "status": "ждёт задачу",
+     "state": "idle",
+     "last_ts": 1791047065
     },
     {
      "id": "dept_analytics",
      "name": "Аналитик отделов",
      "role": "Считает успехи и сбои отделов и выдаёт агентам уроки",
      "short": "Аналитик",
-     "status": "скоро начнёт",
-     "state": "due",
-     "last_ts": 1790697642
+     "status": "ждёт задачу",
+     "state": "idle",
+     "last_ts": 1791043665
     },
     {
      "id": "architect",
@@ -256,7 +256,7 @@
      "short": "Архитектор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1790734131
+     "last_ts": 1790734008
     }
    ]
   },
@@ -272,7 +272,7 @@
      "short": "Юрист",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790669903
+     "last_ts": 1791014917
     },
     {
      "id": "compliance",
@@ -281,7 +281,7 @@
      "short": "Комплаенс",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790669903
+     "last_ts": 1791014917
     }
    ]
   },
@@ -297,7 +297,7 @@
      "short": "Площадки",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790680654
+     "last_ts": 1791025276
     },
     {
      "id": "distributor",
@@ -306,16 +306,16 @@
      "short": "Telegram",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790740748
+     "last_ts": 1791057818
     },
     {
      "id": "distributor_poll",
      "name": "Дистрибьютор · опросы",
      "role": "Раз в неделю задаёт читателям вопрос в канале",
      "short": "Опросы",
-     "status": "скоро начнёт",
-     "state": "due",
-     "last_ts": 1790359260
+     "status": "ждёт задачу",
+     "state": "idle",
+     "last_ts": 1791019050
     },
     {
      "id": "assistant",
@@ -324,7 +324,7 @@
      "short": "Ассистент",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790736535
+     "last_ts": 1791044265
     },
     {
      "id": "vk",
@@ -333,7 +333,7 @@
      "short": "ВКонтакте",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790737743
+     "last_ts": 1791000138
     },
     {
      "id": "outreach_scout",
@@ -342,7 +342,7 @@
      "short": "Разведчик",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790739547
+     "last_ts": 1791059023
     },
     {
      "id": "resource_curator",
@@ -351,7 +351,7 @@
      "short": "Куратор",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790739544
+     "last_ts": 1791052812
     }
    ]
   },
@@ -365,9 +365,9 @@
      "name": "Промо-ролики",
      "role": "Делает короткие ролики по статьям голосом Тима",
      "short": "Ролики",
-     "status": "на проверке",
-     "state": "error",
-     "last_ts": 1790696504
+     "status": "скоро начнёт",
+     "state": "due",
+     "last_ts": 1791059620
     }
    ]
   },
@@ -383,7 +383,7 @@
      "short": "Заказы",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1790662355
+     "last_ts": 1791007763
     }
    ]
   }
@@ -391,17 +391,191 @@
  "counts": {
   "departments": 10,
   "agents": 35,
-  "articles_total": 127,
+  "articles_total": 107,
   "today": {
    "system": 1
   },
   "day": {
-   "system": 1
+   "system": 9,
+   "search": 10,
+   "announce": 3,
+   "edit": 1,
+   "check": 1,
+   "updates": 1
   }
  },
  "events": [
   {
-   "ts": 1791000139,
+   "ts": 1791043064,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1791043064,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1791043065,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1791047065,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1791047065,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1791047068,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1791051136,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1791051137,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1791051137,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1791054910,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1791054938,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1791055213,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1791055240,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1791055307,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1791055361,
+   "agent": "rewriter",
+   "dept": "editorial",
+   "kind": "edit",
+   "label": "Старая статья переписана"
+  },
+  {
+   "ts": 1791055362,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1791055362,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1791055362,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "check",
+   "label": "Текст проверен на живость"
+  },
+  {
+   "ts": 1791055362,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «Что такое ретрит простыми словами: зачем нужен и как проходит»",
+   "link": "/journal/retrit/"
+  },
+  {
+   "ts": 1791055363,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1791055364,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1791059019,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1791059020,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1791059023,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1791126139,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
