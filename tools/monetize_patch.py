@@ -260,6 +260,10 @@ def main():
         if re.search(r"<title>(Материал перенесён|Страница удалена)", h):
             continue
         o = h
+        # (05.10) испорченный код Метрики (insertBefore(k,r)} вместо (k,a)}) ) — ломал скрипт страницы
+        if "a.parentNode.insertBefore(k,r)}\n" in h:
+            h = h.replace("a.parentNode.insertBefore(k,r)}\n", "a.parentNode.insertBefore(k,a)})\n")
+            stats["consent"] += 1
         # 1. согласие не сохранялось (ключом было само значение)
         if "localStorage.setItem(v,v)" in h:
             h = h.replace("localStorage.setItem(v,v)", "localStorage.setItem(KEY,v)")
