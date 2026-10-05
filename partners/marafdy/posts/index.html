@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MARAFDY — короткие заметки о теле</title>
+<meta name="description" content="Короткие заметки MARAFDY: что можно сделать для тела самому и когда лучше к врачу. Аппаратный массаж с выездом по Кисловодску и КМВ.">
+<link rel="canonical" href="https://timlabs.online/partners/marafdy/posts/">
+<meta name="theme-color" content="#05070e">
+<meta property="og:title" content="MARAFDY — короткие заметки о теле">
+<meta property="og:description" content="Короткие заметки MARAFDY: что можно сделать для тела самому и когда лучше к врачу. Аппаратный массаж с выездом по Кисловодску и КМВ.">
+<meta property="og:url" content="https://timlabs.online/partners/marafdy/posts/">
+<style>
+  :root{
+    --bg:#05070e;--bg-2:#0a0f1c;--card:rgba(15,21,38,.6);--card-2:rgba(255,255,255,.035);
+    --stroke:rgba(255,255,255,.09);--stroke-hi:rgba(0,180,255,.5);
+    --cyan:#00b4ff;--magenta:#d100ff;--text:#e7ecf7;--muted:#9aa3b8;--dim:#5c6478;
+    --font-body:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --font-disp:ui-sans-serif,"SF Pro Display",system-ui,"Segoe UI",sans-serif;
+    --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(55% 45% at 15% 0%,rgba(0,180,255,.1),transparent 60%),
+      radial-gradient(50% 45% at 90% 100%,rgba(209,0,255,.08),transparent 60%);
+    background-attachment:fixed;}
+  a{color:var(--cyan)}
+  .wrap{max-width:720px;margin:0 auto;padding:20px 20px 80px}
+
+  .crumb{font-size:.78rem;color:var(--dim);padding:14px 0}
+  .crumb a{color:var(--muted);text-decoration:none}
+  .crumb a:hover{color:var(--cyan)}
+
+  header.hero{padding:14px 0 8px}
+  .eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);font-weight:700}
+  h1{font-family:var(--font-disp);font-size:clamp(1.7rem,5vw,2.4rem);line-height:1.15;margin:.35em 0 .3em;color:#fff;text-wrap:balance}
+  .lead{font-size:1.05rem;color:var(--muted);max-width:62ch;margin:0 0 16px}
+  .byline{font-size:.82rem;color:var(--dim);border-top:1px solid var(--stroke);padding-top:14px;margin-top:16px}
+  .byline .author{color:var(--muted);font-weight:600}
+  .byline time{margin-left:6px}
+
+  nav.toc{background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);padding:18px 22px;margin:28px 0}
+  .toc-title{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;font-weight:700}
+  nav.toc ol{margin:0;padding-left:0;list-style:none;counter-reset:toc}
+  nav.toc li{counter-increment:toc;margin:7px 0}
+  nav.toc a{color:var(--text);text-decoration:none;font-size:.95rem}
+  nav.toc a::before{content:counter(toc) ". ";color:var(--cyan);font-weight:700}
+  nav.toc a:hover{color:var(--cyan)}
+
+  section.article{margin:34px 0}
+  h2{font-family:var(--font-disp);font-size:1.35rem;color:#fff;margin:0 0 14px;text-wrap:balance;padding-top:6px}
+  p{margin:0 0 14px}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin:6px 0}
+  blockquote{border-left:3px solid var(--cyan);margin:0 0 16px;padding:4px 0 4px 16px;color:var(--muted);font-style:italic}
+  strong,b{color:#fff}
+
+  .faq-wrap{margin:38px 0}
+  details{background:var(--card);border:1px solid var(--stroke);border-radius:12px;padding:2px 18px;margin-bottom:10px}
+  details[open]{border-color:var(--stroke-hi)}
+  summary{cursor:pointer;padding:15px 0;font-weight:600;color:#fff;list-style:none;position:relative;padding-right:28px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";position:absolute;right:2px;top:13px;color:var(--cyan);font-size:1.3rem;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{padding:0 0 16px;color:var(--muted);margin:0}
+
+  .related{margin:38px 0}
+  .rel-list{display:flex;flex-direction:column;gap:9px}
+  .rel-list a{display:block;font-size:.92rem;padding:13px 16px;border-radius:10px;background:var(--card-2);
+    border:1px solid var(--stroke);color:var(--text);text-decoration:none}
+  .rel-list a:hover{border-color:var(--cyan);color:var(--cyan)}
+
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 8px;justify-content:center}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:13px;text-decoration:none;
+    font-weight:700;font-size:.95rem;border:1px solid var(--stroke-hi);color:#00131f;
+    background:linear-gradient(120deg,var(--cyan),var(--magenta));box-shadow:0 6px 24px rgba(0,180,255,.25);
+    transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,180,255,.4)}
+  .btn.tg{background:var(--cyan);border-color:rgba(0,180,255,.5);color:#00121f;box-shadow:0 6px 24px rgba(0,180,255,.22)}
+  .btn.max{background:var(--magenta);border-color:rgba(209,0,255,.5);color:#fff;box-shadow:0 6px 24px rgba(209,0,255,.22)}
+
+  .callout{background:linear-gradient(180deg,rgba(0,180,255,.08),rgba(209,0,255,.05));
+    border:1px solid var(--stroke-hi);border-radius:20px;padding:28px 26px;text-align:center;margin:40px 0}
+  .callout h2{margin-bottom:8px;padding-top:0}
+  .callout p{color:var(--muted);max-width:52ch;margin:0 auto 20px}
+
+  .disclaimer{margin-top:30px;font-size:.8rem;color:var(--dim);background:var(--card);border:1px solid var(--stroke);border-radius:12px;padding:14px 16px}
+
+  footer{margin-top:40px;border-top:1px solid var(--stroke);padding-top:20px;font-size:.72rem;color:var(--dim);line-height:1.6}
+  footer a{color:var(--muted)}
+  footer sup{color:var(--magenta)}
+  .back{display:inline-block;margin-top:8px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* cta-spacing 11sep */.cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:32px 0 8px}.cta>p{flex:1 1 100%;margin:0 0 4px}.cta .disclaimer{flex:1 1 100%;margin-top:14px}@media (max-width:520px){.cta .btn,.cta-row .btn{flex:1 1 100%;justify-content:center;text-align:center}}
+</style>
+<style>.pp-card{margin:22px 0;padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(12,17,32,.6)}
+.pp-card img{width:100%;max-width:520px;height:auto;border-radius:12px;display:block;margin:0 0 12px}.pp-text time{opacity:.6;font-size:.85em}</style>
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+<!-- Yandex.Metrika counter (загружается только при согласии) -->
+<script type="text/javascript">
+window.tlLoadMetrika=function(){
+  if(window.__tlMetrikaLoaded) return; window.__tlMetrikaLoaded=true;
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=111725024","ym");
+  ym(111725024,"init",{ssr:true,webvisor:false,clickmap:true,accurateTrackBounce:true,trackLinks:true});
+};
+try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika();}}catch(e){}
+</script>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div class="wrap">
+  <nav class="crumb"><a href="/">ТимЛабс</a> → <a href="/partners/">Партнёры</a> → <a href="/massage-kislovodsk/">MARAFDY</a></nav>
+  <header class="hero"><div class="eyebrow">Заметки партнёра · MARAFDY</div><h1>MARAFDY: короткие заметки о теле</h1>
+  <p class="lead">Здесь собираются короткие заметки MARAFDY. Длинные разборы — в <a href="/massage-kislovodsk/">статьях партнёра</a>.</p></header>
+  <article class="pp-card" id="w1_T2"><img src="/partners/marafdy/posts/w1_T2.jpg" alt="" width="1080" height="1080" loading="lazy"><div class="pp-text"><time datetime="2026-10-05">2026-10-05</time><p><b>Первый день в Кисловодске у многих выглядит одинаково.</b><br><br>Утром терренкур, «раз уж приехали». Подъём к Красному Солнышку, спуск обратно, а вечером ноги гудят от стоп до колен. На второй день идти хочется заметно меньше.<br><br>Что делает второй день легче:<br>— вниз идти медленнее, чем вверх;<br>— в первый день короткий маршрут, длинный оставить на третий;<br>— вечером лечь и закинуть ноги на стену минут на десять.<br><br>Если колено болит, а не просто гудит, — это к врачу, не к нам.<br><br>Приехал на несколько дней и хочешь, чтобы тело успевало за маршрутами? Есть Интенсив: четыре сеанса за время поездки, приезжаем к тебе в номер. 30 000 ₽, выезд включён.<br><br><a href="https://t.me/MARAFDY_manager" target="_blank" rel="noopener">@MARAFDY_manager</a>, слово <i>«гость»</i><br>#курорт</p></div></article>
+  <article class="pp-card" id="w1_T1"><img src="/partners/marafdy/posts/w1_T1.jpg" alt="" width="1080" height="1080" loading="lazy"><div class="pp-text"><time datetime="2026-10-03">2026-10-03</time><p><b>Осенью плечи сами ползут к ушам.</b><br><br>Выходишь утром на ветер, руки в карманах, и через десять минут шеи почти не видно. Сам этого не замечаешь. Замечаешь вечером, когда голову поворачивать тяжелее, чем утром.<br><br>Проверь прямо сейчас, где у тебя плечи. Опусти их. Скорее всего, они ушли вниз дальше, чем ты думал.<br><br>Что можно сделать без нас. Шарф или высокий воротник — звучит несерьёзно, но в тепле шею не хочется прятать. И раз в час: плечи к ушам на вдохе, пара секунд, бросить на выдохе.<br><br>На сеансе плечи мы проходим всегда, как и всё остальное.<br><br>Знакомство — 5 000 ₽. <a href="https://t.me/MARAFDY_manager" target="_blank" rel="noopener">@MARAFDY_manager</a>, слово <i>«тело»</i><br>#ощущение</p></div></article>
+  <p class="disclaimer">Материал носит информационный характер и не заменяет консультацию врача. Услуга партнёра — немедицинская.</p>
+  <footer>
+    <p>Обновлено: 2026-09-19. Материал журнала ТимЛабс (TimLabs) — навигатора по проверенным велнес-мастерам и практикам.</p>
+    <a class="back" href="/">← Вернуться на ТимЛабс</a>
+    <p>© 2026 ТимЛабс (TimLabs) · timlabs.online</p>
+    <p><a href="/privacy/">Политика обработки данных</a> · <a href="/consent/">Согласие на обработку данных</a> · <a href="/terms/">Пользовательское соглашение</a> · <a href="#" id="tl-consent-settings">Настройки данных</a> · 16+</p>
+    <p>Владелец сайта: Гуцев Тимур Олегович (самозанятый), ИНН 460302385684, г. Краснодар, пр. Мира, 28 · <a href="mailto:timurgutsev@yandex.ru">timurgutsev@yandex.ru</a></p>
+  </footer>
+</div>
+<!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
+<style>
+#tl-consent-veil{position:fixed;inset:0;z-index:9998;display:none;
+  background:rgba(3,6,14,.72);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+#tl-consent-veil.show{display:block}
+body.tl-consent-lock{overflow:hidden}
+#tl-consent{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;
+  max-width:720px;margin:0 auto;display:none;
+  background:rgba(10,15,28,.97);border:1px solid rgba(0,180,255,.35);
+  border-radius:14px;padding:14px 16px;
+  box-shadow:0 10px 40px rgba(0,0,0,.5);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:#e7ecf7;font-size:.86rem;line-height:1.55;
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+#tl-consent.show{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#tl-consent p{margin:0;flex:1 1 320px}
+#tl-consent a{color:#00b4ff}
+#tl-consent .tl-btns{display:flex;gap:8px;flex-wrap:wrap;flex:0 0 auto}
+#tl-consent button{cursor:pointer;border-radius:10px;padding:10px 16px;
+  font-weight:700;font-size:.83rem;font-family:inherit;border:1px solid transparent}
+#tl-consent .tl-ok{background:linear-gradient(120deg,#00b4ff,#38c7ff);color:#00131f;border:0}
+#tl-consent .tl-no{background:transparent;color:#9aa3b8;border-color:rgba(255,255,255,.18)}
+#tl-consent .tl-no:hover{color:#e7ecf7;border-color:rgba(255,255,255,.35)}
+#tl-consent .tl-ok:hover{filter:brightness(1.08)}
+@media (max-width:560px){#tl-consent .tl-btns{width:100%}#tl-consent button{flex:1 1 auto}}
+</style>
+<div id="tl-consent-veil"></div>
+<div id="tl-consent" role="dialog" aria-modal="true" aria-label="Согласие на обработку данных">
+  <p>Мы используем cookie и веб-аналитику, чтобы понимать, как люди пользуются сайтом.
+  Без них сайт тоже работает. Нажимая «Принять», вы даёте <a href="/consent/">согласие на обработку данных</a> веб-аналитики. Подробности — в <a href="/privacy/">политике обработки данных</a>.</p>
+  <div class="tl-btns">
+    <button type="button" class="tl-ok" id="tl-consent-ok">Принять</button>
+    <button type="button" class="tl-no" id="tl-consent-no">Только необходимые</button>
+  </div>
+</div>
+<script>
+(function(){
+  var KEY='tl-consent-v2';
+  var box=document.getElementById('tl-consent');
+  if(!box) return;
+  function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+  function show(){box.classList.add('show');}
+  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
+  var veil=document.getElementById('tl-consent-veil');
+  function lock(on){
+    if(veil) veil.classList.toggle('show', on);
+    document.body.classList.toggle('tl-consent-lock', on);
+  }
+  // (15 сен) на политике/согласии/соглашении не затемняем: документ читается ДО согласия
+  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
+  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
+  var ok=document.getElementById('tl-consent-ok');
+  var no=document.getElementById('tl-consent-no');
+  if(ok) ok.addEventListener('click',function(){
+    set('accepted'); hide(); lock(false);
+    if(typeof window.tlLoadMetrika==='function') window.tlLoadMetrika();
+  });
+  if(no) no.addEventListener('click',function(){ set('declined'); hide(); lock(false); });
+  // «Настройки данных» в футере — можно передумать в любой момент
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
+  });
+})();
+</script>
+<!--tl-donate-v1--><a id="tl-donate" href="https://dzen.ru/timlabs.online?donate=true" target="_blank" rel="noopener" aria-label="Поддержать журнал донатом в Дзене">
+<span aria-hidden="true">💙</span><span class="tld-t">Поддержать журнал</span><button type="button" class="tld-x" aria-label="Скрыть">×</button></a>
+<style>
+#tl-donate{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;align-items:center;gap:8px;padding:9px 10px 9px 14px;border-radius:999px;
+  font:600 .82rem/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#e7ecf7;text-decoration:none;
+  background:rgba(12,17,32,.72);border:1px solid rgba(0,180,255,.35);box-shadow:0 8px 28px rgba(0,0,0,.4),0 0 18px rgba(0,180,255,.15);
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .35s,transform .35s,border-color .2s}
+#tl-donate.on{opacity:1;transform:none;pointer-events:auto}
+#tl-donate:hover{border-color:#d100ff}
+#tl-donate:focus-visible{outline:2px solid #00b4ff;outline-offset:3px}
+#tl-donate .tld-x{all:unset;cursor:pointer;width:20px;height:20px;display:grid;place-items:center;border-radius:50%;color:#9aa3b8;font-size:1rem}
+#tl-donate .tld-x:hover{color:#fff;background:rgba(255,255,255,.1)}
+@media (max-width:480px){#tl-donate{font-size:.78rem;padding:8px 8px 8px 12px}}
+@media (prefers-reduced-motion:reduce){#tl-donate{transition:none}}
+</style>
+<script>(function(){var d=document.getElementById('tl-donate');if(!d)return;
+function ok(){try{return !!localStorage.getItem('tl-consent-v2')&&!sessionStorage.getItem('tl-donate-off');}catch(e){return true;}}
+function upd(){var h=document.documentElement,sc=(h.scrollTop||document.body.scrollTop)/Math.max(1,h.scrollHeight-innerHeight);
+d.classList.toggle('on',ok()&&sc>.3&&sc<.97);}
+addEventListener('scroll',upd,{passive:true});addEventListener('click',function(){setTimeout(upd,80)});
+d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();try{sessionStorage.setItem('tl-donate-off','1')}catch(_){};d.classList.remove('on');});
+})();</script>
+<!--tl-goals-v1--><script>/* цели Метрики: только после согласия (ym есть лишь после «Принять»), без личных данных */
+(function(){function g(id,p){try{if(typeof ym==='function')ym(111725024,'reachGoal',id,p||{page:location.pathname});}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'';
+if(/wa\.me|whatsapp\.com/.test(h))g('wa_click');
+else if(/t\.me\/timlabs_journal/i.test(h))g('channel_click');
+else if(/t\.me\/TimLabs_bot/i.test(h))g('bot_click');
+else if(/t\.me\//.test(h))g('tg_click');
+else if(/^tel:/.test(h))g('tel_click');
+else if(/^mailto:/.test(h))g('mail_click');
+else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshelnik|transformacionnyj-retrit|bratstvo|podgotovka|soprovozhdenie|vosstanovlenie|konsultaciya)/.test(a.href))g('service_click');
+else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>
+</body>
+</html>
