@@ -237,10 +237,11 @@ d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault(
     var b=e.target.closest&&e.target.closest('.pl');
     if(b){e.preventDefault();e.stopPropagation();
       if(cur===b){if(au.paused){au.play();b.classList.add('on');bb.textContent='❚❚'}else{au.pause();b.classList.remove('on');bb.textContent='▶'}return}
-      stop();cur=b;au.src=b.dataset.src;au.play().catch(function(){});b.classList.add('on');bt.textContent=b.dataset.title;bb.textContent='❚❚';bar.classList.add('on');
+      stop();cur=b;var bl=document.getElementById('bar-l');if(bl)bl.href=b.dataset.link||'https://band.link/imBUw';au.src=b.dataset.src;au.play().catch(function(){});b.classList.add('on');bt.textContent=b.dataset.title;bb.textContent='❚❚';bar.classList.add('on');
       try{if(typeof ym==='function')ym(111725024,'reachGoal','music_preview')}catch(_){}
       return}
     if(e.target===bb&&cur){cur.click()}
+    var g=e.target.closest&&e.target.closest('[data-goal]');if(g){try{if(typeof ym==='function')ym(111725024,'reachGoal',g.dataset.goal)}catch(_){}}
   });
   au.addEventListener('timeupdate',function(){if(cur&&au.duration)cur.style.setProperty('--p',(100*au.currentTime/au.duration)+'%')});
   au.addEventListener('ended',stop);

@@ -469,7 +469,7 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
         <h2 id="b2b-h">Журнал под ключ: <span>статьи, по которым вас находят в поиске</span></h2>
         <p>Офис ИИ-агентов пишет статьи по реальному поисковому спросу, публикует их и следит за качеством. Вы получаете живой экспертный журнал без штата авторов.</p>
         <ul>
-          <li>Уже работает здесь: журнал «Компас» — 110 статей</li>
+          <li>Уже работает здесь: журнал «Компас» — <span data-jcountw>110 статей</span></li>
           <li>Тексты проверяются на «машинность» и чужие ссылки</li>
           <li>Анонсы — в Telegram, Дзен и ВКонтакте</li>
         </ul>
@@ -482,7 +482,7 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
         <div class="sheet s1"><b></b><s></s><s></s></div>
         <div class="sheet s2"><b></b><s></s><s></s></div>
         <div class="sheet s3"><b></b><s></s><s></s><s></s></div>
-        <div class="num"><strong>110</strong><small>статей в «Компасе»</small></div>
+        <div class="num"><strong data-jcount>110</strong><small>статей в «Компасе»</small></div>
       </div>
     </article>
     <div class="tlg-grid">
@@ -507,7 +507,7 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
       <article class="gcard rv" style="--c:#00b4ff;--c2:#6aa0ff">
         <div class="g-top"><span class="g-ic" aria-hidden="true">📖</span><span class="g-tag">Журнал</span></div>
         <h3><a href="/journal/">Журнал «Компас»</a></h3>
-        <p>Больше 110 статей о развитии, эмоциях, теле, материнстве и местах Кавказа. Новые выходят каждый день.</p>
+        <p>Больше <span data-jfloor>110 статей</span> о развитии, эмоциях, теле, материнстве и местах Кавказа. Новые выходят каждый день.</p>
         <div class="chips"><a class="chip main" style="--c:#2aabee" href="https://t.me/timlabs_journal" target="_blank" rel="noopener">Канал журнала</a></div>
       </article>
       <article class="gcard rv" style="--c:#2fd07a;--c2:#00b4ff">
@@ -878,6 +878,14 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','ask_click',{page:locatio
   });
   document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('deep')){e.preventDefault();e.target.click()}});
   au.addEventListener('ended',function(){if(cur)cur.classList.remove('on')});
+})();</script>
+<script id="tl-live-js">(function(){
+  function pl(n){var a=Math.abs(n)%100,b=a%10;return (a>10&&a<15)?'статей':b===1?'статья':(b>1&&b<5)?'статьи':'статей'}
+  function run(el,to,word){var from=parseInt(el.textContent,10)||0;if(from===to)return;var t0=performance.now();
+    (function step(t){var k=Math.min(1,(t-t0)/900),v=Math.round(from+(to-from)*(1-Math.pow(1-k,3)));el.textContent=word?v+' '+pl(v):v;if(k<1)requestAnimationFrame(step)})(t0)}
+  fetch('/data/site_stats.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){var n=d.articles_total;if(!n)return;
+    document.querySelectorAll('[data-jcount]').forEach(function(e){run(e,n,false)});document.querySelectorAll('[data-jcountw]').forEach(function(e){run(e,n,true)});
+    document.querySelectorAll('[data-jfloor]').forEach(function(e){run(e,Math.floor(n/10)*10,true)})}).catch(function(){});
 })();</script>
 </body>
 </html>
