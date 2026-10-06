@@ -37,6 +37,9 @@ def main():
         h = open(p, encoding="utf-8").read()
         if re.search(r"<title>(Материал перенесён|Страница удалена)", h) or 'http-equiv="refresh"' in h:
             continue
+        c = re.search(r'<link rel="canonical" href="([^"]+)"', h)
+        if c and c.group(1) != SITE + url and c.group(1)[len(SITE):] in exist:
+            continue  # законная копия: canonical ведёт на другую живую страницу, в поиск идёт она
         body = re.sub(r"<(script|style)[^>]*>.*?</\1>", "", h, flags=re.S)
         add = lambda m: issues[url].append(m)
         noindex = re.search(r'name="robots"[^>]*noindex', h)

@@ -224,6 +224,16 @@ CALLOUT_VOICE = [  # (27 сен) контакт в призывах — личн
 ]
 
 
+TLP_GO = ('\n<a class="tlp-main" data-tlp="wa" href="https://wa.me/79938917761" target="_blank" rel="noopener">Отправить в WhatsApp</a>\n'
+          '<a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener">Подобрать в Telegram-боте</a>\n'
+          + ASK_BTN + '\n')
+
+FIT = {
+    "stihi/index.html": ".hero{grid-template-columns:minmax(0,1fr)}.hero>*{min-width:0;overflow-wrap:anywhere}.chip{white-space:normal;max-width:100%}",
+    "music/index.html": ".path{overflow-x:clip}.rels{max-width:100%}.chip{white-space:normal;max-width:100%;text-align:center}",
+    "shkola/index.html": ".week{overflow-x:clip}",
+}
+
 SITE_VOICE = [  # (06.10, облачная) точные фразы «мы» от лица Тима и цена вне страницы услуг
     ("Задам пару вопросов и подберём — нажмите на меня.", "Задам пару вопросов и подберу мастера — нажмите на меня."),
     ("Поможем подобрать — ТимЛабс</a>", "Помогу подобрать — Тим</a>"),
@@ -240,6 +250,44 @@ SITE_VOICE = [  # (06.10, облачная) точные фразы «мы» о�
     ("Бесплатный разбор рутины и план автоматизации — от 15000 ₽. Итог после бесплатного разбора.",
      "Бесплатный разбор рутины и план автоматизации. Стоимость называю после разбора."),
 ]
+
+
+META_FIX = {  # (06.10) описания ≤160 и заголовок ≤60 для страниц витрины (генератор локальной пишет длиннее)
+    "knigi/index.html": [("Книги Тимура Гуцева (Tim Rockets): 5 книг на ЛитРес и новые в работе. Аннотации, аудиообзоры и ссылки: «Путь Тима Рокетса», «Промт-инженеринг для новичков», «Мемуары зерокодера», «Исповедь артиста».",
+                          "Книги Тимура Гуцева (Tim Rockets): «Путь Тима Рокетса», «Промт-инженеринг для новичков», «Мемуары зерокодера». Аннотации, аудиообзоры, ЛитРес.")],
+    "music/index.html": [("Tim Rockets — музыкальный проект Тимура Гуцева на стыке хип-хопа, spoken word и электроники. 13 релизов, 22 трека с фрагментами для прослушивания и «Исповедь артиста» — история пути по главам.",
+                          "Tim Rockets — музыка Тимура Гуцева: хип-хоп, spoken word и электроника. Релизы с фрагментами для прослушивания и «Исповедь артиста» по главам.")],
+    "shkola/index.html": [("TimLabs School — курс по промт-инженерии: 27 уроков за 4 недели, от анатомии запроса до внедрения ИИ в работу. Программа по дням, практика с обратной связью, книга для самообучения.",
+                           "Курс промт-инженерии TimLabs School: 27 уроков за 4 недели — от анатомии запроса до внедрения ИИ в работу. Программа по дням и практика.")],
+    "stihi/index.html": [("Стихи Тима Рокетса — читать и слушать в авторском озвучивании | TimLabs",
+                          "Стихи Тима Рокетса — читать и слушать | TimLabs")],
+    "index.html": [('<img src="avatar.jpg" alt="Тим — основатель TimLabs" onerror',
+                    '<img src="avatar.jpg" width="320" height="320" alt="Тим — основатель TimLabs" onerror')],
+    "massage-kislovodsk/index.html": [('<a href="/partners/marafdy/posts/">Все статьи MARAFDY</a>', '<a href="/partners/marafdy/">Все статьи MARAFDY</a>')],
+}
+
+
+def sitemap_canonical_fix():
+    """(06.10) в sitemap только канонические адреса: страница с canonical на другой адрес — убрать."""
+    n = 0
+    for name in ("sitemap.xml", "sitemap-images.xml"):
+        sm = os.path.join(ROOT, name)
+        if not os.path.exists(sm):
+            continue
+        s = open(sm, encoding="utf-8").read()
+        o = s
+        for loc in re.findall(r"<loc>(%s[^<]*/)</loc>" % re.escape(SITE), s):
+            f = os.path.join(ROOT, loc[len(SITE):].lstrip("/"), "index.html")
+            if not os.path.exists(f):
+                continue
+            c = re.search(r'<link rel="canonical" href="([^"]+)"', open(f, encoding="utf-8").read())
+            if c and c.group(1) != loc:
+                s = re.sub(r"\s*<url>(?:(?!</url>).)*?<loc>%s</loc>.*?</url>" % re.escape(loc), "", s, count=1, flags=re.S)
+        if s != o:
+            n += 1
+            if not DRY:
+                open(sm, "w", encoding="utf-8").write(s)
+    return n
 
 
 def article_voice_fix(html):
@@ -343,6 +391,24 @@ def main():
                 if 'href="%s"' % site in h:
                     h = h.replace('href="%s"' % site, 'href="%s"' % new)
                     stats["utm"] += 1
+        # (06.10) движок заменял кнопки подбора обычными контактами — скрипт блока падал (wa = null)
+        m = re.search(r'(<section class="tlp" id="tl-podbor".*?<div class="tlp-go">)(.*?)(</div>)', h, re.S)
+        if m and 'data-tlp="wa"' not in m.group(2):
+            h = h[:m.start(2)] + TLP_GO + h[m.end(2):]
+            stats["podbor"] += 1
+        for a, b in META_FIX.get(rel, []):
+            if a in h:
+                h = h.replace(a, b)
+                stats["meta"] = stats.get("meta", 0) + 1
+        # (06.10) витрина шире экрана телефона: длинный чип, лента синглов, сдвиг карточек дня до появления
+        if rel in FIT and "<!--tl-fit-v1-->" not in h and "</head>" in h:
+            h = h.replace("</head>", "<!--tl-fit-v1--><style>" + FIT[rel] + "</style>\n</head>", 1)
+            stats["fit"] = stats.get("fit", 0) + 1
+        # (06.10) карточка для соцсетей, если её нет
+        if 'name="twitter:card"' not in h and 'property="og:image"' in h:
+            i = h.find('<meta property="og:image"'); j = h.find(">", i) + 1
+            h = h[:j] + '\n<meta name="twitter:card" content="summary_large_image">' + h[j:]
+            stats["tw"] = stats.get("tw", 0) + 1
         # (3 окт) кнопка «Задать вопрос» в блоках подбора; скрипт подставляет адрес страницы и ведёт скрепку туда же
         if "<!--tl-podbor-v1-->" in h and 'data-tlp="ask"' not in h:
             tgb = '<a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener">Подобрать в Telegram-боте</a>'
@@ -362,6 +428,7 @@ def main():
             stats["files"] += 1
             if not DRY:
                 open(p, "w", encoding="utf-8").write(h)
+    stats["sitemap"] = sitemap_canonical_fix()
     print(stats)
 
 
