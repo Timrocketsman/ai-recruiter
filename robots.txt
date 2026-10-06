@@ -27,3 +27,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://timlabs.online/sitemap.xml
+Sitemap: https://timlabs.online/sitemap-images.xml
