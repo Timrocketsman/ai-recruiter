@@ -194,6 +194,15 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 @keyframes gdgo{0%{background-position:0 0}50%{background-position:100% 0}100%{background-position:0 0}}@keyframes gdar{0%,100%{transform:translateX(0)}50%{transform:translateX(7px)}}
 @media (prefers-reduced-motion:reduce){.gd-go,.gd-go i{animation:none}}
 </style>
+<style id="tl-depth2-css">
+.gd-go{background:linear-gradient(100deg,var(--g1,#ff4fd8),var(--g2,#8a5cff) 55%,var(--g3,#00b4ff));background-size:200% 100%}
+.gd-bks{display:grid;grid-auto-flow:column;grid-auto-columns:104px;gap:14px;overflow-x:auto;padding:16px 4px 12px;perspective:700px;scrollbar-width:thin}
+.gd-bk{display:block;transform:rotateY(-16deg);transform-origin:left center;transition:transform .45s cubic-bezier(.2,.8,.2,1)}.gd-bk:hover{transform:rotateY(0) translateY(-6px)}
+.gd-bk img{width:104px;height:156px;object-fit:cover;border-radius:4px 9px 9px 4px;display:block;box-shadow:-8px 10px 22px -8px rgba(0,0,0,.8),inset 5px 0 8px -5px rgba(255,255,255,.35)}
+.gd-poem{margin:14px 0 6px;padding:16px 18px;border-left:2px solid #8a5cff;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:1.06rem;line-height:1.6;color:#f1f3fa;background:linear-gradient(90deg,rgba(138,92,255,.10),transparent)}
+.gd-poem span{display:block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:#b9a6ff;margin-bottom:8px}
+.gd-weeks{margin:12px 0 4px;padding-left:20px;color:#c9d1e3;font-size:.94rem;display:grid;gap:5px}.gd-weeks b{color:#2fd07a}
+</style>
 </head>
 <body>
 <!-- ===== inline icon sprite ===== -->
@@ -507,12 +516,7 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
         <p>35 агентов в 10 отделах ведут журнал и сайт. Видно, кто сейчас пишет статью, проверяет текст или готовит ролик.</p>
         <div class="chips"><a class="chip main" style="--c:#2fd07a" href="/zhivoj-ofis/">Смотреть офис</a></div>
       </article>
-      <article class="gcard rv" style="--c:#d100ff;--c2:#00b4ff">
-        <div class="g-top"><span class="g-ic" aria-hidden="true">🧪</span><span class="g-tag">Лаборатория</span></div>
-        <h3><a href="https://t.me/+_fmorncBxqA4ZmVi" target="_blank" rel="noopener">Лаборатория TimLabs</a></h3>
-        <p>Школа и творческая мастерская: автоматизация, нейросети и ИИ-агенты на практике.</p>
-        <div class="chips"><a class="chip" style="--c:#2aabee" href="https://t.me/+_fmorncBxqA4ZmVi" target="_blank" rel="noopener">Школа лаборатории</a><a class="chip" style="--c:#2aabee" href="https://t.me/+0AB4I1b__1k2OWRi" target="_blank" rel="noopener">Творческая лаборатория</a></div>
-      </article>
+      
       <!--tl-music-card--><article class="gcard deep rv" id="card-music" tabindex="0" role="button" aria-expanded="false" aria-controls="depth-music" style="--c:#ff4fd8;--c2:#00b4ff">
         <div class="g-top"><span class="g-ic" aria-hidden="true">🎧</span><span class="g-tag">Музыка</span></div>
         <h3>Tim Rockets</h3>
@@ -525,6 +529,36 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
         </div></div>
         <div class="chips"><a class="chip main" style="--c:#ff4fd8" href="/music/">Релизы и путь артиста</a><a class="chip" style="--c:#ffcc00" href="https://music.yandex.ru/artist/25208278" target="_blank" rel="noopener">Яндекс Музыка</a><a class="chip" href="https://band.link/imBUw" target="_blank" rel="noopener">Все площадки</a><a class="chip" style="--c:#2aabee" href="https://t.me/timrockets" target="_blank" rel="noopener">Канал артиста</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_art" target="_blank" rel="noopener">Синглы первыми</a><a class="chip" href="https://suno.com/@timrockets" target="_blank" rel="noopener">Suno</a></div>
       </article><!--/tl-music-card-->
+      <!--tl-art-cards--><article class="gcard deep rv" id="card-books" tabindex="0" role="button" aria-expanded="false" aria-controls="depth-books" style="--c:#ffcc00;--c2:#00b4ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">📚</span><span class="g-tag">Книги</span></div>
+        <h3>Книги Tim Rockets</h3>
+        <p>5 книг на ЛитРес и новые в работе: о возвращении к себе, о поколении интернета и о разговоре с ИИ. Нажмите на карточку — внутри полка с обложками.</p>
+        <div class="g-depth" id="depth-books"><div>
+          <div class="gd-bks" aria-label="Обложки книг"><a class="gd-bk" href="/knigi/#book1" aria-label="Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я"><img src="/media/showcase/books/book1.webp" alt="Книга «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»" loading="lazy" decoding="async" width="200" height="300"></a><a class="gd-bk" href="/knigi/#book2" aria-label="Духовное наследие поколения ПЕПСИ"><img src="/media/showcase/books/book2.webp" alt="Книга «Духовное наследие поколения ПЕПСИ»" loading="lazy" decoding="async" width="200" height="300"></a><a class="gd-bk" href="/knigi/#book3" aria-label="Промт-инженеринг для новичков"><img src="/media/showcase/books/book3.webp" alt="Книга «Промт-инженеринг для новичков»" loading="lazy" decoding="async" width="200" height="300"></a><a class="gd-bk" href="/knigi/#book4" aria-label="Мемуары зерокодера"><img src="/media/showcase/books/book4.webp" alt="Книга «Мемуары зерокодера»" loading="lazy" decoding="async" width="200" height="300"></a><a class="gd-bk" href="/knigi/#book5" aria-label="Лёгкий способ отказа от зависимостей: Революция сознания"><img src="/media/showcase/books/book5.webp" alt="Книга «Лёгкий способ отказа от зависимостей: Революция сознания»" loading="lazy" decoding="async" width="200" height="300"></a><a class="gd-bk" href="/knigi/#book6" aria-label="Архитектор судьбы"><img src="/media/showcase/books/book6.webp" alt="Книга «Архитектор судьбы»" loading="lazy" decoding="async" width="200" height="300"></a><a class="gd-bk" href="/knigi/#book7" aria-label="Исповедь артиста. Эпизод I: Зажигание"><img src="/media/showcase/books/book7.webp" alt="Книга «Исповедь артиста. Эпизод I: Зажигание»" loading="lazy" decoding="async" width="200" height="300"></a></div>
+          <a class="gd-go" style="--g1:#ffcc00;--g2:#ff8a3c;--g3:#ff4fd8" href="/knigi/"><span>Аннотации и аудиообзоры книг</span><i aria-hidden="true">→</i></a>
+        </div></div>
+        <div class="chips"><a class="chip main" style="--c:#ffcc00" href="/knigi/">Все книги</a><a class="chip" href="https://www.litres.ru/72407707/" target="_blank" rel="noopener">ЛитРес</a></div>
+      </article>
+      <article class="gcard deep rv" id="card-poems" tabindex="0" role="button" aria-expanded="false" aria-controls="depth-poems" style="--c:#8a5cff;--c2:#ff4fd8">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🪶</span><span class="g-tag">Стихи</span></div>
+        <h3>Стихи из тишины</h3>
+        <p>12 стихотворений о любви, пути и свободе — с авторским озвучиванием. Нажмите на карточку, чтобы прочитать первую строфу.</p>
+        <div class="g-depth" id="depth-poems"><div>
+          <blockquote class="gd-poem"><span>Вдохновение</span>Когда-нибудь мы сядем у окна,<br>И тишина нам станет добрым другом.<br>Ведь нет оков у нежного &quot;сполна&quot; —<br>Лишь свет в пути и руки рядом, с другом.</blockquote>
+          <a class="gd-go" style="--g1:#8a5cff;--g2:#d100ff;--g3:#ff4fd8" href="/stihi/"><span>Читать и слушать все стихи</span><i aria-hidden="true">→</i></a>
+        </div></div>
+        <div class="chips"><a class="chip main" style="--c:#8a5cff" href="/stihi/">Все стихи</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_art" target="_blank" rel="noopener">Группа TimLabs Art</a></div>
+      </article>
+      <article class="gcard deep rv" id="card-school" tabindex="0" role="button" aria-expanded="false" aria-controls="depth-school" style="--c:#2fd07a;--c2:#00b4ff">
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🧪</span><span class="g-tag">Лаборатория</span></div>
+        <h3>Лаборатория и школа TimLabs</h3>
+        <p>Школа промт-инженерии и творческая мастерская: нейросети и ИИ-агенты на практике. Нажмите на карточку — внутри программа курса.</p>
+        <div class="g-depth" id="depth-school"><div>
+          <ol class="gd-weeks"><li><b>Неделя 1.</b> Основы: что такое промт и из чего он состоит</li><li><b>Неделя 2.</b> Базовые техники: цепочки, роли, примеры</li><li><b>Неделя 3.</b> Продвинутые методы и выбор модели</li><li><b>Неделя 4.</b> Применение в работе и заработок</li></ol>
+          <a class="gd-go" style="--g1:#2fd07a;--g2:#00b4ff;--g3:#8a5cff" href="/shkola/"><span>Программа курса: 27 уроков по дням</span><i aria-hidden="true">→</i></a>
+        </div></div>
+        <div class="chips"><a class="chip main" style="--c:#2fd07a" href="/shkola/">О школе</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_school" target="_blank" rel="noopener">Школа в Telegram</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_art" target="_blank" rel="noopener">Творческая лаборатория</a></div>
+      </article><!--/tl-art-cards-->
       <article class="gcard rv" style="--c:#35b6ff;--c2:#d100ff">
         <div class="g-top"><span class="g-ic" aria-hidden="true">🤖</span><span class="g-tag">Помощник</span></div>
         <h3><a href="https://t.me/TimLabs_bot" target="_blank" rel="noopener">Бот @TimLabs_bot</a></h3>
