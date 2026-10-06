@@ -1,12 +1,9 @@
 {
- "ch_7.webp": "screen",
- "ch_20.webp": "screen",
  "ch_26.webp": "art",
  "ch_28.webp": "art",
  "ch_31.webp": "art",
  "ch_38.webp": "art",
  "ch_39.webp": "art",
- "ch_45.webp": "screen",
  "ch_49.webp": "art",
  "ch_50.webp": "art",
  "ch_51.webp": "art",
@@ -19,7 +16,6 @@
  "ch_65.webp": "art",
  "ch_71.webp": "art",
  "ch_77.webp": "art",
- "ch_78.webp": "screen",
  "ch_82.webp": "art",
  "ch_84.webp": "art",
  "ch_85.webp": "art",
@@ -27,8 +23,12 @@
  "ch_87.webp": "art",
  "ch_89.webp": "art",
  "ch_91.webp": "art",
- "ch_92.webp": "screen",
  "ch_99.webp": "art",
- "ch_102.webp": "screen",
- "ch_103.webp": "art"
+ "ch_103.webp": "art",
+ "ch_7.webp": "art",
+ "ch_20.webp": "screen",
+ "ch_45.webp": "art",
+ "ch_78.webp": "art",
+ "ch_92.webp": "art",
+ "ch_102.webp": "screen"
 }
