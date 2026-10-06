@@ -10,6 +10,13 @@
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1895317028_s.webp</image:loc><image:title>Обложка: ПРЕЛОМЛЕНИЕ — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1877660088_s.webp</image:loc><image:title>Обложка: Внутренний свет — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1875963143_s.webp</image:loc><image:title>Обложка: Мастер бонсай — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book1.webp</image:loc><image:title>Книга «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book2.webp</image:loc><image:title>Книга «Духовное наследие поколения ПЕПСИ»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book3.webp</image:loc><image:title>Книга «Промт-инженеринг для новичков»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book4.webp</image:loc><image:title>Книга «Мемуары зерокодера»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book5.webp</image:loc><image:title>Книга «Лёгкий способ отказа от зависимостей: Революция сознания»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book6.webp</image:loc><image:title>Книга «Архитектор судьбы»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book7.webp</image:loc><image:title>Книга «Исповедь артиста. Эпизод I: Зажигание»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/1-samootsenka/</loc>
@@ -440,6 +447,16 @@
     <image:image><image:loc>https://timlabs.online/media/telegram/znaniy-umeniy-i-navykov-razvitiya.png</image:loc><image:title>Знания, умения и навыки: как отличить и как развивать</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/knigi/</loc>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book1.webp</image:loc><image:title>Книга «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book2.webp</image:loc><image:title>Книга «Духовное наследие поколения ПЕПСИ»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book3.webp</image:loc><image:title>Книга «Промт-инженеринг для новичков»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book4.webp</image:loc><image:title>Книга «Мемуары зерокодера»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book5.webp</image:loc><image:title>Книга «Лёгкий способ отказа от зависимостей: Революция сознания»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book6.webp</image:loc><image:title>Книга «Архитектор судьбы»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book7.webp</image:loc><image:title>Книга «Исповедь артиста. Эпизод I: Зажигание»</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/music/</loc>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_6795121523.webp</image:loc><image:title>Обложка: Двойная спираль — Tim Rockets, сингл</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1896242595.webp</image:loc><image:title>Обложка: Разрыватель — Tim Rockets, сингл</image:title></image:image>
@@ -551,5 +568,20 @@
     <loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.jpg</image:loc><image:title>Расслабляющий массаж: что это и почему не про силу | MARAFDY</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.webp</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/stihi/</loc>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem181.webp</image:loc><image:title>Иллюстрация к стихотворению «Вдохновение» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem182.webp</image:loc><image:title>Иллюстрация к стихотворению «Философская» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem185.webp</image:loc><image:title>Иллюстрация к стихотворению «Романтичная» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem186.webp</image:loc><image:title>Иллюстрация к стихотворению «Стихотворение о любви» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem187.webp</image:loc><image:title>Иллюстрация к стихотворению «Стихотворение о пути и близости» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem202.webp</image:loc><image:title>Иллюстрация к стихотворению «Правда жизни» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem223.webp</image:loc><image:title>Иллюстрация к стихотворению «Будущие - бывшие» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem225.webp</image:loc><image:title>Иллюстрация к стихотворению «О тихой, внутренней грусти и несбывшихся надеждах.» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem284.webp</image:loc><image:title>Иллюстрация к стихотворению «Техносука» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem285.webp</image:loc><image:title>Иллюстрация к стихотворению «Загадочная девчонка» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem507.webp</image:loc><image:title>Иллюстрация к стихотворению «Между мирами» — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem1690.webp</image:loc><image:title>Иллюстрация к стихотворению «Я тут недавно тебя вспомнил» — Tim Rockets</image:title></image:image>
   </url>
 </urlset>
