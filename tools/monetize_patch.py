@@ -400,6 +400,10 @@ def main():
             if a in h:
                 h = h.replace(a, b)
                 stats["meta"] = stats.get("meta", 0) + 1
+        # (06.10) awemusicmedia.ru не открывается даже с телефона (слово Тима) — общая ссылка артиста
+        if "awemusicmedia.ru/" in h:
+            h = re.sub(r"https?://awemusicmedia\.ru/[A-Za-z0-9_-]+", "https://band.link/imBUw", h)
+            stats["deadlink"] = stats.get("deadlink", 0) + 1
         # (06.10) витрина шире экрана телефона: длинный чип, лента синглов, сдвиг карточек дня до появления
         if rel in FIT and "<!--tl-fit-v1-->" not in h and "</head>" in h:
             h = h.replace("</head>", "<!--tl-fit-v1--><style>" + FIT[rel] + "</style>\n</head>", 1)
