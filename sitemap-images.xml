@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://timlabs.online/</loc>
-    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_6795121523.webp</image:loc><image:title>Обложка: Двойная спираль — Tim Rockets</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1896242595.webp</image:loc><image:title>Обложка: Разрыватель — Tim Rockets</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1885555133.webp</image:loc><image:title>Обложка: Шёлковый путь — Tim Rockets</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1884349219.webp</image:loc><image:title>Обложка: Настоящий клад — Tim Rockets</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1884060451.webp</image:loc><image:title>Обложка: Пыль на зеркалах — Tim Rockets</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1895317028.webp</image:loc><image:title>Обложка: ПРЕЛОМЛЕНИЕ — Tim Rockets</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1877660088.webp</image:loc><image:title>Обложка: Внутренний свет — Tim Rockets</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1875963143.webp</image:loc><image:title>Обложка: Мастер бонсай — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_6795121523_s.webp</image:loc><image:title>Обложка: Двойная спираль — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1896242595_s.webp</image:loc><image:title>Обложка: Разрыватель — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1885555133_s.webp</image:loc><image:title>Обложка: Шёлковый путь — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1884349219_s.webp</image:loc><image:title>Обложка: Настоящий клад — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1884060451_s.webp</image:loc><image:title>Обложка: Пыль на зеркалах — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1895317028_s.webp</image:loc><image:title>Обложка: ПРЕЛОМЛЕНИЕ — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1877660088_s.webp</image:loc><image:title>Обложка: Внутренний свет — Tim Rockets</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1875963143_s.webp</image:loc><image:title>Обложка: Мастер бонсай — Tim Rockets</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/1-samootsenka/</loc>
@@ -476,68 +476,80 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.jpg</image:loc><image:title>Сложенные мягкие массажные перчатки на льняной салфетке на деревянном столе в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.jpg</image:loc><image:title>Аппаратный массаж: что это и чем отличается от рук | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.webp</image:loc><image:title>Сложенные мягкие массажные перчатки на льняной салфетке на деревянном столе в тёплом вечернем свете</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.jpg</image:loc><image:title>Сложенные мягкие массажные перчатки на льняной салфетке на деревянном столе в тёплом вечернем свете</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.jpg</image:loc><image:title>Деревянный метроном на тёмной полке у изумрудной стены, тёплый золотой свет сбоку, длинная мягкая тень</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-na-domu/cover.jpg</image:loc><image:title>Сложенный портативный массажный стол стоит у стены в комнате, рядом на стуле — стопка чистых сложенных простыней. Тёплый золотой свет сбоку, глубокий изумрудный фон, уходящий к угл</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/cover.jpg</image:loc><image:title>Пара походных ботинок с распущенными шнурками на каменном полу у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-ruk/cover.jpg</image:loc><image:title>Смартфон экраном вниз на грубой деревянной столешнице в тёплом вечернем свете</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-spiny/cover.jpg</image:loc><image:title>Сложенный тёмно-изумрудный шерстяной плед на краю кровати в тёплом вечернем свете</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/cover.jpg</image:loc><image:title>Длинная льняная дорожка на деревянном полу у окна с видом на горы в тёплом закатном свете</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.jpg</image:loc><image:title>Деревянные плечики для одежды висят на крючке у тёмной стены, тёплый золотой свет сбоку, фон глубокий изумрудный, к углам почти чёрный</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.jpg</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.jpg</image:loc><image:title>Вязаная шерстяная шапка на деревянном крючке у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.webp</image:loc><image:title>Сложенные мягкие массажные перчатки на льняной салфетке на деревянном столе в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.webp</image:loc><image:title>Деревянный метроном на тёмной полке у изумрудной стены, тёплый золотой свет сбоку, длинная мягкая тень</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-na-domu/cover.webp</image:loc><image:title>Сложенный портативный массажный стол стоит у стены в комнате, рядом на стуле — стопка чистых сложенных простыней. Тёплый золотой свет сбоку, глубокий изумрудный фон, уходящий к угл</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/cover.webp</image:loc><image:title>Пара походных ботинок с распущенными шнурками на каменном полу у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-ruk/cover.webp</image:loc><image:title>Смартфон экраном вниз на грубой деревянной столешнице в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-spiny/cover.webp</image:loc><image:title>Сложенный тёмно-изумрудный шерстяной плед на краю кровати в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/cover.webp</image:loc><image:title>Длинная льняная дорожка на деревянном полу у окна с видом на горы в тёплом закатном свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.webp</image:loc><image:title>Деревянные плечики для одежды висят на крючке у тёмной стены, тёплый золотой свет сбоку, фон глубокий изумрудный, к углам почти чёрный</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.webp</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.webp</image:loc><image:title>Вязаная шерстяная шапка на деревянном крючке у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.jpg</image:loc><image:title>Деревянный метроном на тёмной полке у изумрудной стены, тёплый золотой свет сбоку, длинная мягкая тень</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.jpg</image:loc><image:title>Как часто можно делать массаж: ритм подсказывает тело | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.webp</image:loc><image:title>Деревянный метроном на тёмной полке у изумрудной стены, тёплый золотой свет сбоку, длинная мягкая тень</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/massazh-golovy/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.jpg</image:loc><image:title>Вязаная шерстяная шапка на деревянном крючке у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.jpg</image:loc><image:title>Массаж головы дома: маршрут на пять минут | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.webp</image:loc><image:title>Вязаная шерстяная шапка на деревянном крючке у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/massazh-na-domu/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-na-domu/cover.jpg</image:loc><image:title>Сложенный портативный массажный стол стоит у стены в комнате, рядом на стуле — стопка чистых сложенных простыней. Тёплый золотой свет сбоку, глубокий изумрудный фон, уходящий к угл</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-na-domu/cover.jpg</image:loc><image:title>Массаж на дому: как это устроено | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-na-domu/cover.webp</image:loc><image:title>Сложенный портативный массажный стол стоит у стены в комнате, рядом на стуле — стопка чистых сложенных простыней. Тёплый золотой свет сбоку, глубокий изумрудный фон, уходящий к угл</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/cover.jpg</image:loc><image:title>Пара походных ботинок с распущенными шнурками на каменном полу у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/cover.jpg</image:loc><image:title>Массаж после терренкура: как вернуть ногам лёгкость | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/cover.webp</image:loc><image:title>Пара походных ботинок с распущенными шнурками на каменном полу у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/massazh-ruk/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-ruk/cover.jpg</image:loc><image:title>Смартфон экраном вниз на грубой деревянной столешнице в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-ruk/cover.jpg</image:loc><image:title>Массаж рук: рука устаёт не от веса телефона | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-ruk/cover.webp</image:loc><image:title>Смартфон экраном вниз на грубой деревянной столешнице в тёплом вечернем свете</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/massazh-spiny/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-spiny/cover.jpg</image:loc><image:title>Сложенный тёмно-изумрудный шерстяной плед на краю кровати в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-spiny/cover.jpg</image:loc><image:title>Массаж спины: что происходит за час | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-spiny/cover.webp</image:loc><image:title>Сложенный тёмно-изумрудный шерстяной плед на краю кровати в тёплом вечернем свете</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/cover.jpg</image:loc><image:title>Длинная льняная дорожка на деревянном полу у окна с видом на горы в тёплом закатном свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/cover.jpg</image:loc><image:title>Общий массаж тела и массаж по зонам: что выбрать | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/cover.webp</image:loc><image:title>Длинная льняная дорожка на деревянном полу у окна с видом на горы в тёплом закатном свете</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.jpg</image:loc><image:title>Деревянные плечики для одежды висят на крючке у тёмной стены, тёплый золотой свет сбоку, фон глубокий изумрудный, к углам почти чёрный</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.jpg</image:loc><image:title>Напряжение в плечах: почему плечи сами ползут к ушам | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.webp</image:loc><image:title>Деревянные плечики для одежды висят на крючке у тёмной стены, тёплый золотой свет сбоку, фон глубокий изумрудный, к углам почти чёрный</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/posts/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.jpg</image:loc><image:title>Сложенные мягкие массажные перчатки на льняной салфетке на деревянном столе в тёплом вечернем свете</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.jpg</image:loc><image:title>Деревянный метроном на тёмной полке у изумрудной стены, тёплый золотой свет сбоку, длинная мягкая тень</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-na-domu/cover.jpg</image:loc><image:title>Сложенный портативный массажный стол стоит у стены в комнате, рядом на стуле — стопка чистых сложенных простыней. Тёплый золотой свет сбоку, глубокий изумрудный фон, уходящий к угл</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/cover.jpg</image:loc><image:title>Пара походных ботинок с распущенными шнурками на каменном полу у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-ruk/cover.jpg</image:loc><image:title>Смартфон экраном вниз на грубой деревянной столешнице в тёплом вечернем свете</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-spiny/cover.jpg</image:loc><image:title>Сложенный тёмно-изумрудный шерстяной плед на краю кровати в тёплом вечернем свете</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/cover.jpg</image:loc><image:title>Длинная льняная дорожка на деревянном полу у окна с видом на горы в тёплом закатном свете</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.jpg</image:loc><image:title>Деревянные плечики для одежды висят на крючке у тёмной стены, тёплый золотой свет сбоку, фон глубокий изумрудный, к углам почти чёрный</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.jpg</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.jpg</image:loc><image:title>Вязаная шерстяная шапка на деревянном крючке у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.webp</image:loc><image:title>Сложенные мягкие массажные перчатки на льняной салфетке на деревянном столе в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.webp</image:loc><image:title>Деревянный метроном на тёмной полке у изумрудной стены, тёплый золотой свет сбоку, длинная мягкая тень</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-na-domu/cover.webp</image:loc><image:title>Сложенный портативный массажный стол стоит у стены в комнате, рядом на стуле — стопка чистых сложенных простыней. Тёплый золотой свет сбоку, глубокий изумрудный фон, уходящий к угл</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/cover.webp</image:loc><image:title>Пара походных ботинок с распущенными шнурками на каменном полу у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-ruk/cover.webp</image:loc><image:title>Смартфон экраном вниз на грубой деревянной столешнице в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-spiny/cover.webp</image:loc><image:title>Сложенный тёмно-изумрудный шерстяной плед на краю кровати в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/cover.webp</image:loc><image:title>Длинная льняная дорожка на деревянном полу у окна с видом на горы в тёплом закатном свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.webp</image:loc><image:title>Деревянные плечики для одежды висят на крючке у тёмной стены, тёплый золотой свет сбоку, фон глубокий изумрудный, к углам почти чёрный</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.webp</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.webp</image:loc><image:title>Вязаная шерстяная шапка на деревянном крючке у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.jpg</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.jpg</image:loc><image:title>Расслабляющий массаж: что это и почему не про силу | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.webp</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
   </url>
 </urlset>
