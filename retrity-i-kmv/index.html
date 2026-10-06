@@ -462,5 +462,18 @@ var b=document.getElementById('tl-clip-btn');
 if(b)b.addEventListener('click',function(e){e.stopImmediatePropagation();window.open(url,'_blank','noopener');
 try{if(typeof ym==='function')ym(111725024,'reachGoal','ask_click',{page:location.pathname});}catch(_){}} ,true);
 })();</script>
+<script id="tl-depth-js">(function(){
+  var au=new Audio(),cur=null;au.preload='none';
+  document.addEventListener('click',function(e){
+    var p=e.target.closest&&e.target.closest('.gd-rel');
+    if(p){e.stopPropagation();if(cur===p&&!au.paused){au.pause();p.classList.remove('on');return}
+      if(cur)cur.classList.remove('on');cur=p;if(au.src!==p.dataset.src)au.src=p.dataset.src;au.play().catch(function(){});p.classList.add('on');
+      try{if(typeof ym==='function')ym(111725024,'reachGoal','music_preview')}catch(_){}return}
+    var c=e.target.closest&&e.target.closest('.gcard.deep');if(!c||e.target.closest('a,button,.g-depth'))return;
+    c.setAttribute('aria-expanded',c.getAttribute('aria-expanded')==='true'?'false':'true');
+  });
+  document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('deep')){e.preventDefault();e.target.click()}});
+  au.addEventListener('ended',function(){if(cur)cur.classList.remove('on')});
+})();</script>
 </body>
 </html>

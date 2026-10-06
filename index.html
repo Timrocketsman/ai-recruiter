@@ -175,6 +175,21 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 <link rel="alternate" type="application/rss+xml" title="Журнал «Компас» — TimLabs" href="https://timlabs.online/rss.xml">
 <meta name="zen-verification" content="tAtj2hMOM3A8GzQSXbMzsOkm1fj0nB1HPVo3NoSjCQwXxMMMTYBdprczNxOyhLMI" />
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+<style id="tl-depth-css">
+.gcard.deep{cursor:pointer}.gcard.deep h3{display:flex;align-items:center;gap:10px}
+.gcard.deep h3:after{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .3s;opacity:.7;margin-left:auto}
+.gcard.deep[aria-expanded="true"] h3:after{transform:rotate(-135deg)}
+.gcard.deep[aria-expanded="true"]{grid-column:1/-1}
+.g-depth{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}.gcard.deep[aria-expanded="true"] .g-depth{grid-template-rows:1fr}
+.g-depth>div{overflow:hidden;min-height:0}
+.gd-rels{display:grid;grid-auto-flow:column;grid-auto-columns:150px;gap:12px;overflow-x:auto;padding:14px 2px 10px;scrollbar-width:thin}
+.gd-rel{all:unset;cursor:pointer;display:grid;gap:6px;font-size:.84rem;color:#dfe5f3;position:relative}
+.gd-rel img{width:150px;height:150px;border-radius:14px;display:block;object-fit:cover}
+.gd-rel:after{content:"▶";position:absolute;left:10px;top:108px;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#ff4fd8,#00b4ff);display:grid;place-items:center;color:#fff;font-size:12px}
+.gd-rel.on:after{content:"❚❚"}.gd-rel small{color:#9aa3b8}.gd-rel:focus-visible img{outline:2px solid #00b4ff}
+.gd-soon{margin:6px 0 4px;padding:12px 14px;border-radius:14px;border:1px dashed rgba(255,204,0,.45);font-size:.92rem;color:#cfd6e6}.gd-soon b{color:#ffcc00}
+.gd-last{font-size:.92rem;color:#c9d1e3;margin:8px 0 2px}.gd-last b{color:#ff4fd8}
+</style>
 </head>
 <body>
 <!-- ===== inline icon sprite ===== -->
@@ -494,12 +509,17 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
         <p>Школа и творческая мастерская: автоматизация, нейросети и ИИ-агенты на практике.</p>
         <div class="chips"><a class="chip" style="--c:#2aabee" href="https://t.me/+_fmorncBxqA4ZmVi" target="_blank" rel="noopener">Школа лаборатории</a><a class="chip" style="--c:#2aabee" href="https://t.me/+0AB4I1b__1k2OWRi" target="_blank" rel="noopener">Творческая лаборатория</a></div>
       </article>
-      <article class="gcard rv" style="--c:#ff4fd8;--c2:#00b4ff">
+      <!--tl-music-card--><article class="gcard deep rv" id="card-music" tabindex="0" role="button" aria-expanded="false" aria-controls="depth-music" style="--c:#ff4fd8;--c2:#00b4ff">
         <div class="g-top"><span class="g-ic" aria-hidden="true">🎧</span><span class="g-tag">Музыка</span></div>
-        <h3><a href="https://band.link/imBUw" target="_blank" rel="noopener">Tim Rockets</a></h3>
-        <p>Моя музыка, созданная вместе с ИИ. Синглы сначала выходят в Telegram-канале, а через международного агрегатора Believe Music — на всех музыкальных площадках: ищите по имени <b>Tim Rockets</b>.</p>
-        <div class="chips"><a class="chip main" style="--c:#ffcc00" href="https://music.yandex.ru/artist/25208278" target="_blank" rel="noopener">Яндекс Музыка</a><a class="chip" href="https://band.link/imBUw" target="_blank" rel="noopener">Все площадки</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_art" target="_blank" rel="noopener">Синглы первыми</a><a class="chip" href="https://suno.com/@timrockets" target="_blank" rel="noopener">Suno</a><a class="chip" style="--c:#2aabee" href="https://t.me/+Gcap-DtBzeRhMmYy" target="_blank" rel="noopener">Карточка артиста</a></div>
-      </article>
+        <h3>Tim Rockets</h3>
+        <p>Моя музыка на стыке хип-хопа, поэтического речитатива и электроники, созданная вместе с ИИ: 13 релизов и 22 трека на всех площадках. Нажмите на карточку — внутри фрагменты релизов и анонсы.</p>
+        <div class="g-depth" id="depth-music"><div>
+          <div class="gd-rels" aria-label="Свежие релизы"><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/73/4e/81/734e811c-574b-ceee-da84-927cbe494783/mzaf_7162512030488308861.plus.aac.p.m4a" aria-label="Слушать фрагмент: Двойная спираль"><img src="/media/showcase/music/rel_6795121523.webp" alt="Обложка: Двойная спираль — Tim Rockets" loading="lazy" width="150" height="150"><span>Двойная спираль<br><small>сингл · 28 июля 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b0/74/99/b07499a2-0906-b207-14a4-d7822ff108ba/mzaf_2221571977208319856.plus.aac.p.m4a" aria-label="Слушать фрагмент: Разрыватель"><img src="/media/showcase/music/rel_1896242595.webp" alt="Обложка: Разрыватель — Tim Rockets" loading="lazy" width="150" height="150"><span>Разрыватель<br><small>сингл · 5 мая 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/79/85/ae/7985ae26-9f28-799b-673a-e93e5f0a8e1f/mzaf_3342342120802114117.plus.aac.p.m4a" aria-label="Слушать фрагмент: Шёлковый путь"><img src="/media/showcase/music/rel_1885555133.webp" alt="Обложка: Шёлковый путь — Tim Rockets" loading="lazy" width="150" height="150"><span>Шёлковый путь<br><small>сингл · 20 марта 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/62/3c/1d623c3d-84ea-6f42-c2d2-5c3587b06142/mzaf_7290124899351272219.plus.aac.p.m4a" aria-label="Слушать фрагмент: Настоящий клад"><img src="/media/showcase/music/rel_1884349219.webp" alt="Обложка: Настоящий клад — Tim Rockets" loading="lazy" width="150" height="150"><span>Настоящий клад<br><small>сингл · 13 марта 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/06/52/30/06523054-6ab4-1100-1791-c0ac2d123d7e/mzaf_5060878017772472519.plus.aac.p.m4a" aria-label="Слушать фрагмент: Пыль на зеркалах"><img src="/media/showcase/music/rel_1884060451.webp" alt="Обложка: Пыль на зеркалах — Tim Rockets" loading="lazy" width="150" height="150"><span>Пыль на зеркалах<br><small>альбом · 7 марта 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5a/c5/e3/5ac5e3af-68bb-8f34-630b-bd3b70cf1b44/mzaf_353751639434620773.plus.aac.p.m4a" aria-label="Слушать фрагмент: ПРЕЛОМЛЕНИЕ"><img src="/media/showcase/music/rel_1895317028.webp" alt="Обложка: ПРЕЛОМЛЕНИЕ — Tim Rockets" loading="lazy" width="150" height="150"><span>ПРЕЛОМЛЕНИЕ<br><small>мини-альбом · 27 февраля 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/03/d2/b8/03d2b8eb-1187-b651-122b-ac7be0d94b29/mzaf_18184246964375979289.plus.aac.p.m4a" aria-label="Слушать фрагмент: Внутренний свет"><img src="/media/showcase/music/rel_1877660088.webp" alt="Обложка: Внутренний свет — Tim Rockets" loading="lazy" width="150" height="150"><span>Внутренний свет<br><small>сингл · 20 февраля 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/ef/72/eaef72a0-1b92-be63-419c-b5c9b836bbb8/mzaf_15448642368931448339.plus.aac.p.m4a" aria-label="Слушать фрагмент: Мастер бонсай"><img src="/media/showcase/music/rel_1875963143.webp" alt="Обложка: Мастер бонсай — Tim Rockets" loading="lazy" width="150" height="150"><span>Мастер бонсай<br><small>сингл · 13 февраля 2026</small></span></button></div>
+          <div class="gd-soon"><b>Готовится: «Шёпот неба».</b> Есть песни, которые пишутся из вдохновения. А есть песни, которые появляются потому, что внутри тебя уже слишком много того, что невозможно больше молча носить. «Шёпот неба» — именно такая. 23 октября он выйдет на всех площадках.</div>
+          <p class="gd-last"><b>Свежая глава — глава 41: «Дыра, которую не закрыть».</b>  <a href="/music/#put">Весь путь по главам →</a></p>
+        </div></div>
+        <div class="chips"><a class="chip main" style="--c:#ff4fd8" href="/music/">Релизы и путь артиста</a><a class="chip" style="--c:#ffcc00" href="https://music.yandex.ru/artist/25208278" target="_blank" rel="noopener">Яндекс Музыка</a><a class="chip" href="https://band.link/imBUw" target="_blank" rel="noopener">Все площадки</a><a class="chip" style="--c:#2aabee" href="https://t.me/timrockets" target="_blank" rel="noopener">Канал артиста</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_art" target="_blank" rel="noopener">Синглы первыми</a><a class="chip" href="https://suno.com/@timrockets" target="_blank" rel="noopener">Suno</a></div>
+      </article><!--/tl-music-card-->
       <article class="gcard rv" style="--c:#35b6ff;--c2:#d100ff">
         <div class="g-top"><span class="g-ic" aria-hidden="true">🤖</span><span class="g-tag">Помощник</span></div>
         <h3><a href="https://t.me/TimLabs_bot" target="_blank" rel="noopener">Бот @TimLabs_bot</a></h3>
@@ -806,6 +826,19 @@ var l=document.querySelectorAll('[data-tlp="ask"]');for(var i=0;i<l.length;i++)l
 var b=document.getElementById('tl-clip-btn');
 if(b)b.addEventListener('click',function(e){e.stopImmediatePropagation();window.open(url,'_blank','noopener');
 try{if(typeof ym==='function')ym(111725024,'reachGoal','ask_click',{page:location.pathname});}catch(_){}} ,true);
+})();</script>
+<script id="tl-depth-js">(function(){
+  var au=new Audio(),cur=null;au.preload='none';
+  document.addEventListener('click',function(e){
+    var p=e.target.closest&&e.target.closest('.gd-rel');
+    if(p){e.stopPropagation();if(cur===p&&!au.paused){au.pause();p.classList.remove('on');return}
+      if(cur)cur.classList.remove('on');cur=p;if(au.src!==p.dataset.src)au.src=p.dataset.src;au.play().catch(function(){});p.classList.add('on');
+      try{if(typeof ym==='function')ym(111725024,'reachGoal','music_preview')}catch(_){}return}
+    var c=e.target.closest&&e.target.closest('.gcard.deep');if(!c||e.target.closest('a,button,.g-depth'))return;
+    c.setAttribute('aria-expanded',c.getAttribute('aria-expanded')==='true'?'false':'true');
+  });
+  document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList&&e.target.classList.contains('deep')){e.preventDefault();e.target.click()}});
+  au.addEventListener('ended',function(){if(cur)cur.classList.remove('on')});
 })();</script>
 </body>
 </html>
