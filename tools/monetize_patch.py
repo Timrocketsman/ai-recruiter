@@ -228,6 +228,8 @@ TLP_GO = ('\n<a class="tlp-main" data-tlp="wa" href="https://wa.me/79938917761" 
           '<a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener">Подобрать в Telegram-боте</a>\n'
           + ASK_BTN + '\n')
 
+ARTIST = "https://music.yandex.ru/artist/25208278"
+
 FIT = {
     "stihi/index.html": ".hero{grid-template-columns:minmax(0,1fr)}.hero>*{min-width:0;overflow-wrap:anywhere}.chip{white-space:normal;max-width:100%}",
     "music/index.html": ".path{overflow-x:clip}.rels{max-width:100%}.chip{white-space:normal;max-width:100%;text-align:center}",
@@ -401,8 +403,9 @@ def main():
                 h = h.replace(a, b)
                 stats["meta"] = stats.get("meta", 0) + 1
         # (06.10) awemusicmedia.ru не открывается даже с телефона (слово Тима) — общая ссылка артиста
-        if "awemusicmedia.ru/" in h:
-            h = re.sub(r"https?://awemusicmedia\.ru/[A-Za-z0-9_-]+", "https://band.link/imBUw", h)
+        # band.link/imBUw — профиль с QR-кодом вместо площадок (Тим, 06.10) — тоже на Яндекс Музыку
+        if "awemusicmedia.ru/" in h or "band.link/imBUw" in h:
+            h = re.sub(r"https?://awemusicmedia\.ru/[A-Za-z0-9_-]+|https://band\.link/imBUw", ARTIST, h)
             stats["deadlink"] = stats.get("deadlink", 0) + 1
         # (06.10) витрина шире экрана телефона: длинный чип, лента синглов, сдвиг карточек дня до появления
         if rel in FIT and "<!--tl-fit-v1-->" not in h and "</head>" in h:
