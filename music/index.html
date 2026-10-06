@@ -327,6 +327,14 @@ addEventListener('scroll',upd,{passive:true});addEventListener('click',function(
 d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();try{sessionStorage.setItem('tl-donate-off','1')}catch(_){};d.classList.remove('on');});
 })();</script>
 
+<script id="tl-live-js">(function(){
+  function pl(n){var a=Math.abs(n)%100,b=a%10;return (a>10&&a<15)?'статей':b===1?'статья':(b>1&&b<5)?'статьи':'статей'}
+  function run(el,to,word){var from=parseInt(el.textContent,10)||0;if(from===to)return;var t0=performance.now();
+    (function step(t){var k=Math.min(1,(t-t0)/900),v=Math.round(from+(to-from)*(1-Math.pow(1-k,3)));el.textContent=word?v+' '+pl(v):v;if(k<1)requestAnimationFrame(step)})(t0)}
+  fetch('/data/site_stats.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){var n=d.articles_total;if(!n)return;
+    document.querySelectorAll('[data-jcount]').forEach(function(e){run(e,n,false)});document.querySelectorAll('[data-jcountw]').forEach(function(e){run(e,n,true)});
+    document.querySelectorAll('[data-jfloor]').forEach(function(e){run(e,Math.floor(n/10)*10,true)})}).catch(function(){});
+})();</script>
 
 <script>
 (function(){
