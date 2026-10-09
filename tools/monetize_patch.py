@@ -365,6 +365,13 @@ def main():
                 h = h[:i] + fig + h[i:]
                 h = re.sub(r'(<meta property="og:image" content=")[^"]*', lambda m: m.group(1) + SITE + cov, h, count=1)
                 stats["cover"] = stats.get("cover", 0) + 1
+            # (09.10, слово Тима «пиши всегда от моего лица») автор статей — Тим, не «редакция»
+            for a, c in (('<span class="author">Редакция ТимЛабс</span>', '<span class="author">Тимур Гуцев</span>'),
+                         ('"author": {"@type": "Organization", "name": "Редакция TimLabs"}',
+                          '"author": {"@type": "Person", "name": "Тимур Гуцев", "url": "https://timlabs.online/"}')):
+                if a in h:
+                    h = h.replace(a, c)
+                    stats["author"] = stats.get("author", 0) + 1
             h, ch = fix_related(slug, rub.get(slug, ""), h)
             stats["related"] += ch
             if "<!--tl-sub-v1-->" not in h:
