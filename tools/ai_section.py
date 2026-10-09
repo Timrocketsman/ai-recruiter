@@ -96,7 +96,7 @@ def block(n):
         <h2 id="b2b-h">Журнал под ключ: <span>статьи, по которым вас находят в поиске</span></h2>
         <p>Офис ИИ-агентов пишет статьи по реальному поисковому спросу, публикует их и следит за качеством. Вы получаете живой экспертный журнал без штата авторов.</p>
         <ul>
-          <li>Уже работает здесь: журнал «Компас» — {N} {W}</li>
+          <li>Уже работает здесь: журнал «Компас» — <span data-jcountw>{N} {W}</span></li>
           <li>Тексты проверяются на «машинность» и чужие ссылки</li>
           <li>Анонсы — в Telegram, Дзен и ВКонтакте</li>
         </ul>
@@ -109,7 +109,7 @@ def block(n):
         <div class="sheet s1"><b></b><s></s><s></s></div>
         <div class="sheet s2"><b></b><s></s><s></s></div>
         <div class="sheet s3"><b></b><s></s><s></s><s></s></div>
-        <div class="num"><strong>{N}</strong><small>{W} в «Компасе»</small></div>
+        <div class="num"><strong data-jcount>{N}</strong><small>{W} в «Компасе»</small></div>
       </div>
     </article>
     <div class="tlg-grid">
