@@ -13,6 +13,7 @@
 """
 import os
 import re
+import html as html_mod
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -353,6 +354,17 @@ def main():
             if h2 != h:
                 h = h2
                 stats["voice"] = stats.get("voice", 0) + 1
+            # (09.10) обложка статьи: media/covers/<slug>.webp|jpg|png → картинка под шапкой и og:image
+            cov = next((f"media/covers/{slug}.{e}" for e in ("webp", "jpg", "png") if os.path.exists(os.path.join(ROOT, "media/covers", f"{slug}.{e}"))), None)
+            if cov and "<!--tl-cover-v1-->" not in h and "</header>" in h:
+                t1 = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
+                alt = html_mod.escape(re.sub(r"<[^>]+>", "", t1.group(1)).strip()) if t1 else ""
+                fig = ('\n  <!--tl-cover-v1--><figure class="tl-cover" style="margin:18px 0 8px"><img src="/%s" alt="%s" width="1200" height="630" '
+                       'style="width:100%%;height:auto;border-radius:16px;display:block" fetchpriority="high"></figure>' % (cov, alt))
+                i = h.find("</header>") + len("</header>")
+                h = h[:i] + fig + h[i:]
+                h = re.sub(r'(<meta property="og:image" content=")[^"]*', lambda m: m.group(1) + SITE + cov, h, count=1)
+                stats["cover"] = stats.get("cover", 0) + 1
             h, ch = fix_related(slug, rub.get(slug, ""), h)
             stats["related"] += ch
             if "<!--tl-sub-v1-->" not in h:
