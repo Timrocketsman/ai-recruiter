@@ -1,0 +1,70 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;background:#05070e}#w{position:relative;width:1200px;height:630px;overflow:hidden}canvas{display:block}
+#m{position:absolute;left:44px;bottom:34px;font:700 22px DejaVu Sans;color:#fff;letter-spacing:.04em;text-shadow:0 2px 12px #000}#m i{font-style:normal;color:var(--a)}#m s{text-decoration:none;color:#ffffff99;font-weight:400;font-size:15px;letter-spacing:.22em;margin-left:12px}</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script></head>
+<body><div id="w"><div id="m">Tim<i>Labs</i><s>КОМПАС · ИИ</s></div></div>
+<script type="module">
+import * as T from 'three';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
+import {FontLoader} from 'three/addons/loaders/FontLoader.js';
+import {TextGeometry} from 'three/addons/geometries/TextGeometry.js';
+import {Reflector} from 'three/addons/objects/Reflector.js';
+const P=new URLSearchParams(location.search),K=P.get('k');
+const C={funnel:['#00b4ff','#d100ff'],agents:['#2aabee','#9b6cff'],channel:['#00e0c6','#2aabee'],seo:['#ffb400','#ff4fd8'],si:['#ff4fd8','#00b4ff']}[K];
+document.documentElement.style.setProperty('--a',C[0]);
+const r=new T.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});r.setPixelRatio(2);r.setSize(1200,630);
+r.toneMapping=T.ACESFilmicToneMapping;r.toneMappingExposure=1.05;r.shadowMap.enabled=true;r.shadowMap.type=T.VSMShadowMap;
+document.getElementById('w').prepend(r.domElement);
+const s=new T.Scene();s.background=new T.Color('#04060c');s.fog=new T.Fog('#04060c',13,26);
+const pm=new T.PMREMGenerator(r);s.environment=pm.fromScene(new RoomEnvironment(),0.04).texture;s.environmentIntensity=.6;const hemi=new T.DirectionalLight('#9fb4ff',1.2);hemi.position.set(-3,4,6);s.add(hemi);
+const cam=new T.PerspectiveCamera(32,1200/630,.1,100);cam.position.set(0,2.1,12.2);cam.lookAt(0,1.75,0);
+// floor: dark glossy
+const mir=new Reflector(new T.PlaneGeometry(60,60),{textureWidth:2400,textureHeight:1260,color:'#8a8f99'});mir.rotation.x=-Math.PI/2;s.add(mir);
+const fl=new T.Mesh(new T.PlaneGeometry(60,60),new T.MeshStandardMaterial({color:'#03040a',roughness:.6,metalness:0,transparent:true,opacity:.78,envMapIntensity:0}));fl.rotation.x=-Math.PI/2;fl.position.y=.002;s.add(fl);
+const sh=new T.Mesh(new T.PlaneGeometry(60,60),new T.ShadowMaterial({opacity:.6}));sh.rotation.x=-Math.PI/2;sh.position.y=.004;sh.receiveShadow=true;s.add(sh);
+// lights
+const key=new T.SpotLight('#ffffff',170,40,.3,.85,1.6);key.position.set(-2,10,3.5);key.castShadow=true;key.shadow.mapSize.set(2048,2048);key.shadow.radius=18;key.shadow.blurSamples=32;key.shadow.bias=-.0004;key.target.position.set(0,0,0);s.add(key,key.target);
+const r1=new T.PointLight(C[0],45,16,2);r1.position.set(-4.5,6,-6);s.add(r1);
+const r2=new T.PointLight(C[1],45,16,2);r2.position.set(4.5,6,-6);s.add(r2);
+const fill=new T.RectAreaLight?null:null;
+// back glow wall
+const g=document.createElement('canvas');g.width=g.height=512;const x=g.getContext('2d');const gr=x.createRadialGradient(256,256,0,256,256,256);gr.addColorStop(0,C[0]+'aa');gr.addColorStop(.45,C[1]+'44');gr.addColorStop(1,'#00000000');x.fillStyle=gr;x.fillRect(0,0,512,512);
+const glow=new T.Mesh(new T.PlaneGeometry(26,14),new T.MeshBasicMaterial({map:new T.CanvasTexture(g),transparent:true,depthWrite:false,fog:false}));glow.position.set(0,3.4,-9);s.add(glow);
+const chrome=new T.MeshPhysicalMaterial({color:'#e9eef7',metalness:1,roughness:.12,clearcoat:1});
+const glass=c=>new T.MeshPhysicalMaterial({color:c||'#ffffff',metalness:0,roughness:.06,transmission:.92,thickness:.7,ior:1.45,attenuationColor:c||'#ffffff',attenuationDistance:3,clearcoat:1,iridescence:.35,emissive:c||'#223',emissiveIntensity:.18,envMapIntensity:1.6});
+const neon=c=>new T.MeshStandardMaterial({color:c,emissive:c,emissiveIntensity:3.2,roughness:.3});
+const add=(m,sh=true)=>{m.castShadow=sh;m.receiveShadow=true;s.add(m);return m};
+if(K==='funnel'){
+  const pts=[];for(let i=0;i<=40;i++){const t=i/40;pts.push(new T.Vector2(.22+1.75*Math.pow(t,1.35),.25+t*2.6))}
+  const f=add(new T.Mesh(new T.LatheGeometry(pts,160),glass('#bfe9ff')));f.material.side=T.DoubleSide;
+  add(new T.Mesh(new T.TorusGeometry(1.97,.06,24,200),chrome)).position.y=2.85;add(new T.Mesh(new T.TorusGeometry(1.97,.06,24,200),chrome)).rotation.x=Math.PI/2;
+  s.children.at(-1).position.y=2.85;s.children.at(-2).rotation.x=Math.PI/2;
+  for(let i=0;i<22;i++){const a=i*2.4,rr=.4+((i*37)%100)/100*1.3,h=2.4+((i*53)%100)/100*1.6;const b=add(new T.Mesh(new T.SphereGeometry(.07+((i*13)%5)*.025,32,32),i%3?chrome:neon(i%2?C[0]:C[1])));b.position.set(Math.cos(a)*rr,h,Math.sin(a)*rr*.6)}
+  s.children.forEach(m=>{if(m.isMesh&&m!==fl&&m!==glow&&m!==mir&&m!==sh)m.position.y+=.55});const o=add(new T.Mesh(new T.SphereGeometry(.26,64,64),neon(C[1])));o.position.y=.55;const ped=add(new T.Mesh(new T.CylinderGeometry(.9,1.05,.2,96),chrome));ped.position.y=.1;
+}
+if(K==='agents'){
+  const core=add(new T.Mesh(new T.IcosahedronGeometry(1.15,1),glass(C[1])));core.position.y=1.7;core.rotation.set(.3,.5,0);
+  const inner=add(new T.Mesh(new T.SphereGeometry(.5,64,64),neon(C[1])));inner.position.y=1.7;
+  const N=[[-2.9,2.6,-.6],[2.9,2.8,-.8],[-2.4,.55,1],[2.5,.6,1.1],[0,3.6,-1.4]];
+  for(const p of N){const v=new T.Vector3(...p);const sp=add(new T.Mesh(new T.SphereGeometry(.38,64,64),chrome));sp.position.copy(v);
+    const c=new T.CatmullRomCurve3([new T.Vector3(0,1.7,0),v.clone().lerp(new T.Vector3(0,1.7,0),.5).add(new T.Vector3(0,.35,0)),v]);add(new T.Mesh(new T.TubeGeometry(c,64,.025,12),neon(C[0])),false)}
+}
+if(K==='channel'){
+  [[ -.6,2.9,-.4,3.4],[.4,1.75,.2,3.0],[-.2,.62,.8,2.6]].forEach(([px,py,pz,w],i)=>{const b=add(new T.Mesh(new RoundedBoxGeometry(w,.85,.42,8,.28),i==1?chrome:glass(i?C[1]:C[0])));b.position.set(px,py,pz);b.rotation.y=-.25+i*.12;
+    for(let k=0;k<2;k++){const l=add(new T.Mesh(new RoundedBoxGeometry(w*(k?.45:.7),.09,.05,4,.04),neon(C[k])),false);l.position.set(px-w*(k?.22:.1),py+.15-k*.28,pz+.23);l.rotation.y=b.rotation.y}});
+  const st=add(new T.Mesh(new T.OctahedronGeometry(.42,0),neon(C[0])));st.position.set(2.3,2.9,.6);st.scale.set(1,1.5,.4);
+}
+if(K==='seo'){
+  const ring=add(new T.Mesh(new T.TorusGeometry(1.35,.16,48,200),chrome));ring.position.set(-.4,2.2,0);ring.rotation.y=-.35;
+  const lens=add(new T.Mesh(new T.CylinderGeometry(1.25,1.25,.08,96),glass(C[0])));lens.material.transmission=.75;lens.material.emissiveIntensity=.35;lens.rotation.x=Math.PI/2;lens.position.copy(ring.position);lens.rotation.z=.35;lens.rotation.y=-.35;
+  const h=add(new T.Mesh(new T.CylinderGeometry(.14,.18,2.1,48),chrome));h.position.set(1.35,.75,0);h.rotation.z=.85;
+  [.5,.9,.7,1.35,1.1,1.8].forEach((v,i)=>{const b=add(new T.Mesh(new RoundedBoxGeometry(.32,v,.32,4,.06),i==5?neon(C[1]):glass(i%2?C[1]:C[0])));b.position.set(-3.1+i*.42,v/2,-.6)});
+}
+async function si(){const f=await new FontLoader().loadAsync('./node_modules/three/examples/fonts/helvetiker_bold.typeface.json');
+  const tg=(t,m,x,ry)=>{const g=new TextGeometry(t,{font:f,size:1.5,depth:.5,curveSegments:16,bevelEnabled:true,bevelThickness:.07,bevelSize:.045,bevelSegments:8});g.center();const o=add(new T.Mesh(g,m));o.position.set(x,1.25,0);o.rotation.y=ry;return o};
+  tg('AI',chrome,-1.75,.28);const si2=tg('SI',neon(C[0]),1.85,-.28);si2.material.emissiveIntensity=1.6;
+  const bar=add(new T.Mesh(new T.CylinderGeometry(.06,.06,2.9,32),neon(C[1])));bar.position.set(-1.75,1.3,.55);bar.rotation.z=-1.05;
+  const ar=add(new T.Mesh(new T.ConeGeometry(.22,.5,48),chrome));ar.position.set(.05,1.25,0);ar.rotation.z=-Math.PI/2;}
+if(K==='si')await si();
+r.render(s,cam);document.title='done';
+</script></body></html>
