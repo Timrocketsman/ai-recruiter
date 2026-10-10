@@ -438,7 +438,7 @@ def main():
                     return c
                 t = re.search(r'<h2 class="card-title">(.*?)</h2>', c, re.S)
                 return c.replace('alt=""', 'alt="' + html_mod.escape(re.sub(r"<[^>]+>", "", t.group(1)).strip()) + '"', 1) if t else c
-            h2 = re.sub(r'<article class="card".*?</article>', _card, h, flags=re.S)
+            h2 = re.sub(r'<article class="card[^"]*".*?</article>', _card, h, flags=re.S)
             if h2 != h:
                 h = h2; stats["alt"] = stats.get("alt", 0) + 1
         # (06.10) карточка для соцсетей, если её нет
