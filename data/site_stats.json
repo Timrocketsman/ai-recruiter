@@ -1,8 +1,8 @@
 {
- "articles_total": 112,
+ "articles_total": 113,
  "articles_by_rubric": {
   "Осознанность и ретриты": 39,
-  "Развитие": 22,
+  "Развитие": 23,
   "Эмоции и психология": 20,
   "Частые вопросы": 14,
   "Родителям": 10,
@@ -25,7 +25,7 @@
   "Дзен"
  ],
  "first_article_date": "2026-08-19",
- "last_article_date": "2026-10-09",
- "days_without_gaps": 3,
- "updated": "2026-10-09T12:32"
+ "last_article_date": "2026-10-10",
+ "days_without_gaps": 4,
+ "updated": "2026-10-10T11:37"
 }
