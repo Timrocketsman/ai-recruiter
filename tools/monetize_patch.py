@@ -430,6 +430,17 @@ def main():
         if rel in FIT and "<!--tl-fit-v1-->" not in h and "</head>" in h:
             h = h.replace("</head>", "<!--tl-fit-v1--><style>" + FIT[rel] + "</style>\n</head>", 1)
             stats["fit"] = stats.get("fit", 0) + 1
+        # (11.10) обложки на карточках журнала без alt — подставить заголовок карточки
+        if rel == "journal/index.html" and 'class="card-cover" src="/media/covers/' in h:
+            def _card(m):
+                c = m.group(0)
+                if 'class="card-cover" src="/media/covers/' not in c or 'alt=""' not in c:
+                    return c
+                t = re.search(r'<h2 class="card-title">(.*?)</h2>', c, re.S)
+                return c.replace('alt=""', 'alt="' + html_mod.escape(re.sub(r"<[^>]+>", "", t.group(1)).strip()) + '"', 1) if t else c
+            h2 = re.sub(r'<article class="card".*?</article>', _card, h, flags=re.S)
+            if h2 != h:
+                h = h2; stats["alt"] = stats.get("alt", 0) + 1
         # (06.10) карточка для соцсетей, если её нет
         if 'name="twitter:card"' not in h and 'property="og:image"' in h:
             i = h.find('<meta property="og:image"'); j = h.find(">", i) + 1
