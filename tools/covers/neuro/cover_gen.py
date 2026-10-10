@@ -20,7 +20,7 @@ for _ in range(600):
     if pid in h:
         out=[o for n in h[pid]["outputs"].values() for o in n.get("images",[])][0]
         src=f"/opt/timlabs/render/ComfyUI/output/{out['subfolder']}/{out['filename']}"
-        dst=f"/seo_agents/site/media/covers/{slug}.jpg"; os.makedirs(os.path.dirname(dst),exist_ok=True)
+        dst=os.path.join(os.environ.get("COVER_OUT") or "/seo_agents/site/media/covers", slug+".jpg"); os.makedirs(os.path.dirname(dst),exist_ok=True)
         subprocess.run(["convert",src,"-resize","1200x630^","-gravity","center","-extent","1200x630","-quality","90",dst],check=True)
         print("OK",dst,"seed",seed); break
 else: sys.exit("timeout")
