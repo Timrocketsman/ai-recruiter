@@ -1,0 +1,14 @@
+{
+ "_comment": "Доводка 3D-рендера Blender: вход — картинка Cycles, выход — гиперреалистичная версия с той же композицией. Узлы Qwen-Image-Edit нативные в ComfyUI (TextEncodeQwenImageEditPlus). Имена проверить: GET /object_info",
+ "1": {"class_type":"UnetLoaderGGUF","inputs":{"unet_name":"qwen-image-edit-2511-Q4_K_M.gguf"}},
+ "2": {"class_type":"CLIPLoader","inputs":{"clip_name":"qwen_2.5_vl_7b_fp8_scaled.safetensors","type":"qwen_image","device":"default"}},
+ "3": {"class_type":"VAELoader","inputs":{"vae_name":"qwen_image_vae.safetensors"}},
+ "4": {"class_type":"LoadImage","inputs":{"image":"__INPUT__"}},
+ "5": {"class_type":"TextEncodeQwenImageEditPlus","inputs":{"clip":["2",0],"vae":["3",0],"image1":["4",0],"prompt":"Keep the exact composition, camera angle, objects and brand colors (cyan #00b4ff, magenta #d100ff, navy background). Re-render as an ultra-detailed photorealistic 3D product shot: real glass with refraction, dispersion and caustics, polished chrome with crisp reflections, rich saturated colors, high contrast, dramatic studio lighting, sharp micro-details, film grain. No text."}},
+ "6": {"class_type":"TextEncodeQwenImageEditPlus","inputs":{"clip":["2",0],"vae":["3",0],"image1":["4",0],"prompt":"blurry, hazy, washed out, flat, text, watermark, cartoon, extra objects"}},
+ "7": {"class_type":"VAEEncode","inputs":{"pixels":["4",0],"vae":["3",0]}},
+ "8": {"class_type":"ModelSamplingAuraFlow","inputs":{"model":["1",0],"shift":3.0}},
+ "9": {"class_type":"KSampler","inputs":{"model":["8",0],"positive":["5",0],"negative":["6",0],"latent_image":["7",0],"seed":__SEED__,"steps":30,"cfg":4.0,"sampler_name":"euler","scheduler":"simple","denoise":0.55}},
+ "10":{"class_type":"VAEDecode","inputs":{"samples":["9",0],"vae":["3",0]}},
+ "11":{"class_type":"SaveImage","inputs":{"images":["10",0],"filename_prefix":"covers/__SLUG___refined"}}
+}

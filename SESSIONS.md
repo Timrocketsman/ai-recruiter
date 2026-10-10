@@ -449,3 +449,10 @@
   4. Пост канала: первая строка — живая мысль Тима; 2–3 предложения сути с одним конкретным фактом; ссылка. Шаблон видео-поста «В статье: • Слово • Слово» убрать.
   5. Каждая статья ИИ-рубрики — с обложкой `media/covers/<slug>.jpg|webp` ДО публикации.
 - 09.10 (облачная): обложки ИИ-рубрики переделаны в 3D (слово Тима «3D-рендер, ультрареализм, свет и тени»): `tools/covers/` (scene.html + r3d.js, three.js, README). make_covers.js удалён. Новые статьи — только через 3D-генератор.
+
+### 10.10 — ОБЛОЖКИ: Тим требует уровень GPT-image/Nano Banana («мутные, блеклые, нет гиперреализма») — ЗАДАНИЕ ЛОКАЛЬНОЙ (облачная)
+- Что сделано в облаке: three.js (3/5) → Blender Cycles на CPU (`tools/covers/cycles/`, честное стекло/хром/каустика, 60–90 с/картинка) — лучше, но Тиму мало. Текущие 5 обложек на сайте — Cycles, временные.
+- **Blender на сервере не было** — другая сессия искала правильно; ставится скриптом внутрь `my-ubuntu`: `/opt/timlabs/render/blender`.
+- **Пакет `tools/covers/neuro/`**: `install_models.sh` (показ/`--yes`: ComfyUI-GGUF, Qwen-Image-2512 Q5_K_M, Qwen-Image-Edit-2511 Q4_K_M, энкодер Qwen2.5-VL fp8, VAE, ControlNet depth, Blender 4.2.3, HDRI; ≈31 ГБ), `workflow_t2i_api.json`, `workflow_edit_api.json`, `prompts.json` (детальные промпты 5 статей + общий `_style` в гамме сайта), `cover_gen.py`, README.
+- **Лицензии проверены:** Qwen-Image-2512 и Edit-2511 — Apache-2.0 (можно на коммерческий сайт); Qwen-Image-2.1 — research only, FLUX.1-dev/Krea — некоммерческие — НЕ ставить.
+- **Просьба локальной:** выполнить шаги README (установка → перезапуск ComfyUI → пробная обложка `ii-teper-si-ukaz-trampa` → Тиму на оценку → 5 обложек → в конвейер журналиста). Имена нод проверить через `GET /object_info` (`UnetLoaderGGUF`, `TextEncodeQwenImageEditPlus`, `ModelSamplingAuraFlow`). HF_TOKEN — из `/opt/timlabs/render/.env`, не печатать.
