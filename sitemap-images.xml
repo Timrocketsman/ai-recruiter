@@ -36,11 +36,13 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/avtomatizatsiya-telegram-kanala/</loc>
-    <image:image><image:loc>https://timlabs.online/media/telegram/avtomatizatsiya-telegram-kanala.png</image:loc><image:title>Автоматизация Telegram-канала: что реально настроить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-telegram-kanala.jpg</image:loc><image:title>Автоматизация Telegram-канала: что реально настроить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-telegram-kanala.webp</image:loc><image:title>Автоматизация Telegram-канала: что реально настроить</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/avtomatizatsiya-voronki-prodazh/</loc>
-    <image:image><image:loc>https://timlabs.online/media/telegram/avtomatizatsiya-voronki-prodazh.png</image:loc><image:title>Автоматизация воронки продаж: что реально настроить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-voronki-prodazh.jpg</image:loc><image:title>Автоматизация воронки продаж: что реально настроить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-voronki-prodazh.webp</image:loc><image:title>Автоматизация воронки продаж: что реально настроить</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/belyy-vodopad/</loc>
@@ -160,7 +162,13 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/ii-agenty-v-telegram/</loc>
-    <image:image><image:loc>https://timlabs.online/media/telegram/ii-agenty-v-telegram.png</image:loc><image:title>ИИ-агенты в Telegram: что умеет BrainAid</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ii-agenty-v-telegram.jpg</image:loc><image:title>ИИ-агенты в Telegram: что умеет BrainAid</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ii-agenty-v-telegram.webp</image:loc><image:title>ИИ-агенты в Telegram: что умеет BrainAid — от бота с нейросетями до агента, который пишет первым</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/ii-teper-si-ukaz-trampa/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa.jpg</image:loc><image:title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa.webp</image:loc><image:title>ИИ теперь SI? Что значит указ Трампа о суперинтеллекте</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
@@ -384,7 +392,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/seo-s-pomoschyu-neyroseti/</loc>
-    <image:image><image:loc>https://timlabs.online/media/telegram/seo-s-pomoschyu-neyroseti.png</image:loc><image:title>SEO с помощью нейросети: что реально автоматизировать</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/seo-s-pomoschyu-neyroseti.jpg</image:loc><image:title>SEO с помощью нейросети: что реально автоматизировать</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/seo-s-pomoschyu-neyroseti.webp</image:loc><image:title>SEO с помощью нейросети: что реально автоматизировать</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/sovety-kak-spravlyatsya-so-stressom/</loc>
@@ -557,6 +566,20 @@
     <loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.jpg</image:loc><image:title>Напряжение в плечах: почему плечи сами ползут к ушам | MARAFDY</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.webp</image:loc><image:title>Деревянные плечики для одежды висят на крючке у тёмной стены, тёплый золотой свет сбоку, фон глубокий изумрудный, к углам почти чёрный</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/posts/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.webp</image:loc><image:title>Сложенные мягкие массажные перчатки на льняной салфетке на деревянном столе в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.webp</image:loc><image:title>Деревянный метроном на тёмной полке у изумрудной стены, тёплый золотой свет сбоку, длинная мягкая тень</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-na-domu/cover.webp</image:loc><image:title>Сложенный портативный массажный стол стоит у стены в комнате, рядом на стуле — стопка чистых сложенных простыней. Тёплый золотой свет сбоку, глубокий изумрудный фон, уходящий к угл</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/cover.webp</image:loc><image:title>Пара походных ботинок с распущенными шнурками на каменном полу у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-ruk/cover.webp</image:loc><image:title>Смартфон экраном вниз на грубой деревянной столешнице в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-spiny/cover.webp</image:loc><image:title>Сложенный тёмно-изумрудный шерстяной плед на краю кровати в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/cover.webp</image:loc><image:title>Длинная льняная дорожка на деревянном полу у окна с видом на горы в тёплом закатном свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.webp</image:loc><image:title>Деревянные плечики для одежды висят на крючке у тёмной стены, тёплый золотой свет сбоку, фон глубокий изумрудный, к углам почти чёрный</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.webp</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.webp</image:loc><image:title>Вязаная шерстяная шапка на деревянном крючке у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/</loc>
