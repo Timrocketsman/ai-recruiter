@@ -14,6 +14,9 @@ if "--edit" in sys.argv:
 else:
     wf=open(f"{HERE}/workflow_t2i_api.json").read().replace("__PROMPT__",json.dumps(P[slug]+". "+P["_style"])[1:-1]).replace("__NEGATIVE__",P["_negative"])
 wf=json.loads(wf.replace("__SEED__",str(seed)).replace("__SLUG__",slug)); wf.pop("_comment",None)
+if os.environ.get("COVER_STEPS"):                          # меньше шагов — меньше нагрев карты (40 шагов поднимают вентиляторы выше порога)
+    for n in wf.values():
+        if n.get("class_type")=="KSampler": n["inputs"]["steps"]=int(os.environ["COVER_STEPS"])
 r=urllib.request.urlopen(urllib.request.Request(API+"/prompt",json.dumps({"prompt":wf}).encode(),{"Content-Type":"application/json"})); pid=json.load(r)["prompt_id"]
 for _ in range(600):
     time.sleep(2); h=json.load(urllib.request.urlopen(API+"/history/"+pid))
