@@ -43,7 +43,7 @@ PARTNERS = [
         "who": "Умас, мастер, живёт под Железноводском",
         "about": "Умас говорит о том, почему человек живёт не свою жизнь, что стоит за отношениями и эмоциями и что такое ответственность за себя. Разбор через язык тела, в основе — кинезиология.",
         "page": "/partners/umas_osoznanie/", "page_label": "Статьи об Умасе",
-        "more": [("https://www.youtube.com/@umas_channel", "YouTube"), ("https://dzen.ru/umas_osoznanie", "Дзен")],
+        "more": [("https://vk.ru/umas_channel", "ВКонтакте"), ("https://www.youtube.com/@umas_channel", "YouTube"), ("https://dzen.ru/umas_osoznanie", "Дзен")],
         "contact": ("https://t.me/umas_channel", "Канал в Telegram"),
     },
 ]
