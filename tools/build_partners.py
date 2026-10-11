@@ -26,7 +26,7 @@ PARTNERS = [
         "about": "Аппаратный массаж с выездом на дом в Кисловодске и на Кавминводах: без масел, в удобное для вас время.",
         "page": "/massage-kislovodsk/", "page_label": "Аппаратный массаж на дому",
         "more": [("https://vk.ru/marafdy", "ВКонтакте"), ("https://dzen.ru/marafdy", "Дзен")],
-        "contact": ("https://t.me/MARAFDY_manager", "Записаться у MARAFDY"),
+        "contact": ("https://t.me/MARAFDY_manager", "Написать администратору"),
     },
     {   # личная практика Мары — отдельно, без бренда MARAFDY
         "id": "mara-doula", "name": "Доула Мара", "ic": "🤍", "c": "#ff8fd0", "c2": "#35b6ff",
