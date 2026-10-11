@@ -237,6 +237,8 @@ FIT = {
     "shkola/index.html": ".week{overflow-x:clip}",
 }
 
+FOOTNOTE_META = '<p><sup>*</sup> Instagram принадлежит компании Meta Platforms Inc., признанной в Российской Федерации экстремистской организацией; её деятельность на территории РФ запрещена.</p>'
+
 SITE_VOICE = [  # (06.10, облачная) точные фразы «мы» от лица Тима и цена вне страницы услуг
     ("Задам пару вопросов и подберём — нажмите на меня.", "Задам пару вопросов и подберу мастера — нажмите на меня."),
     ("Поможем подобрать — ТимЛабс</a>", "Помогу подобрать — Тим</a>"),
@@ -441,6 +443,17 @@ def main():
             h2 = re.sub(r'<article class="card[^"]*".*?</article>', _card, h, flags=re.S)
             if h2 != h:
                 h = h2; stats["alt"] = stats.get("alt", 0) + 1
+        # (11.10, слово Тима «чтобы не нарваться на штрафы») чужие сервисы без реферальных меток, цен и кнопок-призывов
+        if "t.me/BrainAid_bot?start=ref" in h:
+            h = re.sub(r'<a class="btn" href="https://t\.me/BrainAid_bot[^"]*"[^>]*>[^<]*</a>\s*', "", h)
+            h = h.replace("https://t.me/BrainAid_bot?start=ref6983437462", "https://t.me/BrainAid_bot")
+            h = re.sub(r"<p>По тарифам на день публикации.*?смотрите в боте\.</p>", "", h, flags=re.S)
+            stats["adlaw"] = stats.get("adlaw", 0) + 1
+        # (11.10) упоминание Instagram в тексте — со звёздочкой и сноской про Meta (закон о запрете)
+        if re.search(r"Instagram(?!<sup>|\*|[^<]*</a>)", h) and "Meta Platforms" not in h:
+            h = re.sub(r"Instagram(?!<sup>|\*)", "Instagram<sup>*</sup>", h, count=1)
+            h = h.replace("</footer>", "  " + FOOTNOTE_META + "\n  </footer>", 1)
+            stats["meta"] = stats.get("meta", 0) + 1
         # (06.10) карточка для соцсетей, если её нет
         if 'name="twitter:card"' not in h and 'property="og:image"' in h:
             i = h.find('<meta property="og:image"'); j = h.find(">", i) + 1
