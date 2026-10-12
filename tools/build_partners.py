@@ -57,9 +57,11 @@ def partner_articles(pid):
         for slug in sorted(os.listdir(base)):
             f = os.path.join(base, slug, "index.html")
             if re.fullmatch(r"[a-z0-9-]+", slug) and os.path.exists(f):
-                t = re.search(r"<h1[^>]*>(.*?)</h1>", open(f, encoding="utf-8").read(), re.S)
-                out.append(("/partners/%s/%s/" % (pid, slug), re.sub(r"<[^>]+>", "", t.group(1)).strip() if t else slug))
-    return out
+                h = open(f, encoding="utf-8").read(); t = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
+                d = re.search(r'"datePublished":\s*"([0-9-]+)"', h)                 # (12.10) свежие статьи первыми, а не по алфавиту адресов
+                out.append((d.group(1) if d else "", "/partners/%s/%s/" % (pid, slug), re.sub(r"<[^>]+>", "", t.group(1)).strip() if t else slug))
+    out.sort(key=lambda x: (x[0], x[1]), reverse=True)
+    return [(u, n) for _, u, n in out if "/posts/" not in u]
 
 
 def card(p):
