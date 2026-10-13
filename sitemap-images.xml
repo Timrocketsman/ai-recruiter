@@ -19,8 +19,20 @@
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book7.webp</image:loc><image:title>Книга «Исповедь артиста. Эпизод I: Зажигание»</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/journal/1-poleznuyu-privychku/</loc>
+    <image:image><image:loc>https://timlabs.online/media/telegram/1-poleznuyu-privychku.png</image:loc><image:title>1 полезную привычку: с чего начать и как закрепить</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/journal/1-samootsenka/</loc>
     <image:image><image:loc>https://timlabs.online/media/telegram/1-samootsenka.png</image:loc><image:title>Самооценка от 1 до 10: как оценить себя</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/3-poleznye-privychki/</loc>
+    <image:image><image:loc>https://timlabs.online/media/telegram/3-poleznye-privychki.png</image:loc><image:title>3 полезные привычки: как выстроить утренний ритуал</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/3-poleznyh-privychek/</loc>
+    <image:image><image:loc>https://timlabs.online/media/telegram/3-poleznyh-privychek.png</image:loc><image:title>3 полезные привычки: что реально работает каждый день</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat/</loc>
@@ -407,6 +419,10 @@
   <url>
     <loc>https://timlabs.online/journal/spa-kislovodsk/</loc>
     <image:image><image:loc>https://timlabs.online/media/telegram/spa-kislovodsk.png</image:loc><image:title>СПА в Кисловодске: полный гид по процедурам и отдыху</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/sposobnosti-samorazvitiya/</loc>
+    <image:image><image:loc>https://timlabs.online/media/telegram/sposobnosti-samorazvitiya.png</image:loc><image:title>Способности саморазвития: как выстроить систему и не бросить</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/sut-samootsenki/</loc>
