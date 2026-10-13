@@ -328,8 +328,8 @@ def main():
         p = os.path.join(dp, "index.html")
         rel = os.path.relpath(p, ROOT)
         h = open(p, encoding="utf-8").read()
-        if re.search(r"<title>(Материал перенесён|Страница удалена)", h):
-            continue
+        if re.search(r"<title>(Материал перенесён|Страница удалена)", h) or 'http-equiv="refresh"' in h:
+            continue  # склеенные дубли — только редирект, без блоков
         o = h
         # (05.10) испорченный код Метрики (insertBefore(k,r)} вместо (k,a)}) ) — ломал скрипт страницы
         if "a.parentNode.insertBefore(k,r)}\n" in h:
