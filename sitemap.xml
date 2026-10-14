@@ -697,4 +697,10 @@
     <loc>https://timlabs.online/journal/2-poleznye-privychki/</loc>
     <lastmod>2026-10-13</lastmod>
   </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/posle-massazha/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
