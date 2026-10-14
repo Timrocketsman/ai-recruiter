@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>TimLabs — как всё устроено</title>
+<style>
+:root{--bg:#05070e;--cyan:#00b4ff;--mag:#d100ff;--txt:#eaf2ff;--dim:#8fa3bf;--card:#0b1020;--line:#1b2740}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--txt);font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif}
+body::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 600px at 15% 10%,rgba(0,180,255,.14),transparent 60%),radial-gradient(900px 600px at 85% 90%,rgba(209,0,255,.12),transparent 60%)}
+.scene{position:absolute;inset:0;padding:90px 120px;opacity:0;transition:opacity .8s;pointer-events:none}
+.scene.on{opacity:1}
+h1{font-size:92px;font-weight:800;letter-spacing:-1px;line-height:1.05}
+h2{font-size:58px;font-weight:800;margin-bottom:18px}
+.sub{font-size:30px;color:var(--dim);margin-top:18px}
+.tag{display:inline-block;font-size:22px;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-bottom:26px}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--mag));-webkit-background-clip:text;background-clip:text;color:transparent}
+.node{position:absolute;max-width:620px;background:var(--card);border:2px solid var(--line);border-radius:22px;padding:22px 26px;min-width:300px;box-shadow:0 0 0 1px rgba(255,255,255,.03),0 20px 60px rgba(0,0,0,.5);opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.node.show{opacity:1;transform:none}
+.node b{display:block;font-size:30px;margin-bottom:6px}
+.node span{font-size:22px;color:var(--dim);line-height:1.35;display:block}
+.node.c{border-color:var(--cyan);box-shadow:0 0 40px rgba(0,180,255,.25)}
+.node.m{border-color:var(--mag);box-shadow:0 0 40px rgba(209,0,255,.25)}
+.node .ic{font-size:40px;float:right;margin-left:14px}
+svg.wires{position:absolute;inset:0;width:1920px;height:1080px}
+svg.wires path{fill:none;stroke-width:4;stroke-linecap:round;stroke-dasharray:2000;stroke-dashoffset:2000;transition:stroke-dashoffset 1.4s ease}
+svg.wires path.c{stroke:var(--cyan)} svg.wires path.m{stroke:var(--mag)} svg.wires path.d{stroke:var(--dim);stroke-dasharray:14 12;stroke-dashoffset:0;opacity:0;transition:opacity .8s}
+svg.wires path.go{stroke-dashoffset:0} svg.wires path.d.go{opacity:.8}
+.cap{position:absolute;left:120px;right:120px;bottom:70px;font-size:28px;color:var(--txt);background:rgba(5,7,14,.7);border-left:6px solid var(--cyan);padding:16px 22px;border-radius:8px;opacity:0;transition:opacity .6s}
+.cap.show{opacity:1}
+.floor{position:absolute;left:120px;right:120px;height:200px;border:2px solid var(--line);border-radius:20px;background:var(--card);padding:22px 30px;opacity:0;transform:translateX(-30px);transition:all .7s}
+.floor.show{opacity:1;transform:none}
+.floor b{font-size:34px;display:block;margin-bottom:10px}
+.floor .ag{display:flex;gap:14px;flex-wrap:wrap}
+.floor .ag i{font-style:normal;font-size:22px;padding:8px 16px;border-radius:999px;border:1px solid var(--line);color:var(--txt)}
+.floor .ag i.hot{border-color:var(--mag);color:#fff}
+.list{font-size:34px;line-height:1.6;margin-top:30px}
+.list li{list-style:none;opacity:0;transform:translateX(-20px);transition:all .5s}
+.list li.show{opacity:1;transform:none}
+.list li::before{content:"◆ ";color:var(--cyan)}
+.chan{position:absolute;width:250px;height:150px;border-radius:22px;border:2px solid var(--line);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:30px;font-weight:700;opacity:0;transform:scale(.8);transition:all .6s}
+.chan small{font-size:20px;color:var(--dim);font-weight:400;margin-top:6px}
+.chan.show{opacity:1;transform:none}
+.chan.plan{border-style:dashed}
+.foot{position:absolute;right:120px;bottom:40px;font-size:22px;color:var(--dim)}
+.prog{position:absolute;left:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--cyan),var(--mag));width:0}
+</style></head><body>
+
+<!-- 1 -->
+<section class="scene" id="s1">
+  <div style="position:absolute;left:120px;top:330px">
+    <div class="tag">timlabs.online · 14 октября 2026</div>
+    <h1>TimLabs: <span class="grad">как всё устроено</span></h1>
+    <div class="sub">Устройства, агенты, сервер, офис и площадки — одна связка.</div>
+  </div>
+</section>
+
+<!-- 2 devices -->
+<section class="scene" id="s2">
+  <div class="tag">1 · Устройства и связь</div><h2>Телефон управляет домом, дом — сервером</h2>
+  <svg class="wires">
+    <path class="c" d="M470 420 C 620 420, 640 520, 790 520"/>
+    <path class="c" d="M470 700 C 620 700, 640 580, 790 560"/>
+    <path class="m" d="M1325 540 C 1360 540, 1370 540, 1405 540"/>
+  </svg>
+  <div class="node" style="left:140px;top:340px"><span class="ic">📱</span><b>iPhone Тима</b><span>Telegram-бот, Remote Control, одобрения</span></div>
+  <div class="node" style="left:140px;top:620px"><span class="ic">🤖</span><b>Android · Termux</b><span>домашняя сеть, SSH-туннель, «разбуди Мак»</span></div>
+  <div class="node c" style="left:800px;top:440px;width:520px"><span class="ic">💻</span><b>MacBook (дом)</b><span>агент моста: не спит с закрытой крышкой, будильники, кадры Pexels, связь с сервером</span></div>
+  <div class="node m" style="left:1410px;top:430px"><span class="ic">🖥</span><b>Сервер · my-ubuntu</b><span>RTX 3090, Bonsai 2 27B, ядро офиса /seo_agents, Стройка /stroy</span></div>
+  <div class="cap">Телефон даёт команду → Мак включается и держит связь → сервер исполняет. Спящий Мак через интернет не разбудить, поэтому он не спит и просыпается сам по будильнику.</div>
+</section>
+
+<!-- 3 agents -->
+<section class="scene" id="s3">
+  <div class="tag">2 · Агенты</div><h2>Две сессии Claude Code и «тело» на сервере</h2>
+  <svg class="wires">
+    <path class="c" d="M560 520 C 700 520, 720 520, 860 520"/>
+    <path class="m" d="M1200 520 C 1320 520, 1340 520, 1440 520"/>
+    <path class="d" d="M380 640 C 380 760, 1100 760, 1100 640"/>
+  </svg>
+  <div class="node c" style="left:140px;top:420px;width:420px"><span class="ic">☁️</span><b>Облачная сессия</b><span>Fable 5.1 (это я). Сайт, правила, проверки, контроль канала. До сервера не дотягивается.</span></div>
+  <div class="node c" style="left:870px;top:420px;width:330px"><span class="ic">🖥</span><b>Локальная сессия</b><span>Opus 5.5 на Маке. Доступ к серверу: движок, бот, агенты.</span></div>
+  <div class="node m" style="left:1450px;top:400px;width:340px"><span class="ic">🌳</span><b>Bonsai 2 27B</b><span>Ассистент и модель офиса: статьи, разбор, правки движка, сторож здоровья железа.</span></div>
+  <div class="node" style="left:560px;top:770px;width:600px;border-style:dashed"><b>SESSIONS.md · репозиторий сайта</b><span>общий канал сессий: задания, решения Тима, отчёты, приёмка</span></div>
+  <div class="cap">Облако ставит задачу → локальная исполняет на сервере → Bonsai и агенты работают → отчёт Тиму в Telegram.</div>
+</section>
+
+<!-- 4 office floors -->
+<section class="scene" id="s4">
+  <div class="tag">3 · Офис TimLabs</div><h2>Три этажа агентов, один регламент</h2>
+  <div class="floor" style="top:260px"><b>Этаж 1 · Редакция и SEO</b><div class="ag"><i>Журналист</i><i>Переписчик</i><i>Дистрибьютор</i><i>Семантик · Wordstat</i><i>Аудитор → корректор</i><i>Медосмотр статей</i><i class="hot">Ворота тем и заголовков</i></div></div>
+  <div class="floor" style="top:490px"><b>Этаж 2 · Производство</b><div class="ag"><i>Ролики promo_video</i><i>Голос F5-TTS</i><i>Обложки Qwen-Image</i><i>Мост Мак ↔ кадры</i><i>Окно 8–16, выпуск 17:17</i></div></div>
+  <div class="floor" style="top:720px"><b>Этаж 3 · Рост, клиенты, безопасность</b><div class="ag"><i>Разведчик площадок</i><i>Куратор</i><i>Отдел новых заказов</i><i>Партнёры</i><i>Белый хакер · Сторож</i><i>Иммунитет движка</i></div></div>
+  <div class="cap">Отдел «Стройка» вырос в самостоятельный проект: своя папка, свой надзор, та же видеокарта по очереди.</div>
+</section>
+
+<!-- 5 site -->
+<section class="scene" id="s5">
+  <div class="tag">4 · Сайт и журнал «Компас»</div><h2>Зачем всё это</h2>
+  <ul class="list">
+    <li>Популяризация творчества Тима: музыка, стихи, книги, ролики.</li>
+    <li>Рассказы о людях, которых Тим встретил, — только с их официального одобрения.</li>
+    <li>Образец работы для других компаний: сайт делает себя сам.</li>
+    <li>Партнёры уже есть: MARAFDY, УМАС, Рамагор, экскурсии по Кисловодску.</li>
+    <li>119 статей, 7 рубрик, автор — Тимур Гуцев, голос от первого лица.</li>
+  </ul>
+</section>
+
+<!-- 6 crossposting -->
+<section class="scene" id="s6">
+  <div class="tag">5 · Контент-план и кросс-постинг</div><h2>Один паспорт публикации — все площадки</h2>
+  <svg class="wires">
+    <path class="c" d="M960 420 C 960 480, 400 480, 400 560"/>
+    <path class="c" d="M960 420 C 960 480, 680 480, 680 560"/>
+    <path class="c" d="M960 420 C 960 480, 960 480, 960 560"/>
+    <path class="m" d="M960 420 C 960 480, 1240 480, 1240 560"/>
+    <path class="m" d="M960 420 C 960 480, 1520 480, 1520 560"/>
+  </svg>
+  <div class="node c" style="left:660px;top:250px;width:600px;text-align:center"><b>Контент-план · утверждает Тим</b><span>рубрика по дню недели · форма статьи · окно выхода · ворота</span></div>
+  <div class="chan" style="left:275px;top:560px">Telegram<small>сразу после сайта</small></div>
+  <div class="chan" style="left:555px;top:560px">ВКонтакте<small>+60 минут</small></div>
+  <div class="chan" style="left:835px;top:560px">Дзен<small>по RSS</small></div>
+  <div class="chan plan" style="left:1115px;top:560px">Одноклассники<small>по плану</small></div>
+  <div class="chan plan" style="left:1395px;top:560px">YouTube<small>ролики 17:17</small></div>
+  <div class="cap">Заголовок, лид, обложка и ссылка берутся с самой страницы. Статья переписана — анонсы правятся, а не дублируются. Проверка каждый час.</div>
+</section>
+
+<!-- 7 control -->
+<section class="scene" id="s7">
+  <div class="tag">6 · Контроль</div><h2>Что держит систему честной</h2>
+  <ul class="list">
+    <li>Ворота кодом: одна тема — одна статья, без штампов в заголовках, без дежурных сцен.</li>
+    <li>Проверки: канал ↔ сайт, SEO-аудит, стиль, закон о рекламе.</li>
+    <li>Суточный отчёт и срочные тревоги — Тиму в Telegram.</li>
+    <li>Решения о деньгах, праве и новых площадках — только слово Тима «берём».</li>
+  </ul>
+</section>
+
+<!-- 8 end -->
+<section class="scene" id="s8">
+  <div style="position:absolute;left:120px;top:380px">
+    <h1><span class="grad">timlabs.online</span></h1>
+    <div class="sub">Телефон → Мак → сервер → офис → площадки. Одна связка, один план.</div>
+  </div>
+</section>
+<div class="foot">TimLabs · Тимур Гуцев · 2026</div>
+<div class="prog" id="prog"></div>
+
+<script>
+const T=[ // [scene id, duration ms, steps: [delay, selector]]
+ ["s1",6000,[]],
+ ["s2",14000,[[300,"#s2 .node@0"],[900,"#s2 .node@1"],[1600,"#s2 .node@2"],[1700,"#s2 path@0"],[1900,"#s2 path@1"],[3000,"#s2 .node@3"],[3200,"#s2 path@2"],[5000,"#s2 .cap"]]],
+ ["s3",15000,[[300,"#s3 .node@0"],[1200,"#s3 path@0"],[1500,"#s3 .node@1"],[2400,"#s3 path@1"],[2700,"#s3 .node@2"],[4000,"#s3 .node@3"],[4200,"#s3 path@2"],[6000,"#s3 .cap"]]],
+ ["s4",15000,[[300,"#s4 .floor@0"],[1500,"#s4 .floor@1"],[2700,"#s4 .floor@2"],[5000,"#s4 .cap"]]],
+ ["s5",14000,[[400,"#s5 li:nth-child(1)"],[2000,"#s5 li:nth-child(2)"],[3600,"#s5 li:nth-child(3)"],[5200,"#s5 li:nth-child(4)"],[6800,"#s5 li:nth-child(5)"]]],
+ ["s6",15000,[[300,"#s6 .node"],[1300,"#s6 path@0"],[1400,"#s6 .chan@0"],[1900,"#s6 path@1"],[2000,"#s6 .chan@1"],[2500,"#s6 path@2"],[2600,"#s6 .chan@2"],[3100,"#s6 path@3"],[3200,"#s6 .chan@3"],[3700,"#s6 path@4"],[3800,"#s6 .chan@4"],[6000,"#s6 .cap"]]],
+ ["s7",12000,[[400,"#s7 li:nth-child(1)"],[2200,"#s7 li:nth-child(2)"],[4000,"#s7 li:nth-child(3)"],[5800,"#s7 li:nth-child(4)"]]],
+ ["s8",6000,[]]];
+const total=T.reduce((a,x)=>a+x[1],0); let t0=performance.now();
+function run(i){ if(i>=T.length){document.body.dataset.done="1";return;}
+  const [id,dur,steps]=T[i]; document.querySelectorAll(".scene").forEach(s=>s.classList.remove("on"));
+  const sc=document.getElementById(id); sc.classList.add("on");
+  for(const [d,sel] of steps) setTimeout(()=>{let e; if(sel.includes("@")){const [q,n]=sel.split("@"); e=document.querySelectorAll(q)[+n];} else e=document.querySelector(sel); if(!e)return; e.classList.add(e.tagName==="path"?"go":"show");},d);
+  setTimeout(()=>run(i+1),dur); }
+setInterval(()=>{document.getElementById("prog").style.width=Math.min(100,(performance.now()-t0)/total*100)+"%";},200);
+window.addEventListener("load",()=>setTimeout(()=>run(0),400));
+</script>
+</body></html>
