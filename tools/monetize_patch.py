@@ -356,6 +356,54 @@ def card_titles_sync():
     return n
 
 
+def headline_gate():
+    """(14.10, слово Тима «запрети так делать вообще») Заголовок-штамп «N полезных/простых привычек/правил/способов…»
+    у статьи журнала — статья закрывается от поиска (noindex, метка <!--tl-gate-v1-->) и пишется в data/gate_log.json,
+    пока заголовок не исправят; прошла проверку — метка снимается. Логика проверки — tools/topic_gate.py (та же, что для движка)."""
+    try:
+        sys.path.insert(0, os.path.join(ROOT, "tools"))
+        import topic_gate
+    except Exception as e:  # pragma: no cover
+        print("headline_gate: topic_gate недоступен:", e)
+        return 0
+    n, log = 0, []
+    jd = os.path.join(ROOT, "journal")
+    for slug in sorted(os.listdir(jd)) if os.path.isdir(jd) else []:
+        f = os.path.join(jd, slug, "index.html")
+        if not os.path.isfile(f):
+            continue
+        h = open(f, encoding="utf-8").read()
+        if 'http-equiv="refresh"' in h:
+            continue
+        m = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
+        h1 = html_mod.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip() if m else ""
+        ok, why = topic_gate.headline_ok(h1)
+        tag = '<meta name="robots" content="noindex,follow"><!--tl-gate-v1-->\n'
+        o = h
+        if not ok and tag not in h:
+            h = h.replace("</head>", tag + "</head>", 1)
+            log.append({"slug": slug, "h1": h1, "why": why})
+        if ok and tag in h:
+            h = h.replace(tag, "", 1)
+        if h != o:
+            n += 1
+            if not DRY:
+                open(f, "w", encoding="utf-8").write(h)
+    if log:
+        print("headline_gate: ЗАКРЫТО ОТ ПОИСКА (заголовок-штамп):", "; ".join("%s — %s" % (x["slug"], x["why"]) for x in log))
+        if not DRY:
+            lp = os.path.join(ROOT, "data", "gate_log.json")
+            try:
+                old = json.load(open(lp, encoding="utf-8"))
+            except Exception:
+                old = []
+            import datetime
+            for x in log:
+                x["at"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+            json.dump(old + log, open(lp, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    return n
+
+
 def article_voice_fix(html):
     """Призывы статей — от лица Тима; «Читайте также» без ссылок на главную и юр. документы. Идемпотентно."""
     def cal(m):
@@ -541,6 +589,7 @@ def main():
                 open(p, "w", encoding="utf-8").write(h)
     stats["sitemap"] = sitemap_canonical_fix()
     stats["titles"] = card_titles_sync()
+    stats["gate"] = headline_gate()
     print(stats)
 
 
