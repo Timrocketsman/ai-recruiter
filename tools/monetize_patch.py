@@ -11,6 +11,7 @@
   нажал «Принять»); в параметрах цели — только адрес страницы, без личных данных.
 - Цен нет. Рекламных вставок нет (нет вознаграждения от мастеров — не реклама).
 """
+import json
 import os
 import re
 import html as html_mod
@@ -295,6 +296,66 @@ def sitemap_canonical_fix():
     return n
 
 
+def h1_of(slug):
+    f = os.path.join(ROOT, "journal", slug, "index.html")
+    if not os.path.exists(f):
+        return ""
+    h = open(f, encoding="utf-8").read()
+    if 'http-equiv="refresh"' in h:
+        return ""
+    m = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
+    return html_mod.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip() if m else ""
+
+
+def card_titles_sync():
+    """(14.10) заголовок статьи — один: карточки журнала, JSON-LD списка и RSS берут H1 страницы.
+    Движок пересобирает journal/index.html из knowledge/journal_index.json, где лежит первый заголовок статьи,
+    и после переписывания возвращал старое название (Тим 14.10: «на сайте всё по-прежнему»)."""
+    n = 0
+    cache = {}
+
+    def h1(slug):
+        if slug not in cache:
+            cache[slug] = h1_of(slug)
+        return cache[slug]
+
+    def esc(t):
+        return t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
+    jp = os.path.join(ROOT, "journal", "index.html")
+    if os.path.exists(jp):
+        s = open(jp, encoding="utf-8").read()
+        o = s
+
+        def card(m):
+            t = h1(m.group(2))
+            return m.group(1) + esc(t) + m.group(3) if t else m.group(0)
+
+        s = re.sub(r'(<a class="card-link" href="%s/journal/([^/"]+)/"><h2 class="card-title">)[^<]*(</h2>)' % re.escape(SITE), card, s)
+
+        s = re.sub(r'("name": ")[^"]*(", "url": "%s/journal/)([^/"]+)(/")' % re.escape(SITE),
+                   lambda m: (m.group(1) + json.dumps(h1(m.group(3)), ensure_ascii=False)[1:-1] + m.group(2) + m.group(3) + m.group(4)) if h1(m.group(3)) else m.group(0), s)
+        if s != o:
+            n += 1
+            if not DRY:
+                open(jp, "w", encoding="utf-8").write(s)
+    rp = os.path.join(ROOT, "rss.xml")
+    if os.path.exists(rp):
+        s = open(rp, encoding="utf-8").read()
+        o = s
+
+        def item(m):
+            t = h1(m.group(3))
+            return m.group(1) + esc(t) + m.group(2) if t else m.group(0)
+
+        s = re.sub(r"(<item>\s*<title>)[^<]*(</title>\s*<link>%s/journal/([^/<]+)/</link>)" % re.escape(SITE), item, s)
+        if s != o:
+            n += 1
+            if not DRY:
+                open(rp, "w", encoding="utf-8").write(s)
+    return n
+
+
 def article_voice_fix(html):
     """Призывы статей — от лица Тима; «Читайте также» без ссылок на главную и юр. документы. Идемпотентно."""
     def cal(m):
@@ -479,6 +540,7 @@ def main():
             if not DRY:
                 open(p, "w", encoding="utf-8").write(h)
     stats["sitemap"] = sitemap_canonical_fix()
+    stats["titles"] = card_titles_sync()
     print(stats)
 
 
