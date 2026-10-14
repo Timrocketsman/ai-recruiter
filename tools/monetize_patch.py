@@ -331,9 +331,9 @@ def card_titles_sync():
             t = h1(m.group(2))
             return m.group(1) + esc(t) + m.group(3) if t else m.group(0)
 
-        s = re.sub(r'(<a class="card-link" href="%s/journal/([^/"]+)/"><h2 class="card-title">)[^<]*(</h2>)' % re.escape(SITE), card, s)
+        s = re.sub(r'(<a class="card-link" href="%s/journal/([^/"]+)/"><h2 class="card-title">)[^<]*(</h2>)' % re.escape(SITE.rstrip('/')), card, s)
 
-        s = re.sub(r'("name": ")[^"]*(", "url": "%s/journal/)([^/"]+)(/")' % re.escape(SITE),
+        s = re.sub(r'("name": ")[^"]*(", "url": "%s/journal/)([^/"]+)(/")' % re.escape(SITE.rstrip('/')),
                    lambda m: (m.group(1) + json.dumps(h1(m.group(3)), ensure_ascii=False)[1:-1] + m.group(2) + m.group(3) + m.group(4)) if h1(m.group(3)) else m.group(0), s)
         if s != o:
             n += 1
@@ -348,7 +348,7 @@ def card_titles_sync():
             t = h1(m.group(3))
             return m.group(1) + esc(t) + m.group(2) if t else m.group(0)
 
-        s = re.sub(r"(<item>\s*<title>)[^<]*(</title>\s*<link>%s/journal/([^/<]+)/</link>)" % re.escape(SITE), item, s)
+        s = re.sub(r"(<item>\s*<title>)[^<]*(</title>\s*<link>%s/journal/([^/<]+)/</link>)" % re.escape(SITE.rstrip('/')), item, s)
         if s != o:
             n += 1
             if not DRY:
