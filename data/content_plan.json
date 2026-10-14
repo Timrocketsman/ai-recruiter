@@ -40,7 +40,7 @@
     "marafdy": "пн/ср/пт/вс 10:00",
     "promo_video": "17:17"
   },
-  "approved_by_tim": false,
+  "approved_by_tim": true,
   "queue": [
     {
       "id": "2026-10-14-u",
@@ -144,10 +144,10 @@
       "date": "2026-10-17",
       "kind": "new",
       "rubric": "Тело и здоровье",
-      "query": null,
+      "query": "утренняя разминка для спины",
       "angle": "",
       "form": "репортаж",
-      "status": "needs_topic",
+      "status": "planned",
       "slug": null,
       "channels": {
         "site": null,
@@ -182,10 +182,10 @@
       "date": "2026-10-18",
       "kind": "new",
       "rubric": "ИИ-автоматизация",
-      "query": null,
+      "query": "как использовать нейросеть в работе",
       "angle": "",
       "form": "вопрос читателя",
-      "status": "needs_topic",
+      "status": "planned",
       "slug": null,
       "channels": {
         "site": null,
@@ -298,10 +298,10 @@
       "date": "2026-10-21",
       "kind": "new",
       "rubric": "Эмоции и психология",
-      "query": null,
+      "query": "как перестать сравнивать себя с другими",
       "angle": "",
       "form": "спор с мифом",
-      "status": "needs_topic",
+      "status": "planned",
       "slug": null,
       "channels": {
         "site": null,
@@ -315,10 +315,10 @@
       "date": "2026-10-22",
       "kind": "new",
       "rubric": "Частые вопросы",
-      "query": null,
+      "query": "как провести выходные с пользой",
       "angle": "",
       "form": "письмо",
-      "status": "needs_topic",
+      "status": "planned",
       "slug": null,
       "channels": {
         "site": null,
@@ -332,10 +332,10 @@
       "date": "2026-10-23",
       "kind": "new",
       "rubric": "Родителям",
-      "query": null,
+      "query": "восстановление после родов сколько времени",
       "angle": "",
       "form": "репортаж",
-      "status": "needs_topic",
+      "status": "planned",
       "slug": null,
       "channels": {
         "site": null,
@@ -349,10 +349,10 @@
       "date": "2026-10-24",
       "kind": "new",
       "rubric": "Тело и здоровье",
-      "query": null,
+      "query": "дыхательные упражнения для расслабления",
       "angle": "",
       "form": "история",
-      "status": "needs_topic",
+      "status": "planned",
       "slug": null,
       "channels": {
         "site": null,
@@ -366,10 +366,10 @@
       "date": "2026-10-25",
       "kind": "new",
       "rubric": "ИИ-автоматизация",
-      "query": null,
+      "query": "нейросеть помощник для малого бизнеса",
       "angle": "",
       "form": "вопрос читателя",
-      "status": "needs_topic",
+      "status": "planned",
       "slug": null,
       "channels": {
         "site": null,
@@ -378,5 +378,6 @@
         "dzen": null
       }
     }
-  ]
+  ],
+  "approved_at": "2026-10-14"
 }
