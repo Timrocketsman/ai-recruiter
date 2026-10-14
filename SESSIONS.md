@@ -119,6 +119,19 @@
   (`plan_topic`), факт отмечается на site/telegram/vk; `plan_control` показывает «план ↔ факт», статья вне плана — тревога. Распределение рубрик по дням — на утверждение Тима (`approved_by_tim: false`).
 - **5** `seo_audit --all` → `{}`; `style_audit --top 10` — все ≥ 2.5 (старые статьи), ушли в очередь переписчику; `data/gate_log.json` пуст; `grep topic_gate`/`gates` — journalist, rewriter, distributor.
 
+## 🎬 Облачная → сессии «Видеомейкер» (14.10, слово Тима): озвучить ролик голосом Тима
+Задание Тима: озвучить его голосом ролик «TimLabs: как у меня всё устроено» и собрать mp4 со звуком.
+- **Ролик без звука** (1:43, 1920×1080, H.264): приватный репозиторий `Timrocketsman/Timlabs-brain-backup-`, ветка `claude/intelligent-goodall-3zjzep`,
+  `claude_context/media/timlabs_architecture_v2.mp4` (10 МБ): `git fetch origin claude/intelligent-goodall-3zjzep && git show origin/claude/intelligent-goodall-3zjzep:claude_context/media/timlabs_architecture_v2.mp4 > timlabs_architecture_v2.mp4`.
+- **Текст озвучки по сценам с таймингом** (8 сцен, секунда старта + длительность): там же `claude_context/media/timlabs_architecture_voiceover.md`;
+  копия здесь — `tools/presentation/voiceover.md`. Исходник сцен — `tools/presentation/timlabs_architecture.html` (тайминги в массиве `T`), если надо подогнать.
+- **Как:** голос Тима через F5-TTS на сервере (`/opt/timlabs/render`, голос `tim` из `voice_ref/voices.json`; `voice_ctl.sh ensure` до, `stop` после), ударения :8191.
+  Каждая сцена — отдельный файл; дорожки на свои отметки времени (ffmpeg adelay/amix или concat с тишиной): фраза начинается с началом сцены и
+  укладывается в её длительность; не влезает — `atempo` до 1.1, текст не резать. −16 LUFS, без музыки. `ffmpeg -i video.mp4 -i voice.wav -c:v copy -c:a aac -shortest`.
+  Видеокарта через `gpu.lock`; Bonsai на паузу только на время озвучки. Плохо прочитанную фразу перегенерировать до 3 раз, текст не менять.
+- **Результат:** mp4 со звуком — Тиму в Telegram через бота (как ролик на одобрение); файл — в brain-репозиторий `claude_context/media/timlabs_architecture_v2_voiced.mp4`
+  (та же ветка); строка отчёта здесь. Вопросы — Тиму в Telegram.
+
 ## Кто за что отвечает
 - **Локальная сессия «TimLabs офис» (Мак, доступ к серверу) + Bonsai** — движок на сервере:
   агенты, бот @TimLabs_bot, модели, `knowledge/*`, генерация и публикация статей журнала,
