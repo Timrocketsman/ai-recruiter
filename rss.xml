@@ -8,7 +8,7 @@
     <link>https://timlabs.online/</link>
     <description>Навигатор по этапам жизни: развитие, тело, эмоции, осознанность, родительство. Спокойные разборы и практики от проверенных мастеров.</description>
     <language>ru</language>
-    <lastBuildDate>Thu, 15 Oct 2026 18:43:40 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 18:43:44 +0300</lastBuildDate>
     <atom:link href="https://timlabs.online/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Корпоративный блог с ИИ-агентами: опыт журнала «Компас»</title>
@@ -25,10 +25,23 @@
 <section id="s6" class="article"><h2>Сколько работы остаётся человеку</h2><p>У меня на журнал уходит несколько минут в день: я читаю суточный отчёт, одобряю ролики и решаю то, что агенты решать не должны, — деньги, право и новые площадки. План рубрик я утверждаю раз в неделю.</p><p>Такая схема подойдёт компании, у которой есть что объяснять клиентам: услуги со сложным выбором, товар, который надо уметь подобрать, частые вопросы. Магазину с одним товаром и ясной ценой блог не нужен, ему хватит хорошей карточки.</p><p>Если бы я запускал блог для своей компании с нуля, начал бы с двадцати самых частых вопросов клиентов. На них уже есть спрос, и их не надо выдумывать.</p></section>]]></content:encoded>
     </item>
     <item>
+      <title>Локальная нейросеть: когда своя модель выгоднее облака</title>
+      <link>https://timlabs.online/journal/lokalnaya-neyroset/</link>
+      <guid isPermaLink="true">https://timlabs.online/journal/lokalnaya-neyroset/</guid>
+      <pubDate>Thu, 15 Oct 2026 10:01:00 +0300</pubDate>
+      <description><![CDATA[Что тянет одна видеокарта, сколько энергии уходит на модель в 27 млрд параметров и в каких задачах своя нейросеть выгоднее облачной.]]></description>
+      <category>native-draft</category>
+      <content:encoded><![CDATA[<section id="s1" class="article"><h2>Чем своя модель отличается от облачной</h2><p>Облачная модель живёт у компании, которая её сделала. Вы отправляете ей текст через интернет и платите за каждый запрос. Локальная модель работает на вашем компьютере или сервере: текст никуда не уходит, а платите вы за железо и электричество.</p><p>У меня работают обе. Большие статьи журнала пишет облачная модель, а рутину офиса ведёт своя: разбор задач, правки кода, проверки, ответы бота. Делю я их по простому признаку: где ошибка стоит дорого, там сильнее модель, где запросов много, там дешевле своя.</p></section>
+<section id="s2" class="article"><h2>Что тянет одна видеокарта</h2><p>Моя основная модель — Bonsai 2 на 27 миллиардов параметров. Она сжата так, что помещается на одну видеокарту RTX 3090 с 24 ГБ памяти и занимает около 14 ГБ. Остальная память остаётся для зрения, голоса и роликов.</p><ul><li>Один запрос модель отвечает со скоростью около 53 токенов в секунду, это быстрее, чем человек читает.</li><li>Три запроса сразу идут по 22 токена в секунду каждый: вместе быстрее, по отдельности медленнее.</li><li>На правках кода, где ответ во многом повторяет исходный текст, ускоритель внутри сервера даёт прирост почти в пять раз.</li></ul><p>На процессоре та же модель выдаёт около одного токена в секунду, поэтому большую модель без видеокарты я не запускаю. Маленьким моделям процессора хватает: модель поиска по смыслу на нём разобрала получасовое видео за пятнадцать минут.</p></section>
+<section id="s3" class="article"><h2>Как она устроена у меня</h2><p>Одна модель обслуживает весь офис, поэтому вокруг неё пришлось построить порядок. Запросы агентов стоят в общей очереди: длинные задачи идут в одни слоты сервера, короткие в другие, и ответ боту не ждёт, пока модель пишет большой разбор.</p><ul><li>Сторож проверяет модель каждые десять секунд и, если она упала, поднимает её снова примерно за десять секунд.</li><li>Видеокарта одна, и её делят по расписанию: днём на ней собираются ролики, ночью модель учится на собственных прогонах.</li><li>Модель для поиска по смыслу работает на процессоре и видеокарту не трогает вовсе.</li></ul><p>Без этого порядка своя нейросеть быстро превращается в капризную машину, которую надо перезапускать руками. С ним она работает неделями без моего участия, а мне приходит только отчёт.</p></section>
+<section id="s4" class="article"><h2>Сколько она потребляет</h2><p>Видеокарта с моделью в простое берёт около 36 Вт, под нагрузкой около 250 Вт. Расход я меряю не на глаз: отдельная программа каждые пять секунд записывает мощность карты, и я вижу, сколько энергии ушло на каждую задачу.</p><p>Мерило у меня одно: больше полезного результата на меньшее потребление. Если агент запускался сто раз и ничего не сделал, он сжёг энергию впустую, и это видно в отчёте. Нагрев я тоже держу под контролем: когда вентиляторы карты подходят к 70% оборотов, тяжёлые задачи ждут, пока она остынет.</p></section>
+<section id="s5" class="article"><h2>Когда своя модель выгоднее, а когда нет</h2><p>Своя модель выгодна, когда запросов много и они идут каждый день, когда данные нельзя отдавать наружу и когда вам нужна предсказуемая цена, которая не зависит от тарифов чужой компании.</p><p>У меня так работают ответы ботов, разбор находок разведчика площадок и ночная проверка агентов. Запросов много, каждый короткий, и платить облаку за каждый из них было бы дороже, чем держать свою модель включённой.</p><p>Она не нужна, если нейросеть нужна вам раз в неделю: облако обойдётся дешевле и не потребует обслуживания. И она хуже больших облачных моделей в сложных текстах. Я пробовал дообучить свою модель на правилах и коде офиса, и проверка не пустила результат в работу: правильных ответов стало 7 из 60 вместо одного, этого мало.</p><p>С чего бы я начал: взял бы одну повторяющуюся задачу с вашими данными и запустил её на небольшой модели. Если она справляется, остальное можно переносить постепенно.</p></section>]]></content:encoded>
+    </item>
+    <item>
       <title>Длинный список привычек: как выбрать из него свою и не бросить</title>
       <link>https://timlabs.online/journal/10-poleznyh-privychek/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/10-poleznyh-privychek/</guid>
-      <pubDate>Wed, 14 Oct 2026 10:01:00 +0300</pubDate>
+      <pubDate>Wed, 14 Oct 2026 10:02:00 +0300</pubDate>
       <description><![CDATA[Зачем нужны списки из десяти привычек, если приживается одна. Мой фильтр из трёх вопросов оставляет от любого списка одну строку. Что с ней делать дальше.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/10-poleznyh-privychek.png" type="image/png" length="196761"/>
@@ -44,7 +57,7 @@
       <title>Связка привычек: как закрепить две за неделю без силы воли</title>
       <link>https://timlabs.online/journal/2-poleznye-privychki/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/2-poleznye-privychki/</guid>
-      <pubDate>Tue, 13 Oct 2026 10:02:00 +0300</pubDate>
+      <pubDate>Tue, 13 Oct 2026 10:03:00 +0300</pubDate>
       <description><![CDATA[Как две привычки держат друг друга: связка «после одного — сразу другое». План на семь дней без силы воли и план на случай, если неделя пошла не так.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/2-poleznye-privychki.png" type="image/png" length="191595"/>
@@ -60,7 +73,7 @@
       <title>С чего начать: одна привычка вместо десяти</title>
       <link>https://timlabs.online/journal/1-poleznuyu-privychku/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/1-poleznuyu-privychku/</guid>
-      <pubDate>Mon, 12 Oct 2026 10:03:00 +0300</pubDate>
+      <pubDate>Mon, 12 Oct 2026 10:04:00 +0300</pubDate>
       <description><![CDATA[Два пути: десять привычек сразу или одна. Почему я всегда советую одну, какую именно взять первой и как понять, что она закрепилась.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/1-poleznuyu-privychku.png" type="image/png" length="180219"/>
@@ -76,7 +89,7 @@
       <title>AI для отдела продаж: что реально автоматизировать</title>
       <link>https://timlabs.online/journal/ai-dlya-otdela-prodazh/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/ai-dlya-otdela-prodazh/</guid>
-      <pubDate>Sun, 11 Oct 2026 10:04:00 +0300</pubDate>
+      <pubDate>Sun, 11 Oct 2026 10:05:00 +0300</pubDate>
       <description><![CDATA[Разбираем, какие задачи отдела продаж можно передать ИИ-агентам, а какие лучше оставить людям. Честный взгляд без хайпа и выдуманных кейсов.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/ai-dlya-otdela-prodazh.png" type="image/png" length="154384"/>
@@ -91,7 +104,7 @@
       <title>Способности саморазвития: как выстроить систему и не бросить</title>
       <link>https://timlabs.online/journal/sposobnosti-samorazvitiya/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/sposobnosti-samorazvitiya/</guid>
-      <pubDate>Sat, 10 Oct 2026 10:05:00 +0300</pubDate>
+      <pubDate>Sat, 10 Oct 2026 10:06:00 +0300</pubDate>
       <description><![CDATA[Саморазвитие держится не на навыках, а на четырёх способностях: замечать, выдерживать скуку, спрашивать и останавливаться. Как проверить их у себя и с какой начать.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/sposobnosti-samorazvitiya.png" type="image/png" length="174120"/>
@@ -108,7 +121,7 @@
       <title>Утренний ритуал без надрыва: три опоры на любое утро</title>
       <link>https://timlabs.online/journal/3-poleznye-privychki/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/3-poleznye-privychki/</guid>
-      <pubDate>Fri, 09 Oct 2026 10:06:00 +0300</pubDate>
+      <pubDate>Fri, 09 Oct 2026 10:07:00 +0300</pubDate>
       <description><![CDATA[Утренний ритуал без церемоний: три опоры, которые работают, когда проспал, когда дети, когда командировка. Что я оставил из всех утренних систем и почему.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/3-poleznye-privychki.png" type="image/png" length="194677"/>
@@ -124,7 +137,7 @@
       <title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</title>
       <link>https://timlabs.online/journal/ii-teper-si-ukaz-trampa/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/ii-teper-si-ukaz-trampa/</guid>
-      <pubDate>Fri, 09 Oct 2026 10:07:00 +0300</pubDate>
+      <pubDate>Fri, 09 Oct 2026 10:08:00 +0300</pubDate>
       <description><![CDATA[29 сентября Трамп велел ведомствам США называть ИИ «суперинтеллектом». Разбираю, что указ требует, чего не требует и что меняется для бизнеса в России.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/ii-teper-si-ukaz-trampa.png" type="image/png" length="186192"/>
@@ -139,7 +152,7 @@
       <title>Автоматизация воронки продаж: что реально настроить</title>
       <link>https://timlabs.online/journal/avtomatizatsiya-voronki-prodazh/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/avtomatizatsiya-voronki-prodazh/</guid>
-      <pubDate>Thu, 08 Oct 2026 10:08:00 +0300</pubDate>
+      <pubDate>Thu, 08 Oct 2026 10:09:00 +0300</pubDate>
       <description><![CDATA[Практический взгляд на автоматизацию воронки продаж: какие этапы можно передать системе, какие инструменты подходят и где ИИ не нужен.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/avtomatizatsiya-voronki-prodazh.png" type="image/png" length="162234"/>
@@ -158,7 +171,7 @@
       <title>Саморазвитие способностей: как развивать навыки и не бросать</title>
       <link>https://timlabs.online/journal/samorazvitie-sposobnostey/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/samorazvitie-sposobnostey/</guid>
-      <pubDate>Wed, 07 Oct 2026 10:09:00 +0300</pubDate>
+      <pubDate>Wed, 07 Oct 2026 10:10:00 +0300</pubDate>
       <description><![CDATA[Практические шаги для развития способностей: как выбрать направление, выстроить систему и закрепить результат без выгорания.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/samorazvitie-sposobnostey.png" type="image/png" length="178700"/>
@@ -173,7 +186,7 @@
       <title>ИИ-агенты в Telegram: что умеет BrainAid</title>
       <link>https://timlabs.online/journal/ii-agenty-v-telegram/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/ii-agenty-v-telegram/</guid>
-      <pubDate>Mon, 05 Oct 2026 10:10:00 +0300</pubDate>
+      <pubDate>Mon, 05 Oct 2026 10:11:00 +0300</pubDate>
       <description><![CDATA[Чем ИИ-агент отличается от чат-бота и что уже работает в Telegram. Разбор BrainAid: 30+ нейросетей, ассистенты с готовыми файлами и агент, который пишет первым.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/ii-agenty-v-telegram.png" type="image/png" length="173814"/>
@@ -192,7 +205,7 @@
       <title>Автоматизация Telegram-канала: что реально настроить</title>
       <link>https://timlabs.online/journal/avtomatizatsiya-telegram-kanala/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/avtomatizatsiya-telegram-kanala/</guid>
-      <pubDate>Sun, 04 Oct 2026 10:11:00 +0300</pubDate>
+      <pubDate>Sun, 04 Oct 2026 10:12:00 +0300</pubDate>
       <description><![CDATA[Разбираем, какие задачи канала можно передать ИИ-агентам и ботам, а что оставить человеку. Практично, без обещаний и выдуманных кейсов.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/avtomatizatsiya-telegram-kanala.png" type="image/png" length="165641"/>
@@ -206,7 +219,7 @@
       <title>Привычки, которые держатся: что реально работает каждый день</title>
       <link>https://timlabs.online/journal/3-poleznyh-privychek/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/3-poleznyh-privychek/</guid>
-      <pubDate>Sat, 03 Oct 2026 10:12:00 +0300</pubDate>
+      <pubDate>Sat, 03 Oct 2026 10:13:00 +0300</pubDate>
       <description><![CDATA[Три привычки, которые переживают плохой день: якорь сна, двадцать минут ходьбы и вечерняя точка. Почему они держатся, когда остальные рассыпаются.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/3-poleznyh-privychek.png" type="image/png" length="188337"/>
@@ -221,7 +234,7 @@
       <title>SEO с помощью нейросети: что реально автоматизировать</title>
       <link>https://timlabs.online/journal/seo-s-pomoschyu-neyroseti/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/seo-s-pomoschyu-neyroseti/</guid>
-      <pubDate>Sun, 27 Sep 2026 10:13:00 +0300</pubDate>
+      <pubDate>Sun, 27 Sep 2026 10:14:00 +0300</pubDate>
       <description><![CDATA[Практический взгляд на то, как нейросети помогают с поисковым продвижением. Разбираем задачи, риски и границы применения для бизнеса и частных лиц.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/seo-s-pomoschyu-neyroseti.png" type="image/png" length="172408"/>
@@ -235,7 +248,7 @@
       <title>Виды саморазвития: как понять, что вам подходит</title>
       <link>https://timlabs.online/journal/vidy-samorazvitiya/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/vidy-samorazvitiya/</guid>
-      <pubDate>Fri, 25 Sep 2026 10:14:00 +0300</pubDate>
+      <pubDate>Fri, 25 Sep 2026 10:15:00 +0300</pubDate>
       <description><![CDATA[Разбираем виды саморазвития: нравственное, интеллектуальное, физическое. Как выбрать направление и с чего начать рост без выгорания.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/vidy-samorazvitiya.png" type="image/png" length="141993"/>
@@ -249,7 +262,7 @@
       <title>Эмоциональный интеллект по Гоулману: книга и практика</title>
       <link>https://timlabs.online/journal/goulman-emotsionalnyy-intellekt/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/goulman-emotsionalnyy-intellekt/</guid>
-      <pubDate>Mon, 21 Sep 2026 10:15:00 +0300</pubDate>
+      <pubDate>Mon, 21 Sep 2026 10:16:00 +0300</pubDate>
       <description><![CDATA[Разбираем книгу Дэниела Гоулмана «Эмоциональный интеллект»: что в ней действительно работает, как применять навыки на работе и в отношениях.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/goulman-emotsionalnyy-intellekt.png" type="image/png" length="169899"/>
@@ -263,7 +276,7 @@
       <title>Самооценка от 1 до 10: как оценить себя</title>
       <link>https://timlabs.online/journal/1-samootsenka/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/1-samootsenka/</guid>
-      <pubDate>Sat, 19 Sep 2026 10:16:00 +0300</pubDate>
+      <pubDate>Sat, 19 Sep 2026 10:17:00 +0300</pubDate>
       <description><![CDATA[Что значит самооценка на 1 балл и как пользоваться шкалой от 1 до 10. Простой способ понять своё отношение к себе и сдвинуть его в здоровую сторону.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/1-samootsenka.png" type="image/png" length="131640"/>
@@ -278,7 +291,7 @@
       <title>Ретрит по медитации: как проходит, что даёт и с чего начать</title>
       <link>https://timlabs.online/journal/meditatsiya-retrit/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/meditatsiya-retrit/</guid>
-      <pubDate>Fri, 18 Sep 2026 10:17:00 +0300</pubDate>
+      <pubDate>Fri, 18 Sep 2026 10:18:00 +0300</pubDate>
       <description><![CDATA[Ретрит по медитации — как устроен, кому подходит и чем отличается от йога-ретрита. Короткий чек-лист для первой поездки и ответы на частые вопросы.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/meditatsiya-retrit.png" type="image/png" length="153744"/>
@@ -293,7 +306,7 @@
       <title>День ретрита: как проходит один день и что он даёт</title>
       <link>https://timlabs.online/journal/den-retrita/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/den-retrita/</guid>
-      <pubDate>Thu, 17 Sep 2026 10:18:00 +0300</pubDate>
+      <pubDate>Thu, 17 Sep 2026 10:19:00 +0300</pubDate>
       <description><![CDATA[День ретрита — формат на 1 день: как проходит, кому подходит, чем отличается от ретрита выходного дня и как подготовиться к короткой перезагрузке.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/den-retrita.png" type="image/png" length="153501"/>
@@ -308,7 +321,7 @@
       <title>Почему игра развивает навыки ребёнка</title>
       <link>https://timlabs.online/journal/i-napravlena-na-razvitie-navykov/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/i-napravlena-na-razvitie-navykov/</guid>
-      <pubDate>Wed, 16 Sep 2026 10:19:00 +0300</pubDate>
+      <pubDate>Wed, 16 Sep 2026 10:20:00 +0300</pubDate>
       <description><![CDATA[Разбираем, что такое развивающие игры, какие навыки они тренируют и как выбрать занятия по возрасту. Примеры и практические советы.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/i-napravlena-na-razvitie-navykov.png" type="image/png" length="154316"/>
@@ -323,7 +336,7 @@
       <title>Знания, умения и навыки: как отличить и как развивать</title>
       <link>https://timlabs.online/journal/znaniy-umeniy-i-navykov-razvitiya/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/znaniy-umeniy-i-navykov-razvitiya/</guid>
-      <pubDate>Tue, 15 Sep 2026 10:20:00 +0300</pubDate>
+      <pubDate>Tue, 15 Sep 2026 10:21:00 +0300</pubDate>
       <description><![CDATA[Разбираем, чем знания, умения и навыки отличаются друг от друга. Простые примеры, этапы формирования навыка и практические шаги без перегруза.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/znaniy-umeniy-i-navykov-razvitiya.png" type="image/png" length="133633"/>
@@ -338,7 +351,7 @@
       <title>День полезных привычек: как выстроить день без перегруза</title>
       <link>https://timlabs.online/journal/den-poleznyh-privychek/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/den-poleznyh-privychek/</guid>
-      <pubDate>Mon, 14 Sep 2026 10:21:00 +0300</pubDate>
+      <pubDate>Mon, 14 Sep 2026 10:22:00 +0300</pubDate>
       <description><![CDATA[День полезных привычек — это не строгий график, а забота о себе. Разбираем, какие привычки встроить в утро, день и вечер.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/den-poleznyh-privychek.png" type="image/png" length="162080"/>
@@ -353,7 +366,7 @@
       <title>Ретрит: что это такое и почему он важен для вашего здоровья</title>
       <link>https://timlabs.online/journal/retrit-eto/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/retrit-eto/</guid>
-      <pubDate>Tue, 08 Sep 2026 10:22:00 +0300</pubDate>
+      <pubDate>Tue, 08 Sep 2026 10:23:00 +0300</pubDate>
       <description><![CDATA[Ретрит — это временной отрыв от повседневной жизни для духовного или физического восстановления, предоставляющий возможность сосредоточиться на себе и свои]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/retrit-eto.png" type="image/png" length="66437"/>
@@ -371,7 +384,7 @@
       <title>Пять недель работы и неделя отдыха: как устроен цикл 5/1</title>
       <link>https://timlabs.online/journal/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:23:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:24:00 +0300</pubDate>
       <description><![CDATA[Как работает цикл «пять недель нагрузки — неделя восстановления», кому он подходит в учёбе и работе и как спланировать разгрузочную неделю, чтобы она сработала.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat.png" type="image/png" length="62109"/>
@@ -386,7 +399,7 @@
       <title>Гора Шелудивая: как подняться и что видно с вершины</title>
       <link>https://timlabs.online/journal/gora-sheludivaya/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/gora-sheludivaya/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:24:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:25:00 +0300</pubDate>
       <description><![CDATA[Гора Шелудивая на Кавминводах: высота 874 метра, один из 17 лакколитов, след старого карьера, короткий подъём примерно на час и панорама Бештау с вершины.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-sheludivaya.png" type="image/png" length="66615"/>
@@ -402,7 +415,7 @@
       <title>Эльбрус: что важно знать перед поездкой к высшей точке Европы</title>
       <link>https://timlabs.online/journal/gora-elbrus/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/gora-elbrus/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:25:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:26:00 +0300</pubDate>
       <description><![CDATA[Эльбрус — 5642 метра, высшая точка России и Европы, потухший вулкан в Кабардино-Балкарии. Чем поездка к подножию отличается от восхождения и как спланировать её с КМВ.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-elbrus.png" type="image/png" length="69409"/>
@@ -417,7 +430,7 @@
       <title>Саморазвитие без денег: что реально работает бесплатно</title>
       <link>https://timlabs.online/journal/samorazvitie-besplatno/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/samorazvitie-besplatno/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:26:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:27:00 +0300</pubDate>
       <description><![CDATA[Как развиваться без вложений: бесплатные библиотеки и курсы, обучение через практику, сообщества по интересам и почему платное не всегда лучше.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/samorazvitie-besplatno.png" type="image/png" length="65152"/>
@@ -432,7 +445,7 @@
       <title>Гора Кольцо в Кисловодске: где находится и как добраться</title>
       <link>https://timlabs.online/journal/gde-nahoditsya-gora-koltso-v-kislovodske/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/gde-nahoditsya-gora-koltso-v-kislovodske/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:27:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:28:00 +0300</pubDate>
       <description><![CDATA[Гора Кольцо — скала со сквозной аркой на Боргустанском хребте под Кисловодском, памятник природы, упомянутый Лермонтовым. Как доехать и когда лучше приезжать.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gde-nahoditsya-gora-koltso-v-kislovodske.png" type="image/png" length="63547"/>
@@ -447,7 +460,7 @@
       <title>Как восстанавливать силы: что работает каждый день</title>
       <link>https://timlabs.online/journal/kak-pravilno-vosstanavlivat-sily/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/kak-pravilno-vosstanavlivat-sily/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:28:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:29:00 +0300</pubDate>
       <description><![CDATA[Как восстанавливать силы без сложных систем: почему сон важнее добавок, как есть и двигаться в период усталости и чем отличается отдых от простого безделья.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-pravilno-vosstanavlivat-sily.png" type="image/png" length="73830"/>
@@ -462,7 +475,7 @@
       <title>Как ставить перед собой цели: от желания к конкретному плану</title>
       <link>https://timlabs.online/journal/kak-stavit-pered-soboy-tsel/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/kak-stavit-pered-soboy-tsel/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:29:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:30:00 +0300</pubDate>
       <description><![CDATA[Как превратить размытое желание в цель: формулировка, критерий выполнения, разбивка на шаги и что делать, когда план сбился.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-stavit-pered-soboy-tsel.png" type="image/png" length="51789"/>
@@ -477,7 +490,7 @@
       <title>Водопады рядом с Кисловодском: куда доехать за день</title>
       <link>https://timlabs.online/journal/belyy-vodopad/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/belyy-vodopad/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:30:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:31:00 +0300</pubDate>
       <description><![CDATA[Куда съездить к воде из Кисловодска: Медовые водопады в Аликоновском ущелье в 14 км от города, Берёзовское ущелье рядом с курортом. Как добраться и что учесть.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/belyy-vodopad.png" type="image/png" length="67415"/>
@@ -492,7 +505,7 @@
       <title>Гора Белалакая в Домбае: полосатая вершина и виды со стороны</title>
       <link>https://timlabs.online/journal/gora-belalakaya/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/gora-belalakaya/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:31:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:32:00 +0300</pubDate>
       <description><![CDATA[Белалакая — гора высотой 3861 метр в Домбае, Карачаево-Черкесия. Почему она полосатая, откуда на неё лучше смотреть и чем поездка отличается от восхождения.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-belalakaya.png" type="image/png" length="68214"/>
@@ -507,7 +520,7 @@
       <title>Горы рядом с Кисловодском: куда подняться без подготовки</title>
       <link>https://timlabs.online/journal/gora-naudzhidza/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/gora-naudzhidza/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:32:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:33:00 +0300</pubDate>
       <description><![CDATA[Куда подняться рядом с Кисловодском, если нет опыта походов: гора Кольцо, Шелудивая, Берёзовское ущелье. Сколько занимает подъём и что взять с собой.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-naudzhidza.png" type="image/png" length="65859"/>
@@ -522,7 +535,7 @@
       <title>Цель жизни: как её искать, если пока непонятно, чего хотите</title>
       <link>https://timlabs.online/journal/kak-stavit-tsel-zhizni/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/kak-stavit-tsel-zhizni/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:33:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:34:00 +0300</pubDate>
       <description><![CDATA[Что делать, если не знаете, чего хотите от жизни: почему поиск «главной цели» заводит в тупик, как двигаться через пробы и на что опираться вместо готового ответа.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-stavit-tsel-zhizni.png" type="image/png" length="59128"/>
@@ -537,7 +550,7 @@
       <title>Цель занятия: как её сформулировать, чтобы она работала</title>
       <link>https://timlabs.online/journal/kak-stavit-tsel-uroka/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/kak-stavit-tsel-uroka/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:34:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:35:00 +0300</pubDate>
       <description><![CDATA[Как ставить цель занятия или урока: чем цель отличается от темы, как сформулировать её через результат участника и как проверить, достигнута ли она.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-stavit-tsel-uroka.png" type="image/png" length="77822"/>
@@ -552,7 +565,7 @@
       <title>Цели и задачи проекта: как их сформулировать понятно</title>
       <link>https://timlabs.online/journal/kak-sformulirovat-tseli-i-zadachi-proekt/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/kak-sformulirovat-tseli-i-zadachi-proekt/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:35:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:36:00 +0300</pubDate>
       <description><![CDATA[Чем цель проекта отличается от задач, как сформулировать результат измеримо, как разложить его на задачи и договориться о них с командой.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-sformulirovat-tseli-i-zadachi-proekt.png" type="image/png" length="70250"/>
@@ -580,7 +593,7 @@
       <title>Нет сил и ничего не хочется: как вернуть себе энергию</title>
       <link>https://timlabs.online/journal/zhiznennaya-sila-kak-vosstanavlivat/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/zhiznennaya-sila-kak-vosstanavlivat/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:36:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:37:00 +0300</pubDate>
       <description><![CDATA[Что делать, когда нет сил и ничего не хочется: как отличить усталость от выгорания, с чего начать восстановление и когда пора к специалисту.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/zhiznennaya-sila-kak-vosstanavlivat.png" type="image/png" length="65333"/>
@@ -595,7 +608,7 @@
       <title>Как восстановиться после нагрузки: пошагово и без перегиба</title>
       <link>https://timlabs.online/journal/vosstanovitsya-kak-pravilno/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/vosstanovitsya-kak-pravilno/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:37:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:38:00 +0300</pubDate>
       <description><![CDATA[Как восстанавливаться после физической и умственной нагрузки: этапы, роль сна и питания, когда возвращать активность и почему единого срока не существует.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/vosstanovitsya-kak-pravilno.png" type="image/png" length="76259"/>
@@ -634,7 +647,7 @@
       <title>Гора Чегет: как устроена поездка и что видно с канатной дороги</title>
       <link>https://timlabs.online/journal/gora-cheget/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/gora-cheget/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:38:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:39:00 +0300</pubDate>
       <description><![CDATA[Чегет — гора в Приэльбрусье, Кабардино-Балкария, рядом с Эльбрусом. Канатная дорога, виды на Донгузорун и Эльбрус, что учесть при поездке с Кавминвод.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-cheget.png" type="image/png" length="63345"/>
@@ -649,7 +662,7 @@
       <title>Как вернуть силы: питание, движение и сон без крайностей</title>
       <link>https://timlabs.online/journal/kak-vosstanovit-silu-organizma/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/kak-vosstanovit-silu-organizma/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:39:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:40:00 +0300</pubDate>
       <description><![CDATA[Как вернуть силы: почему не работают резкие схемы, как связаны сон, еда и движение и какие простые шаги дают результат в обычной жизни.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/kak-vosstanovit-silu-organizma.png" type="image/png" length="75216"/>
@@ -664,7 +677,7 @@
       <title>Водопад Козода: самый высокий водопад Ставрополья</title>
       <link>https://timlabs.online/journal/vodopad-kozoda/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/vodopad-kozoda/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:40:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:41:00 +0300</pubDate>
       <description><![CDATA[Водопад Козода (Кичмалкинский) — около 15 метров, самый высокий в Ставропольском крае. Где находится, почему его нашли только в 2016 году и как спланировать поездку.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/vodopad-kozoda.png" type="image/png" length="67224"/>
@@ -679,7 +692,7 @@
       <title>Водопад Байради в Дигории: где находится и как спланировать поездку</title>
       <link>https://timlabs.online/journal/vodopad-beyradi/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/vodopad-beyradi/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:41:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:42:00 +0300</pubDate>
       <description><![CDATA[Водопад Байради — в Дигорском ущелье Северной Осетии, а не на Кавминводах. Что это за место, чем оно интересно и как рассчитать поездку с КМВ.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/vodopad-beyradi.png" type="image/png" length="63444"/>
@@ -694,7 +707,7 @@
       <title>Гора Мехтыген: что это за вершина и кому подойдёт маршрут</title>
       <link>https://timlabs.online/journal/gora-mehtygen/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/gora-mehtygen/</guid>
-      <pubDate>Mon, 07 Sep 2026 10:42:00 +0300</pubDate>
+      <pubDate>Mon, 07 Sep 2026 10:43:00 +0300</pubDate>
       <description><![CDATA[Мехтыген — вершина Скалистого хребта в Кабардино-Балкарии, в районе Верхней Балкарии. Что это за место, чем оно интересно и почему это маршрут для подготовленных.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-mehtygen.png" type="image/png" length="71350"/>
@@ -709,7 +722,7 @@
       <title>Гора Джантуган: гора забытой души на Кавказе</title>
       <link>https://timlabs.online/journal/gora-dzhantugan/</link>
       <guid isPermaLink="true">https://timlabs.online/journal/gora-dzhantugan/</guid>
-      <pubDate>Sun, 06 Sep 2026 10:43:00 +0300</pubDate>
+      <pubDate>Sun, 06 Sep 2026 10:44:00 +0300</pubDate>
       <description><![CDATA[Гора Джантуган — высота 4012 м, расположение, история названия, ледники и как добраться. Информационный гид для тех, кто ищет тишину в горах.]]></description>
       <category>native-draft</category>
       <enclosure url="https://timlabs.online/media/telegram/gora-dzhantugan.png" type="image/png" length="65250"/>
@@ -719,21 +732,6 @@
 <section id="s3" class="article"><h2>Как Джантуган связан с осознанностью</h2><p>Осознанность — это не только медитация на подушке. Это умение быть здесь и сейчас, замечать, что происходит с телом и умом, и не отворачиваться от этого. Горы хорошо подходят для такой практики: они не терпят рассеянности.</p><p>На подходе к Джантугану приходится следить за дыханием на подъёме, замечать рельеф под ногами, считать шаги между передышками. В лагере — слушать тишину между звуками ледника. На вершине — ощущать ветер и понимать, что ты находишься на высоте больше четырёх тысяч метров над уровнем моря. Каждый такой момент — практика осознанности, только без коврика и наставника.</p><p>Горы часто выбирают для ретритов и внутренней работы не потому, что там «особая энергия», а потому, что там сами собой исчезают отвлекающие факторы: телефон не ловит сеть, нет привычного шума, не получается переключиться на что-то знакомое. Остаются только ты и гора.</p></section>
 <section id="s4" class="article"><h2>Как добраться и что важно знать</h2><p>Джантуган находится в Кабардино-Балкарии. Ближайшие населённые пункты — посёлок Эльбрус и район ледника Безенговский. Подход к вершине начинается из ущелья Адылсу, которое входит в национальный парк «Приэльбрусье».</p><p>Маршрут к подножию занимает один-два дня в зависимости от физической формы и опыта группы. Перепад высот — около 1200–1500 метров, среднее время подхода от стоянки — 6–8 часов. На пути встречаются сложные каменистые участки и снежные поля, поэтому без опыта горных походов и снаряжения не обойтись.</p><p>Оптимальное время для поездки — июль–сентябрь: ледники стабильнее, а температура на высоте остаётся приемлемой. В остальное время вершина покрыта снегом, и маршруты становятся заметно сложнее.</p><p>Если вы планируете поездку в этот регион и хотите совместить природу с познавательной программой, обратите внимание на <a href="https://timlabs.online/ekskursii-kislovodsk/">экскурсии по Кисловодску и КМВ</a>. Это хороший способ провести первый или последний день поездки в спокойном темпе и ближе познакомиться с природой и культурой Кавказа.</p></section>
 <section id="s5" class="article"><h2>Что взять с собой: практический чек-лист</h2><p>Сборы в поход к Джантугану — тоже часть осознанного путешествия. Вот что стоит продумать заранее:</p><ul><li><strong>Снаряжение:</strong> треккинговые палки, рюкзак объёмом 50–70 литров, палатка с ветрозащитой, спальный мешок на температуру до −5°C.</li><li><strong>Одежда:</strong> система трёх слоёв — термобельё, утепляющий слой, ветро- и влагозащитная куртка. Даже летом на высоте температура может опускаться до нуля.</li><li><strong>Питание и вода:</strong> запас на весь маршрут, фильтр для воды из горных ручьёв, энергетические батончики на ходу.</li><li><strong>Навигация:</strong> GPS-навигатор или приложение с офлайн-картами. Маркировки на маршруте нет.</li><li><strong>Аптечка:</strong> базовый набор — бинт, антисептик, средство от аллергии, таблетки от высотной тошноты.</li><li><strong>Документы:</strong> паспорт, медицинская страховка, разрешение на посещение национального парка, если оно требуется.</li></ul><p>В горах внимательность к деталям становится частью пути. Чем тщательнее вы готовитесь, тем больше сил остаётся на саму встречу с горами.</p></section>]]></content:encoded>
-    </item>
-    <item>
-      <title>Самооценка: что это, откуда она берётся и как с ней жить</title>
-      <link>https://timlabs.online/journal/sut-samootsenki/</link>
-      <guid isPermaLink="true">https://timlabs.online/journal/sut-samootsenki/</guid>
-      <pubDate>Thu, 03 Sep 2026 10:44:00 +0300</pubDate>
-      <description><![CDATA[Самооценка — это как вы себя цените. Разбираемся, откуда она берётся, как работает и что с ней делать, чтобы жить спокойнее.]]></description>
-      <category>native-draft</category>
-      <enclosure url="https://timlabs.online/media/telegram/sut-samootsenki.png" type="image/png" length="64432"/>
-      <media:content url="https://timlabs.online/media/telegram/sut-samootsenki.png" medium="image"/>
-      <content:encoded><![CDATA[<section id="s1" class="article"><h2>Что такое самооценка простыми словами</h2><p>Самооценка — это внутренняя оценка самого себя. Не та, которую дают окружающие, а та, которая живёт внутри: как вы себя видите, чувствуете и оцениваете. Это как внутренний компас, который подсказывает, насколько вы достойны любви, успеха и хорошего отношения.</p><p>Представьте, что у вас есть невидимый фильтр, через который вы пропускаете всё, что происходит в жизни. Этот фильтр и есть самооценка. Когда она здоровая, вы спокойно принимаете комплименты, не боитесь ошибаться и можете сказать «нет» без чувства вины. Когда она занижена — даже похвала вызывает сомнения, а критика ранит глубоко.</p><p>Самооценка — это не черта характера и не врождённое свойство. Это набор убеждений о себе, которые складывались годами. Хорошая новость: эти убеждения можно осознать и изменить, если понять, как они работают.</p><p>Важно различать самооценку и самомнение. Самомнение — это завышенное представление о своих возможностях, часто не подкреплённое реальными действиями. Здоровая самооценка — это честный взгляд на себя: вы видите свои сильные стороны и принимаете свои ограничения без драматизации.</p></section>
-<section id="s2" class="article"><h2>Откуда берётся самооценка</h2><p>Корни самооценки уходят в детство. Первые «инструкции» о том, кто вы и сколько стоите, дают родители. Не словами — а реакциями. Мамина улыбка, когда ребёнок делает что-то новое. Терпеливое ожидание, когда он учится ходить. Или, наоборот, раздражение, когда он мешает. Все эти микровзаимодействия формируют базовое ощущение: «Я в порядке» или «Я недостаточно хорош».</p><p>С возрастом к родительским установкам добавляются другие: реакции учителей, отношение друзей, первые успехи и неудачи. Каждое событие — как кирпичик в здании самооценки. Если большинство кирпичиков положительные — здание крепкое. Если негативные — оно начинает шататься.</p><p>Современный мир добавляет свои сложности. Социальные сети создают ложное ощущение, что все вокруг живут лучше, красивее и успешнее. Сравнение себя с отредактированными фото и идеальными историями подтачивает даже крепкую самооценку.</p><p>Понимание этих корней — первый шаг к изменению. Вы не виноваты в том, что ваша самооценка сформировалась определённым образом. Но вы можете осознать эти паттерны и начать работать с ними.</p></section>
-<section id="s3" class="article"><h2>Как работает самооценка: три главных механизма</h2><p>Самооценка работает как замкнутый круг. Она влияет на ваши действия, а ваши действия влияют на самооценку. Вот три основных механизма:</p><p><strong>1. Фильтр восприятия.</strong> Самооценка определяет, как вы интерпретируете события. Если коллега не поздоровался, человек со здоровой самооценкой подумает «он, наверное, не заметил». Человек с заниженной — «он специально игнорирует, потому что я ему не нравлюсь». Один и тот же факт — два разных смысла.</p><p><strong>2. Выбор поведения.</strong> Люди с высокой самооценкой чаще берут на себя ответственность, пробуют новое и открыто общаются. Те, у кого самооценка шатается, чаще избегают сложных ситуаций, откладывают решения и боятся проявлять инициативу. Не потому что «ленивые» — а потому что страх ошибки сильнее желания расти.</p><p><strong>3. Реакция на обратную связь.</strong> Здоровая самооценка позволяет воспринимать критику как информацию, а не как приговор. Заниженная превращает любое замечание в подтверждение собственной несостоятельности. Это особенно заметно в отношениях и на работе.</p><p>Эти механизмы связаны между собой. Изменяя один, вы влияете на остальные. Например, когда вы начинаете замечать свои интерпретации (механизм 1), вы можете выбрать другое поведение (механизм 2), что в итоге меняет вашу реакцию на обратную связь (механизм 3).</p></section>
-<section id="s4" class="article"><h2>Когда самооценка мешает жить</h2><p>Проблемы с самооценкой проявляются не только в моменты кризиса. Часто они работают тихо, фоном, влияя на десятки мелких решений каждый день.</p><p>Типичные сигналы: вы постоянно извиняетесь, даже когда ни в чём не виноваты. Не можете принять комплимент — сразу отмахиваетесь или чувствуете неловкость. Откладываете важные дела, потому что боитесь сделать «не так». В отношениях либо подстраиваетесь под другого человека, либо держите дистанцию, чтобы не быть отвергнутым.</p><p>Ещё один признак — внутренний критик, который никогда не молчит. «Ты мог бы лучше», «Это не достаточно хорошо», «Зачем ты вообще взялся?». Этот голос кажется полезным — мол, мотивирует. Но на деле он не помогает расти, а парализует.</p><p>Сложность в том, что заниженная самооценка маскируется под разные вещи: перфекционизм, прокрастинацию, излишнюю критичность к другим, постоянную занятость, чтобы не останавливаться и не чувствовать. Иногда человек даже не подозревает, что проблема в самооценке — кажется, что дело в обстоятельствах.</p><p>Осознание — уже половина пути. Когда вы видите эти паттерны, вы получаете выбор: продолжать автоматически или начать действовать иначе.</p></section>
-<section id="s5" class="article"><h2>Что делать, если самооценка шатается</h2><p>Изменение самооценки — это не про «просто решить любить себя». Это про последовательную работу, которая даёт результат постепенно. Вот конкретные шаги:</p><p><strong>Замечайте свои интерпретации.</strong> Когда ловите себя на негативной мысли о себе, остановитесь и спросите: «Это факт или моя интерпретация?» Часто оказывается, что вы додумываете историю, которая не имеет отношения к реальности.</p><p><strong>Ведите «дневник побед».</strong> Каждый вечер записывайте три вещи, которые сегодня получились. Не грандиозные достижения — а обычные: встал вовремя, помог коллеге, приготовил ужин. Это тренирует мозг замечать положительное.</p><p><strong>Учитесь говорить «нет».</strong> Каждый отказ от того, что вам не нужно — это маленький акт уважения к себе. Начните с мелочей: не соглашайтесь на планы, которые вас не вдохновляют, не отвечайте на сообщения сразу, если не готовы.</p><p><strong>Ограничьте сравнения.</strong> Не нужно полностью отказываться от соцсетей — но осознанно замечайте, когда сравнение начинает вас расстраивать. Уберите аккаунты, которые вызывают негативные эмоции. Помните: вы видите чужой «наилучший рабочий день», а сравниваете со своим обычным.</p><p><strong>Обратитесь к специалисту.</strong> Если самооценка серьёзно влияет на вашу жизнь — отношения, работу, самочувствие — психотерапия может помочь разобраться в корнях проблемы. Это не слабость, а осознанный выбор заботы о себе.</p><p>Изменения происходят не за день и не за неделю. Но каждый маленький шаг — это реальный сдвиг. Главное — не требовать от себя идеальности в процессе изменений. Даже попытка — это уже успех.</p></section>]]></content:encoded>
     </item>
   </channel>
 </rss>
