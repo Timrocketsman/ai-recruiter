@@ -90,12 +90,12 @@
       "rubric": "ИИ-автоматизация",
       "query": "корпоративный блог",
       "form": "кейс",
-      "status": "published",
+      "status": "announced",
       "slug": "korporativnyy-blog",
       "note": "показательная статья Claude по слову Тима 15.10",
       "channels": {
         "site": "https://timlabs.online/journal/korporativnyy-blog/",
-        "telegram": null,
+        "telegram": 308,
         "vk": null,
         "dzen": null
       }
