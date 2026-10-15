@@ -156,7 +156,7 @@ def build():
         print(hub["slug"], "статей:", sum(len(i) for _, i in groups))
 
 
-TAGS = {'/podgotovka-k-beremennosti/':'До беременности','/soprovozhdenie-beremennosti-onlayn/':'Во время беременности','/podgotovka-k-rodam/':'Перед родами','/vosstanovlenie-posle-rodov/':'После родов','/konsultaciya-grudnoe-vskarmlivanie/':'Кормление','/massage-kislovodsk/':'MARAFDY · выезд на дом','/retrit-otshelnik/':'УМАС · уединение','/transformacionnyj-retrit/':'Ретрит-центр','/ekskursii-kislovodsk/':'Прогулки по КМВ'}
+TAGS = {'/podgotovka-k-beremennosti/':'До беременности','/soprovozhdenie-beremennosti-onlayn/':'Во время беременности','/podgotovka-k-rodam/':'Перед родами','/vosstanovlenie-posle-rodov/':'После родов','/konsultaciya-grudnoe-vskarmlivanie/':'Кормление','/massage-kislovodsk/':'MARAFDY · выезд на дом','/retrit-otshelnik/':'Умас · ретрит','/transformacionnyj-retrit/':'Ретрит-центр','/ekskursii-kislovodsk/':'Прогулки по КМВ'}
 
 
 TEMPLATE = """<!DOCTYPE html>
