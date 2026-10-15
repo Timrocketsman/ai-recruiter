@@ -107,12 +107,12 @@
       "rubric": "ИИ-автоматизация",
       "query": "локальная нейросеть",
       "form": "кейс",
-      "status": "published",
+      "status": "announced",
       "slug": "lokalnaya-neyroset",
       "note": "показательная статья Claude по слову Тима 15.10",
       "channels": {
         "site": "https://timlabs.online/journal/lokalnaya-neyroset/",
-        "telegram": null,
+        "telegram": 309,
         "vk": null,
         "dzen": null
       }
