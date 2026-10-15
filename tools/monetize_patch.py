@@ -28,14 +28,13 @@ SKIP_DIRS = {"privacy", "consent", "terms", ".git", "tools", "assets", "media"}
 SVC = {
     "ekskursii-kislovodsk": "Авторские экскурсии по Кисловодску и КМВ",
     "retrit-otshelnik": "Ретрит «Отшельник» у Железноводска",
-    "transformacionnyj-retrit": "Ретрит-центр УМАС",
     "bratstvo-edinomyshlennikov": "Сообщество единомышленников",
     "massage-kislovodsk": "Аппаратный массаж на дому в Кисловодске",
 }
 # Какие услуги уместны под рубрикой (рубрика берётся из карточек журнала).
 RUBRIC_SVC = {
-    "Эмоции и психология": ["bratstvo-edinomyshlennikov", "transformacionnyj-retrit"],
-    "Развитие": ["bratstvo-edinomyshlennikov", "transformacionnyj-retrit"],
+    "Эмоции и психология": ["bratstvo-edinomyshlennikov", "retrit-otshelnik"],   # (15.10) /transformacionnyj-retrit/ снята — перенаправление; Умас — мастер, не «центр» (канон проекта)
+    "Развитие": ["bratstvo-edinomyshlennikov", "retrit-otshelnik"],
     "Осознанность и ретриты": ["ekskursii-kislovodsk", "retrit-otshelnik"],
 }
 RETREAT_SLUGS = ("retrit", "yoga")
@@ -174,7 +173,7 @@ def fix_related(slug, rubric, html):
     if slug in NO_SVC:
         svc = []
     elif rubric in RUBRIC_SVC:
-        svc = ["transformacionnyj-retrit", "retrit-otshelnik"] if (
+        svc = ["retrit-otshelnik"] if (
             rubric == "Осознанность и ретриты" and any(k in slug for k in RETREAT_SLUGS)) else RUBRIC_SVC[rubric]
         svc = [(SITE + s + "/", SVC[s]) for s in svc] if had_svc else []
     else:  # рубрики, где услуги уже по смыслу: только убрать дубли
