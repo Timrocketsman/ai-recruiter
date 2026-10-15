@@ -124,12 +124,12 @@
       "rubric": "ИИ-автоматизация",
       "query": "бот для записи клиентов",
       "form": "кейс",
-      "status": "published",
+      "status": "announced",
       "slug": "bot-dlya-zapisi-klientov",
       "note": "показательная статья Claude по слову Тима 15.10",
       "channels": {
         "site": "https://timlabs.online/journal/bot-dlya-zapisi-klientov/",
-        "telegram": null,
+        "telegram": 310,
         "vk": null,
         "dzen": null
       }
