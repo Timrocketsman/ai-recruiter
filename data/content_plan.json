@@ -169,9 +169,9 @@
         "sovety-kak-spravlyatsya-so-stressom": "ОСТРЫЙ: волнение прямо сейчас — перед разговором, выступлением, после ссоры. Приёмы на 2–5 минут, почему они работают физиологически (просто), чего не делать.",
         "kak-spravitsya-so-stressom-i-trevogoy": "ФОНОВЫЙ: тревога неделями без видимой причины — как отличить от усталости, что убрать из дня, когда к специалисту (без диагнозов). Ни одного приёма 'на две минуты'."
       },
-      "status": "planned",
+      "status": "published",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/kak-spravitsya-so-stressom-i-trevogoy/",
         "telegram": null,
         "vk": null,
         "dzen": null
