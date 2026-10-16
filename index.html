@@ -845,7 +845,7 @@ d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault(
 </style>
 <script>/* всплывающее предложение: раз за сеанс, после ответа на согласие, через 12 с или 45% прокрутки; картинка грузится только при показе */
 (function(){var w=document.getElementById('tl-promo');if(!w)return;var K='tl-promo-seen',shown=false;
-function can(){try{return !!localStorage.getItem('tl-consent-v2')&&!sessionStorage.getItem(K);}catch(e){return false;}}
+var busy=!!location.hash;document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('#tl-podbor,a[href*="#tl-podbor"],.tlp'))busy=true;},true);addEventListener('hashchange',function(){busy=true;});function can(){try{return !busy&&!!localStorage.getItem('tl-consent-v2')&&!sessionStorage.getItem(K);}catch(e){return false;}}
 function show(){if(shown||!can())return;shown=true;try{sessionStorage.setItem(K,'1')}catch(e){}
 var img=w.querySelector('img'),v=matchMedia('(max-width:700px)').matches;
 img.src=v?'/assets/promo-zhurnal-v.webp':'/assets/promo-zhurnal-h.webp';if(v){img.width=1024;img.height=1536;}
