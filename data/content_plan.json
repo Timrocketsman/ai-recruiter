@@ -301,9 +301,9 @@
         "kak-pravilno-vosstanavlivat-sily": "Только ДВИЖЕНИЕ и ПАУЗЫ в обычный день: ходьба, перерывы, свет, как встроить в рабочий день. Без сна и без еды.",
         "vosstanovitsya-kak-pravilno": "ПОСЛЕ ПЕРЕГРУЗА: аврал, болезнь, большое событие — сколько длится откат, три стадии возвращения, чего не требовать от себя в первую неделю."
       },
-      "status": "planned",
+      "status": "published",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/kak-pravilno-vosstanavlivat-sily/",
         "telegram": null,
         "vk": null,
         "dzen": null
