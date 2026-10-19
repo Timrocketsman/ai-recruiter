@@ -1011,3 +1011,7 @@ CLI для проверки: `python3 tools/style_audit.py --check journal/<slug
 - 19.10 16:45 journalist: topic не определён в publish_article (моя правка a903fa4) — editorial_manager падал 08:00–16:30, статья дня не вышла; исправлено 84e9315, статья professionalnoe-samorazvitie допубликована. push_site: --autostash (коммит 6ba9ec4 висел 4 ч, расхождение с GitHub)
 - 19.10 17:30 Умас (по просьбе сессии «Умас»): description_file L1/L2 → rules/opisanie-L*.txt, главы сверены по звуку смонтированных L1/L2 (check19/*.tsv) и сдвинуты (21 и 28 глав), ролики 03/07 → L1 (по звуку), struktura с правкой подписи 08 в rules + очередь пересобрана, bot.json unknown/vk.start + ЛИЧНО, чек-лист: связанное видео Shorts вручную, карточка серии в rules. Открыто: pw.check отклоняет «мы ищем в партнёре» в описании L1 — правит сессия Умаса
 - 19.10 18:00 каждый анонс канала → история в профиле Тима (tg_stories.post_announce, вызов в distributor._publish_one после _record); первая — пост 315 (professionalnoe-samorazvitie)
+
+### 19.10.2026 19:00 · сессия MARAFDY (куратор)
+- Пост w2_T6 (12.10) не вышел: Connection reset, повторов не было, неделю висел в failed. Перенесён на 04.11 19:19.
+- /opt/timlabs/projects/tg_posts.py cmd_tick: при сбое отправки до трёх повторов в течение 50 минут (журнал action=retry), только потом failed и срочный отчёт. Касается всех партнёров. Копия: tg_posts.py.bak-20261019retry.
