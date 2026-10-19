@@ -5,6 +5,7 @@
     python3 tools/channel_check.py --live     # заголовки статей брать с timlabs.online, не из файлов
     python3 tools/channel_check.py --file x.html   # разбор сохранённой страницы канала (без сети)
     python3 tools/channel_check.py --json     # машинный вывод
+    python3 tools/channel_check.py --deep 8   # весь архив: ещё 8 страниц по 20 постов назад (19.10: в архиве было 74 расхождения)
 
 Что проверяет по каждому посту со ссылкой на /journal/…:
   1. первая строка поста (заголовок анонса) совпадает с H1 статьи — иначе «старый анонс»
@@ -129,7 +130,23 @@ def main():
         page = open(a[a.index("--file") + 1], encoding="utf-8").read()
     else:
         page = fetch(CHANNEL)
+        if "--deep" in a:
+            pages = int(a[a.index("--deep") + 1])
+            for _ in range(pages):
+                ids = [int(x) for x in re.findall(r'data-post="[^"/]+/(\d+)"', page)]
+                if not ids:
+                    break
+                older = fetch(CHANNEL + "?before=%d" % min(ids))
+                if not re.search(r'data-post="', older):
+                    break
+                page = older + page
     posts = parse_channel(page)
+    seen, uniq = set(), []
+    for p_ in posts:
+        if p_["post"] and p_["post"] in seen:
+            continue
+        seen.add(p_["post"]); uniq.append(p_)
+    posts = uniq
     problems = check(posts, live)
     if "--json" in a:
         print(json.dumps({"posts": len(posts), "problems": problems}, ensure_ascii=False, indent=1))
