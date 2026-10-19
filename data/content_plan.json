@@ -277,10 +277,10 @@
       "query": "профессиональное саморазвитие",
       "angle": "",
       "form": "шаги",
-      "status": "planned",
-      "slug": null,
+      "status": "published",
+      "slug": "professionalnoe-samorazvitie",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/professionalnoe-samorazvitie/",
         "telegram": null,
         "vk": null,
         "dzen": null
