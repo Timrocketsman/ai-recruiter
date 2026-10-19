@@ -960,3 +960,4 @@
 - 18.10 22:40 humanize: проверка повторов/тавтологии (repetition_problems) в voice_problems(post), dialog_problems, статьи — только тавтологии; стоп-лист связок для постов; подпись поста resursnoe-sostoyanie в канале переписана вручную после замечания читателя
 - 18.10 22:55 distributor: учебные пары анонсов (teacher/announce.jsonl) для ночного дообучения Bonsai; затравка — ручная правка поста
 - 19.10 04:10 журнал: статья resursnoe-sostoyanie переведена в «Эмоции и психология» (рубрика дня подставлялась теме без кластера — теперь _infer_cluster по ядру, a903fa4); стиль обложек: ровный градиент вместо двух пятен (prompts.json _style); 3 статьи 15.10 без обложек + 6 старых поставлены в очередь cover_auto (пересборка ночью)
+- 19.10 Open Design поставлен в /opt/timlabs/opendesign (172.30.0.2:7456, вход по паролю, модель Bonsai через byok-opencode); надзор — /opt/timlabs/supervise.sh, флажок ENABLED
