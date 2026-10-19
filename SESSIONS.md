@@ -1015,3 +1015,7 @@ CLI для проверки: `python3 tools/style_audit.py --check journal/<slug
 ### 19.10.2026 19:00 · сессия MARAFDY (куратор)
 - Пост w2_T6 (12.10) не вышел: Connection reset, повторов не было, неделю висел в failed. Перенесён на 04.11 19:19.
 - /opt/timlabs/projects/tg_posts.py cmd_tick: при сбое отправки до трёх повторов в течение 50 минут (журнал action=retry), только потом failed и срочный отчёт. Касается всех партнёров. Копия: tg_posts.py.bak-20261019retry.
+
+### 19.10.2026 · сессия MARAFDY (куратор)
+- Ноябрьская пачка, часть 1 (1–15.11): «тело» w7_T20–T25 (6, 8, 9, 11, 13, 15.11), «партнёры» wp4_R16–R21 (3, 5, 7, 10, 12, 14.11) — тексты, картинки, юрист, одобрено. Статьи 37–45: massazh-nog 01.11, massazh-stop 02.11, kislovodsk-v-noyabre 04.11, kak-snyat-napryazhenie 06.11, massazh-lica 08.11, kak-rasslabitsya-posle-stressa 09.11, telo-na-holode 11.11, zazhataya-chelyust 13.11, kogda-luchshe-delat-massazh 15.11 — approved, обложки, без цен.
+- Wordstat не отвечает: грант Яндекса истёк 16.10 (остаток 242 ₽, active=False).
