@@ -403,6 +403,45 @@ def headline_gate():
     return n
 
 
+LEAD_VOICE = [  # (19.10, облачная) лид и описание статьи — от первого лица Тима, не «мы» (правило 09.10)
+    ("Разбираем", "Разберу"), ("Рассказываем", "Расскажу"), ("Разберём", "Разберу"), ("Расскажем", "Расскажу"),
+    ("Объясняем", "Объясню"), ("Объясним", "Объясню"), ("Показываем", "Покажу"), ("Покажем", "Покажу"),
+    ("Подсказываем", "Подскажу"), ("Подскажем", "Подскажу"), ("Разбираемся", "Разбираюсь"), ("Разберёмся", "Разберу"),
+]
+
+
+def _lead_voice(text):
+    text = text.replace("— и даём простые шаги", "— и дам простые шаги").replace("от мягких, и составим план", "от мягких, и составлю план")
+    for a, b in LEAD_VOICE:
+        text = re.sub(r"(?<![а-яёА-ЯЁ])" + a + r"(?![а-яё])", b, text)
+    return text
+
+
+def lead_voice_fix():
+    """Лид, meta/og/twitter-описания, JSON-LD description статей журнала, описания карточек и RSS — без «мы»."""
+    n = 0
+    targets = [os.path.join(ROOT, "journal", d, "index.html") for d in os.listdir(os.path.join(ROOT, "journal"))]
+    targets += [os.path.join(ROOT, "journal", "index.html"), os.path.join(ROOT, "rss.xml")]
+    pats = [r'(<p class="lead">)(.*?)(</p>)', r'(<meta name="description" content=")([^"]*)(")',
+            r'(<meta property="og:description" content=")([^"]*)(")', r'(<meta name="twitter:description" content=")([^"]*)(")',
+            r'("description": ")((?:[^"\\]|\\.)*)(")', r'(<description><!\[CDATA\[)(.*?)(\]\]></description>)', r'(<content:encoded><!\[CDATA\[)(.*?)(\]\]></content:encoded>)',
+            r'(<p class="card-desc">)(.*?)(</p>)']
+    for f in targets:
+        if not os.path.isfile(f):
+            continue
+        h = open(f, encoding="utf-8").read()
+        if 'http-equiv="refresh"' in h:
+            continue
+        o = h
+        for pat in pats:
+            h = re.sub(pat, lambda m: m.group(1) + _lead_voice(m.group(2)) + m.group(3), h, flags=re.S)
+        if h != o:
+            n += 1
+            if not DRY:
+                open(f, "w", encoding="utf-8").write(h)
+    return n
+
+
 def article_voice_fix(html):
     """Призывы статей — от лица Тима; «Читайте также» без ссылок на главную и юр. документы. Идемпотентно."""
     def cal(m):
@@ -589,6 +628,7 @@ def main():
     stats["sitemap"] = sitemap_canonical_fix()
     stats["titles"] = card_titles_sync()
     stats["gate"] = headline_gate()
+    stats["lead_voice"] = lead_voice_fix()
     print(stats)
 
 
