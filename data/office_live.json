@@ -1,6 +1,6 @@
 {
- "generated": 1792425123,
- "updated": "2026-10-19T18:52",
+ "generated": 1792511762,
+ "updated": "2026-10-20T18:56",
  "departments": [
   {
    "id": "research",
@@ -14,7 +14,7 @@
      "short": "Спрос",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792361253
+     "last_ts": 1792447385
     },
     {
      "id": "analytics",
@@ -23,7 +23,7 @@
      "short": "Трафик",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792361253
+     "last_ts": 1792447385
     },
     {
      "id": "graph",
@@ -32,7 +32,7 @@
      "short": "Связи",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792364856
+     "last_ts": 1792450988
     }
    ]
   },
@@ -48,7 +48,7 @@
      "short": "Журналист",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792422527
+     "last_ts": 1792510599
     },
     {
      "id": "editor_brief",
@@ -66,7 +66,7 @@
      "short": "Выпуск",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1792422436
+     "last_ts": 1792509908
     },
     {
      "id": "refiner",
@@ -75,7 +75,7 @@
      "short": "Шлифовка",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792372062
+     "last_ts": 1792458194
     },
     {
      "id": "journal_index",
@@ -84,7 +84,7 @@
      "short": "Оглавление",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792422530
+     "last_ts": 1792510602
     },
     {
      "id": "rewriter",
@@ -93,7 +93,7 @@
      "short": "Переписчик",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792422508
+     "last_ts": 1792510595
     }
    ]
   },
@@ -109,7 +109,7 @@
      "short": "Аудитор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792416749
+     "last_ts": 1792476451
     },
     {
      "id": "fixer",
@@ -118,7 +118,7 @@
      "short": "Корректор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792416749
+     "last_ts": 1792479669
     },
     {
      "id": "immunity",
@@ -127,7 +127,7 @@
      "short": "Иммунитет",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792404112
+     "last_ts": 1792490705
     },
     {
      "id": "content_medic",
@@ -136,7 +136,7 @@
      "short": "Медосмотр",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792400555
+     "last_ts": 1792487014
     },
     {
      "id": "backup",
@@ -145,7 +145,7 @@
      "short": "Копии",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792382961
+     "last_ts": 1792469117
     }
    ]
   },
@@ -177,7 +177,7 @@
      "short": "Сторож",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792411859
+     "last_ts": 1792498298
     },
     {
      "id": "whitehacker",
@@ -186,7 +186,7 @@
      "short": "Белый хакер",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792414912
+     "last_ts": 1792501216
     }
    ]
   },
@@ -202,7 +202,7 @@
      "short": "Директор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792422536
+     "last_ts": 1792511208
     },
     {
      "id": "web_designer",
@@ -211,7 +211,7 @@
      "short": "Дизайнер",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792350029
+     "last_ts": 1792436575
     },
     {
      "id": "creative_director",
@@ -220,7 +220,7 @@
      "short": "Креатив",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792346900
+     "last_ts": 1792432972
     },
     {
      "id": "attestation",
@@ -229,7 +229,7 @@
      "short": "Аттестация",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792422437
+     "last_ts": 1792508706
     },
     {
      "id": "charter",
@@ -238,7 +238,7 @@
      "short": "Регламент",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792343637
+     "last_ts": 1792429239
     },
     {
      "id": "dept_analytics",
@@ -247,7 +247,7 @@
      "short": "Аналитик",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792382961
+     "last_ts": 1792426139
     },
     {
      "id": "architect",
@@ -256,7 +256,7 @@
      "short": "Архитектор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792375755
+     "last_ts": 1792461911
     },
     {
      "id": "plan_control",
@@ -265,7 +265,7 @@
      "short": "",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792424882
+     "last_ts": 1792511643
     },
     {
      "id": "revizor",
@@ -290,7 +290,7 @@
      "short": "Юрист",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792397239
+     "last_ts": 1792483385
     },
     {
      "id": "compliance",
@@ -299,7 +299,7 @@
      "short": "Комплаенс",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792397239
+     "last_ts": 1792483385
     }
    ]
   },
@@ -315,16 +315,16 @@
      "short": "Площадки",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792408293
+     "last_ts": 1792494408
     },
     {
      "id": "distributor",
      "name": "Дистрибьютор",
      "role": "Публикует анонсы новых статей в Telegram-канале",
      "short": "Telegram",
-     "status": "ждёт задачу",
-     "state": "idle",
-     "last_ts": 1792424337
+     "status": "скоро начнёт",
+     "state": "due",
+     "last_ts": 1792508706
     },
     {
      "id": "distributor_poll",
@@ -342,16 +342,16 @@
      "short": "Ассистент",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792408922
+     "last_ts": 1792495697
     },
     {
      "id": "vk",
      "name": "Дистрибьютор · ВКонтакте",
      "role": "Публикует анонсы статей во ВКонтакте",
      "short": "ВКонтакте",
-     "status": "ждёт задачу",
-     "state": "idle",
-     "last_ts": 1792424337
+     "status": "скоро начнёт",
+     "state": "due",
+     "last_ts": 1792508706
     },
     {
      "id": "outreach_scout",
@@ -360,7 +360,7 @@
      "short": "Разведчик",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792422437
+     "last_ts": 1792510509
     },
     {
      "id": "resource_curator",
@@ -369,7 +369,7 @@
      "short": "Куратор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792424937
+     "last_ts": 1792505551
     }
    ]
   },
@@ -383,9 +383,9 @@
      "name": "Промо-ролики",
      "role": "Делает короткие ролики по статьям голосом Тима",
      "short": "Ролики",
-     "status": "ждёт задачу",
-     "state": "idle",
-     "last_ts": 1792424937
+     "status": "скоро начнёт",
+     "state": "due",
+     "last_ts": 1792509908
     },
     {
      "id": "book_writer",
@@ -410,7 +410,7 @@
      "short": "Заказы",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1792389846
+     "last_ts": 1792476451
     }
    ]
   }
@@ -418,873 +418,882 @@
  "counts": {
   "departments": 10,
   "agents": 38,
-  "articles_total": 123,
+  "articles_total": 118,
   "today": {
-   "system": 26,
-   "search": 36,
+   "system": 36,
+   "search": 38,
    "plan": 3,
-   "guard": 31,
-   "check": 20,
-   "video": 9,
-   "edit": 23,
-   "draft": 7,
+   "check": 15,
+   "updates": 12,
+   "announce": 15,
+   "video": 5,
+   "edit": 20,
+   "draft": 1,
    "articles": 1,
-   "announce": 5,
-   "updates": 2
+   "guard": 16
   },
   "day": {
-   "system": 35,
-   "edit": 29,
-   "search": 44,
-   "check": 24,
-   "updates": 5,
-   "announce": 11,
-   "draft": 8,
+   "system": 45,
+   "search": 48,
+   "edit": 22,
+   "check": 18,
+   "updates": 14,
+   "announce": 20,
    "articles": 2,
    "plan": 3,
-   "guard": 31,
-   "video": 9
+   "video": 5,
+   "draft": 1,
+   "guard": 16
   }
  },
  "events": [
   {
-   "ts": 1792364857,
-   "agent": "graph",
-   "dept": "research",
-   "kind": "system",
-   "label": "Обновлён граф знаний"
-  },
-  {
-   "ts": 1792365458,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1792366059,
+   "ts": 1792466116,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1792366059,
+   "ts": 1792466116,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1792368474,
-   "agent": "secguard",
-   "dept": "security",
-   "kind": "guard",
-   "label": "Проверка безопасности"
-  },
-  {
-   "ts": 1792369061,
+   "ts": 1792469118,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1792369661,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1792369661,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1792370974,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "system",
-   "label": "Обновлено оглавление журнала"
-  },
-  {
-   "ts": 1792372077,
-   "agent": "whitehacker",
-   "dept": "security",
-   "kind": "guard",
-   "label": "Проверка на уязвимости"
-  },
-  {
-   "ts": 1792372152,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792372754,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1792373355,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1792373357,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1792376357,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1792376957,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1792376957,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1792377497,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "system",
-   "label": "Обновлено оглавление журнала"
-  },
-  {
-   "ts": 1792379960,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1792380560,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1792380560,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1792382976,
+   "ts": 1792469162,
    "agent": "backup",
    "dept": "quality",
    "kind": "system",
    "label": "Резервная копия"
   },
   {
-   "ts": 1792383564,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1792384164,
+   "ts": 1792469719,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1792384167,
+   "ts": 1792469719,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1792387166,
+   "ts": 1792471282,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792472721,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1792387167,
+   "ts": 1792473322,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1792473323,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1792387767,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1792387767,
+   "ts": 1792473325,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1792388033,
+   "ts": 1792473419,
    "agent": "rewriter",
    "dept": "editorial",
    "kind": "edit",
    "label": "Старая статья переписана"
   },
   {
-   "ts": 1792388037,
+   "ts": 1792473443,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "check",
    "label": "Текст проверен на живость"
   },
   {
-   "ts": 1792388637,
+   "ts": 1792473443,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «Гора Мехтыген: что это за вершина и кому подойдёт маршрут»",
+   "link": "/journal/gora-mehtygen/"
+  },
+  {
+   "ts": 1792473444,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1792473447,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792474651,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1792389846,
+   "ts": 1792475851,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1792391048,
+   "ts": 1792476453,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1792391048,
-   "agent": "promo_video",
-   "dept": "production",
-   "kind": "video",
-   "label": "Собирается ролик"
-  },
-  {
-   "ts": 1792391649,
+   "ts": 1792477053,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1792391649,
+   "ts": 1792477053,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1792391734,
+   "ts": 1792477152,
    "agent": "rewriter",
    "dept": "editorial",
    "kind": "edit",
    "label": "Старая статья переписана"
   },
   {
-   "ts": 1792391739,
+   "ts": 1792477231,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "check",
    "label": "Текст проверен на живость"
   },
   {
-   "ts": 1792393546,
-   "agent": "promo_video",
-   "dept": "production",
-   "kind": "video",
-   "label": "Собирается ролик"
+   "ts": 1792477231,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «Саморазвитие для мужчин: с чего начать»",
+   "link": "/journal/muzhchina-samorazvitie/"
   },
   {
-   "ts": 1792394748,
+   "ts": 1792477232,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1792477234,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792480271,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1792394748,
-   "agent": "promo_video",
-   "dept": "production",
-   "kind": "video",
-   "label": "Собирается ролик"
-  },
-  {
-   "ts": 1792395348,
+   "ts": 1792480872,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1792395352,
+   "ts": 1792480872,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1792395424,
+   "ts": 1792480955,
    "agent": "rewriter",
    "dept": "editorial",
    "kind": "edit",
    "label": "Старая статья переписана"
   },
   {
-   "ts": 1792395438,
+   "ts": 1792480963,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "check",
    "label": "Текст проверен на живость"
   },
   {
-   "ts": 1792396039,
-   "agent": "promo_video",
-   "dept": "production",
-   "kind": "video",
-   "label": "Собирается ролик"
+   "ts": 1792480963,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «Как отдохнуть в отпуске дома: практичный гид»",
+   "link": "/journal/kak-otdohnut-v-otpuske-doma/"
   },
   {
-   "ts": 1792398455,
+   "ts": 1792480964,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1792480981,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792483987,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1792399080,
+   "ts": 1792484588,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1792484591,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1792484660,
+   "agent": "rewriter",
+   "dept": "editorial",
+   "kind": "edit",
+   "label": "Старая статья переписана"
+  },
+  {
+   "ts": 1792484679,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "check",
+   "label": "Текст проверен на живость"
+  },
+  {
+   "ts": 1792484679,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «SEO с помощью нейросети: что реально автоматизировать»",
+   "link": "/journal/seo-s-pomoschyu-neyroseti/"
+  },
+  {
+   "ts": 1792484680,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1792484682,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792485310,
    "agent": "editor_brief",
    "dept": "editorial",
    "kind": "plan",
    "label": "Бриф статьи готов"
   },
   {
-   "ts": 1792399209,
+   "ts": 1792485618,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "edit",
    "label": "Разделы статьи дописаны"
   },
   {
-   "ts": 1792399219,
+   "ts": 1792485621,
    "agent": "journalist",
-   "dept": "editorial",
-   "kind": "draft",
-   "label": "Черновик статьи готов"
-  },
-  {
-   "ts": 1792399219,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792399265,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1792399265,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1792399335,
-   "agent": "rewriter",
    "dept": "editorial",
    "kind": "edit",
-   "label": "Старая статья переписана"
+   "label": "Заголовок отшлифован"
   },
   {
-   "ts": 1792399355,
+   "ts": 1792485813,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "edit",
+   "label": "Разделы статьи дописаны"
+  },
+  {
+   "ts": 1792485813,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "check",
-   "label": "Текст проверен на живость"
+   "label": "Статья отправлена на доработку"
   },
   {
-   "ts": 1792400562,
+   "ts": 1792487021,
    "agent": "content_medic",
    "dept": "quality",
    "kind": "check",
    "label": "Медосмотр опубликованных статей"
   },
   {
-   "ts": 1792402150,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "edit",
-   "label": "Разделы статьи дописаны"
-  },
-  {
-   "ts": 1792402156,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "draft",
-   "label": "Черновик статьи готов"
-  },
-  {
-   "ts": 1792402156,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792402220,
+   "ts": 1792487619,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1792402821,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1792402821,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1792402891,
-   "agent": "rewriter",
-   "dept": "editorial",
-   "kind": "edit",
-   "label": "Старая статья переписана"
-  },
-  {
-   "ts": 1792402911,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792404113,
-   "agent": "immunity",
-   "dept": "quality",
-   "kind": "guard",
-   "label": "Самопроверка движка"
-  },
-  {
-   "ts": 1792405045,
+   "ts": 1792488523,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "edit",
    "label": "Разделы статьи дописаны"
   },
   {
-   "ts": 1792405051,
+   "ts": 1792488527,
    "agent": "journalist",
-   "dept": "editorial",
-   "kind": "draft",
-   "label": "Черновик статьи готов"
-  },
-  {
-   "ts": 1792405051,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792406323,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1792406923,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1792406926,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1792407005,
-   "agent": "rewriter",
    "dept": "editorial",
    "kind": "edit",
-   "label": "Старая статья переписана"
+   "label": "Заголовок отшлифован"
   },
   {
-   "ts": 1792407013,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792408236,
+   "ts": 1792488690,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "edit",
    "label": "Разделы статьи дописаны"
   },
   {
-   "ts": 1792408242,
+   "ts": 1792488693,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "edit",
+   "label": "Заголовок отшлифован"
+  },
+  {
+   "ts": 1792488696,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "draft",
    "label": "Черновик статьи готов"
   },
   {
-   "ts": 1792408242,
+   "ts": 1792488696,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "check",
    "label": "Текст проверен на живость"
   },
   {
-   "ts": 1792410124,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1792410908,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "edit",
-   "label": "Разделы статьи дописаны"
-  },
-  {
-   "ts": 1792410915,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "draft",
-   "label": "Черновик статьи готов"
-  },
-  {
-   "ts": 1792410915,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792410973,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1792410973,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1792411040,
-   "agent": "rewriter",
-   "dept": "editorial",
-   "kind": "edit",
-   "label": "Старая статья переписана"
-  },
-  {
-   "ts": 1792411063,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792411680,
-   "agent": "secguard",
-   "dept": "security",
-   "kind": "guard",
-   "label": "Проверка безопасности"
-  },
-  {
-   "ts": 1792413603,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "edit",
-   "label": "Разделы статьи дописаны"
-  },
-  {
-   "ts": 1792413610,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "draft",
-   "label": "Черновик статьи готов"
-  },
-  {
-   "ts": 1792413610,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792414287,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1792414888,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1792414888,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1792414912,
-   "agent": "whitehacker",
-   "dept": "security",
-   "kind": "guard",
-   "label": "Проверка на уязвимости"
-  },
-  {
-   "ts": 1792414970,
-   "agent": "rewriter",
-   "dept": "editorial",
-   "kind": "edit",
-   "label": "Старая статья переписана"
-  },
-  {
-   "ts": 1792414978,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792416705,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "edit",
-   "label": "Разделы статьи дописаны"
-  },
-  {
-   "ts": 1792416712,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "draft",
-   "label": "Черновик статьи готов"
-  },
-  {
-   "ts": 1792416871,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792416871,
+   "ts": 1792488696,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "article",
-   "label": "Вышла статья: «Профессиональное саморазвитие: как расти в работе без выгорания»",
-   "link": "/journal/professionalnoe-samorazvitie/"
+   "label": "Вышла статья",
+   "link": "/journal/retritnyy-tsentr-chto-eto-takoe-osoznann/"
   },
   {
-   "ts": 1792416873,
+   "ts": 1792488697,
    "agent": "publisher",
    "dept": "publishing",
    "kind": "announce",
    "label": "Поисковики узнали о новой странице"
   },
   {
-   "ts": 1792416897,
+   "ts": 1792488699,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "system",
    "label": "Обновлено оглавление журнала"
   },
   {
-   "ts": 1792417990,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
+   "ts": 1792488703,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1792418100,
+   "ts": 1792488703,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1792488786,
+   "agent": "rewriter",
+   "dept": "editorial",
+   "kind": "edit",
+   "label": "Старая статья переписана"
+  },
+  {
+   "ts": 1792488793,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "check",
+   "label": "Текст проверен на живость"
+  },
+  {
+   "ts": 1792488793,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «Доломитские озёра: мини-ретрит у воды на природе»",
+   "link": "/journal/dolomitskie-ozera/"
+  },
+  {
+   "ts": 1792488794,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1792488796,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792490089,
    "agent": "distributor",
    "dept": "growth",
    "kind": "announce",
    "label": "Анонс ушёл в Telegram"
   },
   {
-   "ts": 1792418103,
+   "ts": 1792490102,
    "agent": "vk",
    "dept": "growth",
    "kind": "announce",
    "label": "Пост во ВКонтакте"
   },
   {
-   "ts": 1792418705,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
+   "ts": 1792490705,
+   "agent": "immunity",
+   "dept": "quality",
+   "kind": "guard",
+   "label": "Самопроверка движка"
   },
   {
-   "ts": 1792418709,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1792418772,
-   "agent": "rewriter",
-   "dept": "editorial",
-   "kind": "edit",
-   "label": "Старая статья переписана"
-  },
-  {
-   "ts": 1792418796,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "check",
-   "label": "Текст проверен на живость"
-  },
-  {
-   "ts": 1792418796,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "article",
-   "label": "Статья обновлена: «Сон, еда, движение: база, на которой держатся силы»",
-   "link": "/journal/kak-pravilno-vosstanavlivat-sily/"
-  },
-  {
-   "ts": 1792418797,
-   "agent": "publisher",
-   "dept": "publishing",
-   "kind": "announce",
-   "label": "Поисковики узнали о новой странице"
-  },
-  {
-   "ts": 1792418799,
-   "agent": "journalist",
-   "dept": "editorial",
-   "kind": "system",
-   "label": "Обновлено оглавление журнала"
-  },
-  {
-   "ts": 1792420034,
-   "agent": "promo_video",
-   "dept": "production",
-   "kind": "video",
-   "label": "Вышел ролик"
-  },
-  {
-   "ts": 1792421836,
+   "ts": 1792491306,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1792422437,
+   "ts": 1792491850,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792491907,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1792422437,
+   "ts": 1792491907,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1792422508,
+   "ts": 1792491989,
    "agent": "rewriter",
    "dept": "editorial",
    "kind": "edit",
    "label": "Старая статья переписана"
   },
   {
-   "ts": 1792422527,
+   "ts": 1792491997,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "check",
    "label": "Текст проверен на живость"
   },
   {
-   "ts": 1792422527,
+   "ts": 1792491997,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "article",
-   "label": "Статья обновлена: «AI для отдела продаж: что реально автоматизировать»",
-   "link": "/journal/ai-dlya-otdela-prodazh/"
+   "label": "Статья обновлена: «Дзивгисская крепость: тихая поездка вместо шумного туризма»",
+   "link": "/journal/dzivgisskaya-krepost/"
   },
   {
-   "ts": 1792422528,
+   "ts": 1792491998,
    "agent": "publisher",
    "dept": "publishing",
    "kind": "announce",
    "label": "Поисковики узнали о новой странице"
   },
   {
-   "ts": 1792422530,
+   "ts": 1792492000,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792495006,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1792495607,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1792495610,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1792495692,
+   "agent": "rewriter",
+   "dept": "editorial",
+   "kind": "edit",
+   "label": "Старая статья переписана"
+  },
+  {
+   "ts": 1792495697,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "check",
+   "label": "Текст проверен на живость"
+  },
+  {
+   "ts": 1792495697,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «Дукинские озёра: тихий маршрут к ледниковым озёрам»",
+   "link": "/journal/dukinskie-ozera/"
+  },
+  {
+   "ts": 1792495698,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1792495701,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792498120,
+   "agent": "secguard",
+   "dept": "security",
+   "kind": "guard",
+   "label": "Проверка безопасности"
+  },
+  {
+   "ts": 1792498707,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1792499308,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1792499308,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1792499398,
+   "agent": "rewriter",
+   "dept": "editorial",
+   "kind": "edit",
+   "label": "Старая статья переписана"
+  },
+  {
+   "ts": 1792499399,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "check",
+   "label": "Текст проверен на живость"
+  },
+  {
+   "ts": 1792499399,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «Йога-ретрит: распорядок дня по часам и подготовка к первому»",
+   "link": "/journal/yoga-retrit/"
+  },
+  {
+   "ts": 1792499399,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1792499401,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792501216,
+   "agent": "whitehacker",
+   "dept": "security",
+   "kind": "guard",
+   "label": "Проверка на уязвимости"
+  },
+  {
+   "ts": 1792502407,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1792503008,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1792503008,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1792503098,
+   "agent": "rewriter",
+   "dept": "editorial",
+   "kind": "edit",
+   "label": "Старая статья переписана"
+  },
+  {
+   "ts": 1792503128,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "check",
+   "label": "Текст проверен на живость"
+  },
+  {
+   "ts": 1792503128,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «Зарамагское водохранилище: спокойный день у воды в горах»",
+   "link": "/journal/zaramagskoe-vodohranilische/"
+  },
+  {
+   "ts": 1792503129,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1792503147,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792506153,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1792506176,
+   "agent": "promo_video",
+   "dept": "production",
+   "kind": "video",
+   "label": "Вышел ролик"
+  },
+  {
+   "ts": 1792506777,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1792506783,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1792506873,
+   "agent": "rewriter",
+   "dept": "editorial",
+   "kind": "edit",
+   "label": "Старая статья переписана"
+  },
+  {
+   "ts": 1792506897,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "check",
+   "label": "Текст проверен на живость"
+  },
+  {
+   "ts": 1792506897,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «Ретрит-тур: чек-лист выбора и вопросы организатору»",
+   "link": "/journal/retrit-tur/"
+  },
+  {
+   "ts": 1792506898,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1792506901,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1792509908,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1792510509,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1792510509,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1792510595,
+   "agent": "rewriter",
+   "dept": "editorial",
+   "kind": "edit",
+   "label": "Старая статья переписана"
+  },
+  {
+   "ts": 1792510599,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "check",
+   "label": "Текст проверен на живость"
+  },
+  {
+   "ts": 1792510599,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья обновлена: «Ретрит по медитации: что это и как начать»",
+   "link": "/journal/meditatsiya-retrit/"
+  },
+  {
+   "ts": 1792510600,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Поисковики узнали о новой странице"
+  },
+  {
+   "ts": 1792510602,
    "agent": "journalist",
    "dept": "editorial",
    "kind": "system",
