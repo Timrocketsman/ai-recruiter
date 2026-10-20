@@ -317,12 +317,12 @@
       "query": "ретритный центр что это такое осознанность",
       "angle": "",
       "form": "история",
-      "status": "published",
+      "status": "announced",
       "slug": "retritnyy-tsentr-chto-eto-takoe-osoznann",
       "channels": {
         "site": "https://timlabs.online/journal/retritnyy-tsentr-chto-eto-takoe-osoznann/",
-        "telegram": null,
-        "vk": null,
+        "telegram": 318,
+        "vk": 340,
         "dzen": null
       }
     },
