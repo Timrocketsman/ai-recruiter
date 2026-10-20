@@ -39,10 +39,6 @@
     <image:image><image:loc>https://timlabs.online/media/telegram/3-poleznye-privychki.png</image:loc><image:title>Утренний ритуал без надрыва: три опоры на любое утро</image:title></image:image>
   </url>
   <url>
-    <loc>https://timlabs.online/journal/3-poleznyh-privychek/</loc>
-    <image:image><image:loc>https://timlabs.online/media/telegram/3-poleznyh-privychek.png</image:loc><image:title>Привычки, которые держатся: что реально работает каждый день</image:title></image:image>
-  </url>
-  <url>
     <loc>https://timlabs.online/journal/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat/</loc>
     <image:image><image:loc>https://timlabs.online/media/telegram/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat.png</image:loc><image:title>Пять недель работы и неделя отдыха: как устроен цикл 5/1</image:title></image:image>
   </url>
@@ -195,20 +191,6 @@
     <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa.webp</image:loc><image:title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</image:title></image:image>
   </url>
   <url>
-    <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/ai-creative-awards-zayavka-800.webp</image:loc><image:title>AI Creative Awards 2026: как подать заявку на премию</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/resursnoe-sostoyanie-800.webp</image:loc><image:title>Ресурсное состояние: как вернуть силы без выгорания</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/korporativnyy-blog-800.webp</image:loc><image:title>Корпоративный блог с ИИ-агентами: опыт журнала «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/bot-dlya-zapisi-klientov-800.webp</image:loc><image:title>Бот для записи клиентов в Telegram: что он должен уметь</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/lokalnaya-neyroset-800.webp</image:loc><image:title>Локальная нейросеть: когда своя модель выгоднее облака</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/ai-dlya-otdela-prodazh-800.webp</image:loc><image:title>AI для отдела продаж: что реально автоматизировать</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa-800.webp</image:loc><image:title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-voronki-prodazh-800.webp</image:loc><image:title>Автоматизация воронки продаж: что реально настроить</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/ii-agenty-v-telegram-800.webp</image:loc><image:title>Нейроагент в Telegram: что умеет BrainAid</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-telegram-kanala-800.webp</image:loc><image:title>Автоматизация Telegram-канала: что реально настроить</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/seo-s-pomoschyu-neyroseti-800.webp</image:loc><image:title>SEO с помощью нейросети: что реально автоматизировать</image:title></image:image>
-  </url>
-  <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
     <image:image><image:loc>https://timlabs.online/media/telegram/irganayskoe-vodohranilische.png</image:loc><image:title>Ирганайское водохранилище: где найти тишину в Дагестане</image:title></image:image>
   </url>
@@ -287,14 +269,6 @@
   <url>
     <loc>https://timlabs.online/journal/kak-stavit-tsel-zhizni/</loc>
     <image:image><image:loc>https://timlabs.online/media/telegram/kak-stavit-tsel-zhizni.png</image:loc><image:title>Цель жизни: как её искать, если пока непонятно, чего хотите</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://timlabs.online/journal/kak-v-domashnih-usloviyah-vosstanovit-si/</loc>
-    <image:image><image:loc>https://timlabs.online/media/telegram/kak-v-domashnih-usloviyah-vosstanovit-si.png</image:loc><image:title>Как восстановить силы в домашних условиях</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://timlabs.online/journal/kak-vosstanovit-silu-organizma/</loc>
-    <image:image><image:loc>https://timlabs.online/media/telegram/kak-vosstanovit-silu-organizma.png</image:loc><image:title>Как вернуть силы: питание, движение и сон без крайностей</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/kak-vosstanovit-sily-posle-rabochego-dny/</loc>
@@ -393,14 +367,6 @@
     <image:image><image:loc>https://timlabs.online/media/covers/resursnoe-sostoyanie.webp</image:loc><image:title>Ресурсное состояние: как вернуть силы без выгорания</image:title></image:image>
   </url>
   <url>
-    <loc>https://timlabs.online/journal/retrit-eto/</loc>
-    <image:image><image:loc>https://timlabs.online/media/telegram/retrit-eto.png</image:loc><image:title>Ретрит: кому он не нужен и когда лучше просто выспаться</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://timlabs.online/journal/retrit-otel/</loc>
-    <image:image><image:loc>https://timlabs.online/media/telegram/retrit-otel.png</image:loc><image:title>Ретрит-отель: что это и как выбрать</image:title></image:image>
-  </url>
-  <url>
     <loc>https://timlabs.online/journal/retrit-tsentr/</loc>
     <image:image><image:loc>https://timlabs.online/media/telegram/retrit-tsentr.png</image:loc><image:title>Ретрит-центр: как подготовиться к первой поездке и чего ждать</image:title></image:image>
   </url>
@@ -456,10 +422,6 @@
   <url>
     <loc>https://timlabs.online/journal/spa-kislovodsk/</loc>
     <image:image><image:loc>https://timlabs.online/media/telegram/spa-kislovodsk.png</image:loc><image:title>СПА в Кисловодске: полный гид по процедурам и отдыху</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://timlabs.online/journal/sposobnosti-samorazvitiya/</loc>
-    <image:image><image:loc>https://timlabs.online/media/telegram/sposobnosti-samorazvitiya.png</image:loc><image:title>Способности к саморазвитию: какие они бывают и как их у себя заметить</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/sut-samootsenki/</loc>
