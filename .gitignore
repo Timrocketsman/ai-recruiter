@@ -1,0 +1,3 @@
+*.pyc
+.gate_tmp.html
+__pycache__/
