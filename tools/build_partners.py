@@ -29,7 +29,8 @@ PARTNERS = [
         "contact": ("https://t.me/MARAFDY_manager", "Написать администратору"),
     },
     {   # личная практика Мары — отдельно, без бренда MARAFDY
-        "id": "mara-doula", "name": "Доула Мара", "ic": "🤍", "c": "#ff8fd0", "c2": "#35b6ff",
+        "id": "mara-doula", "hub_hidden": True,   # (20.10, слово Тима) на /partners/ не показываем: профиля в офисе нет; на остальных страницах доула остаётся
+        "name": "Доула Мара", "ic": "🤍", "c": "#ff8fd0", "c2": "#35b6ff",
         "tag": "Партнёр · материнство",
         "who": "Мара — доула, личная практика",
         "about": "Подготовка к беременности и родам, сопровождение онлайн и в Кисловодске, восстановление после родов и помощь с кормлением.",
@@ -97,9 +98,9 @@ def main():
         {"@type": "CollectionPage", "@id": URL, "url": URL, "name": title, "description": desc, "inLanguage": "ru",
          "isPartOf": {"@id": SITE + "/#site"},
          "mainEntity": {"@type": "ItemList", "itemListElement": [
-             {"@type": "ListItem", "position": i + 1, "name": p["name"], "url": SITE + p["page"]} for i, p in enumerate(PARTNERS)]}}]}
+             {"@type": "ListItem", "position": i + 1, "name": p["name"], "url": SITE + p["page"]} for i, p in enumerate([q for q in PARTNERS if not q.get("hub_hidden")])]}}]}
     page = TEMPLATE.format(title=html.escape(title), desc=html.escape(desc), url=URL, ld=json.dumps(ld, ensure_ascii=False, indent=1),
-                           metrika=metrika, icons=icons, cards="\n".join(card(p) for p in PARTNERS), footer=footer, tail=tail)
+                           metrika=metrika, icons=icons, cards="\n".join(card(p) for p in PARTNERS if not p.get("hub_hidden")), footer=footer, tail=tail)
     os.makedirs(os.path.join(ROOT, "partners"), exist_ok=True)
     open(os.path.join(ROOT, "partners", "index.html"), "w", encoding="utf-8").write(page)
     sm = os.path.join(ROOT, "sitemap.xml")
