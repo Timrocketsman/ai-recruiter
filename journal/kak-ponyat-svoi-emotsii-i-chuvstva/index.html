@@ -438,7 +438,7 @@ function upd(){var h=document.documentElement,sc=(h.scrollTop||document.body.scr
 d.classList.toggle('on',ok()&&sc>.3&&sc<.97);}
 addEventListener('scroll',upd,{passive:true});addEventListener('click',function(){setTimeout(upd,80)});
 d.querySelector('.tld-x').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();try{sessionStorage.setItem('tl-donate-off','1')}catch(_){};d.classList.remove('on');});
-</script>
+})();</script>
 <!--tl-ask-v1--><script>(function(){
 var slug=(location.pathname.replace(/\/$/,'').split('/').pop()||'home').replace(/[^a-z0-9-]/gi,'').slice(0,50);
 var url='https://t.me/TimLabs_bot?start=q_'+slug;
