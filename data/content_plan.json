@@ -355,11 +355,11 @@
       "query": "как перестать сравнивать себя с другими",
       "angle": "",
       "form": "спор с мифом",
-      "status": "published",
+      "status": "announced",
       "slug": "kak-perestat-sravnivat-sebya-s-drugimi",
       "channels": {
         "site": "https://timlabs.online/journal/kak-perestat-sravnivat-sebya-s-drugimi/",
-        "telegram": null,
+        "telegram": 323,
         "vk": 346,
         "dzen": null
       }
