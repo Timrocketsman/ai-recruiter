@@ -51,6 +51,10 @@
     <image:image><image:loc>https://timlabs.online/media/covers/ai-dlya-otdela-prodazh.webp</image:loc><image:title>AI для отдела продаж: что реально автоматизировать</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/journal/avtomatizatsiya-rutiny/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-rutiny.webp</image:loc><image:title>Автоматизация рутины: что можно передать агенту, а что оставить себе</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/journal/avtomatizatsiya-telegram-kanala/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-telegram-kanala.jpg</image:loc><image:title>Автоматизация Telegram-канала: что реально настроить</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-telegram-kanala.webp</image:loc><image:title>Автоматизация Telegram-канала: что реально настроить</image:title></image:image>
@@ -189,6 +193,21 @@
     <loc>https://timlabs.online/journal/ii-teper-si-ukaz-trampa/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa.jpg</image:loc><image:title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa.webp</image:loc><image:title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-rutiny-800.webp</image:loc><image:title>Автоматизация рутины: что можно передать агенту</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ai-creative-awards-zayavka-800.webp</image:loc><image:title>AI Creative Awards 2026: как подать заявку на премию</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/resursnoe-sostoyanie-800.webp</image:loc><image:title>Ресурсное состояние: как вернуть силы без выгорания</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/korporativnyy-blog-800.webp</image:loc><image:title>Корпоративный блог с ИИ-агентами: опыт журнала «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/bot-dlya-zapisi-klientov-800.webp</image:loc><image:title>Бот для записи клиентов в Telegram: что он должен уметь</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/lokalnaya-neyroset-800.webp</image:loc><image:title>Локальная нейросеть: когда своя модель выгоднее облака</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ai-dlya-otdela-prodazh-800.webp</image:loc><image:title>AI для отдела продаж: что реально автоматизировать</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa-800.webp</image:loc><image:title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-voronki-prodazh-800.webp</image:loc><image:title>Автоматизация воронки продаж: что реально настроить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ii-agenty-v-telegram-800.webp</image:loc><image:title>Нейроагент в Telegram: что умеет BrainAid</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-telegram-kanala-800.webp</image:loc><image:title>Автоматизация Telegram-канала: что реально настроить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/seo-s-pomoschyu-neyroseti-800.webp</image:loc><image:title>SEO с помощью нейросети: что реально автоматизировать</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
