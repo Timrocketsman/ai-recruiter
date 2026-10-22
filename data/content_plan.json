@@ -372,12 +372,12 @@
       "query": "автоматизация рутины",
       "angle": "",
       "form": "письмо",
-      "status": "published",
+      "status": "announced",
       "slug": "avtomatizatsiya-rutiny",
       "channels": {
         "site": "https://timlabs.online/journal/avtomatizatsiya-rutiny/",
-        "telegram": null,
-        "vk": null,
+        "telegram": 325,
+        "vk": 347,
         "dzen": null
       }
     },
