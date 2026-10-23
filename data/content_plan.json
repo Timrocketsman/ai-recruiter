@@ -1,438 +1,439 @@
 {
-  "week": {
-    "mon": {
-      "rubric": "Развитие",
-      "form": "шаги"
-    },
-    "tue": {
-      "rubric": "Осознанность и ретриты"
-    },
-    "wed": {
-      "rubric": "Эмоции и психология"
-    },
-    "thu": {
-      "rubric": "ИИ-автоматизация",
-      "form": "кейс"
-    },
-    "fri": {
-      "rubric": "Родителям"
-    },
-    "sat": {
-      "rubric": "Тело и здоровье",
-      "alt_rubric": "Частые вопросы"
-    },
-    "sun": {
-      "rubric": "ИИ-автоматизация"
-    }
+ "week": {
+  "mon": {
+   "rubric": "Развитие",
+   "form": "шаги"
   },
-  "forms": [
-    "история",
-    "вопрос читателя",
-    "спор с мифом",
-    "шаги",
-    "письмо",
-    "сравнение",
-    "репортаж",
-    "кейс"
-  ],
-  "windows": {
-    "site": "10:00",
-    "telegram": "сразу",
-    "vk": "+60 мин",
-    "dzen": "RSS",
-    "marafdy": "пн/ср/пт/вс 10:00",
-    "promo_video": "17:17"
+  "tue": {
+   "rubric": "Осознанность и ретриты",
+   "alt_rubric": "Кисловодск и КМВ"
   },
-  "approved_by_tim": true,
-  "queue": [
-    {
-      "id": "2026-10-14-u",
-      "date": "2026-10-14",
-      "kind": "update",
-      "topic": "что такое ретрит",
-      "slugs": [
-        "retrit",
-        "retrit-eto"
-      ],
-      "angles": {
-        "retrit": "Базовое объяснение: что такое ретрит, какие бывают, сколько длится, что происходит по дням. Для человека, который слышит слово впервые.",
-        "retrit-eto": "Кому ретрит НЕ нужен и когда он вредит: уставшим до истощения, тем, кто бежит от решения, кто ждёт чуда за выходные. Что вместо ретрита в этих случаях. Про здоровье — только 'не является лечением'."
-      },
-      "status": "published",
-      "channels": {
-        "site": "https://timlabs.online/journal/retrit/",
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-15-a",
-      "date": "2026-10-15",
-      "kind": "new",
-      "rubric": "Частые вопросы",
-      "query": "как праздники отдыхать",
-      "angle": "",
-      "form": "шаги",
-      "status": "planned",
-      "slug": null,
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-15-s1",
-      "date": "2026-10-15",
-      "kind": "new",
-      "rubric": "ИИ-автоматизация",
-      "query": "корпоративный блог",
-      "form": "кейс",
-      "status": "announced",
-      "slug": "korporativnyy-blog",
-      "note": "показательная статья Claude по слову Тима 15.10",
-      "channels": {
-        "site": "https://timlabs.online/journal/korporativnyy-blog/",
-        "telegram": 308,
-        "vk": 331,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-15-s2",
-      "date": "2026-10-15",
-      "kind": "new",
-      "rubric": "ИИ-автоматизация",
-      "query": "локальная нейросеть",
-      "form": "кейс",
-      "status": "announced",
-      "slug": "lokalnaya-neyroset",
-      "note": "показательная статья Claude по слову Тима 15.10",
-      "channels": {
-        "site": "https://timlabs.online/journal/lokalnaya-neyroset/",
-        "telegram": 309,
-        "vk": 332,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-15-s3",
-      "date": "2026-10-15",
-      "kind": "new",
-      "rubric": "ИИ-автоматизация",
-      "query": "бот для записи клиентов",
-      "form": "кейс",
-      "status": "announced",
-      "slug": "bot-dlya-zapisi-klientov",
-      "note": "показательная статья Claude по слову Тима 15.10",
-      "channels": {
-        "site": "https://timlabs.online/journal/bot-dlya-zapisi-klientov/",
-        "telegram": 310,
-        "vk": 333,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-15-u",
-      "date": "2026-10-15",
-      "kind": "update",
-      "topic": "после работы",
-      "slugs": [
-        "kak-vosstanovit-sily-posle-rabochego-dny",
-        "kak-otdohnut-posle-raboty"
-      ],
-      "angles": {
-        "kak-vosstanovit-sily-posle-rabochego-dny": "ТЕЛО: физическая усталость после дня за столом или на ногах — спина, глаза, ноги, еда и свет вечером. Ни слова про мысли о работе.",
-        "kak-otdohnut-posle-raboty": "ГОЛОВА: как перестать прокручивать совещания и переписку вечером — граница между работой и домом, ритуал закрытия дня, что делать с телефоном. Ни слова про тело и еду."
-      },
-      "status": "planned",
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-16-a",
-      "date": "2026-10-16",
-      "kind": "new",
-      "rubric": "Родителям",
-      "query": "перинатальный психотерапевт",
-      "angle": "",
-      "form": "спор с мифом",
-      "status": "planned",
-      "slug": null,
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-16-u",
-      "date": "2026-10-16",
-      "kind": "update",
-      "topic": "выходные",
-      "slugs": [
-        "prazdnik-kak-otdyhaem",
-        "dlinnye-vyhodnye"
-      ],
-      "angles": {
-        "prazdnik-kak-otdyhaem": "Праздники С ЛЮДЬМИ: гости, застолья, родственники, шум — как не выйти из них выжатым, где взять час тишины, как уходить вовремя.",
-        "dlinnye-vyhodnye": "Три дня В ОДИНОЧКУ: как не проспать их и не просидеть в телефоне, план по дням — разгрузка, движение, одно удовольствие, возвращение."
-      },
-      "status": "planned",
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-17-a",
-      "date": "2026-10-17",
-      "kind": "new",
-      "rubric": "Тело и здоровье",
-      "query": "утренняя разминка для спины",
-      "angle": "",
-      "form": "репортаж",
-      "status": "planned",
-      "slug": null,
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-17-u",
-      "date": "2026-10-17",
-      "kind": "update",
-      "topic": "стресс",
-      "slugs": [
-        "sovety-kak-spravlyatsya-so-stressom",
-        "kak-spravitsya-so-stressom-i-trevogoy"
-      ],
-      "angles": {
-        "sovety-kak-spravlyatsya-so-stressom": "ОСТРЫЙ: волнение прямо сейчас — перед разговором, выступлением, после ссоры. Приёмы на 2–5 минут, почему они работают физиологически (просто), чего не делать.",
-        "kak-spravitsya-so-stressom-i-trevogoy": "ФОНОВЫЙ: тревога неделями без видимой причины — как отличить от усталости, что убрать из дня, когда к специалисту (без диагнозов). Ни одного приёма 'на две минуты'."
-      },
-      "status": "published",
-      "channels": {
-        "site": "https://timlabs.online/journal/sovety-kak-spravlyatsya-so-stressom/",
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-18-a",
-      "date": "2026-10-18",
-      "kind": "new",
-      "rubric": "ИИ-автоматизация",
-      "query": "как использовать нейросеть в работе",
-      "angle": "",
-      "form": "вопрос читателя",
-      "status": "planned",
-      "slug": null,
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-18-u",
-      "date": "2026-10-18",
-      "kind": "update",
-      "topic": "Кисловодск что посмотреть",
-      "slugs": [
-        "chto-posmotret-v-kislovodske-za-odin-den",
-        "chto-interesnogo-posmotret-v-kislovodske"
-      ],
-      "angles": {
-        "chto-posmotret-v-kislovodske-za-odin-den": "МАРШРУТ ПО ЧАСАМ: 9:00–20:00, конкретные точки, расстояния пешком, где поесть, где устанешь. Только проверяемые места (парк, Нарзанная галерея, Красное Солнышко и т.п.), без выдуманных цен.",
-        "chto-interesnogo-posmotret-v-kislovodske": "ПЯТЬ МЕСТ, о которых молчат путеводители: тихие части парка, видовые точки, дома и дворы с историей. Без маршрута и без времени, только места и почему они стоят внимания."
-      },
-      "status": "planned",
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-19-a",
-      "date": "2026-10-19",
-      "kind": "new",
-      "rubric": "Развитие",
-      "query": "профессиональное саморазвитие",
-      "angle": "",
-      "form": "шаги",
-      "status": "announced",
-      "slug": "professionalnoe-samorazvitie",
-      "channels": {
-        "site": "https://timlabs.online/journal/professionalnoe-samorazvitie/",
-        "telegram": 315,
-        "vk": 337,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-19-u",
-      "date": "2026-10-19",
-      "kind": "update",
-      "topic": "восстановить силы (07.09)",
-      "slugs": [
-        "kak-vosstanovit-silu-organizma",
-        "kak-pravilno-vosstanavlivat-sily",
-        "vosstanovitsya-kak-pravilno"
-      ],
-      "angles": {
-        "kak-vosstanovit-silu-organizma": "Только ПИТАНИЕ и СОН: что есть вечером и утром, когда ложиться, почему крайние схемы не работают. Без движения и без 'ежедневных опор'.",
-        "kak-pravilno-vosstanavlivat-sily": "Только ДВИЖЕНИЕ и ПАУЗЫ в обычный день: ходьба, перерывы, свет, как встроить в рабочий день. Без сна и без еды.",
-        "vosstanovitsya-kak-pravilno": "ПОСЛЕ ПЕРЕГРУЗА: аврал, болезнь, большое событие — сколько длится откат, три стадии возвращения, чего не требовать от себя в первую неделю."
-      },
-      "status": "published",
-      "channels": {
-        "site": "https://timlabs.online/journal/kak-pravilno-vosstanavlivat-sily/",
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-20-a",
-      "date": "2026-10-20",
-      "kind": "new",
-      "rubric": "Осознанность и ретриты",
-      "query": "ретритный центр что это такое осознанность",
-      "angle": "",
-      "form": "история",
-      "status": "announced",
-      "slug": "retritnyy-tsentr-chto-eto-takoe-osoznann",
-      "channels": {
-        "site": "https://timlabs.online/journal/retritnyy-tsentr-chto-eto-takoe-osoznann/",
-        "telegram": 318,
-        "vk": 340,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-20-u",
-      "date": "2026-10-20",
-      "kind": "update",
-      "topic": "полезные привычки (остатки той же формы)",
-      "slugs": [
-        "den-poleznyh-privychek",
-        "poleznye-privychki"
-      ],
-      "angles": {
-        "den-poleznyh-privychek": "Один мой реальный день по часам: где привычки встраиваются сами (к уже существующему действию), где ломаются и почему. Без расписания «утро/день/вечер» и без списка из 5+5.",
-        "poleznye-privychki": "Разбор спора: почему 90% списков привычек не работают — они про действие, а не про условие. Три условия, при которых любая привычка приживается, и как я проверяю новую привычку за 7 дней."
-      },
-      "status": "planned",
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-21-a",
-      "date": "2026-10-21",
-      "kind": "new",
-      "rubric": "Эмоции и психология",
-      "query": "как перестать сравнивать себя с другими",
-      "angle": "",
-      "form": "спор с мифом",
-      "status": "announced",
-      "slug": "kak-perestat-sravnivat-sebya-s-drugimi",
-      "channels": {
-        "site": "https://timlabs.online/journal/kak-perestat-sravnivat-sebya-s-drugimi/",
-        "telegram": 323,
-        "vk": 346,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-22-a",
-      "date": "2026-10-22",
-      "kind": "new",
-      "rubric": "ИИ-автоматизация",
-      "query": "автоматизация рутины",
-      "angle": "",
-      "form": "письмо",
-      "status": "announced",
-      "slug": "avtomatizatsiya-rutiny",
-      "channels": {
-        "site": "https://timlabs.online/journal/avtomatizatsiya-rutiny/",
-        "telegram": 325,
-        "vk": 347,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-23-a",
-      "date": "2026-10-23",
-      "kind": "new",
-      "rubric": "Родителям",
-      "query": "восстановление после родов сколько времени",
-      "angle": "",
-      "form": "репортаж",
-      "status": "planned",
-      "slug": null,
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-24-a",
-      "date": "2026-10-24",
-      "kind": "new",
-      "rubric": "Частые вопросы",
-      "query": "как провести выходные с пользой",
-      "angle": "",
-      "form": "история",
-      "status": "planned",
-      "slug": null,
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    },
-    {
-      "id": "2026-10-25-a",
-      "date": "2026-10-25",
-      "kind": "new",
-      "rubric": "ИИ-автоматизация",
-      "query": "нейросеть помощник для малого бизнеса",
-      "angle": "",
-      "form": "вопрос читателя",
-      "status": "planned",
-      "slug": null,
-      "channels": {
-        "site": null,
-        "telegram": null,
-        "vk": null,
-        "dzen": null
-      }
-    }
-  ],
-  "approved_at": "2026-10-14",
-  "_week_why": "15.10 слово Тима: продаже его продукта — достаточно времени: ИИ-автоматизация чт и вс; суббота: Тело и здоровье / Частые вопросы через неделю"
+  "wed": {
+   "rubric": "Эмоции и психология"
+  },
+  "thu": {
+   "rubric": "ИИ-автоматизация",
+   "form": "кейс"
+  },
+  "fri": {
+   "rubric": "Родителям"
+  },
+  "sat": {
+   "rubric": "Тело и здоровье",
+   "alt_rubric": "Частые вопросы"
+  },
+  "sun": {
+   "rubric": "ИИ-автоматизация"
+  }
+ },
+ "forms": [
+  "история",
+  "вопрос читателя",
+  "спор с мифом",
+  "шаги",
+  "письмо",
+  "сравнение",
+  "репортаж",
+  "кейс"
+ ],
+ "windows": {
+  "site": "10:00",
+  "telegram": "сразу",
+  "vk": "+60 мин",
+  "dzen": "RSS",
+  "marafdy": "пн/ср/пт/вс 10:00",
+  "promo_video": "17:17"
+ },
+ "approved_by_tim": true,
+ "queue": [
+  {
+   "id": "2026-10-14-u",
+   "date": "2026-10-14",
+   "kind": "update",
+   "topic": "что такое ретрит",
+   "slugs": [
+    "retrit",
+    "retrit-eto"
+   ],
+   "angles": {
+    "retrit": "Базовое объяснение: что такое ретрит, какие бывают, сколько длится, что происходит по дням. Для человека, который слышит слово впервые.",
+    "retrit-eto": "Кому ретрит НЕ нужен и когда он вредит: уставшим до истощения, тем, кто бежит от решения, кто ждёт чуда за выходные. Что вместо ретрита в этих случаях. Про здоровье — только 'не является лечением'."
+   },
+   "status": "published",
+   "channels": {
+    "site": "https://timlabs.online/journal/retrit/",
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-15-a",
+   "date": "2026-10-15",
+   "kind": "new",
+   "rubric": "Частые вопросы",
+   "query": "как праздники отдыхать",
+   "angle": "",
+   "form": "шаги",
+   "status": "planned",
+   "slug": null,
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-15-s1",
+   "date": "2026-10-15",
+   "kind": "new",
+   "rubric": "ИИ-автоматизация",
+   "query": "корпоративный блог",
+   "form": "кейс",
+   "status": "announced",
+   "slug": "korporativnyy-blog",
+   "note": "показательная статья Claude по слову Тима 15.10",
+   "channels": {
+    "site": "https://timlabs.online/journal/korporativnyy-blog/",
+    "telegram": 308,
+    "vk": 331,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-15-s2",
+   "date": "2026-10-15",
+   "kind": "new",
+   "rubric": "ИИ-автоматизация",
+   "query": "локальная нейросеть",
+   "form": "кейс",
+   "status": "announced",
+   "slug": "lokalnaya-neyroset",
+   "note": "показательная статья Claude по слову Тима 15.10",
+   "channels": {
+    "site": "https://timlabs.online/journal/lokalnaya-neyroset/",
+    "telegram": 309,
+    "vk": 332,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-15-s3",
+   "date": "2026-10-15",
+   "kind": "new",
+   "rubric": "ИИ-автоматизация",
+   "query": "бот для записи клиентов",
+   "form": "кейс",
+   "status": "announced",
+   "slug": "bot-dlya-zapisi-klientov",
+   "note": "показательная статья Claude по слову Тима 15.10",
+   "channels": {
+    "site": "https://timlabs.online/journal/bot-dlya-zapisi-klientov/",
+    "telegram": 310,
+    "vk": 333,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-15-u",
+   "date": "2026-10-15",
+   "kind": "update",
+   "topic": "после работы",
+   "slugs": [
+    "kak-vosstanovit-sily-posle-rabochego-dny",
+    "kak-otdohnut-posle-raboty"
+   ],
+   "angles": {
+    "kak-vosstanovit-sily-posle-rabochego-dny": "ТЕЛО: физическая усталость после дня за столом или на ногах — спина, глаза, ноги, еда и свет вечером. Ни слова про мысли о работе.",
+    "kak-otdohnut-posle-raboty": "ГОЛОВА: как перестать прокручивать совещания и переписку вечером — граница между работой и домом, ритуал закрытия дня, что делать с телефоном. Ни слова про тело и еду."
+   },
+   "status": "planned",
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-16-a",
+   "date": "2026-10-16",
+   "kind": "new",
+   "rubric": "Родителям",
+   "query": "перинатальный психотерапевт",
+   "angle": "",
+   "form": "спор с мифом",
+   "status": "planned",
+   "slug": null,
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-16-u",
+   "date": "2026-10-16",
+   "kind": "update",
+   "topic": "выходные",
+   "slugs": [
+    "prazdnik-kak-otdyhaem",
+    "dlinnye-vyhodnye"
+   ],
+   "angles": {
+    "prazdnik-kak-otdyhaem": "Праздники С ЛЮДЬМИ: гости, застолья, родственники, шум — как не выйти из них выжатым, где взять час тишины, как уходить вовремя.",
+    "dlinnye-vyhodnye": "Три дня В ОДИНОЧКУ: как не проспать их и не просидеть в телефоне, план по дням — разгрузка, движение, одно удовольствие, возвращение."
+   },
+   "status": "planned",
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-17-a",
+   "date": "2026-10-17",
+   "kind": "new",
+   "rubric": "Тело и здоровье",
+   "query": "утренняя разминка для спины",
+   "angle": "",
+   "form": "репортаж",
+   "status": "planned",
+   "slug": null,
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-17-u",
+   "date": "2026-10-17",
+   "kind": "update",
+   "topic": "стресс",
+   "slugs": [
+    "sovety-kak-spravlyatsya-so-stressom",
+    "kak-spravitsya-so-stressom-i-trevogoy"
+   ],
+   "angles": {
+    "sovety-kak-spravlyatsya-so-stressom": "ОСТРЫЙ: волнение прямо сейчас — перед разговором, выступлением, после ссоры. Приёмы на 2–5 минут, почему они работают физиологически (просто), чего не делать.",
+    "kak-spravitsya-so-stressom-i-trevogoy": "ФОНОВЫЙ: тревога неделями без видимой причины — как отличить от усталости, что убрать из дня, когда к специалисту (без диагнозов). Ни одного приёма 'на две минуты'."
+   },
+   "status": "published",
+   "channels": {
+    "site": "https://timlabs.online/journal/sovety-kak-spravlyatsya-so-stressom/",
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-18-a",
+   "date": "2026-10-18",
+   "kind": "new",
+   "rubric": "ИИ-автоматизация",
+   "query": "как использовать нейросеть в работе",
+   "angle": "",
+   "form": "вопрос читателя",
+   "status": "planned",
+   "slug": null,
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-18-u",
+   "date": "2026-10-18",
+   "kind": "update",
+   "topic": "Кисловодск что посмотреть",
+   "slugs": [
+    "chto-posmotret-v-kislovodske-za-odin-den",
+    "chto-interesnogo-posmotret-v-kislovodske"
+   ],
+   "angles": {
+    "chto-posmotret-v-kislovodske-za-odin-den": "МАРШРУТ ПО ЧАСАМ: 9:00–20:00, конкретные точки, расстояния пешком, где поесть, где устанешь. Только проверяемые места (парк, Нарзанная галерея, Красное Солнышко и т.п.), без выдуманных цен.",
+    "chto-interesnogo-posmotret-v-kislovodske": "ПЯТЬ МЕСТ, о которых молчат путеводители: тихие части парка, видовые точки, дома и дворы с историей. Без маршрута и без времени, только места и почему они стоят внимания."
+   },
+   "status": "planned",
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-19-a",
+   "date": "2026-10-19",
+   "kind": "new",
+   "rubric": "Развитие",
+   "query": "профессиональное саморазвитие",
+   "angle": "",
+   "form": "шаги",
+   "status": "announced",
+   "slug": "professionalnoe-samorazvitie",
+   "channels": {
+    "site": "https://timlabs.online/journal/professionalnoe-samorazvitie/",
+    "telegram": 315,
+    "vk": 337,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-19-u",
+   "date": "2026-10-19",
+   "kind": "update",
+   "topic": "восстановить силы (07.09)",
+   "slugs": [
+    "kak-vosstanovit-silu-organizma",
+    "kak-pravilno-vosstanavlivat-sily",
+    "vosstanovitsya-kak-pravilno"
+   ],
+   "angles": {
+    "kak-vosstanovit-silu-organizma": "Только ПИТАНИЕ и СОН: что есть вечером и утром, когда ложиться, почему крайние схемы не работают. Без движения и без 'ежедневных опор'.",
+    "kak-pravilno-vosstanavlivat-sily": "Только ДВИЖЕНИЕ и ПАУЗЫ в обычный день: ходьба, перерывы, свет, как встроить в рабочий день. Без сна и без еды.",
+    "vosstanovitsya-kak-pravilno": "ПОСЛЕ ПЕРЕГРУЗА: аврал, болезнь, большое событие — сколько длится откат, три стадии возвращения, чего не требовать от себя в первую неделю."
+   },
+   "status": "published",
+   "channels": {
+    "site": "https://timlabs.online/journal/kak-pravilno-vosstanavlivat-sily/",
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-20-a",
+   "date": "2026-10-20",
+   "kind": "new",
+   "rubric": "Осознанность и ретриты",
+   "query": "ретритный центр что это такое осознанность",
+   "angle": "",
+   "form": "история",
+   "status": "announced",
+   "slug": "retritnyy-tsentr-chto-eto-takoe-osoznann",
+   "channels": {
+    "site": "https://timlabs.online/journal/retritnyy-tsentr-chto-eto-takoe-osoznann/",
+    "telegram": 318,
+    "vk": 340,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-20-u",
+   "date": "2026-10-20",
+   "kind": "update",
+   "topic": "полезные привычки (остатки той же формы)",
+   "slugs": [
+    "den-poleznyh-privychek",
+    "poleznye-privychki"
+   ],
+   "angles": {
+    "den-poleznyh-privychek": "Один мой реальный день по часам: где привычки встраиваются сами (к уже существующему действию), где ломаются и почему. Без расписания «утро/день/вечер» и без списка из 5+5.",
+    "poleznye-privychki": "Разбор спора: почему 90% списков привычек не работают — они про действие, а не про условие. Три условия, при которых любая привычка приживается, и как я проверяю новую привычку за 7 дней."
+   },
+   "status": "planned",
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-21-a",
+   "date": "2026-10-21",
+   "kind": "new",
+   "rubric": "Эмоции и психология",
+   "query": "как перестать сравнивать себя с другими",
+   "angle": "",
+   "form": "спор с мифом",
+   "status": "announced",
+   "slug": "kak-perestat-sravnivat-sebya-s-drugimi",
+   "channels": {
+    "site": "https://timlabs.online/journal/kak-perestat-sravnivat-sebya-s-drugimi/",
+    "telegram": 323,
+    "vk": 346,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-22-a",
+   "date": "2026-10-22",
+   "kind": "new",
+   "rubric": "ИИ-автоматизация",
+   "query": "автоматизация рутины",
+   "angle": "",
+   "form": "письмо",
+   "status": "announced",
+   "slug": "avtomatizatsiya-rutiny",
+   "channels": {
+    "site": "https://timlabs.online/journal/avtomatizatsiya-rutiny/",
+    "telegram": 325,
+    "vk": 347,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-23-a",
+   "date": "2026-10-23",
+   "kind": "new",
+   "rubric": "Родителям",
+   "query": "восстановление после родов сколько времени",
+   "angle": "",
+   "form": "репортаж",
+   "status": "planned",
+   "slug": null,
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-24-a",
+   "date": "2026-10-24",
+   "kind": "new",
+   "rubric": "Частые вопросы",
+   "query": "как провести выходные с пользой",
+   "angle": "",
+   "form": "история",
+   "status": "planned",
+   "slug": null,
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  },
+  {
+   "id": "2026-10-25-a",
+   "date": "2026-10-25",
+   "kind": "new",
+   "rubric": "ИИ-автоматизация",
+   "query": "нейросеть помощник для малого бизнеса",
+   "angle": "",
+   "form": "вопрос читателя",
+   "status": "planned",
+   "slug": null,
+   "channels": {
+    "site": null,
+    "telegram": null,
+    "vk": null,
+    "dzen": null
+   }
+  }
+ ],
+ "approved_at": "2026-10-14",
+ "_week_why": "15.10 слово Тима: продаже его продукта — достаточно времени: ИИ-автоматизация чт и вс; суббота: Тело и здоровье / Частые вопросы через неделю | 23.10 (слово Тима): прогулки — рубрика «Кисловодск и КМВ», вторник через неделю с ретритами."
 }
