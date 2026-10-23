@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://timlabs.online/</loc>
+    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_6818540761_s.webp</image:loc><image:title>Обложка: Шёпот неба — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_6795121523_s.webp</image:loc><image:title>Обложка: Двойная спираль — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1896242595_s.webp</image:loc><image:title>Обложка: Разрыватель — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1885555133_s.webp</image:loc><image:title>Обложка: Шёлковый путь — Tim Rockets</image:title></image:image>
@@ -9,7 +10,6 @@
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1884060451_s.webp</image:loc><image:title>Обложка: Пыль на зеркалах — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1895317028_s.webp</image:loc><image:title>Обложка: ПРЕЛОМЛЕНИЕ — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1877660088_s.webp</image:loc><image:title>Обложка: Внутренний свет — Tim Rockets</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1875963143_s.webp</image:loc><image:title>Обложка: Мастер бонсай — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book1.webp</image:loc><image:title>Книга «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book2.webp</image:loc><image:title>Книга «Духовное наследие поколения ПЕПСИ»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book3.webp</image:loc><image:title>Книга «Промт-инженеринг для новичков»</image:title></image:image>
@@ -193,6 +193,21 @@
     <loc>https://timlabs.online/journal/ii-teper-si-ukaz-trampa/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa.jpg</image:loc><image:title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa.webp</image:loc><image:title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-rutiny-800.webp</image:loc><image:title>Автоматизация рутины: что можно передать агенту</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ai-creative-awards-zayavka-800.webp</image:loc><image:title>AI Creative Awards 2026: как подать заявку на премию</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/resursnoe-sostoyanie-800.webp</image:loc><image:title>Ресурсное состояние: как вернуть силы без выгорания</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/bot-dlya-zapisi-klientov-800.webp</image:loc><image:title>Бот для записи клиентов в Telegram: что он должен уметь</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/lokalnaya-neyroset-800.webp</image:loc><image:title>Локальная нейросеть: когда своя модель выгоднее облака</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/korporativnyy-blog-800.webp</image:loc><image:title>Корпоративный блог с ИИ-агентами: опыт журнала «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ai-dlya-otdela-prodazh-800.webp</image:loc><image:title>AI для отдела продаж: что реально автоматизировать</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa-800.webp</image:loc><image:title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-voronki-prodazh-800.webp</image:loc><image:title>Автоматизация воронки продаж: что реально настроить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ii-agenty-v-telegram-800.webp</image:loc><image:title>Нейроагент в Telegram: что умеет BrainAid</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-telegram-kanala-800.webp</image:loc><image:title>Автоматизация Telegram-канала: что реально настроить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/seo-s-pomoschyu-neyroseti-800.webp</image:loc><image:title>SEO с помощью нейросети: что реально автоматизировать</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
@@ -519,6 +534,7 @@
   </url>
   <url>
     <loc>https://timlabs.online/music/</loc>
+    <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_6818540761.webp</image:loc><image:title>Обложка: Шёпот неба — Tim Rockets, сингл</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_6795121523.webp</image:loc><image:title>Обложка: Двойная спираль — Tim Rockets, сингл</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1896242595.webp</image:loc><image:title>Обложка: Разрыватель — Tim Rockets, сингл</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1885555133.webp</image:loc><image:title>Обложка: Шёлковый путь — Tim Rockets, сингл</image:title></image:image>
@@ -550,7 +566,6 @@
     <image:image><image:loc>https://timlabs.online/media/showcase/music/ch_63.webp</image:loc><image:title>Глава 22. Ракета вышла на орбиту. Двигатели выключены — Tim Rockets, «Исповедь артиста»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/ch_65.webp</image:loc><image:title>Глава 23. Терапия давлением — Tim Rockets, «Исповедь артиста»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/ch_71.webp</image:loc><image:title>Глава 25. Выход на сушу — Tim Rockets, «Исповедь артиста»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/showcase/music/ch_77.webp</image:loc><image:title>Глава 26. Город изнутри — Tim Rockets, «Исповедь артиста»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/</loc>
@@ -655,6 +670,28 @@
     <image:image><image:loc>https://timlabs.online/partners/marafdy/posle-massazha/cover.webp</image:loc><image:title>Кровать с отвёрнутым пледом и стакан воды на тумбочке у окна с видом на вечерние горы</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/partners/marafdy/posts/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-massazhista/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-massazhista/cover.webp</image:loc><image:title>Три разных деревянных стула в ряд перед окном, за окном осенний парк</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/sidyachaya-rabota/cover.webp</image:loc><image:title>Пустое офисное кресло у стола с закрытым ноутбуком перед окном, за окном осенний парк</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-podgotovitsya-k-massazhu/cover.webp</image:loc><image:title>Сложенная мягкая одежда и тёплые носки на стуле у окна, за окном осенний парк</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kislovodsk-osenyu/cover.webp</image:loc><image:title>Пустая аллея парка со скамейками и фонарями под золотыми осенними деревьями, вдали холмы на закате</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-poyasnicy/cover.webp</image:loc><image:title>Деревянный стул с льняной подушкой у письменного стола перед окном, за окном осенний парк</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/posle-massazha/cover.webp</image:loc><image:title>Кровать с отвёрнутым пледом и стакан воды на тумбочке у окна с видом на вечерние горы</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/muzyka-dlya-massazha/cover.webp</image:loc><image:title>Проигрыватель с пластинкой на деревянном комоде у окна, за окном осенний парк</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-sheyno-vorotnikovoy-zony/cover.webp</image:loc><image:title>Шерстяное пальто с поднятым воротником на вешалке у окна, за окном осенний парк на закате</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.webp</image:loc><image:title>Сложенные мягкие массажные перчатки на льняной салфетке на деревянном столе в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.webp</image:loc><image:title>Деревянный метроном на тёмной полке у изумрудной стены, тёплый золотой свет сбоку, длинная мягкая тень</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-na-domu/cover.webp</image:loc><image:title>Сложенный портативный массажный стол стоит у стены в комнате, рядом на стуле — стопка чистых сложенных простыней. Тёплый золотой свет сбоку, глубокий изумрудный фон, уходящий к угл</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/cover.webp</image:loc><image:title>Пара походных ботинок с распущенными шнурками на каменном полу у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-ruk/cover.webp</image:loc><image:title>Смартфон экраном вниз на грубой деревянной столешнице в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-spiny/cover.webp</image:loc><image:title>Сложенный тёмно-изумрудный шерстяной плед на краю кровати в тёплом вечернем свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/cover.webp</image:loc><image:title>Длинная льняная дорожка на деревянном полу у окна с видом на горы в тёплом закатном свете</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.webp</image:loc><image:title>Деревянные плечики для одежды висят на крючке у тёмной стены, тёплый золотой свет сбоку, фон глубокий изумрудный, к углам почти чёрный</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.webp</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.webp</image:loc><image:title>Вязаная шерстяная шапка на деревянном крючке у тёмно-зелёной стены в тёплом вечернем свете</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.jpg</image:loc><image:title>Расслабляющий массаж: что это и почему не про силу | MARAFDY</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.webp</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
@@ -717,6 +754,30 @@
     <loc>https://timlabs.online/partners/umas_osoznanie/odni-i-te-zhe-partnery/</loc>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/odni-i-te-zhe-partnery/cover.jpg</image:loc><image:title>Одни и те же партнёры: тест на листке бумаги</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/odni-i-te-zhe-partnery/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему вам попадаются одни и те же партнёры: простой тест на листке бумаги»</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/umas_osoznanie/posts/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-dostigli-tseli-a-radosti-net/cover.jpg</image:loc><image:title>Статьи об Умасе: отношения, эмоции, ответственность</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-dostigli-tseli-a-radosti-net/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Достиг цели, а радости нет. Почему так?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-fokus-vnimaniya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему ты видишь только то, что ищешь?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-mentalnyy-vozrast/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему взрослые ведут себя как дети?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-mne-plokho-ty-vinovat/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему простой разговор в паре заканчивается ссорой?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-na-chto-vy-tratite-dengi/cover.webp</image:loc><image:title>Умас во время разговора — к статье «На что ты на самом деле тратишь деньги?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-odni-i-te-zhe-partnery/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему тебе попадаются одни и те же партнёры?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-potentsial-podarok-ili-gruz/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Потенциал — это подарок или груз?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-trudno-priznat-chto-shel-ne-tuda/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему так трудно признать, что ты шёл не туда?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-zachem-vy-prosypaetes/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Зачем ты каждый день просыпаешься?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-zlost-i-radost-odna-emotsiya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Злость и радость — это одно и то же?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/dostigli-tseli-a-radosti-net/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Достигли цели, а радости нет: что значит двигаться ради движения»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/fokus-vnimaniya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему вы замечаете только то, что ищете: фокус внимания»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/mentalnyy-vozrast/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему взрослые иногда ведут себя как дети: что Умас называет ментальным возрастом»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/mne-plokho-ty-vinovat/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Она говорит «мне плохо», он слышит «ты виноват»: почему разговор превращается в ссору»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/na-chto-vy-tratite-dengi/cover.webp</image:loc><image:title>Умас во время разговора — к статье «На что вы тратите деньги, когда вам плохо»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/odni-i-te-zhe-partnery/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему вам попадаются одни и те же партнёры: простой тест на листке бумаги»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/potentsial-podarok-ili-gruz/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Потенциал — подарок или груз? Почему большие возможности тяжело нести»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/trudno-priznat-chto-shel-ne-tuda/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему так трудно признать, что шёл не туда»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/zachem-vy-prosypaetes/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Зачем вы каждый день просыпаетесь: разговор об ответственности за свою жизнь»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/zlost-i-radost-odna-emotsiya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Злость и радость — одна эмоция? Что показывает упражнение «разложи эмоцию»»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/potentsial-podarok-ili-gruz/</loc>
