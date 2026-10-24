@@ -407,12 +407,12 @@
       "query": "как провести выходные с пользой",
       "angle": "",
       "form": "история",
-      "status": "published",
+      "status": "announced",
       "slug": "kak-provesti-vyhodnye-s-polzoy",
       "channels": {
         "site": "https://timlabs.online/journal/kak-provesti-vyhodnye-s-polzoy/",
-        "telegram": null,
-        "vk": null,
+        "telegram": 326,
+        "vk": 348,
         "dzen": null
       }
     },
