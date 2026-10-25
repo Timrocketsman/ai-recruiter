@@ -90,8 +90,7 @@ a{color:inherit}
 .pp-facts span{font-size:14.5px;color:var(--mute)}
 @keyframes ppZoom{from{transform:scale(1.12)}to{transform:scale(1.04)}}
 @keyframes ppUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-.pp-hero-text>*:not(h1){animation:ppUp .9s cubic-bezier(.2,.7,.2,1) both}
-.pp-hero-text>*:nth-child(2){animation-delay:.08s}.pp-hero-text>*:nth-child(3){animation-delay:.16s}.pp-hero-text>*:nth-child(4){animation-delay:.24s}
+/* текст первого экрана без анимации: виден сразу (скорость, метрики поиска) */
 @media (max-width:900px){
   .pp-hero-text,.pp-hero-art{grid-column:1/-1}
   .pp-hero-art{order:-1}.pp-hero-photo{aspect-ratio:16/11}
