@@ -9,7 +9,7 @@
 <link rel="canonical" href="https://timlabs.online/" />
 <meta name="yandex-verification" content="0934835e01204185" />
 <meta name="google-site-verification" content="YApNQnKkYCCcRsbGo8mjDzddORmYEkMudjbIbDyDx04" />
-<meta name="theme-color" content="#06080E" />
+<meta name="theme-color" content="#07090F" media="(prefers-color-scheme: dark)" /><meta name="theme-color" content="#F2F4F8" media="(prefers-color-scheme: light)" /><script>(function(){try{var t=localStorage.getItem("tl-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);else if(matchMedia("(prefers-color-scheme: light)").matches)document.documentElement.classList.add("auto-light")}catch(e){}})();</script>
 <meta property="og:type" content="profile" />
 <meta property="og:site_name" content="TimLabs" />
 <meta property="og:title" content="TimLabs — проводник по мастерам жизни" />
@@ -69,7 +69,7 @@
 }
 </script>
 
-<script>document.documentElement.classList.add("js")</script>
+
 
 <style id="timlabs-frame-guard">body{display:none!important}</style>
 <script>if(self===top){var d=document.getElementById("timlabs-frame-guard");d&&d.parentNode.removeChild(d);}else{top.location=self.location;}</script>
@@ -120,7 +120,7 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 </style>
 <link rel="preload" href="/assets/fonts/onest-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/corm-cyr-500i.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/tl-paper.css?v=202610251642">
+<link rel="stylesheet" href="/assets/tl-paper.css?v=202610251720">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
@@ -136,14 +136,14 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
   <a class="pp-logo" href="/" aria-label="TimLabs — на главную">TimLabs <i>проводник</i></a>
   <nav class="pp-nav" aria-label="Разделы">
     <a href="#put">Направления</a><a href="#mastera">Мастера</a><a href="/journal/">Журнал «Компас»</a><a href="/ii-avtomatizaciya/">ИИ-автоматизация</a>
-    <a class="pp-btn" href="#tl-podbor">Подобрать мастера</a>
+    <a class="pp-btn" href="#tl-podbor">Подобрать мастера</a><button class="pp-theme" type="button" aria-label="Переключить тему: день или ночь" title="День / ночь"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
   </nav>
-  <details class="pp-menu"><summary>Меню</summary><div class="pp-drop">
+  <button class="pp-theme pp-theme-m" type="button" aria-label="Переключить тему: день или ночь" title="День / ночь"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><details class="pp-menu"><summary>Меню</summary><div class="pp-drop">
     <a href="#put">Направления</a><a href="#tl-podbor">Подобрать мастера</a><a href="#mastera">Мастера</a><a href="/journal/">Журнал «Компас»</a>
     <a href="/ii-avtomatizaciya/">ИИ-автоматизация</a><a href="#svyaz">Написать мне</a></div></details>
 </div></header>
 <main>
-<section class="pp-hero"><div class="pp-wrap">
+<section class="pp-hero"><canvas id="tl-field" aria-hidden="true"></canvas><div class="pp-wrap">
   <div class="pp-hero-text">
     <span class="pp-mono">Проводник по мастерам жизни · Кавминводы и онлайн</span>
     <h1>Помогу пройти <em>каждый этап жизни</em> рядом с проверенными мастерами</h1>
@@ -160,9 +160,9 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
       <span><b>Тим, автор проекта</b>Отвечаю лично — напишите</span></a>
   </div>
   <div class="pp-facts">
-    <div><b data-jcount>126</b><span>статей в журнале «Компас»</span></div>
-    <div><b>5</b><span>мастеров и проектов, которые я веду</span></div>
-    <div><b>КМВ</b><span>на месте и онлайн по всей России</span></div>
+    <div class="rv"><b data-jcount data-count="126">126</b><span>статей в журнале «Компас»</span></div>
+    <div class="rv"><b data-count="5">5</b><span>мастеров и проектов, которые я веду</span></div>
+    <div class="rv"><b>КМВ</b><span>на месте и онлайн по всей России</span></div>
   </div>
 </div></section>
 <section class="pp-sec" id="put" aria-labelledby="put-h"><div class="pp-wrap">
@@ -356,9 +356,9 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
       </div>
     </article>
     <div class="tlg-grid">
-      <article class="gcard rv" style="--c:#35b6ff;--c2:#00b4ff"><div class="g-top"><span class="g-ic" aria-hidden="true">🙋</span><span class="g-tag">Частным лицам</span></div><h3><a href="/ii-avtomatizaciya/#chastnym">Автоматизация рутины</a></h3><p>Разберу вашу рутину и настрою ИИ-помощников под почту, записи, учёбу и личные проекты.</p><span class="g-more">Подробнее →</span></article>
-      <article class="gcard rv" style="--c:#00b4ff;--c2:#d100ff"><div class="g-top"><span class="g-ic" aria-hidden="true">🏢</span><span class="g-tag">Бизнесу</span></div><h3><a href="/ii-avtomatizaciya/#biznesu">ИИ для бизнеса: боты и агенты</a></h3><p>Ответы клиентам и заявки, отчёты и документы, ИИ-агенты на данных компании.</p><span class="g-more">Подробнее →</span></article>
-      <article class="gcard rv" style="--c:#d100ff;--c2:#35b6ff"><div class="g-top"><span class="g-ic" aria-hidden="true">🌐</span><span class="g-tag">Бренду и эксперту</span></div><h3><a href="/ii-avtomatizaciya/#cifrovoj-sled">Экосистема цифрового следа</a></h3><p>Сайт, журнал, соцсети и ролики — и видимость в поиске и в ИИ-ассистентах.</p><span class="g-more">Подробнее →</span></article>
+      <article class="gcard rv" style="--c:#35b6ff;--c2:#00b4ff"><div class="g-top"><span class="g-tag">Частным лицам</span></div><h3><a href="/ii-avtomatizaciya/#chastnym">Автоматизация рутины</a></h3><p>Разберу вашу рутину и настрою ИИ-помощников под почту, записи, учёбу и личные проекты.</p><span class="g-more">Подробнее →</span></article>
+      <article class="gcard rv" style="--c:#00b4ff;--c2:#d100ff"><div class="g-top"><span class="g-tag">Бизнесу</span></div><h3><a href="/ii-avtomatizaciya/#biznesu">ИИ для бизнеса: боты и агенты</a></h3><p>Ответы клиентам и заявки, отчёты и документы, ИИ-агенты на данных компании.</p><span class="g-more">Подробнее →</span></article>
+      <article class="gcard rv" style="--c:#d100ff;--c2:#35b6ff"><div class="g-top"><span class="g-tag">Бренду и эксперту</span></div><h3><a href="/ii-avtomatizaciya/#cifrovoj-sled">Экосистема цифрового следа</a></h3><p>Сайт, журнал, соцсети и ролики — и видимость в поиске и в ИИ-ассистентах.</p><span class="g-more">Подробнее →</span></article>
     </div>
   </section>
 <script>/* цель b2b_click (Метрика id 664071713) — только после согласия */
@@ -373,20 +373,20 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
     </div>
     <div class="tlg-grid">
       <article class="gcard rv" style="--c:#00b4ff;--c2:#6aa0ff">
-        <div class="g-top"><span class="g-ic" aria-hidden="true">📖</span><span class="g-tag">Журнал</span></div>
+        <div class="g-top"><span class="g-tag">Журнал</span></div>
         <h3><a href="/journal/">Журнал «Компас»</a></h3>
         <p>Больше <span data-jfloor>120 статей</span> о развитии, эмоциях, теле, материнстве и местах Кавказа. Новые выходят каждый день.</p>
         <div class="chips"><a class="chip main" style="--c:#2aabee" href="https://t.me/timlabs_journal" target="_blank" rel="noopener">Канал журнала</a></div>
       </article>
       <article class="gcard rv" style="--c:#2fd07a;--c2:#00b4ff">
-        <div class="g-top"><span class="g-ic" aria-hidden="true">🛰️</span><span class="g-tag">В реальном времени</span></div>
+        <div class="g-top"><span class="g-tag">В реальном времени</span></div>
         <h3><a href="/zhivoj-ofis/">Живой офис ИИ-агентов</a></h3>
         <p>35 агентов в 10 отделах ведут журнал и сайт. Видно, кто сейчас пишет статью, проверяет текст или готовит ролик.</p>
         <div class="chips"><a class="chip main" style="--c:#2fd07a" href="/zhivoj-ofis/">Смотреть офис</a></div>
       </article>
       
       <!--tl-music-card--><article class="gcard deep rv" id="card-music" tabindex="0" role="button" aria-expanded="false" aria-controls="depth-music" style="--c:#ff4fd8;--c2:#00b4ff">
-        <div class="g-top"><span class="g-ic" aria-hidden="true">🎧</span><span class="g-tag">Музыка</span></div>
+        <div class="g-top"><span class="g-tag">Музыка</span></div>
         <h3>Tim Rockets</h3>
         <p>Моя музыка на стыке хип-хопа, поэтического речитатива и электроники, созданная вместе с ИИ: 14 релизов и 23 трека на всех площадках. Нажмите на карточку — внутри фрагменты релизов и анонсы.</p>
         <div class="g-depth" id="depth-music"><div>
@@ -398,7 +398,7 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
         <div class="chips"><a class="chip main" style="--c:#ff4fd8" href="/music/">Релизы и путь артиста</a><a class="chip" style="--c:#ffcc00" href="https://music.yandex.ru/artist/25208278" target="_blank" rel="noopener">Яндекс Музыка</a><a class="chip" href="https://music.yandex.ru/artist/25208278" target="_blank" rel="noopener">Все площадки</a><a class="chip" style="--c:#2aabee" href="https://t.me/timrockets" target="_blank" rel="noopener">Канал артиста</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_art" target="_blank" rel="noopener">Синглы первыми</a><a class="chip" href="https://suno.com/@timrockets" target="_blank" rel="noopener">Suno</a></div>
       </article><!--/tl-music-card-->
       <!--tl-art-cards--><article class="gcard deep rv" id="card-books" tabindex="0" role="button" aria-expanded="false" aria-controls="depth-books" style="--c:#ffcc00;--c2:#00b4ff">
-        <div class="g-top"><span class="g-ic" aria-hidden="true">📚</span><span class="g-tag">Книги</span></div>
+        <div class="g-top"><span class="g-tag">Книги</span></div>
         <h3>Книги Tim Rockets</h3>
         <p>5 книг на ЛитРес и новые в работе: о возвращении к себе, о поколении интернета и о разговоре с ИИ. Нажмите на карточку — внутри полка с обложками.</p>
         <div class="g-depth" id="depth-books"><div>
@@ -408,7 +408,7 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
         <div class="chips"><a class="chip main" style="--c:#ffcc00" href="/knigi/">Все книги</a><a class="chip" href="https://www.litres.ru/72407707/" target="_blank" rel="noopener">ЛитРес</a></div>
       </article>
       <article class="gcard deep rv" id="card-poems" tabindex="0" role="button" aria-expanded="false" aria-controls="depth-poems" style="--c:#8a5cff;--c2:#ff4fd8">
-        <div class="g-top"><span class="g-ic" aria-hidden="true">🪶</span><span class="g-tag">Стихи</span></div>
+        <div class="g-top"><span class="g-tag">Стихи</span></div>
         <h3>Стихи из тишины</h3>
         <p>12 стихотворений о любви, пути и свободе — с авторским озвучиванием. Нажмите на карточку, чтобы прочитать первую строфу.</p>
         <div class="g-depth" id="depth-poems"><div>
@@ -418,7 +418,7 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
         <div class="chips"><a class="chip main" style="--c:#8a5cff" href="/stihi/">Все стихи</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_art" target="_blank" rel="noopener">Группа TimLabs Art</a></div>
       </article>
       <article class="gcard deep rv" id="card-school" tabindex="0" role="button" aria-expanded="false" aria-controls="depth-school" style="--c:#2fd07a;--c2:#00b4ff">
-        <div class="g-top"><span class="g-ic" aria-hidden="true">🧪</span><span class="g-tag">Лаборатория</span></div>
+        <div class="g-top"><span class="g-tag">Лаборатория</span></div>
         <h3>Лаборатория и школа TimLabs</h3>
         <p>Школа промт-инженерии и творческая мастерская: нейросети и ИИ-агенты на практике. Нажмите на карточку — внутри программа курса.</p>
         <div class="g-depth" id="depth-school"><div>
@@ -428,7 +428,7 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
         <div class="chips"><a class="chip main" style="--c:#2fd07a" href="/shkola/">О школе</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_school" target="_blank" rel="noopener">Школа в Telegram</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_art" target="_blank" rel="noopener">Творческая лаборатория</a></div>
       </article><!--/tl-art-cards-->
       <article class="gcard rv" style="--c:#35b6ff;--c2:#d100ff">
-        <div class="g-top"><span class="g-ic" aria-hidden="true">🤖</span><span class="g-tag">Помощник</span></div>
+        <div class="g-top"><span class="g-tag">Помощник</span></div>
         <h3><a href="https://t.me/TimLabs_bot" target="_blank" rel="noopener">Бот @TimLabs_bot</a></h3>
         <p>Задаст пару вопросов и передаст мне ваш запрос — если удобнее в Telegram, чем в форме подбора выше.</p>
         <div class="chips"><a class="chip main" style="--c:#2aabee" href="https://t.me/TimLabs_bot" target="_blank" rel="noopener">Открыть бота</a></div>
@@ -454,16 +454,7 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
     <p>Владелец сайта: Гуцев Тимур Олегович (самозанятый), ИНН 460302385684, г. Краснодар, пр. Мира, 28 · <a href="mailto:timurgutsev@yandex.ru">timurgutsev@yandex.ru</a></p>
   </div></footer>
 </main>
-<script>(function(){
-  var go={zamysel:'/beremennost-i-rody/',rozhdenie:'/beremennost-i-rody/',telo:'/telo-i-vosstanovlenie/',dukh:'/retrity-i-kmv/',detstvo:'/journal/'};
-  var hh=location.hash.slice(1); if(go[hh]){location.replace(go[hh]);return;}
-  if(hh==='provody'){var pv=document.querySelector('#provody details'); if(pv) pv.open=true;}
-  var els=document.querySelectorAll('.rv');
-  if(!('IntersectionObserver' in window)){for(var i=0;i<els.length;i++)els[i].classList.add('in');return;}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
-  for(var j=0;j<els.length;j++)io.observe(els[j]);
-  document.querySelectorAll('.pp-menu a').forEach(function(a){a.addEventListener('click',function(){a.closest('details').open=false;});});
-})();</script>
+<script src="/assets/tl-motion.js?v=202610251720" defer></script>
 
 
 <!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
@@ -648,7 +639,7 @@ else if(/^mailto:/.test(h))g('mail_click');
 else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshelnik|transformacionnyj-retrit|bratstvo|podgotovka|soprovozhdenie|vosstanovlenie|konsultaciya)/.test(a.href))g('service_click');
 else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>
 <!--tl-donate-v1--><a id="tl-donate" href="https://dzen.ru/timlabs.online?donate=true" target="_blank" rel="noopener" aria-label="Поддержать журнал донатом в Дзене">
-<span aria-hidden="true">💙</span><span class="tld-t">Поддержать журнал</span><button type="button" class="tld-x" aria-label="Скрыть">×</button></a>
+<span class="tld-t">Поддержать журнал</span><button type="button" class="tld-x" aria-label="Скрыть">×</button></a>
 <style>
 #tl-donate{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;align-items:center;gap:8px;padding:9px 10px 9px 14px;border-radius:999px;
   font:600 .82rem/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#e7ecf7;text-decoration:none;
