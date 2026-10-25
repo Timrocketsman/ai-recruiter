@@ -424,10 +424,10 @@
       "query": "нейросеть помощник для малого бизнеса",
       "angle": "",
       "form": "вопрос читателя",
-      "status": "planned",
-      "slug": null,
+      "status": "published",
+      "slug": "neyroset-pomoschnik-dlya-malogo-biznesa",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/neyroset-pomoschnik-dlya-malogo-biznesa/",
         "telegram": null,
         "vk": null,
         "dzen": null
