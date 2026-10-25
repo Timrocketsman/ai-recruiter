@@ -302,3 +302,6 @@ body,.pp-top,.pp-tile,.pp-row,.pp-btn.line{transition-property:background-color,
 
 /* плашка «Поддержать журнал»: кнопка закрытия не меньше 36 px (на всех страницах) */
 html body #tl-donate .tld-x,html body #tl-donate button{min-width:36px!important;min-height:36px!important;width:36px!important;height:36px!important;display:inline-flex!important;align-items:center;justify-content:center}
+
+/* старые страницы дорисовывали «+» к любому summary — у меню шапки не надо */
+html body .pp-menu summary::after,html body .pp-menu summary::before{content:none!important}
