@@ -117,6 +117,9 @@
 .pa .btn:hover{background:var(--accent-2);transform:translateY(-1px);box-shadow:0 8px 24px rgba(79,180,242,.18)}
 .pa .btn.tg,.pa .btn.max{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line-2)}
 .pa .cta-row{justify-content:flex-start}
+.pa .callout .btn,.pa .cta .btn,.pa .cta-row .btn{margin:0 10px 10px 0}
+.pa .callout p:last-child{margin:8px 0 0;font-size:13.5px;color:var(--faint)}
+@media (max-width:520px){.pa .callout .btn,.pa .cta .btn,.pa .cta-row .btn{display:flex;width:100%;margin:0 0 10px}}
 .pa .disclaimer{margin-top:28px;font-size:13px;color:var(--faint);background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;padding:14px 0 0}
 .pa footer{margin-top:40px;border-top:1px solid var(--line);padding-top:20px;font:400 12.5px/1.6 var(--sans);color:var(--faint)}
 .pa footer a{color:var(--mute)}.pa footer sup{color:var(--faint)}
