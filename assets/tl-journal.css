@@ -69,10 +69,10 @@
 .pa .byline{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;border-top:1px solid var(--line);padding-top:14px;margin-top:8px;font:400 12.5px/1.5 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--faint)}
 .pa .byline .author{color:var(--ink-2);font-weight:400}
 .pa .byline time{margin:0}
-.pa .cover{margin:22px 0 6px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;background:var(--night)}
+.pa .cover{margin:22px 0 0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;background:var(--night)}
 .pa .cover img{width:100%;height:100%;object-fit:cover;display:block}
 .pa .cover figcaption{display:none}
-@media (min-width:1024px){.pa .crumb,.pa header.hero,.pa .cover{grid-column:1/-1;max-width:1000px}.pa nav.toc{grid-column:2;grid-row:4/span 40;align-self:start;position:sticky;top:84px}}
+@media (min-width:1024px){.pa .crumb,.pa header.hero,.pa .cover{grid-column:1/-1;max-width:1000px}.pa nav.toc{grid-column:2;grid-row:3/span 60;align-self:start;position:sticky;top:84px;max-height:calc(100vh - 100px);overflow:auto}}
 .pa nav.toc{background:transparent;border:0;border-left:1px solid var(--line);border-radius:0;padding:4px 0 4px 18px;margin:28px 0}
 .pa .toc-title{font:400 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:12px;font-weight:400}
 .pa nav.toc ol{margin:0;padding:0;list-style:none;counter-reset:toc}
