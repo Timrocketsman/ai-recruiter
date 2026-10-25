@@ -70,3 +70,18 @@ body.ps .callout p{color:var(--mute)!important;max-width:none!important;margin-l
 body.ps .chip.main,body.ps .btn.main{color:var(--accent)!important}
 body.ps details summary{color:var(--ink)}
 body.ps ::selection{background:var(--accent);color:var(--accent-ink)}
+
+/* ——— светлая тема: старые страницы прописывали светлый текст цифрами — переводим на чернила системы ——— */
+:root[data-theme="light"] body.ps :is(b,strong,th,h1,h2,h3,h4,.pl-t,.gd-t,.card-title,summary),:root.auto-light body.ps :is(b,strong,th,h1,h2,h3,h4,.pl-t,.gd-t,.card-title,summary){color:var(--ink)!important}
+:root[data-theme="light"] body.ps :is(p,li,td,dd,blockquote,.gd-soon,.gd-poem,.lead,.sub),:root.auto-light body.ps :is(p,li,td,dd,blockquote,.gd-soon,.gd-poem,.lead,.sub){color:var(--ink-2)!important}
+:root[data-theme="light"] body.ps :is(small,.k,.kick,.muted,.dim,.meta,.date,time,.eyebrow,.tlg-kicker,.g-tag),:root.auto-light body.ps :is(small,.k,.kick,.muted,.dim,.meta,.date,time,.eyebrow,.tlg-kicker,.g-tag){color:var(--mute)!important}
+:root[data-theme="light"] body.ps main a:not(.btn):not(.pp-btn):not(.chip):not(.tab):not(.pj-tab),:root.auto-light body.ps main a:not(.btn):not(.pp-btn):not(.chip):not(.tab):not(.pj-tab){color:var(--ink)!important}
+:root[data-theme="light"] body.ps .btn,:root.auto-light body.ps .btn{color:var(--accent-ink)!important}
+:root[data-theme="light"] body.ps :is(.btn.ghost,.btn.tg,.btn.max,.btn.sec,.btn.secondary),:root.auto-light body.ps :is(.btn.ghost,.btn.tg,.btn.max,.btn.sec,.btn.secondary){color:var(--ink)!important}
+/* главная: витрины «Мои проекты» и блок услуг */
+:root[data-theme="light"] :is(#moi,#uslugi) :is(b,strong,.pl-t,.gd-t,h3,h4),:root.auto-light :is(#moi,#uslugi) :is(b,strong,.pl-t,.gd-t,h3,h4){color:var(--ink)!important}
+:root[data-theme="light"] :is(#moi,#uslugi) :is(p,li,span,blockquote,.gd-soon,.gd-poem),:root.auto-light :is(#moi,#uslugi) :is(p,li,span,blockquote,.gd-soon,.gd-poem){color:var(--ink-2)!important}
+:root[data-theme="light"] :is(#moi,#uslugi) :is(small,.k,.kick,time),:root.auto-light :is(#moi,#uslugi) :is(small,.k,.kick,time){color:var(--mute)!important}
+:root[data-theme="light"] :is(#moi,#uslugi) .b2b h2 span,:root.auto-light :is(#moi,#uslugi) .b2b h2 span{-webkit-text-fill-color:transparent!important}
+/* кнопка закрытия плашки «Поддержать журнал» — не меньше 36 px */
+html body #tl-donate .tld-x,html body #tl-donate button{min-width:36px;min-height:36px;display:inline-flex;align-items:center;justify-content:center}
