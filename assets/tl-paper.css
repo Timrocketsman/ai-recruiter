@@ -12,7 +12,7 @@
 :root{
   /* фирменная палитра TimLabs, взрослая интерпретация (слово Тима 25.10: «премиум со вкусом, без звона и пестроты,
      технологично и современно»): почти ахроматическая ночь, один льдисто-голубой акцент, фиолет — тихо и редко */
-  --paper:#07090F; --paper-2:#0C1018; --bone:#0F131C; --raise:#141926; --ink:#E9EDF5; --ink-2:#C3CAD8; --mute:#9AA3B6; --faint:#667087;
+  --paper:#07090F; --paper-2:#0C1018; --bone:#0F131C; --raise:#141926; --ink:#E9EDF5; --ink-2:#C3CAD8; --mute:#9AA3B6; --faint:#7A849B;
   --line:rgba(255,255,255,.06); --line-2:rgba(255,255,255,.11); --line-solid:#1B2130;
   --accent:#4FB4F2; --accent-2:#6CC2F7; --accent-ink:#06121D; --brand:#00B4FF; --violet:#7C7CFF; --mag:#A86BFF; --night:#0A0D15;
   --grad:linear-gradient(100deg,#4FB4F2 0%,#7C7CFF 60%,#A86BFF 100%);
@@ -266,7 +266,7 @@ html body{overflow-x:clip}
 /* ——— светлая тема «День»: то же решение в противоположном исполнении (слово Тима 25.10) ———
    холодный туман и белая бумага, тот же льдисто-голубой, но глубже ради контраста; тёмные окна (фото, полоса «Проводы») остаются ночными */
 :root[data-theme="light"],:root:not([data-theme="dark"]).auto-light{
-  --paper:#F2F4F8; --paper-2:#E9EDF3; --bone:#FFFFFF; --raise:#FFFFFF; --ink:#0E1320; --ink-2:#2A3245; --mute:#5B6578; --faint:#8A94A8;
+  --paper:#F2F4F8; --paper-2:#E9EDF3; --bone:#FFFFFF; --raise:#FFFFFF; --ink:#0E1320; --ink-2:#2A3245; --mute:#5B6578; --faint:#6F7990;
   --line:rgba(14,19,32,.08); --line-2:rgba(14,19,32,.15); --line-solid:#D9DEE8;
   --accent:#1B7FD6; --accent-2:#2E90E6; --accent-ink:#FFFFFF; --violet:#5B5BE6; --mag:#7A4FE0; --night:#0E1320;
   --grad:linear-gradient(100deg,#1B7FD6 0%,#5B5BE6 60%,#7A4FE0 100%); --shadow:0 24px 60px rgba(14,19,32,.12);
