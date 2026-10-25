@@ -69,6 +69,9 @@
 .pa .byline{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;border-top:1px solid var(--line);padding-top:14px;margin-top:8px;font:400 12.5px/1.5 var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--faint)}
 .pa .byline .author{color:var(--ink-2);font-weight:400}
 .pa .byline time{margin:0}
+.pa .tl-cover{margin:22px 0 0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--night)}
+.pa .tl-cover img{width:100%;height:auto;display:block;border-radius:0;margin:0}
+.pa .tl-cover figcaption{font:400 12px/1.5 var(--mono);letter-spacing:.04em;color:var(--faint);padding:10px 14px;text-transform:uppercase}
 .pa .cover{margin:22px 0 0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);aspect-ratio:16/9;background:var(--night)}
 .pa .cover img{width:100%;height:100%;object-fit:cover;display:block}
 .pa .cover figcaption{display:none}
