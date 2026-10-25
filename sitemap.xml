@@ -820,4 +820,10 @@
     <loc>https://timlabs.online/journal/kak-provesti-vyhodnye-s-polzoy/</loc>
     <lastmod>2026-10-24</lastmod>
   </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/massazh-v-kislovodske/</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
