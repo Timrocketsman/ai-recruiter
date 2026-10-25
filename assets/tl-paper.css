@@ -240,7 +240,9 @@ html body #tl-consent .tl-ok,html body #tl-consent button.tl-ok{background-image
 .pp-tile:hover{border-color:var(--line-2)}
 
 /* ——— движение и живое поле ——— */
-#tl-field{position:absolute;inset:0 auto auto 0;z-index:0;pointer-events:none;filter:blur(70px);opacity:.9}
+#tl-field{position:absolute;left:0;top:0;width:100%;height:min(100vh,1200px);z-index:0;pointer-events:none;filter:blur(70px);opacity:.9}
+.pp-hero{overflow-x:clip}
+html body{overflow-x:clip}
 .pp-hero,.pp-top,main{position:relative}
 .pp-hero{z-index:1}
 .pp-top{transition:box-shadow var(--t-ui) ease,background var(--t-ui) ease}

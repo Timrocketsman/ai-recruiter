@@ -87,8 +87,8 @@
   var COLORS = [[79, 180, 242], [124, 124, 255], [79, 180, 242], [168, 107, 255]];
   function size() {
     dpr = Math.min(1, devicePixelRatio || 1) * .5;                  /* полразмера: пятна размыты, точность не нужна */
-    W = c.width = Math.ceil(innerWidth * dpr); H = c.height = Math.ceil(Math.min(innerHeight, 1200) * dpr);
-    c.style.width = innerWidth + "px"; c.style.height = Math.min(innerHeight, 1200) + "px";
+    var cw = c.clientWidth || root.clientWidth, ch = c.clientHeight || Math.min(innerHeight, 1200);   /* размер задаёт CSS — холст никогда не шире страницы */
+    W = c.width = Math.ceil(cw * dpr); H = c.height = Math.ceil(ch * dpr);
   }
   function seed() {
     blobs = COLORS.map(function (col, i) {
@@ -119,7 +119,7 @@
   function start() { if (!raf && visible) raf = requestAnimationFrame(draw); }
   size(); seed(); start();
   addEventListener("resize", function () { size(); }, { passive: true });
-  addEventListener("pointermove", function (e) { tx = e.clientX / innerWidth; ty = e.clientY / Math.min(innerHeight, 1200); }, { passive: true });
+  addEventListener("pointermove", function (e) { tx = e.clientX / (c.clientWidth || 1); ty = e.clientY / (c.clientHeight || 1); }, { passive: true });
   doc.addEventListener("visibilitychange", function () { visible = doc.visibilityState === "visible"; start(); });
   var heroIO = new IntersectionObserver(function (es) { visible = es[0].isIntersecting && doc.visibilityState === "visible"; start(); });
   heroIO.observe(c);
