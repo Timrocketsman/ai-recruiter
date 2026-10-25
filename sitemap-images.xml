@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://timlabs.online/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/gory-kislovodsk-rassvet.webp</image:loc><image:title>Горы Кавказа над Кисловодском перед рассветом — Кавминводы</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/avatar.jpg</image:loc><image:title>Тим — основатель TimLabs</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/paper/podgotovka-k-rodam-doula.webp</image:loc><image:title>Будущая мама перед родами: подготовка к родам и сопровождение беременности с доулой</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/paper/massazh-na-domu-kislovodsk.webp</image:loc><image:title>Спокойный отдых на массажном столе: велнес-массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/paper/retrit-zheleznovodsk-beshtau.webp</image:loc><image:title>Деревянный дом на склоне у Железноводска и гора Бештау — место для ретрита</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Блокнот и травяной чай у окна с видом на горы — журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/paper/provody-svecha.webp</image:loc><image:title>Свеча и сухие цветы на подоконнике — поддержка в трудный момент</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_6818540761_s.webp</image:loc><image:title>Обложка: Шёпот неба — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_6795121523_s.webp</image:loc><image:title>Обложка: Двойная спираль — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1896242595_s.webp</image:loc><image:title>Обложка: Разрыватель — Tim Rockets</image:title></image:image>
@@ -196,19 +203,46 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/neyroset-pomoschnik-dlya-malogo-biznesa.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/neyroset-pomoschnik-dlya-malogo-biznesa-800.webp</image:loc><image:title>Нейросеть-помощник для малого бизнеса: с какой задачи начать</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/professionalnoe-samorazvitie-800.webp</image:loc><image:title>Профессиональное саморазвитие: как расти в работе без выгорания</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/tsel-samorazvitiya-800.webp</image:loc><image:title>Цель саморазвития: как определить, что вам действительно нужно</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/sotsialnoe-samorazvitie-800.webp</image:loc><image:title>Социальное саморазвитие: как меняться рядом с людьми</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-semi-800.webp</image:loc><image:title>Семейное саморазвитие: как расти вместе и не терять себя</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-primery-800.webp</image:loc><image:title>Саморазвитие: примеры, которые реально работают</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/spa-kislovodsk-800.webp</image:loc><image:title>СПА в Кисловодске: полный гид по процедурам и отдыху</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-massazh-800.webp</image:loc><image:title>Массаж в Кисловодске: виды, польза и как выбрать мастера</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-sanatoriy-kakoy-luchshe-800.webp</image:loc><image:title>Какой санаторий в Кисловодске лучше выбрать: честный гид</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-perestat-sravnivat-sebya-s-drugimi-800.webp</image:loc><image:title>Как перестать сравнивать себя с другими: практические шаги</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/resursnoe-sostoyanie-800.webp</image:loc><image:title>Ресурсное состояние: как вернуть силы без выгорания</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/goulman-emotsionalnyy-intellekt-800.webp</image:loc><image:title>Эмоциональный интеллект по Гоулману: книга и практика</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/1-samootsenka-800.webp</image:loc><image:title>Самооценка от 1 до 10: как оценить себя</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/sut-samootsenki-800.webp</image:loc><image:title>Самооценка: что это, откуда она берётся и как с ней жить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/meditatsiya-retrit-800.webp</image:loc><image:title>Ретрит по медитации: что это и как начать</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/den-retrita-800.webp</image:loc><image:title>День ретрита: как проходит один день и что он даёт</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/retrit-tsentr-800.webp</image:loc><image:title>Ретрит-центр: как подготовиться к первой поездке и чего ждать</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/yoga-retrit-800.webp</image:loc><image:title>Йога-ретрит: распорядок дня по часам и подготовка к первому</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/retrit-tur-800.webp</image:loc><image:title>Ретрит-тур: чек-лист выбора и вопросы организатору</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/gora-sheludivaya-800.webp</image:loc><image:title>Гора Шелудивая: как подняться и что видно с вершины</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/gora-elbrus-800.webp</image:loc><image:title>Эльбрус: что важно знать перед поездкой к высшей точке Европы</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/vodopad-kozoda-800.webp</image:loc><image:title>Водопад Козода: самый высокий водопад Ставрополья</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/vodopad-beyradi-800.webp</image:loc><image:title>Водопад Байради в Дигории: где находится и как спланировать поездку</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/belyy-vodopad-800.webp</image:loc><image:title>Водопады рядом с Кисловодском: куда доехать за день</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/doula-kakoe-obrazovanie-nuzhno-800.webp</image:loc><image:title>Доула: какое образование нужно и что важнее диплома</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/doula-link-800.webp</image:loc><image:title>Доула онлайн: как сервисы помогают маме и доуле</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kakie-vitaminy-pit-posle-rodov-dlya-voss-800.webp</image:loc><image:title>Какие витамины пить после родов: что важно знать маме</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/prihod-moloka-posle-rodov-kak-oblegchit-800.webp</image:loc><image:title>Приход молока после родов: как облегчить состояние</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/doula-kak-stat-800.webp</image:loc><image:title>Как стать доулой: обучение, зарплата, шаги</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-provesti-vyhodnye-s-polzoy-800.webp</image:loc><image:title>Как провести выходные с пользой: 5 проверенных способов</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat-800.webp</image:loc><image:title>Пять недель работы и неделя отдыха: как устроен цикл 5/1</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/zhiznennaya-sila-kak-vosstanavlivat-800.webp</image:loc><image:title>Нет сил и ничего не хочется: как вернуть себе энергию</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/vosstanovitsya-kak-pravilno-800.webp</image:loc><image:title>Как восстановиться после нагрузки: пошагово и без перегиба</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-pravilno-vosstanavlivat-sily-800.webp</image:loc><image:title>Сон, еда, движение: база, на которой держатся силы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-rutiny-800.webp</image:loc><image:title>Автоматизация рутины: что можно передать агенту</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/ai-creative-awards-zayavka-800.webp</image:loc><image:title>AI Creative Awards 2026: как подать заявку на премию</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/resursnoe-sostoyanie-800.webp</image:loc><image:title>Ресурсное состояние: как вернуть силы без выгорания</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/bot-dlya-zapisi-klientov-800.webp</image:loc><image:title>Бот для записи клиентов в Telegram: что он должен уметь</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/lokalnaya-neyroset-800.webp</image:loc><image:title>Локальная нейросеть: когда своя модель выгоднее облака</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/korporativnyy-blog-800.webp</image:loc><image:title>Корпоративный блог с ИИ-агентами: опыт журнала «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/ai-dlya-otdela-prodazh-800.webp</image:loc><image:title>AI для отдела продаж: что реально автоматизировать</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/ii-teper-si-ukaz-trampa-800.webp</image:loc><image:title>ИИ теперь SI? Указ Трампа о суперинтеллекте и что он меняет</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-voronki-prodazh-800.webp</image:loc><image:title>Автоматизация воронки продаж: что реально настроить</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/ii-agenty-v-telegram-800.webp</image:loc><image:title>Нейроагент в Telegram: что умеет BrainAid</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-telegram-kanala-800.webp</image:loc><image:title>Автоматизация Telegram-канала: что реально настроить</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/seo-s-pomoschyu-neyroseti-800.webp</image:loc><image:title>SEO с помощью нейросети: что реально автоматизировать</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/lokalnaya-neyroset-800.webp</image:loc><image:title>Локальная нейросеть: когда своя модель выгоднее облака</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/bot-dlya-zapisi-klientov-800.webp</image:loc><image:title>Бот для записи клиентов в Telegram: что он должен уметь</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
