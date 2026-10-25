@@ -179,7 +179,7 @@ a{color:inherit}
 
 /* появление при прокрутке */
 html.js .rv{opacity:0;transform:translateY(22px);transition:opacity var(--t-reveal) var(--ease-out),transform var(--t-reveal) var(--ease-out)}
-html.js .rv.in{opacity:1;transform:none}
+html.js .rv.in,html.js .rv.on,html.js .rv.show{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html.js .rv{opacity:1;transform:none}}
 
 /* ——— блоки агентов в новой одежде ——— */
