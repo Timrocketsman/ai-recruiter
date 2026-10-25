@@ -84,4 +84,13 @@ body.ps ::selection{background:var(--accent);color:var(--accent-ink)}
 :root[data-theme="light"] :is(#moi,#uslugi) :is(small,.k,.kick,time),:root.auto-light :is(#moi,#uslugi) :is(small,.k,.kick,time){color:var(--mute)!important}
 :root[data-theme="light"] :is(#moi,#uslugi) .b2b h2 span,:root.auto-light :is(#moi,#uslugi) .b2b h2 span{-webkit-text-fill-color:transparent!important}
 /* кнопка закрытия плашки «Поддержать журнал» — не меньше 36 px */
-html body #tl-donate .tld-x,html body #tl-donate button{min-width:36px;min-height:36px;display:inline-flex;align-items:center;justify-content:center}
+html body #tl-donate .tld-x,html body #tl-donate button{min-width:36px!important;min-height:36px!important;width:36px!important;height:36px!important;display:inline-flex!important;align-items:center;justify-content:center}
+
+/* тёмные вставки старых страниц в дневной теме: плеер стихов, кнопка «смотреть офис», переключатель карты, цифры офиса */
+:root[data-theme="light"] body.ps .pl,:root.auto-light body.ps .pl{background:var(--bone)!important;border:1px solid var(--line-2)!important;color:var(--ink)!important}
+body.ps .tl-go a.live,body.pa .tl-go a.live,.tl-go a.live{background:var(--accent)!important;background-image:none!important;color:var(--accent-ink)!important;border:0!important;border-radius:999px!important}
+.tl-go a.live *{color:var(--accent-ink)!important}
+:root[data-theme="light"] body.ps .zo-mode,:root.auto-light body.ps .zo-mode{background:var(--paper-2)!important;border:1px solid var(--line-2)!important}
+:root[data-theme="light"] body.ps .zo-mode button,:root.auto-light body.ps .zo-mode button{color:var(--ink)!important}
+:root[data-theme="light"] body.ps main span:not(.btn *):not(.pp-btn *):not(.pl *):not(.live *):not(.zo-mode *):not(.pp-mono):not(.pj-meta *),:root.auto-light body.ps main span:not(.btn *):not(.pp-btn *):not(.pl *):not(.live *):not(.zo-mode *):not(.pp-mono):not(.pj-meta *){color:var(--ink-2)!important}
+:root[data-theme="light"] body.ps .zo-stat span,:root.auto-light body.ps .zo-stat span{color:var(--mute)!important}
