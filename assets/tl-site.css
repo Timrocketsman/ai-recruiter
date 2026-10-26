@@ -92,7 +92,7 @@ body.ps .tl-go a.live,body.pa .tl-go a.live,.tl-go a.live{background:var(--accen
 .tl-go a.live *{color:var(--accent-ink)!important}
 :root[data-theme="light"] body.ps .zo-mode,:root.auto-light body.ps .zo-mode{background:var(--paper-2)!important;border:1px solid var(--line-2)!important}
 :root[data-theme="light"] body.ps .zo-mode button,:root.auto-light body.ps .zo-mode button{color:var(--ink)!important}
-:root[data-theme="light"] body.ps main span:not(.btn *):not(.pp-btn *):not(.pl *):not(.live *):not(.zo-mode *):not(.pp-mono):not(.pj-meta *),:root.auto-light body.ps main span:not(.btn *):not(.pp-btn *):not(.pl *):not(.live *):not(.zo-mode *):not(.pp-mono):not(.pj-meta *){color:var(--ink-2)!important}
+:root[data-theme="light"] body.ps main span:not(.btn *):not(.pp-btn *):not(.pl *):not(.live *):not(.zo-mode *):not(.pp-mono):not(.pj-meta *):not(.dir *):not(.faq-hero *):not(.stage *):not(.zo-scene-wrap *),:root.auto-light body.ps main span:not(.btn *):not(.pp-btn *):not(.pl *):not(.live *):not(.zo-mode *):not(.pp-mono):not(.pj-meta *):not(.dir *):not(.faq-hero *):not(.stage *):not(.zo-scene-wrap *){color:var(--ink-2)!important}
 :root[data-theme="light"] body.ps .zo-stat span,:root.auto-light body.ps .zo-stat span{color:var(--mute)!important}
 
 /* карта офиса — всегда ночная «витрина»: подписи светлые; кнопки переключателя не меньше 36 px */
