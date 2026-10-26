@@ -317,3 +317,6 @@ html body .pp-menu summary::after,html body .pp-menu summary::before{content:non
 .pp-hero-text{grid-column:1/8;max-width:none}
 .pp-hero h1{font-size:clamp(32px,4.1vw,56px);line-height:1.04}
 .pp-fig{display:none}
+
+/* (26.10) по Taste skill: капслок-метки над каждой карточкой и разделом в блоках агентов не показываем — заголовок говорит сам */
+html body .g-tag,html body .tlg-kicker{display:none!important}
