@@ -1,0 +1,57 @@
+/* ═══ (26.10, слово Тима) «Взрослое стекло» — одна поверхность для всех карточек сайта ═══
+   Полупрозрачный слой, светлая кромка сверху, лёгкое размытие того, что под ним, мягкий блик, который сдвигается при наведении.
+   Не неон и не «молодёжные зеркала»: прозрачность ≤ 6 %, размытие 14 px, блик едва заметен. Без поддержки размытия — сплошная заливка. */
+:root{
+  --gl-bg:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018) 38%,rgba(255,255,255,.012));
+  --gl-tint:rgba(14,18,28,.72);
+  --gl-edge:rgba(255,255,255,.085); --gl-edge-hi:rgba(255,255,255,.16);
+  --gl-hi:inset 0 1px 0 rgba(255,255,255,.07),inset 0 0 0 1px rgba(255,255,255,.015);
+  --gl-sheen:radial-gradient(120% 80% at 0% 0%,rgba(79,180,242,.07),transparent 55%);
+  --gl-sheen-hi:radial-gradient(120% 80% at 18% 0%,rgba(124,124,255,.10),transparent 60%);
+  --gl-shadow:0 1px 0 rgba(0,0,0,.25),0 18px 50px -28px rgba(0,0,0,.6);
+}
+:root[data-theme="light"],:root.auto-light{
+  --gl-bg:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.78));
+  --gl-tint:rgba(255,255,255,.55);
+  --gl-edge:rgba(14,19,32,.08); --gl-edge-hi:rgba(14,19,32,.16);
+  --gl-hi:inset 0 1px 0 rgba(255,255,255,1),inset 0 0 0 1px rgba(255,255,255,.4);
+  --gl-sheen:radial-gradient(120% 80% at 0% 0%,rgba(27,127,214,.06),transparent 55%);
+  --gl-sheen-hi:radial-gradient(120% 80% at 18% 0%,rgba(91,91,230,.08),transparent 60%);
+  --gl-shadow:0 1px 2px rgba(14,19,32,.04),0 18px 50px -30px rgba(14,19,32,.22);
+}
+html:root body :is(.pp-tile,.pj-card,.pj-feature,.gcard,.tlp,.callout,.pa-cta,.pp-card,.tl-hub,.tls,.tl-master,.note,.rel-list a,.pp-tim,.pp-drop,.zo-stat,.cta){
+  background:var(--gl-sheen),var(--gl-bg),var(--gl-tint)!important;
+  border:1px solid var(--gl-edge)!important;
+  box-shadow:var(--gl-hi),var(--gl-shadow)!important;
+  -webkit-backdrop-filter:blur(14px) saturate(135%);backdrop-filter:blur(14px) saturate(135%);
+  background-size:200% 200%,100% 100%,100% 100%!important;background-position:0% 0%,0 0,0 0!important;
+  transition:transform .4s var(--ease-out),border-color .3s ease,background-position .9s var(--ease-out),box-shadow .4s ease!important;
+}
+html:root body :is(.pp-tile,.pj-card,.pj-feature,.gcard,.pp-card,.rel-list a):hover{
+  border-color:var(--gl-edge-hi)!important;background:var(--gl-sheen-hi),var(--gl-bg),var(--gl-tint)!important;background-position:30% 0%,0 0,0 0!important;
+}
+/* фото внутри стеклянных карточек — без лишней рамки */
+html:root body :is(.pp-tile,.pj-card,.pj-feature) .ph{border-bottom:1px solid var(--gl-edge)}
+/* тёмная полоса «Проводы» и блок услуг остаются плотными — стекло только по кромке */
+html:root body .pp-farewell{box-shadow:var(--gl-hi),var(--gl-shadow);border:1px solid var(--gl-edge)}
+html:root body .b2b{box-shadow:var(--gl-hi),var(--gl-shadow)!important;border:1px solid var(--gl-edge)!important}
+
+/* отступы карточек разделов: раньше жили в отключённом tl-glass.css — без них текст прилипал к краю */
+html body .gcard{padding:clamp(20px,2.4vw,28px)!important;display:flex;flex-direction:column;gap:12px;border-radius:var(--r)!important}
+html body .gcard>*{margin:0}
+html body .gcard h3,html body .gcard h2{font:650 clamp(19px,1.8vw,23px)/1.2 var(--sans)!important;letter-spacing:-.02em}
+html body .gcard p{font-size:15.5px;line-height:1.55}
+html body .gcard .chips{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:auto;padding-top:4px}
+html body .gcard .g-more{margin-top:4px}
+html body .gcard .g-top{display:flex;gap:10px;align-items:center}
+html body .tlg-grid{gap:var(--gut)!important}
+html body .tlg-grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))!important}
+html body .pp-card .pp-text{padding:18px 22px 18px 0}
+@media (max-width:640px){html body .pp-card .pp-text{padding:16px 18px 18px}}
+
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  html:root body :is(.pp-tile,.pj-card,.pj-feature,.gcard,.tlp,.callout,.pa-cta,.pp-card,.tl-hub,.tls,.tl-master,.note,.rel-list a,.pp-tim,.pp-drop,.zo-stat,.cta){background:var(--bone)!important}
+}
+@media (prefers-reduced-transparency:reduce){
+  html:root body :is(.pp-tile,.pj-card,.pj-feature,.gcard,.tlp,.callout,.pa-cta,.pp-card,.tl-hub,.tls,.tl-master,.note,.rel-list a,.pp-tim,.pp-drop,.zo-stat,.cta){background:var(--bone)!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
