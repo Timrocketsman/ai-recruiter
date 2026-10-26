@@ -247,8 +247,7 @@ html body{overflow-x:clip}
 .pp-hero{z-index:1}
 .pp-top{transition:box-shadow var(--t-ui) ease,background var(--t-ui) ease}
 .pp-top.is-scrolled{box-shadow:0 1px 0 var(--line-2),0 12px 40px rgba(0,0,0,.35)}
-.pp-top .pp-wrap{transition:height var(--t-ui) var(--ease-out)}
-.pp-top.is-scrolled .pp-wrap{height:56px}
+/* (26.10) шапка при прокрутке не меняет высоту — только тень (.is-scrolled выше) */
 .pp-btn{will-change:transform}
 .pp-tile .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,9,15,.55));opacity:0;transition:opacity .4s ease}
 .pp-tile:hover .ph::after{opacity:1}
