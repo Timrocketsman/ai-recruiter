@@ -314,7 +314,7 @@ html body .pp-menu summary::after,html body .pp-menu summary::before{content:non
 .pp-head>p{display:none}
 @media (max-width:900px){.pp-head .pp-ht{grid-column:1/-1}}
 /* первый экран: заголовок не больше трёх строк */
-.pp-hero-text{grid-column:1/8;max-width:none}
+@media (min-width:901px){.pp-hero-text{grid-column:1/8;max-width:none}}
 .pp-hero h1{font-size:clamp(32px,4.1vw,56px);line-height:1.04}
 .pp-fig{display:none}
 
