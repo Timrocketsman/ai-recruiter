@@ -413,3 +413,8 @@ html body .pp-card .pp-text{padding:18px 22px 18px 0}
 @media (forced-colors:active){html:root body :is(.pp-tile,.pj-card,.pj-feature,.gcard,.tlp,.callout,.pa-cta,.pp-card){border:1px solid CanvasText!important}}
 @media print{#tl-donate,#tl-clip,#tl-consent,#tl-consent-veil,#tl-field,.pp-theme,header.pp-top{display:none!important}
   html:root body{background:#fff!important;color:#000!important}}
+
+/* (26.10, слово Тима) номера разделов (I, II…) и мастеров (01…) убраны — заголовок и строка занимают их место */
+@media (min-width:901px){.pp-head .pp-ht{grid-column:1/10}}
+.pp-row{grid-template-columns:1.1fr 1.4fr 1fr}
+@media (max-width:900px){.pp-row{grid-template-columns:1fr}.pp-row>p,.pp-row>.lk,.pp-row>div:not(.n){grid-column:1}}
