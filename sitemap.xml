@@ -840,4 +840,10 @@
     <loc>https://timlabs.online/journal/video-poleznye-privychki/</loc>
     <lastmod>2026-10-26</lastmod>
   </url>
+  <url>
+    <loc>https://timlabs.online/obuchenie/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
