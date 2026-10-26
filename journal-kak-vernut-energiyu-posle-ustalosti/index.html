@@ -15,7 +15,7 @@
 <footer class="tl-legal"><p><a href="/privacy/">Политика обработки данных</a> · <a href="/consent/">Согласие на обработку данных</a> · <a href="/terms/">Пользовательское соглашение</a> · <a href="#" id="tl-consent-settings">Настройки данных</a> · 16+</p>  <p>Владелец сайта: Гуцев Тимур Олегович (самозанятый), ИНН 460302385684, г. Краснодар, пр. Мира, 28 · <a href="mailto:timurgutsev@yandex.ru">timurgutsev@yandex.ru</a></p>
   </footer>
 <!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
-<style>
+<style>@layer tl-base,legacy;@layer legacy{
 #tl-consent-veil{position:fixed;inset:0;z-index:9998;display:none;
   background:rgba(3,6,14,.72);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
 #tl-consent-veil.show{display:block}
@@ -39,7 +39,7 @@ body.tl-consent-lock{overflow:hidden}
 #tl-consent .tl-no:hover{color:#e7ecf7;border-color:rgba(255,255,255,.35)}
 #tl-consent .tl-ok:hover{filter:brightness(1.08)}
 @media (max-width:560px){#tl-consent .tl-btns{width:100%}#tl-consent button{flex:1 1 auto}}
-</style>
+}</style>
 <div id="tl-consent-veil"></div>
 <div id="tl-consent" role="dialog" aria-modal="true" aria-label="Согласие на обработку данных">
   <p>Мы используем cookie и веб-аналитику, чтобы понимать, как люди пользуются сайтом.

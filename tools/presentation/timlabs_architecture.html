@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><title>TimLabs — как у меня всё устроено</title>
-<style>
+<style>@layer tl-base,legacy;@layer legacy{
 :root{--bg:#05070e;--cyan:#00b4ff;--mag:#d100ff;--txt:#eaf2ff;--dim:#8fa3bf;--card:#0b1020;--line:#1b2740}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:1920px;height:1080px;overflow:hidden;background:var(--bg);color:var(--txt);font-family:"DejaVu Sans","Liberation Sans",Arial,sans-serif}
@@ -41,7 +41,7 @@ svg.wires path.go{stroke-dashoffset:0} svg.wires path.d.go{opacity:.8}
 .chan.plan{border-style:dashed}
 .foot{position:absolute;right:120px;bottom:40px;font-size:22px;color:var(--dim)}
 .prog{position:absolute;left:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--cyan),var(--mag));width:0}
-</style></head><body>
+}</style></head><body>
 
 <!-- 1 -->
 <section class="scene" id="s1">
