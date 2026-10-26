@@ -21,7 +21,8 @@
   --mono:"TL Mono","JetBrains Mono",ui-monospace,"SF Mono",monospace;
   --r:18px; --r-sm:12px; --wrap:1240px; --gut:clamp(16px,3.2vw,24px); --shadow:0 24px 60px rgba(0,0,0,.45);
   --ease-out:cubic-bezier(.23,1,.32,1); --ease-in-out:cubic-bezier(.77,0,.175,1); --ease-drawer:cubic-bezier(.32,.72,0,1);
-  --t-fast:160ms; --t-ui:220ms; --t-reveal:800ms;
+  --t-fast:160ms; --t-ui:220ms; --t-reveal:800ms; --ease-focus:cubic-bezier(.2,0,0,1); --t-focus:700ms;
+  --tl-relay:"thread focus window";   /* приёмы Relay, включённые на сайте: thread focus window (читает tl-motion.js) */
   /* старые имена — для блоков агентов */
   --text:var(--ink); --muted:var(--mute); --dim:var(--faint); --cyan:var(--accent); --magenta:var(--violet);
   --stroke:var(--line); --stroke-hi:var(--line-2); --bg:var(--paper); --card:var(--bone); --font-disp:var(--sans); --font-body:var(--sans);
@@ -82,7 +83,7 @@ a{color:inherit}
 .pp-cta .pp-link:hover{border-color:var(--accent);color:var(--accent)}
 .pp-hero-art{grid-column:8/13;position:relative}
 .pp-hero-photo{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:radial-gradient(120% 90% at 70% 10%,#16305a,#0b1426 55%,#070a12)}
-.pp-hero-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:ppZoom 2.2s cubic-bezier(.2,.7,.2,1) both}
+.pp-hero-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
 .pp-fig{position:absolute;left:16px;top:14px;color:#E6ECF8;text-shadow:0 1px 8px rgba(0,0,0,.35)}
 .pp-tim{text-decoration:none;color:var(--ink);position:absolute;left:-36px;bottom:-26px;display:flex;align-items:center;gap:12px;padding:10px 18px 10px 10px;background:var(--bone);
   border:1px solid var(--line);border-radius:999px;box-shadow:0 14px 34px rgba(0,0,0,.5);max-width:290px}
@@ -93,8 +94,6 @@ a{color:inherit}
 .pp-facts div{padding:18px 18px 0 0}
 .pp-facts b{display:block;font:500 italic clamp(30px,3.6vw,46px)/1 var(--serif);color:var(--ink)}
 .pp-facts span{font-size:14.5px;color:var(--mute)}
-@keyframes ppZoom{from{transform:scale(1.12)}to{transform:scale(1.04)}}
-@keyframes ppUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 /* текст первого экрана без анимации: виден сразу (скорость, метрики поиска) */
 @media (max-width:900px){
   .pp-hero-text,.pp-hero-art{grid-column:1/-1}
@@ -258,18 +257,15 @@ html body{overflow-x:clip}
 .pp-nav a{transition:background var(--t-fast) ease,color var(--t-fast) ease}
 @view-transition{navigation:auto}
 .pp-top{view-transition-name:tl-top}
-::view-transition-old(root){animation:tlOut .22s var(--ease-out) both}
-::view-transition-new(root){animation:tlIn .32s var(--ease-out) both}
-@keyframes tlOut{to{opacity:0;transform:translateY(-6px)}}
-@keyframes tlIn{from{opacity:0;transform:translateY(8px)}}
+/* смена страниц — стандартное растворение браузера, своих @keyframes нет (контракт движения 26.10) */
 @media (prefers-reduced-motion:reduce){#tl-field{display:none}::view-transition-old(root),::view-transition-new(root){animation:none}}
 
 /* ——— светлая тема «День»: то же решение в противоположном исполнении (слово Тима 25.10) ———
    холодный туман и белая бумага, тот же льдисто-голубой, но глубже ради контраста; тёмные окна (фото, полоса «Проводы») остаются ночными */
 :root[data-theme="light"],:root:not([data-theme="dark"]).auto-light{
-  --paper:#F2F4F8; --paper-2:#E9EDF3; --bone:#FFFFFF; --raise:#FFFFFF; --ink:#0E1320; --ink-2:#2A3245; --mute:#5B6578; --faint:#6F7990;
+  --paper:#F2F4F8; --paper-2:#E9EDF3; --bone:#FFFFFF; --raise:#FFFFFF; --ink:#0E1320; --ink-2:#2A3245; --mute:#5B6578; --faint:#606A80;
   --line:rgba(14,19,32,.08); --line-2:rgba(14,19,32,.15); --line-solid:#D9DEE8;
-  --accent:#1B7FD6; --accent-2:#2E90E6; --accent-ink:#FFFFFF; --violet:#5B5BE6; --mag:#7A4FE0; --night:#0E1320;
+  --accent:#176FBD; --accent-2:#1A78CA; --accent-ink:#FFFFFF;   /* 26.10: было #1B7FD6/#2E90E6 — белый текст 4,2:1 */ --violet:#5B5BE6; --mag:#7A4FE0; --night:#0E1320;
   --grad:linear-gradient(100deg,#1B7FD6 0%,#5B5BE6 60%,#7A4FE0 100%); --shadow:0 24px 60px rgba(14,19,32,.12);
   color-scheme:light;
 }
@@ -418,3 +414,31 @@ html body .pp-card .pp-text{padding:18px 22px 18px 0}
 @media (min-width:901px){.pp-head .pp-ht{grid-column:1/10}}
 .pp-row{grid-template-columns:1.1fr 1.4fr 1fr}
 @media (max-width:900px){.pp-row{grid-template-columns:1fr}.pp-row>p,.pp-row>.lk,.pp-row>div:not(.n){grid-column:1}}
+
+/* ═══ (26.10) Контракт движения: TL.tick, TL.spring, TL.Inview, TL.SpringTrigger, TL.Hover, TL.Handle в tl-motion.js.
+   Ни одного @keyframes в tl-*.css (кроме полосы чтения, если когда-нибудь понадобится): движение — переходы и пружины. ═══ */
+html.js .rv{transition-delay:var(--rv-d,0ms)}
+/* ═══ (26.10, Relay) Нить света: один SVG-путь по левому полю главной, дорисовывается при прокрутке (tl-motion.js) ═══ */
+.tl-thread{position:absolute;left:0;top:0;z-index:0;pointer-events:none;overflow:visible;display:block}
+.tl-thread-stop{stop-color:var(--accent)}
+.tl-thread-path{fill:none;stroke:url(#tl-thread-g);stroke-width:1.5;stroke-linecap:round;opacity:.55}
+.tl-thread-node{fill:var(--paper);stroke:var(--line-2);stroke-width:1.5;transition:fill var(--t-ui) ease,stroke var(--t-ui) ease}
+.tl-thread-node.on{fill:var(--accent);stroke:var(--accent)}
+@media (max-width:900px){.tl-thread{display:none}}
+@media print{.tl-thread{display:none}}
+/* ═══ (26.10, Relay) Приезд из расфокуса: карточки и шапки разделов — blur 8px + 12px → резко, 700 мс; потом класс снимается ═══ */
+html.js .rv.rv-focus{opacity:0;filter:blur(8px);transform:translateY(12px);
+  transition:opacity var(--t-focus) var(--ease-focus) var(--rv-d,0ms),filter var(--t-focus) var(--ease-focus) var(--rv-d,0ms),transform var(--t-focus) var(--ease-focus) var(--rv-d,0ms)!important}
+html.js .rv.rv-focus.in{opacity:1;filter:blur(0);transform:none}
+@media (prefers-reduced-motion:reduce){html.js .rv.rv-focus{filter:none;transform:none;opacity:1}}
+/* ═══ (26.10, Relay) Стеклянное окно первого экрана: светлая кромка, блик за курсором, наклон ≤ 4° (tl-motion.js, только мышь) ═══ */
+.pp-hero-photo{box-shadow:var(--gl-shadow);transform-origin:50% 50%}
+.pp-hero-photo::before{content:"";position:absolute;inset:0;z-index:2;border-radius:inherit;pointer-events:none;box-shadow:var(--gl-hi),inset 0 0 0 1px var(--gl-edge)}
+.pp-hero-photo::after{content:"";position:absolute;inset:-20%;z-index:1;pointer-events:none;opacity:var(--go,0);
+  background:radial-gradient(38% 32% at 50% 42%,rgba(255,255,255,.10),transparent 70%);transform:translate(var(--gx,0%),var(--gy,0%));transition:opacity var(--t-ui) ease}
+:root[data-theme="light"] .pp-hero-photo::after,:root.auto-light .pp-hero-photo::after{background:radial-gradient(38% 32% at 50% 42%,rgba(255,255,255,.35),transparent 70%)}
+/* ═══ (26.10) Встроенные кнопки агентов на акценте: текст всегда контрастный ═══ */
+html body a[style*="background:var(--cyan"],html body a[style*="background:var(--accent"]{color:var(--accent-ink)!important}
+/* ═══ (26.10) Карточки с раскрытием: кнопка-заголовок 44 px, текст кнопки-перехода всегда на своём фоне ═══ */
+html body .gcard.deep h3 .gd-tg{display:inline-flex!important;align-items:center;min-height:44px}
+:root[data-theme="light"] :is(#moi,#uslugi) a.gd-go span,:root.auto-light :is(#moi,#uslugi) a.gd-go span{color:var(--accent-ink)!important}
