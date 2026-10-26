@@ -444,3 +444,6 @@ html body .gcard.deep h3 .gd-tg{display:inline-flex!important;align-items:center
 /* ═══ (26.10) Хлебные крошки: ссылка отличается не только цветом ═══ */
 html body :is(.pa,.ps-hub,main) .crumb a,html body .crumb a{text-decoration:underline;text-decoration-color:var(--line-2);text-decoration-thickness:1px;text-underline-offset:3px}
 html body :is(.pa,.ps-hub,main) .crumb a:hover,html body .crumb a:hover{text-decoration-color:currentColor}
+/* ═══ (26.10) Вторая кнопка .btn.sec — всегда контурная (раньше только внутри .pa-cta) ═══ */
+html body.ps .btn.sec,html body .pa .btn.sec{background:transparent!important;color:var(--ink)!important;box-shadow:inset 0 0 0 1px var(--line-2)!important}
+html body.ps .btn.sec:hover,html body .pa .btn.sec:hover{box-shadow:inset 0 0 0 1px var(--ink)!important}
