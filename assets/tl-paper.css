@@ -442,3 +442,6 @@ html body a[style*="background:var(--cyan"],html body a[style*="background:var(-
 /* ═══ (26.10) Карточки с раскрытием: кнопка-заголовок 44 px, текст кнопки-перехода всегда на своём фоне ═══ */
 html body .gcard.deep h3 .gd-tg{display:inline-flex!important;align-items:center;min-height:44px}
 :root[data-theme="light"] :is(#moi,#uslugi) a.gd-go span,:root.auto-light :is(#moi,#uslugi) a.gd-go span{color:var(--accent-ink)!important}
+/* ═══ (26.10) Хлебные крошки: ссылка отличается не только цветом ═══ */
+html body .crumb a{text-decoration:underline;text-decoration-color:var(--line-2);text-decoration-thickness:1px;text-underline-offset:3px}
+html body .crumb a:hover{text-decoration-color:currentColor}
