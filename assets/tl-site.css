@@ -104,3 +104,7 @@ body.ps .pa-cta{background:radial-gradient(90% 120% at 100% 0%,rgba(124,124,255,
 body.ps .pa-cta p{color:var(--ink-2)!important;margin:0 0 14px!important}
 body.ps .pa-cta .btn.main,body.ps .btn.main{color:var(--accent-ink)!important}
 body.ps .pa-cta .btn.sec{background:transparent!important;color:var(--ink)!important;box-shadow:inset 0 0 0 1px var(--line-2)!important}
+
+/* тёмные «окна» старых страниц остаются ночными и в дневной теме: текст в них светлый */
+:root[data-theme="light"] body.ps :is(.faq-hero,.dir,.dir-h,.zo-scene-wrap,.stage,.pl.voice) *,:root.auto-light body.ps :is(.faq-hero,.dir,.dir-h,.zo-scene-wrap,.stage,.pl.voice) *{color:#E9EDF5!important}
+:root[data-theme="light"] body.ps :is(.faq-hero,.dir) :is(p,small,.lead,.dt,.sub),:root.auto-light body.ps :is(.faq-hero,.dir) :is(p,small,.lead,.dt,.sub){color:#C3CAD8!important}
