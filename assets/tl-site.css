@@ -108,3 +108,10 @@ body.ps .pa-cta .btn.sec{background:transparent!important;color:var(--ink)!impor
 /* тёмные «окна» старых страниц остаются ночными и в дневной теме: текст в них светлый */
 :root[data-theme="light"] body.ps :is(.faq-hero,.dir,.dir-h,.zo-scene-wrap,.stage,.pl.voice) *,:root.auto-light body.ps :is(.faq-hero,.dir,.dir-h,.zo-scene-wrap,.stage,.pl.voice) *{color:#E9EDF5!important}
 :root[data-theme="light"] body.ps :is(.faq-hero,.dir) :is(p,small,.lead,.dt,.sub),:root.auto-light body.ps :is(.faq-hero,.dir) :is(p,small,.lead,.dt,.sub){color:#C3CAD8!important}
+
+/* (26.10) список «Статьи по теме» в разделах: дата слипалась с заголовком («…маме2026-08-23») — строка с датой справа */
+.alist{list-style:none;padding:0;margin:8px 0 0;border-top:1px solid var(--line)}
+.alist li{margin:0;border-bottom:1px solid var(--line)}
+.alist a{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 18px;padding:13px 2px;color:var(--ink);text-decoration:none}
+.alist a:hover{color:var(--accent)}
+.alist small{flex:none;font:12px/1.4 var(--mono);color:var(--faint);letter-spacing:.02em}

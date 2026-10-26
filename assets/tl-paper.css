@@ -2,6 +2,7 @@
    Вёрстка по эталону Atelier Zero (база Open Design): сетка 12, нумерация глав, журнальное оглавление; цвета — фирменные TimLabs,
    Onest + Cormorant Garamond курсив + JetBrains Mono. Шрифты свои (OFL), без сторонних серверов.
    Старые имена переменных (--text, --muted, --cyan…) переназначены: блоки агентов перекрашиваются сами. */
+@layer tl-base, legacy;
 @font-face{font-family:"Onest";src:url(/assets/fonts/onest-cyr.woff2) format("woff2");font-weight:300 800;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:"Onest";src:url(/assets/fonts/onest-lat.woff2) format("woff2");font-weight:300 800;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Cormorant";src:url(/assets/fonts/corm-cyr-500i.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
@@ -320,3 +321,95 @@ html body .pp-menu summary::after,html body .pp-menu summary::before{content:non
 
 /* (26.10) по Taste skill: капслок-метки над каждой карточкой и разделом в блоках агентов не показываем — заголовок говорит сам */
 html body .g-tag,html body .tlg-kicker{display:none!important}
+
+/* ═══ (26.10, слово Тима) «Взрослое стекло» — одна поверхность для всех карточек сайта ═══
+   Полупрозрачный слой, светлая кромка сверху, лёгкое размытие того, что под ним, мягкий блик, который сдвигается при наведении.
+   Не неон и не «молодёжные зеркала»: прозрачность ≤ 6 %, размытие 14 px, блик едва заметен. Без поддержки размытия — сплошная заливка. */
+:root{
+  --gl-bg:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018) 38%,rgba(255,255,255,.012));
+  --gl-tint:rgba(14,18,28,.72);
+  --gl-edge:rgba(255,255,255,.085); --gl-edge-hi:rgba(255,255,255,.16);
+  --gl-hi:inset 0 1px 0 rgba(255,255,255,.07),inset 0 0 0 1px rgba(255,255,255,.015);
+  --gl-sheen:radial-gradient(120% 80% at 0% 0%,rgba(79,180,242,.07),transparent 55%);
+  --gl-sheen-hi:radial-gradient(120% 80% at 18% 0%,rgba(124,124,255,.10),transparent 60%);
+  --gl-shadow:0 1px 0 rgba(0,0,0,.25),0 18px 50px -28px rgba(0,0,0,.6);
+}
+:root[data-theme="light"],:root.auto-light{
+  --gl-bg:linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.78));
+  --gl-tint:rgba(255,255,255,.55);
+  --gl-edge:rgba(14,19,32,.08); --gl-edge-hi:rgba(14,19,32,.16);
+  --gl-hi:inset 0 1px 0 rgba(255,255,255,1),inset 0 0 0 1px rgba(255,255,255,.4);
+  --gl-sheen:radial-gradient(120% 80% at 0% 0%,rgba(27,127,214,.06),transparent 55%);
+  --gl-sheen-hi:radial-gradient(120% 80% at 18% 0%,rgba(91,91,230,.08),transparent 60%);
+  --gl-shadow:0 1px 2px rgba(14,19,32,.04),0 18px 50px -30px rgba(14,19,32,.22);
+}
+html:root body :is(.pp-tile,.pj-card,.pj-feature,.gcard,.tlp,.callout,.pa-cta,.pp-card,.tl-hub,.tls,.tl-master,.note,.rel-list a,.pp-tim,.pp-drop,.zo-stat,.cta){
+  background:var(--gl-sheen),var(--gl-bg),var(--gl-tint)!important;
+  border:1px solid var(--gl-edge)!important;
+  box-shadow:var(--gl-hi),var(--gl-shadow)!important;
+  -webkit-backdrop-filter:blur(14px) saturate(135%);backdrop-filter:blur(14px) saturate(135%);
+  background-size:200% 200%,100% 100%,100% 100%!important;background-position:0% 0%,0 0,0 0!important;
+  transition:transform .4s var(--ease-out),border-color .3s ease,background-position .9s var(--ease-out),box-shadow .4s ease!important;
+}
+html:root body :is(.pp-tile,.pj-card,.pj-feature,.gcard,.pp-card,.rel-list a):hover{
+  border-color:var(--gl-edge-hi)!important;background:var(--gl-sheen-hi),var(--gl-bg),var(--gl-tint)!important;background-position:30% 0%,0 0,0 0!important;
+}
+/* фото внутри стеклянных карточек — без лишней рамки */
+html:root body :is(.pp-tile,.pj-card,.pj-feature) .ph{border-bottom:1px solid var(--gl-edge)}
+/* тёмная полоса «Проводы» и блок услуг остаются плотными — стекло только по кромке */
+html:root body .pp-farewell{box-shadow:var(--gl-hi),var(--gl-shadow);border:1px solid var(--gl-edge)}
+html:root body .b2b{box-shadow:var(--gl-hi),var(--gl-shadow)!important;border:1px solid var(--gl-edge)!important}
+
+/* отступы карточек разделов: раньше жили в отключённом tl-glass.css — без них текст прилипал к краю */
+html body .gcard{padding:clamp(20px,2.4vw,28px)!important;display:flex;flex-direction:column;gap:12px;border-radius:var(--r)!important}
+html body .gcard>*{margin:0}
+html body .gcard h3,html body .gcard h2{font:650 clamp(19px,1.8vw,23px)/1.2 var(--sans)!important;letter-spacing:-.02em}
+html body .gcard p{font-size:15.5px;line-height:1.55}
+html body .gcard .chips{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:auto;padding-top:4px}
+html body .gcard .g-more{margin-top:4px}
+html body .gcard .g-top{display:flex;gap:10px;align-items:center}
+html body .tlg-grid{gap:var(--gut)!important}
+html body .tlg-grid.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))!important}
+html body .pp-card .pp-text{padding:18px 22px 18px 0}
+@media (max-width:640px){html body .pp-card .pp-text{padding:16px 18px 18px}}
+
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  html:root body :is(.pp-tile,.pj-card,.pj-feature,.gcard,.tlp,.callout,.pa-cta,.pp-card,.tl-hub,.tls,.tl-master,.note,.rel-list a,.pp-tim,.pp-drop,.zo-stat,.cta){background:var(--bone)!important}
+}
+@media (prefers-reduced-transparency:reduce){
+  html:root body :is(.pp-tile,.pj-card,.pj-feature,.gcard,.tlp,.callout,.pa-cta,.pp-card,.tl-hub,.tls,.tl-master,.note,.rel-list a,.pp-tim,.pp-drop,.zo-stat,.cta){background:var(--bone)!important;-webkit-backdrop-filter:none;backdrop-filter:none}
+}
+
+/* ═══ (26.10, слово Тима: «стабильная вёрстка, чтобы не возвращаться к ошибкам») Основа устойчивости ═══
+   Порядок слоёв: tl-base (общий сброс) < legacy (стили агентов в страницах) < общая система без слоя.
+   Сброс не ломает точные размеры агентов, а агенты не перебивают систему. Стили агентов лежат в @layer legacy (tools/css_layers.py)
+   и общую систему не перебивают. Каждый пункт закрывает класс ошибки, уже встречавшийся на сайте. */
+@layer tl-base{
+:where(html){text-size-adjust:100%}                                                         /* шрифт не прыгает при повороте телефона */
+:where(*,*::before,*::after){box-sizing:border-box}
+:where(img,svg,video,canvas,picture,iframe,embed,object){max-width:100%}                     /* медиа никогда не шире колонки */
+:where(img,video){height:auto}
+:where(p,li,dd,dt,td,th,h1,h2,h3,h4,h5,h6,figcaption,blockquote,summary,label,a){overflow-wrap:break-word}  /* длинные адреса и слова не рвут экран */
+:where(h1,h2,h3,h4){text-wrap:balance}                                                       /* заголовки без одинокого слова в строке */
+:where(p,li,figcaption,blockquote){text-wrap:pretty}
+:where(pre,code){white-space:pre-wrap;overflow-wrap:anywhere}
+:where(table){max-width:100%}
+:where([id]){scroll-margin-top:84px}                                                         /* якорь не прячется под шапкой */
+:where(button,input,select,textarea){font:inherit;color:inherit}
+:where(button,[role=button],summary){touch-action:manipulation}                              /* без задержки двойного касания */
+}
+/* дети сеток и строк могут сжиматься — иначе длинное слово распирает колонку (частая причина «вылезает за экран») */
+:where(.pp-grid,.pp-tiles,.pj-grid,.pj-row,.tlg-grid,.pp-hero,.pp-hero-grid,.pa-grid,.ps-grid,.pp-row,.pp-cols,.rel-list,.chips)>*{min-width:0}
+/* группы кнопок: перенос и зазор вместо слипания */
+:where(.pp-actions,.pp-cta,.hero-cta,.cta-row,.btns,.tl-go,.pa-cta .row,.pj-actions){display:flex;flex-wrap:wrap;gap:10px 12px}
+/* закреплённые виджеты не уходят под вырез и жест «домой» на телефонах */
+#tl-donate{bottom:max(14px,env(safe-area-inset-bottom))!important;left:max(14px,env(safe-area-inset-left))!important}
+#tl-clip{bottom:max(18px,env(safe-area-inset-bottom))!important;right:max(18px,env(safe-area-inset-right))!important}
+@media (max-width:640px){
+  :where(main table:not(.price)){display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}  /* широкая таблица листается сама, страница — нет */
+  :where(main){overflow-wrap:break-word}
+}
+@media (prefers-reduced-motion:reduce){:where(html){scroll-behavior:auto}}
+@media (forced-colors:active){html:root body :is(.pp-tile,.pj-card,.pj-feature,.gcard,.tlp,.callout,.pa-cta,.pp-card){border:1px solid CanvasText!important}}
+@media print{#tl-donate,#tl-clip,#tl-consent,#tl-consent-veil,#tl-field,.pp-theme,header.pp-top{display:none!important}
+  html:root body{background:#fff!important;color:#000!important}}

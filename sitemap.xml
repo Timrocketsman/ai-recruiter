@@ -830,4 +830,10 @@
     <loc>https://timlabs.online/journal/neyroset-pomoschnik-dlya-malogo-biznesa/</loc>
     <lastmod>2026-10-26</lastmod>
   </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/posle-dolgoy-dorogi/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
