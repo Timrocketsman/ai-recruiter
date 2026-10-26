@@ -8,6 +8,7 @@
   var doc = document, root = doc.documentElement, W = window;
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   var fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
+  var wide = matchMedia("(min-width: 901px)");   /* нить и расфокус — только на широком экране: на телефоне они не создаются вовсе */
   root.classList.add("js");
   var TL = W.TL = W.TL || {};
   TL.reduce = reduce; TL.fine = fine;
@@ -173,7 +174,7 @@
     var kids = g.querySelectorAll(":scope > .rv, :scope > div");
     for (var k = 0; k < kids.length && k < 6; k++) { kids[k].style.transitionDelay = (k * 70) + "ms"; kids[k].style.setProperty("--rv-d", (k * 70) + "ms"); }
   });
-  if (!reduce && TL.relay("focus")) doc.querySelectorAll(".pp-head.rv,.tlg-head.rv,.pp-tile.rv,.pj-card.rv,.pj-feature.rv,.gcard.rv,.pp-row.rv").forEach(function (el) {
+  if (!reduce && wide.matches && TL.relay("focus")) doc.querySelectorAll(".pp-head.rv,.tlg-head.rv,.pp-tile.rv,.pj-card.rv,.pj-feature.rv,.gcard.rv,.pp-row.rv").forEach(function (el) {
     el.classList.add("rv-focus");
     function done(e) { if (e && e.propertyName && e.propertyName !== "opacity") return; el.classList.remove("rv-focus"); el.style.removeProperty("--rv-d"); el.removeEventListener("transitionend", done); }
     el.addEventListener("transitionend", done);
@@ -217,6 +218,7 @@
   /* нить света через страницу (Relay): один SVG-путь по левому полю через опорные точки, дорисовывается при прокрутке */
   (function thread() {
     var main = doc.querySelector("main"); if (!main || !TL.relay("thread")) return;
+    if (!wide.matches) { wide.addEventListener("change", function once() { wide.removeEventListener("change", once); thread(); }); return; }
     var anchors = $$("[data-thread]", main);
     if (anchors.length < 2) anchors = [].slice.call(doc.querySelectorAll(".pp-hero .pp-cta .pp-btn, #put .pp-head h2, #mastera .pp-head h2, #svyaz h2"));
     if (anchors.length < 2) return;
@@ -277,7 +279,7 @@
   /* меню на телефоне закрывается по выбору */
   doc.querySelectorAll(".pp-menu a").forEach(function (a) { a.addEventListener("click", function () { a.closest("details").open = false; }); });
 
-  /* живое поле: 4 пятна, 30 кадров/с, половинное разрешение; живёт в общем цикле, спит вне экрана, на скрытой вкладке и во время прокрутки */
+  /* живое поле: 4 пятна, 30 кадров/с, половинное разрешение; живёт в общем цикле, спит вне экрана, на скрытой вкладке и во время прокрутки; на сенсорном экране — один кадр */
   var c = doc.getElementById("tl-field");
   if (!c || reduce || !c.getContext) return;
   var ctx = c.getContext("2d", { alpha: true }), Wd, H, dpr, blobs = [], mx = .7, my = .3, tx = .7, ty = .3, last = 0, visible = true, scrolled = -1e9;
@@ -312,7 +314,9 @@
     }
   }
   function run() { if (visible && !doc.hidden) TL.tick.add(draw); else TL.tick.remove(draw); }
-  size(); seed(); run();
+  size(); seed();
+  if (!fine) { draw(1e9); return; }      /* сенсорный экран: поле рисуется один раз и не анимируется — главный поток телефона свободен */
+  run();
   addEventListener("resize", size, { passive: true });
   addEventListener("pointermove", function (e) { tx = e.clientX / (c.clientWidth || 1); ty = e.clientY / (c.clientHeight || 1); }, { passive: true });
   doc.addEventListener("visibilitychange", run);
