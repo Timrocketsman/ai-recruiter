@@ -836,4 +836,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://timlabs.online/journal/video-poleznye-privychki/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
 </urlset>
