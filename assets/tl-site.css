@@ -67,7 +67,7 @@ body.ps .cta-row,body.ps .hub-cta{display:flex;flex-wrap:wrap;gap:0;justify-cont
 body.ps .callout{background:radial-gradient(90% 120% at 100% 0%,rgba(124,124,255,.08),transparent 55%),radial-gradient(80% 120% at 0% 100%,rgba(79,180,242,.08),transparent 60%),var(--bone)!important;border:1px solid var(--line)!important;border-radius:var(--r)!important;text-align:left!important;padding:clamp(24px,3vw,36px)!important}
 body.ps .callout h2{color:var(--ink)!important;margin-top:0}
 body.ps .callout p{color:var(--mute)!important;max-width:none!important;margin-left:0!important}
-body.ps .chip.main,body.ps .btn.main{color:var(--accent)!important}
+body.ps .chip.main{color:var(--accent)!important}
 body.ps details summary{color:var(--ink)}
 body.ps ::selection{background:var(--accent);color:var(--accent-ink)}
 
@@ -98,3 +98,9 @@ body.ps .tl-go a.live,body.pa .tl-go a.live,.tl-go a.live{background:var(--accen
 /* карта офиса — всегда ночная «витрина»: подписи светлые; кнопки переключателя не меньше 36 px */
 body.ps .zo-scene-wrap svg text{fill:#E9EDF5!important}
 body.ps .zo-mode button{min-height:36px!important;min-width:40px;padding:0 12px}
+
+/* блок «Вопросы о сеансе» в статьях партнёров — как «напишите мне» в журнале; кнопка с текстом на заливке */
+body.ps .pa-cta{background:radial-gradient(90% 120% at 100% 0%,rgba(124,124,255,.08),transparent 55%),radial-gradient(80% 120% at 0% 100%,rgba(79,180,242,.08),transparent 60%),var(--bone)!important;border:1px solid var(--line)!important;border-radius:var(--r)!important;padding:clamp(22px,3vw,32px)!important;margin:36px 0!important;text-align:left}
+body.ps .pa-cta p{color:var(--ink-2)!important;margin:0 0 14px!important}
+body.ps .pa-cta .btn.main,body.ps .btn.main{color:var(--accent-ink)!important}
+body.ps .pa-cta .btn.sec{background:transparent!important;color:var(--ink)!important;box-shadow:inset 0 0 0 1px var(--line-2)!important}
