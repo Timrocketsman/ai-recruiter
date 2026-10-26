@@ -305,3 +305,15 @@ html body #tl-donate .tld-x,html body #tl-donate button{min-width:36px!important
 
 /* старые страницы дорисовывали «+» к любому summary — у меню шапки не надо */
 html body .pp-menu summary::after,html body .pp-menu summary::before{content:none!important}
+
+/* (26.10) по Taste skill: заголовок раздела — один фокус, абзац под ним (без «сплит-шапки»), меток над заголовками нет */
+.pp-head{align-items:start}
+.pp-head .pp-ht{grid-column:3/12}
+.pp-head .pp-ht h2{margin-top:0}
+.pp-head .pp-ht p{margin:14px 0 0;max-width:62ch;color:var(--mute);font-size:16.5px;line-height:1.55}
+.pp-head>p{display:none}
+@media (max-width:900px){.pp-head .pp-ht{grid-column:1/-1}}
+/* первый экран: заголовок не больше трёх строк */
+.pp-hero-text{grid-column:1/8;max-width:none}
+.pp-hero h1{font-size:clamp(32px,4.1vw,56px);line-height:1.04}
+.pp-fig{display:none}
