@@ -170,11 +170,11 @@
   /* ════ применение на сайте ════ */
 
   /* появление: группы со ступенькой 70 мс, не больше 6; карточки и шапки разделов — из расфокуса (Relay) */
-  doc.querySelectorAll(".pp-bento,.pp-index,.tlg-grid,.pp-facts,.pj-grid").forEach(function (g) {
+  doc.querySelectorAll(".pp-bento,.pp-index,.tlg-grid,.pp-facts,.pj-grid,.sh-grid").forEach(function (g) {
     var kids = g.querySelectorAll(":scope > .rv, :scope > div");
     for (var k = 0; k < kids.length && k < 6; k++) { kids[k].style.transitionDelay = (k * 70) + "ms"; kids[k].style.setProperty("--rv-d", (k * 70) + "ms"); }
   });
-  if (!reduce && wide.matches && TL.relay("focus")) doc.querySelectorAll(".pp-head.rv,.tlg-head.rv,.pp-tile.rv,.pj-card.rv,.pj-feature.rv,.gcard.rv,.pp-row.rv").forEach(function (el) {
+  if (!reduce && wide.matches && TL.relay("focus")) doc.querySelectorAll(".pp-head.rv,.tlg-head.rv,.pp-tile.rv,.pj-card.rv,.pj-feature.rv,.gcard.rv,.pp-row.rv,.sh-card.rv").forEach(function (el) {
     el.classList.add("rv-focus");
     function done(e) { if (e && e.propertyName && e.propertyName !== "opacity") return; el.classList.remove("rv-focus"); el.style.removeProperty("--rv-d"); el.removeEventListener("transitionend", done); }
     el.addEventListener("transitionend", done);
