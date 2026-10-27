@@ -118,3 +118,5 @@ body.ps .pa-cta .btn.sec{background:transparent!important;color:var(--ink)!impor
 
 /* tl-foot-links-v1 (27.10): ссылки в подвале витрин подчёркнуты — иначе их не отличить от текста (link-in-text-block) */
 .ps-show footer p a,body:has(.ps-show) footer p a{text-decoration:underline;text-underline-offset:2px}
+/* tl-consent-links-v1 (27.10): ссылки в окне согласия подчёркнуты (link-in-text-block) */
+#tl-consent p a{text-decoration:underline;text-underline-offset:2px}
