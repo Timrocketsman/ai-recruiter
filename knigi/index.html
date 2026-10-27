@@ -35,7 +35,7 @@ h2{font-size:clamp(1.4rem,3.4vw,2rem);margin:46px 0 6px;letter-spacing:-.01em}.s
 .pl:hover,.pl:focus-visible{background:rgba(255,255,255,.06)}.pl:focus-visible{outline:2px solid var(--cyan)}
 .pl-ic{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--ac,var(--pink)),var(--cyan));position:relative}
 .pl-ic:before{content:"";position:absolute;left:12px;top:9px;border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
-.pl.on .pl-ic:before{left:10px;top:9px;height:12px;border:0;border-left:3px solid #fff;border-right:3px solid #fff;box-sizing:content-box;width:4px}
+.pl.on .pl-ic:before{left:10px;top:9px;width:10px;height:12px;border:0;box-sizing:border-box;background:linear-gradient(90deg,#fff 0 3px,transparent 3px 7px,#fff 7px)}
 .pl-t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pl-d{color:var(--dim);font-size:.8rem}
 .pl:after{content:"";position:absolute;left:0;bottom:0;height:2px;width:var(--p,0%);background:linear-gradient(90deg,var(--pink),var(--cyan))}
 .bar{position:fixed;left:50%;bottom:16px;transform:translate(-50%,140%);transition:transform .35s;z-index:20;display:flex;align-items:center;gap:12px;padding:9px 16px 9px 10px;border-radius:999px;background:rgba(10,15,28,.92);border:1px solid var(--stroke);backdrop-filter:blur(12px);max-width:calc(100vw - 24px)}
