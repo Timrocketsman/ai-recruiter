@@ -1370,3 +1370,5 @@ CLI для проверки: `python3 tools/style_audit.py --check journal/<slug
 - 27.10 claude-core (GetLayers): /ii-avtomatizaciya/ — кнопки кейса «Компаса» переведены на системные .btn и .btn.sec (была своя радужная кнопка с @keyframes рядом с голубой). Число статей уже со счётчика (127). Правка в tools/site_stats.py (.bak-20261027a), сайт 1d247fc, движок 2fc0136, проверка: телефон и ПК 100×4.
 
 - 27.10 claude-core: 6 страниц услуг под /ii-avtomatizaciya/ (ii-v-otdel-prodazh, chat-bot-dlya-biznesa, kontent-i-socseti, otchety-i-dokumenty, ii-agenty, lichnyj-ii-assistent) — коммерческий спрос из core.json «ИИ-автоматизация», цены только из таблицы хаба, ссылки на статьи журнала той же темы. Карточки хаба кликабельны целиком. Источник tools/service_build.py + knowledge/service_pages.json. Сайт 6307de3, IndexNow ок; gate 100×4 телефон/ПК. Магазина на сайте нет (демо shop-min не публиковался).
+
+- 27.10 claude-core: ещё 2 страницы услуг — /ii-avtomatizaciya/zhurnal-pod-klyuch/ и /ii-avtomatizaciya/cifrovoj-sled/ (данные knowledge/service_pages.json, ссылки из разделов хаба «Журнал под ключ» и «Экосистема цифрового следа»). gate 100×4, IndexNow.
