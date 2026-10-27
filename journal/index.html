@@ -36,7 +36,7 @@
   tabs.forEach(function(t){t.addEventListener('click',function(){rub=t.getAttribute('data-rubric');tabs.forEach(function(x){x.setAttribute('aria-selected',x===t?'true':'false');});apply();});});
   document.querySelectorAll('.pj-tab-link').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=tabs.filter(function(x){return x.getAttribute('data-rubric')===a.getAttribute('data-rubric');})[0];if(t){t.click();window.scrollTo({top:allSec.offsetTop-80,behavior:'smooth'});}});});
   var h=location.hash.replace('#','');if(h){var t=tabs.filter(function(x){return x.getAttribute('data-rubric')===decodeURIComponent(h);})[0];if(t)t.click();}
-})();</script><script src="/assets/tl-motion.js?v=d4fe849b53" defer></script>
+})();</script><script src="/assets/tl-motion.js?v=356bf04f7e" defer></script>
 <script type="text/javascript">
 window.tlLoadMetrika=function(){
   if(window.__tlMetrikaLoaded) return; window.__tlMetrikaLoaded=true;
