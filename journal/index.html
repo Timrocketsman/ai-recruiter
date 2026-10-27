@@ -12,7 +12,7 @@
 <script>(function(){try{var t=localStorage.getItem("tl-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);else if(matchMedia("(prefers-color-scheme: light)").matches)document.documentElement.classList.add("auto-light")}catch(e){}})();</script>
 <link rel="preload" href="/assets/fonts/onest-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/corm-cyr-500i.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/tl-paper.css?v=91f696b9bc">
+<link rel="stylesheet" href="/assets/tl-paper.css?v=fec01ab5ba">
 <link rel="stylesheet" href="/assets/tl-journal.css?v=435e4f21b0">
 <link rel="alternate" type="application/rss+xml" title="Журнал «Компас» — TimLabs" href="https://timlabs.online/rss.xml">
 <meta name="zen-verification" content="tAtj2hMOM3A8GzQSXbMzsOkm1fj0nB1HPVo3NoSjCQwXxMMMTYBdprczNxOyhLMI" />
@@ -36,7 +36,7 @@
   tabs.forEach(function(t){t.addEventListener('click',function(){rub=t.getAttribute('data-rubric');tabs.forEach(function(x){x.setAttribute('aria-selected',x===t?'true':'false');});apply();});});
   document.querySelectorAll('.pj-tab-link').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=tabs.filter(function(x){return x.getAttribute('data-rubric')===a.getAttribute('data-rubric');})[0];if(t){t.click();window.scrollTo({top:allSec.offsetTop-80,behavior:'smooth'});}});});
   var h=location.hash.replace('#','');if(h){var t=tabs.filter(function(x){return x.getAttribute('data-rubric')===decodeURIComponent(h);})[0];if(t)t.click();}
-})();</script><script src="/assets/tl-motion.js?v=356bf04f7e" defer></script>
+})();</script><script src="/assets/tl-motion.js?v=d8a3c0e8d4" defer></script>
 <script type="text/javascript">
 window.tlLoadMetrika=function(){
   if(window.__tlMetrikaLoaded) return; window.__tlMetrikaLoaded=true;

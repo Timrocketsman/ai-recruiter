@@ -22,7 +22,7 @@
   --r:18px; --r-sm:12px; --wrap:1240px; --gut:clamp(16px,3.2vw,24px); --shadow:0 24px 60px rgba(0,0,0,.45);
   --ease-out:cubic-bezier(.23,1,.32,1); --ease-in-out:cubic-bezier(.77,0,.175,1); --ease-drawer:cubic-bezier(.32,.72,0,1);
   --t-fast:160ms; --t-ui:220ms; --t-reveal:800ms; --ease-focus:cubic-bezier(.2,0,0,1); --t-focus:700ms;
-  --tl-relay:"thread focus window pulse";   /* приёмы Relay, включённые на сайте: thread focus window (читает tl-motion.js) */
+  --tl-relay:"thread focus window rise";   /* приёмы Relay, включённые на сайте: thread focus window (читает tl-motion.js) */
   /* старые имена — для блоков агентов */
   --text:var(--ink); --muted:var(--mute); --dim:var(--faint); --cyan:var(--accent); --magenta:var(--violet);
   --stroke:var(--line); --stroke-hi:var(--line-2); --bg:var(--paper); --card:var(--bone); --font-disp:var(--sans); --font-body:var(--sans);
@@ -278,15 +278,14 @@ html body{overflow-x:clip}
 :root[data-theme="light"] .pp-farewell,:root.auto-light .pp-farewell{color:#E9EDF5;--ink:#E9EDF5;--mute:#A8B0C2;--faint:#7C859A;--line-2:rgba(255,255,255,.14)}
 :root[data-theme="light"] .pp-tim,:root.auto-light .pp-tim{box-shadow:0 14px 34px rgba(14,19,32,.14)}
 :root[data-theme="light"] .pp-mega,:root.auto-light .pp-mega{-webkit-text-stroke:1px var(--line-2)}
-/* (27.10) импульсы по контуру слова TimLabs — приём Relay «pulse» (tl-motion.js); метка ?v= поднята после гонки с хуком */
-.pp-mega .tl-pulse{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
-.pp-mega.tl-pulsing{-webkit-text-stroke-color:transparent}
-.tl-pulse text{fill:none;stroke-linecap:round;stroke-linejoin:round}
-.tl-pulse .tl-pulse-base{stroke:var(--line-2)}
-.tl-pulse .tl-pulse-halo{stroke:var(--accent);opacity:.18}
-.tl-pulse .tl-pulse-a{stroke:var(--accent);opacity:.7}
-.tl-pulse .tl-pulse-b{stroke:var(--accent);opacity:.45}
-.tl-pulse .tl-pulse-c{stroke:var(--ink,#fff);opacity:.35}
+/* (27.10) слово TimLabs в подвале — матовый чёрный «из пустоты»: свет сверху, низ уходит в темноту; подъём — приём Relay «rise» (tl-motion.js) */
+:root{--mega-hi:#2e3546;--mega-mid:#0b0d13;--mega-lo:#020304;--mega-fx:drop-shadow(0 -1px 0 rgba(255,255,255,.13))}
+:root[data-theme="light"],:root.auto-light{--mega-hi:#3b414e;--mega-mid:#11141a;--mega-lo:#040506;--mega-fx:drop-shadow(0 22px 26px rgba(10,14,25,.16))}
+.pp-mega,:root[data-theme="light"] .pp-mega,:root.auto-light .pp-mega{-webkit-text-stroke:0;color:transparent;
+  background:linear-gradient(180deg,var(--mega-hi) 0%,var(--mega-mid) 30%,var(--mega-lo) 70%);-webkit-background-clip:text;background-clip:text;
+  filter:var(--mega-fx);   /* не text-shadow: при background-clip:text тень текста ложится поверх заливки букв */
+  -webkit-mask-image:linear-gradient(180deg,#000 38%,rgba(0,0,0,.5) 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 38%,rgba(0,0,0,.5) 72%,transparent 100%)}
+.pp-mega.tl-rise{transform:translate3d(0,calc((1 - var(--rise,1)) * 26%),0);opacity:calc(var(--rise,1) * .92 + .08)}
 :root[data-theme="light"] .pp-btn,:root.auto-light .pp-btn{box-shadow:0 8px 24px rgba(27,127,214,.22)}
 :root[data-theme="light"] .pp-row:hover,:root.auto-light .pp-row:hover{background:linear-gradient(90deg,transparent,var(--paper-2) 30%,transparent)}
 :root[data-theme="light"] html body .b2b,:root.auto-light body .b2b{background:radial-gradient(90% 120% at 100% 0%,rgba(91,91,230,.07),transparent 55%),radial-gradient(80% 120% at 0% 100%,rgba(27,127,214,.07),transparent 60%),var(--bone)!important}

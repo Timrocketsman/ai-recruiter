@@ -323,63 +323,17 @@
   new IntersectionObserver(function (es) { visible = es[0].isIntersecting; run(); }).observe(c);
 })();
 
-/* ── импульсы по контуру слова TimLabs в подвале (27.10.2026, Тим: «электрические импульсы как нейронные связи»; приём Relay «pulse») ──
-   SVG-копия слова поверх .pp-mega: тот же шрифт, ширина подогнана textLength под HTML-слово. Короткие штрихи бегут по обводке букв
-   (stroke-dashoffset), слои с разной скоростью и направлением, вспышки — редкие всплески яркости, как разряд нейрона.
-   Без @keyframes и фильтров: один подписчик TL.tick, 30 кадров/с, только пока слово на экране и вкладка видна, во время прокрутки
-   стоит. reduced-motion — неподвижные точки на контуре. Без JS остаётся обычная обводка. */
+/* ── слово TimLabs в подвале выходит из пустоты (27.10.2026, Тим: «выезжание из пустоты, глубокий чёрный матовый, тень и свет»; приём Relay «rise»)
+   Буквы — матовый чёрный с бликом сверху (стили .pp-mega в tl-paper.css), низ растворяется в темноте маской. При прокрутке слово
+   поднимается из глубины и проявляется: только transform и opacity через переменную --rise, прогресс — TL.SpringTrigger scrub.
+   reduced-motion и без JS — сразу конечное состояние. */
 (function () {
   "use strict";
-  var TL = window.TL, doc = document; if (!TL || !TL.relay || !TL.relay("pulse")) return;
-  var el = doc.querySelector(".pp-mega"); if (!el || !el.firstChild || !window.IntersectionObserver) return;
-  var NS = "http://www.w3.org/2000/svg", svg, layers = [], visible = false, last = 0, scrollT = 0, t0 = 0;
-  /* [ширина штриха, узор штрих/пауза, скорость px/с, класс] — два встречных потока + ореол первого */
-  var SPEC = [[5, "16 74 9 167 13 241", 46, "tl-pulse-halo"], [1.7, "16 74 9 167 13 241", 46, "tl-pulse-a"], [1.3, "7 131 4 219", -31, "tl-pulse-b"], [1.1, "2 97 2 311 2 183", 71, "tl-pulse-c"]];   /* неровные промежутки — как живые разряды, а не бусы */
-  function build() {
-    var cs = getComputedStyle(el), r = el.getBoundingClientRect(); if (!r.width) return false;
-    var range = doc.createRange(); range.selectNodeContents(el); var tr = range.getBoundingClientRect();
-    var ctx = doc.createElement("canvas").getContext("2d"); ctx.font = cs.fontWeight + " " + cs.fontSize + " " + cs.fontFamily;
-    var m = ctx.measureText(el.textContent), A = m.fontBoundingBoxAscent, D = m.fontBoundingBoxDescent;
-    var fs = parseFloat(cs.fontSize), lh = parseFloat(cs.lineHeight) || fs * .78;
-    if (!(A > 0)) { A = fs * .93; D = fs * .24; }
-    var base = (lh - (A + D)) / 2 + A + parseFloat(cs.paddingTop || 0);
-    if (svg) svg.remove(); layers = [];
-    svg = doc.createElementNS(NS, "svg"); svg.setAttribute("class", "tl-pulse"); svg.setAttribute("aria-hidden", "true"); svg.setAttribute("focusable", "false");
-    svg.setAttribute("viewBox", "0 0 " + r.width.toFixed(1) + " " + r.height.toFixed(1));
-    var x = (tr.left - r.left).toFixed(1), w = tr.width.toFixed(1);
-    function text(cls, sw, dash) {
-      var t = doc.createElementNS(NS, "text"); t.textContent = el.textContent;
-      t.setAttribute("x", x); t.setAttribute("y", base.toFixed(1)); t.setAttribute("textLength", w); t.setAttribute("lengthAdjust", "spacing");
-      t.setAttribute("class", cls); t.style.font = cs.fontWeight + " " + cs.fontSize + " " + cs.fontFamily; t.style.letterSpacing = cs.letterSpacing;
-      t.style.strokeWidth = sw; if (dash) t.style.strokeDasharray = dash; svg.appendChild(t); return t;
-    }
-    text("tl-pulse-base", 1);
-    var k = Math.max(.4, Math.min(1, fs / 330));      /* толщина и шаг — от размера букв: на телефоне слово в 3 раза мельче */
-    SPEC.forEach(function (s, i) { var t = text(s[3], (s[0] * k).toFixed(2), s[1].split(" ").map(function (v) { return (v * k).toFixed(1); }).join(" ")); t._v = s[2] * k; t._ph = i * 37 * k; layers.push(t); });
-    el.appendChild(svg); el.classList.add("tl-pulsing"); return true;
-  }
-  function frame(t) {
-    if (t - last < 33) return; last = t;                 /* 30 кадров/с */
-    if (t - scrollT < 160) return;                        /* во время прокрутки — пауза */
-    if (!t0) t0 = t; var s = (t - t0) / 1000;
-    for (var i = 0; i < layers.length; i++) {
-      var L = layers[i]; L.style.strokeDashoffset = (-(s * L._v) - L._ph).toFixed(1);
-    }
-    /* разряд: раз в несколько секунд поток «a» на мгновение ярче, ореол вспыхивает вместе с ним */
-    var f = Math.max(0, Math.sin(s * 0.9) * Math.sin(s * 2.3 + 1.1)), b = (0.55 + 0.45 * f * f).toFixed(2);
-    layers[0].style.opacity = (0.12 + 0.3 * f * f).toFixed(2); layers[1].style.opacity = b;
-  }
-  function run() { if (visible && !doc.hidden && !TL.reduce) TL.tick.add(frame); else TL.tick.remove(frame); }
-  var built = false;
-  function ensure() { if (!built) built = build(); return built; }
-  var io = new IntersectionObserver(function (es) {
-    visible = es[0].isIntersecting;
-    if (visible && ensure() && TL.reduce) frame(1e5);
-    run();
-  }, { rootMargin: "120px 0px" });
-  io.observe(el);
-  addEventListener("scroll", function () { scrollT = performance.now(); }, { passive: true });
-  doc.addEventListener("visibilitychange", run);
-  var rz; addEventListener("resize", function () { clearTimeout(rz); rz = setTimeout(function () { if (built) { built = build(); if (TL.reduce) frame(1e5); } }, 200); }, { passive: true });
-  if (doc.fonts && doc.fonts.ready) doc.fonts.ready.then(function () { if (built) built = build(); });
+  var TL = window.TL; if (!TL || !TL.relay || !TL.relay("rise") || !TL.SpringTrigger) return;
+  var el = document.querySelector(".pp-mega"); if (!el) return;
+  function set(p) { var e = 1 - Math.pow(1 - p, 3); el.style.setProperty("--rise", e.toFixed(3)); }
+  el.classList.add("tl-rise");
+  if (TL.reduce) { set(1); return; }
+  set(0);
+  TL.SpringTrigger(el, { mode: "scrub", start: "top 100%", end: "top 50%", onProgress: set });
 })();
