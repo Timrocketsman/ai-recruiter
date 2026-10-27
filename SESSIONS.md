@@ -1372,3 +1372,5 @@ CLI для проверки: `python3 tools/style_audit.py --check journal/<slug
 - 27.10 claude-core: 6 страниц услуг под /ii-avtomatizaciya/ (ii-v-otdel-prodazh, chat-bot-dlya-biznesa, kontent-i-socseti, otchety-i-dokumenty, ii-agenty, lichnyj-ii-assistent) — коммерческий спрос из core.json «ИИ-автоматизация», цены только из таблицы хаба, ссылки на статьи журнала той же темы. Карточки хаба кликабельны целиком. Источник tools/service_build.py + knowledge/service_pages.json. Сайт 6307de3, IndexNow ок; gate 100×4 телефон/ПК. Магазина на сайте нет (демо shop-min не публиковался).
 
 - 27.10 claude-core: ещё 2 страницы услуг — /ii-avtomatizaciya/zhurnal-pod-klyuch/ и /ii-avtomatizaciya/cifrovoj-sled/ (данные knowledge/service_pages.json, ссылки из разделов хаба «Журнал под ключ» и «Экосистема цифрового следа»). gate 100×4, IndexNow.
+
+- 27.10 claude-core: 6 страниц форматов обучения /obuchenie/{nastroyka,nedelya,mesyac,gruppa,komanda,nastavnik}/ — данные knowledge/edu_pages.json, цены из studio_products.json, кнопки ведут в бота start=edu_<код>; названия на карточках /obuchenie/ — ссылки. Сайт 8c2a9c8, IndexNow, gate 100×4.
