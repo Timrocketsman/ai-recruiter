@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
+    <loc>https://timlabs.online/ii-avtomatizaciya/chat-bot-dlya-biznesa/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Чат-бот для бизнеса с ИИ под ключ: Telegram и сайт</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/ii-avtomatizaciya/cifrovoj-sled/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Цифровой след компании под ключ: сайт, журнал, соцсети, поиск</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/ii-avtomatizaciya/ii-agenty/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>ИИ-агенты для бизнеса на своих данных: внедрение под ключ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/ii-avtomatizaciya/ii-v-otdel-prodazh/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Внедрение ИИ в отдел продаж: заявки и ответы клиентам</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/ii-avtomatizaciya/kontent-i-socseti/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Нейросеть для контента и соцсетей: автоматизация публикаций</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/ii-avtomatizaciya/lichnyj-ii-assistent/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Личный ИИ-ассистент: настройка под почту, учёбу и дела</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/ii-avtomatizaciya/otchety-i-dokumenty/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Автоматизация отчётов и документов с помощью нейросети</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/ii-avtomatizaciya/zhurnal-pod-klyuch/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Корпоративный блог под ключ: журнал компании на ИИ-агентах</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/</loc>
     <image:image><image:loc>https://timlabs.online/media/paper/gory-kislovodsk-rassvet.webp</image:loc><image:title>Горы Кавказа над Кисловодском перед рассветом — Кавминводы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/avatar.jpg</image:loc><image:title>Тим — основатель TimLabs</image:title></image:image>
@@ -582,6 +614,10 @@
     <image:image><image:loc>https://timlabs.online/media/covers/znaniy-umeniy-i-navykov-razvitiya.webp</image:loc><image:title>Знания, умения и навыки: как выстроить систему развития</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/knigi/elektronnaya-kniga-gid/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Электронная книга-гид на заказ для эксперта и его подписчиков</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/knigi/</loc>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book1.webp</image:loc><image:title>Книга «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book2.webp</image:loc><image:title>Книга «Духовное наследие поколения ПЕПСИ»</image:title></image:image>
@@ -590,6 +626,14 @@
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book5.webp</image:loc><image:title>Книга «Лёгкий способ отказа от зависимостей: Революция сознания»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book6.webp</image:loc><image:title>Книга «Архитектор судьбы»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book7.webp</image:loc><image:title>Книга «Исповедь артиста. Эпизод I: Зажигание»</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/knigi/kniga-eksperta/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Написать книгу эксперта на заказ: от интервью до выпуска на ЛитРес</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/knigi/kniga-istoriya/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Книга о семье на заказ: история рода, юбилей, жизненный путь</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/music/</loc>
@@ -627,8 +671,48 @@
     <image:image><image:loc>https://timlabs.online/media/showcase/music/ch_71.webp</image:loc><image:title>Глава 25. Выход на сушу — Tim Rockets, «Исповедь артиста»</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/music/mini-albom/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Мини-альбом на заказ: 4 трека с общей идеей и обложками</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/music/pesnya-pod-klyuch/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Песня под ключ для артиста: текст, аранжировка, сведение, обложка</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/music/pesnya-v-podarok/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Песня на заказ по вашей истории: подарок за 3–5 дней</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/music/trek-dlya-brenda/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Музыка для бренда и роликов на заказ: трек и версии 15, 30, 60 секунд</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/obuchenie/gruppa/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Обучение нейросетям в мини-группе: 4 недели, до 6 человек</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/obuchenie/</loc>
     <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Обучение нейросетям лично: настройка, неделя, месяц</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/obuchenie/komanda/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Корпоративное обучение нейросетям для команды</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/obuchenie/mesyac/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Индивидуальное обучение промпт-инжинирингу: месяц один на один</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/obuchenie/nastavnik/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Наставник по нейросетям: созвоны и чат каждый месяц</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/obuchenie/nastroyka/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Настройка нейросети под ваши задачи: одна встреча на 2 часа</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/obuchenie/nedelya/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Интенсив по нейросетям за неделю: 5 занятий на ваших задачах</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/</loc>
@@ -745,6 +829,30 @@
     <image:image><image:loc>https://timlabs.online/partners/marafdy/posle-massazha/cover.webp</image:loc><image:title>Кровать с отвёрнутым пледом и стакан воды на тумбочке у окна с видом на вечерние горы — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/partners/marafdy/posts/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/posle-dolgoy-dorogi/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/posle-dolgoy-dorogi/cover.webp</image:loc><image:title>После долгой дороги: как прийти в себя за один вечер — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-v-kislovodske/cover.webp</image:loc><image:title>Массаж в Кисловодске для отдыхающих: как вписать его в отпуск — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-massazhista/cover.webp</image:loc><image:title>Как выбрать массажиста: семь вопросов до первой записи — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/sidyachaya-rabota/cover.webp</image:loc><image:title>Сидячая работа: что происходит с телом за день и что делать у стола — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-podgotovitsya-k-massazhu/cover.webp</image:loc><image:title>Как подготовиться к массажу: что надеть, что взять и о чём сказать мастеру — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kislovodsk-osenyu/cover.webp</image:loc><image:title>Кисловодск осенью: как спланировать неделю и не устать от отдыха — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-poyasnicy/cover.webp</image:loc><image:title>Массаж поясницы: почему она устаёт к вечеру и что сделать самому — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/posle-massazha/cover.webp</image:loc><image:title>После массажа: что делать в первые часы и чего не делать — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/muzyka-dlya-massazha/cover.webp</image:loc><image:title>Музыка для расслабляющего массажа: что включить и когда лучше тишина — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-sheyno-vorotnikovoy-zony/cover.webp</image:loc><image:title>Массаж шейно-воротниковой зоны: что это и что можно сделать самому — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/apparatnyy-massazh/cover.webp</image:loc><image:title>Аппаратный массаж: что это и чем отличается от рук — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.webp</image:loc><image:title>Как часто можно делать массаж: ритм подсказывает тело — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-na-domu/cover.webp</image:loc><image:title>Массаж на дому: как это устроено, если приезжают к тебе — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-posle-terrenkura/cover.webp</image:loc><image:title>Массаж после терренкура: как вернуть ногам лёгкость — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-ruk/cover.webp</image:loc><image:title>Массаж рук: рука устаёт не от веса телефона — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-spiny/cover.webp</image:loc><image:title>Массаж спины: что происходит за час — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/cover.webp</image:loc><image:title>Общий массаж тела: что это и чем он отличается от массажа по зонам — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.webp</image:loc><image:title>Напряжение в плечах: почему плечи сами ползут к ушам — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.webp</image:loc><image:title>Расслабляющий массаж: что под этим понимают на самом деле — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.webp</image:loc><image:title>Массаж головы: место, которого не касается никто — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.jpg</image:loc><image:title>Расслабляющий массаж: что это и почему не про силу | MARAFDY</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/rasslablyayushchiy-massazh/cover.webp</image:loc><image:title>Толстая хлопковая верёвка свободной спиралью на тёмной деревянной столешнице, витки не натянуты, конец свисает за край, изумрудный фон, тёплый золотой свет сбоку</image:title></image:image>
@@ -807,6 +915,30 @@
     <loc>https://timlabs.online/partners/umas_osoznanie/odni-i-te-zhe-partnery/</loc>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/odni-i-te-zhe-partnery/cover.jpg</image:loc><image:title>Одни и те же партнёры: тест на листке бумаги</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/odni-i-te-zhe-partnery/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему вам попадаются одни и те же партнёры: простой тест на листке бумаги»</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/umas_osoznanie/posts/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-dostigli-tseli-a-radosti-net/cover.jpg</image:loc><image:title>Статьи об Умасе: отношения, эмоции, ответственность</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-dostigli-tseli-a-radosti-net/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Достиг цели, а радости нет. Почему так?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-fokus-vnimaniya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему ты видишь только то, что ищешь?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-mentalnyy-vozrast/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему взрослые ведут себя как дети?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-mne-plokho-ty-vinovat/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему простой разговор в паре заканчивается ссорой?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-na-chto-vy-tratite-dengi/cover.webp</image:loc><image:title>Умас во время разговора — к статье «На что ты на самом деле тратишь деньги?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-odni-i-te-zhe-partnery/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему тебе попадаются одни и те же партнёры?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-potentsial-podarok-ili-gruz/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Потенциал — это подарок или груз?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-trudno-priznat-chto-shel-ne-tuda/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему так трудно признать, что ты шёл не туда?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-zachem-vy-prosypaetes/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Зачем ты каждый день просыпаешься?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-zlost-i-radost-odna-emotsiya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Злость и радость — это одно и то же?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/dostigli-tseli-a-radosti-net/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Достигли цели, а радости нет: что значит двигаться ради движения»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/fokus-vnimaniya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему вы замечаете только то, что ищете: фокус внимания»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/mentalnyy-vozrast/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему взрослые иногда ведут себя как дети: что Умас называет ментальным возрастом»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/mne-plokho-ty-vinovat/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Она говорит «мне плохо», он слышит «ты виноват»: почему разговор превращается в ссору»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/na-chto-vy-tratite-dengi/cover.webp</image:loc><image:title>Умас во время разговора — к статье «На что вы тратите деньги, когда вам плохо»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/odni-i-te-zhe-partnery/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему вам попадаются одни и те же партнёры: простой тест на листке бумаги»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/potentsial-podarok-ili-gruz/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Потенциал — подарок или груз? Почему большие возможности тяжело нести»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/trudno-priznat-chto-shel-ne-tuda/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему так трудно признать, что шёл не туда»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/zachem-vy-prosypaetes/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Зачем вы каждый день просыпаетесь: разговор об ответственности за свою жизнь»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/zlost-i-radost-odna-emotsiya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Злость и радость — одна эмоция? Что показывает упражнение «разложи эмоцию»»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/potentsial-podarok-ili-gruz/</loc>
@@ -892,5 +1024,9 @@
     <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem285.webp</image:loc><image:title>Иллюстрация к стихотворению «Загадочная девчонка» — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem507.webp</image:loc><image:title>Иллюстрация к стихотворению «Между мирами» — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/poems/poem1690.webp</image:loc><image:title>Иллюстрация к стихотворению «Я тут недавно тебя вспомнил» — Tim Rockets</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/stihi/stih-na-zakaz/</loc>
+    <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Стихи на заказ по вашей истории: к празднику и в подарок</image:title></image:image>
   </url>
 </urlset>
