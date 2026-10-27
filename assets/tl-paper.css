@@ -278,7 +278,7 @@ html body{overflow-x:clip}
 :root[data-theme="light"] .pp-farewell,:root.auto-light .pp-farewell{color:#E9EDF5;--ink:#E9EDF5;--mute:#A8B0C2;--faint:#7C859A;--line-2:rgba(255,255,255,.14)}
 :root[data-theme="light"] .pp-tim,:root.auto-light .pp-tim{box-shadow:0 14px 34px rgba(14,19,32,.14)}
 :root[data-theme="light"] .pp-mega,:root.auto-light .pp-mega{-webkit-text-stroke:1px var(--line-2)}
-/* (27.10) импульсы по контуру слова TimLabs — приём Relay «pulse» (tl-motion.js) */
+/* (27.10) импульсы по контуру слова TimLabs — приём Relay «pulse» (tl-motion.js); метка ?v= поднята после гонки с хуком */
 .pp-mega .tl-pulse{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
 .pp-mega.tl-pulsing{-webkit-text-stroke-color:transparent}
 .tl-pulse text{fill:none;stroke-linecap:round;stroke-linejoin:round}
