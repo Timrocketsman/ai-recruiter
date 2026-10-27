@@ -505,7 +505,7 @@ def main():
                 stats["voice"] = stats.get("voice", 0) + 1
             # (09.10) обложка статьи: media/covers/<slug>.webp|jpg|png → картинка под шапкой и og:image
             cov = next((f"media/covers/{slug}.{e}" for e in ("webp", "jpg", "png") if os.path.exists(os.path.join(ROOT, "media/covers", f"{slug}.{e}"))), None)
-            if cov and "<!--tl-cover-v1-->" not in h and "</header>" in h:
+            if cov and "<!--tl-cover-v1-->" not in h and '<figure class="cover">' not in h and "</header>" in h:   # (27.10) новый шаблон ставит обложку сам — иначе две обложки
                 t1 = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
                 alt = html_mod.escape(re.sub(r"<[^>]+>", "", t1.group(1)).strip()) if t1 else ""
                 fig = ('\n  <!--tl-cover-v1--><figure class="tl-cover" style="margin:18px 0 8px"><img src="/%s" alt="%s" width="1200" height="630" '
