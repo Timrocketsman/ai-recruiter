@@ -115,3 +115,6 @@ body.ps .pa-cta .btn.sec{background:transparent!important;color:var(--ink)!impor
 .alist a{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 18px;padding:13px 2px;color:var(--ink);text-decoration:none}
 .alist a:hover{color:var(--accent)}
 .alist small{flex:none;font:12px/1.4 var(--mono);color:var(--faint);letter-spacing:.02em}
+
+/* tl-foot-links-v1 (27.10): ссылки в подвале витрин подчёркнуты — иначе их не отличить от текста (link-in-text-block) */
+.ps-show footer p a{text-decoration:underline;text-underline-offset:2px}
