@@ -186,9 +186,9 @@
         "prazdnik-kak-otdyhaem": "Праздники С ЛЮДЬМИ: гости, застолья, родственники, шум — как не выйти из них выжатым, где взять час тишины, как уходить вовремя.",
         "dlinnye-vyhodnye": "Три дня В ОДИНОЧКУ: как не проспать их и не просидеть в телефоне, план по дням — разгрузка, движение, одно удовольствие, возвращение."
       },
-      "status": "planned",
+      "status": "published",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/dlinnye-vyhodnye/",
         "telegram": null,
         "vk": null,
         "dzen": null
