@@ -1,6 +1,7 @@
 # Поисковики и ИИ-ассистенты: сайт открыт целиком
 User-agent: YandexBot
 Allow: /
+Clean-param: v&a1&utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&ysclid&gclid&fbclid
 
 User-agent: Bingbot
 Allow: /
