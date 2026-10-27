@@ -91,6 +91,19 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 <meta name="zen-verification" content="tAtj2hMOM3A8GzQSXbMzsOkm1fj0nB1HPVo3NoSjCQwXxMMMTYBdprczNxOyhLMI" />
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="120x120" href="/favicon-120x120.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">
+<style id="tl-depth2-css">
+.gd-go{background:linear-gradient(100deg,var(--g1,#ff4fd8),var(--g2,#8a5cff) 55%,var(--g3,#00b4ff));background-size:200% 100%}
+.gd-bks{display:grid;grid-auto-flow:column;grid-auto-columns:104px;gap:14px;align-items:end;overflow-x:auto;padding:16px 4px 12px;perspective:700px;scrollbar-width:thin}
+.gd-bk{display:block;transform:rotateY(-16deg);transform-origin:left center;transition:transform .45s cubic-bezier(.2,.8,.2,1)}.gd-bk:hover{transform:rotateY(0) translateY(-6px)}
+.gd-bk img{width:104px;height:156px;object-fit:cover;border-radius:4px 9px 9px 4px;display:block;box-shadow:-8px 10px 22px -8px rgba(0,0,0,.8),inset 5px 0 8px -5px rgba(255,255,255,.35)}
+.gd-poem{margin:14px 0 6px;padding:16px 18px;border-left:2px solid #8a5cff;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:1.06rem;line-height:1.6;color:#f1f3fa;background:linear-gradient(90deg,rgba(138,92,255,.10),transparent)}
+.gd-poem span{display:block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:#b9a6ff;margin-bottom:8px}
+.gd-weeks{margin:12px 0 4px;padding-left:20px;color:#c9d1e3;font-size:.94rem;display:grid;gap:5px}.gd-weeks b{color:#2fd07a}
+</style>
+<link rel="preload" href="/assets/fonts/onest-cyr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/corm-cyr-500i.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/tl-paper.css?v=35896bccde">
+<link rel="stylesheet" href="/assets/tl-site.css?v=48c07ac1de">
 <style id="tl-depth-css">
 .gcard.deep{cursor:pointer}.gd-tg{all:unset;cursor:pointer}.gd-tg:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}.gcard.deep h3{display:flex;align-items:center;gap:10px}
 .gcard.deep h3:after{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform .3s;opacity:.7;margin-left:auto}
@@ -109,19 +122,6 @@ try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika(
 .gd-go i{font-style:normal;font-size:1.3rem}.gd-go:hover{filter:brightness(1.12)}
 @media (prefers-reduced-motion:reduce){.gd-go,.gd-go i{animation:none}}
 </style>
-<style id="tl-depth2-css">
-.gd-go{background:linear-gradient(100deg,var(--g1,#ff4fd8),var(--g2,#8a5cff) 55%,var(--g3,#00b4ff));background-size:200% 100%}
-.gd-bks{display:grid;grid-auto-flow:column;grid-auto-columns:104px;gap:14px;align-items:end;overflow-x:auto;padding:16px 4px 12px;perspective:700px;scrollbar-width:thin}
-.gd-bk{display:block;transform:rotateY(-16deg);transform-origin:left center;transition:transform .45s cubic-bezier(.2,.8,.2,1)}.gd-bk:hover{transform:rotateY(0) translateY(-6px)}
-.gd-bk img{width:104px;height:156px;object-fit:cover;border-radius:4px 9px 9px 4px;display:block;box-shadow:-8px 10px 22px -8px rgba(0,0,0,.8),inset 5px 0 8px -5px rgba(255,255,255,.35)}
-.gd-poem{margin:14px 0 6px;padding:16px 18px;border-left:2px solid #8a5cff;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:1.06rem;line-height:1.6;color:#f1f3fa;background:linear-gradient(90deg,rgba(138,92,255,.10),transparent)}
-.gd-poem span{display:block;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:#b9a6ff;margin-bottom:8px}
-.gd-weeks{margin:12px 0 4px;padding-left:20px;color:#c9d1e3;font-size:.94rem;display:grid;gap:5px}.gd-weeks b{color:#2fd07a}
-</style>
-<link rel="preload" href="/assets/fonts/onest-cyr.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/corm-cyr-500i.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/tl-paper.css?v=35896bccde">
-<link rel="stylesheet" href="/assets/tl-site.css?v=48c07ac1de">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -381,13 +381,12 @@ if(a)try{if(typeof ym==='function')ym(111725024,'reachGoal','b2b_click',{from:lo
       </article>
       
       <!--tl-music-card--><article class="gcard deep rv" id="card-music" data-open="false" style="--c:#ff4fd8;--c2:#00b4ff">
-        <div class="g-top"><span class="g-tag">Музыка</span></div>
+        <div class="g-top"><span class="g-ic" aria-hidden="true">🎧</span><span class="g-tag">Музыка</span></div>
         <h3><button class="gd-tg" type="button" aria-expanded="false" aria-controls="depth-music">Tim Rockets</button></h3>
         <p>Моя музыка на стыке хип-хопа, поэтического речитатива и электроники, созданная вместе с ИИ: 14 релизов и 23 трека на всех площадках. Нажмите на карточку — внутри фрагменты релизов и анонсы.</p>
         <div class="g-depth" id="depth-music"><div>
           <div class="gd-rels" aria-label="Свежие релизы"><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b5/d4/ba/b5d4bafa-668d-fe11-eb96-d0cb3489f666/mzaf_9531486412366712342.plus.aac.p.m4a" aria-label="Слушать фрагмент: Шёпот неба"><img src="/media/showcase/music/rel_6818540761_s.webp" alt="Обложка: Шёпот неба — Tim Rockets" loading="lazy" decoding="async" width="300" height="300"><span>Шёпот неба<br><small>сингл · 23 октября 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/73/4e/81/734e811c-574b-ceee-da84-927cbe494783/mzaf_7162512030488308861.plus.aac.p.m4a" aria-label="Слушать фрагмент: Двойная спираль"><img src="/media/showcase/music/rel_6795121523_s.webp" alt="Обложка: Двойная спираль — Tim Rockets" loading="lazy" decoding="async" width="300" height="300"><span>Двойная спираль<br><small>сингл · 28 июля 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b0/74/99/b07499a2-0906-b207-14a4-d7822ff108ba/mzaf_2221571977208319856.plus.aac.p.m4a" aria-label="Слушать фрагмент: Разрыватель"><img src="/media/showcase/music/rel_1896242595_s.webp" alt="Обложка: Разрыватель — Tim Rockets" loading="lazy" decoding="async" width="300" height="300"><span>Разрыватель<br><small>сингл · 5 мая 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/79/85/ae/7985ae26-9f28-799b-673a-e93e5f0a8e1f/mzaf_3342342120802114117.plus.aac.p.m4a" aria-label="Слушать фрагмент: Шёлковый путь"><img src="/media/showcase/music/rel_1885555133_s.webp" alt="Обложка: Шёлковый путь — Tim Rockets" loading="lazy" decoding="async" width="300" height="300"><span>Шёлковый путь<br><small>сингл · 20 марта 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/62/3c/1d623c3d-84ea-6f42-c2d2-5c3587b06142/mzaf_7290124899351272219.plus.aac.p.m4a" aria-label="Слушать фрагмент: Настоящий клад"><img src="/media/showcase/music/rel_1884349219_s.webp" alt="Обложка: Настоящий клад — Tim Rockets" loading="lazy" decoding="async" width="300" height="300"><span>Настоящий клад<br><small>сингл · 13 марта 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/06/52/30/06523054-6ab4-1100-1791-c0ac2d123d7e/mzaf_5060878017772472519.plus.aac.p.m4a" aria-label="Слушать фрагмент: Пыль на зеркалах"><img src="/media/showcase/music/rel_1884060451_s.webp" alt="Обложка: Пыль на зеркалах — Tim Rockets" loading="lazy" decoding="async" width="300" height="300"><span>Пыль на зеркалах<br><small>альбом · 7 марта 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5a/c5/e3/5ac5e3af-68bb-8f34-630b-bd3b70cf1b44/mzaf_353751639434620773.plus.aac.p.m4a" aria-label="Слушать фрагмент: ПРЕЛОМЛЕНИЕ"><img src="/media/showcase/music/rel_1895317028_s.webp" alt="Обложка: ПРЕЛОМЛЕНИЕ — Tim Rockets" loading="lazy" decoding="async" width="300" height="300"><span>ПРЕЛОМЛЕНИЕ<br><small>мини-альбом · 27 февраля 2026</small></span></button><button class="gd-rel" type="button" data-src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/03/d2/b8/03d2b8eb-1187-b651-122b-ac7be0d94b29/mzaf_18184246964375979289.plus.aac.p.m4a" aria-label="Слушать фрагмент: Внутренний свет"><img src="/media/showcase/music/rel_1877660088_s.webp" alt="Обложка: Внутренний свет — Tim Rockets" loading="lazy" decoding="async" width="300" height="300"><span>Внутренний свет<br><small>сингл · 20 февраля 2026</small></span></button></div>
-          <div class="gd-soon"><b>Готовится: «Шёпота неба».</b> В прошлой главе я проживал то, что некоторые истории невозможно продолжить. Можно только отпустить. Сегодня у «Шёпота неба» появилось то, чего не было ни у одной моей песни, — изображение. Это первый клип Tim Rockets.</div>
-          <p class="gd-last"><b>Свежая глава — глава 42: «Тишина после дождя».</b> </p>
+          <p class="gd-last"><b>Свежая глава — глава 42: «Тишина после дождя».</b> В прошлой главе я проживал то, что некоторые истории невозможно продолжить. Можно только отпустить. Сегодня у «Шёпота неба» появилось то, чего не было ни у одной моей песни, — изображение.</p>
           <a class="gd-go" href="/music/#put"><span>Пройти весь путь по главам</span><i aria-hidden="true">→</i></a>
         </div></div>
         <div class="chips"><a class="chip main" style="--c:#ff4fd8" href="/music/">Релизы и путь артиста</a><a class="chip" style="--c:#ffcc00" href="https://music.yandex.ru/artist/25208278" target="_blank" rel="noopener">Яндекс Музыка</a><a class="chip" href="https://music.yandex.ru/artist/25208278" target="_blank" rel="noopener">Все площадки</a><a class="chip" style="--c:#2aabee" href="https://t.me/timrockets" target="_blank" rel="noopener">Канал артиста</a><a class="chip" style="--c:#2aabee" href="https://t.me/timlabs_art" target="_blank" rel="noopener">Синглы первыми</a><a class="chip" href="https://suno.com/@timrockets" target="_blank" rel="noopener">Suno</a></div>
@@ -697,6 +696,14 @@ var b=document.getElementById('tl-clip-btn');
 if(b)b.addEventListener('click',function(e){e.stopImmediatePropagation();window.open(url,'_blank','noopener');
 try{if(typeof ym==='function')ym(111725024,'reachGoal','ask_click',{page:location.pathname});}catch(_){}} ,true);
 })();</script>
+<script id="tl-live-js">(function(){
+  function pl(n){var a=Math.abs(n)%100,b=a%10;return (a>10&&a<15)?'статей':b===1?'статья':(b>1&&b<5)?'статьи':'статей'}
+  function run(el,to,word){var from=parseInt(el.textContent,10)||0;if(from===to)return;var t0=performance.now();
+    (function step(t){var k=Math.min(1,(t-t0)/900),v=Math.round(from+(to-from)*(1-Math.pow(1-k,3)));el.textContent=word?v+' '+pl(v):v;if(k<1)requestAnimationFrame(step)})(t0)}
+  fetch('/data/site_stats.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){var n=d.articles_total;if(!n)return;
+    document.querySelectorAll('[data-jcount]').forEach(function(e){run(e,n,false)});document.querySelectorAll('[data-jcountw]').forEach(function(e){run(e,n,true)});
+    document.querySelectorAll('[data-jfloor]').forEach(function(e){run(e,Math.floor(n/10)*10,true)})}).catch(function(){});
+})();</script>
 <script id="tl-depth-js">(function(){
   var au=new Audio(),cur=null;au.preload='none';
   document.addEventListener('click',function(e){
@@ -708,14 +715,6 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','ask_click',{page:locatio
     var o=c.getAttribute('data-open')!=='true',t=c.querySelector('.gd-tg');c.setAttribute('data-open',o?'true':'false');if(t)t.setAttribute('aria-expanded',o?'true':'false');
   });
   au.addEventListener('ended',function(){if(cur)cur.classList.remove('on')});
-})();</script>
-<script id="tl-live-js">(function(){
-  function pl(n){var a=Math.abs(n)%100,b=a%10;return (a>10&&a<15)?'статей':b===1?'статья':(b>1&&b<5)?'статьи':'статей'}
-  function run(el,to,word){var from=parseInt(el.textContent,10)||0;if(from===to)return;var t0=performance.now();
-    (function step(t){var k=Math.min(1,(t-t0)/900),v=Math.round(from+(to-from)*(1-Math.pow(1-k,3)));el.textContent=word?v+' '+pl(v):v;if(k<1)requestAnimationFrame(step)})(t0)}
-  fetch('/data/site_stats.json',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){var n=d.articles_total;if(!n)return;
-    document.querySelectorAll('[data-jcount]').forEach(function(e){run(e,n,false)});document.querySelectorAll('[data-jcountw]').forEach(function(e){run(e,n,true)});
-    document.querySelectorAll('[data-jfloor]').forEach(function(e){run(e,Math.floor(n/10)*10,true)})}).catch(function(){});
 })();</script>
 </body>
 </html>
