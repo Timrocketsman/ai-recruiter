@@ -90,6 +90,10 @@
     <image:image><image:loc>https://timlabs.online/media/covers/ai-dlya-otdela-prodazh.webp</image:loc><image:title>AI для отдела продаж: что реально автоматизировать</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/journal/avtomatizatsiya-otchetov/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-otchetov-800.webp</image:loc><image:title>Автоматизация отчётов: что реально передать ИИ-агенту</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/journal/avtomatizatsiya-rutiny/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-rutiny.webp</image:loc><image:title>Автоматизация рутины: что можно передать агенту, а что оставить себе</image:title></image:image>
   </url>
@@ -235,13 +239,13 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-otchetov.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-otchetov-800.webp</image:loc><image:title>Автоматизация отчётов: что реально передать ИИ-агенту</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Саморазвитие личности: с чего начать и как не бросить</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/video-poleznye-privychki-800.webp</image:loc><image:title>Видео про полезные привычки: как выбрать и смотреть с толком</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/professionalnoe-samorazvitie-800.webp</image:loc><image:title>Профессиональное саморазвитие: как расти в работе без выгорания</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/tsel-samorazvitiya-800.webp</image:loc><image:title>Цель саморазвития: как определить, что вам действительно нужно</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/sotsialnoe-samorazvitie-800.webp</image:loc><image:title>Социальное саморазвитие: как меняться рядом с людьми</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-semi-800.webp</image:loc><image:title>Семейное саморазвитие: как расти вместе и не терять себя</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/spa-kislovodsk-800.webp</image:loc><image:title>СПА в Кисловодске: полный гид по процедурам и отдыху</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-massazh-800.webp</image:loc><image:title>Массаж в Кисловодске: виды, польза и как выбрать мастера</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-sanatoriy-kakoy-luchshe-800.webp</image:loc><image:title>Какой санаторий в Кисловодске лучше выбрать: честный гид</image:title></image:image>
@@ -274,6 +278,7 @@
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-rutiny-800.webp</image:loc><image:title>Автоматизация рутины: что можно передать агенту</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/ai-creative-awards-zayavka-800.webp</image:loc><image:title>AI Creative Awards 2026: как подать заявку на премию</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/korporativnyy-blog-800.webp</image:loc><image:title>Корпоративный блог с ИИ-агентами: опыт журнала «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/lokalnaya-neyroset-800.webp</image:loc><image:title>Локальная нейросеть: когда своя модель выгоднее облака</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
