@@ -129,8 +129,8 @@ else if(/timlabs\.online\/(massage-kislovodsk|ekskursii-kislovodsk|retrit-otshel
 else if(a.host&&a.host!==location.host)g('outbound_master');},true);})();</script>"""
 
 
-DONATE = r"""<!--tl-donate-v1--><a id="tl-donate" href="https://dzen.ru/timlabs.online?donate=true" target="_blank" rel="noopener" aria-label="Поддержать журнал донатом в Дзене">
-<span aria-hidden="true">💙</span><span class="tld-t">Поддержать журнал</span><button type="button" class="tld-x" aria-label="Скрыть">×</button></a>
+DONATE = r"""<!--tl-donate-v2--><a id="tl-donate" href="https://finance.ozon.ru/apps/sbp/ozonbankpay/01a185ec-6f36-7447-a97a-2944ba12dfc2" target="_blank" rel="noopener" title="Перевод по СБП через любой банк" aria-label="Поддержать проект: перевод по СБП через любой банк">
+<span aria-hidden="true">💙</span><span class="tld-t">Поддержать проект</span><button type="button" class="tld-x" aria-label="Скрыть">×</button></a>
 <style>
 #tl-donate{position:fixed;left:14px;bottom:14px;z-index:900;display:flex;align-items:center;gap:8px;padding:9px 10px 9px 14px;border-radius:999px;
   font:600 .82rem/1 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#e7ecf7;text-decoration:none;
@@ -615,7 +615,10 @@ def main():
         if "<!--tl-ask-v1-->" not in h and ("tl-clip-btn" in h or 'data-tlp="ask"' in h):
             h = insert_before_body(h, ASK_JS)
             stats["askjs"] = stats.get("askjs", 0) + 1
-        if "<!--tl-donate-v1-->" not in h:
+        if "<!--tl-donate-v1-->" in h:          # (29.10, слово Тима) донат: Дзен → перевод по СБП (Ozon Банк); старая плашка заменяется целиком
+            h = re.sub(r"<!--tl-donate-v1-->.*?</script>", lambda m: DONATE, h, count=1, flags=re.S)
+            stats["donate_v2"] = stats.get("donate_v2", 0) + 1
+        if "<!--tl-donate-v2-->" not in h:
             h = insert_before_body(h, DONATE)
             stats["donate"] = stats.get("donate", 0) + 1
         if "<!--tl-goals-v1-->" not in h:
