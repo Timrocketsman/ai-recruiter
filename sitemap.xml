@@ -1002,4 +1002,10 @@
     <loc>https://timlabs.online/journal/avtomatizatsiya-otchetov/</loc>
     <lastmod>2026-10-29</lastmod>
   </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/osanka-u-vzroslogo/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
