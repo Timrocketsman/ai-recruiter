@@ -240,12 +240,13 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-otchetov.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-otchetov-800.webp</image:loc><image:title>Автоматизация отчётов: что реально передать ИИ-агенту</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Саморазвитие ребенка: как помочь ему расти без давления</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Саморазвитие личности: с чего начать и как не бросить</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/video-poleznye-privychki-800.webp</image:loc><image:title>Видео про полезные привычки: как выбрать и смотреть с толком</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/professionalnoe-samorazvitie-800.webp</image:loc><image:title>Профессиональное саморазвитие: как расти в работе без выгорания</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/tsel-samorazvitiya-800.webp</image:loc><image:title>Цель саморазвития: как определить, что вам действительно нужно</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/sotsialnoe-samorazvitie-800.webp</image:loc><image:title>Социальное саморазвитие: как меняться рядом с людьми</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/spa-kislovodsk-800.webp</image:loc><image:title>СПА в Кисловодске: полный гид по процедурам и отдыху</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-massazh-800.webp</image:loc><image:title>Массаж в Кисловодске: виды, польза и как выбрать мастера</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-sanatoriy-kakoy-luchshe-800.webp</image:loc><image:title>Какой санаторий в Кисловодске лучше выбрать: честный гид</image:title></image:image>
@@ -274,11 +275,11 @@
     <image:image><image:loc>https://timlabs.online/media/covers/zhiznennaya-sila-kak-vosstanavlivat-800.webp</image:loc><image:title>Нет сил и ничего не хочется: как вернуть себе энергию</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/vosstanovitsya-kak-pravilno-800.webp</image:loc><image:title>Как восстановиться после нагрузки: пошагово и без перегиба</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-pravilno-vosstanavlivat-sily-800.webp</image:loc><image:title>Активизация и восстановление сил: сон, еда, движение</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-otchetov-800.webp</image:loc><image:title>Автоматизация отчётов: что реально передать ИИ-агенту</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/neyroset-pomoschnik-dlya-malogo-biznesa-800.webp</image:loc><image:title>Нейросеть-помощник для малого бизнеса: с какой задачи начать</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-rutiny-800.webp</image:loc><image:title>Автоматизация рутины: что можно передать агенту</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/ai-creative-awards-zayavka-800.webp</image:loc><image:title>AI Creative Awards 2026: как подать заявку на премию</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/korporativnyy-blog-800.webp</image:loc><image:title>Корпоративный блог с ИИ-агентами: опыт журнала «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/lokalnaya-neyroset-800.webp</image:loc><image:title>Локальная нейросеть: когда своя модель выгоднее облака</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
@@ -520,6 +521,10 @@
   <url>
     <loc>https://timlabs.online/journal/samorazvitie-primery/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-primery.webp</image:loc><image:title>Саморазвитие: примеры, которые реально работают</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/samorazvitie-rebenka/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Саморазвитие ребенка: как помочь ему расти без давления</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/samorazvitie-semi/</loc>
