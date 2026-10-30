@@ -432,6 +432,111 @@
         "vk": 350,
         "dzen": null
       }
+    },
+    {
+      "id": "2026-10-30-a",
+      "date": "2026-10-30",
+      "kind": "new",
+      "rubric": "Родителям",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-10-31-a",
+      "date": "2026-10-31",
+      "kind": "new",
+      "rubric": "Тело и здоровье",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-01-a",
+      "date": "2026-11-01",
+      "kind": "new",
+      "rubric": "ИИ-автоматизация",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-02-a",
+      "date": "2026-11-02",
+      "kind": "new",
+      "rubric": "Развитие",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-03-a",
+      "date": "2026-11-03",
+      "kind": "new",
+      "rubric": "Кисловодск и КМВ",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-04-a",
+      "date": "2026-11-04",
+      "kind": "new",
+      "rubric": "Эмоции и психология",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-05-a",
+      "date": "2026-11-05",
+      "kind": "new",
+      "rubric": "ИИ-автоматизация",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
     }
   ],
   "approved_at": "2026-10-14",
