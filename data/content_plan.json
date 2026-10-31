@@ -453,11 +453,11 @@
       "date": "2026-10-31",
       "kind": "new",
       "rubric": "Тело и здоровье",
-      "query": null,
-      "status": "needs_topic",
-      "slug": null,
+      "query": "как праздники отдыхать",
+      "status": "published",
+      "slug": "kak-prazdniki-otdyhat",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/kak-prazdniki-otdyhat/",
         "telegram": null,
         "vk": null,
         "dzen": null
@@ -528,6 +528,21 @@
       "date": "2026-11-05",
       "kind": "new",
       "rubric": "ИИ-автоматизация",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-06-a",
+      "date": "2026-11-06",
+      "kind": "new",
+      "rubric": "Родителям",
       "query": null,
       "status": "needs_topic",
       "slug": null,
