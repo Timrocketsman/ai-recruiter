@@ -516,6 +516,7 @@ def main():
                 stats["cover"] = stats.get("cover", 0) + 1
             # (09.10, слово Тима «пиши всегда от моего лица») автор статей — Тим, не «редакция»
             for a, c in (('<span class="author">Редакция ТимЛабс</span>', '<span class="author">Тимур Гуцев</span>'),
+                         ('<span class="author">Редакция TimLabs</span>', '<span class="author">Тимур Гуцев</span>'),
                          ('"author": {"@type": "Organization", "name": "Редакция TimLabs"}',
                           '"author": {"@type": "Person", "name": "Тимур Гуцев", "url": "https://timlabs.online/"}')):
                 if a in h:
