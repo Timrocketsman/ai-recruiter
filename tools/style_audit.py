@@ -96,6 +96,8 @@ def gate_check(page_html, slug=None, threshold=1.5):
     import journal_content
     if journal_content.is_journal_article(page_html):
         block.extend(journal_content.problems(page_html))
+    from source_evidence import review_problems
+    block.extend(review_problems(page_html))
     ok = not block and score < threshold
     return dict(ok=ok, score=round(score, 2), block=block, why=why, words=words)
 
