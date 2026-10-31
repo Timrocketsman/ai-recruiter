@@ -521,6 +521,14 @@ def main():
                 if a in h:
                     h = h.replace(a, c)
                     stats["author"] = stats.get("author", 0) + 1
+            # (31.10) Link only an already-confirmed Tim byline; release requires a published profile.
+            if "/seo_agents/tools" not in sys.path:
+                sys.path.insert(0, "/seo_agents/tools")
+            import author_identity
+            h2 = author_identity.apply_if_ready(h, rel)
+            if h2 != h:
+                h = h2
+                stats["author_identity"] = stats.get("author_identity", 0) + 1
             h, ch = fix_related(slug, rub.get(slug, ""), h)
             stats["related"] += ch
             if "<!--tl-sub-v1-->" not in h:
