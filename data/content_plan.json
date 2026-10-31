@@ -454,11 +454,11 @@
       "kind": "new",
       "rubric": "Тело и здоровье",
       "query": "как праздники отдыхать",
-      "status": "published",
+      "status": "announced",
       "slug": "kak-prazdniki-otdyhat",
       "channels": {
         "site": "https://timlabs.online/journal/kak-prazdniki-otdyhat/",
-        "telegram": null,
+        "telegram": 339,
         "vk": 359,
         "dzen": null
       }
