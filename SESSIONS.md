@@ -1458,3 +1458,5 @@ CLI для проверки: `python3 tools/style_audit.py --check journal/<slug
 2026-10-31 UX follow-up: миграция frame guard исключает tools/assets/media; восстановлены два служебных HTML рендера, ошибочно затронутые общим проходом. Регрессия проверяет сохранность internal fixture. Публичная CDN-версия в первой проверке была ещё старой; финальная приёмка ожидает новую выкладку.
 
 2026-10-31 UX final: карточка офиса без устаревающего headcount, ссылка на актуальные результаты; помеченный счётчик журнала синхронизируется в статическом HTML (home_v2 и site_stats), без зависимости отJS. Техническое описание /privacy/ приведено к фактическим localStorage выбора/темы/корзины и sessionStorage подсказок. Корзина хранит ID+количество, не имя/адрес/платёжные данные. Юридические выводы о локализации/трансграничной передаче не делались. Публичная главная проверена32режимами;gate98/100/100/100 mobile,100x4PC,93оси,100вкус.
+
+2026-10-31 root: resolve three legacy internal journal links to final canonical destinations; preserve redirects; update source drafts. Backups and hashes: /opt/timlabs/site-refactor-links-20261031/.
