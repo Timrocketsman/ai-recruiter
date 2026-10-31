@@ -40,8 +40,10 @@ def _opener(t, n=8):
 
 def gate_check(page_html, slug=None, threshold=1.5):
     """Ворота стиля на одну статью. page_html — полный HTML новой версии статьи."""
-    tmp = os.path.join(ROOT, ".gate_tmp.html")
-    open(tmp, "w", encoding="utf-8").write(page_html)
+    import tempfile
+    with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", suffix=".html", prefix="timlabs-gate-", delete=False) as f:
+        f.write(page_html)
+        tmp = f.name
     try:
         d = text_of(tmp)
     finally:
@@ -91,6 +93,9 @@ def gate_check(page_html, slug=None, threshold=1.5):
         if not ok_h: block.append(why_h)
     except Exception:
         pass
+    import journal_content
+    if journal_content.is_journal_article(page_html):
+        block.extend(journal_content.problems(page_html))
     ok = not block and score < threshold
     return dict(ok=ok, score=round(score, 2), block=block, why=why, words=words)
 
