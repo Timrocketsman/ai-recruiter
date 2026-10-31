@@ -1,6 +1,6 @@
 {
- "generated": 1793466244,
- "updated": "2026-10-31T20:04",
+ "generated": 1793473043,
+ "updated": "2026-10-31T21:57",
  "departments": [
   {
    "id": "research",
@@ -66,7 +66,7 @@
      "short": "Выпуск",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793466169
+     "last_ts": 1793471573
     },
     {
      "id": "refiner",
@@ -93,7 +93,7 @@
      "short": "Переписчик",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793464586
+     "last_ts": 1793471574
     }
    ]
   },
@@ -177,7 +177,7 @@
      "short": "Сторож",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793448565
+     "last_ts": 1793448407
     },
     {
      "id": "whitehacker",
@@ -220,7 +220,7 @@
      "short": "Креатив",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793384016
+     "last_ts": 1793470986
     },
     {
      "id": "attestation",
@@ -238,7 +238,7 @@
      "short": "Регламент",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793380411
+     "last_ts": 1793467369
     },
     {
      "id": "dept_analytics",
@@ -265,7 +265,7 @@
      "short": "",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793465283
+     "last_ts": 1793472962
     },
     {
      "id": "revizor",
@@ -324,7 +324,7 @@
      "short": "Telegram",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793465568
+     "last_ts": 1793472775
     },
     {
      "id": "distributor_poll",
@@ -351,7 +351,7 @@
      "short": "ВКонтакте",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793465219
+     "last_ts": 1793472776
     },
     {
      "id": "outreach_scout",
@@ -360,7 +360,7 @@
      "short": "Разведчик",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793464157
+     "last_ts": 1793471577
     },
     {
      "id": "resource_curator",
@@ -387,7 +387,7 @@
      "short": "",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793460560
+     "last_ts": 1793467976
     }
    ]
   },
@@ -403,7 +403,7 @@
      "short": "Ролики",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793466169
+     "last_ts": 1793472173
     },
     {
      "id": "book_writer",
@@ -438,8 +438,8 @@
   "agents": 40,
   "articles_total": 132,
   "today": {
-   "search": 40,
-   "system": 27,
+   "search": 44,
+   "system": 29,
    "plan": 3,
    "announce": 8,
    "edit": 6,
@@ -464,49 +464,24 @@
    "guard": 26
   }
  },
+ "results": {
+  "day": {
+   "articles": 1,
+   "updates": 4,
+   "telegram": 1,
+   "vk": 1
+  },
+  "month": {
+   "articles": 4,
+   "updates": 20,
+   "telegram": 5,
+   "vk": 5
+  }
+ },
+ "journal_coverage_start": 1793106256,
+ "month_coverage_complete": false,
+ "results_basis": "Уникальные результаты по реестру статей и квитанциям площадок; пустой результат не означает успешную публикацию.",
  "events": [
-  {
-   "ts": 1793380412,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1793380414,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1793381615,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1793384016,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1793384016,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1793385218,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
   {
    "ts": 1793387620,
    "agent": "outreach_scout",
@@ -638,7 +613,7 @@
    "agent": "publisher",
    "dept": "publishing",
    "kind": "announce",
-   "label": "Поисковики узнали о новой странице"
+   "label": "Уведомление о странице отправлено поисковикам"
   },
   {
    "ts": 1793405659,
@@ -785,7 +760,7 @@
    "agent": "journalist",
    "dept": "editorial",
    "kind": "article",
-   "label": "Статья обновлена: «Как стать мужчиной в отношениях с девушкой: психология»",
+   "label": "Обновление статьи подготовлено: «Как стать мужчиной в отношениях с девушкой: психология»",
    "link": "/journal/kak-stat-muzhchinoy-v-otnosheniyah-s-dev/"
   },
   {
@@ -793,7 +768,7 @@
    "agent": "publisher",
    "dept": "publishing",
    "kind": "announce",
-   "label": "Поисковики узнали о новой странице"
+   "label": "Уведомление о странице отправлено поисковикам"
   },
   {
    "ts": 1793423974,
@@ -884,7 +859,7 @@
    "agent": "journalist",
    "dept": "editorial",
    "kind": "article",
-   "label": "Вышла статья: «Как отдыхать в праздники: практические советы»",
+   "label": "Статья подготовлена для сайта: «Как отдыхать в праздники, если выходные уже заняты»",
    "link": "/journal/kak-prazdniki-otdyhat/"
   },
   {
@@ -892,7 +867,7 @@
    "agent": "publisher",
    "dept": "publishing",
    "kind": "announce",
-   "label": "Поисковики узнали о новой странице"
+   "label": "Уведомление о странице отправлено поисковикам"
   },
   {
    "ts": 1793435199,
@@ -969,7 +944,7 @@
    "agent": "journalist",
    "dept": "editorial",
    "kind": "article",
-   "label": "Статья обновлена: «Как отдохнуть в праздники и выходные без выгорания»",
+   "label": "Обновление статьи подготовлено: «Как отдохнуть в праздники и выходные без выгорания»",
    "link": "/journal/prazdnik-kak-otdyhaem/"
   },
   {
@@ -977,7 +952,7 @@
    "agent": "publisher",
    "dept": "publishing",
    "kind": "announce",
-   "label": "Поисковики узнали о новой странице"
+   "label": "Уведомление о странице отправлено поисковикам"
   },
   {
    "ts": 1793438779,
@@ -1138,7 +1113,7 @@
    "agent": "journalist",
    "dept": "editorial",
    "kind": "article",
-   "label": "Статья обновлена: «Как добраться до Медовых водопадов из Кисловодска»",
+   "label": "Обновление статьи подготовлено: «Как добраться до Медовых водопадов из Кисловодска»",
    "link": "/journal/kak-dobratsya-do-medovyh-vodopadov-iz-ki/"
   },
   {
@@ -1146,7 +1121,7 @@
    "agent": "publisher",
    "dept": "publishing",
    "kind": "announce",
-   "label": "Поисковики узнали о новой странице"
+   "label": "Уведомление о странице отправлено поисковикам"
   },
   {
    "ts": 1793449733,
@@ -1265,7 +1240,7 @@
    "agent": "journalist",
    "dept": "editorial",
    "kind": "article",
-   "label": "Статья обновлена: «Нет сил и ничего не хочется: как вернуть себе энергию»",
+   "label": "Обновление статьи подготовлено: «Нет сил и ничего не хочется: как вернуть себе энергию»",
    "link": "/journal/zhiznennaya-sila-kak-vosstanavlivat/"
   },
   {
@@ -1273,7 +1248,7 @@
    "agent": "publisher",
    "dept": "publishing",
    "kind": "announce",
-   "label": "Поисковики узнали о новой странице"
+   "label": "Уведомление о странице отправлено поисковикам"
   },
   {
    "ts": 1793464612,
@@ -1295,6 +1270,48 @@
    "dept": "growth",
    "kind": "announce",
    "label": "Анонс ушёл в Telegram"
+  },
+  {
+   "ts": 1793467970,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1793467970,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1793469172,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1793471573,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1793471577,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1793472775,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
   }
  ],
  "_about": "Снимок офиса ИИ-агентов TimLabs за последние сутки. Обновляется примерно раз в 30 минут."
