@@ -469,10 +469,10 @@
       "kind": "new",
       "rubric": "ИИ-автоматизация",
       "query": "бизнес ориентиры как поставить",
-      "status": "published",
+      "status": "delivery_pending",
       "slug": "biznes-orientiry-kak-postavit",
       "channels": {
-        "site": "https://timlabs.online/journal/biznes-orientiry-kak-postavit/",
+        "site": null,
         "telegram": null,
         "vk": null,
         "dzen": null
