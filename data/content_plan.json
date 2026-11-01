@@ -468,9 +468,9 @@
       "date": "2026-11-01",
       "kind": "new",
       "rubric": "ИИ-автоматизация",
-      "query": null,
-      "status": "needs_topic",
-      "slug": null,
+      "query": "бизнес ориентиры как поставить",
+      "status": "draft",
+      "slug": "biznes-orientiry-kak-postavit",
       "channels": {
         "site": null,
         "telegram": null,
@@ -543,6 +543,21 @@
       "date": "2026-11-06",
       "kind": "new",
       "rubric": "Родителям",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-07-a",
+      "date": "2026-11-07",
+      "kind": "new",
+      "rubric": "Частые вопросы",
       "query": null,
       "status": "needs_topic",
       "slug": null,
