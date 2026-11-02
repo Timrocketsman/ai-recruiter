@@ -483,9 +483,9 @@
       "date": "2026-11-02",
       "kind": "new",
       "rubric": "Развитие",
-      "query": null,
-      "status": "needs_topic",
-      "slug": null,
+      "query": "мотивация саморазвития",
+      "status": "draft",
+      "slug": "motivatsiya-samorazvitiya",
       "channels": {
         "site": null,
         "telegram": null,
@@ -558,6 +558,21 @@
       "date": "2026-11-07",
       "kind": "new",
       "rubric": "Частые вопросы",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-08-a",
+      "date": "2026-11-08",
+      "kind": "new",
+      "rubric": "ИИ-автоматизация",
       "query": null,
       "status": "needs_topic",
       "slug": null,
