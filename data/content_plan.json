@@ -498,9 +498,9 @@
       "date": "2026-11-03",
       "kind": "new",
       "rubric": "Кисловодск и КМВ",
-      "query": null,
-      "status": "needs_topic",
-      "slug": null,
+      "query": "авторские экскурсии кисловодск",
+      "status": "draft",
+      "slug": "avtorskie-ekskursii-kislovodsk",
       "channels": {
         "site": null,
         "telegram": null,
@@ -573,6 +573,21 @@
       "date": "2026-11-08",
       "kind": "new",
       "rubric": "ИИ-автоматизация",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-09-a",
+      "date": "2026-11-09",
+      "kind": "new",
+      "rubric": "Развитие",
       "query": null,
       "status": "needs_topic",
       "slug": null,
