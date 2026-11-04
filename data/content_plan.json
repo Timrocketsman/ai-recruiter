@@ -514,10 +514,10 @@
       "kind": "new",
       "rubric": "Эмоции и психология",
       "query": "как поднять самооценку",
-      "status": "draft",
+      "status": "published",
       "slug": "kak-podnyat-samootsenku",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/kak-podnyat-samootsenku/",
         "telegram": null,
         "vk": null,
         "dzen": null
@@ -593,6 +593,21 @@
       "date": "2026-11-09",
       "kind": "new",
       "rubric": "Развитие",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-10-a",
+      "date": "2026-11-10",
+      "kind": "new",
+      "rubric": "Осознанность и ретриты",
       "query": null,
       "status": "needs_topic",
       "slug": null,
