@@ -1490,3 +1490,5 @@ Engine47e2287/63f6a07: конечные timeout в publisher/guard/covers/push w
 2026-11-04 — activated current immunity journal-v2 detector and review-artifact classification; graceful drain PID 936295 -> 1138405, four runtime code hashes verified. 33 regressions passed, public search rechecked at390/1280, no search lost_marker alarms. Other diagnostics and source review records retained. No site publication for testing. Activation record engine 7345a32.
 
 2026-11-04: Journal cover repair: curated same-series fallback for three newly published articles waiting for GPU rendering. Original covers override fallbacks automatically; render queue remains intact. Compiled and verified actual card replacements and precedence.
+
+2026-11-04: Restored report automation cover to approved blue-hour photographic series; synchronized article/link preview and journal, cache-busted visible cover URLs. Legacy cover_auto installer now preserves valid accepted .paper series. py_compile and no-overwrite regression verified.
