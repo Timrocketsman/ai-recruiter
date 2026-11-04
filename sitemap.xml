@@ -479,7 +479,7 @@
   <url><loc>https://timlabs.online/partners/</loc><lastmod>2026-10-31</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1028,5 +1028,9 @@
   <url>
     <loc>https://timlabs.online/partners/marafdy/massazh-stop/</loc>
     <lastmod>2026-11-02</lastmod>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/kislovodsk-v-noyabre/</loc>
+    <lastmod>2026-11-04</lastmod>
   </url>
 </urlset>
