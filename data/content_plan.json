@@ -513,14 +513,19 @@
       "date": "2026-11-04",
       "kind": "new",
       "rubric": "Эмоции и психология",
-      "query": null,
-      "status": "needs_topic",
-      "slug": null,
+      "query": "как поднять самооценку",
+      "status": "draft",
+      "slug": "kak-podnyat-samootsenku",
       "channels": {
         "site": null,
         "telegram": null,
         "vk": null,
         "dzen": null
+      },
+      "adopted_review": {
+        "document_sha256": "a78441e4c700e4a55d55e1b5c7982d4dabe7942f9383ef1c2aa24ae5c79d056c",
+        "assigned_at": 1793748717.3704903,
+        "worker": "editorial_revision"
       }
     },
     {
