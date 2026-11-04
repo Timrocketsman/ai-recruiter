@@ -533,14 +533,19 @@
       "date": "2026-11-05",
       "kind": "new",
       "rubric": "ИИ-автоматизация",
-      "query": null,
-      "status": "needs_topic",
-      "slug": null,
+      "query": "что умеет ИИ ассистент для бизнеса",
+      "status": "draft",
+      "slug": "chto-umeet-ii-assistent-dlya-biznesa",
       "channels": {
         "site": null,
         "telegram": null,
         "vk": null,
         "dzen": null
+      },
+      "adopted_review": {
+        "document_sha256": "160fd0b3a0706efa71ae50d2a5ab538a8e7f8caecb7401196284bca007c8b749",
+        "assigned_at": 1793826279.3124218,
+        "worker": "editorial_revision"
       }
     },
     {
