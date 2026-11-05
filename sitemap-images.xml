@@ -110,6 +110,10 @@
     <image:image><image:loc>https://timlabs.online/media/covers/belyy-vodopad.webp</image:loc><image:title>Водопады рядом с Кисловодском: куда доехать за день</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/journal/biznes-orientiry-kak-postavit/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/biznes-orientiry-kak-postavit.webp</image:loc><image:title>Как поставить бизнес-цель перед автоматизацией</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/journal/bot-dlya-zapisi-klientov/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/bot-dlya-zapisi-klientov.webp</image:loc><image:title>Бот для записи клиентов в Telegram: что он должен уметь</image:title></image:image>
   </url>
@@ -132,6 +136,10 @@
   <url>
     <loc>https://timlabs.online/journal/chto-posmotret-v-kislovodske-za-odin-den/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/chto-posmotret-v-kislovodske-za-odin-den.webp</image:loc><image:title>Что посмотреть в Кисловодске за один день</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/chto-umeet-ii-assistent-dlya-biznesa/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa.webp</image:loc><image:title>Что умеет ИИ-ассистент для бизнеса и что ему поручить</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/den-poleznyh-privychek/</loc>
@@ -272,6 +280,8 @@
     <image:image><image:loc>https://timlabs.online/media/covers/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat-800.webp</image:loc><image:title>Пять недель работы и неделя отдыха: как устроен цикл 5/1</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/vosstanovitsya-kak-pravilno-800.webp</image:loc><image:title>Как восстановиться после нагрузки: пошагово и без перегиба</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-pravilno-vosstanavlivat-sily-800.webp</image:loc><image:title>Активизация и восстановление сил: сон, еда, движение</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa-800.webp</image:loc><image:title>Что умеет ИИ-ассистент для бизнеса и что ему поручить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/biznes-orientiry-kak-postavit-800.webp</image:loc><image:title>Как поставить бизнес-цель перед автоматизацией</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-otchetov-800.webp</image:loc><image:title>Автоматизация отчётов: что реально передать ИИ-агенту</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/neyroset-pomoschnik-dlya-malogo-biznesa-800.webp</image:loc><image:title>Нейросеть-помощник для малого бизнеса: с какой задачи начать</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-rutiny-800.webp</image:loc><image:title>Автоматизация рутины: что можно передать агенту</image:title></image:image>
