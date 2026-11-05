@@ -534,10 +534,10 @@
       "kind": "new",
       "rubric": "ИИ-автоматизация",
       "query": "что умеет ИИ ассистент для бизнеса",
-      "status": "draft",
+      "status": "published",
       "slug": "chto-umeet-ii-assistent-dlya-biznesa",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/chto-umeet-ii-assistent-dlya-biznesa/",
         "telegram": null,
         "vk": null,
         "dzen": null
@@ -613,6 +613,21 @@
       "date": "2026-11-10",
       "kind": "new",
       "rubric": "Осознанность и ретриты",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-11-a",
+      "date": "2026-11-11",
+      "kind": "new",
+      "rubric": "Эмоции и психология",
       "query": null,
       "status": "needs_topic",
       "slug": null,
