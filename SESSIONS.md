@@ -1502,3 +1502,10 @@ Engine47e2287/63f6a07: конечные timeout в publisher/guard/covers/push w
 2026-11-05 — Process recovery: social_watch now separates planned social holds from delivery faults and unknown receipts, preserves real faults and starts fresh incident ages after release. Promo GPU denial is warn rather than false ok, including prescript prefixes. Local24 strict social tests plus isolated wrapper regressions passed. Cooperative dispatcher1673832→1695356;57 loaded fingerprints match disk; bot and panel identities unchanged. No holds/receipts/history reset, model starts or manual publication. Runtime proof: /opt/timlabs/recovery/process-fixes-20261105-root/runtime-adoption.json. Video remains resource-blocked; bot_facts v2 not activated.
 
 2026-11-05 — Owner model shutdown: installed live-policy fast-fail in lib/panel and three legacy CLI launchers; 25 offline tests PASS, real-config smoke 18 roles disabled and 3 launchers exit78, zero model/GPU requests. models.json/history/offset unchanged; bot/panel/dispatcher imports still require coordinated pickup. Evidence: /opt/timlabs/recovery/no-paid-models-20261105/fast-fail/.
+
+
+## 2026-11-05 — MARAFDY: проверка готовности и двух авторских линий
+
+Проверка 21:00 МСК: 40 статей (25 published, 15 approved), ноябрьские посты 5 published / 25 approved. Источниковые проверки без замечаний; три ноябрьские страницы проверены на живом сайте, RSS и обложках. XML: 25 уникальных записей, импорт Дзен не наблюдался. В 40 JSON нет явных author/kind; эффективный kind=article, публичная подпись MARAFDY. tip от конкретного мастера не подготовлены; ни Тиму, ни мастеру личный опыт не приписан. В rules/ добавлены PUBLICATION_LANES.md и полный датированный план готовности. Общие генераторы, карточка masters.json и контракт не изменялись; holds не снимались, live-публикации не запускались.
+
+2026-11-05 — SITE: по образцу Тима кнопки действий переведены на статичный голубой–фиолетовый–пурпурный CSS-градиент с тёмным текстом. 24 проверки страниц/тем/экранов: размеры и ссылки сохранены; Lighthouse mobile 95→97, a11y/BP/SEO 100, CLS 0. Движок 568a8153; без новых JS, картинок и анимации градиента.

@@ -456,3 +456,18 @@ html body :is(.pa,.ps-hub,main) .crumb a:hover,html body .crumb a:hover{text-dec
 /* ═══ (26.10) Вторая кнопка .btn.sec — всегда контурная (раньше только внутри .pa-cta) ═══ */
 html body.ps .btn.sec,html body .pa .btn.sec{background:transparent!important;color:var(--ink)!important;box-shadow:inset 0 0 0 1px var(--line-2)!important}
 html body.ps .btn.sec:hover,html body .pa .btn.sec:hover{box-shadow:inset 0 0 0 1px var(--ink)!important}
+
+/* tl-button-gradient-v1 */
+/* 05.11.2026 — Тим: кнопки cyan → violet → magenta, как в присланном образце.
+   Статичная CSS-заливка: без изображений, скриптов и анимации градиента.
+   Тёмная подпись одинакова в обеих темах; минимум контраста по градиенту > 4.7:1. */
+:root{--tl-action-bg:linear-gradient(105deg,#12A6FA 0%,#7D66FF 50%,#C82BFF 100%);--tl-action-ink:#05050B}
+html body :is(.pp-btn,.btn,a.p,a.gd-go,.tlp .tlp-go a.tlp-main,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button){
+  --accent-ink:var(--tl-action-ink);
+  background-color:#7D66FF!important;background-image:var(--tl-action-bg)!important;
+  color:var(--tl-action-ink)!important;-webkit-text-fill-color:currentColor!important;
+  border-color:transparent!important;
+}
+html body :is(.pp-btn,.btn,a.p,a.gd-go,.tlp .tlp-go a.tlp-main,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button) :is(span,strong,small){color:inherit!important;-webkit-text-fill-color:currentColor!important}
+
+/* /tl-button-gradient-v1 */
