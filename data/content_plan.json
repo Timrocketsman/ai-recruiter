@@ -47,6 +47,22 @@
   "approved_by_tim": true,
   "queue": [
     {
+      "id": "2026-11-05-control-first-automatic",
+      "date": "2026-11-05",
+      "kind": "control",
+      "rubric": "Кисловодск и КМВ",
+      "query": "авторские экскурсии кисловодск",
+      "slug": "avtorskie-ekskursii-kislovodsk",
+      "status": "published",
+      "authorization": "Tim explicit acceptance publication 2026-11-05",
+      "channels": {
+        "site": "https://timlabs.online/journal/avtorskie-ekskursii-kislovodsk/",
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
       "id": "2026-10-14-u",
       "date": "2026-10-14",
       "kind": "update",
