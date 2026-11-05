@@ -109,13 +109,93 @@ def block(h, start, end):
     return h[a:h.index(end, a) + len(end)]
 
 
+
+def icon_links(home):
+    """Select actual head link tags, independent of their order and quoting.
+
+    Preserve original tags. Collapse only semantically identical duplicates;
+    absent icons/manifest or ambiguous attributes fail explicitly.
+    """
+    from html.parser import HTMLParser
+
+    class HeadLinks(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.in_head = False
+            self.template_depth = 0
+            self.heads = 0
+            self.closed = False
+            self.links = []
+            self.seen = set()
+            self.has_icon = False
+            self.manifest = None
+
+        def handle_starttag(self, tag, attrs):
+            if tag == "template":
+                self.template_depth += 1
+                return
+            if self.template_depth:
+                return
+            if tag == "head":
+                self.heads += 1
+                self.in_head = True
+                return
+            if tag != "link" or not self.in_head:
+                return
+            rel_values = [value for key, value in attrs if key == "rel"]
+            tokens = set(" ".join(value or "" for value in rel_values).lower().split())
+            if not tokens.intersection(("icon", "apple-touch-icon", "manifest", "mask-icon")):
+                return
+            keys = [key for key, value in attrs]
+            if len(keys) != len(set(keys)):
+                raise ValueError("duplicate favicon link attribute")
+            values = dict(attrs)
+            href = values.get("href")
+            if not href or not href.strip():
+                raise ValueError("favicon link href missing")
+            href = href.strip()
+            if "manifest" in tokens:
+                # Distinct existing manifest tags are retained, never arbitrarily
+                # preferred. Only complete semantic duplicates collapse below.
+                self.manifest = href
+            if tokens.intersection(("icon", "apple-touch-icon", "mask-icon")):
+                self.has_icon = True
+            normalized = dict(values, rel=" ".join(sorted(tokens)), href=href)
+            signature = tuple(sorted(normalized.items()))
+            if signature not in self.seen:
+                self.seen.add(signature)
+                self.links.append(self.get_starttag_text())
+
+        def handle_startendtag(self, tag, attrs):
+            self.handle_starttag(tag, attrs)
+
+        def handle_endtag(self, tag):
+            if tag == "template":
+                self.template_depth = max(0, self.template_depth - 1)
+                return
+            if self.template_depth:
+                return
+            if tag == "head":
+                self.in_head = False
+                self.closed = True
+
+    parser = HeadLinks()
+    parser.feed(home)
+    parser.close()
+    if parser.heads != 1 or not parser.closed or not parser.has_icon or parser.manifest is None:
+        raise ValueError("head favicon or manifest links missing")
+    return "\n".join(parser.links)
+
+
 def build():
     home = read("index.html")
     metrika = block(home, "<!-- Yandex.Metrika counter", "<!-- /Yandex.Metrika counter -->")
-    icons = block(home, '<link rel="icon"', 'href="/site.webmanifest">')
+    icons = icon_links(home)
     tail = home[home.index("<!-- tl-consent-v2"):home.rindex("</body>")]
     podbor = block(home, "<!--tl-podbor-v1-->", "</section>")
-    footer = block(home, "  <footer>", "</footer>")
+    _footer = re.search(r'<footer\b[^>]*>.*?</footer>', home, re.S)
+    if not _footer:raise ValueError("shared footer missing")
+    footer = _footer.group(0)
     arts = articles()
     all_hubs = [(x["slug"], x["h1"]) for x in HUBS]
 

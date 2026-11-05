@@ -247,13 +247,13 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa-800.webp</image:loc><image:title>Что умеет ИИ-ассистент для бизнеса и что ему поручить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Саморазвитие ребенка: как помочь ему расти без давления</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Саморазвитие личности: с чего начать и как не бросить</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/video-poleznye-privychki-800.webp</image:loc><image:title>Видео про полезные привычки: как выбрать и смотреть с толком</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/professionalnoe-samorazvitie-800.webp</image:loc><image:title>Профессиональное саморазвитие: как расти в работе без выгорания</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/tsel-samorazvitiya-800.webp</image:loc><image:title>Цель саморазвития: как определить, что вам действительно нужно</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/sotsialnoe-samorazvitie-800.webp</image:loc><image:title>Социальное саморазвитие: как меняться рядом с людьми</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/spa-kislovodsk-800.webp</image:loc><image:title>СПА в Кисловодске: полный гид по процедурам и отдыху</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-massazh-800.webp</image:loc><image:title>Массаж в Кисловодске: виды, польза и как выбрать мастера</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-sanatoriy-kakoy-luchshe-800.webp</image:loc><image:title>Какой санаторий в Кисловодске лучше выбрать: честный гид</image:title></image:image>
@@ -271,6 +271,7 @@
     <image:image><image:loc>https://timlabs.online/media/covers/vodopad-beyradi-800.webp</image:loc><image:title>Водопад Байради в Дигории: где находится и как спланировать поездку</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/gora-naudzhidza-800.webp</image:loc><image:title>Горы рядом с Кисловодском: куда подняться без подготовки</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/gora-belalakaya-800.webp</image:loc><image:title>Гора Белалакая в Домбае: полосатая вершина и виды со стороны</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/gora-cheget-800.webp</image:loc><image:title>Гора Чегет: как устроена поездка и что видно с канатной дороги</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/doula-kakoe-obrazovanie-nuzhno-800.webp</image:loc><image:title>Доула: какое образование нужно и что важнее диплома</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/doula-link-800.webp</image:loc><image:title>Доула онлайн: как сервисы помогают маме и доуле</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kakie-vitaminy-pit-posle-rodov-dlya-voss-800.webp</image:loc><image:title>Какие витамины пить после родов: вопросы для врача</image:title></image:image>
@@ -281,11 +282,11 @@
     <image:image><image:loc>https://timlabs.online/media/covers/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat-800.webp</image:loc><image:title>Пять недель работы и неделя отдыха: как устроен цикл 5/1</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/vosstanovitsya-kak-pravilno-800.webp</image:loc><image:title>Как восстановиться после нагрузки: пошагово и без перегиба</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-pravilno-vosstanavlivat-sily-800.webp</image:loc><image:title>Активизация и восстановление сил: сон, еда, движение</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa-800.webp</image:loc><image:title>Что умеет ИИ-ассистент для бизнеса и что ему поручить</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/biznes-orientiry-kak-postavit-800.webp</image:loc><image:title>Как поставить бизнес-цель перед автоматизацией</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-otchetov-800.webp</image:loc><image:title>Автоматизация отчётов: что реально передать ИИ-агенту</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/neyroset-pomoschnik-dlya-malogo-biznesa-800.webp</image:loc><image:title>Нейросеть-помощник для малого бизнеса: с какой задачи начать</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-rutiny-800.webp</image:loc><image:title>Автоматизация рутины: что можно передать агенту</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/ai-creative-awards-zayavka-800.webp</image:loc><image:title>AI Creative Awards 2026: как подать заявку на премию</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
@@ -934,8 +935,7 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otkupaeshsya-ot-rebenka/cover.jpg</image:loc><image:title>Статьи об Умасе: отношения, эмоции, ответственность</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otkupaeshsya-ot-rebenka/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Откупаешься ли ты от ребёнка игрушками?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-dostigli-tseli-a-radosti-net/cover.jpg</image:loc><image:title>Статьи об Умасе: отношения, эмоции, ответственность</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-dostigli-tseli-a-radosti-net/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Достиг цели, а радости нет. Почему так?»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-fokus-vnimaniya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему ты видишь только то, что ищешь?»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-mentalnyy-vozrast/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему взрослые ведут себя как дети?»</image:title></image:image>
@@ -979,8 +979,7 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/posts/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otkupaeshsya-ot-rebenka/cover.jpg</image:loc><image:title>Статьи об Умасе: отношения, эмоции, ответственность</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otkupaeshsya-ot-rebenka/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Откупаешься ли ты от ребёнка игрушками?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-dostigli-tseli-a-radosti-net/cover.jpg</image:loc><image:title>Статьи об Умасе: отношения, эмоции, ответственность</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-dostigli-tseli-a-radosti-net/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Достиг цели, а радости нет. Почему так?»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-fokus-vnimaniya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему ты видишь только то, что ищешь?»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-mentalnyy-vozrast/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему взрослые ведут себя как дети?»</image:title></image:image>
@@ -1036,11 +1035,6 @@
     <loc>https://timlabs.online/partners/umas_osoznanie/sovet-odni-i-te-zhe-partnery/</loc>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-odni-i-te-zhe-partnery/cover.jpg</image:loc><image:title>Почему тебе попадаются одни и те же партнёры? | Умас</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-odni-i-te-zhe-partnery/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему тебе попадаются одни и те же партнёры?»</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://timlabs.online/partners/umas_osoznanie/sovet-otkupaeshsya-ot-rebenka/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otkupaeshsya-ot-rebenka/cover.jpg</image:loc><image:title>Откупаешься ли ты от ребёнка игрушками? | Умас</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otkupaeshsya-ot-rebenka/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Откупаешься ли ты от ребёнка игрушками?»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/sovet-potentsial-podarok-ili-gruz/</loc>

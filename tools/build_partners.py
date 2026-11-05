@@ -14,7 +14,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build_hubs import block, read  # noqa: E402
+from build_hubs import block, icon_links, read  # noqa: E402
 
 SITE = "https://timlabs.online"
 URL = SITE + "/partners/"
@@ -85,10 +85,12 @@ def card(p):
 def main():
     home = read("index.html")
     metrika = block(home, "<!-- Yandex.Metrika counter", "<!-- /Yandex.Metrika counter -->")
-    icons = block(home, '<link rel="icon"', 'href="/site.webmanifest">')
+    icons = icon_links(home)
     tail = home[home.index("<!-- tl-consent-v2"):home.rindex("</body>")]
     tail = re.sub(r"<!--tl-promo-v1-->.*?</script>\n?", "", tail, flags=re.S)  # всплывающий баннер — только на главной
-    footer = block(home, "  <footer>", "</footer>")
+    _footer = re.search(r'<footer\b[^>]*>.*?</footer>', home, re.S)
+    if not _footer:raise ValueError("shared footer missing")
+    footer = _footer.group(0)
     title = "Партнёры TimLabs: проверенные мастера на Кавминводах и онлайн"
     desc = "Мастера, с которыми я работаю и о которых рассказываю: аппаратный массаж на дому в Кисловодске от MARAFDY и сопровождение доулы Мары."
     ld = {"@context": "https://schema.org", "@graph": [
