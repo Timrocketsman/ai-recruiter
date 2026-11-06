@@ -1519,3 +1519,21 @@ Engine47e2287/63f6a07: конечные timeout в publisher/guard/covers/push w
 
 ## 2026-11-06: две статьи Тима об Умасе — обнаружение и RSS
 Проверенный код discovery/current source-review и общий inventory установлен (engine3a1bbd3). Журнал и общий счётчик138, native136. Канонические /partners/ адреса без /journal/дублей; masterRSS исключён. MainRSS допускает две статьи только с08.11.2026 01:06:59МСК (actual+2дня), что не доказывает импорт Дзеном. Root20tests+13installedcases (включая20subcases)+полный12hookPASS. Protected ai-creative-awards counter update остаётся pending review, articlebody не меняется; holdУмаса сохранён. Реальные VK361/362 исправлены безrepost; TG/story ожидают ответа о дублях.
+
+
+### Надзор диспетчера, 6ноября
+После discovery-adoption выявлен лишний root-runner с абсолютнымargv; он штатноdrained, оставлен supervised1821173. Engine144bd407 исправляет распознавание absolute/relative orchestrator.py в supervisor; syntax/5identitycases/PID и109loadedhashes подтверждены. Боты/модели/источники/соцквитанции не изменились. Эта внутренняя запись ожидает следующего нормального docscommit; functional sitefe178e7 уже принят live. Полная история /opt/timlabs/recovery/discovery-root-20261106/.
+
+
+### Защита обложек ВК, 6ноября
+Engine395a23703982: полный исходныйheader помещается на16:9canvas доupload, sourcePNGнеизменён, cacheключ отреальныхподготовленныхбайтов; старыйкэшсохранён. 17независимых+17installedactualmodulesPASS, реальные2headers byte-identical уже принятымcorrectedcanvas. Единственный dispatcher1826405/110loadedfingerprints; боты/models/receipt/cache/holdнеизменены, testposts0. Remotephoto pixelQA по-прежнему обязательна. Вinstalledtests найденсуществующий lib.load_env ResourceWarning; переданOFFICEотдельно, не скрыт. Proof /opt/timlabs/recovery/vk-contain-root-20261106.
+
+Сопутствующий ResourceWarning устранён минимальным with-open в lib.load_env (engined690b6f0525e);19hermeticroot+20actualinstalledstrictPASS безwarnings. OutsidefunctionASTidentical, env/policyнеизменены. Runtime1828461/111fingerprints принят, protectedbots/models/source/receipts/uploadcache/holdнеизменены. Старыйwarninglog сохранён рядом с finalcleanproof.
+
+
+### Exact copy guard, 2026-11-06 02:35 MSK
+Engine61ca59cb2191: VK manual/direct для двух Tim-about-Umas маршрутов допускает только source-bound raw и принятую revision5 bodycomposition. Нет короткого meta/generic fallback. Existing/uncertain receipt блокирует до source/image/API, повторные проверки body/source/holds/ID перед сетью.20independent+40combinedinstalled strictPASS безwarnings. Устаревший Image.getdata вpixeltest заменён на get_flattened_data, всеassertionsсохранены; первичныйstrictfailureсохранён. Runtime1829487/114fingerprints принят, actualsource2PASS/bodyexact, IDs361/362 блокируют обаentrypoints, API/edits/posts0. Реестры/holds/models/bots/cacheнеизменены. Proof /opt/timlabs/recovery/vk-approved-copy-root-20261106.
+
+
+### Историческая заявка Awards, 2026-11-06 04:29 MSK
+Engine03efc8ad: автоматический servercounter исключает историческое число заявки, прочие currentcounters сохраняются.4independent+5installed strictPASS. ДействующиеHTML132, draft123, source KB и pendingнеизменены. Booksнашёлподававшийсяpayload123 и UI«Заявкапринята» вsourceJSONL19окт; rootпроверилстроки21318/21350. Restore123 — только после полного независимого source-review/in-place пути, не NEWslot. Rootотозвалнеподтверждённыйвыводоcurrentbrowser138: тестреальнойLIVE_JSбылsyntheticDOM, currentarticleэтотscriptнеподключает. Оригинальная ошибочная формулировка сохранена вдосье.
