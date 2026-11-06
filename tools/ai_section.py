@@ -25,8 +25,44 @@ def plural(n, one, few, many):
 
 
 def count_articles():
-    t = open(os.path.join(ROOT, "journal/index.html"), encoding="utf-8").read()
-    return len(re.findall(r'<article class="card"', t))
+    from html.parser import HTMLParser
+    from urllib.parse import urljoin, urlsplit
+
+    class Cards(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.urls, self.depth, self.link = set(), 0, None
+
+        def handle_starttag(self, tag, attrs):
+            attrs = dict(attrs)
+            if tag == "article":
+                if self.depth:
+                    self.depth += 1
+                elif {"card", "pj-card"}.intersection((attrs.get("class") or "").split()):
+                    self.depth, self.link = 1, None
+            elif tag == "a" and self.depth and self.link is None:
+                href = attrs.get("href") or ""
+                if not href or href.startswith("#"):
+                    return
+                target = urlsplit(urljoin("https://timlabs.online/journal/", href))
+                if target.scheme not in ("http", "https") or target.netloc != "timlabs.online":
+                    return
+                path = target.path.rstrip("/") + "/"
+                if re.fullmatch(r"/(?:journal/[^/]+|partners/[^/]+/[^/]+)/", path) and not path.endswith("/posts/"):
+                    self.link = path
+
+        def handle_endtag(self, tag):
+            if tag == "article" and self.depth:
+                self.depth -= 1
+                if not self.depth and self.link:
+                    self.urls.add(self.link)
+
+    with open(os.path.join(ROOT, "journal/index.html"), encoding="utf-8") as stream:
+        text = stream.read()
+    cards = Cards()
+    cards.feed(text)
+    cards.close()
+    return len(cards.urls)
 
 
 SERVICES = [
