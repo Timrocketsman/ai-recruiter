@@ -7,6 +7,7 @@
 Правила сайта: цен нет, чужих ссылок нет, медицинских обещаний нет, Instagram со сноской.
 """
 import html
+from pathlib import Path
 import json
 import os
 import re
@@ -16,15 +17,98 @@ SITE = "https://timlabs.online"
 
 
 def read(p):
-    return open(os.path.join(ROOT, p), encoding="utf-8").read()
+    return Path(os.path.join(ROOT, p)).read_text(encoding="utf-8")
 
 
 def articles():
     t = read("journal/index.html")
-    return re.findall(
+    legacy = re.findall(
         r'data-rubric="([^"]*)"><a class="card-link" href="https://timlabs\.online/journal/([^"/]+)/"><h2 class="card-title">([^<]*)</h2></a>'
         r'<div class="card-meta"><span class="card-rubric">[^<]*</span><span class="card-date">([^<]*)', t)
+    return legacy if legacy else current_journal_articles(t)
 
+
+
+
+def current_journal_articles(text):
+    """Current pj-card DOM, deduplicated; retain the supported legacy format."""
+    from html.parser import HTMLParser
+    class Cards(HTMLParser):
+        def __init__(self):
+            super().__init__(); self.row = None; self.heading = False; self.rows = []; self.seen = set()
+        def handle_starttag(self, tag, attrs):
+            a = dict(attrs)
+            if tag == "article" and "pj-card" in a.get("class", "").split():
+                self.row = {"rubric": a.get("data-rubric", ""), "title": [], "date": "", "slug": None}
+            if self.row is None: return
+            if tag in ("h2", "h3"): self.heading = True
+            if tag == "a" and self.heading:
+                m = re.fullmatch(r"(?:https://timlabs\.online)?/journal/([a-z0-9-]+)/", a.get("href", ""))
+                if m: self.row["slug"] = m[1]
+            if tag == "time": self.row["date"] = a.get("datetime", "")
+        def handle_data(self, data):
+            if self.row is not None and self.heading: self.row["title"].append(data)
+        def handle_endtag(self, tag):
+            if tag in ("h2", "h3"): self.heading = False
+            if tag == "article" and self.row is not None:
+                r = self.row; title = " ".join("".join(r["title"]).split())
+                if r["slug"] and title and re.fullmatch(r"\d{4}-\d{2}-\d{2}", r["date"]) and r["slug"] not in self.seen:
+                    self.seen.add(r["slug"]); self.rows.append((r["rubric"], r["slug"], title, r["date"]))
+                self.row = None
+    p = Cards(); p.feed(text); p.close()
+    if not p.rows: raise ValueError("journal card structure unsupported; refusing empty hub lists")
+    return p.rows
+
+
+def native_hub_page(generated, previous, shared, kind="hub"):
+    """Keep approved head/static copy; rebuild only owner-controlled lists.
+
+    Current published pages provide the real shared shell, not guard markers.
+    New pages get the same actual navigation/assets/theme/motion from the journal.
+    """
+    if previous:
+        for pattern in (r'<head\b[^>]*>.*?</head>', r'<header class="pp-top">.*?</header>'):
+            if len(re.findall(pattern, previous, re.S)) != 1: raise ValueError("approved hub shell missing")
+        canonical = lambda h: re.search(r'<link rel="canonical" href="([^"]+)"', h)[1]
+        if canonical(previous) != canonical(generated): raise ValueError("hub canonical changed")
+        if kind == "hub":
+            pattern = r'<section\b[^>]*\bid="stati"[^>]*>.*?</section>'
+            old = re.search(pattern, previous, re.S); new = re.search(pattern, generated, re.S)
+            if old is None or new is None: raise ValueError("owned article-list section missing")
+            return previous[:old.start()] + new[0] + previous[old.end():]
+        pattern = r'<article\b[^>]*\bgcard[^>]*>.*?</article>'
+        fresh = {}
+        for match in re.finditer(pattern, generated, re.S):
+            key = re.search(r'<h3><a href="([^"]+)"', match[0])
+            if key: fresh[key[1]] = match[0]
+        seen = set()
+        def update(match):
+            old = match[0]; key = re.search(r'<h3><a href="([^"]+)"', old)
+            if key is None or key[1] not in fresh: raise ValueError("approved partner cards changed")
+            seen.add(key[1]); current = fresh[key[1]]
+            pat = r'<ul class="alist"[^>]*>.*?</ul>'
+            new_list = re.search(pat, current, re.S); old_list = re.search(pat, old, re.S)
+            if old_list: return old[:old_list.start()] + (new_list[0] if new_list else "") + old[old_list.end():]
+            return old.replace("</article>", (new_list[0] if new_list else "") + "</article>", 1)
+        result = re.sub(pattern, update, previous, flags=re.S)
+        if seen != set(fresh): raise ValueError("new partner requires approved template update")
+        return result
+    # Genuine first render: shared production assets/nav/theme/runtime, no new library.
+    header = re.search(r'<header class="pp-top">.*?</header>', shared, re.S)
+    motion = re.search(r'<script[^>]*src="/assets/tl-motion\.js[^>]*>.*?</script>', shared, re.S)
+    theme = next((x for x in re.findall(r'<script\b[^>]*>.*?</script>', shared, re.S) if 'localStorage.getItem("tl-theme")' in x), None)
+    if header is None or motion is None or theme is None: raise ValueError("shared production frame incomplete")
+    page = re.sub(r'<(?:link|script)\b[^>]*(?:tl-glass\.css|tl-glass\.js)[^>]*>(?:</script>)?', "", generated)
+    styles = []
+    for name in ("tl-paper", "tl-journal", "tl-site"):
+        match = re.search(r'<link[^>]*href="/assets/' + name + r'\.css[^>]*>', shared)
+        styles.append(match[0] if match else '<link rel="stylesheet" href="/assets/' + name + '.css">')
+    theme_colors = re.findall(r'<meta[^>]*name="theme-color"[^>]*>', shared)
+    preloads = re.findall(r'<link[^>]*rel="preload"[^>]*href="/assets/fonts/[^>]*>', shared)
+    page = re.sub(r'<meta[^>]*name="theme-color"[^>]*>', "", page)
+    page = page.replace("</head>", "\n".join(theme_colors + [theme] + preloads + styles) + "\n</head>", 1)
+    page = page.replace("<body>", '<body class="ps ps-hub">' + header[0], 1).replace("<main>", '<main class="ps-hub">', 1)
+    return page.replace("</body>", motion[0] + "\n</body>", 1)
 
 # рубрики не про велнес — в страницы направлений не попадают (SESSIONS.md 26.09)
 SKIP_RUBRICS = {"ИИ-автоматизация"}
@@ -231,8 +315,11 @@ def build():
             h1=html.escape(hub["h1"]), kicker=html.escape(hub["kicker"]), lead=html.escape(hub["lead"]),
             cards=cards, podbor=podbor, lists=lists, others=others, note=html.escape(hub["note"]),
             footer=footer, tail=tail, n=sum(len(i) for _, i in groups), nw=plural(sum(len(i) for _, i in groups)))
+        target = os.path.join(ROOT, hub["slug"], "index.html")
+        previous = read(hub["slug"] + "/index.html") if os.path.isfile(target) else ""
+        page = native_hub_page(page, previous, read("journal/index.html"))
         os.makedirs(os.path.join(ROOT, hub["slug"]), exist_ok=True)
-        open(os.path.join(ROOT, hub["slug"], "index.html"), "w", encoding="utf-8").write(page)
+        Path(os.path.join(ROOT, hub["slug"], "index.html")).write_text(page, encoding="utf-8")
         print(hub["slug"], "статей:", sum(len(i) for _, i in groups))
 
 

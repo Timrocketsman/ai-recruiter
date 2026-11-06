@@ -7,6 +7,7 @@
 если они уже есть в репозитории.
 """
 import html
+from pathlib import Path
 import json
 import os
 import re
@@ -14,7 +15,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build_hubs import block, icon_links, read  # noqa: E402
+from build_hubs import block, icon_links, read, native_hub_page  # noqa: E402
 
 SITE = "https://timlabs.online"
 URL = SITE + "/partners/"
@@ -58,7 +59,7 @@ def partner_articles(pid):
         for slug in sorted(os.listdir(base)):
             f = os.path.join(base, slug, "index.html")
             if re.fullmatch(r"[a-z0-9-]+", slug) and os.path.exists(f):
-                h = open(f, encoding="utf-8").read(); t = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
+                h = Path(f).read_text(encoding="utf-8"); t = re.search(r"<h1[^>]*>(.*?)</h1>", h, re.S)
                 d = re.search(r'"datePublished":\s*"([0-9-]+)"', h)                 # (12.10) свежие статьи первыми, а не по алфавиту адресов
                 out.append((d.group(1) if d else "", "/partners/%s/%s/" % (pid, slug), re.sub(r"<[^>]+>", "", t.group(1)).strip() if t else slug))
     out.sort(key=lambda x: (x[0], x[1]), reverse=True)
@@ -103,13 +104,16 @@ def main():
              {"@type": "ListItem", "position": i + 1, "name": p["name"], "url": SITE + p["page"]} for i, p in enumerate([q for q in PARTNERS if not q.get("hub_hidden")])]}}]}
     page = TEMPLATE.format(title=html.escape(title), desc=html.escape(desc), url=URL, ld=json.dumps(ld, ensure_ascii=False, indent=1),
                            metrika=metrika, icons=icons, cards="\n".join(card(p) for p in PARTNERS if not p.get("hub_hidden")), footer=footer, tail=tail)
+    target = os.path.join(ROOT, "partners", "index.html")
+    previous = read("partners/index.html") if os.path.isfile(target) else ""
+    page = native_hub_page(page, previous, read("journal/index.html"), kind="partners")
     os.makedirs(os.path.join(ROOT, "partners"), exist_ok=True)
-    open(os.path.join(ROOT, "partners", "index.html"), "w", encoding="utf-8").write(page)
+    Path(os.path.join(ROOT, "partners", "index.html")).write_text(page, encoding="utf-8")
     sm = os.path.join(ROOT, "sitemap.xml")
-    s = open(sm, encoding="utf-8").read()
+    s = Path(sm).read_text(encoding="utf-8")
     if URL not in s:
         s = s.replace("</urlset>", "  <url><loc>%s</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>\n</urlset>" % URL)
-        open(sm, "w", encoding="utf-8").write(s)
+        Path(sm).write_text(s, encoding="utf-8")
     print("partners:", len(PARTNERS))
 
 
