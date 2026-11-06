@@ -1537,3 +1537,76 @@ Engine61ca59cb2191: VK manual/direct для двух Tim-about-Umas маршру
 
 ### Историческая заявка Awards, 2026-11-06 04:29 MSK
 Engine03efc8ad: автоматический servercounter исключает историческое число заявки, прочие currentcounters сохраняются.4independent+5installed strictPASS. ДействующиеHTML132, draft123, source KB и pendingнеизменены. Booksнашёлподававшийсяpayload123 и UI«Заявкапринята» вsourceJSONL19окт; rootпроверилстроки21318/21350. Restore123 — только после полного независимого source-review/in-place пути, не NEWslot. Rootотозвалнеподтверждённыйвыводоcurrentbrowser138: тестреальнойLIVE_JSбылsyntheticDOM, currentarticleэтотscriptнеподключает. Оригинальная ошибочная формулировка сохранена вдосье.
+
+
+### 06.11.2026 — опубликованные статьи: отдельное read-only ревью
+
+Root внедрил negative-only published_revision_review и явные blocked diagnostics вместо сокрытия stale/corrupt как empty. 225 строгих независимых и225 проверок установленных bytes;12 runtime fingerprints добавлены, один dispatcher, боты/модели/source/social/hold неизменны. Историческая Awards принята только в read-only intake с точным исходным snapshot; source acceptance/публикации/NEW-слота нет. Existing hourly reviewer prompt дополнен, расписание прежнее. Proof: /opt/timlabs/recovery/published-intake-root-20261106/. Bot env reader и lib.read_file leaks остаются отдельными невнедрёнными исправлениями; история v1 failures сохранена.
+
+
+### 06.11.2026 — закрытие ресурсов чтения файлов
+
+Root: TXT/MD/код, HTML и RTF читаются через with; Excel read_only workbook закрывается при успешном разборе и ошибках. Двойной сбой разбора/cleanup сообщает обе причины. Остальные функции lib и форматы/лимиты/RTF-fallback сохранены.69 независимых библиотечных+15 bot tests,82 регрессии actual source и225 редакционных интеграционных тестов со strict warnings PASS. lib.read_file загружена одним новым dispatcher,127 fingerprints подтверждены; боты/модели/source/social/hold/cache не менялись. Bot env-loop исправлен только на диске и тестирован на извлечённом actual startup block; действующий бот не перезапущен, initializer применится при обычном следующем старте. Awards независимый результат49/49 needs_correction, source approval и выпуска нет. Proof: /opt/timlabs/recovery/file-readers-root-20261106/.
+
+
+### 06.11.2026 — удержание партнёрского сайта до мутации статуса
+
+Root закрыл обход общего articles_due: render hold теперь проверяется до чтенияочереди/побочныхдействий, послеdue-lock и передкаждымэлементом. Активныйhold оставляетстатьюapproved и пишетsite_deferred,published=false. MARAFDYfastpathиmq неизменны; собственнаяпрограмма10:00нетронута.16stricttests и8negativecontrols; actualcoldCLIподnetwork/subprocessdeny вернул[] иdurabledeferral,91source/HTML/protectedfiles unchanged. Безперезапусков,sourcegrantиливыпуска. Точныйfunctionpatchотражёнвtracked snapshot,остальноеold snapshotнеперезаписывалось. Этоcontainment,неполныйtransactionadapter: holdнеснимать. Proof /opt/timlabs/recovery/tg-articles-hold-root-20261106/.
+
+
+MARAFDY06.11утро: штатныйarticles-dueначат10:00:00; publicHTML200наблюдается10:01:23, documentSHA73f4e077...совпалсодобренным, selfcanonical/обложка/RSSguid1. published+checkokштатно10:01:33; VK115/ОК159090058638798 квитанцииоднократныханонсов,mirror_rc0. ОКполныйанонс10:02:12публичносовпал; VKpublic200покаоболочкабезcaption(непубличныйproof, неповодretry). ДзенRSSpubDate08.11 10:00. Приёмкатолькочтение, вечернийpostнетронут. Доказательстваrules/article-acceptance-2026-11-06.json иaudit/2026-11-06/*.live.html.
+
+
+### 06.11.2026 — уникальные статьи в старом и новом журнале
+
+Root independently accepted SITE count_articles-only patch: HTMLParser recognizes card/pj-card, deduplicates canonical hrefs, closes reader.176DOM cards →138 unique, no hardcoded count or source-gate changes.10strict tests pre/actual-installed plus9 versioned actual-code regressions. Normal publisher with only tools/ai_section.py intent pushed43a28153; netcode+generatedcountertimestamp only, unrelated pending files retained. Publiccode200 exactef97e018, home+AIpage138 verified. This codefix does NOT accept incomplete R3 tip fixture or grant new source approval; tip remainsheld. Proof /opt/timlabs/recovery/ai-section-count-root-20261106/.
+
+
+### 06.11.2026 — review planned master tip from honest draft
+
+Root adopted exact Nov6 Umas planned-tip review case after200 independent and200 installed strict tests. Old3 authorizations/signing/consent/revocations and DELIVERY_FIELDS preserved. New case initialdraft, separate typed approvedplan, source fingerprint/CAS/operator staging required; this doesnot itself stage/approve/publish. Main129function fingerprints verified with sole dispatcher, other processes/protected source/social/hold state unchanged. Source/body still originalapproved; corrected immutable revision2 is draft candidate only. No grant or release. Proof /opt/timlabs/recovery/planned-tip-validator-root-20261106/.
+
+
+### 06.11.2026 — excursions doctype / Best Practices
+
+Root independently5tests + full private before/after4LH: oldBackCompat/doctype0/BP96; newCSS1Compat/doctype1/BP100mobile+desktop. Published single HTML through original publisher/source gates, websitedd4d8b9b. Publicraw93a873 exact, actualpublicmobile+desktop100x4 verified; no overwrite ofoldquality/best/history. Entirebody/sourceDocument/canonical/author/dates unchanged; no wholearticle factualapproval claimed. Initialmissingmanifestprivatefailures retained, realassets copied innewattempt, not filtered. Oldinsertioncause/futuregeneratorrecurrence notproven. Proof /opt/timlabs/recovery/excursions-doctype-root-20261106/.
+
+
+## 2026-11-06 — master RSS actual publication delay
+Engine f977a9dad4640b8d64f2aed620389aab31f9a112: cold partner renderer rss uses max(planMSK, awareactual)+48h for published Umas tips; invalid present actual raises, absent legacy fallback explicit. Root11+11+11 strict tests and baseline negative controls verified. No feed rebuild, source approval, model activation or public article release. Receipt/backup/rollback /opt/timlabs/recovery/umas-rss-actual-root-20261106/.
+
+
+## 2026-11-06 — exact mixed source evidence
+Engine9f9c364e883c21ceb5748f96b23d44c68a9263d5: signed block-bound source policy for2exact conversation blocks in Nov6Umas tip, authoritative blockcontext passed by bridge/sourcegate. Root73+199strict tests repeated oninstalledbytes,4negativecontrols,131loadedfingerprints verified. No sourceapproval/articlepublish/holdchange. Oldnegative result remains. Same-byte explicitreviewretry stillseparatecandidate, not reset. Proof/rollback /opt/timlabs/recovery/mixed-source-root-20261106/.
+
+
+## 2026-11-06 — explicit checker re-review
+Engine 5078b537b5b78c8c376c682199fce1a0c1a532ba: one owner-signed fresh independent attempt on exact unchanged Nov6Umas bytes, old negative/job/auth retained, no replay/autoapproval/publish. Root341strict+2baselinecontrols, actualinstalled341PASS; sole1997070/133matching. Source/RSS fixes and holds preserved. Actualreview-onlyauth issued separately; independentOFFICE reviewpending. Proof/rollback /opt/timlabs/recovery/checker-rereview-root-20261106/.
+
+
+## 2026-11-06 — richer content-grounded cover prompts
+Engine 2b90214e8240e980c95435b55fd97f5c6bd1cbd2: no blanketblue-hour filter;65–100wordscene brief from boundedarticlecontext+partner visuals,120→240outputcap. Root30+30installed+30versionedstrictchecks, cache/render/workflow/gatespreserved. Actualcold2006976/SYS/STYLE/functionhashesrecorded;3realBonsaiscenescreated, pixelgenerationstillwaits16:30/admission. Promptsrequireeditorialreview, noimagequality/publicationclaim. Tim-authorizedlocalavailabilityrestored with18role-level disables/paidbanretained. Proof/backup/rollback /opt/timlabs/recovery/journal-cover-prompts-root-20261106/.
+
+
+## 2026-11-06 — F5 WAV client integrity
+Engine 2af90f74bcd6bd12d1848740ca02d23833adca14: canonical prepare.py now validates full WAV before atomic replacement and preserves bounded sanitized HTTP reason/status/cause. Root41strict +14independentredaction +41installed +41versioned tests pass; rejected v1 retained. Next cold CLI only, no process restart/GPU generation/queue or oldWAV edits. Thermal deferral/resume remains open. Proof /opt/timlabs/recovery/f5-http503-root-20261106/adoption-v2/.
+
+
+## 2026-11-06 — require actual time for new master RSS tips
+Engine c490a470d563fcbc3ccb1c279ebb4bfd65bbbe79: RSS missingactualfallback narrowed to11observedpublishedlegacytips. New unknown published tips without actual_publication_at fail visibly; valid actual+48h unchanged. Root12candidate+12installed tests and baseline negativecontrol, actual11metadata verified. No feed/metadata/hold/source/restart writes. Director earlystatus defect remains blocked by hold, not declared fixed. Proof /opt/timlabs/recovery/umas-rss-cohort-root-20261106/.
+
+
+## 2026-11-06 — exact published rewrite review route
+Engine a22858cd9e01b07acf8c0a136b7b54008560f6b7: explicitroot review-only intake/exactversionledger, nativeJSONLDidentity+hiddenFAQ strict checks, oldpublishednegative/history retained. Root336+336installed+336versioned; unchangedv2suite214+8expectednegativecontrols. Sole2026937/138loadedhashes, bot/cover/protected unchanged. No semantic sourceapproval/articlepublish/NEWslot/modelcall. Proof/backup/CASrollback /opt/timlabs/recovery/published-rewrite-route-root-20261106/adoption-v3/.
+
+
+## 2026-11-06 — incident dedupe retention
+Engine 3a6cacec19238f0776df0febd13a06a51fc3d870: raw retained incidentIDs remain seen beyond7days; genuinely unseen old/newID still visible, unfinishedgroups retained forworker/timeout. Root9strict+2negativecontrols+9actualinstalled+9versioned, no live tick/handle/model/testsend or state/budget/historyreset. CurrentdeliveryUNKNOWN, thisisnot deliverysuccess. Coldnative supervisor adoption; receipt/proof /opt/timlabs/recovery/incident-retention-root-20261106/.
+
+
+## 2026-11-06 — bounded automatic voice continuation
+Engine 590f98c2f62dcf76668a66eb2a47b663c6274838:4canonicalvoiceworkflowfiles +runtimeinstrumentation adopted,178matchingloadedfingerprints/sole2038723. Temporaryonlypromosched0 restoredexact. Root40workflow+40audio+41acceptedbaseline+negativecontrols; installed40+40/versioned40. Resource waits bounded6/24h; oldhistory/failed/attempts/source/social/GA/approval unchanged. No synthetic video/oldqueue reset, hardware successstillpendingactualnativejob. Proof /opt/timlabs/recovery/voice-defer-resume-root-20261106/adoption-v1/.
+
+
+## 2026-11-06 — report accounting scope and freshness
+Engine cc0e8980b31c2308d79ba05637a75a0113c3dc04: exactbuild_report-onlysemanticdelta atopsource/voice180, oneextrareportfingerprint;181loadedfunctions/sole2043853verified.14rebased+14versionedchecks, independentSITEinstalledcheckpending. Native/publiccounts andcalendardates explicit, externalBonsai excludedfromserverledgerlabelled, oldstatusesdated/holdsnotoutage. No counters/alerts/securitybaseline reset or testsend. Proof /opt/timlabs/recovery/report-labels-root-20261106/.
