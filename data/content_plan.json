@@ -515,13 +515,36 @@
       "kind": "new",
       "rubric": "Кисловодск и КМВ",
       "query": "авторские экскурсии кисловодск",
-      "status": "draft",
+      "status": "merged",
       "slug": "avtorskie-ekskursii-kislovodsk",
       "channels": {
         "site": null,
         "telegram": null,
         "vk": null,
         "dzen": null
+      },
+      "resolution_history": [
+        {
+          "at": 1794124197.5198617,
+          "kind": "actual_publication_reconciliation",
+          "public_evidence": "/opt/timlabs/office-control/engine-plan-execution-20261107/solo-plan-reconciliation-20261108/PUBLIC-EVIDENCE.json",
+          "document_sha256": "9307d9971cab298065fe82684ba9325fa3dc8766d725fb3bac6e4ecf798fa4c9",
+          "fulfilled_by_plan_id": "2026-11-05-control-first-automatic",
+          "original_deadline_missed": true,
+          "on_time_claim": false,
+          "social_receipts_not_reassigned": true,
+          "previous_status": "draft"
+        }
+      ],
+      "resolution": {
+        "at": 1794124197.5198617,
+        "kind": "actual_publication_reconciliation",
+        "public_evidence": "/opt/timlabs/office-control/engine-plan-execution-20261107/solo-plan-reconciliation-20261108/PUBLIC-EVIDENCE.json",
+        "document_sha256": "9307d9971cab298065fe82684ba9325fa3dc8766d725fb3bac6e4ecf798fa4c9",
+        "fulfilled_by_plan_id": "2026-11-05-control-first-automatic",
+        "original_deadline_missed": true,
+        "on_time_claim": false,
+        "social_receipts_not_reassigned": true
       }
     },
     {
