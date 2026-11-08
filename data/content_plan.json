@@ -637,15 +637,25 @@
       "date": "2026-11-09",
       "kind": "new",
       "rubric": "Развитие",
-      "query": null,
-      "status": "needs_topic",
-      "slug": null,
+      "query": "саморазвитие педагога",
+      "status": "planned",
+      "slug": "samorazvitie-pedagoga",
       "channels": {
         "site": null,
         "telegram": null,
         "vk": null,
         "dzen": null
-      }
+      },
+      "planning_history": [
+        {
+          "at": 1794137102.7073267,
+          "status": "needs_topic",
+          "query": null,
+          "slug": null,
+          "action": "selected_existing_semantic_core_topic",
+          "demand_measurement": "not_refetched"
+        }
+      ]
     },
     {
       "id": "2026-11-10-a",
