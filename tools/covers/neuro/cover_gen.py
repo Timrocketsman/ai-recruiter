@@ -1,29 +1,64 @@
 #!/usr/bin/env python3
-"""Обложка статьи через ComfyUI (Qwen-Image-2512) на сервере. Запуск внутри my-ubuntu под gpu.lock:
-  python3 cover_gen.py <slug> [--edit <blender_render.jpg>] [--seed N]
-Промпт: prompts.json[slug] + _style; нет записи — текст промпта пишет Bonsai по заголовку/лиду статьи (роль article → JSON-поля).
-Результат → site/media/covers/<slug>.jpg (1200×630, JPEG 90) → monetize_patch.py сам поставит под шапку и в og:image."""
-import json, sys, time, random, urllib.request, os, subprocess
-HERE=os.path.dirname(os.path.abspath(__file__)); API="http://127.0.0.1:8188"
-slug=sys.argv[1]; seed=int(sys.argv[sys.argv.index("--seed")+1]) if "--seed" in sys.argv else random.randrange(1<<31)
-P=json.load(open(f"{HERE}/prompts.json"))
-if slug not in P: sys.exit("нет промпта для %s — добавь в prompts.json или дай Bonsai сочинить (role article)" % slug)
-if "--edit" in sys.argv:
-    src=sys.argv[sys.argv.index("--edit")+1]; name=os.path.basename(src); subprocess.run(["cp",src,f"/opt/timlabs/render/ComfyUI/input/{name}"],check=True)
-    wf=open(f"{HERE}/workflow_edit_api.json").read().replace("__INPUT__",name)
-else:
-    wf=open(f"{HERE}/workflow_t2i_api.json").read().replace("__PROMPT__",json.dumps(P[slug]+". "+P["_style"])[1:-1]).replace("__NEGATIVE__",P["_negative"])
-wf=json.loads(wf.replace("__SEED__",str(seed)).replace("__SLUG__",slug)); wf.pop("_comment",None)
-if os.environ.get("COVER_STEPS"):                          # меньше шагов — меньше нагрев карты (40 шагов поднимают вентиляторы выше порога)
-    for n in wf.values():
-        if n.get("class_type")=="KSampler": n["inputs"]["steps"]=int(os.environ["COVER_STEPS"])
-r=urllib.request.urlopen(urllib.request.Request(API+"/prompt",json.dumps({"prompt":wf}).encode(),{"Content-Type":"application/json"})); pid=json.load(r)["prompt_id"]
-for _ in range(600):
-    time.sleep(2); h=json.load(urllib.request.urlopen(API+"/history/"+pid))
-    if pid in h:
-        out=[o for n in h[pid]["outputs"].values() for o in n.get("images",[])][0]
-        src=f"/opt/timlabs/render/ComfyUI/output/{out['subfolder']}/{out['filename']}"
-        dst=os.path.join(os.environ.get("COVER_OUT") or "/seo_agents/site/media/covers", slug+".jpg"); os.makedirs(os.path.dirname(dst),exist_ok=True)
-        subprocess.run(["convert",src,"-resize","1200x630^","-gravity","center","-extent","1200x630","-quality","90",dst],check=True)
-        print("OK",dst,"seed",seed); break
-else: sys.exit("timeout")
+"""Prepare the existing Qwen cover workflow; every CLI renders through cover_neuro.
+
+No import-time work, direct GPU HTTP, input copies into shared Comfy, or live-site writes.
+"""
+import json
+import hashlib
+import io
+import os
+from pathlib import Path
+import random
+import re
+import sys
+
+HERE = Path(__file__).resolve().parent
+
+
+def prepare(slug, *, seed=None, edit=None, prompts=None):
+    if not re.fullmatch(r'[a-z0-9][a-z0-9-]{0,159}', str(slug)):
+        raise ValueError('invalid cover slug')
+    seed = random.randrange(1 << 31) if seed is None else int(seed)
+    p = prompts if prompts is not None else json.loads((HERE / 'prompts.json').read_text())
+    if slug not in p:
+        raise ValueError('cover prompt missing: ' + slug)
+    inputs = []
+    input_sizes = []
+    if edit:
+        source = Path(edit).resolve(strict=True)
+        if not source.is_file():
+            raise ValueError('edit input is not a regular image')
+        raw_input = source.read_bytes()
+        inputs.append(dict(path=str(source), sha256=hashlib.sha256(raw_input).hexdigest(),
+                           size=len(raw_input)))
+        from PIL import Image
+        with Image.open(io.BytesIO(raw_input)) as image:
+            input_sizes.append(list(image.size))
+        template = HERE / 'workflow_edit_api.json'
+        raw = template.read_text().replace('__INPUT__', source.name)
+    else:
+        template = HERE / 'workflow_t2i_api.json'
+        raw = template.read_text()
+        raw = raw.replace('__PROMPT__', json.dumps(p[slug] + '. ' + p['_style'])[1:-1])
+        raw = raw.replace('__NEGATIVE__', json.dumps(p['_negative'])[1:-1])
+    workflow = json.loads(raw.replace('__SEED__', str(seed)).replace('__SLUG__', slug))
+    workflow.pop('_comment', None)
+    steps = os.environ.get('COVER_STEPS')
+    if steps is not None:
+        if not 1 <= int(steps) <= 40:
+            raise ValueError('cover steps outside existing 1–40 limit')
+        for node in workflow.values():
+            if node.get('class_type') == 'KSampler':
+                node['inputs']['steps'] = int(steps)
+    return dict(slug=slug, seed=seed, workflow=workflow, inputs=inputs, input_sizes=input_sizes,
+                template_sha256=hashlib.sha256(template.read_bytes()).hexdigest())
+
+
+def main(argv=None):
+    sys.path.insert(0, '/seo_agents/tools')
+    import cover_neuro
+    return cover_neuro.main(sys.argv[1:] if argv is None else argv)
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
