@@ -767,7 +767,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-snyat-napryazhenie/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-lica/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-lica/cover.webp</image:loc><image:title>Вафельное полотенце, миска с тёплой водой и круглое зеркало на столике у окна</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-snyat-napryazhenie/cover.webp</image:loc><image:title>Сумка на скамейке в прихожей, ключи на полке и тёплый свет лампы в комнате</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kislovodsk-v-noyabre/cover.webp</image:loc><image:title>Пустая аллея курортного парка с опавшими листьями и фонарём, вдали горы в вечерней дымке</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-stop/cover.webp</image:loc><image:title>Деревянный массажный роллер и мяч на вязаном коврике у окна, за окном осенний парк</image:title></image:image>
@@ -828,6 +829,11 @@
   <url>
     <loc>https://timlabs.online/partners/marafdy/massazh-golovy/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-golovy/cover.webp</image:loc><image:title>Вязаная шерстяная шапка на деревянном крючке у тёмно-зелёной стены в тёплом вечернем свете — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/massazh-lica/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-lica/cover.jpg</image:loc><image:title>Массаж лица: сначала реши, какие прикосновения тебе нужны | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-lica/cover.webp</image:loc><image:title>Вафельное полотенце, миска с тёплой водой и круглое зеркало на столике у окна</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/massazh-na-domu/</loc>

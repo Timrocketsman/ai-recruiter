@@ -476,10 +476,10 @@
     <lastmod>2026-11-05</lastmod>
   </url>
   <url><loc>https://timlabs.online/zhivoj-ofis/</loc><lastmod>2026-11-07</lastmod><changefreq>daily</changefreq></url>
-  <url><loc>https://timlabs.online/partners/</loc><lastmod>2026-11-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://timlabs.online/partners/</loc><lastmod>2026-11-08</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1056,4 +1056,8 @@
     <lastmod>2026-11-06</lastmod>
   </url>
 <url><loc>https://timlabs.online/partners/umas_osoznanie/sovet-kto-otvechaet-vselennoy/</loc><lastmod>2026-11-06</lastmod></url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/massazh-lica/</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
 </urlset>
