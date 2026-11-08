@@ -22,13 +22,33 @@
 <link href="https://timlabs.online/partners/marafdy/rss.xml" rel="alternate" title="Статьи MARAFDY" type="application/rss+xml"/>
 <link href="/site.webmanifest" rel="manifest"/>
 <!-- Yandex.Metrika counter (загружается только при согласии) -->
-<script type="text/javascript">
-window.tlLoadMetrika=function(){
-  if(window.__tlMetrikaLoaded) return; window.__tlMetrikaLoaded=true;
-  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=111725024","ym");
-  ym(111725024,"init",{ssr:true,webvisor:false,clickmap:true,accurateTrackBounce:true,trackLinks:true});
+<script type="text/javascript">window.tlStopMetrika = function () {
+  // Revocation never reloads the page or discards an unsent form.
+  window.__tlMetrikaRevoked = true;
+  if (window.__tlMetrikaInitialized && typeof window.ym === 'function') {
+    window.ym(111725024, 'destruct');
+    window.__tlMetrikaInitialized = false;
+  }
 };
-try{if(localStorage.getItem("tl-consent-v2")==="accepted"){window.tlLoadMetrika();}}catch(e){}
+window.tlLoadMetrika = function () {
+  if (typeof window.tlConsentAllowed !== 'function' || !window.tlConsentAllowed() || window.__tlMetrikaRevoked) return;
+  function initialize() {
+    if (!window.tlConsentAllowed() || window.__tlMetrikaRevoked || window.__tlMetrikaInitialized) return;
+    window.__tlMetrikaInitialized = true;
+    window.ym(111725024, 'init', {ssr:true,webvisor:false,clickmap:true,accurateTrackBounce:true,trackLinks:true});
+  }
+  if (window.__tlMetrikaSdkReady) { initialize(); return; }
+  if (window.__tlMetrikaLoaded) return;
+  window.__tlMetrikaLoaded = true;
+  // Unlike the previous bootstrap, no init is queued before the SDK arrives.
+  window.ym = window.ym || function () { (window.ym.a = window.ym.a || []).push(arguments); };
+  window.ym.l = +new Date();
+  var tag = document.createElement('script');
+  tag.async = true; tag.src = 'https://mc.yandex.ru/metrika/tag.js?id=111725024';
+  tag.onload = function () { window.__tlMetrikaSdkReady = true; initialize(); };
+  tag.onerror = function () { window.__tlMetrikaLoaded = false; };
+  document.head.appendChild(tag);
+};
 </script>
 <!-- /Yandex.Metrika counter -->
 <meta content="#07090F" media="(prefers-color-scheme: dark)" name="theme-color"/><meta content="#F2F4F8" media="(prefers-color-scheme: light)" name="theme-color"/>
@@ -143,37 +163,7 @@ body.tl-consent-lock{overflow:hidden}
 <button class="tl-no" id="tl-consent-no" type="button">Только необходимые</button>
 </div>
 </div>
-<script>
-(function(){
-  var KEY='tl-consent-v2';
-  var box=document.getElementById('tl-consent');
-  if(!box) return;
-  function get(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
-  function set(v){try{localStorage.setItem(KEY,v);}catch(e){}}
-  function show(){box.classList.add('show');}
-  function hide(){box.classList.remove('show');document.body.style.paddingBottom='';}
-  var veil=document.getElementById('tl-consent-veil');
-  function lock(on){
-    if(veil) veil.classList.toggle('show', on);
-    document.body.classList.toggle('tl-consent-lock', on);
-  }
-  // (15 сен) на политике/согласии/соглашении не затемняем: документ читается ДО согласия
-  var LEGAL=/^\/(privacy|consent|terms)(\/|$)/.test(location.pathname);
-  if(!get()){ show(); if(!LEGAL) lock(true); else document.body.style.paddingBottom='240px'; }
-  var ok=document.getElementById('tl-consent-ok');
-  var no=document.getElementById('tl-consent-no');
-  if(ok) ok.addEventListener('click',function(){
-    set('accepted'); hide(); lock(false);
-    if(typeof window.tlLoadMetrika==='function') window.tlLoadMetrika();
-  });
-  if(no) no.addEventListener('click',function(){ set('declined'); hide(); lock(false); });
-  // «Настройки данных» в футере — можно передумать в любой момент
-  document.addEventListener('click',function(e){
-    var t=e.target;
-    if(t && t.id==='tl-consent-settings'){ e.preventDefault(); show(); if(!LEGAL) lock(true); }
-  });
-})();
-</script>
+<script src="/assets/tl-consent.3861db3008cb.js" integrity="sha256-OGHbMAjLdQ++bFlxFSLp7VDHfIkx54CIXVsm7emLNf8=" crossorigin="anonymous" defer></script>
 <script defer="" src="/assets/tl-motion.js?v=d8a3c0e8d4"></script>
 <!--tl-donate-v2--><a aria-label="Поддержать проект: перевод по СБП через любой банк" href="https://finance.ozon.ru/apps/sbp/ozonbankpay/01a185ec-6f36-7447-a97a-2944ba12dfc2" id="tl-donate" rel="noopener" target="_blank" title="Перевод по СБП через любой банк">
 <span aria-hidden="true">💙</span><span class="tld-t">Поддержать проект</span><button aria-label="Скрыть" class="tld-x" type="button">×</button></a>
