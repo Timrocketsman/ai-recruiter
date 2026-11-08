@@ -662,30 +662,50 @@
       "date": "2026-11-10",
       "kind": "new",
       "rubric": "Осознанность и ретриты",
-      "query": null,
-      "status": "needs_topic",
+      "query": "ретрит молчания",
+      "status": "planned",
       "slug": null,
       "channels": {
         "site": null,
         "telegram": null,
         "vk": null,
         "dzen": null
-      }
+      },
+      "planning_history": [
+        {
+          "at": 1794154598.7615037,
+          "status": "needs_topic",
+          "query": null,
+          "slug": null,
+          "action": "root_checked_existing_core_topic_and_primary_sources",
+          "demand_measurement": "not_refetched_not_invented"
+        }
+      ]
     },
     {
       "id": "2026-11-11-a",
       "date": "2026-11-11",
       "kind": "new",
       "rubric": "Эмоции и психология",
-      "query": null,
-      "status": "needs_topic",
+      "query": "как выражать эмоции без конфликтов",
+      "status": "planned",
       "slug": null,
       "channels": {
         "site": null,
         "telegram": null,
         "vk": null,
         "dzen": null
-      }
+      },
+      "planning_history": [
+        {
+          "at": 1794154598.7615132,
+          "status": "needs_topic",
+          "query": null,
+          "slug": null,
+          "action": "root_checked_existing_core_topic_and_primary_sources",
+          "demand_measurement": "not_refetched_not_invented"
+        }
+      ]
     }
   ],
   "approved_at": "2026-10-14",

@@ -1,6 +1,6 @@
 {
- "generated": 1794072482,
- "updated": "2026-11-07T20:28",
+ "generated": 1794159124,
+ "updated": "2026-11-08T20:32",
  "departments": [
   {
    "id": "research",
@@ -14,7 +14,7 @@
      "short": "Спрос",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794005663
+     "last_ts": 1794135855
     },
     {
      "id": "analytics",
@@ -23,7 +23,7 @@
      "short": "Трафик",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794005663
+     "last_ts": 1794135855
     },
     {
      "id": "graph",
@@ -32,7 +32,7 @@
      "short": "Связи",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794008672
+     "last_ts": 1794095427
     }
    ]
   },
@@ -66,7 +66,7 @@
      "short": "Выпуск",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794071095
+     "last_ts": 1794157480
     },
     {
      "id": "refiner",
@@ -75,16 +75,16 @@
      "short": "Шлифовка",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794068762
+     "last_ts": 1794157481
     },
     {
      "id": "journal_index",
      "name": "Выпускающий редактор",
      "role": "Ведёт оглавление журнала и рубрики",
      "short": "Оглавление",
-     "status": "скоро начнёт",
-     "state": "due",
-     "last_ts": 1794068758
+     "status": "ждёт задачу",
+     "state": "idle",
+     "last_ts": 1794156876
     },
     {
      "id": "rewriter",
@@ -93,7 +93,7 @@
      "short": "Переписчик",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1794071447
+     "last_ts": 1794157480
     }
    ]
   },
@@ -109,7 +109,7 @@
      "short": "Аудитор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794032420
+     "last_ts": 1794119414
     },
     {
      "id": "fixer",
@@ -118,7 +118,7 @@
      "short": "Корректор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794032420
+     "last_ts": 1794121275
     },
     {
      "id": "immunity",
@@ -127,7 +127,7 @@
      "short": "Иммунитет",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794046176
+     "last_ts": 1794133080
     },
     {
      "id": "content_medic",
@@ -136,7 +136,7 @@
      "short": "Медосмотр",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794044975
+     "last_ts": 1794131873
     },
     {
      "id": "backup",
@@ -145,7 +145,7 @@
      "short": "Копии",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794025793
+     "last_ts": 1794112259
     }
    ]
   },
@@ -177,16 +177,16 @@
      "short": "Сторож",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794055196
+     "last_ts": 1794142189
     },
     {
      "id": "whitehacker",
      "name": "Белый хакер",
      "role": "Проверяет сайт на уязвимости, ничего не ломая",
      "short": "Белый хакер",
-     "status": "скоро начнёт",
-     "state": "due",
-     "last_ts": 1793973234
+     "status": "ждёт задачу",
+     "state": "idle",
+     "last_ts": 1794103242
     }
    ]
   },
@@ -202,15 +202,15 @@
      "short": "Директор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794071447
+     "last_ts": 1794153272
     },
     {
      "id": "web_designer",
      "name": "Веб-дизайнер",
      "role": "Следит за тем, как сайт выглядит на экране",
      "short": "Дизайнер",
-     "status": "ждёт задачу",
-     "state": "idle",
+     "status": "скоро начнёт",
+     "state": "due",
      "last_ts": 1794038116
     },
     {
@@ -218,18 +218,18 @@
      "name": "Креативный директор",
      "role": "Сверяет подачу журнала с тем, что сейчас работает в соцсетях",
      "short": "Креатив",
-     "status": "скоро начнёт",
-     "state": "due",
-     "last_ts": 1793948429
+     "status": "ждёт задачу",
+     "state": "idle",
+     "last_ts": 1794074814
     },
     {
      "id": "attestation",
      "name": "Аттестация",
      "role": "Раз в неделю проверяет, кто из агентов работает хорошо, а кому нужна помощь",
      "short": "Аттестация",
-     "status": "скоро начнёт",
-     "state": "due",
-     "last_ts": 1793980327
+     "status": "ждёт задачу",
+     "state": "idle",
+     "last_ts": 1794110456
     },
     {
      "id": "charter",
@@ -238,7 +238,7 @@
      "short": "Регламент",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793987539
+     "last_ts": 1794074388
     },
     {
      "id": "dept_analytics",
@@ -247,7 +247,7 @@
      "short": "Аналитик",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794070343
+     "last_ts": 1794156880
     },
     {
      "id": "architect",
@@ -265,7 +265,7 @@
      "short": "",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794072002
+     "last_ts": 1794158402
     },
     {
      "id": "revizor",
@@ -290,7 +290,7 @@
      "short": "Юрист",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793999044
+     "last_ts": 1794124932
     },
     {
      "id": "compliance",
@@ -299,7 +299,7 @@
      "short": "Комплаенс",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1793999044
+     "last_ts": 1794124932
     }
    ]
   },
@@ -313,8 +313,8 @@
      "name": "Аудитор присутствия",
      "role": "Проверяет, что страницы журнала на внешних площадках живы",
      "short": "Площадки",
-     "status": "ждёт задачу",
-     "state": "idle",
+     "status": "скоро начнёт",
+     "state": "due",
      "last_ts": 1794052791
     },
     {
@@ -324,7 +324,7 @@
      "short": "Telegram",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794071409
+     "last_ts": 1794157480
     },
     {
      "id": "distributor_poll",
@@ -342,7 +342,7 @@
      "short": "Ассистент",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794054596
+     "last_ts": 1794142189
     },
     {
      "id": "vk",
@@ -351,7 +351,7 @@
      "short": "ВКонтакте",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794071096
+     "last_ts": 1794157481
     },
     {
      "id": "outreach_scout",
@@ -360,7 +360,7 @@
      "short": "Разведчик",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794070260
+     "last_ts": 1794157481
     },
     {
      "id": "resource_curator",
@@ -369,7 +369,7 @@
      "short": "Куратор",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794066018
+     "last_ts": 1794155074
     },
     {
      "id": "tech_scout",
@@ -378,7 +378,7 @@
      "short": "",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794012285
+     "last_ts": 1794099033
     },
     {
      "id": "social_watch",
@@ -387,7 +387,7 @@
      "short": "",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794066043
+     "last_ts": 1794155090
     }
    ]
   },
@@ -403,7 +403,7 @@
      "short": "Ролики",
      "status": "скоро начнёт",
      "state": "due",
-     "last_ts": 1794071447
+     "last_ts": 1794158081
     },
     {
      "id": "book_writer",
@@ -428,7 +428,7 @@
      "short": "Заказы",
      "status": "ждёт задачу",
      "state": "idle",
-     "last_ts": 1794034010
+     "last_ts": 1794120671
     }
    ]
   }
@@ -436,676 +436,763 @@
  "counts": {
   "departments": 10,
   "agents": 40,
-  "articles_total": 138,
+  "articles_total": 139,
   "today": {
    "search": 40,
-   "system": 21,
-   "announce": 1,
-   "plan": 2,
-   "video": 14,
-   "check": 1,
-   "guard": 8
+   "system": 27,
+   "guard": 26,
+   "video": 19,
+   "announce": 4,
+   "check": 2,
+   "articles": 1,
+   "plan": 2
   },
   "day": {
-   "system": 25,
    "search": 46,
-   "announce": 1,
-   "plan": 2,
-   "video": 14,
-   "check": 1,
-   "guard": 8
+   "system": 30,
+   "guard": 26,
+   "video": 19,
+   "announce": 4,
+   "check": 2,
+   "articles": 1,
+   "plan": 2
   }
  },
  "results": {
   "day": {
-   "articles": 0,
+   "articles": 1,
    "updates": 0,
-   "telegram": 0,
-   "vk": 0
+   "telegram": 1,
+   "vk": 1
   },
   "month": {
-   "articles": 2,
-   "updates": 1,
+   "articles": 1,
+   "updates": 0,
    "telegram": 1,
-   "vk": 0
+   "vk": 1
   }
  },
- "journal_coverage_start": 1793824475,
+ "journal_coverage_start": 1793970002,
  "month_coverage_complete": false,
  "results_basis": "Уникальные результаты по реестру статей и квитанциям площадок; пустой результат не означает успешную публикацию.",
  "events": [
   {
-   "ts": 1793986939,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1793988741,
+   "ts": 1794074388,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1793988741,
+   "ts": 1794074393,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1793990939,
+   "ts": 1794076742,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1793992741,
+   "ts": 1794078004,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1793992741,
+   "ts": 1794078004,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1793994837,
+   "ts": 1794080409,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1793996639,
+   "ts": 1794081611,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1793996642,
+   "ts": 1794081611,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1793998444,
+   "ts": 1794084602,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794000246,
+   "ts": 1794085804,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794000246,
+   "ts": 1794085806,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794002051,
+   "ts": 1794088209,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794003853,
+   "ts": 1794089411,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794003853,
+   "ts": 1794089411,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794005061,
-   "agent": "publisher",
-   "dept": "publishing",
-   "kind": "announce",
-   "label": "Уведомление о странице отправлено поисковикам"
-  },
-  {
-   "ts": 1794005666,
+   "ts": 1794091815,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794005670,
-   "agent": "analytics",
-   "dept": "research",
-   "kind": "plan",
-   "label": "Обновлена аналитика"
-  },
-  {
-   "ts": 1794005756,
-   "agent": "semantic",
-   "dept": "research",
-   "kind": "plan",
-   "label": "Собран поисковый спрос"
-  },
-  {
-   "ts": 1794007470,
+   "ts": 1794093018,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794007472,
+   "ts": 1794093018,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794008673,
+   "ts": 1794095429,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1794095430,
    "agent": "graph",
    "dept": "research",
    "kind": "system",
    "label": "Обновлён граф знаний"
   },
   {
-   "ts": 1794009278,
-   "agent": "orchestrator",
-   "dept": "management",
-   "kind": "system",
-   "label": "Обновлена карта системы"
-  },
-  {
-   "ts": 1794011083,
+   "ts": 1794096631,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794011083,
+   "ts": 1794096633,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794012890,
+   "ts": 1794099036,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794014695,
+   "ts": 1794100238,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794014695,
+   "ts": 1794100238,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794016502,
+   "ts": 1794102642,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794018307,
+   "ts": 1794103255,
+   "agent": "whitehacker",
+   "dept": "security",
+   "kind": "guard",
+   "label": "Проверка на уязвимости"
+  },
+  {
+   "ts": 1794103844,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794018309,
+   "ts": 1794103844,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794020114,
+   "ts": 1794106249,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794021919,
+   "ts": 1794107451,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794021919,
+   "ts": 1794107453,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794023726,
+   "ts": 1794109856,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794025794,
+   "ts": 1794111058,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794025794,
+   "ts": 1794111058,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794026098,
+   "ts": 1794112564,
    "agent": "backup",
    "dept": "quality",
    "kind": "system",
    "label": "Резервная копия"
   },
   {
-   "ts": 1794027601,
+   "ts": 1794113463,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794028203,
-   "agent": "promo_video",
-   "dept": "production",
-   "kind": "video",
-   "label": "Собирается ролик"
-  },
-  {
-   "ts": 1794029409,
+   "ts": 1794114665,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794029409,
-   "agent": "promo_video",
-   "dept": "production",
-   "kind": "video",
-   "label": "Собирается ролик"
-  },
-  {
-   "ts": 1794029411,
+   "ts": 1794114665,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794030614,
+   "ts": 1794116264,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1794031217,
+   "ts": 1794117069,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794031819,
+   "ts": 1794117070,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1794032796,
+   "ts": 1794118096,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1794033397,
+   "ts": 1794118814,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794033397,
+   "ts": 1794118816,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794034613,
+   "ts": 1794119415,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1794035217,
+   "ts": 1794120674,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794037079,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
-  },
-  {
-   "ts": 1794037079,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1794037080,
+   "ts": 1794120674,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1794039064,
+   "ts": 1794121771,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Уведомление о странице отправлено поисковикам"
+  },
+  {
+   "ts": 1794122104,
+   "agent": "promo_video",
+   "dept": "production",
+   "kind": "video",
+   "label": "Собирается ролик"
+  },
+  {
+   "ts": 1794122973,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1794122973,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1794122973,
+   "agent": "promo_video",
+   "dept": "production",
+   "kind": "video",
+   "label": "Собирается ролик"
+  },
+  {
+   "ts": 1794124297,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794040266,
-   "agent": "promo_video",
-   "dept": "production",
-   "kind": "video",
-   "label": "Собирается ролик"
-  },
-  {
-   "ts": 1794041174,
+   "ts": 1794126668,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794041176,
+   "ts": 1794126669,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794042979,
+   "ts": 1794127870,
+   "agent": "promo_video",
+   "dept": "production",
+   "kind": "video",
+   "label": "Собирается ролик"
+  },
+  {
+   "ts": 1794128474,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794044568,
+   "ts": 1794129353,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1794044976,
+   "ts": 1794130328,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794044976,
+   "ts": 1794130328,
+   "agent": "promo_video",
+   "dept": "production",
+   "kind": "video",
+   "label": "Собирается ролик"
+  },
+  {
+   "ts": 1794130330,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794044982,
+   "ts": 1794131880,
    "agent": "content_medic",
    "dept": "quality",
    "kind": "check",
    "label": "Медосмотр опубликованных статей"
   },
   {
-   "ts": 1794045576,
+   "ts": 1794132476,
+   "agent": "orchestrator",
+   "dept": "management",
+   "kind": "system",
+   "label": "Обновлена карта системы"
+  },
+  {
+   "ts": 1794132480,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1794046177,
+   "ts": 1794133081,
    "agent": "immunity",
    "dept": "quality",
    "kind": "guard",
    "label": "Самопроверка движка"
   },
   {
-   "ts": 1794046779,
-   "agent": "orchestrator",
-   "dept": "management",
+   "ts": 1794133565,
+   "agent": "promo_video",
+   "dept": "production",
+   "kind": "video",
+   "label": "Собирается ролик"
+  },
+  {
+   "ts": 1794133566,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "check",
+   "label": "Текст проверен на живость"
+  },
+  {
+   "ts": 1794133719,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "article",
+   "label": "Статья подготовлена для сайта: «Как проверить ИИ-ассистента перед запуском в бизнесе»",
+   "link": "/journal/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese/"
+  },
+  {
+   "ts": 1794133720,
+   "agent": "publisher",
+   "dept": "publishing",
+   "kind": "announce",
+   "label": "Уведомление о странице отправлено поисковикам"
+  },
+  {
+   "ts": 1794133729,
+   "agent": "journalist",
+   "dept": "editorial",
    "kind": "system",
-   "label": "Обновлена карта системы"
+   "label": "Обновлено оглавление журнала"
   },
   {
-   "ts": 1794046781,
-   "agent": "promo_video",
-   "dept": "production",
-   "kind": "video",
-   "label": "Собирается ролик"
-  },
-  {
-   "ts": 1794047982,
-   "agent": "promo_video",
-   "dept": "production",
-   "kind": "video",
-   "label": "Собирается ролик"
-  },
-  {
-   "ts": 1794048583,
+   "ts": 1794134238,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794048584,
+   "ts": 1794134238,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794049184,
+   "ts": 1794134979,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1794135334,
+   "agent": "distributor",
+   "dept": "growth",
+   "kind": "announce",
+   "label": "Анонс ушёл в Telegram"
+  },
+  {
+   "ts": 1794135382,
+   "agent": "vk",
+   "dept": "growth",
+   "kind": "announce",
+   "label": "Пост во ВКонтакте"
+  },
+  {
+   "ts": 1794135856,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1794050387,
+   "ts": 1794135860,
+   "agent": "analytics",
+   "dept": "research",
+   "kind": "plan",
+   "label": "Обновлена аналитика"
+  },
+  {
+   "ts": 1794135956,
+   "agent": "semantic",
+   "dept": "research",
+   "kind": "plan",
+   "label": "Собран поисковый спрос"
+  },
+  {
+   "ts": 1794137380,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794051589,
+   "ts": 1794137381,
    "agent": "promo_video",
    "dept": "production",
    "kind": "video",
    "label": "Собирается ролик"
   },
   {
-   "ts": 1794052191,
+   "ts": 1794137904,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794052193,
+   "ts": 1794137904,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794053994,
+   "ts": 1794138381,
+   "agent": "promo_video",
+   "dept": "production",
+   "kind": "video",
+   "label": "Собирается ролик"
+  },
+  {
+   "ts": 1794139583,
+   "agent": "promo_video",
+   "dept": "production",
+   "kind": "video",
+   "label": "Собирается ролик"
+  },
+  {
+   "ts": 1794140762,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
+  },
+  {
+   "ts": 1794141096,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794055233,
+   "ts": 1794141588,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Поиск площадок для журнала"
+  },
+  {
+   "ts": 1794141590,
+   "agent": "outreach_scout",
+   "dept": "growth",
+   "kind": "search",
+   "label": "Разобраны новые площадки"
+  },
+  {
+   "ts": 1794142237,
    "agent": "secguard",
    "dept": "security",
    "kind": "guard",
    "label": "Проверка безопасности"
   },
   {
-   "ts": 1794055798,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Поиск площадок для журнала"
+   "ts": 1794143748,
+   "agent": "journalist",
+   "dept": "editorial",
+   "kind": "system",
+   "label": "Обновлено оглавление журнала"
   },
   {
-   "ts": 1794055798,
-   "agent": "outreach_scout",
-   "dept": "growth",
-   "kind": "search",
-   "label": "Разобраны новые площадки"
-  },
-  {
-   "ts": 1794057601,
+   "ts": 1794144950,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794059406,
+   "ts": 1794145555,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794059406,
+   "ts": 1794145555,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794061209,
+   "ts": 1794148476,
+   "agent": "promo_video",
+   "dept": "production",
+   "kind": "video",
+   "label": "Вышел ролик"
+  },
+  {
+   "ts": 1794149086,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794063012,
+   "ts": 1794149688,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794063015,
+   "ts": 1794149688,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794064815,
+   "ts": 1794153157,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794066619,
+   "ts": 1794153874,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794066619,
+   "ts": 1794153876,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Разобраны новые площадки"
   },
   {
-   "ts": 1794068761,
+   "ts": 1794156879,
    "agent": "orchestrator",
    "dept": "management",
    "kind": "system",
    "label": "Обновлена карта системы"
   },
   {
-   "ts": 1794070260,
+   "ts": 1794157481,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
    "label": "Поиск площадок для журнала"
   },
   {
-   "ts": 1794070260,
+   "ts": 1794157481,
    "agent": "outreach_scout",
    "dept": "growth",
    "kind": "search",
