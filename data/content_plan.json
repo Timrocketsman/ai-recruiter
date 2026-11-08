@@ -623,11 +623,11 @@
       "kind": "new",
       "rubric": "ИИ-автоматизация",
       "query": "как проверить ИИ-ассистента перед запуском в бизнесе",
-      "status": "published",
+      "status": "announced",
       "slug": "kak-proverit-ii-assistenta-pered-zapuskom-v-biznese",
       "channels": {
         "site": "https://timlabs.online/journal/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese/",
-        "telegram": null,
+        "telegram": 347,
         "vk": null,
         "dzen": null
       }
