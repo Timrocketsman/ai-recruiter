@@ -247,8 +247,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa-800.webp</image:loc><image:title>Что умеет ИИ-ассистент для бизнеса и что ему поручить</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese-800.webp</image:loc><image:title>Как проверить ИИ-ассистента перед запуском в бизнесе</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Саморазвитие ребенка: как помочь ему расти без давления</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Саморазвитие личности: с чего начать и как не бросить</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/video-poleznye-privychki-800.webp</image:loc><image:title>Видео про полезные привычки: как выбрать и смотреть с толком</image:title></image:image>
@@ -281,6 +281,7 @@
     <image:image><image:loc>https://timlabs.online/media/covers/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat-800.webp</image:loc><image:title>Пять недель работы и неделя отдыха: как устроен цикл 5/1</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/vosstanovitsya-kak-pravilno-800.webp</image:loc><image:title>Как восстановиться после нагрузки: пошагово и без перегиба</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-pravilno-vosstanavlivat-sily-800.webp</image:loc><image:title>Активизация и восстановление сил: сон, еда, движение</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa-800.webp</image:loc><image:title>Что умеет ИИ-ассистент для бизнеса и что ему поручить</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/biznes-orientiry-kak-postavit-800.webp</image:loc><image:title>Как поставить бизнес-цель перед автоматизацией</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-otchetov-800.webp</image:loc><image:title>Автоматизация отчётов: что реально передать ИИ-агенту</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/neyroset-pomoschnik-dlya-malogo-biznesa-800.webp</image:loc><image:title>Нейросеть-помощник для малого бизнеса: с какой задачи начать</image:title></image:image>
@@ -346,6 +347,10 @@
     <loc>https://timlabs.online/journal/kak-prazdniki-otdyhat/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/prazdnik-kak-otdyhaem.webp</image:loc><image:title>Как отдыхать в праздники, если выходные уже заняты | Компас</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/prazdnik-kak-otdyhaem-800.webp</image:loc><image:title>Как отдыхать в праздники, если выходные уже заняты</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese-800.webp</image:loc><image:title>Как проверить ИИ-ассистента перед запуском в бизнесе</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/kak-provesti-vyhodnye-s-polzoy/</loc>
