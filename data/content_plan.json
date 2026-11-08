@@ -622,11 +622,11 @@
       "date": "2026-11-08",
       "kind": "new",
       "rubric": "ИИ-автоматизация",
-      "query": null,
-      "status": "needs_topic",
-      "slug": null,
+      "query": "как проверить ИИ-ассистента перед запуском в бизнесе",
+      "status": "published",
+      "slug": "kak-proverit-ii-assistenta-pered-zapuskom-v-biznese",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese/",
         "telegram": null,
         "vk": null,
         "dzen": null
