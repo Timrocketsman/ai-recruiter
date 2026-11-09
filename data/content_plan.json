@@ -638,10 +638,10 @@
       "kind": "new",
       "rubric": "Развитие",
       "query": "саморазвитие педагога",
-      "status": "draft",
+      "status": "published",
       "slug": "samorazvitie-pedagoga",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/samorazvitie-pedagoga/",
         "telegram": null,
         "vk": null,
         "dzen": null
