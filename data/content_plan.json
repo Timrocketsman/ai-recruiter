@@ -681,8 +681,8 @@
       "kind": "new",
       "rubric": "Осознанность и ретриты",
       "query": "ретрит молчания",
-      "status": "planned",
-      "slug": null,
+      "status": "draft",
+      "slug": "retrit-molchaniya",
       "channels": {
         "site": null,
         "telegram": null,
