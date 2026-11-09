@@ -638,7 +638,7 @@
       "kind": "new",
       "rubric": "Развитие",
       "query": "саморазвитие педагога",
-      "status": "hold",
+      "status": "draft",
       "slug": "samorazvitie-pedagoga",
       "channels": {
         "site": null,
@@ -660,14 +660,20 @@
           "status": "planned",
           "action": "root_cover_quality_hold",
           "reason": "Owner requires uniform cover before new release; independent text review accepted; private cover in production"
+        },
+        {
+          "at": 1794241129.6906946,
+          "action": "root_cover_quality_hold_released",
+          "status": "hold",
+          "reason": "Actual accepted image installed and public exactSHA; native handoff fix loaded"
+        },
+        {
+          "at": 1794241130.4450107,
+          "status": "planned",
+          "action": "existing_independent_review_handoff",
+          "document_sha256": "c4e22041b447d2e5503a025410839239ee848669d4f486307273e13109023b21"
         }
-      ],
-      "root_quality_hold": {
-        "owner": "ROOT",
-        "reason": "cover_pending_visual_acceptance",
-        "release_requires": "actual uniform style image visual acceptance + current source gates",
-        "created_at": 1794239740.9650383
-      }
+      ]
     },
     {
       "id": "2026-11-10-a",

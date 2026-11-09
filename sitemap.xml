@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://timlabs.online/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1066,6 +1066,10 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/kak-rasslabitsya-posle-stressa/</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/samorazvitie-pedagoga/</loc>
     <lastmod>2026-11-09</lastmod>
   </url>
 </urlset>
