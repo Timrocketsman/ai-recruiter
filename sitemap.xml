@@ -476,10 +476,10 @@
     <lastmod>2026-11-08</lastmod>
   </url>
   <url><loc>https://timlabs.online/zhivoj-ofis/</loc><lastmod>2026-11-08</lastmod><changefreq>daily</changefreq></url>
-  <url><loc>https://timlabs.online/partners/</loc><lastmod>2026-11-08</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://timlabs.online/partners/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1063,5 +1063,9 @@
   <url>
     <loc>https://timlabs.online/journal/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese/</loc>
     <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/kak-rasslabitsya-posle-stressa/</loc>
+    <lastmod>2026-11-09</lastmod>
   </url>
 </urlset>
