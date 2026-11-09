@@ -166,3 +166,27 @@
 .sh-catalog{padding-bottom:8px}
 @media (max-width:1100px){.sh-card.is-svc{grid-column:span 6}}
 @media (max-width:620px){.sh-card.is-svc{grid-column:span 12}}
+
+/* tl-shop-manual-handoff-v1: visible manual transfer only when the link cannot hold the basket. */
+.sh-foot.sh-manual{flex:0 1 auto;min-height:0;max-height:70vh;max-height:70dvh;overflow-y:auto;overscroll-behavior:contain}
+.sh-handoff{border-top:1px solid var(--line);margin-top:16px;padding-top:16px}
+.sh-handoff[hidden]{display:none}
+.sh-handoff p{margin:0 0 12px;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.sh-handoff label{display:block;margin:0 0 8px;font-size:14px;font-weight:600;color:var(--ink)}
+.sh-handoff textarea{display:block;box-sizing:border-box;width:100%;min-width:0;min-height:6em;max-height:24vh;max-height:24dvh;
+  padding:12px;border:1px solid var(--line-2);border-radius:10px;background:var(--paper-2);color:var(--ink);font:400 14px/1.5 var(--sans);resize:vertical}
+.sh-handoff .sh-select{min-height:44px;margin:4px 0 8px;padding:8px 0;text-align:left}
+.sh-handoff .sh-handoff-status{min-height:3em;margin:0 0 12px;color:var(--ink)}
+.sh-go[role="button"],.sh-handoff .sh-manual-go{box-sizing:border-box;min-width:0;white-space:normal;text-align:center;line-height:1.4}
+.sh-drawer .sh-line{grid-template-columns:64px minmax(0,1fr) minmax(0,auto)}
+.sh-drawer .sh-line>div{min-width:0}
+.sh-drawer .sh-line-t{overflow-wrap:anywhere}
+.sh-drawer .sh-line-r{min-width:0;max-width:120px}
+.sh-drawer .sh-line-s{white-space:normal;text-align:right}
+@media (max-width:400px){
+  .sh-drawer .sh-line{grid-template-columns:48px minmax(0,1fr);gap:8px 12px}
+  .sh-drawer .sh-line img,.sh-drawer .sh-line-ic{width:48px;height:60px}
+  .sh-drawer .sh-line-r{grid-column:2;flex-direction:row;align-items:center;justify-content:space-between;max-width:none;width:100%;gap:12px}
+  .sh-drawer .sh-line-s{min-width:0}
+}
+.sh-handoff :is(textarea,button,a):focus-visible{outline:2px solid var(--accent);outline-offset:3px}

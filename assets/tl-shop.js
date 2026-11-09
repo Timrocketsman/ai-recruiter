@@ -96,10 +96,70 @@
     '<div class="sh-foot" hidden><p class="sh-total"><span>Итого</span><b></b></p>' +
     '<p class="sh-note">' + esc(body.getAttribute("data-note") || "Оплата — после подтверждения в Telegram.") + '</p>' +
     '<a class="pp-btn sh-go" href="https://t.me/' + esc(BOT) + '" rel="noopener">Оформить в Telegram</a>' +
-    '<button class="sh-copy" type="button">Скопировать заказ</button></div>';
+    '<button class="sh-copy" type="button">Скопировать заказ</button>' +
+    '<section class="sh-handoff" id="sh-handoff" aria-label="Передача состава заказа" hidden>' +
+    '<p>Состав заказа не помещается в ссылку. Скопируйте его. В боте сначала подтвердите согласие на обработку данных, затем вставьте состав в ответ на вопрос о заказе.</p>' +
+    '<label for="sh-handoff-text">Состав заказа</label>' +
+    '<textarea id="sh-handoff-text" rows="4" readonly spellcheck="false" aria-describedby="sh-handoff-status"></textarea>' +
+    '<button class="sh-copy sh-select" type="button">Выделить текст заказа</button>' +
+    '<p class="sh-handoff-status" id="sh-handoff-status" role="status"></p>' +
+    '<a class="pp-btn sh-manual-go" target="_blank" rel="noopener">Перейти к оформлению в боте</a></section></div>';
   body.appendChild(veil); body.appendChild(drawer);
   var head = drawer.querySelector("#sh-cart-h"), list = drawer.querySelector(".sh-lines"), empty = drawer.querySelector(".sh-empty"),
     foot = drawer.querySelector(".sh-foot"), sumEl = foot.querySelector(".sh-total b"), go = foot.querySelector(".sh-go"), copyBtn = foot.querySelector(".sh-copy");
+  var manualBox = drawer.querySelector(".sh-handoff"), manualText = drawer.querySelector("#sh-handoff-text"),
+    manualStatus = drawer.querySelector("#sh-handoff-status"), manualLink = drawer.querySelector(".sh-manual-go"),
+    selectBtn = drawer.querySelector(".sh-select");
+  var manualOpen = false, manualGeneration = 0, manualPending = false;
+  function overflow() { return ids().length > 0 && !startParam(); }
+  function syncTransfer() {
+    manualGeneration++; manualPending = false; copyBtn.disabled = false;
+    copyBtn.textContent = "Скопировать заказ"; manualStatus.textContent = "";
+    manualText.value = orderText(); manualLink.href = orderLink();
+    if (overflow()) {
+      // A real button state: modifiers/middle click cannot bypass preparation via href.
+      go.removeAttribute("href"); go.setAttribute("role", "button"); go.setAttribute("tabindex", "0");
+      go.setAttribute("aria-controls", "sh-handoff"); go.setAttribute("aria-expanded", manualOpen ? "true" : "false");
+      go.textContent = "Подготовить заказ для Telegram";
+    } else {
+      manualOpen = false; go.href = orderLink(); go.textContent = "Оформить в Telegram";
+      go.removeAttribute("role"); go.removeAttribute("tabindex"); go.removeAttribute("aria-controls"); go.removeAttribute("aria-expanded");
+    }
+    manualBox.hidden = !manualOpen; foot.classList.toggle("sh-manual", manualOpen);
+  }
+  function revealTransfer(message) {
+    manualOpen = true; manualBox.hidden = false; foot.classList.add("sh-manual");
+    manualText.value = orderText(); manualLink.href = orderLink();
+    go.setAttribute("aria-expanded", "true"); manualStatus.textContent = message;
+  }
+  function copyTransfer() {
+    if (manualPending) return;
+    var text = orderText(), generation = ++manualGeneration;
+    revealTransfer("Копирую состав заказа…");
+    manualPending = true; copyBtn.disabled = true; copyBtn.textContent = "Копирую…";
+    function finish(ok) {
+      // A late clipboard result must not describe a different basket as copied.
+      if (generation !== manualGeneration || text !== orderText()) return;
+      manualPending = false; copyBtn.disabled = false;
+      copyBtn.textContent = ok ? "Заказ скопирован" : "Скопировать ещё раз";
+      manualStatus.textContent = ok ? "Состав скопирован. В боте подтвердите согласие на обработку данных, затем отправьте состав в ответ на вопрос о заказе." :
+        "Копирование недоступно. Выделите состав заказа и скопируйте его вручную.";
+      say(manualStatus.textContent);
+      if (!ok) { manualText.focus({ preventScroll: false }); manualText.setSelectionRange(0, 0); manualText.scrollTop = 0; }
+    }
+    var task;
+    try { task = copy(text); } catch (e) { finish(false); return; }
+    Promise.resolve(task).then(finish, function () { finish(false); });
+  }
+  selectBtn.addEventListener("click", function () {
+    manualText.focus({ preventScroll: false });
+    try {
+      manualText.select(); manualText.setSelectionRange(0, manualText.value.length);
+      manualStatus.textContent = manualText.selectionStart === 0 && manualText.selectionEnd === manualText.value.length ?
+        "Текст выделен. Скопируйте его; после согласия на обработку данных отправьте состав в ответ на вопрос бота." : "Выделите состав в поле и скопируйте его вручную.";
+    } catch (e) { manualStatus.textContent = "Выделите состав в поле и скопируйте его вручную."; }
+  });
+
 
   function render(focusSel) {
     var list_ = ids(), n = count();
@@ -118,7 +178,7 @@
     }).join("");
     list.hidden = !list_.length; empty.hidden = !!list_.length; foot.hidden = !list_.length;
     sumEl.textContent = totalText();
-    go.href = orderLink();
+    syncTransfer();
     if (focusSel) { var f = drawer.querySelector(focusSel); (f && !f.disabled ? f : head).focus({ preventScroll: true }); }
   }
 
@@ -165,15 +225,26 @@
     }
   });
   function doCopy() {
-    copy(orderText()).then(function (ok) {
+    if (overflow()) { copyTransfer(); return; }
+    var text = orderText(), generation = ++manualGeneration;
+    copy(text).then(function (ok) {
+      if (generation !== manualGeneration || text !== orderText()) return;
       var was = "Скопировать заказ";
       copyBtn.textContent = ok ? "Заказ скопирован" : "Не удалось скопировать";
       say(copyBtn.textContent);
-      setTimeout(function () { copyBtn.textContent = was; }, 1200);
+      setTimeout(function () {
+        if (generation === manualGeneration && text === orderText()) copyBtn.textContent = was;
+      }, 1200);
     });
   }
-  /* код не влез в 64 символа — бот открывается без кода, заказ копируется текстом */
-  go.addEventListener("click", function () { if (!startParam() && ids().length) copy(orderText()); });
+  /* Большой заказ передаётся текстом: без автоматического перехода и без обещания копирования. */
+  go.addEventListener("click", function (e) {
+    if (!overflow()) return;
+    e.preventDefault(); copyTransfer();
+  });
+  go.addEventListener("keydown", function (e) {
+    if (overflow() && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); go.click(); }
+  });
 
   /* ── свайп вправо: TL.Handle по оси x, порог 30 % ширины, иначе пружина возвращает ── */
   var snap = [0, 420], dragging = false;
@@ -190,7 +261,7 @@
     isOpen = true; close();
   }
   drawer.addEventListener("pointerdown", function (e) {
-    if (e.button > 0 || e.target.closest("button,a,input,output")) { e.stopPropagation(); return; }  /* кнопки и ссылки внутри — не ручка */
+    if (e.button > 0 || e.target.closest("button,a,input,textarea,label,output")) { e.stopPropagation(); return; }  /* кнопки и ссылки внутри — не ручка */
     dragging = true; drawer.classList.add("is-drag");
   }, true);
   drawer.addEventListener("keydown", function (e) { if (/^Arrow/.test(e.key) && e.target !== drawer) e.stopPropagation(); }, true);
