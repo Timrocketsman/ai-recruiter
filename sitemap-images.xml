@@ -251,8 +251,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese-800.webp</image:loc><image:title>Как проверить ИИ-ассистента перед запуском в бизнесе</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga-800.webp</image:loc><image:title>Саморазвитие педагога: как выбрать навык и проверить результат</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Саморазвитие ребенка: как помочь ему расти без давления</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Саморазвитие личности: с чего начать и как не бросить</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/video-poleznye-privychki-800.webp</image:loc><image:title>Видео про полезные привычки: как выбрать и смотреть с толком</image:title></image:image>
@@ -286,11 +286,11 @@
     <image:image><image:loc>https://timlabs.online/media/covers/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat-800.webp</image:loc><image:title>Пять недель работы и неделя отдыха: как устроен цикл 5/1</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/vosstanovitsya-kak-pravilno-800.webp</image:loc><image:title>Как восстановиться после нагрузки: пошагово и без перегиба</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-pravilno-vosstanavlivat-sily-800.webp</image:loc><image:title>Активизация и восстановление сил: сон, еда, движение</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese-800.webp</image:loc><image:title>Как проверить ИИ-ассистента перед запуском в бизнесе</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa-800.webp</image:loc><image:title>Что умеет ИИ-ассистент для бизнеса и что ему поручить</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/biznes-orientiry-kak-postavit-800.webp</image:loc><image:title>Как поставить бизнес-цель перед автоматизацией</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-otchetov-800.webp</image:loc><image:title>Автоматизация отчётов: что реально передать ИИ-агенту</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/neyroset-pomoschnik-dlya-malogo-biznesa-800.webp</image:loc><image:title>Нейросеть-помощник для малого бизнеса: с какой задачи начать</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/avtomatizatsiya-rutiny-800.webp</image:loc><image:title>Автоматизация рутины: что можно передать агенту</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
@@ -541,6 +541,11 @@
   <url>
     <loc>https://timlabs.online/journal/samorazvitie-lichnosti/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-lichnosti.webp</image:loc><image:title>Признаки саморазвития: как заметить, что вы меняетесь</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/samorazvitie-pedagoga/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga.webp</image:loc><image:title>Саморазвитие педагога: как выбрать навык и проверить результат</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga-800.webp</image:loc><image:title>Саморазвитие педагога: как выбрать навык и проверить результат</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/samorazvitie-primery/</loc>
