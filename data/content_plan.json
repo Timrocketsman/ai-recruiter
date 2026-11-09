@@ -697,6 +697,13 @@
           "slug": null,
           "action": "root_checked_existing_core_topic_and_primary_sources",
           "demand_measurement": "not_refetched_not_invented"
+        },
+        {
+          "at": 1794263196.2183993,
+          "action": "accepted_cover_quality_hold_released",
+          "hold_id": "75cabab6ec9f413eb737d301422fa68f",
+          "cover_sha256": "85fab57b2a7aec5923a765ffd9ce13a4fd503532a894789582628c1feeb6acc5",
+          "document_sha256": "31ad734fb1fa0beee12d609cd7e37b8aba6d993ea042cb394e90d4c4797b28c4"
         }
       ]
     },
