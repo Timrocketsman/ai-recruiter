@@ -18,6 +18,9 @@
 <link rel="preload" href="/assets/fonts/onest-cyr.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/onest-lat.woff2" as="font" type="font/woff2" crossorigin>
 <style>@layer tl-base,legacy;@layer legacy{
+.shop .pp-top .pp-theme{flex-shrink:0}
+@media(max-width:600px){.shop .pp-top .pp-wrap{gap:8px!important}}
+@media(max-width:380px){.shop .pp-logo i{display:none}}
 .sh-hero{padding:clamp(28px,5vw,64px) 0 clamp(18px,3vw,28px)}
 .sh-hero h1{max-width:18ch}
 .sh-hero .pp-wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,56px);align-items:center}
