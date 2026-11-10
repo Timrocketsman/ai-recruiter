@@ -681,10 +681,10 @@
       "kind": "new",
       "rubric": "Осознанность и ретриты",
       "query": "ретрит молчания",
-      "status": "draft",
+      "status": "published",
       "slug": "retrit-molchaniya",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/retrit-molchaniya/",
         "telegram": null,
         "vk": 366,
         "dzen": null
