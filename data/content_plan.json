@@ -686,7 +686,7 @@
       "channels": {
         "site": null,
         "telegram": null,
-        "vk": null,
+        "vk": 366,
         "dzen": null
       },
       "planning_history": [
