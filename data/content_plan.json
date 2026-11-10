@@ -47,22 +47,6 @@
   "approved_by_tim": true,
   "queue": [
     {
-      "id": "2026-11-05-control-first-automatic",
-      "date": "2026-11-05",
-      "kind": "control",
-      "rubric": "Кисловодск и КМВ",
-      "query": "авторские экскурсии кисловодск",
-      "slug": "avtorskie-ekskursii-kislovodsk",
-      "status": "announced",
-      "authorization": "Tim explicit acceptance publication 2026-11-05",
-      "channels": {
-        "site": "https://timlabs.online/journal/avtorskie-ekskursii-kislovodsk/",
-        "telegram": 340,
-        "vk": 360,
-        "dzen": null
-      }
-    },
-    {
       "id": "2026-10-14-u",
       "date": "2026-10-14",
       "kind": "update",
@@ -588,6 +572,22 @@
       }
     },
     {
+      "id": "2026-11-05-control-first-automatic",
+      "date": "2026-11-05",
+      "kind": "control",
+      "rubric": "Кисловодск и КМВ",
+      "query": "авторские экскурсии кисловодск",
+      "slug": "avtorskie-ekskursii-kislovodsk",
+      "status": "announced",
+      "authorization": "Tim explicit acceptance publication 2026-11-05",
+      "channels": {
+        "site": "https://timlabs.online/journal/avtorskie-ekskursii-kislovodsk/",
+        "telegram": 340,
+        "vk": 360,
+        "dzen": null
+      }
+    },
+    {
       "id": "2026-11-06-a",
       "date": "2026-11-06",
       "kind": "new",
@@ -704,6 +704,13 @@
           "hold_id": "75cabab6ec9f413eb737d301422fa68f",
           "cover_sha256": "85fab57b2a7aec5923a765ffd9ce13a4fd503532a894789582628c1feeb6acc5",
           "document_sha256": "31ad734fb1fa0beee12d609cd7e37b8aba6d993ea042cb394e90d4c4797b28c4"
+        },
+        {
+          "at": 1794266577.2768228,
+          "action": "independently_accepted_concept_hold_released",
+          "hold_id": "8b2f62d391514ff0b42e9f9efacd107d",
+          "document_sha256": "f80041403412d082b867648b51438eec001e2c9285486590b0e07930cb2657b9",
+          "review_result": "/seo_agents/knowledge/codex_editorial_review/results/9b0d6b439f46445393bebc5ee38eb51f.json"
         }
       ]
     },
@@ -713,8 +720,8 @@
       "kind": "new",
       "rubric": "Эмоции и психология",
       "query": "как выражать эмоции без конфликтов",
-      "status": "planned",
-      "slug": null,
+      "status": "draft",
+      "slug": "kak-vyrazhat-emotsii-bez-konfliktov",
       "channels": {
         "site": null,
         "telegram": null,
@@ -731,6 +738,99 @@
           "demand_measurement": "not_refetched_not_invented"
         }
       ]
+    },
+    {
+      "id": "2026-11-12-a",
+      "date": "2026-11-12",
+      "kind": "new",
+      "rubric": "ИИ-автоматизация",
+      "query": "как подготовить документы компании для ИИ-ассистента",
+      "status": "draft",
+      "slug": "kak-podgotovit-dokumenty-kompanii-dlya-ii-assistenta",
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      },
+      "planning_history": [
+        {
+          "at": 1794271512.1938653,
+          "action": "root_prepare_specific_source_bounded_core_facet",
+          "parent_core_query": "автоматизация документов нейросеть",
+          "rationale": "Preparation of company document inputs, distinct from existing SEO and assistant acceptance articles",
+          "measured_demand": "not_refetched_not_invented"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-13-a",
+      "date": "2026-11-13",
+      "kind": "new",
+      "rubric": "Родителям",
+      "query": "как объяснить маленькому ребёнку семейное правило",
+      "status": "draft",
+      "slug": "kak-obyasnit-malenkomu-rebenku-semeynoe-pravilo",
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      },
+      "planning_history": [
+        {
+          "at": 1794272974.914638,
+          "action": "root_prepare_source_bounded_parenting_topic",
+          "basis": "existing approved Friday parents rubric; narrow small-child guide grounded in CDC",
+          "semantic_basis": "editorial selection under approved rubric; exact query not claimed to exist in measured semantic core",
+          "demand_measurement": "not_refetched_not_invented"
+        }
+      ]
+    },
+    {
+      "id": "2026-11-14-a",
+      "date": "2026-11-14",
+      "kind": "new",
+      "rubric": "Тело и здоровье",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-15-a",
+      "date": "2026-11-15",
+      "kind": "new",
+      "rubric": "ИИ-автоматизация",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-16-a",
+      "date": "2026-11-16",
+      "kind": "new",
+      "rubric": "Развитие",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
     }
   ],
   "approved_at": "2026-10-14",
