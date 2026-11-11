@@ -251,8 +251,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/retrit-molchaniya.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/retrit-molchaniya-800.webp</image:loc><image:title>Ретрит молчания: правила общения и вопросы организатору</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vyrazhat-emotsii-bez-konfliktov.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vyrazhat-emotsii-bez-konfliktov-800.webp</image:loc><image:title>Как выражать эмоции без конфликтов: просьба вместо обвинения</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga-800.webp</image:loc><image:title>Саморазвитие педагога: как выбрать навык и проверить результат</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Саморазвитие ребенка: как помочь ему расти без давления</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Саморазвитие личности: с чего начать и как не бросить</image:title></image:image>
@@ -266,11 +266,11 @@
     <image:image><image:loc>https://timlabs.online/media/covers/samootsenka-zhenschiny-800.webp</image:loc><image:title>Самооценка женщины: как устроена и что с ней делать</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-perestat-sravnivat-sebya-s-drugimi-800.webp</image:loc><image:title>Как перестать сравнивать себя с другими: практические шаги</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/resursnoe-sostoyanie-800.webp</image:loc><image:title>Ресурсное состояние: как вернуть силы без выгорания</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/retrit-molchaniya-800.webp</image:loc><image:title>Ретрит молчания: правила общения и вопросы организатору</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/meditatsiya-retrit-800.webp</image:loc><image:title>Ретрит по медитации: что это и как начать</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/den-retrita-800.webp</image:loc><image:title>День ретрита: как проходит один день и что он даёт</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/retrit-tsentr-800.webp</image:loc><image:title>Ретрит-центр: как подготовиться к первой поездке и чего ждать</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/yoga-retrit-800.webp</image:loc><image:title>Йога-ретрит: распорядок дня по часам и подготовка к первому</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/retrit-tur-800.webp</image:loc><image:title>Ретрит-тур: чек-лист выбора и вопросы организатору</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtorskie-ekskursii-kislovodsk-800.webp</image:loc><image:title>Авторские экскурсии в Кисловодске: как выбрать маршрут</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/gora-elbrus-800.webp</image:loc><image:title>Эльбрус: что важно знать перед поездкой к высшей точке Европы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/vodopad-beyradi-800.webp</image:loc><image:title>Водопад Байради в Дигории: где находится и как спланировать поездку</image:title></image:image>
@@ -396,6 +396,10 @@
   <url>
     <loc>https://timlabs.online/journal/kak-vosstanovit-sily-posle-rabochego-dny/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-vosstanovit-sily-posle-rabochego-dny.webp</image:loc><image:title>Как восстановить силы после рабочего дня</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/kak-vyrazhat-emotsii-bez-konfliktov/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vyrazhat-emotsii-bez-konfliktov-800.webp</image:loc><image:title>Иллюстрация к статье «Как выражать эмоции без конфликтов: просьба вместо обвинения»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/kak-vyyti-iz-sostoyaniya-zhertvy-v-otnos/</loc>
