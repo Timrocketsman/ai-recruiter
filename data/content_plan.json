@@ -720,10 +720,10 @@
       "kind": "new",
       "rubric": "Эмоции и психология",
       "query": "как выражать эмоции без конфликтов",
-      "status": "draft",
+      "status": "published",
       "slug": "kak-vyrazhat-emotsii-bez-konfliktov",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/kak-vyrazhat-emotsii-bez-konfliktov/",
         "telegram": null,
         "vk": null,
         "dzen": null
