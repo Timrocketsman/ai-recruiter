@@ -251,8 +251,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-vyrazhat-emotsii-bez-konfliktov.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-vyrazhat-emotsii-bez-konfliktov-800.webp</image:loc><image:title>Как выражать эмоции без конфликтов: просьба вместо обвинения</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-podgotovit-dokumenty-kompanii-dlya-ii-assistenta.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-podgotovit-dokumenty-kompanii-dlya-ii-assistenta-800.webp</image:loc><image:title>Как подготовить документы компании для ИИ-ассистента</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga-800.webp</image:loc><image:title>Саморазвитие педагога: как выбрать навык и проверить результат</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Саморазвитие ребенка: как помочь ему расти без давления</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Саморазвитие личности: с чего начать и как не бросить</image:title></image:image>
@@ -261,11 +261,11 @@
     <image:image><image:loc>https://timlabs.online/media/covers/spa-kislovodsk-800.webp</image:loc><image:title>СПА в Кисловодске: полный гид по процедурам и отдыху</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-massazh-800.webp</image:loc><image:title>Массаж в Кисловодске: виды, польза и как выбрать мастера</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-sanatoriy-kakoy-luchshe-800.webp</image:loc><image:title>Какой санаторий в Кисловодске лучше выбрать: честный гид</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vyrazhat-emotsii-bez-konfliktov-800.webp</image:loc><image:title>Как выражать эмоции без конфликтов: просьба вместо обвинения</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/chuzhaya-otvetstvennost/cover.webp</image:loc><image:title>Как перестать брать на себя чужую ответственность</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-podnyat-samootsenku-800.webp</image:loc><image:title>Как поддержать самооценку после неудачи</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samootsenka-zhenschiny-800.webp</image:loc><image:title>Самооценка женщины: как устроена и что с ней делать</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-perestat-sravnivat-sebya-s-drugimi-800.webp</image:loc><image:title>Как перестать сравнивать себя с другими: практические шаги</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/resursnoe-sostoyanie-800.webp</image:loc><image:title>Ресурсное состояние: как вернуть силы без выгорания</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/retrit-molchaniya-800.webp</image:loc><image:title>Ретрит молчания: правила общения и вопросы организатору</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/meditatsiya-retrit-800.webp</image:loc><image:title>Ретрит по медитации: что это и как начать</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/den-retrita-800.webp</image:loc><image:title>День ретрита: как проходит один день и что он даёт</image:title></image:image>
@@ -327,6 +327,10 @@
   <url>
     <loc>https://timlabs.online/journal/kak-perestat-sravnivat-sebya-s-drugimi/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-perestat-sravnivat-sebya-s-drugimi.webp</image:loc><image:title>Как перестать сравнивать себя с другими: практические шаги</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/kak-podgotovit-dokumenty-kompanii-dlya-ii-assistenta/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-podgotovit-dokumenty-kompanii-dlya-ii-assistenta-800.webp</image:loc><image:title>Иллюстрация к статье «Как подготовить документы компании для ИИ-ассистента»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/kak-podnyat-samootsenku/</loc>
