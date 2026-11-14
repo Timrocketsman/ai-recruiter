@@ -296,7 +296,7 @@
   </url>
   <url>
     <loc>https://timlabs.online/privacy/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-14</lastmod>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
@@ -426,8 +426,8 @@
     <loc>https://timlabs.online/journal/gora-elbrus/</loc>
     <lastmod>2026-11-05</lastmod>
   </url>
-  <url><loc>https://timlabs.online/consent/</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq></url>
-  <url><loc>https://timlabs.online/terms/</loc><lastmod>2026-11-09</lastmod><changefreq>yearly</changefreq></url>
+  <url><loc>https://timlabs.online/consent/</loc><lastmod>2026-11-14</lastmod><changefreq>yearly</changefreq></url>
+  <url><loc>https://timlabs.online/terms/</loc><lastmod>2026-11-14</lastmod><changefreq>yearly</changefreq></url>
   <url><loc>https://timlabs.online/journal/chastye-voprosy/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://timlabs.online/journal/den-poleznyh-privychek/</loc>
@@ -466,7 +466,7 @@
   <url><loc>https://timlabs.online/retrity-i-kmv/</loc><lastmod>2026-11-11</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url>
     <loc>https://timlabs.online/ii-avtomatizaciya/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -984,7 +984,7 @@
   </url>
   <url>
     <loc>https://timlabs.online/magazin/</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
