@@ -745,11 +745,11 @@
       "kind": "new",
       "rubric": "ИИ-автоматизация",
       "query": "как подготовить документы компании для ИИ-ассистента",
-      "status": "published",
+      "status": "announced",
       "slug": "kak-podgotovit-dokumenty-kompanii-dlya-ii-assistenta",
       "channels": {
         "site": "https://timlabs.online/journal/kak-podgotovit-dokumenty-kompanii-dlya-ii-assistenta/",
-        "telegram": null,
+        "telegram": 359,
         "vk": null,
         "dzen": null
       },
