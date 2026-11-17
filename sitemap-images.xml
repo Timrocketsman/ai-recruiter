@@ -793,7 +793,10 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-rasslabitsya-posle-stressa/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-dlya-muzhchin/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-dlya-muzhchin/cover.webp</image:loc><image:title>Тёмная куртка на вешалке у стены, кресло и ботинки рядом с окнами с видом на горы.</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/zazhataya-chelyust/cover.webp</image:loc><image:title>Раскрытая книга, очки и чашка чая на деревянном столе у окна, за окном осенние горы</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/telo-na-holode/cover.webp</image:loc><image:title>Вязаный шарф и шерстяные перчатки на скамье у окна, за окном первый снег и горы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-rasslabitsya-posle-stressa/cover.webp</image:loc><image:title>Окно со светлыми шторами, стакан с янтарной жидкостью на подоконнике и осенний пейзаж за стеклом.</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-lica/cover.webp</image:loc><image:title>Вафельное полотенце, миска с тёплой водой и круглое зеркало на столике у окна</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-snyat-napryazhenie/cover.webp</image:loc><image:title>Сумка на скамейке в прихожей, ключи на полке и тёплый свет лампы в комнате</image:title></image:image>
@@ -857,6 +860,11 @@
     <loc>https://timlabs.online/partners/marafdy/kislovodsk-v-noyabre/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kislovodsk-v-noyabre/cover.jpg</image:loc><image:title>Кисловодск в ноябре: что проверить перед поездкой и каждой прогулкой | MARAFDY</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kislovodsk-v-noyabre/cover.webp</image:loc><image:title>Пустая аллея курортного парка с опавшими листьями и фонарём, вдали горы в вечерней дымке</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/massazh-dlya-muzhchin/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-dlya-muzhchin/cover.jpg</image:loc><image:title>Массаж для мужчин: как выбрать по своим пожеланиям, а не по готовому образу | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-dlya-muzhchin/cover.webp</image:loc><image:title>Тёмная куртка на вешалке у стены, кресло и ботинки рядом с окнами с видом на горы.</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/massazh-golovy/</loc>
@@ -938,6 +946,16 @@
     <image:image><image:loc>https://timlabs.online/partners/marafdy/sidyachaya-rabota/cover.webp</image:loc><image:title>Пустое офисное кресло у стола с закрытым ноутбуком перед окном, за окном осенний парк — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/partners/marafdy/telo-na-holode/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/telo-na-holode/cover.jpg</image:loc><image:title>Тело на холоде: как собрать одежду под свой день | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/telo-na-holode/cover.webp</image:loc><image:title>Вязаный шарф и шерстяные перчатки на скамье у окна, за окном первый снег и горы</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/zazhataya-chelyust/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/zazhataya-chelyust/cover.jpg</image:loc><image:title>Зажатая челюсть: как заметить неудобство и не искать его причину по статье | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/zazhataya-chelyust/cover.webp</image:loc><image:title>Раскрытая книга, очки и чашка чая на деревянном столе у окна, за окном осенние горы</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/chuzhaya-otvetstvennost/</loc>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/chuzhaya-otvetstvennost/cover.jpg</image:loc><image:title>Умас во время разговора — к статье «Как перестать брать на себя чужую ответственность»</image:title></image:image>
   </url>
@@ -953,7 +971,9 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/chuzhaya-otvetstvennost/cover.jpg</image:loc><image:title>Статьи об Умасе: отношения, эмоции, ответственность</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-protiv-techeniya/cover.jpg</image:loc><image:title>Статьи об Умасе: отношения, эмоции, ответственность</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-protiv-techeniya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему нельзя просто плыть по течению?»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-iz-chego-ty-sostoish/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему тебе достались именно такие родители?»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-kto-otvechaet-vselennoy/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Кто отвечает, когда ты спрашиваешь Вселенную?»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otkupaeshsya-ot-rebenka/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Откупаешься ли ты от ребёнка игрушками?»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-dostigli-tseli-a-radosti-net/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Достиг цели, а радости нет. Почему так?»</image:title></image:image>
@@ -1019,6 +1039,10 @@
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-fokus-vnimaniya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему ты видишь только то, что ищешь?»</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/partners/umas_osoznanie/sovet-iz-chego-ty-sostoish/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-iz-chego-ty-sostoish/cover.jpg</image:loc><image:title>Умас во время разговора — к статье «Почему тебе достались именно такие родители?»</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/sovet-kto-otvechaet-vselennoy/</loc>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-kto-otvechaet-vselennoy/cover.jpg</image:loc><image:title>Умас во время разговора — к статье «Кто отвечает, когда ты спрашиваешь Вселенную?»</image:title></image:image>
   </url>
@@ -1049,6 +1073,10 @@
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/sovet-potentsial-podarok-ili-gruz/</loc>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-potentsial-podarok-ili-gruz/cover.jpg</image:loc><image:title>Умас во время разговора — к статье «Потенциал — это подарок или груз?»</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/umas_osoznanie/sovet-protiv-techeniya/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-protiv-techeniya/cover.jpg</image:loc><image:title>Умас во время разговора — к статье «Почему нельзя просто плыть по течению?»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/sovet-trudno-priznat-chto-shel-ne-tuda/</loc>
