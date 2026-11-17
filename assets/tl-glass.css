@@ -38,6 +38,7 @@
 .gcard::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;z-index:-1;pointer-events:none;
   background:linear-gradient(135deg,var(--c),transparent 40%,transparent 60%,var(--c2));
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;mask-composite:exclude;opacity:.45;transition:opacity .35s}
 /* зеркальный блик, следует за курсором */
 .gcard::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;border-radius:inherit;

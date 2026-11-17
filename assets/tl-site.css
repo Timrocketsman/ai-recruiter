@@ -14,7 +14,7 @@
 .pa .pp-card .pp-text{padding:18px 20px 18px 0}
 .pa .pp-card .pp-text h2{margin:0 0 8px;font:650 20px/1.25 var(--sans);letter-spacing:-.02em}
 .pa .pp-card .pp-text p{color:var(--mute);font-size:15.5px;margin:0 0 10px}
-.pa .pp-card .pp-text a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-2)}
+.pa .pp-card .pp-text a:not(.btn):not(.pp-btn){color:var(--ink);text-decoration-line:underline;text-decoration-color:var(--line-2);text-decoration-thickness:1px;text-underline-offset:.18em;text-decoration-skip-ink:auto}
 @media (max-width:640px){.pa .pp-card{grid-template-columns:1fr}.pa .pp-card .pp-text{padding:16px 18px 18px}}
 .pa .hero .lead,.pa header.hero p{color:var(--mute)}
 .pa article>h2:first-child,.pa section>h2:first-child{margin-top:0}

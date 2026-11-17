@@ -128,8 +128,8 @@ a{color:inherit}
 .pp-tile h3 a::after{content:"";position:absolute;inset:0;z-index:1}
 .pp-tile p{margin:0;color:var(--mute);font-size:16px}
 .pp-tags{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:auto;padding-top:6px;position:relative;z-index:2}
-.pp-tags a{font-size:14.5px;text-decoration:none;color:var(--ink-2);border-bottom:1px solid var(--line-2);padding:2px 0}
-.pp-tags a:hover{color:var(--accent);border-color:var(--accent)}
+.pp-tags a{font-size:14.5px;text-decoration-line:underline;text-decoration-color:var(--line-2);text-decoration-thickness:1px;text-underline-offset:.18em;text-decoration-skip-ink:auto;color:var(--ink-2);padding:2px 0}
+.pp-tags a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 .t-a{grid-column:span 7;grid-row:span 2}.t-a .ph{aspect-ratio:auto;flex:1 1 auto;min-height:340px}.t-a .bd{flex:0 0 auto}
 .t-b,.t-c{grid-column:span 5}
 .t-d{grid-column:span 12;flex-direction:row}.t-d .ph{aspect-ratio:auto;width:42%;min-height:260px}.t-d .bd{justify-content:center;padding:32px 40px}

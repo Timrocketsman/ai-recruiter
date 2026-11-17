@@ -89,8 +89,8 @@
 .pa article>section:first-child h2{margin-top:10px}
 .pa h3{margin:26px 0 10px;font:650 20px/1.25 var(--sans);color:var(--ink)}
 .pa p{margin:0 0 16px}
-.pa article a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-2);transition:border-color var(--t-fast) ease,color var(--t-fast) ease}
-.pa article a:hover{color:var(--accent);border-color:var(--accent)}
+.pa article a:not(.btn):not(.pp-btn){color:var(--ink);text-decoration-line:underline;text-decoration-color:var(--line-2);text-decoration-thickness:1px;text-underline-offset:.18em;text-decoration-skip-ink:auto;transition:text-decoration-color var(--t-fast) ease,color var(--t-fast) ease}
+.pa article a:not(.btn):not(.pp-btn):hover{color:var(--accent);text-decoration-color:var(--accent)}
 .pa ul,.pa ol{margin:0 0 18px;padding-left:22px}.pa li{margin:7px 0}
 .pa li::marker{color:var(--accent)}
 .pa blockquote{margin:26px 0;padding:6px 0 6px 22px;border-left:2px solid var(--accent);font:500 italic clamp(21px,2vw,26px)/1.35 var(--serif);color:var(--ink)}
@@ -98,8 +98,8 @@
 .pa article img{border-radius:var(--r-sm);margin:8px 0 16px}
 .pa .tl-hub,.pa .tls,.pa .tl-master{background:var(--bone)!important;border:1px solid var(--line)!important;border-radius:var(--r)!important;color:var(--ink)!important;padding:20px 22px!important}
 .pa .tl-hub b{display:block;font:400 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:6px}
-.pa .tl-hub a,.pa .tls a,.pa .tl-master a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-2)}
-.pa .tl-hub a:hover,.pa .tls a:hover,.pa .tl-master a:hover{color:var(--accent);border-color:var(--accent)}
+.pa .tl-hub a:not(.btn):not(.pp-btn),.pa .tls a:not(.btn):not(.pp-btn),.pa .tl-master a:not(.btn):not(.pp-btn){color:var(--ink);text-decoration-line:underline;text-decoration-color:var(--line-2);text-decoration-thickness:1px;text-underline-offset:.18em;text-decoration-skip-ink:auto}
+.pa .tl-hub a:hover,.pa .tls a:hover,.pa .tl-master a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 .pa .tl-master a.btn,.pa .tls a.btn{border:0;background:var(--accent);color:var(--accent-ink);border-radius:999px;padding:10px 18px;font-weight:600}
 .pa .faq-wrap,.pa .related{margin:44px 0}
 .pa .faq-wrap h2,.pa .related h2{font-size:clamp(22px,2.2vw,28px);margin-top:0}
