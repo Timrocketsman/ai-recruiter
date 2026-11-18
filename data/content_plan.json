@@ -851,15 +851,16 @@
       "date": "2026-11-19",
       "kind": "new",
       "rubric": "ИИ-автоматизация",
-      "query": null,
-      "status": "needs_topic",
+      "query": "Как проверить, что заявки из Telegram-бота сохраняются и доходят до ответственного",
+      "status": "planned",
       "slug": null,
       "channels": {
         "site": null,
         "telegram": null,
         "vk": null,
         "dzen": null
-      }
+      },
+      "form": "кейс"
     },
     {
       "id": "2026-11-20-a",
