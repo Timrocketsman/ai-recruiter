@@ -698,9 +698,6 @@
   </url>
   <url>
     <loc>https://timlabs.online/magazin/</loc>
-    <image:image><image:loc>https://timlabs.online/media/studio/book1-400.webp</image:loc><image:title>Обложка книги «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/studio/book2-400.webp</image:loc><image:title>Обложка книги «Духовное наследие поколения ПЕПСИ»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/studio/book3-400.webp</image:loc><image:title>Обложка книги «Промт-инженеринг для новичков»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book1.webp</image:loc><image:title>Обложка книги «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book2.webp</image:loc><image:title>Обложка книги «Духовное наследие поколения ПЕПСИ»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book3.webp</image:loc><image:title>Обложка книги «Промт-инженеринг для новичков»</image:title></image:image>
