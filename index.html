@@ -448,9 +448,110 @@ html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow
  .tl-portal-preview,.tl-portal-preview::after{transition:none}
  .tl-cart-flight,.tl-cart-spark{display:none}
 }
+
+/* Match block rhythm across widths while keeping the existing hierarchy. */
+.tl-service-copy,.tl-service-feature .tl-service-copy{padding:clamp(22px,2.65vw,34px)}
+.tl-service-feature .tl-service-copy{padding-bottom:18px}
+.tl-service-learn .tl-service-copy{padding-right:15px}
+.tl-service-link{width:fit-content;max-width:100%}
+.tl-service .tl-service-copy p{margin-bottom:12px}
+.tl-service-trace .tl-service-copy p{margin:0}
+.tl-home-hero .pp-facts>div{min-width:0}
+.tl-home-hero .pp-facts span{line-height:1.45}
+.tl-home-hero .pp-cta{align-items:center}
+.tl-home-hero .pp-link,.tl-portal-link{text-underline-offset:5px}
+.shop .sh-bd{min-width:0}
+.shop .sh-buy{margin-top:auto}
+.shop .sh-chip:focus-visible{outline-offset:-3px}
+@media(max-width:767px){
+ .tl-home-hero .pp-facts{
+   grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:8px;padding-top:18px
+ }
+ .tl-home-hero .pp-facts>div{padding:0;gap:5px}
+ .tl-home-hero .pp-facts>div:last-child{grid-column:auto}
+ .tl-home-hero .pp-facts b{font-size:clamp(14px,4.35vw,19px)}
+ .tl-home-hero .pp-cta{column-gap:12px;row-gap:8px}
+ .tl-home-hero .tl-depth-meta{margin-top:8px}
+ .tl-service-trace .tl-service-copy p{margin:12px 0}
+ .shop .sh-filters{
+   margin-inline:calc(0px - var(--gut,16px));padding-inline:var(--gut,16px);
+   scroll-padding-inline:var(--gut,16px)
+ }
+ .shop .sh-grid>.sh-card:not(.is-svc){grid-template-columns:clamp(91px,30vw,120px) minmax(0,1fr)}
+ .shop .sh-bd{padding:clamp(15px,4.6vw,22px)}
+}
 </style>
-</head>
-<body>
+<!--tl-space-head-v1--><style id="tl-space-theme">/* The TimLabs background. Text and layout remain in the page's own layers. */
+body:has(>.tl-space){isolation:isolate}
+body:has(>.tl-space)::before{display:none}
+.tl-space{
+  --tl-space-art:none;
+  --tl-space-left:#203c61;
+  --tl-space-right:#3e2d69;
+  --tl-space-glint:#387ac1;
+  --tl-space-level:.92;
+  position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;
+  contain:strict;
+}
+.tl-space[data-tone=quiet]{--tl-space-level:.56}
+:root[data-theme=light] .tl-space,:root.auto-light:not([data-theme=dark]) .tl-space{
+  --tl-space-left:#becfe6;
+  --tl-space-right:#d8cdef;
+  --tl-space-glint:#aacceb;
+}
+.tl-space.tl-space-ready{--tl-space-art:url("/media/studio/field-night-v1.webp")}
+:root[data-theme=light] .tl-space.tl-space-ready,
+:root.auto-light:not([data-theme=dark]) .tl-space.tl-space-ready{--tl-space-art:url("/media/studio/field-day-v1.webp")}
+:root:not([data-theme]) .tl-space{color-scheme:light dark}
+@media(prefers-color-scheme:light){
+ :root:not([data-theme]):not(.auto-light) .tl-space{
+   --tl-space-left:#becfe6;--tl-space-right:#d8cdef;--tl-space-glint:#aacceb
+ }
+ :root:not([data-theme]):not(.auto-light) .tl-space.tl-space-ready{
+   --tl-space-art:url("/media/studio/field-day-v1.webp")
+ }
+}
+.tl-space>span{position:absolute;display:block;inset:-11% -8%;opacity:var(--tl-space-level)}
+.tl-space-far{
+  background:radial-gradient(ellipse at 3% 32%,var(--tl-space-left),transparent 39%),
+             radial-gradient(ellipse at 98% 71%,var(--tl-space-right),transparent 43%);
+}
+.tl-space-format{
+  background-image:var(--tl-space-art);
+  background-size:100% 100%;
+  opacity:calc(var(--tl-space-level) * .74)!important;
+}
+.tl-space-glint{
+  background:radial-gradient(ellipse at 5% 82%,var(--tl-space-glint),transparent 23%),
+             radial-gradient(ellipse at 96% 24%,var(--tl-space-glint),transparent 17%);
+  opacity:calc(var(--tl-space-level) * .22)!important;
+}
+.tl-space-control{
+  display:inline-flex;align-items:center;min-height:44px;padding:0 9px;
+  margin:4px 0 0;color:var(--ink-2,#abb5c7);background:transparent;border:1px solid transparent;
+  border-radius:8px;font:500 13px/1.25 var(--sans,system-ui);text-decoration:underline;text-underline-offset:4px;cursor:pointer;
+}
+.tl-space-control:hover{border-color:var(--line-2)}
+.tl-space-control[hidden]{display:none}
+@media(max-width:767px){
+ .tl-space>span{inset:-10% -19%}
+ .tl-space[data-tone=quiet]{--tl-space-level:.44}
+}
+@media(forced-colors:active),print{
+ .tl-space,.tl-space-control{display:none!important}
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .tl-space[data-tone=studio]>span{transition:translate 720ms cubic-bezier(.23,1,.32,1)}
+ .tl-space[data-tone=studio] .tl-space-far{
+   translate:calc(var(--tl-depth-x,0px) * .35) calc(var(--tl-depth-y,0px) * .35)
+ }
+ .tl-space[data-tone=studio] .tl-space-format{translate:var(--tl-depth-x,0px) var(--tl-depth-y,0px)}
+ .tl-space[data-tone=studio] .tl-space-glint{
+   translate:calc(var(--tl-depth-x,0px) * 1.4) calc(var(--tl-depth-y,0px) * 1.4)
+ }
+}
+</style><script src="/assets/tl-space-v1.js?v=9bcf3ef874" defer></script><!--/tl-space-head-v1--></head>
+<body><!--tl-space-body-v1--><div class="tl-space" data-tone="studio" aria-hidden="true"><span class="tl-space-far"></span><span class="tl-space-format"></span><span class="tl-space-glint"></span></div><!--/tl-space-body-v1-->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <g id="i-tg"><path d="M22 3 11.2 13.6M22 3 15.1 21.5 11.2 13.6 2.6 9.7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></g>
   <g id="i-yt"><rect x="2.5" y="5.6" width="19" height="12.8" rx="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M10.3 9.4 15.6 12l-5.3 2.6z" fill="currentColor"/></g>
