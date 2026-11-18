@@ -2,6 +2,7 @@
 (() => {
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const rails = [];
+  const wide = matchMedia("(min-width: 960px)");
   const isPaused = () => {
     if (reduced.matches) return true;
     try { return localStorage.getItem("tl-studio-motion") === "paused"; }
@@ -28,6 +29,7 @@
     meter.setAttribute("aria-hidden", "true");
     tools.append(prev, number, next, meter);
     rail.dataset.enhanced = "";
+    if (books) meter.style.setProperty("--rail-segment", `${100 / slots.length}%`);
     let stops = [];
     let width = 1;
     let active = -1;
@@ -50,25 +52,43 @@
       const start = slots[0].offsetLeft;
       const end = track.scrollWidth - track.clientWidth;
       width = slots[0].offsetWidth + (parseFloat(getComputedStyle(track).columnGap) || 0);
-      stops = slots.map(slot => Math.min(end, slot.offsetLeft - start));
+      stops = books && wide.matches
+        ? slots.map((_, index) => end * index / (slots.length - 1))
+        : slots.map(slot => Math.min(end, slot.offsetLeft - start));
       render();
     }
 
     function render() {
       if (!stops.length) return;
       const scroll = track.scrollLeft;
+      const extent = stops.at(-1) || 1;
+      const stepWidth = books && wide.matches ? Math.max(1, extent / (slots.length - 1)) : width;
       const current = stops.reduce((best, stop, index) =>
         Math.abs(stop - scroll) < Math.abs(stops[best] - scroll) ? index : best, 0);
       slots.forEach((slot, index) => {
-        const distance = (stops[index] - scroll) / width;
-        if (paused) {
+        const distance = (stops[index] - scroll) / stepWidth;
+        if (books) {
+          const depth = paused ? 0 : Math.min(1, Math.abs(distance));
+          const approach = 1 - depth * depth * (3 - 2 * depth);
+          const signed = Math.max(-1, Math.min(1, distance));
+          const style = cards[index].style;
+          style.setProperty("--rail-y", `${(depth * 7).toFixed(1)}px`);
+          style.setProperty("--rail-light", paused ? 0 : approach * .72);
+          style.setProperty("--rail-shine", `${(signed * 34).toFixed(1)}px`);
+          style.setProperty("--rail-cover", `${(paused ? 0 : signed * 12).toFixed(2)}deg`);
+          style.setProperty("--rail-cover-x", `${(paused ? 0 : signed * 5).toFixed(1)}px`);
+          style.setProperty("--rail-cover-y", `${(depth * 5).toFixed(1)}px`);
+          style.setProperty("--rail-cover-scale", (1 - depth * .045).toFixed(3));
+          style.setProperty("--rail-reflection", `${(signed * 78).toFixed(1)}%`);
+          style.setProperty("--rail-reflection-alpha", paused ? 0 : depth * approach * .72);
+        } else if (paused) {
           cards[index].style.removeProperty("--rail-transform");
         } else {
-          const angle = Math.atan(distance * (books ? .88 : .66));
+          const angle = Math.atan(distance * .66);
           const curve = 1 - Math.cos(angle);
           const x = -distance * width * Math.min(curve * .36, .19);
-          const y = curve * (books ? 52 : 34);
-          const z = -curve * (books ? 240 : 192);
+          const y = curve * 34;
+          const z = -curve * 192;
           cards[index].style.setProperty("--rail-transform",
             `perspective(840px) translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,${z.toFixed(1)}px) rotateY(${angle.toFixed(4)}rad)`);
         }
@@ -77,7 +97,8 @@
           else slot.removeAttribute("aria-current");
         }
       });
-      meter.style.setProperty("--rail-progress", Math.min(1, (scroll / width + 1) / slots.length));
+      if (books) meter.style.setProperty("--rail-meter-x", `${100 * (slots.length - 1) * Math.min(1, scroll / extent)}%`);
+      else meter.style.setProperty("--rail-progress", Math.min(1, (scroll / width + 1) / slots.length));
       if (current === active) return;
       active = current;
       prev.setAttribute("aria-disabled", String(active === 0));
@@ -107,14 +128,21 @@
     prev.addEventListener("click", () => step(-1));
     next.addEventListener("click", () => step(1));
     track.addEventListener("scroll", schedule, {passive: true});
+    if (books) track.addEventListener("scrollend", () => {
+      if (!wide.matches || gesture || !stops.length) return;
+      render();
+      if (Math.abs(stops[active] - track.scrollLeft) > 2) go(active);
+    });
     track.addEventListener("keydown", event => {
       if (event.target !== track || event.altKey || event.ctrlKey || event.metaKey) return;
       if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
         event.preventDefault();
-        step(event.key === "ArrowRight" ? 1 : -1);
+        const direction = event.key === "ArrowRight" ? 1 : -1;
+        if (books) go(active + direction, true);
+        else step(direction);
       } else if (event.key === "Home" || event.key === "End") {
         event.preventDefault();
-        go(event.key === "Home" ? 0 : slots.length - 1);
+        go(event.key === "Home" ? 0 : slots.length - 1, books);
       }
     });
     track.addEventListener("focusin", event => {

@@ -462,6 +462,220 @@ html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow
 }
 @media(prefers-reduced-motion:reduce){.tl-rail-slot>article{transform:none}}
 </style>
+<style id="tl-books-design">.tl-rail:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  --rail-card:clamp(286px,34cqi,402px);
+  --rail-start:14px;
+  --rail-gap:12px;
+  --rail-round:18px;
+  isolation:isolate;
+}
+.tl-rail[data-rail=books]:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){--rail-card:clamp(350px,39cqi,444px);--rail-tint:#9386e4}
+.tl-rail:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *)::before{
+  inset:0 0 54px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 12% 100%,color-mix(in srgb,var(--rail-tint) 14%,transparent),transparent 64%),
+    linear-gradient(165deg,color-mix(in srgb,var(--paper-2) 66%,transparent),color-mix(in srgb,var(--paper-2) 20%,transparent));
+}
+.tl-rail:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *)::after{
+  inset:auto 13px 62px;
+  height:5px;
+  border:0;
+  border-radius:100%;
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--rail-tint) 52%,var(--line)) 13%,var(--line) 83%,transparent);
+  box-shadow:0 4px 13px color-mix(in srgb,var(--rail-tint) 30%,transparent);
+}
+.shop .sh-group .sh-grid.tl-rail-scroll:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  padding-block:15px 23px;
+  border-radius:20px;
+  mask-image:linear-gradient(90deg,#000 calc(100% - 13px),transparent 100%);
+}
+.tl-rail-slot > article:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  transform:translateY(var(--rail-y,0px));
+  transform-origin:center bottom;
+  backface-visibility:visible;
+  border-radius:var(--rail-round);
+}
+.tl-rail-slot > article:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *)::after{
+  content:"";
+  position:absolute;
+  height:1px;
+  inset:0 16% auto;
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--rail-tint) 46%,transparent),transparent);
+  opacity:var(--rail-light,.15);
+  pointer-events:none;
+}
+.tl-rail-tools:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){padding-block:6px 0;padding-inline:5px 13px}
+.tl-rail-index:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){order:3}
+.tl-rail-meter:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){order:4;max-width:none;margin-inline:0 7px}
+.tl-rail-tools button:first-child:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){order:1}
+.tl-rail-tools button:nth-of-type(2):where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){order:2}
+.shop .tl-rail-slot>.sh-card:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  background:
+    linear-gradient(150deg,color-mix(in srgb,var(--rail-tint) 6%,transparent),transparent 40%),
+    var(--paper-2);
+  border-radius:var(--rail-round);
+}
+.shop .tl-rail[data-rail=books] .tl-rail-slot>.sh-card:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  display:grid;
+  grid-template-columns:minmax(116px,36%) minmax(0,1fr);
+  min-height:310px;
+}
+.shop .tl-rail[data-rail=books] .tl-rail-slot .sh-ph:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  box-sizing:border-box;
+  display:grid;
+  place-items:center;
+  align-self:stretch;
+  padding:16px 12px;
+  border:0;
+  border-inline-end:1px solid var(--line);
+  background:
+    radial-gradient(ellipse at 46% 70%,color-mix(in srgb,var(--rail-tint) 23%,transparent),transparent 72%),
+    color-mix(in srgb,var(--paper) 70%,transparent);
+}
+.shop .tl-rail[data-rail=books] .tl-rail-slot .sh-ph img:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  width:100%;
+  height:auto;
+  max-width:140px;
+  max-height:none;
+  object-fit:contain;
+  transform:perspective(530px) rotateY(var(--rail-cover,0deg));
+  transform-origin:center;
+  box-shadow:3px 3px 0 color-mix(in srgb,var(--ink) 20%,var(--paper)),8px 12px 21px #07090f55;
+}
+.shop .tl-rail-slot>.sh-card .sh-bd:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){padding:19px 20px 18px}
+.shop .tl-rail-slot>.sh-card .sh-t:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){font-size:19px;line-height:1.25}
+.shop .tl-rail-slot>.sh-card .sh-price:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){font-size:17px}
+.shop .tl-rail-slot>.sh-card .sh-buy:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){margin-top:auto}
+.shop .tl-rail-slot>.sh-card .sh-add:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){min-height:44px}
+
+
+@media(max-width:767px){.tl-rail:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *),
+.tl-rail[data-rail=books]:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){--rail-card:87cqi;--rail-gap:9px;--rail-start:10px;--rail-round:15px}
+.shop .sh-group .sh-grid.tl-rail-scroll:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){padding-block:11px 18px}
+.shop .tl-rail[data-rail=books] .tl-rail-slot>.sh-card:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+    display:flex;
+    min-height:0;
+  }
+.shop .tl-rail[data-rail=books] .tl-rail-slot .sh-ph:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+    height:164px;
+    padding:12px;
+    border:0;
+    border-bottom:1px solid var(--line);
+  }
+.shop .tl-rail[data-rail=books] .tl-rail-slot .sh-ph img:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){width:auto;height:139px}
+.shop .tl-rail-slot>.sh-card .sh-bd:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){padding:16px}
+.shop .tl-rail-slot>.sh-card .sh-t:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){font-size:17px}}
+
+@media(prefers-reduced-motion:reduce){.tl-rail-slot > article:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *),
+.shop .tl-rail[data-rail=books] .tl-rail-slot .sh-ph img:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){transform:none}}
+.tl-rail:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *),
+.tl-rail[data-rail=books]:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  --rail-tint:color-mix(in srgb,var(--accent) 68%,var(--ink-2));
+  --rail-shell:color-mix(in srgb,var(--paper) 88%,var(--paper-2));
+  --rail-surface:color-mix(in srgb,var(--paper-2) 92%,var(--paper));
+}
+.tl-rail:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *)::before{
+  inset:0;
+  border-radius:21px;
+  background:var(--rail-shell);
+}
+.tl-rail:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *)::after{display:none}
+.shop .sh-group .sh-grid.tl-rail-scroll:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  mask-image:linear-gradient(90deg,#000 calc(100% - 18px),transparent 100%);
+}
+.tl-rail-slot > article:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  background:var(--rail-surface);
+  border:1px solid var(--line);
+}
+.tl-rail-slot > article:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *)::after{
+  inset:0 8% auto;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--rail-tint),transparent);
+  opacity:var(--rail-light,0);
+  transform:translateX(var(--rail-shine,0px));
+}
+.tl-rail-slot[aria-current=true] > article:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *),
+.shop .tl-rail-slot[aria-current=true] > .sh-card:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  border-color:color-mix(in srgb,var(--rail-tint) 32%,var(--line-2));
+}
+.shop .tl-rail-slot>.sh-card:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  background:var(--rail-surface);
+}
+.shop .tl-rail[data-rail=books] .tl-rail-slot>.sh-card:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){min-height:305px}
+.shop .tl-rail[data-rail=books] .tl-rail-slot .sh-ph:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 40% 68%,color-mix(in srgb,var(--accent) 13%,transparent),transparent 69%),
+    color-mix(in srgb,var(--paper) 87%,var(--paper-2));
+}
+.shop .tl-rail[data-rail=books] .tl-rail-slot .sh-ph:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *)::after{
+  content:"";position:absolute;pointer-events:none;inset:-14% 0;
+  background:linear-gradient(116deg,transparent 39%,color-mix(in srgb,var(--rail-tint) 30%,transparent) 50%,transparent 61%);
+  transform:translateX(var(--rail-reflection,75%));
+  opacity:var(--rail-reflection-alpha,0);
+}
+.shop .tl-rail[data-rail=books] .tl-rail-slot .sh-ph img:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  transform:perspective(680px) translate3d(var(--rail-cover-x,0px),var(--rail-cover-y,0px),0)
+      rotateY(var(--rail-cover,0deg)) scale(var(--rail-cover-scale,1));
+}
+.shop .tl-rail-slot>.sh-card .sh-bd:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){padding:18px 19px}
+.shop .tl-rail-slot>.sh-card .sh-buy:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){gap:8px}
+.shop .tl-rail-slot>.sh-card .sh-add:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  width:auto;
+  min-width:min(100%,148px);
+  padding-inline:18px;
+}
+.tl-rail-tools:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  position:relative;
+  min-height:57px;
+  padding:2px 14px 10px;
+  gap:8px;
+}
+.tl-rail-tools button:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  box-shadow:none;
+  background:transparent;
+  border-radius:10px;
+}
+.tl-rail-tools button[aria-disabled=false]:hover:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  background:var(--paper-2);
+  border-color:var(--line-2);
+}
+.tl-rail-index:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  margin-inline:2px 6px;
+  color:var(--ink-2);
+  font-size:12px;
+}
+.tl-rail-meter:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+  height:2px;
+  overflow:hidden;
+  background:var(--line-2);
+}
+.tl-rail-meter:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *)::after{
+  width:var(--rail-segment,25%);
+  background:linear-gradient(90deg,var(--line-2),var(--rail-tint));
+  border-radius:inherit;
+  transform:translate3d(var(--rail-meter-x,0%),0,0);
+}
+
+
+@media(max-width:767px){.tl-rail:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *)::before{border-radius:16px}
+.shop .tl-rail[data-rail=books] .tl-rail-slot>.sh-card:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){min-height:0}
+.shop .tl-rail-slot>.sh-card .sh-bd:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){padding:15px}
+.tl-rail-tools:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){padding-inline:10px}}
+
+@media(prefers-reduced-motion:reduce){.shop .tl-rail[data-rail=books] .tl-rail-slot .sh-ph img:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){transform:none}
+.shop .tl-rail[data-rail=books] .tl-rail-slot .sh-ph:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *)::after{display:none}}
+
+
+@media(min-width:960px){
+.shop .sh-group .tl-rail[data-enhanced] .tl-rail-scroll:where(.tl-rail[data-rail=books],.tl-rail[data-rail=books] *){
+    padding-inline-end:var(--rail-start);
+    scroll-snap-type:none;
+  }}
+</style>
 <script type="text/javascript">window.tlStopMetrika = function () {
   // Revocation never reloads the page or discards an unsent form.
   window.__tlMetrikaRevoked = true;
@@ -613,7 +827,7 @@ body:has(>.tl-space)::before{display:none}
 <script src="/assets/tl-motion.js?v=d8a3c0e8d4" defer></script>
 <script src="/assets/tl-shop.js?v=67608f32c5" defer></script>
 <script src="/assets/tl-studio-depth-v2.js?v=416314d5a5" defer></script>
-<script src="/assets/tl-rails-v1.js?v=93ffb1eb58" defer fetchpriority="low"></script>
+<script src="/assets/tl-rails-v1.js?v=db57748ac6" defer fetchpriority="low"></script>
 <!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
 <style>@layer tl-base,legacy;@layer legacy{
 #tl-consent-veil{position:fixed;inset:0;z-index:9998;display:none;
