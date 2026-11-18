@@ -201,6 +201,10 @@ def main():
             open(p, "w", encoding="utf-8").write(h2)
         print("страницы %s нет — раздел не вставлен" % PAGE)
         return
+    # The studio service composition belongs to home_v2, including rebuilds.
+    if re.search(re.escape(START) + r'\s*<section class="pp-sec tl-services"', h):
+        print("раздел студии сохранён: сборщик home_v2")
+        return
     new = block(count_articles())
     if START in h:
         h2 = re.sub(re.escape(START) + ".*?" + re.escape(END) + "\n?", lambda m: new, h, count=1, flags=re.S)
