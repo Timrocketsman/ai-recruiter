@@ -34,8 +34,9 @@
   </url>
   <url>
     <loc>https://timlabs.online/</loc>
-    <image:image><image:loc>https://timlabs.online/media/paper/gory-kislovodsk-rassvet.webp</image:loc><image:title>Горы Кавказа над Кисловодском перед рассветом — Кавминводы</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/avatar.jpg</image:loc><image:title>Тим — основатель TimLabs</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/studio/kompas-case.webp</image:loc><image:title>Журнал «Компас»: реальная страница проекта TimLabs со статьями и обложками</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/avatar.webp</image:loc><image:title>Тим — основатель TimLabs</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/showcase/books/book3.webp</image:loc><image:title>Обложка книги Тимура Гуцева «Промт-инженеринг для новичков»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/paper/podgotovka-k-rodam-doula.webp</image:loc><image:title>Будущая мама перед родами: подготовка к родам и сопровождение беременности с доулой</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/paper/massazh-na-domu-kislovodsk.webp</image:loc><image:title>Спокойный отдых на массажном столе: велнес-массаж на дому в Кисловодске</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/paper/retrit-zheleznovodsk-beshtau.webp</image:loc><image:title>Деревянный дом на склоне у Железноводска и гора Бештау — место для ретрита</image:title></image:image>
@@ -51,7 +52,6 @@
     <image:image><image:loc>https://timlabs.online/media/showcase/music/rel_1877660088_s.webp</image:loc><image:title>Обложка: Внутренний свет — Tim Rockets</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book1.webp</image:loc><image:title>Книга «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book2.webp</image:loc><image:title>Книга «Духовное наследие поколения ПЕПСИ»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/showcase/books/book3.webp</image:loc><image:title>Книга «Промт-инженеринг для новичков»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book4.webp</image:loc><image:title>Книга «Мемуары зерокодера»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book5.webp</image:loc><image:title>Книга «Лёгкий способ отказа от зависимостей: Революция сознания»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book6.webp</image:loc><image:title>Книга «Архитектор судьбы»</image:title></image:image>
@@ -698,6 +698,9 @@
   </url>
   <url>
     <loc>https://timlabs.online/magazin/</loc>
+    <image:image><image:loc>https://timlabs.online/media/studio/book1-400.webp</image:loc><image:title>Обложка книги «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/studio/book2-400.webp</image:loc><image:title>Обложка книги «Духовное наследие поколения ПЕПСИ»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/studio/book3-400.webp</image:loc><image:title>Обложка книги «Промт-инженеринг для новичков»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book1.webp</image:loc><image:title>Обложка книги «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book2.webp</image:loc><image:title>Обложка книги «Духовное наследие поколения ПЕПСИ»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/showcase/books/book3.webp</image:loc><image:title>Обложка книги «Промт-инженеринг для новичков»</image:title></image:image>
@@ -793,7 +796,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-dlya-muzhchin/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-dyshat-chtoby-rasslabitsya/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-dyshat-chtoby-rasslabitsya/cover.webp</image:loc><image:title>Открытое окно с льняной занавеской и зелёное растение на подоконнике, за окном горы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-dlya-muzhchin/cover.webp</image:loc><image:title>Тёмная куртка на вешалке у стены, кресло и ботинки рядом с окнами с видом на горы.</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/zazhataya-chelyust/cover.webp</image:loc><image:title>Раскрытая книга, очки и чашка чая на деревянном столе у окна, за окном осенние горы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/telo-na-holode/cover.webp</image:loc><image:title>Вязаный шарф и шерстяные перчатки на скамье у окна, за окном первый снег и горы</image:title></image:image>
@@ -829,6 +833,11 @@
   <url>
     <loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-chasto-mozhno-delat-massazh/cover.webp</image:loc><image:title>Деревянный метроном на тёмной полке у изумрудной стены, тёплый золотой свет сбоку, длинная мягкая тень — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/kak-dyshat-chtoby-rasslabitsya/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-dyshat-chtoby-rasslabitsya/cover.jpg</image:loc><image:title>Пауза без дыхательной техники: как выбрать место, звук и время | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-dyshat-chtoby-rasslabitsya/cover.webp</image:loc><image:title>Открытое окно с льняной занавеской и зелёное растение на подоконнике, за окном горы</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/kak-podgotovitsya-k-massazhu/</loc>

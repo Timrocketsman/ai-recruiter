@@ -145,6 +145,8 @@ window.tlLoadMetrika = function () {
 @media (prefers-reduced-motion:reduce){.gd-go,.gd-go i{animation:none}}
 </style>
 <link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="icon" type="image/png" sizes="120x120" href="/favicon-120x120.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style id="timlabs-frame-guard">html.tl-framed body{display:none!important}</style>
+<script data-tl-frame="2">if(self!==top){document.documentElement.classList.add("tl-framed");try{top.location.replace(self.location.href)}catch(e){}}</script>
 <style id="tl-home-business-v1">@layer legacy{
 .pp-home-business .pp-hero-text{padding-top:12px}
 .pp-home-business h1{font-size:clamp(32px,4.1vw,56px)}
@@ -159,8 +161,91 @@ window.tlLoadMetrika = function () {
 <link rel="preload" href="/assets/fonts/corm-cyr-500i.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/tl-paper.css?v=e23f652ff9">
 <link rel="stylesheet" href="/assets/tl-site.css?v=2b8ae8fabc">
-<style id="timlabs-frame-guard">html.tl-framed body{display:none!important}</style>
-<script data-tl-frame="2">if(self!==top){document.documentElement.classList.add("tl-framed");try{top.location.replace(self.location.href)}catch(e){}}</script>
+<link rel="preload" as="image" href="/media/studio/kompas-case-480.webp" media="(max-width:767px)" fetchpriority="high">
+<style id="tl-studio-design">/* TimLabs studio · scoped home/store composition · 18 Nov 2026.
+   Native CSS only. Existing catalog, cart, fonts and SEO stay authoritative. */
+.tl-home-hero{padding:clamp(44px,6vw,84px) 0 32px}
+.tl-home-hero .pp-wrap{align-items:center;gap:28px}
+.tl-home-hero .pp-hero-text{grid-column:1/7;padding-top:0;max-width:600px}
+.tl-home-hero h1{font-size:clamp(38px,4.4vw,66px);line-height:1.04;letter-spacing:-.045em;margin:0 0 26px}
+.tl-home-hero h1 em{white-space:normal}
+.tl-home-hero .pp-lead{max-width:42ch;font-size:18px;line-height:1.65;margin:0 0 30px}
+.tl-home-hero .pp-hero-art{grid-column:7/13;min-width:0;align-self:center}
+.tl-case{margin:0;border:1px solid var(--line-2);border-radius:24px;background:var(--paper-2);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.12)}
+.tl-case>a{display:block;overflow:hidden}
+.tl-case img{width:100%;height:auto;display:block;aspect-ratio:24/17;object-fit:cover}
+.tl-case figcaption{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;border-top:1px solid var(--line)}
+.tl-case figcaption span{font-size:13px;color:var(--mute);line-height:1.6}
+.tl-case figcaption b{display:block;color:var(--ink);font-size:16px}
+.tl-case figcaption a{font-size:13px;color:var(--ink);text-underline-offset:4px;min-height:44px;display:flex;align-items:center}
+.tl-home-hero .pp-tim{position:static;inset:auto;display:flex;width:fit-content;margin:18px 0 0;padding:0;background:none;border:0;border-radius:0;box-shadow:none;backdrop-filter:none;gap:12px;color:var(--ink);text-decoration:none}
+.tl-home-hero .pp-tim img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.tl-home-hero .pp-tim span{font-size:13px;color:var(--mute)}
+.tl-home-hero .pp-tim b{font-size:14px;color:var(--ink)}
+.tl-home-hero .pp-facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px;padding:28px 0 0;border-top:1px solid var(--line);gap:24px}
+.tl-home-hero .pp-facts>div{display:flex;flex-direction:column;gap:8px}
+.tl-home-hero .pp-facts b{font:600 25px/1.2 var(--sans);letter-spacing:-.025em}
+.tl-home-hero .pp-facts span{font-size:14px;color:var(--mute)}
+.tl-services .pp-head{margin-bottom:30px}
+.tl-service-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px}
+.tl-service{position:relative;overflow:hidden;border:1px solid var(--line-2);border-radius:24px;background:var(--paper-2);min-width:0;display:flex;flex-direction:column}
+.tl-service-copy{padding:30px;position:relative;z-index:1}
+.tl-service h3{font:600 clamp(23px,2.3vw,32px)/1.17 var(--sans);letter-spacing:-.03em;margin:0 0 15px;color:var(--ink)}
+.tl-service h3 a{color:inherit;text-decoration:none}
+.tl-service p{color:var(--ink-2);font-size:16px;line-height:1.65;margin:0 0 16px;max-width:45ch}
+.tl-service-link{display:inline-flex;align-items:center;min-height:44px;color:var(--ink);font-size:14px;font-weight:600;text-underline-offset:5px}
+.tl-service-feature{grid-column:span 7;grid-row:span 2;background:linear-gradient(145deg,rgba(79,180,242,.08),transparent 70%),var(--paper-2)}
+.tl-service-feature .tl-service-copy{padding:36px 36px 20px}
+.tl-service-feature h3{font-size:clamp(28px,3vw,42px);max-width:14ch}
+.tl-service-image{display:block;margin:auto 28px 0;border:1px solid var(--line-2);border-bottom:0;border-radius:14px 14px 0 0;overflow:hidden}
+.tl-service-image img{display:block;width:100%;height:auto;aspect-ratio:24/13;object-fit:cover;object-position:top}
+.tl-service-auto{grid-column:span 5;background:linear-gradient(145deg,rgba(124,124,255,.07),transparent 75%),var(--paper-2)}
+.tl-service-topics{display:flex;gap:8px;flex-wrap:wrap;padding:0 30px 28px;color:var(--mute);font-size:13px}
+.tl-service-topics span{border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+.tl-service-learn{grid-column:span 5;display:grid;grid-template-columns:minmax(0,1fr) 100px;align-items:center;gap:0}
+.tl-service-learn .tl-service-copy{padding-right:18px}
+.tl-service-book{display:block;padding-right:20px}
+.tl-service-book img{display:block;width:100%;height:auto;aspect-ratio:533/800;border-radius:4px;box-shadow:0 12px 22px rgba(0,0,0,.15)}
+.tl-service-trace{grid-column:span 12}
+.tl-service-trace .tl-service-copy{display:grid;grid-template-columns:1fr 1fr auto;gap:30px;align-items:center}
+.tl-service-trace h3,.tl-service-trace p{margin:0}
+.tl-service a:focus-visible,.tl-case a:focus-visible{outline:2px solid var(--accent);outline-offset:-4px;border-radius:6px}
+/* Store: physical covers first; calm surfaces let the product and price lead. */
+.shop .sh-hero{padding:48px 0 42px}
+.shop .sh-hero h1{font-size:clamp(34px,4.5vw,64px);max-width:19ch;line-height:1.08}
+.shop .sh-hero .sh-lead{max-width:36ch;font-size:18px;line-height:1.6;margin:24px 0 12px}
+.shop .tl-shop-note{font-size:14px;color:var(--mute);margin:0 0 26px}
+.shop .sh-fan img{box-shadow:0 22px 48px rgba(0,0,0,.22);border:1px solid var(--line-2);border-radius:7px}
+.shop .sh-fan img:nth-child(1){transform:translate(-118%,-46%) rotate(-4deg)}
+.shop .sh-fan img:nth-child(3){transform:translate(18%,-46%) rotate(4deg)}
+.shop .sh-filters{gap:8px;padding:14px 0 22px;border-bottom:1px solid var(--line);margin-bottom:36px}
+.shop .sh-chip{min-height:44px;font-size:14px;padding:10px 18px}
+.shop .sh-chip[aria-current=true]{background:var(--grad);color:#07090f;font-weight:600}
+.shop .sh-cat{font-size:clamp(28px,3vw,40px);letter-spacing:-.035em;margin:52px 0 12px}
+.shop .sh-gi{font-size:16px;line-height:1.65;max-width:64ch;margin:0 0 28px;color:var(--mute)}
+.shop .sh-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.shop .sh-grid>.sh-card{grid-column:auto;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--paper-2);border:1px solid var(--line-2);border-radius:20px}
+.shop .sh-card:hover{background:var(--paper-2);border-color:var(--accent)}
+.shop .sh-ph{padding:24px;background:linear-gradient(145deg,rgba(124,124,255,.06),rgba(79,180,242,.04));border-bottom:1px solid var(--line)}
+.shop .sh-card:not(.is-svc) .sh-ph img{aspect-ratio:533/800;object-fit:contain;max-height:270px;border-radius:4px}
+.shop .sh-bd{padding:24px;gap:12px}
+.shop .sh-t{font-size:19px;line-height:1.35}
+.shop .sh-buy{align-items:flex-start;flex-direction:column;gap:18px;padding-top:14px}
+.shop .sh-price{font-size:22px;line-height:1.3;white-space:normal}
+.shop .sh-add{width:100%;min-height:44px;background:var(--grad);color:#07090f;font-size:14px}
+.shop .sh-card.is-svc{border-top:3px solid var(--line-2)}
+.shop .sh-card.is-svc .sh-bd{padding-top:30px}
+.shop .sh-group:not([data-cat=knigi]) .sh-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.shop .sh-howto li{background:var(--paper-2);box-shadow:none;border-color:var(--line-2)}
+@media(min-width:1001px){.shop .sh-group[data-cat=knigi] .sh-card:first-child{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.shop .sh-group[data-cat=knigi] .sh-card:first-child .sh-ph{display:flex;align-items:center;border-bottom:0;border-right:1px solid var(--line)}.shop .sh-group[data-cat=knigi] .sh-card:first-child .sh-ph img{max-height:340px}.shop .sh-group[data-cat=knigi] .sh-card:first-child .sh-t{font-size:24px}}
+@media(max-width:1000px){.tl-home-hero h1{font-size:clamp(36px,5vw,54px)}.tl-service-copy{padding:24px}.tl-service-feature .tl-service-copy{padding:28px}.tl-service-trace .tl-service-copy{grid-template-columns:1fr 1fr}.tl-service-trace .tl-service-link{grid-column:1/-1}.shop .sh-grid,.shop .sh-group:not([data-cat=knigi]) .sh-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:767px){.tl-home-hero{padding:32px 0 28px}.tl-home-hero .pp-hero-text,.tl-home-hero .pp-hero-art{grid-column:1/-1}.tl-home-hero .pp-hero-art{order:0!important}.tl-home-hero h1{font-size:clamp(34px,8.4vw,52px);margin:0 0 18px!important}.tl-home-hero .pp-lead{font-size:17px;margin-bottom:22px}.tl-home-hero .pp-cta{gap:12px;align-items:center}.tl-home-hero .pp-facts{gap:16px;margin-top:4px;padding-top:24px}.tl-home-hero .pp-facts b{font-size:19px}.tl-home-hero .pp-facts span{font-size:12px}.tl-case{border-radius:18px}.tl-case figcaption{padding:14px 18px}.tl-service-grid{grid-template-columns:1fr;gap:16px}.tl-service-feature,.tl-service-auto,.tl-service-learn,.tl-service-trace{grid-column:1;grid-row:auto}.tl-service-feature h3{max-width:none}.tl-service-copy,.tl-service-feature .tl-service-copy{padding:24px}.tl-service-image{margin:0 20px}.tl-service-trace .tl-service-copy{display:block}.tl-service-trace p{margin:16px 0}.tl-service-learn{grid-template-columns:minmax(0,1fr) 90px}.shop .sh-hero{padding:24px 0 30px}.shop .sh-hero .pp-wrap{gap:24px}.shop .sh-hero h1{font-size:clamp(32px,8vw,46px)}.shop .sh-fan{display:block;height:220px;max-width:360px;width:100%;margin:auto}.shop .sh-fan img{width:125px}.shop .sh-hero .sh-lead{font-size:17px;margin-top:20px}.shop .sh-filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:16px}.shop .sh-grid,.shop .sh-group:not([data-cat=knigi]) .sh-grid{grid-template-columns:1fr}.shop .sh-grid>.sh-card:not(.is-svc){display:grid;grid-template-columns:120px minmax(0,1fr)}.shop .sh-ph{padding:16px;display:flex;align-items:flex-start;border:0;border-right:1px solid var(--line)}.shop .sh-bd{padding:20px;gap:10px}.shop .sh-t{font-size:18px}.shop .sh-buy{gap:14px}.shop .sh-price{font-size:20px}.shop .sh-d{font-size:14px}.shop .sh-cat{margin-top:36px}.shop .sh-add{padding:11px 12px}}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.tl-case>a img{transition:transform 300ms ease}.tl-case>a:hover img{transform:scale(1.015)}.tl-service-book img{transition:transform 220ms ease}.tl-service-book:hover img{transform:translateY(-3px)}}
+
+.tl-home-hero .pp-tim::before,.tl-home-hero .pp-tim::after{display:none}
+
+html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow:none!important;border:0!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -182,25 +267,17 @@ window.tlLoadMetrika = function () {
     <a href="/magazin/">Магазин</a><a href="#svyaz">Обсудить задачу</a></div></details>
 </div></header>
 <main>
-<section class="pp-hero pp-home-business"><canvas id="tl-field" aria-hidden="true"></canvas><div class="pp-wrap">
+<section class="pp-hero pp-home-business tl-home-hero"><div class="pp-wrap">
   <div class="pp-hero-text">
-    <h1>ИИ для бизнеса <br><em>и вашей команды</em></h1>
-    <p class="pp-lead">Отчёты, заявки и публикации занимают весь день? Помогу выбрать задачу для ИИ и настроить её выполнение.</p>
-    <div class="pp-cta">
-      <a class="pp-btn" href="/ii-avtomatizaciya/">Подобрать решение</a>
-      <a class="pp-link" href="/zhivoj-ofis/">Посмотреть офис агентов</a>
-    </div>
+    <h1>ИИ для бизнеса<br><em>и вашей команды</em></h1>
+    <p class="pp-lead">Настрою ИИ-агентов для заявок, отчётов и публикаций. Помогу вашей команде применять их в работе.</p>
+    <div class="pp-cta"><a class="pp-btn" href="/ii-avtomatizaciya/">Подобрать решение</a><a class="pp-link" href="/zhivoj-ofis/">Офис агентов →</a></div>
   </div>
   <div class="pp-hero-art">
-    <div class="pp-hero-photo"><picture><source srcset="/media/paper/gory-kislovodsk-rassvet-800.webp 800w, /media/paper/gory-kislovodsk-rassvet.webp 1600w" sizes="(max-width:900px) 100vw, 50vw" type="image/webp"><img src="/media/paper/gory-kislovodsk-rassvet.webp" width="1600" height="914" alt="Горы Кавказа над Кисловодском перед рассветом — Кавминводы" fetchpriority="high" decoding="async"></picture></div>
-    <a class="pp-tim" href="https://wa.me/79938917761" target="_blank" rel="noopener"><picture><source srcset="/avatar.webp" type="image/webp"><img src="/avatar.jpg" width="104" height="104" alt="Тим — основатель TimLabs" loading="lazy" decoding="async"></picture>
-      <span><b>Тим, автор проекта</b>Отвечаю лично — напишите</span></a>
+    <figure class="tl-case"><a href="/journal/" aria-label="Открыть журнал «Компас» — проект TimLabs"><picture><source media="(max-width:767px)" srcset="/media/studio/kompas-case-480.webp"><img src="/media/studio/kompas-case.webp" width="960" height="680" fetchpriority="high" decoding="async" alt="Журнал «Компас»: реальная страница проекта TimLabs со статьями и обложками"></picture></a><figcaption><span><b>Журнал «Компас»</b>Работающий проект TimLabs</span><a href="/journal/">Открыть журнал ↗</a></figcaption></figure>
+    <a class="pp-tim" href="https://wa.me/79938917761" target="_blank" rel="noopener"><img src="/avatar.webp" width="64" height="64" alt="Тим — основатель TimLabs" loading="lazy" decoding="async"><span><b>Тим, автор проекта</b>Обсудим вашу задачу лично</span></a>
   </div>
-  <div class="pp-facts">
-    <div class="rv"><b data-jcount data-count="143">143</b><span>статьи в журнале «Компас»</span></div>
-    <div class="rv"><b data-count="5">5</b><span>мастеров и проектов, которые я веду</span></div>
-    <div class="rv"><b>КМВ</b><span>на месте и онлайн по всей России</span></div>
-  </div>
+  <div class="pp-facts"><div><b data-jcount data-count="143">143</b><span>статьи в журнале «Компас»</span></div><div><b>ИИ-агенты</b><span>в моей собственной работе</span></div><div><b>Онлайн</b><span>работаю по всей России</span></div></div>
 </div></section>
 <!--tl-ai-v1-->
 <style>@layer tl-base,legacy;@layer legacy{
