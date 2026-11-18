@@ -831,6 +831,111 @@
         "vk": null,
         "dzen": null
       }
+    },
+    {
+      "id": "2026-11-18-a",
+      "date": "2026-11-18",
+      "kind": "new",
+      "rubric": "Эмоции и психология",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-19-a",
+      "date": "2026-11-19",
+      "kind": "new",
+      "rubric": "ИИ-автоматизация",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-20-a",
+      "date": "2026-11-20",
+      "kind": "new",
+      "rubric": "Родителям",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-21-a",
+      "date": "2026-11-21",
+      "kind": "new",
+      "rubric": "Частые вопросы",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-22-a",
+      "date": "2026-11-22",
+      "kind": "new",
+      "rubric": "ИИ-автоматизация",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-23-a",
+      "date": "2026-11-23",
+      "kind": "new",
+      "rubric": "Развитие",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-24-a",
+      "date": "2026-11-24",
+      "kind": "new",
+      "rubric": "Осознанность и ретриты",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
     }
   ],
   "approved_at": "2026-10-14",
