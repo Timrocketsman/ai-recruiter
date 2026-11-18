@@ -173,8 +173,8 @@
   }
 
   if (window.TL && !motion.matches) {
-    const services = [...document.querySelectorAll(".tl-service-grid .tl-service")];
-    TL.Inview(".tl-service-grid",{onEnter() {
+    const services = [...document.querySelectorAll(".tl-service-grid:not(.tl-rail-scroll) .tl-service")];
+    TL.Inview(".tl-service-grid:not(.tl-rail-scroll)",{onEnter() {
       if (hero?.classList.contains("tl-paused")) return;
       services.forEach((card,index) => card.animate(
         [{transform:`translateY(${18+index*5}px) rotateX(11deg) scale(.98)`},{transform:"none"}],

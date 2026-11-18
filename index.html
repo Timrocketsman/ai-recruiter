@@ -238,7 +238,7 @@ window.tlLoadMetrika = function () {
 .shop .sh-card.is-svc .sh-bd{padding-top:30px}
 .shop .sh-group:not([data-cat=knigi]) .sh-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .shop .sh-howto li{background:var(--paper-2);box-shadow:none;border-color:var(--line-2)}
-@media(min-width:1001px){.shop .sh-group[data-cat=knigi] .sh-card:first-child{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.shop .sh-group[data-cat=knigi] .sh-card:first-child .sh-ph{display:flex;align-items:center;border-bottom:0;border-right:1px solid var(--line)}.shop .sh-group[data-cat=knigi] .sh-card:first-child .sh-ph img{max-height:340px}.shop .sh-group[data-cat=knigi] .sh-card:first-child .sh-t{font-size:24px}}
+@media(min-width:1001px){.shop .sh-group[data-cat=knigi] .sh-grid>.sh-card:first-child{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.shop .sh-group[data-cat=knigi] .sh-grid>.sh-card:first-child .sh-ph{display:flex;align-items:center;border-bottom:0;border-right:1px solid var(--line)}.shop .sh-group[data-cat=knigi] .sh-grid>.sh-card:first-child .sh-ph img{max-height:340px}.shop .sh-group[data-cat=knigi] .sh-grid>.sh-card:first-child .sh-t{font-size:24px}}
 @media(max-width:1000px){.tl-home-hero h1{font-size:clamp(36px,5vw,54px)}.tl-service-copy{padding:24px}.tl-service-feature .tl-service-copy{padding:28px}.tl-service-trace .tl-service-copy{grid-template-columns:1fr 1fr}.tl-service-trace .tl-service-link{grid-column:1/-1}.shop .sh-grid,.shop .sh-group:not([data-cat=knigi]) .sh-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:767px){.tl-home-hero{padding:32px 0 28px}.tl-home-hero .pp-hero-text,.tl-home-hero .pp-hero-art{grid-column:1/-1}.tl-home-hero .pp-hero-art{order:0!important}.tl-home-hero h1{font-size:clamp(34px,8.4vw,52px);margin:0 0 18px!important}.tl-home-hero .pp-lead{font-size:17px;margin-bottom:22px}.tl-home-hero .pp-cta{gap:12px;align-items:center}.tl-home-hero .pp-facts{gap:16px;margin-top:4px;padding-top:24px}.tl-home-hero .pp-facts b{font-size:19px}.tl-home-hero .pp-facts span{font-size:12px}.tl-case{border-radius:18px}.tl-case figcaption{padding:14px 18px}.tl-service-grid{grid-template-columns:1fr;gap:16px}.tl-service-feature,.tl-service-auto,.tl-service-learn,.tl-service-trace{grid-column:1;grid-row:auto}.tl-service-feature h3{max-width:none}.tl-service-copy,.tl-service-feature .tl-service-copy{padding:24px}.tl-service-image{margin:0 20px}.tl-service-trace .tl-service-copy{display:block}.tl-service-trace p{margin:16px 0}.tl-service-learn{grid-template-columns:minmax(0,1fr) 90px}.shop .sh-hero{padding:24px 0 30px}.shop .sh-hero .pp-wrap{gap:24px}.shop .sh-hero h1{font-size:clamp(32px,8vw,46px)}.shop .sh-fan{display:block;height:220px;max-width:360px;width:100%;margin:auto}.shop .sh-fan img{width:125px}.shop .sh-hero .sh-lead{font-size:17px;margin-top:20px}.shop .sh-filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:16px}.shop .sh-grid,.shop .sh-group:not([data-cat=knigi]) .sh-grid{grid-template-columns:1fr}.shop .sh-grid>.sh-card:not(.is-svc){display:grid;grid-template-columns:120px minmax(0,1fr)}.shop .sh-ph{padding:16px;display:flex;align-items:flex-start;border:0;border-right:1px solid var(--line)}.shop .sh-bd{padding:20px;gap:10px}.shop .sh-t{font-size:18px}.shop .sh-buy{gap:14px}.shop .sh-price{font-size:20px}.shop .sh-d{font-size:14px}.shop .sh-cat{margin-top:36px}.shop .sh-add{padding:11px 12px}}
 @media(hover:hover) and (prefers-reduced-motion:no-preference){.tl-case>a img{transition:transform 300ms ease}.tl-case>a:hover img{transform:scale(1.015)}.tl-service-book img{transition:transform 220ms ease}.tl-service-book:hover img{transform:translateY(-3px)}}
@@ -480,6 +480,109 @@ html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow
  .shop .sh-grid>.sh-card:not(.is-svc){grid-template-columns:clamp(91px,30vw,120px) minmax(0,1fr)}
  .shop .sh-bd{padding:clamp(15px,4.6vw,22px)}
 }
+
+/* Native scroll surface with perspective added only to the contents. */
+.tl-rail{
+  container-type:inline-size;
+  position:relative;
+  --rail-card:clamp(275px,35cqi,420px);
+  --rail-start:clamp(18px,7cqi,95px);
+  --rail-gap:clamp(12px,2cqi,26px);
+  --rail-tint:#4fb4f2;
+  --rail-round:24px;
+}
+.tl-rail[data-rail=books]{--rail-card:clamp(286px,32cqi,378px);--rail-tint:#a392ec}
+.tl-rail::before{
+  content:"";position:absolute;pointer-events:none;inset:31% 0 70px;
+  border-radius:var(--rail-round);
+  background:radial-gradient(ellipse at 39% 100%,color-mix(in srgb,var(--rail-tint) 13%,transparent),transparent 73%);
+}
+.tl-rail::after{
+  content:"";position:absolute;pointer-events:none;inset:auto 4% 53px 3%;
+  height:24px;border-radius:50%;border-bottom:1px solid color-mix(in srgb,var(--rail-tint) 26%,transparent);
+}
+.tl-services .tl-service-grid.tl-rail-scroll,.shop .sh-group .sh-grid.tl-rail-scroll{
+  position:relative;
+  display:flex;align-items:stretch;gap:var(--rail-gap);
+  padding:23px max(var(--rail-start),calc(100% - var(--rail-card) - var(--rail-start))) 44px var(--rail-start);
+  margin:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior-inline:contain;
+  scroll-snap-type:x mandatory;scroll-padding-inline-start:var(--rail-start);
+  scrollbar-width:thin;perspective:none;
+}
+.tl-rail[data-enhanced] .tl-rail-scroll{scrollbar-width:none}
+.tl-rail[data-enhanced] .tl-rail-scroll::-webkit-scrollbar{display:none}
+.tl-rail-scroll:focus-visible{outline:2px solid var(--accent);outline-offset:-3px;border-radius:var(--rail-round)}
+.tl-rail-scroll.is-dragging{scroll-snap-type:none;cursor:grabbing;user-select:none}
+.tl-rail-slot{
+  position:relative;display:flex;flex:0 0 var(--rail-card);min-width:0;
+  scroll-snap-align:start;
+}
+.tl-rail-slot > article{
+  width:100%;min-width:0;overflow:hidden;
+  transform:var(--rail-transform,none);
+  transform-origin:center 54%;backface-visibility:hidden;
+}
+.tl-rail-slot[aria-current=true]{z-index:2}
+.tl-rail-slot[aria-current=true] > article{border-color:color-mix(in srgb,var(--rail-tint) 42%,var(--line-2))}
+.tl-rail-slot > article:focus-within{outline-offset:-3px}
+
+.tl-rail .tl-service{
+  display:flex;flex-direction:column;min-height:334px;
+  background:linear-gradient(155deg,color-mix(in srgb,var(--rail-tint) 7%,transparent),transparent 55%),var(--paper-2);
+}
+.tl-rail .tl-service .tl-service-copy{display:block;padding:24px 25px 12px}
+.tl-rail .tl-service h3{font-size:clamp(23px,3cqi,31px);max-width:none;margin:0 0 12px}
+.tl-rail .tl-service p{margin:0 0 10px;font-size:15px;line-height:1.55}
+.tl-rail .tl-service-image{margin:auto 25px 0}
+.tl-rail .tl-service-image img{aspect-ratio:3}
+.tl-rail .tl-service-topics{margin:auto 0 0;padding:0 25px 21px}
+.tl-rail .tl-service-book{margin:auto 0 18px 25px;padding:0;width:48px}
+
+.shop .tl-rail-slot>.sh-card{
+  display:flex;flex-direction:column;border:1px solid var(--line-2);border-radius:var(--rail-round);
+  background:linear-gradient(145deg,color-mix(in srgb,var(--rail-tint) 7%,transparent),transparent 56%),var(--paper-2);
+  box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+.shop .tl-rail-slot>.sh-card .sh-ph{
+  display:grid;place-items:center;padding:20px 12px 15px;
+  background:radial-gradient(ellipse at 50% 100%,color-mix(in srgb,var(--rail-tint) 26%,transparent),transparent 75%);
+}
+.shop .tl-rail-slot>.sh-card .sh-ph img{
+  width:auto;height:clamp(142px,19cqi,205px);max-height:none;max-width:100%;
+  box-shadow:4px 4px 0 color-mix(in srgb,var(--ink) 24%,var(--paper)),10px 13px 22px #07090f45;
+}
+.shop .tl-rail-slot>.sh-card .sh-bd{padding:21px;gap:9px}
+.shop .tl-rail-slot>.sh-card .sh-buy{gap:10px;padding-top:10px}
+.shop .tl-rail-slot>.sh-card .sh-price{font-size:19px}
+.shop .tl-rail-slot[aria-current=true]>.sh-card{border-color:color-mix(in srgb,var(--rail-tint) 46%,var(--line-2))}
+
+.tl-rail-tools{min-height:44px;display:flex;align-items:center;gap:12px;padding-inline:var(--rail-start)}
+.tl-rail-tools:empty{visibility:hidden}
+.tl-rail-tools button{
+  flex:none;inline-size:44px;block-size:44px;display:grid;place-items:center;
+  border:1px solid var(--line-2);border-radius:50%;color:var(--ink);background:var(--paper-2);
+  font:600 18px/1 var(--sans);cursor:pointer;
+}
+.tl-rail-tools button[aria-disabled=true]{color:var(--faint);cursor:default}
+.tl-rail-tools button[aria-disabled=false]:hover{border-color:var(--accent)}
+.tl-rail-tools button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.tl-rail-index{font:500 12px/1 var(--mono);color:var(--mute);font-variant-numeric:tabular-nums;min-width:6ch;text-align:center}
+.tl-rail-meter{display:block;flex:1;height:2px;background:var(--line-2);border-radius:2px;overflow:hidden}
+.tl-rail-meter::after{
+  content:"";display:block;width:100%;height:100%;
+  background:linear-gradient(90deg,var(--accent),var(--rail-tint));
+  transform:scaleX(var(--rail-progress,0));transform-origin:left;
+}
+@media(max-width:767px){
+  .tl-rail,.tl-rail[data-rail=books]{--rail-card:83cqi;--rail-start:8px;--rail-gap:13px;--rail-round:19px}
+  .tl-services .tl-service-grid.tl-rail-scroll,.shop .sh-group .sh-grid.tl-rail-scroll{padding-block:17px 39px}
+  .tl-rail .tl-service{min-height:300px}
+  .tl-rail .tl-service .tl-service-copy,.shop .tl-rail-slot>.sh-card .sh-bd{padding:18px}
+  .tl-rail .tl-service-image{margin-inline:18px}
+  .tl-rail .tl-service-topics{padding-inline:18px}
+  .tl-rail-tools{gap:8px}
+}
+@media(prefers-reduced-motion:reduce){.tl-rail-slot>article{transform:none}}
 </style>
 <!--tl-space-head-v1--><style id="tl-space-theme">/* The TimLabs background. Text and layout remain in the page's own layers. */
 body:has(>.tl-space){isolation:isolate}
@@ -585,19 +688,19 @@ body:has(>.tl-space)::before{display:none}
       <a class="tl-portal-link" href="/journal/">Журнал «Компас» <span aria-hidden="true">↗</span></a>
     </div>
     <div class="tl-depth-meta">
-    <a class="pp-tim" href="https://wa.me/79938917761" target="_blank" rel="noopener"><img src="/avatar.webp" width="64" height="64" alt="Тим — основатель TimLabs" loading="lazy" decoding="async"><span><b>Тим, автор проекта</b>Обсудим вашу задачу лично</span></a>
+    <a class="pp-tim" href="https://wa.me/79938917761" target="_blank" rel="noopener"><img src="/avatar.webp" width="64" height="64" alt="Тим — основатель TimLabs"><span><b>Тим, автор проекта</b>Обсудим вашу задачу лично</span></a>
       <button class="tl-motion-toggle" type="button" aria-label="Пауза фонового движения" aria-pressed="false" hidden>Пауза фона</button>
     </div>
   </div>
   <div class="pp-facts"><div><b data-jcount data-count="143">143</b><span>статьи в журнале «Компас»</span></div><div><b>ИИ-агенты</b><span>в моей собственной работе</span></div><div><b>Онлайн</b><span>работаю по всей России</span></div></div>
 </div></section>
 <!--tl-ai-v1--><section class="pp-sec tl-services" id="uslugi" aria-labelledby="uslugi-h"><div class="pp-wrap"><div class="pp-head"><div class="pp-ht"><h2 id="uslugi-h">От задачи — <em>к решению</em></h2><p>Автоматизация, собственный журнал и обучение команды. Выберите, с чего начать.</p></div></div>
-<div class="tl-service-grid">
-<article class="tl-service tl-service-feature b2b"><div class="tl-service-copy"><h3 id="b2b-h"><a href="/ii-avtomatizaciya/zhurnal-pod-klyuch/">Журнал под ключ</a></h3><p>Статьи по поисковому спросу, редакционная проверка и публикация на вашем сайте.</p><a class="tl-service-link" href="/ii-avtomatizaciya/zhurnal-pod-klyuch/">Как устроен запуск →</a></div><a class="tl-service-image" href="/journal/" aria-label="Посмотреть журнал «Компас»"><img src="/media/studio/kompas-case.webp" width="960" height="680" alt="Статьи и рубрики работающего журнала «Компас»" loading="lazy" decoding="async"></a></article>
-<article class="tl-service tl-service-auto"><div class="tl-service-copy"><h3><a href="/ii-avtomatizaciya/">Боты и ИИ-агенты</a></h3><p>Ответы клиентам, заявки, отчёты и документы. Разберём процесс и выберем задачу для автоматизации.</p><a class="tl-service-link" href="/ii-avtomatizaciya/">Подобрать решение →</a></div><div class="tl-service-topics" aria-label="Задачи"><span>Заявки</span><span>Документы</span><span>Отчёты</span></div></article>
-<article class="tl-service tl-service-learn"><div class="tl-service-copy"><h3><a href="/obuchenie/">Обучение на ваших задачах</a></h3><p>От разовой настройки до личного сопровождения и занятий для команды.</p><a class="tl-service-link" href="/obuchenie/">Выбрать формат →</a></div><a class="tl-service-book" href="/knigi/#book3" aria-label="Книга «Промт-инженеринг для новичков»"><img src="/media/showcase/books/book3.webp" width="533" height="800" alt="Обложка книги Тимура Гуцева «Промт-инженеринг для новичков»" loading="lazy" decoding="async"></a></article>
-<article class="tl-service tl-service-trace"><div class="tl-service-copy"><h3><a href="/ii-avtomatizaciya/cifrovoj-sled/">Экосистема цифрового следа</a></h3><p>Сайт, журнал и площадки проекта — с общей структурой и связями между материалами.</p><a class="tl-service-link" href="/ii-avtomatizaciya/cifrovoj-sled/">Посмотреть состав →</a></div></article>
-</div></div></section><!--/tl-ai-v1-->
+<div class="tl-rail" data-rail="services"><div class="tl-service-grid tl-rail-scroll" id="tl-service-rail" tabindex="0" role="group" aria-labelledby="uslugi-h">
+<div class="tl-rail-slot"><article class="tl-service tl-service-feature b2b"><div class="tl-service-copy"><h3 id="b2b-h"><a href="/ii-avtomatizaciya/zhurnal-pod-klyuch/">Журнал под ключ</a></h3><p>Статьи по поисковому спросу, редакционная проверка и публикация на вашем сайте.</p><a class="tl-service-link" href="/ii-avtomatizaciya/zhurnal-pod-klyuch/">Как устроен запуск →</a></div><a class="tl-service-image" href="/journal/" aria-label="Посмотреть журнал «Компас»"><img src="/media/studio/kompas-case.webp" width="960" height="680" alt="Статьи и рубрики работающего журнала «Компас»" loading="lazy" decoding="async"></a></article></div>
+<div class="tl-rail-slot"><article class="tl-service tl-service-auto"><div class="tl-service-copy"><h3><a href="/ii-avtomatizaciya/">Боты и ИИ-агенты</a></h3><p>Ответы клиентам, заявки, отчёты и документы. Разберём процесс и выберем задачу для автоматизации.</p><a class="tl-service-link" href="/ii-avtomatizaciya/">Подобрать решение →</a></div><div class="tl-service-topics" aria-label="Задачи"><span>Заявки</span><span>Документы</span><span>Отчёты</span></div></article></div>
+<div class="tl-rail-slot"><article class="tl-service tl-service-learn"><div class="tl-service-copy"><h3><a href="/obuchenie/">Обучение на ваших задачах</a></h3><p>От разовой настройки до личного сопровождения и занятий для команды.</p><a class="tl-service-link" href="/obuchenie/">Выбрать формат →</a></div><a class="tl-service-book" href="/knigi/#book3" aria-label="Книга «Промт-инженеринг для новичков»"><img src="/media/showcase/books/book3.webp" width="533" height="800" alt="Обложка книги Тимура Гуцева «Промт-инженеринг для новичков»" loading="lazy" decoding="async"></a></article></div>
+<div class="tl-rail-slot"><article class="tl-service tl-service-trace"><div class="tl-service-copy"><h3><a href="/ii-avtomatizaciya/cifrovoj-sled/">Экосистема цифрового следа</a></h3><p>Сайт, журнал и площадки проекта — с общей структурой и связями между материалами.</p><a class="tl-service-link" href="/ii-avtomatizaciya/cifrovoj-sled/">Посмотреть состав →</a></div></article></div>
+</div><div class="tl-rail-tools"></div></div></div></section><!--/tl-ai-v1-->
 <section class="pp-sec tl-projects" aria-labelledby="tl-projects-h"><div class="pp-wrap">
   <div class="pp-head"><div class="pp-ht"><h2 id="tl-projects-h">Проекты <em>TimLabs</em></h2></div>
     <div class="tl-project-controls" hidden><button type="button" aria-label="Предыдущий проект" aria-controls="tl-project-list">←</button><button type="button" aria-label="Следующий проект" aria-controls="tl-project-list">→</button></div>
@@ -821,7 +924,8 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
   </div></footer>
 </main>
 <script src="/assets/tl-motion.js?v=d8a3c0e8d4" defer></script>
-<script src="/assets/tl-studio-depth-v2.js?v=be8c60e891" defer></script>
+<script src="/assets/tl-studio-depth-v2.js?v=416314d5a5" defer></script>
+<script src="/assets/tl-rails-v1.js?v=93ffb1eb58" defer fetchpriority="low"></script>
 <!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
 <style>@layer tl-base,legacy;@layer legacy{
 #tl-consent-veil{position:fixed;inset:0;z-index:9998;display:none;
