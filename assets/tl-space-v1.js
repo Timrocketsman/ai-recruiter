@@ -1,94 +1,100 @@
-/* Ambient movement uses compositor transforms. No frame polling or canvas. */
+/* Scroll-driven perspective. Older browsers use the shared site frame. */
 (() => {
   const field = document.querySelector("body > .tl-space");
-  if (!field || typeof field.animate!=="function") return;
-  const layers = [...field.children];
-  const reduce = matchMedia("(prefers-reduced-motion: reduce)");
-  const slowData = navigator.connection;
+  if (!field || !CSS.supports("mask-image","linear-gradient(black,black)")) return;
   const key = "tl-studio-motion";
-  let loaded = false;
-  let stopped = false;
-  let animations = [];
-  try { stopped = localStorage.getItem(key)==="paused"; } catch {}
-  const home = document.querySelector(".tl-home-hero");
-  const control = home?.querySelector(".tl-motion-toggle") || document.querySelector(".tl-space-control");
-  const tracks = [
-    {time:29000,frames:["translate3d(-2%,1%,0) scale(1.01)","translate3d(3%,-2%,0) scale(1.06)"]},
-    {time:36000,frames:["translate3d(2%,-2%,0) scale(1.01)","translate3d(-3%,3%,0) scale(1.08)"]},
-    {time:21000,frames:["translate3d(-2%,3%,0) scale(1.03)","translate3d(3%,-4%,0) scale(1.11)"]}
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+  const data = navigator.connection;
+  const studio = field.dataset.tone === "studio";
+  const hero = document.querySelector(".tl-home-hero");
+  const control = hero?.querySelector(".tl-motion-toggle") || document.querySelector(".tl-space-control");
+  const planes = [field.querySelector(".tl-space-far"),field.querySelector(".tl-space-format")];
+  const travel = [
+    "translate3d(clamp(-10px,-.8vw,-4px),clamp(-30px,-2.4vw,-13px),0) scale(1.035)",
+    "translate3d(clamp(-28px,-2vw,-12px),clamp(-68px,-5vw,-29px),0) scale(1.09)"
   ];
-  function settings() {
-    if (control && !home) {
-      control.hidden = reduce.matches;
-      control.setAttribute("aria-pressed",String(stopped));
+  const supported = typeof ScrollTimeline === "function" && "rangeEnd" in Animation.prototype;
+  let tick;
+  let tracks = [];
+  let listening = false;
+  function drawScroll() {
+    tick.remove(drawScroll);
+    if (!listening) return;
+    const progress = 1 - (1 - Math.min(1,Math.max(0,scrollY)/1100))**2;
+    const vw = innerWidth * .01;
+    const span = (rate,min,max) => Math.min(max,Math.max(min,rate*vw));
+    [[span(.8,4,10),span(2.4,13,30),.035],
+     [span(2,12,28),span(5,29,68),.09]].forEach(([x,y,s],i)=>{
+      planes[i].style.transform = `translate3d(${-x*progress}px,${-y*progress}px,0) scale(${1+s*progress})`;
+    });
+  }
+  const onScroll = () => tick.add(drawScroll);
+  function fallback(active) {
+    if (active === listening) return;
+    listening = active;
+    if (active) {
+      addEventListener("scroll",onScroll,{passive:true});
+      onScroll();
+    } else {
+      removeEventListener("scroll",onScroll);
+      tick.remove(drawScroll);
     }
+  }
+  let loaded = false;
+  let paused = false;
+
+  function read() {
+    try { paused = localStorage.getItem(key) === "paused"; } catch {}
+  }
+  function sync() {
     if (!loaded) return;
-    if (reduce.matches || stopped || slowData?.saveData) {
-      animations.forEach(animation=>animation.cancel());
-      animations = [];
-      resetDepth();
+    const draw = !data?.saveData;
+    const animate = studio && (supported || !!tick) && draw && !reduce.matches;
+    if (!supported) fallback(animate && !paused);
+    field.classList.toggle("tl-space-ready",draw);
+    if (!hero && control) {
+      control.hidden = !animate;
+      control.setAttribute("aria-pressed",String(paused));
+    }
+    if (!animate || paused) {
+      const freeze = animate && paused && tracks.length;
+      const transforms = freeze ? planes.map(plane=>getComputedStyle(plane).transform) : [];
+      tracks.forEach(track=>track.cancel());
+      tracks = [];
+      if (!animate) planes.forEach(plane=>plane.style.removeProperty("transform"));
+      if (freeze) planes.forEach((plane,i)=>{plane.style.transform=transforms[i];});
       return;
     }
-    if (document.hidden) {
-      animations.forEach(animation=>animation.pause());
-      return;
-    }
-    if (!animations.length) {
-      animations = tracks.map((track,i)=>{
-        const motion = layers[i].animate(track.frames.map(transform=>({transform})),
-          {duration:track.time,direction:"alternate",iterations:Infinity,easing:"ease-in-out"});
-        const now = performance.timeOrigin+performance.now();
-        motion.currentTime = now%(track.time*2);
-        return motion;
-      });
-    } else animations.forEach(animation=>animation.play());
+    if (!supported || tracks.length) return;
+    const timeline = new ScrollTimeline({source:document.scrollingElement,axis:"block"});
+    tracks = planes.map((plane,i)=>{
+      plane.style.removeProperty("transform");
+      return plane.animate(
+        [{transform:"translate3d(0,0,0) scale(1)"},{transform:travel[i]}],
+        {timeline,duration:"auto",rangeEnd:"1100px",fill:"both",easing:"cubic-bezier(.21,.55,.43,1)"}
+      );
+    });
   }
-  function resetDepth() {
-    field.style.removeProperty("--tl-depth-x");
-    field.style.removeProperty("--tl-depth-y");
-  }
-  const fine = matchMedia("(hover: hover) and (pointer: fine)");
-  if (field.dataset.tone==="studio") {
-    let lastMove = 0;
-    addEventListener("pointermove",event=>{
-      if (!loaded || stopped || reduce.matches || slowData?.saveData || !fine.matches ||
-          event.pointerType!=="mouse" || event.timeStamp-lastMove<85) return;
-      lastMove = event.timeStamp;
-      field.style.setProperty("--tl-depth-x",`${((event.clientX/innerWidth-.5)*32).toFixed(1)}px`);
-      field.style.setProperty("--tl-depth-y",`${((event.clientY/innerHeight-.5)*25).toFixed(1)}px`);
-    },{passive:true});
-    document.documentElement.addEventListener("pointerleave",resetDepth);
-  }
-  function syncPreference() {
-    try { stopped = localStorage.getItem(key)==="paused"; } catch {}
-    settings();
-  }
-  function start() {
-    if (loaded) return;
-    loaded = true;
-    if (!slowData?.saveData) field.classList.add("tl-space-ready");
-    settings();
-  }
-  const deferStart = () => {
-    if ("requestIdleCallback" in window) requestIdleCallback(start,{timeout:850});
+
+  if (hero && control) {
+    new MutationObserver(()=>{
+      paused = hero.classList.contains("tl-paused");
+      sync();
+    }).observe(hero,{attributes:true,attributeFilter:["class"]});
+  } else control?.addEventListener("click",()=>{
+    paused = !paused;
+    try { localStorage.setItem(key,paused ? "paused" : "playing"); } catch {}
+    sync();
+  });
+  reduce.addEventListener("change",sync);
+  data?.addEventListener?.("change",sync);
+  addEventListener("pageshow",()=>{read();sync();});
+  addEventListener("storage",event=>{if (event.key === key) {read();sync();}});
+  const init = () => {
+    const start = ()=>{tick=window.TL?.tick;read();loaded=true;sync();};
+    if ("requestIdleCallback" in window) requestIdleCallback(start,{timeout:900});
     else setTimeout(start,120);
   };
-  if (home && control) {
-    new MutationObserver(()=>{
-      stopped = home.classList.contains("tl-paused");
-      settings();
-    }).observe(home,{attributes:true,attributeFilter:["class"]});
-  } else control?.addEventListener("click",()=>{
-    stopped = !stopped;
-    try { localStorage.setItem(key,stopped?"paused":"playing"); } catch {}
-    settings();
-  });
-  reduce.addEventListener("change",settings);
-  slowData?.addEventListener?.("change",settings);
-  document.addEventListener("visibilitychange",settings);
-  addEventListener("pageshow",syncPreference);
-  addEventListener("storage",event=>{if (event.key===key) syncPreference();});
-  if (document.readyState==="complete") deferStart();
-  else addEventListener("load",deferStart,{once:true});
-  settings();
+  if (document.readyState === "complete") init();
+  else addEventListener("load",init,{once:true});
 })();

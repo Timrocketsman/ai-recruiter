@@ -1,69 +1,48 @@
-/* The TimLabs background. Text and layout remain in the page's own layers. */
+/* TimLabs perspective drawing. Only the two drawing planes move. */
 body:has(>.tl-space){isolation:isolate}
 body:has(>.tl-space)::before{display:none}
 .tl-space{
-  --tl-space-art:none;
-  --tl-space-left:#203c61;
-  --tl-space-right:#3e2d69;
-  --tl-space-glint:#387ac1;
-  --tl-space-level:.92;
-  position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;
-  contain:strict;
+  --city-wash:#172434;
+  --city-strength:.91;
+  position:fixed;inset:0;z-index:-1;overflow:hidden;contain:strict;pointer-events:none;
+  background:radial-gradient(ellipse 74% 62% at 99% 58%,var(--city-wash),transparent);
 }
-.tl-space[data-tone=quiet]{--tl-space-level:.56}
-:root[data-theme=light] .tl-space,:root.auto-light:not([data-theme=dark]) .tl-space{
-  --tl-space-left:#becfe6;
-  --tl-space-right:#d8cdef;
-  --tl-space-glint:#aacceb;
-}
-.tl-space.tl-space-ready{--tl-space-art:url("/media/studio/field-night-v1.webp")}
-:root[data-theme=light] .tl-space.tl-space-ready,
-:root.auto-light:not([data-theme=dark]) .tl-space.tl-space-ready{--tl-space-art:url("/media/studio/field-day-v1.webp")}
-:root:not([data-theme]) .tl-space{color-scheme:light dark}
 @media(prefers-color-scheme:light){
- :root:not([data-theme]):not(.auto-light) .tl-space{
-   --tl-space-left:#becfe6;--tl-space-right:#d8cdef;--tl-space-glint:#aacceb
- }
- :root:not([data-theme]):not(.auto-light) .tl-space.tl-space-ready{
-   --tl-space-art:url("/media/studio/field-day-v1.webp")
- }
+  :root:not([data-theme]) .tl-space{--city-wash:#e1e8ef;--city-strength:.78}
 }
-.tl-space>span{position:absolute;display:block;inset:-11% -8%;opacity:var(--tl-space-level)}
-.tl-space-far{
-  background:radial-gradient(ellipse at 3% 32%,var(--tl-space-left),transparent 39%),
-             radial-gradient(ellipse at 98% 71%,var(--tl-space-right),transparent 43%);
+:root[data-theme=light] .tl-space,:root.auto-light:not([data-theme]) .tl-space{
+  --city-wash:#e1e8ef;--city-strength:.78
 }
-.tl-space-format{
-  background-image:var(--tl-space-art);
-  background-size:100% 100%;
-  opacity:calc(var(--tl-space-level) * .74)!important;
+.tl-space-far{--city-drawing:url("/media/studio/tl-city-ground-v2.webp")}
+.tl-space-format{--city-drawing:url("/media/studio/tl-city-buildings-v2.webp")}
+.tl-space-ready :is(.tl-space-far,.tl-space-format){
+  position:absolute;inset:-7%;
+  background:#6887a5;mask:var(--city-drawing) 57% 54%/cover no-repeat;
+  opacity:var(--city-strength);
+  transform-origin:64% 47%;
 }
-.tl-space-glint{
-  background:radial-gradient(ellipse at 5% 82%,var(--tl-space-glint),transparent 23%),
-             radial-gradient(ellipse at 96% 24%,var(--tl-space-glint),transparent 17%);
-  opacity:calc(var(--tl-space-level) * .22)!important;
+.tl-space-ready .tl-space-far{opacity:calc(var(--city-strength) * .65)}
+.tl-space[data-tone=quiet]{background:none}
+.tl-space[data-tone=quiet] .tl-space-glint{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,var(--paper) 16% 84%,transparent);
 }
+.tl-space[data-tone=quiet] :is(.tl-space-far,.tl-space-format){opacity:.3}
 .tl-space-control{
-  display:inline-flex;align-items:center;min-height:44px;padding:0 9px;
-  margin:4px 0 0;color:var(--ink-2,#abb5c7);background:transparent;border:1px solid transparent;
-  border-radius:8px;font:500 13px/1.25 var(--sans,system-ui);text-decoration:underline;text-underline-offset:4px;cursor:pointer;
+  min-height:44px;padding:0 8px;
+  color:var(--ink-2,#abb5c7);background:transparent;border:1px solid transparent;
+  border-radius:8px;font:500 13px/1.25 var(--sans,system-ui);text-decoration:underline;text-underline-offset:4px;
+  cursor:pointer;
 }
 .tl-space-control:hover{border-color:var(--line-2)}
-.tl-space-control[hidden]{display:none}
 @media(max-width:767px){
- .tl-space>span{inset:-10% -19%}
- .tl-space[data-tone=quiet]{--tl-space-level:.44}
+  .tl-space-ready :is(.tl-space-far,.tl-space-format){
+    inset:-5% -10%;mask-size:auto 74%;mask-position:68% 72%;
+    opacity:calc(var(--city-strength) * .83)
+  }
+  .tl-space-ready .tl-space-far{opacity:calc(var(--city-strength) * .51)}
+  .tl-space[data-tone=quiet] :is(.tl-space-far,.tl-space-format,.tl-space-glint){display:none}
 }
 @media(forced-colors:active),print{
- .tl-space,.tl-space-control{display:none!important}
-}
-@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
- .tl-space[data-tone=studio]>span{transition:translate 720ms cubic-bezier(.23,1,.32,1)}
- .tl-space[data-tone=studio] .tl-space-far{
-   translate:calc(var(--tl-depth-x,0px) * .35) calc(var(--tl-depth-y,0px) * .35)
- }
- .tl-space[data-tone=studio] .tl-space-format{translate:var(--tl-depth-x,0px) var(--tl-depth-y,0px)}
- .tl-space[data-tone=studio] .tl-space-glint{
-   translate:calc(var(--tl-depth-x,0px) * 1.4) calc(var(--tl-depth-y,0px) * 1.4)
- }
+  .tl-space,.tl-space-control{display:none!important}
 }

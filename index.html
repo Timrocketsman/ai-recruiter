@@ -363,37 +363,7 @@ html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow
 }
 .tl-portal-link span{color:var(--accent)}
 
-.tl-matte-signature {
-  --tl-matte-top:#333b4a; --tl-matte-middle:#181c24; --tl-matte-deep:#0b0e15;
-  --tl-matte-edge:#8099b249; --tl-matte-light:#a8bacf;
-  width:min(1240px,100%); margin:clamp(42px,7vw,93px) auto 0; overflow:hidden;
-  padding:0 15px .09em; position:relative; isolation:isolate;
-  font:760 clamp(68px,19vw,260px)/.98 var(--sans); letter-spacing:-.094em;
-  text-align:center; white-space:nowrap; user-select:none;
-}
-:root[data-theme="light"] .tl-matte-signature,:root.auto-light .tl-matte-signature{
-  --tl-matte-top:#424b57; --tl-matte-middle:#222834; --tl-matte-deep:#111722;
-  --tl-matte-edge:#f0f8ff9c; --tl-matte-light:#bdd7eb
-}
-.tl-matte-signature::before{
-  content:""; position:absolute; inset:23% 4% 5%; z-index:-1;
-  background:radial-gradient(ellipse at 52% 63%,#718ab01e,transparent 66%);
-}
-.tl-matte-lettering{
-  position:relative; display:inline-block; padding-right:.09em; color:var(--tl-matte-middle)
-}
-.tl-matte-lettering span{
-  background:linear-gradient(174deg,var(--tl-matte-top),var(--tl-matte-middle) 49%,var(--tl-matte-deep) 87%);
-  background-clip:text; -webkit-background-clip:text; color:transparent;
-}
-.tl-matte-lettering span:first-child{
-  display:block; filter:drop-shadow(0 -1px 0 var(--tl-matte-edge)) drop-shadow(0 14px 14px #05091025)
-}
-.tl-matte-lettering .tl-matte-glint{
-  position:absolute; inset:0; padding-right:inherit;
-  background-image:linear-gradient(166deg,var(--tl-matte-light) 18%,#819cba 37%,transparent 70%);
-  clip-path:polygon(0 0,0 0,0 100%,0 100%); pointer-events:none;
-}
+
 
 .tl-book-vitrine{min-width:0; position:relative}
 .shop .sh-fan.tl-book-shelf{
@@ -440,7 +410,6 @@ html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow
 @media(max-width:767px){
  .tl-portal-preview{inset:12% 5% 15%;border-radius:14px}
  .tl-portal-link{bottom:0;font-size:13px}
- .tl-matte-signature{font-size:clamp(62px,18.8vw,150px)}
  .shop .sh-fan.tl-book-shelf{--tl-orbit-gap:13px;gap:var(--tl-orbit-gap)}
  .tl-orbit-tools{width:min(100%,355px)}
 }
@@ -583,77 +552,275 @@ html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow
   .tl-rail-tools{gap:8px}
 }
 @media(prefers-reduced-motion:reduce){.tl-rail-slot>article{transform:none}}
+
+/* A case study and a short list use the same surface, without tilting the copy. */
+.tl-service-spread{
+  display:grid;
+  grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);
+  grid-template-rows:repeat(3,auto);
+  border:1px solid var(--line-2);
+  border-radius:24px;
+  background:var(--paper-2);
+  overflow:hidden;
+}
+.tl-service-spread>.tl-service{
+  border:0;
+  border-radius:0;
+  background:none;
+  transform:none;
+  transition:none;
+  grid-column:auto;
+  grid-row:auto;
+}
+.tl-service-spread>.tl-service::before{content:none}
+.tl-service-spread>.tl-service-feature{
+  grid-column:1;
+  grid-row:1 / span 3;
+  border-inline-end:1px solid var(--line);
+  background:linear-gradient(154deg,color-mix(in srgb,var(--accent) 8%,transparent),transparent 55%);
+}
+.tl-service-spread>.tl-service-feature .tl-service-copy{padding:clamp(23px,3vw,40px)}
+.tl-service-spread>.tl-service-feature h3{max-width:none;font-size:clamp(28px,3vw,42px)}
+.tl-service-spread>.tl-service-feature .tl-service-image{
+  margin:auto clamp(19px,3vw,38px) 0;
+  background:var(--paper);
+  border-color:var(--line-2);
+}
+.tl-service-spread .tl-service-image img{aspect-ratio:16 / 9}
+.tl-service-spread>.tl-service:not(.tl-service-feature){display:block;grid-column:2}
+.tl-service-spread>.tl-service+.tl-service:not(:nth-child(2)){border-top:1px solid var(--line)}
+.tl-service-spread>.tl-service:not(.tl-service-feature) .tl-service-copy{
+  display:block;padding:clamp(17px,2.2vw,29px) clamp(22px,3vw,39px);
+}
+.tl-service-spread>.tl-service:not(.tl-service-feature) h3{font-size:clamp(20px,2vw,27px);margin:0 0 8px}
+.tl-service-spread .tl-service-copy p{font-size:15px;line-height:1.55;margin:0 0 4px}
+.tl-service-spread>.tl-service.tl-service-auto .tl-service-copy{padding-bottom:0}
+.tl-service-spread .tl-service-topics{padding:0 clamp(22px,3vw,39px) 22px;gap:7px}
+.tl-service-spread .tl-service-topics span{padding:3px 9px;font-size:12px}
+.tl-service-spread>.tl-service.tl-service-learn{display:grid;grid-template-columns:minmax(0,1fr) 85px}
+.tl-service-spread>.tl-service-learn .tl-service-copy{padding-inline-end:12px}
+.tl-service-spread .tl-service-book{width:100%;padding:0 24px 0 0}
+.tl-service-spread .tl-service-link:hover,.tl-service-spread .tl-service h3 a:hover{color:var(--accent)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){
+  .tl-service-spread .tl-service-image img{transition:transform var(--t-ui,220ms) var(--ease-out,ease-out)}
+  .tl-service-spread .tl-service-image:is(:hover,:focus-visible) img{transform:scale(1.025)}
+}
+@media(max-width:767px){
+  .tl-service-spread{display:block;border-radius:19px}
+  .tl-service-spread>.tl-service-feature{border-inline-end:0}
+  .tl-service-spread>.tl-service+.tl-service{border-top:1px solid var(--line)}
+}
+
+/* Differentiate the photography, map and books without changing the card frame. */
+.tl-project-picture.tl-project-book{
+  display:flex;align-items:center;justify-content:center;gap:clamp(5px,1.1vw,14px);
+  padding-inline:8%;background:radial-gradient(ellipse at 50% 95%,#31435c,#131d2e 72%);
+}
+:root[data-theme=light] .tl-project-picture.tl-project-book,
+:root.auto-light:not([data-theme=dark]) .tl-project-picture.tl-project-book{
+  background:radial-gradient(ellipse at 50% 95%,#d0dbe7,#e9edf3 75%);
+}
+.tl-project-picture.tl-project-book img{
+  width:min(16%,86px);height:auto;max-height:72%;object-fit:contain;
+  border-radius:3px;box-shadow:3px 6px 13px #07090f69;transform:none;
+}
+.tl-project-picture.tl-project-book img:nth-child(1){transform:translateY(6%) rotate(-7deg)}
+.tl-project-picture.tl-project-book img:nth-child(2){transform:translateY(2%) rotate(-3deg)}
+.tl-project-picture.tl-project-book img:nth-child(4){transform:translateY(2%) rotate(3deg)}
+.tl-project-picture.tl-project-book img:nth-child(5){transform:translateY(6%) rotate(7deg)}
+
+/* Keep the expanded content in each card and allow links to receive focus native to the browser. */
+#moi .tl-mine-controls{justify-content:flex-end;margin:0 0 10px}
+#moi .tl-mine-list{
+  --mine-size:calc((100% - 2 * var(--gut)) / 3);
+  position:relative;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:var(--mine-size);
+  align-items:start;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:thin;padding:3px 0 14px;
+}
+#moi .tl-mine-list:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+#moi .tl-mine-list>article{grid-column:auto;scroll-snap-align:start;min-width:0}
+#moi .tl-mine-list .g-depth{transition:none}
+html.js #moi .tl-mine-list>article.rv{opacity:1;transform:none;filter:none}
+@media(max-width:1000px){#moi .tl-mine-list{--mine-size:calc((100% - var(--gut)) / 2)}}
+@media(max-width:560px){#moi .tl-mine-list{--mine-size:89%}}
+
+/* One set of surfaces and spacing for the homepage. */
+main{--home-r:22px;--home-pad:clamp(18px,3.1vw,38px)}
+.tl-home-hero .pp-wrap{column-gap:clamp(16px,3vw,48px)}
+.tl-home-hero .pp-hero-art{
+  border:1px solid var(--line-2);border-radius:var(--home-r);
+  background:radial-gradient(ellipse at 58% 42%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 72%),
+    color-mix(in srgb,var(--paper-2) 74%,transparent);
+  padding:0 clamp(10px,1.8vw,22px) clamp(12px,2vw,20px);
+}
+.tl-home-hero .tl-depth-stage{margin:0 auto;max-width:510px}
+.tl-home-hero .pp-facts{gap:0;padding:0;border:1px solid var(--line);border-radius:var(--home-r);background:var(--paper-2)}
+.tl-home-hero .pp-facts>div{padding:clamp(11px,2vw,21px) clamp(10px,2vw,24px)}
+.tl-home-hero .pp-facts>div+div{border-inline-start:1px solid var(--line)}
+.tl-home-hero .pp-facts>div:last-child{grid-column:auto}
+@media(max-width:860px) and (min-width:768px){
+  .tl-home-hero .pp-hero-text{grid-column:1/7}
+  .tl-home-hero .pp-hero-art{grid-column:7/13}
+}
+
+/* The case occupies a whole row. The remaining offers share a single baseline. */
+.tl-service-spread{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto;border-radius:var(--home-r)}
+.tl-service-spread>.tl-service-feature{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-column:1/-1;grid-row:auto;
+  align-items:center;border-inline-end:0;border-bottom:1px solid var(--line);gap:0;
+}
+.tl-service-spread>.tl-service-feature .tl-service-copy{padding:var(--home-pad)}
+.tl-service-spread>.tl-service-feature .tl-service-image{
+  margin:clamp(12px,2vw,24px) clamp(12px,2vw,24px) clamp(12px,2vw,24px) 0;border:1px solid var(--line-2);border-radius:13px;
+}
+.tl-service-spread .tl-service-image img{aspect-ratio:2 / 1}
+.tl-service-spread>.tl-service:not(.tl-service-feature){
+  display:flex;grid-column:auto;border:0;align-items:stretch;
+}
+.tl-service-spread>.tl-service+.tl-service:not(:nth-child(2)){border-top:0}
+.tl-service-spread>.tl-service:nth-child(n+3){border-inline-start:1px solid var(--line)}
+.tl-service-spread>.tl-service:not(.tl-service-feature) .tl-service-copy{
+  display:flex;flex-direction:column;align-items:flex-start;flex:1;padding:clamp(16px,2.25vw,28px);
+}
+.tl-service-spread .tl-service:not(.tl-service-feature) .tl-service-link{margin-top:auto}
+.tl-service-spread .tl-service-topics,.tl-service-spread .tl-service-book{margin:0 clamp(16px,2.25vw,28px) 19px;padding:0}
+.tl-service-spread .tl-service-book{width:37px}
+.tl-service-spread>.tl-service.tl-service-learn{display:flex}
+@media(max-width:767px){
+  .tl-service-spread{display:block}
+  .tl-service-spread>.tl-service:nth-child(n+3){border-inline-start:0;border-top:1px solid var(--line)}
+  .tl-service-spread>.tl-service-feature{grid-template-columns:1fr}
+  .tl-service-spread>.tl-service-feature .tl-service-image{margin:0 15px 15px}
+}
+@media(min-width:768px){
+  .tl-service-spread>.tl-service:not(.tl-service-feature){display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:1fr auto;grid-row:2}
+  .tl-service-spread>.tl-service.tl-service-learn{display:grid}
+  .tl-service-spread>.tl-service:nth-child(2){grid-column:1}
+  .tl-service-spread>.tl-service:nth-child(3){grid-column:2}
+  .tl-service-spread>.tl-service:nth-child(4){grid-column:3}
+}
+
+#mastera .pp-index{border:1px solid var(--line-2);border-radius:var(--home-r);background:var(--paper-2)}
+#mastera .pp-row{
+  padding:clamp(18px,2.7vw,32px) var(--home-pad);gap:10px clamp(16px,3vw,38px);
+  grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);background:none;
+}
+#mastera .pp-row:last-child{border-bottom:0}
+#mastera .pp-row>*{grid-column:auto}
+#mastera .pp-row .lk{grid-column:2;display:flex;flex-direction:row;flex-wrap:wrap;gap:2px 18px}
+#mastera .pp-row h3{font-size:clamp(20px,2.5vw,29px);line-height:1.18}
+#mastera .pp-row .lk a{display:inline-flex;align-items:center;min-height:44px;gap:.35em;text-decoration:underline;text-underline-offset:4px}
+html.js #mastera :is(.pp-head,.pp-row).rv{opacity:1;transform:none;filter:none}
+@media(max-width:620px){
+  #mastera .pp-row{grid-template-columns:1fr}
+  #mastera .pp-row .lk{grid-column:auto}
+}
+
+.tl-home-picker summary{
+  position:relative;display:block;cursor:pointer;list-style:none;min-height:44px;
+  padding-right:50px;color:var(--ink);
+}
+.tl-home-picker summary::-webkit-details-marker{display:none}
+.tl-home-picker summary::after{
+  content:"+";position:absolute;right:0;top:0;display:grid;place-items:center;width:44px;height:44px;
+  border:1px solid var(--line-2);border-radius:50%;font-size:25px;
+}
+.tl-home-picker[open] summary::after{content:"−"}
+.tl-home-picker summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.tl-home-picker summary p{margin:9px 0 0;max-width:65ch}
+.tl-home-picker[open] summary{padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+.tl-home-picker .tlp-go{justify-content:flex-start}
+.tl-home-picker .tlp-go a{flex:0 1 auto;min-height:44px}
+.tl-home-picker fieldset label span{min-height:44px;display:flex;align-items:center}
+#svyaz{padding-bottom:clamp(32px,6vw,72px)}
+
+/* Seven faces on an interactive wheel; only the front face is in the reading flow. */
+#moi .tl-mine-list[data-drum]{
+  --mine-card:min(64%,530px);
+  display:block;perspective:1060px;overflow:clip;touch-action:pan-y;
+  padding:16px 0 14px;scroll-snap-type:none;min-height:var(--drum-min);
+}
+#moi .tl-mine-list[data-drum]>article{
+  width:var(--mine-card);margin-inline:auto;min-height:235px;
+  background:var(--paper-2)!important;box-shadow:none!important;opacity:var(--drum-opacity,1);
+  backface-visibility:hidden;
+}
+html.js #moi .tl-mine-list[data-drum]>article.rv{
+  transform:var(--drum-transform,none);opacity:var(--drum-opacity,1);
+}
+#moi .tl-mine-list[data-drum]>article:not([data-drum-front]){
+  position:absolute;top:16px;left:calc((100% - var(--mine-card))/2);
+  pointer-events:none;overflow:hidden;height:var(--drum-height,235px);
+}
+#moi .tl-mine-list[data-drum]>article[data-drum-front]{position:relative;z-index:1;touch-action:pan-y}
+#moi .tl-mine-list[data-drum] .gcard h3{font:650 clamp(20px,2.5vw,28px)/1.16 var(--sans);margin:0}
+#moi .tl-mine-list[data-drum] .gcard h3>a{text-underline-offset:4px}
+#moi .tl-mine-list[data-drum] .gcard h3>button{min-height:44px}
+#moi .tl-mine-list[data-drum] .gcard .chips{justify-content:flex-start}
+#moi .tl-drum-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:3px}
+#moi .tl-drum-nav[hidden]{display:none}
+.tl-drum-nav button{
+  width:38px;height:44px;display:grid;place-items:center;cursor:pointer;color:var(--mute);
+  border:0;border-radius:8px;background:none;padding:0;
+}
+.tl-drum-nav button::after{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.tl-drum-nav button[aria-pressed=true]{color:var(--accent)}
+.tl-drum-nav button[aria-pressed=true]::after{width:16px;border-radius:7px}
+.tl-drum-nav button:focus-visible{outline:2px solid var(--accent)}
+@media(max-width:560px){#moi .tl-mine-list[data-drum]{--mine-card:83%;perspective:770px}}
+@media(prefers-reduced-motion:reduce){
+  #moi .tl-mine-list[data-drum]>article:not([data-drum-front]){visibility:hidden}
+}
 </style>
-<!--tl-space-head-v1--><style id="tl-space-theme">/* The TimLabs background. Text and layout remain in the page's own layers. */
+<!--tl-space-head-v1--><style id="tl-space-theme">/* TimLabs perspective drawing. Only the two drawing planes move. */
 body:has(>.tl-space){isolation:isolate}
 body:has(>.tl-space)::before{display:none}
 .tl-space{
-  --tl-space-art:none;
-  --tl-space-left:#203c61;
-  --tl-space-right:#3e2d69;
-  --tl-space-glint:#387ac1;
-  --tl-space-level:.92;
-  position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;
-  contain:strict;
+  --city-wash:#172434;
+  --city-strength:.91;
+  position:fixed;inset:0;z-index:-1;overflow:hidden;contain:strict;pointer-events:none;
+  background:radial-gradient(ellipse 74% 62% at 99% 58%,var(--city-wash),transparent);
 }
-.tl-space[data-tone=quiet]{--tl-space-level:.56}
-:root[data-theme=light] .tl-space,:root.auto-light:not([data-theme=dark]) .tl-space{
-  --tl-space-left:#becfe6;
-  --tl-space-right:#d8cdef;
-  --tl-space-glint:#aacceb;
-}
-.tl-space.tl-space-ready{--tl-space-art:url("/media/studio/field-night-v1.webp")}
-:root[data-theme=light] .tl-space.tl-space-ready,
-:root.auto-light:not([data-theme=dark]) .tl-space.tl-space-ready{--tl-space-art:url("/media/studio/field-day-v1.webp")}
-:root:not([data-theme]) .tl-space{color-scheme:light dark}
 @media(prefers-color-scheme:light){
- :root:not([data-theme]):not(.auto-light) .tl-space{
-   --tl-space-left:#becfe6;--tl-space-right:#d8cdef;--tl-space-glint:#aacceb
- }
- :root:not([data-theme]):not(.auto-light) .tl-space.tl-space-ready{
-   --tl-space-art:url("/media/studio/field-day-v1.webp")
- }
+  :root:not([data-theme]) .tl-space{--city-wash:#e1e8ef;--city-strength:.78}
 }
-.tl-space>span{position:absolute;display:block;inset:-11% -8%;opacity:var(--tl-space-level)}
-.tl-space-far{
-  background:radial-gradient(ellipse at 3% 32%,var(--tl-space-left),transparent 39%),
-             radial-gradient(ellipse at 98% 71%,var(--tl-space-right),transparent 43%);
+:root[data-theme=light] .tl-space,:root.auto-light:not([data-theme]) .tl-space{
+  --city-wash:#e1e8ef;--city-strength:.78
 }
-.tl-space-format{
-  background-image:var(--tl-space-art);
-  background-size:100% 100%;
-  opacity:calc(var(--tl-space-level) * .74)!important;
+.tl-space-far{--city-drawing:url("/media/studio/tl-city-ground-v2.webp")}
+.tl-space-format{--city-drawing:url("/media/studio/tl-city-buildings-v2.webp")}
+.tl-space-ready :is(.tl-space-far,.tl-space-format){
+  position:absolute;inset:-7%;
+  background:#6887a5;mask:var(--city-drawing) 57% 54%/cover no-repeat;
+  opacity:var(--city-strength);
+  transform-origin:64% 47%;
 }
-.tl-space-glint{
-  background:radial-gradient(ellipse at 5% 82%,var(--tl-space-glint),transparent 23%),
-             radial-gradient(ellipse at 96% 24%,var(--tl-space-glint),transparent 17%);
-  opacity:calc(var(--tl-space-level) * .22)!important;
+.tl-space-ready .tl-space-far{opacity:calc(var(--city-strength) * .65)}
+.tl-space[data-tone=quiet]{background:none}
+.tl-space[data-tone=quiet] .tl-space-glint{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,var(--paper) 16% 84%,transparent);
 }
+.tl-space[data-tone=quiet] :is(.tl-space-far,.tl-space-format){opacity:.3}
 .tl-space-control{
-  display:inline-flex;align-items:center;min-height:44px;padding:0 9px;
-  margin:4px 0 0;color:var(--ink-2,#abb5c7);background:transparent;border:1px solid transparent;
-  border-radius:8px;font:500 13px/1.25 var(--sans,system-ui);text-decoration:underline;text-underline-offset:4px;cursor:pointer;
+  min-height:44px;padding:0 8px;
+  color:var(--ink-2,#abb5c7);background:transparent;border:1px solid transparent;
+  border-radius:8px;font:500 13px/1.25 var(--sans,system-ui);text-decoration:underline;text-underline-offset:4px;
+  cursor:pointer;
 }
 .tl-space-control:hover{border-color:var(--line-2)}
-.tl-space-control[hidden]{display:none}
 @media(max-width:767px){
- .tl-space>span{inset:-10% -19%}
- .tl-space[data-tone=quiet]{--tl-space-level:.44}
+  .tl-space-ready :is(.tl-space-far,.tl-space-format){
+    inset:-5% -10%;mask-size:auto 74%;mask-position:68% 72%;
+    opacity:calc(var(--city-strength) * .83)
+  }
+  .tl-space-ready .tl-space-far{opacity:calc(var(--city-strength) * .51)}
+  .tl-space[data-tone=quiet] :is(.tl-space-far,.tl-space-format,.tl-space-glint){display:none}
 }
 @media(forced-colors:active),print{
- .tl-space,.tl-space-control{display:none!important}
+  .tl-space,.tl-space-control{display:none!important}
 }
-@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
- .tl-space[data-tone=studio]>span{transition:translate 720ms cubic-bezier(.23,1,.32,1)}
- .tl-space[data-tone=studio] .tl-space-far{
-   translate:calc(var(--tl-depth-x,0px) * .35) calc(var(--tl-depth-y,0px) * .35)
- }
- .tl-space[data-tone=studio] .tl-space-format{translate:var(--tl-depth-x,0px) var(--tl-depth-y,0px)}
- .tl-space[data-tone=studio] .tl-space-glint{
-   translate:calc(var(--tl-depth-x,0px) * 1.4) calc(var(--tl-depth-y,0px) * 1.4)
- }
-}
-</style><script src="/assets/tl-space-v1.js?v=9bcf3ef874" defer></script><!--/tl-space-head-v1--></head>
+</style><script src="/assets/tl-space-v1.js?v=d964f4d642" defer></script><!--/tl-space-head-v1--></head>
 <body><!--tl-space-body-v1--><div class="tl-space" data-tone="studio" aria-hidden="true"><span class="tl-space-far"></span><span class="tl-space-format"></span><span class="tl-space-glint"></span></div><!--/tl-space-body-v1-->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <g id="i-tg"><path d="M22 3 11.2 13.6M22 3 15.1 21.5 11.2 13.6 2.6 9.7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></g>
@@ -688,27 +855,27 @@ body:has(>.tl-space)::before{display:none}
       <a class="tl-portal-link" href="/journal/">Журнал «Компас» <span aria-hidden="true">↗</span></a>
     </div>
     <div class="tl-depth-meta">
-    <a class="pp-tim" href="https://wa.me/79938917761" target="_blank" rel="noopener"><img src="/avatar.webp" width="64" height="64" alt="Тим — основатель TimLabs"><span><b>Тим, автор проекта</b>Обсудим вашу задачу лично</span></a>
+    <a class="pp-tim" href="https://wa.me/79938917761" target="_blank" rel="noopener"><img src="/avatar.webp" width="64" height="64" alt="Тим — основатель TimLabs" loading="lazy" decoding="async"><span><b>Тим, автор проекта</b>Обсудим вашу задачу лично</span></a>
       <button class="tl-motion-toggle" type="button" aria-label="Пауза фонового движения" aria-pressed="false" hidden>Пауза фона</button>
     </div>
   </div>
   <div class="pp-facts"><div><b data-jcount data-count="143">143</b><span>статьи в журнале «Компас»</span></div><div><b>ИИ-агенты</b><span>в моей собственной работе</span></div><div><b>Онлайн</b><span>работаю по всей России</span></div></div>
 </div></section>
 <!--tl-ai-v1--><section class="pp-sec tl-services" id="uslugi" aria-labelledby="uslugi-h"><div class="pp-wrap"><div class="pp-head"><div class="pp-ht"><h2 id="uslugi-h">От задачи — <em>к решению</em></h2><p>Автоматизация, собственный журнал и обучение команды. Выберите, с чего начать.</p></div></div>
-<div class="tl-rail" data-rail="services"><div class="tl-service-grid tl-rail-scroll" id="tl-service-rail" tabindex="0" role="group" aria-labelledby="uslugi-h">
-<div class="tl-rail-slot"><article class="tl-service tl-service-feature b2b"><div class="tl-service-copy"><h3 id="b2b-h"><a href="/ii-avtomatizaciya/zhurnal-pod-klyuch/">Журнал под ключ</a></h3><p>Статьи по поисковому спросу, редакционная проверка и публикация на вашем сайте.</p><a class="tl-service-link" href="/ii-avtomatizaciya/zhurnal-pod-klyuch/">Как устроен запуск →</a></div><a class="tl-service-image" href="/journal/" aria-label="Посмотреть журнал «Компас»"><img src="/media/studio/kompas-case.webp" width="960" height="680" alt="Статьи и рубрики работающего журнала «Компас»" loading="lazy" decoding="async"></a></article></div>
-<div class="tl-rail-slot"><article class="tl-service tl-service-auto"><div class="tl-service-copy"><h3><a href="/ii-avtomatizaciya/">Боты и ИИ-агенты</a></h3><p>Ответы клиентам, заявки, отчёты и документы. Разберём процесс и выберем задачу для автоматизации.</p><a class="tl-service-link" href="/ii-avtomatizaciya/">Подобрать решение →</a></div><div class="tl-service-topics" aria-label="Задачи"><span>Заявки</span><span>Документы</span><span>Отчёты</span></div></article></div>
-<div class="tl-rail-slot"><article class="tl-service tl-service-learn"><div class="tl-service-copy"><h3><a href="/obuchenie/">Обучение на ваших задачах</a></h3><p>От разовой настройки до личного сопровождения и занятий для команды.</p><a class="tl-service-link" href="/obuchenie/">Выбрать формат →</a></div><a class="tl-service-book" href="/knigi/#book3" aria-label="Книга «Промт-инженеринг для новичков»"><img src="/media/showcase/books/book3.webp" width="533" height="800" alt="Обложка книги Тимура Гуцева «Промт-инженеринг для новичков»" loading="lazy" decoding="async"></a></article></div>
-<div class="tl-rail-slot"><article class="tl-service tl-service-trace"><div class="tl-service-copy"><h3><a href="/ii-avtomatizaciya/cifrovoj-sled/">Экосистема цифрового следа</a></h3><p>Сайт, журнал и площадки проекта — с общей структурой и связями между материалами.</p><a class="tl-service-link" href="/ii-avtomatizaciya/cifrovoj-sled/">Посмотреть состав →</a></div></article></div>
-</div><div class="tl-rail-tools"></div></div></div></section><!--/tl-ai-v1-->
+<div class="tl-service-spread">
+<article class="tl-service tl-service-feature"><div class="tl-service-copy"><h3 id="b2b-h"><a href="/ii-avtomatizaciya/zhurnal-pod-klyuch/">Журнал под ключ</a></h3><p>Статьи по поисковому спросу, редакционная проверка и публикация на вашем сайте.</p><a class="tl-service-link" href="/ii-avtomatizaciya/zhurnal-pod-klyuch/">Как устроен запуск →</a></div><a class="tl-service-image" href="/journal/" aria-label="Посмотреть журнал «Компас»"><img src="/media/studio/kompas-case.webp" width="960" height="680" alt="Статьи и рубрики работающего журнала «Компас»" loading="lazy" decoding="async"></a></article>
+<article class="tl-service tl-service-auto"><div class="tl-service-copy"><h3><a href="/ii-avtomatizaciya/">Боты и ИИ-агенты</a></h3><p>Ответы клиентам, заявки, отчёты и документы. Разберём процесс и выберем задачу для автоматизации.</p><a class="tl-service-link" href="/ii-avtomatizaciya/">Подобрать решение →</a></div><div class="tl-service-topics" aria-label="Задачи"><span>Заявки</span><span>Документы</span><span>Отчёты</span></div></article>
+<article class="tl-service tl-service-learn"><div class="tl-service-copy"><h3><a href="/obuchenie/">Обучение на ваших задачах</a></h3><p>От разовой настройки до личного сопровождения и занятий для команды.</p><a class="tl-service-link" href="/obuchenie/">Выбрать формат →</a></div><a class="tl-service-book" href="/knigi/#book3" aria-label="Книга «Промт-инженеринг для новичков»"><img src="/media/showcase/books/book3.webp" width="533" height="800" alt="Обложка книги Тимура Гуцева «Промт-инженеринг для новичков»" loading="lazy" decoding="async"></a></article>
+<article class="tl-service tl-service-trace"><div class="tl-service-copy"><h3><a href="/ii-avtomatizaciya/cifrovoj-sled/">Экосистема цифрового следа</a></h3><p>Сайт, журнал и площадки проекта — с общей структурой и связями между материалами.</p><a class="tl-service-link" href="/ii-avtomatizaciya/cifrovoj-sled/">Посмотреть состав →</a></div></article>
+</div></div></section><!--/tl-ai-v1-->
 <section class="pp-sec tl-projects" aria-labelledby="tl-projects-h"><div class="pp-wrap">
   <div class="pp-head"><div class="pp-ht"><h2 id="tl-projects-h">Проекты <em>TimLabs</em></h2></div>
     <div class="tl-project-controls" hidden><button type="button" aria-label="Предыдущий проект" aria-controls="tl-project-list">←</button><button type="button" aria-label="Следующий проект" aria-controls="tl-project-list">→</button></div>
   </div>
   <ul class="tl-project-list" id="tl-project-list" tabindex="0" aria-label="Проекты TimLabs">
-    <li><article class="tl-project-card"><div class="tl-project-picture"><img src="/media/studio/kompas-case.webp" width="960" height="680" loading="lazy" decoding="async" alt="Страница журнала «Компас» об ИИ-ассистенте для компании"></div><div class="tl-project-copy"><h3><a href="/journal/">Журнал «Компас»</a></h3><p>Статьи об автоматизации, работе и повседневной жизни.</p></div></article></li>
-    <li><article class="tl-project-card"><div class="tl-project-picture tl-project-office" aria-hidden="true"><span><b>Задача</b><i></i><b>Проверка</b><i></i><b>Публикация</b></span></div><div class="tl-project-copy"><h3><a href="/zhivoj-ofis/">Офис агентов</a></h3><p>Показываю, как агенты работают над сайтом и журналом.</p></div></article></li>
-    <li><article class="tl-project-card"><div class="tl-project-picture tl-project-book"><img src="/media/studio/book1-400.webp" width="400" height="600" alt="" loading="lazy" decoding="async"></div><div class="tl-project-copy"><h3><a href="/magazin/">Магазин TimLabs</a></h3><p>Печатные книги с автографом, обучение и услуги.</p></div></article></li>
+    <li><article class="tl-project-card"><div class="tl-project-picture"><img src="/media/studio/project-kompas-960.webp" srcset="/media/studio/project-kompas-480.webp 480w, /media/studio/project-kompas-960.webp 960w" sizes="(max-width: 620px) 85vw, 560px" width="960" height="480" loading="lazy" decoding="async" alt="Журнал «Компас» и обложки его статей"></div><div class="tl-project-copy"><h3><a href="/journal/">Журнал «Компас»</a></h3><p>Статьи об автоматизации, работе и повседневной жизни.</p></div></article></li>
+    <li><article class="tl-project-card"><div class="tl-project-picture"><img src="/media/studio/project-office-960.webp" srcset="/media/studio/project-office-480.webp 480w, /media/studio/project-office-960.webp 960w" sizes="(max-width: 620px) 85vw, 560px" width="960" height="480" loading="lazy" decoding="async" alt="Карта офиса ИИ-агентов: отделы и связи между ними"></div><div class="tl-project-copy"><h3><a href="/zhivoj-ofis/">Офис агентов</a></h3><p>Показываю, как агенты работают над сайтом и журналом.</p></div></article></li>
+    <li><article class="tl-project-card"><div class="tl-project-picture tl-project-book"><img src="/media/studio/book1-192.webp" alt="Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я" width="533" height="800" loading="lazy" decoding="async"><img src="/media/studio/book2-192.webp" alt="Духовное наследие поколения ПЕПСИ" width="533" height="800" loading="lazy" decoding="async"><img src="/media/studio/book3-192.webp" alt="Промт-инженеринг для новичков" width="533" height="800" loading="lazy" decoding="async"><img src="/media/studio/book4-192.webp" alt="Мемуары зерокодера" width="533" height="800" loading="lazy" decoding="async"><img src="/media/studio/book5-192.webp" alt="Лёгкий способ отказа от зависимостей: Революция сознания" width="533" height="800" loading="lazy" decoding="async"></div><div class="tl-project-copy"><h3><a href="/magazin/">Магазин TimLabs</a></h3><p>Печатные книги с автографом, обучение и услуги.</p></div></article></li>
   </ul>
 </div></section>
 <section class="pp-sec" id="start" aria-labelledby="start-h"><div class="pp-wrap">
@@ -775,8 +942,8 @@ body:has(>.tl-space)::before{display:none}
 .tlp .tlp-go a.tlp-main{background:var(--cyan,#00b4ff);color:#00121f}
 .tlp small{display:block;margin-top:10px;color:var(--dim,#5c6478);font-size:.8rem;line-height:1.4}
 }</style>
-<h2 id="tlp-h">Подобрать мастера за минуту</h2>
-<p>Отметьте, что вам сейчас нужно, — посоветую специалиста или практику, которые знаю сам.</p>
+<details class="tl-home-picker"><summary><h2 id="tlp-h">Подобрать мастера за минуту</h2>
+<p>Отметьте, что вам сейчас нужно, — посоветую специалиста или практику, которые знаю сам.</p></summary>
 <fieldset><legend>Что важно сейчас?</legend><div class="tlp-ch">
 <label><input type="radio" name="tlp-what" value="беременность и роды"><span>Беременность и роды</span></label>
 <label><input type="radio" name="tlp-what" value="тело и восстановление"><span>Тело и восстановление</span></label>
@@ -811,6 +978,7 @@ box.addEventListener('change',upd);upd();
 box.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-tlp]');if(!a)return;
 try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getAttribute('data-tlp'),page:location.pathname});}catch(_){}});
 })();</script>
+</details>
 </section>
   </section></div>
 <section class="pp-sec" id="mastera" aria-labelledby="mastera-h"><div class="pp-wrap">
@@ -842,7 +1010,7 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
       <p><b style="color:#fff">Меня зовут Тим.</b> Годами я помогал расти чужим проектам и собрал круг мастеров, которым доверяю сам. Параллельно строю собственное: журнал, лабораторию и музыку. ИИ помогает мне делать это быстро и точно.</p>
     <!--tl-author-home--><p>ИИ-инструменты сначала появляются в моей собственной работе — в журнале, на сайте и в творческих проектах. <a href="/ob-avtore/">Кто я и как работаю</a>.</p><!--/tl-author-home-->
 </div>
-    <div class="tlg-grid">
+    <div class="tlg-grid tl-mine-list" id="tl-mine-list" tabindex="0" role="group" aria-labelledby="moi-h">
       <article class="gcard rv" style="--c:#00b4ff;--c2:#6aa0ff">
         <div class="g-top"><span class="g-tag">Журнал</span></div>
         <h3><a href="/journal/">Журнал «Компас»</a></h3>
@@ -904,7 +1072,7 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
         <div class="chips"><a class="chip main" style="--c:#2aabee" href="https://t.me/TimLabs_bot" target="_blank" rel="noopener">Открыть бота</a></div>
       </article>
     </div>
-  </section>
+  <div class="tl-drum-nav" role="group" aria-label="Выбрать проект" hidden></div></section>
 <section class="pp-close" id="svyaz" aria-labelledby="svyaz-h"><div class="pp-wrap">
   <h2 id="svyaz-h">Напишите мне <em>лично</em></h2>
   <p>Отвечаю сам. Расскажите, какую задачу хотите передать ИИ, чему научиться или какой проект задумали.</p>
@@ -915,7 +1083,7 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
     <a class="pp-link" href="https://vk.ru/tim.rockets" target="_blank" rel="noopener">ВКонтакте</a>
     <a class="pp-link" href="https://www.instagram.com/tim__rockets" target="_blank" rel="noopener">Instagram<sup>*</sup></a>
   </div>
-</div><div class="tl-matte-signature" aria-hidden="true"><span class="tl-matte-lettering"><span>TimLabs</span><span class="tl-matte-glint">TimLabs</span></span></div></section>
+</div></section>
 <footer class="pp-foot"><div class="pp-wrap">
     <p><sup>*</sup> Instagram принадлежит компании Meta Platforms Inc., признанной в Российской Федерации экстремистской организацией; её деятельность на территории РФ запрещена.</p>
     <p class="cop">© 2026 ТимЛабс (TimLabs) · timlabs.online</p>
@@ -924,8 +1092,8 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
   </div></footer>
 </main>
 <script src="/assets/tl-motion.js?v=d8a3c0e8d4" defer></script>
-<script src="/assets/tl-studio-depth-v2.js?v=416314d5a5" defer></script>
-<script src="/assets/tl-rails-v1.js?v=db57748ac6" defer fetchpriority="low"></script>
+<script src="/assets/tl-studio-depth-v2.js?v=31844810f4" defer></script>
+
 <!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
 <style>@layer tl-base,legacy;@layer legacy{
 #tl-consent-veil{position:fixed;inset:0;z-index:9998;display:none;
