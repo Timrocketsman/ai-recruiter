@@ -324,6 +324,130 @@ html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow
  .tl-depth-stage::before,.tl-depth-stage>picture,.tl-service,.tl-project-card,.tl-book-volume{transform:none;transition:none}
  .tl-cart-spark{display:none}
 }
+
+/* Studio house effects. Geometry is static before scripts become available. */
+.tl-portal-preview {
+  position:absolute; z-index:2; inset:12% 7% 13%; margin:0;
+  overflow:hidden; border-radius:20px; border:1px solid #91b7d07a;
+  background:#101926; color:#eef4fb; box-shadow:0 24px 62px #0007;
+  clip-path:circle(0 at 54% 46%); opacity:0;
+  transform:perspective(950px) rotateY(-9deg) scale(.9);
+  transition:clip-path 650ms cubic-bezier(.2,.72,.27,1),
+             transform 650ms cubic-bezier(.23,1,.32,1), opacity 340ms ease;
+  pointer-events:none;
+}
+.tl-portal-preview img {
+  display:block; width:100%; height:100%; object-fit:cover; object-position:center top;
+}
+.tl-portal-preview::after {
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(114deg,transparent 38%,#aacfff3d 48%,transparent 57%);
+  transform:translateX(-103%); transition:transform 780ms cubic-bezier(.25,.55,.4,1);
+}
+.tl-depth-stage.tl-portal-open .tl-portal-preview {
+  clip-path:circle(79% at 54% 46%); opacity:1; transform:none;
+}
+.tl-depth-stage.tl-portal-open .tl-portal-preview::after{transform:translateX(103%)}
+.tl-depth-stage.tl-portal-open .tl-compass-canvas,
+.tl-depth-stage.tl-portal-open>picture{opacity:.2}
+.tl-portal-link {
+  position:absolute; z-index:3; bottom:1%; left:50%; transform:translateX(-50%);
+  display:inline-flex; justify-content:center; align-items:center; gap:12px;
+  padding:0 17px; min-height:44px; white-space:nowrap; border-radius:999px;
+  background:var(--paper-2); border:1px solid var(--line-2);
+  color:var(--ink); text-decoration:none; font:600 14px/1 var(--sans);
+}
+.tl-portal-link:hover,.tl-portal-link:focus-visible{border-color:var(--accent)}
+.tl-portal-link:focus-visible,.tl-orbit-tools button:focus-visible,.tl-orbit-tools a:focus-visible{
+  outline:2px solid var(--accent); outline-offset:3px
+}
+.tl-portal-link span{color:var(--accent)}
+
+.tl-matte-signature {
+  --tl-matte-top:#333b4a; --tl-matte-middle:#181c24; --tl-matte-deep:#0b0e15;
+  --tl-matte-edge:#8099b249; --tl-matte-light:#a8bacf;
+  width:min(1240px,100%); margin:clamp(42px,7vw,93px) auto 0; overflow:hidden;
+  padding:0 15px .09em; position:relative; isolation:isolate;
+  font:760 clamp(68px,19vw,260px)/.98 var(--sans); letter-spacing:-.094em;
+  text-align:center; white-space:nowrap; user-select:none;
+}
+:root[data-theme="light"] .tl-matte-signature,:root.auto-light .tl-matte-signature{
+  --tl-matte-top:#424b57; --tl-matte-middle:#222834; --tl-matte-deep:#111722;
+  --tl-matte-edge:#f0f8ff9c; --tl-matte-light:#bdd7eb
+}
+.tl-matte-signature::before{
+  content:""; position:absolute; inset:23% 4% 5%; z-index:-1;
+  background:radial-gradient(ellipse at 52% 63%,#718ab01e,transparent 66%);
+}
+.tl-matte-lettering{
+  position:relative; display:inline-block; padding-right:.09em; color:var(--tl-matte-middle)
+}
+.tl-matte-lettering span{
+  background:linear-gradient(174deg,var(--tl-matte-top),var(--tl-matte-middle) 49%,var(--tl-matte-deep) 87%);
+  background-clip:text; -webkit-background-clip:text; color:transparent;
+}
+.tl-matte-lettering span:first-child{
+  display:block; filter:drop-shadow(0 -1px 0 var(--tl-matte-edge)) drop-shadow(0 14px 14px #05091025)
+}
+.tl-matte-lettering .tl-matte-glint{
+  position:absolute; inset:0; padding-right:inherit;
+  background-image:linear-gradient(166deg,var(--tl-matte-light) 18%,#819cba 37%,transparent 70%);
+  clip-path:polygon(0 0,0 0,0 100%,0 100%); pointer-events:none;
+}
+
+.tl-book-vitrine{min-width:0; position:relative}
+.shop .sh-fan.tl-book-shelf{
+  --tl-orbit-gap:clamp(9px,2vw,26px); gap:var(--tl-orbit-gap);
+  touch-action:pan-y;
+}
+.shop .tl-book-shelf.tl-orbit-three .tl-book-volume{
+  grid-row:1; grid-column:2; transition:none; will-change:auto;
+}
+.tl-orbit-three .tl-book-volume:nth-child(1){
+  transform:translate3d(calc(-100% - var(--tl-orbit-gap)),9px,-39px) rotateY(19deg) rotateZ(-3.5deg) scale(.913)
+}
+.tl-orbit-three .tl-book-volume:nth-child(2){z-index:2;transform:scale(.995)}
+.tl-orbit-three .tl-book-volume:nth-child(3){
+  transform:translate3d(calc(100% + var(--tl-orbit-gap)),9px,-39px) rotateY(-19deg) rotateZ(3.5deg) scale(.913)
+}
+.tl-orbit-tools{
+  min-height:57px; display:grid; grid-template-columns:44px minmax(0,1fr) 44px;
+  gap:10px; align-items:center; margin:-6px auto 0; width:min(100%,445px);
+}
+.tl-orbit-tools button{
+  width:44px; height:44px; border-radius:50%; border:1px solid var(--line-2);
+  background:var(--paper-2); color:var(--ink); cursor:pointer; font:550 18px/1 var(--sans);
+}
+.tl-orbit-tools button:first-child{grid-column:1;grid-row:1}
+.tl-orbit-tools button:last-child{grid-column:3;grid-row:1}
+.tl-orbit-tools button[hidden]{display:none}
+.tl-orbit-tools button:hover{border-color:var(--accent)}
+.tl-orbit-tools a{
+  grid-column:2;grid-row:1;display:grid; place-items:center; text-align:center; min-height:44px; font-size:14px;
+  color:var(--ink); text-underline-offset:4px; line-height:1.22;
+}
+.tl-cart-slot{display:inline-grid;place-items:center;width:44px;height:44px;flex:0 0 44px}
+.shop .sh-cart-btn.tl-cart-docked{
+  position:fixed;top:max(15px,env(safe-area-inset-top));right:max(19px,env(safe-area-inset-right));
+  z-index:60;background:var(--paper-2);box-shadow:0 8px 25px #0003,inset 0 0 0 1px var(--line-2)
+}
+.tl-cart-flight{
+  position:fixed; width:var(--tl-flight-width); height:var(--tl-flight-height);
+  inset:0 auto auto 0; z-index:10050; border-radius:3px; overflow:hidden;
+  pointer-events:none; box-shadow:0 8px 22px #050a1c65;
+}
+.tl-cart-flight img{height:100%;width:100%;display:block;object-fit:cover}
+@media(max-width:767px){
+ .tl-portal-preview{inset:12% 5% 15%;border-radius:14px}
+ .tl-portal-link{bottom:0;font-size:13px}
+ .tl-matte-signature{font-size:clamp(62px,18.8vw,150px)}
+ .shop .sh-fan.tl-book-shelf{--tl-orbit-gap:13px;gap:var(--tl-orbit-gap)}
+ .tl-orbit-tools{width:min(100%,355px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .tl-portal-preview,.tl-portal-preview::after{transition:none}
+ .tl-cart-flight,.tl-cart-spark{display:none}
+}
 </style>
 </head>
 <body>
@@ -353,12 +477,14 @@ html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow
     <div class="pp-cta"><a class="pp-btn" href="/ii-avtomatizaciya/">Подобрать решение</a><a class="pp-link" href="/zhivoj-ofis/">Офис агентов →</a></div>
   </div>
   <div class="pp-hero-art">
-    <div class="tl-depth-stage" data-compass="/assets/tl-compass-v1.js?v=188f2c3da6">
+    <div class="tl-depth-stage" data-compass="/assets/tl-compass-v2.js?v=10b51873f8">
       <picture aria-hidden="true"><source media="(prefers-color-scheme: light)" srcset="/media/studio/compass-day-v1.webp"><img src="/media/studio/compass-night-v1.webp" width="600" height="480" alt="" fetchpriority="high" decoding="async"></picture>
       <canvas class="tl-compass-canvas" aria-hidden="true"></canvas>
+      <div class="tl-portal-preview" data-image="/media/studio/kompas-case.webp" aria-hidden="true"></div>
+      <a class="tl-portal-link" href="/journal/">Журнал «Компас» <span aria-hidden="true">↗</span></a>
     </div>
     <div class="tl-depth-meta">
-    <a class="pp-tim" href="https://wa.me/79938917761" target="_blank" rel="noopener"><img src="/avatar.webp" width="64" height="64" alt="Тим — основатель TimLabs" loading="lazy" decoding="async"><span><b>Тим, автор проекта</b>Обсудим вашу задачу лично</span></a>
+    <a class="pp-tim" href="https://wa.me/79938917761" target="_blank" rel="noopener"><img src="/avatar.webp" width="64" height="64" alt="Тим — основатель TimLabs"><span><b>Тим, автор проекта</b>Обсудим вашу задачу лично</span></a>
       <button class="tl-motion-toggle" type="button" aria-label="Пауза фонового движения" aria-pressed="false" hidden>Пауза фона</button>
     </div>
   </div>
@@ -585,7 +711,7 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
     <a class="pp-link" href="https://vk.ru/tim.rockets" target="_blank" rel="noopener">ВКонтакте</a>
     <a class="pp-link" href="https://www.instagram.com/tim__rockets" target="_blank" rel="noopener">Instagram<sup>*</sup></a>
   </div>
-</div><div class="pp-mega" aria-hidden="true">TimLabs</div></section>
+</div><div class="tl-matte-signature" aria-hidden="true"><span class="tl-matte-lettering"><span>TimLabs</span><span class="tl-matte-glint">TimLabs</span></span></div></section>
 <footer class="pp-foot"><div class="pp-wrap">
     <p><sup>*</sup> Instagram принадлежит компании Meta Platforms Inc., признанной в Российской Федерации экстремистской организацией; её деятельность на территории РФ запрещена.</p>
     <p class="cop">© 2026 ТимЛабс (TimLabs) · timlabs.online</p>
@@ -594,7 +720,7 @@ try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getA
   </div></footer>
 </main>
 <script src="/assets/tl-motion.js?v=d8a3c0e8d4" defer></script>
-<script src="/assets/tl-studio-depth-v1.js?v=f4a8763c06" defer></script>
+<script src="/assets/tl-studio-depth-v2.js?v=be8c60e891" defer></script>
 <!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
 <style>@layer tl-base,legacy;@layer legacy{
 #tl-consent-veil{position:fixed;inset:0;z-index:9998;display:none;

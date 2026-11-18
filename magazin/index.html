@@ -202,6 +202,130 @@ html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow
  .tl-depth-stage::before,.tl-depth-stage>picture,.tl-service,.tl-project-card,.tl-book-volume{transform:none;transition:none}
  .tl-cart-spark{display:none}
 }
+
+/* Studio house effects. Geometry is static before scripts become available. */
+.tl-portal-preview {
+  position:absolute; z-index:2; inset:12% 7% 13%; margin:0;
+  overflow:hidden; border-radius:20px; border:1px solid #91b7d07a;
+  background:#101926; color:#eef4fb; box-shadow:0 24px 62px #0007;
+  clip-path:circle(0 at 54% 46%); opacity:0;
+  transform:perspective(950px) rotateY(-9deg) scale(.9);
+  transition:clip-path 650ms cubic-bezier(.2,.72,.27,1),
+             transform 650ms cubic-bezier(.23,1,.32,1), opacity 340ms ease;
+  pointer-events:none;
+}
+.tl-portal-preview img {
+  display:block; width:100%; height:100%; object-fit:cover; object-position:center top;
+}
+.tl-portal-preview::after {
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(114deg,transparent 38%,#aacfff3d 48%,transparent 57%);
+  transform:translateX(-103%); transition:transform 780ms cubic-bezier(.25,.55,.4,1);
+}
+.tl-depth-stage.tl-portal-open .tl-portal-preview {
+  clip-path:circle(79% at 54% 46%); opacity:1; transform:none;
+}
+.tl-depth-stage.tl-portal-open .tl-portal-preview::after{transform:translateX(103%)}
+.tl-depth-stage.tl-portal-open .tl-compass-canvas,
+.tl-depth-stage.tl-portal-open>picture{opacity:.2}
+.tl-portal-link {
+  position:absolute; z-index:3; bottom:1%; left:50%; transform:translateX(-50%);
+  display:inline-flex; justify-content:center; align-items:center; gap:12px;
+  padding:0 17px; min-height:44px; white-space:nowrap; border-radius:999px;
+  background:var(--paper-2); border:1px solid var(--line-2);
+  color:var(--ink); text-decoration:none; font:600 14px/1 var(--sans);
+}
+.tl-portal-link:hover,.tl-portal-link:focus-visible{border-color:var(--accent)}
+.tl-portal-link:focus-visible,.tl-orbit-tools button:focus-visible,.tl-orbit-tools a:focus-visible{
+  outline:2px solid var(--accent); outline-offset:3px
+}
+.tl-portal-link span{color:var(--accent)}
+
+.tl-matte-signature {
+  --tl-matte-top:#333b4a; --tl-matte-middle:#181c24; --tl-matte-deep:#0b0e15;
+  --tl-matte-edge:#8099b249; --tl-matte-light:#a8bacf;
+  width:min(1240px,100%); margin:clamp(42px,7vw,93px) auto 0; overflow:hidden;
+  padding:0 15px .09em; position:relative; isolation:isolate;
+  font:760 clamp(68px,19vw,260px)/.98 var(--sans); letter-spacing:-.094em;
+  text-align:center; white-space:nowrap; user-select:none;
+}
+:root[data-theme="light"] .tl-matte-signature,:root.auto-light .tl-matte-signature{
+  --tl-matte-top:#424b57; --tl-matte-middle:#222834; --tl-matte-deep:#111722;
+  --tl-matte-edge:#f0f8ff9c; --tl-matte-light:#bdd7eb
+}
+.tl-matte-signature::before{
+  content:""; position:absolute; inset:23% 4% 5%; z-index:-1;
+  background:radial-gradient(ellipse at 52% 63%,#718ab01e,transparent 66%);
+}
+.tl-matte-lettering{
+  position:relative; display:inline-block; padding-right:.09em; color:var(--tl-matte-middle)
+}
+.tl-matte-lettering span{
+  background:linear-gradient(174deg,var(--tl-matte-top),var(--tl-matte-middle) 49%,var(--tl-matte-deep) 87%);
+  background-clip:text; -webkit-background-clip:text; color:transparent;
+}
+.tl-matte-lettering span:first-child{
+  display:block; filter:drop-shadow(0 -1px 0 var(--tl-matte-edge)) drop-shadow(0 14px 14px #05091025)
+}
+.tl-matte-lettering .tl-matte-glint{
+  position:absolute; inset:0; padding-right:inherit;
+  background-image:linear-gradient(166deg,var(--tl-matte-light) 18%,#819cba 37%,transparent 70%);
+  clip-path:polygon(0 0,0 0,0 100%,0 100%); pointer-events:none;
+}
+
+.tl-book-vitrine{min-width:0; position:relative}
+.shop .sh-fan.tl-book-shelf{
+  --tl-orbit-gap:clamp(9px,2vw,26px); gap:var(--tl-orbit-gap);
+  touch-action:pan-y;
+}
+.shop .tl-book-shelf.tl-orbit-three .tl-book-volume{
+  grid-row:1; grid-column:2; transition:none; will-change:auto;
+}
+.tl-orbit-three .tl-book-volume:nth-child(1){
+  transform:translate3d(calc(-100% - var(--tl-orbit-gap)),9px,-39px) rotateY(19deg) rotateZ(-3.5deg) scale(.913)
+}
+.tl-orbit-three .tl-book-volume:nth-child(2){z-index:2;transform:scale(.995)}
+.tl-orbit-three .tl-book-volume:nth-child(3){
+  transform:translate3d(calc(100% + var(--tl-orbit-gap)),9px,-39px) rotateY(-19deg) rotateZ(3.5deg) scale(.913)
+}
+.tl-orbit-tools{
+  min-height:57px; display:grid; grid-template-columns:44px minmax(0,1fr) 44px;
+  gap:10px; align-items:center; margin:-6px auto 0; width:min(100%,445px);
+}
+.tl-orbit-tools button{
+  width:44px; height:44px; border-radius:50%; border:1px solid var(--line-2);
+  background:var(--paper-2); color:var(--ink); cursor:pointer; font:550 18px/1 var(--sans);
+}
+.tl-orbit-tools button:first-child{grid-column:1;grid-row:1}
+.tl-orbit-tools button:last-child{grid-column:3;grid-row:1}
+.tl-orbit-tools button[hidden]{display:none}
+.tl-orbit-tools button:hover{border-color:var(--accent)}
+.tl-orbit-tools a{
+  grid-column:2;grid-row:1;display:grid; place-items:center; text-align:center; min-height:44px; font-size:14px;
+  color:var(--ink); text-underline-offset:4px; line-height:1.22;
+}
+.tl-cart-slot{display:inline-grid;place-items:center;width:44px;height:44px;flex:0 0 44px}
+.shop .sh-cart-btn.tl-cart-docked{
+  position:fixed;top:max(15px,env(safe-area-inset-top));right:max(19px,env(safe-area-inset-right));
+  z-index:60;background:var(--paper-2);box-shadow:0 8px 25px #0003,inset 0 0 0 1px var(--line-2)
+}
+.tl-cart-flight{
+  position:fixed; width:var(--tl-flight-width); height:var(--tl-flight-height);
+  inset:0 auto auto 0; z-index:10050; border-radius:3px; overflow:hidden;
+  pointer-events:none; box-shadow:0 8px 22px #050a1c65;
+}
+.tl-cart-flight img{height:100%;width:100%;display:block;object-fit:cover}
+@media(max-width:767px){
+ .tl-portal-preview{inset:12% 5% 15%;border-radius:14px}
+ .tl-portal-link{bottom:0;font-size:13px}
+ .tl-matte-signature{font-size:clamp(62px,18.8vw,150px)}
+ .shop .sh-fan.tl-book-shelf{--tl-orbit-gap:13px;gap:var(--tl-orbit-gap)}
+ .tl-orbit-tools{width:min(100%,355px)}
+}
+@media(prefers-reduced-motion:reduce){
+ .tl-portal-preview,.tl-portal-preview::after{transition:none}
+ .tl-cart-flight,.tl-cart-spark{display:none}
+}
 </style>
 <script type="text/javascript">window.tlStopMetrika = function () {
   // Revocation never reloads the page or discards an unsent form.
@@ -244,7 +368,15 @@ window.tlLoadMetrika = function () {
   <p class="sh-lead">Выберите книгу, обучение или услугу. Соберите заказ — детали согласуем в Telegram.</p><p class="tl-shop-note">Книги подписываю и отправляю лично.</p>
   <a class="pp-btn" href="#katalog">Перейти к каталогу</a>
   </div>
-  <div class="sh-fan tl-book-shelf" aria-hidden="true"><div class="tl-book-volume"><img src="/media/studio/book1-400.webp" width="533" height="800" alt="Обложка книги «Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я»" decoding="async" loading="lazy"></div><div class="tl-book-volume"><img src="/media/studio/book2-400.webp" width="533" height="800" alt="Обложка книги «Духовное наследие поколения ПЕПСИ»" decoding="async" fetchpriority="high"></div><div class="tl-book-volume"><img src="/media/studio/book3-400.webp" width="533" height="800" alt="Обложка книги «Промт-инженеринг для новичков»" decoding="async" loading="lazy"></div></div>
+  
+  <div class="tl-book-vitrine">
+    <div class="sh-fan tl-book-shelf tl-orbit-three" aria-hidden="true"><div class="tl-book-volume" data-href="/knigi/#book1" data-title="Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я"><img src="/media/studio/book1-400.webp" width="533" height="800" alt="" decoding="async" loading="lazy"></div><div class="tl-book-volume" data-href="/knigi/#book2" data-title="Духовное наследие поколения ПЕПСИ"><img src="/media/studio/book2-400.webp" width="533" height="800" alt="" decoding="async" fetchpriority="high"></div><div class="tl-book-volume" data-href="/knigi/#book3" data-title="Промт-инженеринг для новичков"><img src="/media/studio/book3-400.webp" width="533" height="800" alt="" decoding="async" loading="lazy"></div></div>
+    <div class="tl-orbit-tools">
+      <button type="button" aria-label="Предыдущая книга" data-orbit="-1" hidden>←</button>
+      <a href="/knigi/#book2"><span aria-live="polite">Духовное наследие поколения ПЕПСИ</span></a>
+      <button type="button" aria-label="Следующая книга" data-orbit="1" hidden>→</button>
+    </div>
+  </div>
 </div></section>
 
 <section id="katalog" class="sh-catalog" aria-label="Каталог"><div class="pp-wrap">
@@ -276,7 +408,7 @@ window.tlLoadMetrika = function () {
 <script type="application/json" id="sh-catalog">{"k1": {"t": "Путь Тима Рокетса. Я был здесь, чтобы вспомнить, кто Я", "p": null, "f": 0, "u": "", "q": 9, "i": "/media/showcase/books/book1.webp", "h": "/knigi/#book1"}, "k2": {"t": "Духовное наследие поколения ПЕПСИ", "p": null, "f": 0, "u": "", "q": 9, "i": "/media/showcase/books/book2.webp", "h": "/knigi/#book2"}, "k3": {"t": "Промт-инженеринг для новичков", "p": null, "f": 0, "u": "", "q": 9, "i": "/media/showcase/books/book3.webp", "h": "/knigi/#book3"}, "k4": {"t": "Мемуары зерокодера", "p": null, "f": 0, "u": "", "q": 9, "i": "/media/showcase/books/book4.webp", "h": "/knigi/#book4"}, "k5": {"t": "Лёгкий способ отказа от зависимостей: Революция сознания", "p": null, "f": 0, "u": "", "q": 9, "i": "/media/showcase/books/book5.webp", "h": "/knigi/#book5"}, "w1": {"t": "Как написать и выпустить свою книгу", "p": null, "f": 0, "u": "", "q": 1, "i": "", "h": "/knigi/"}, "a1": {"t": "ИИ-бот для приёма заявок и ответов", "p": 150000, "f": 1, "u": "", "q": 1, "i": "", "h": "/ii-avtomatizaciya/ii-v-otdel-prodazh/"}, "a2": {"t": "ИИ-агент на воронку с интеграцией в CRM", "p": 350000, "f": 1, "u": "", "q": 1, "i": "", "h": "/ii-avtomatizaciya/ii-v-otdel-prodazh/"}, "a3": {"t": "ИИ-бот для бизнеса: Telegram или сайт, база знаний, заявки", "p": 150000, "f": 1, "u": "", "q": 1, "i": "", "h": "/ii-avtomatizaciya/chat-bot-dlya-biznesa/"}, "a4": {"t": "Сопровождение и доработки", "p": 50000, "f": 1, "u": "", "q": 1, "i": "", "h": "/ii-avtomatizaciya/chat-bot-dlya-biznesa/"}, "a5": {"t": "Разбор рутины и план автоматизации", "p": 15000, "f": 1, "u": "", "q": 1, "i": "", "h": "/ii-avtomatizaciya/kontent-i-socseti/"}, "a6": {"t": "ИИ-агент на процессы бизнеса", "p": 350000, "f": 1, "u": "", "q": 1, "i": "", "h": "/ii-avtomatizaciya/ii-agenty/"}, "a7": {"t": "Автоматизация для частного лица", "p": 35000, "f": 1, "u": "", "q": 1, "i": "", "h": "/ii-avtomatizaciya/lichnyj-ii-assistent/"}, "a8": {"t": "Журнал под ключ: запуск", "p": 300000, "f": 1, "u": "", "q": 1, "i": "", "h": "/ii-avtomatizaciya/zhurnal-pod-klyuch/"}, "a9": {"t": "Ведение журнала", "p": 90000, "f": 1, "u": " в месяц", "q": 1, "i": "", "h": "/ii-avtomatizaciya/zhurnal-pod-klyuch/"}, "aa": {"t": "Экосистема цифрового следа: запуск", "p": 600000, "f": 1, "u": "", "q": 1, "i": "", "h": "/ii-avtomatizaciya/cifrovoj-sled/"}, "ab": {"t": "Сопровождение экосистемы", "p": 150000, "f": 1, "u": " в месяц", "q": 1, "i": "", "h": "/ii-avtomatizaciya/cifrovoj-sled/"}, "e1": {"t": "Разовая настройка «ИИ под ваши задачи»", "p": 9900, "f": 0, "u": "", "q": 1, "i": "", "h": "/obuchenie/nastroyka/"}, "e2": {"t": "Неделя-интенсив", "p": 29000, "f": 0, "u": "", "q": 1, "i": "", "h": "/obuchenie/nedelya/"}, "e3": {"t": "Месяц лично", "p": 69000, "f": 0, "u": "", "q": 1, "i": "", "h": "/obuchenie/mesyac/"}, "e4": {"t": "Месяц в группе", "p": 19000, "f": 0, "u": " с человека", "q": 1, "i": "", "h": "/obuchenie/gruppa/"}, "e5": {"t": "Обучение команды", "p": 120000, "f": 1, "u": "", "q": 1, "i": "", "h": "/obuchenie/komanda/"}, "e6": {"t": "Наставничество", "p": 25000, "f": 0, "u": " в месяц", "q": 1, "i": "", "h": "/obuchenie/nastavnik/"}, "m1": {"t": "Песня-подарок по вашей истории", "p": 12000, "f": 0, "u": "", "q": 1, "i": "", "h": "/music/pesnya-v-podarok/"}, "m2": {"t": "Трек для бренда или ролика", "p": 25000, "f": 0, "u": "", "q": 1, "i": "", "h": "/music/trek-dlya-brenda/"}, "m3": {"t": "Песня под ключ для артиста", "p": 45000, "f": 0, "u": "", "q": 1, "i": "", "h": "/music/pesnya-pod-klyuch/"}, "m4": {"t": "Мини-альбом из 4 треков", "p": 140000, "f": 0, "u": "", "q": 1, "i": "", "h": "/music/mini-albom/"}, "m5": {"t": "Стихотворение на заказ", "p": 5000, "f": 0, "u": "", "q": 1, "i": "", "h": "/stihi/stih-na-zakaz/"}, "n1": {"t": "Электронная книга-гид", "p": 40000, "f": 0, "u": "", "q": 1, "i": "", "h": "/knigi/elektronnaya-kniga-gid/"}, "n2": {"t": "Книга-история", "p": 120000, "f": 0, "u": "", "q": 1, "i": "", "h": "/knigi/kniga-istoriya/"}, "n3": {"t": "Книга эксперта", "p": 250000, "f": 0, "u": "", "q": 1, "i": "", "h": "/knigi/kniga-eksperta/"}}</script>
 <script src="/assets/tl-motion.js?v=d8a3c0e8d4" defer></script>
 <script src="/assets/tl-shop.js?v=67608f32c5" defer></script>
-<script src="/assets/tl-studio-depth-v1.js?v=f4a8763c06" defer></script>
+<script src="/assets/tl-studio-depth-v2.js?v=be8c60e891" defer></script>
 <!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
 <style>@layer tl-base,legacy;@layer legacy{
 #tl-consent-veil{position:fixed;inset:0;z-index:9998;display:none;
