@@ -283,7 +283,10 @@
     b.setAttribute("aria-label", "В корзину: " + CAT[id].t);
     a.replaceWith(b);
     b.addEventListener("click", function () {
-      cart[id] = Math.min(mx(id), (cart[id] || 0) + 1); save(); render(); pulse();
+      var previous = cart[id] || 0;
+      cart[id] = Math.min(mx(id), previous + 1);
+      save(); render(); pulse();
+      if (cart[id] > previous) b.dispatchEvent(new CustomEvent("tl-cart-added", {bubbles:true}));
       say("Добавлено в корзину: " + CAT[id].t + ", товаров: " + count());
       clearTimeout(timers.get(b));
       swap(b, "✓ В корзине");
