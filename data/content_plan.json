@@ -852,10 +852,10 @@
       "kind": "new",
       "rubric": "ИИ-автоматизация",
       "query": "Как проверить, что заявки из Telegram-бота сохраняются и доходят до ответственного",
-      "status": "draft",
+      "status": "published",
       "slug": "proverka-zayavok-iz-telegram-bota",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/proverka-zayavok-iz-telegram-bota/",
         "telegram": null,
         "vk": null,
         "dzen": null
