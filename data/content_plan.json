@@ -951,6 +951,111 @@
         "vk": null,
         "dzen": null
       }
+    },
+    {
+      "id": "2026-11-26-a",
+      "date": "2026-11-26",
+      "kind": "new",
+      "rubric": "ИИ-автоматизация",
+      "query": "Как проверить, что обновление сайта дошло до посетителя",
+      "status": "planned",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-27-a",
+      "date": "2026-11-27",
+      "kind": "new",
+      "rubric": "Частые вопросы",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-28-a",
+      "date": "2026-11-28",
+      "kind": "new",
+      "rubric": "Кисловодск и КМВ",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-29-a",
+      "date": "2026-11-29",
+      "kind": "new",
+      "rubric": "ИИ-автоматизация",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-11-30-a",
+      "date": "2026-11-30",
+      "kind": "new",
+      "rubric": "Тело и здоровье",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-12-01-a",
+      "date": "2026-12-01",
+      "kind": "new",
+      "rubric": "Осознанность и ретриты",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
+    },
+    {
+      "id": "2026-12-02-a",
+      "date": "2026-12-02",
+      "kind": "new",
+      "rubric": "Эмоции и психология",
+      "query": null,
+      "status": "needs_topic",
+      "slug": null,
+      "channels": {
+        "site": null,
+        "telegram": null,
+        "vk": null,
+        "dzen": null
+      }
     }
   ],
   "approved_at": "2026-10-14",
