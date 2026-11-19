@@ -556,11 +556,11 @@
       "kind": "new",
       "rubric": "ИИ-автоматизация",
       "query": "что умеет ИИ ассистент для бизнеса",
-      "status": "published",
+      "status": "announced",
       "slug": "chto-umeet-ii-assistent-dlya-biznesa",
       "channels": {
         "site": "https://timlabs.online/journal/chto-umeet-ii-assistent-dlya-biznesa/",
-        "telegram": null,
+        "telegram": 363,
         "vk": null,
         "dzen": null
       },
