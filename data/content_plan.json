@@ -868,10 +868,10 @@
       "kind": "new",
       "rubric": "Родителям",
       "query": "Как договориться о семейном правиле экранного времени на выходных",
-      "status": "draft",
+      "status": "published",
       "slug": "semeynoe-pravilo-ekrannogo-vremeni-v-vyhodnye",
       "channels": {
-        "site": null,
+        "site": "https://timlabs.online/journal/semeynoe-pravilo-ekrannogo-vremeni-v-vyhodnye/",
         "telegram": null,
         "vk": null,
         "dzen": null
