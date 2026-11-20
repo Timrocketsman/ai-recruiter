@@ -958,8 +958,8 @@
       "kind": "new",
       "rubric": "ИИ-автоматизация",
       "query": "Как проверить, что обновление сайта дошло до посетителя",
-      "status": "planned",
-      "slug": null,
+      "status": "draft",
+      "slug": "kak-proverit-chto-obnovlenie-doshlo-do-saita",
       "channels": {
         "site": null,
         "telegram": null,

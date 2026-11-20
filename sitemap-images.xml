@@ -799,7 +799,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-dyshat-chtoby-rasslabitsya/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-podushku/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-podushku/cover.webp</image:loc><image:title>Застеленная кровать с двумя подушками разной высоты у окна в утреннем свете</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-dyshat-chtoby-rasslabitsya/cover.webp</image:loc><image:title>Открытое окно с льняной занавеской и зелёное растение на подоконнике, за окном горы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-dlya-muzhchin/cover.webp</image:loc><image:title>Тёмная куртка на вешалке у стены, кресло и ботинки рядом с окнами с видом на горы.</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/zazhataya-chelyust/cover.webp</image:loc><image:title>Раскрытая книга, очки и чашка чая на деревянном столе у окна, за окном осенние горы</image:title></image:image>
@@ -863,6 +864,11 @@
   <url>
     <loc>https://timlabs.online/partners/marafdy/kak-vybrat-massazhista/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-massazhista/cover.webp</image:loc><image:title>Три разных деревянных стула в ряд перед окном, за окном осенний парк — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/kak-vybrat-podushku/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-podushku/cover.jpg</image:loc><image:title>Как выбрать подушку, с которой удобно именно тебе | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-podushku/cover.webp</image:loc><image:title>Застеленная кровать с двумя подушками разной высоты у окна в утреннем свете</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/kislovodsk-osenyu/</loc>
@@ -983,7 +989,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-protiv-techeniya/cover.jpg</image:loc><image:title>Статьи об Умасе: отношения, эмоции, ответственность</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otpusk-kak-pobeg/cover.jpg</image:loc><image:title>Статьи об Умасе: отношения, эмоции, ответственность</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otpusk-kak-pobeg/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Зачем ты на самом деле едешь в отпуск?»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-protiv-techeniya/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему нельзя просто плыть по течению?»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-iz-chego-ty-sostoish/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Почему тебе достались именно такие родители?»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-kto-otvechaet-vselennoy/cover.webp</image:loc><image:title>Умас во время разговора — к статье «Кто отвечает, когда ты спрашиваешь Вселенную?»</image:title></image:image>
@@ -1081,6 +1088,10 @@
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/sovet-otkupaeshsya-ot-rebenka/</loc>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otkupaeshsya-ot-rebenka/cover.jpg</image:loc><image:title>Умас во время разговора — к статье «Откупаешься ли ты от ребёнка игрушками?»</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/umas_osoznanie/sovet-otpusk-kak-pobeg/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/sovet-otpusk-kak-pobeg/cover.jpg</image:loc><image:title>Умас во время разговора — к статье «Зачем ты на самом деле едешь в отпуск?»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/umas_osoznanie/sovet-potentsial-podarok-ili-gruz/</loc>
