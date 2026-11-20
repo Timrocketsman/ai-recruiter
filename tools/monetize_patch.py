@@ -612,9 +612,12 @@ def main():
             stats["meta"] = stats.get("meta", 0) + 1
         # (06.10) карточка для соцсетей, если её нет
         if 'name="twitter:card"' not in h and 'property="og:image"' in h:
-            i = h.find('<meta property="og:image"'); j = h.find(">", i) + 1
-            h = h[:j] + '\n<meta name="twitter:card" content="summary_large_image">' + h[j:]
-            stats["tw"] = stats.get("tw", 0) + 1
+            head = re.search(r"<head\b[^>]*>.*?</head\s*>", h, re.I | re.S)
+            if head and 'property="og:image"' in head.group():
+                image = re.search(r'<meta\s+property="og:image"[^>]*>', head.group(), re.I)
+                j = head.start() + (image.end() if image else head.group().rfind("<"))
+                h = h[:j] + '\n<meta name="twitter:card" content="summary_large_image">' + h[j:]
+                stats["tw"] = stats.get("tw", 0) + 1
         # (3 окт) кнопка «Задать вопрос» в блоках подбора; скрипт подставляет адрес страницы и ведёт скрепку туда же
         if "<!--tl-podbor-v1-->" in h and 'data-tlp="ask"' not in h:
             tgb = '<a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener">Подобрать в Telegram-боте</a>'
