@@ -1,8 +1,8 @@
 {
- "articles_total": 145,
+ "articles_total": 146,
  "articles_by_rubric": {
   "Развитие": 33,
-  "Кисловодск и КМВ": 31,
+  "Кисловодск и КМВ": 32,
   "Эмоции и психология": 26,
   "ИИ-автоматизация": 18,
   "Частые вопросы": 14,
@@ -27,7 +27,7 @@
   "Дзен"
  ],
  "first_article_date": "2026-08-19",
- "last_article_date": "2026-11-20",
- "days_without_gaps": 2,
- "updated": "2026-11-20T15:27"
+ "last_article_date": "2026-11-21",
+ "days_without_gaps": 3,
+ "updated": "2026-11-21T10:12"
 }

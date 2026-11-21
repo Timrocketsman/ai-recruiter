@@ -254,8 +254,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/semeynoe-pravilo-ekrannogo-vremeni-v-vyhodnye.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/semeynoe-pravilo-ekrannogo-vremeni-v-vyhodnye-800.webp</image:loc><image:title>Как договориться о семейном правиле экранного времени на выходных</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/korotkaya-progulka-v-kislovodske-za-chas.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/korotkaya-progulka-v-kislovodske-za-chas-800.webp</image:loc><image:title>Как выбрать короткую прогулку в Кисловодске</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga-800.webp</image:loc><image:title>Саморазвитие педагога: как выбрать навык и проверить результат</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Саморазвитие ребенка: как помочь ему расти без давления</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Саморазвитие личности: с чего начать и как не бросить</image:title></image:image>
@@ -279,11 +279,11 @@
     <image:image><image:loc>https://timlabs.online/media/covers/vodopad-beyradi-800.webp</image:loc><image:title>Водопад Байради в Дигории: где находится и как спланировать поездку</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/gora-naudzhidza-800.webp</image:loc><image:title>Горы рядом с Кисловодском: куда подняться без подготовки</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/gora-belalakaya-800.webp</image:loc><image:title>Гора Белалакая в Домбае: полосатая вершина и виды со стороны</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/semeynoe-pravilo-ekrannogo-vremeni-v-vyhodnye-800.webp</image:loc><image:title>Как договориться о семейном правиле экранного времени на выходных</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/umas_osoznanie/ozhidaniya-roditeley-i-zhelaniya-rebenka/cover.webp</image:loc><image:title>Как отличить желания ребёнка от ожиданий родителей</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/doula-kakoe-obrazovanie-nuzhno-800.webp</image:loc><image:title>Доула: какое образование нужно и что важнее диплома</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/doula-link-800.webp</image:loc><image:title>Доула онлайн: как сервисы помогают маме и доуле</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kakie-vitaminy-pit-posle-rodov-dlya-voss-800.webp</image:loc><image:title>Какие витамины пить после родов: вопросы для врача</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/prihod-moloka-posle-rodov-kak-oblegchit-800.webp</image:loc><image:title>Приход молока после родов: как облегчить состояние</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-prazdniki-otdyhat-800.webp</image:loc><image:title>Как отдыхать в праздники, если выходные уже заняты</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-provesti-vyhodnye-s-polzoy-800.webp</image:loc><image:title>Как провести выходные с пользой: 5 проверенных способов</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat-800.webp</image:loc><image:title>Пять недель работы и неделя отдыха: как устроен цикл 5/1</image:title></image:image>
@@ -447,6 +447,11 @@
   <url>
     <loc>https://timlabs.online/journal/kislovodsk-sanatoriy-kakoy-luchshe/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-sanatoriy-kakoy-luchshe.webp</image:loc><image:title>Какой санаторий в Кисловодске выбрать: на что смотреть перед бронью</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/korotkaya-progulka-v-kislovodske-za-chas/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/korotkaya-progulka-v-kislovodske-za-chas.jpg</image:loc><image:title>Как выбрать короткую прогулку в Кисловодске</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/korotkaya-progulka-v-kislovodske-za-chas-800.webp</image:loc><image:title>Иллюстрация к статье «Как выбрать короткую прогулку в Кисловодске, если времени всего час»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/korporativnyy-blog/</loc>
@@ -1183,10 +1188,5 @@
   <url>
     <loc>https://timlabs.online/stihi/stih-na-zakaz/</loc>
     <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Стихи на заказ по вашей истории: к празднику и в подарок</image:title></image:image>
-  </url>
-<url>
-    <loc>https://timlabs.online/journal/korotkaya-progulka-v-kislovodske-za-chas/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/korotkaya-progulka-v-kislovodske-za-chas.jpg</image:loc><image:title>Как выбрать короткую прогулку в Кисловодске</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/korotkaya-progulka-v-kislovodske-za-chas-800.webp</image:loc><image:title>Иллюстрация к статье «Как выбрать короткую прогулку в Кисловодске, если времени всего час»</image:title></image:image>
   </url>
 </urlset>
