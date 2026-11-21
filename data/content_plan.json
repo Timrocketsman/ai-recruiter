@@ -883,11 +883,11 @@
       "kind": "new",
       "rubric": "Кисловодск и КМВ",
       "query": "Как выбрать короткую прогулку в Кисловодске, если времени всего час",
-      "status": "published",
+      "status": "announced",
       "slug": "korotkaya-progulka-v-kislovodske-za-chas",
       "channels": {
         "site": "https://timlabs.online/journal/korotkaya-progulka-v-kislovodske-za-chas/",
-        "telegram": null,
+        "telegram": 368,
         "vk": null,
         "dzen": null
       }
