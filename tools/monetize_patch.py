@@ -11,11 +11,14 @@
   нажал «Принять»); в параметрах цели — только адрес страницы, без личных данных.
 - Цен нет. Рекламных вставок нет (нет вознаграждения от мастеров — не реклама).
 """
+import importlib.util
 import json
 import os
 import re
 import html as html_mod
+import subprocess
 import sys
+from pathlib import Path
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DRY = "--dry" in sys.argv
@@ -465,7 +468,34 @@ def insert_before_body(html, block):
     return html if i < 0 else html[:i] + block + "\n" + html[i:]
 
 
+def private_author_identity(private_root):
+    """Load author identity only from this script's own private Git checkout."""
+    root = Path(private_root)
+    site = Path(ROOT)
+    if (not root.is_absolute() or root == Path("/seo_agents") or root.resolve() != root
+            or site != root / "site" or site.resolve() != site
+            or not (site / ".git").is_dir() or (site / ".git").is_symlink()):
+        raise RuntimeError("private journal root does not bind this site Git checkout")
+    # Git hooks can inherit repository overrides from a different worktree.
+    env = {key: value for key, value in os.environ.items()
+           if key not in {"GIT_DIR", "GIT_WORK_TREE", "GIT_COMMON_DIR"}}
+    result = subprocess.run(["git", "-C", str(site), "rev-parse", "--show-toplevel"],
+                            env=env, capture_output=True, text=True, timeout=15)
+    if result.returncode or Path(result.stdout.strip()) != site:
+        raise RuntimeError("private journal root does not bind this site Git checkout")
+
+    path = root / "tools" / "author_identity.py"
+    if not path.is_file() or path.resolve() != path:
+        raise RuntimeError("private author_identity.py is missing or outside the checkout")
+    spec = importlib.util.spec_from_file_location("author_identity", path)
+    module = importlib.util.module_from_spec(spec)
+    exec(compile(path.read_bytes(), str(path), "exec"), module.__dict__)
+    return module
+
+
 def main():
+    private_root = os.environ.get("TL_PRIVATE_JOURNAL_ROOT")
+    identity = private_author_identity(private_root) if private_root is not None else None
     rub = rubrics()
     stats = {"consent": 0, "related": 0, "podbor": 0, "sub": 0, "goals": 0, "utm": 0, "files": 0}
     for dp, dns, fns in os.walk(ROOT):
@@ -523,10 +553,12 @@ def main():
                     h = h.replace(a, c)
                     stats["author"] = stats.get("author", 0) + 1
             # (31.10) Link only an already-confirmed Tim byline; release requires a published profile.
-            if "/seo_agents/tools" not in sys.path:
-                sys.path.insert(0, "/seo_agents/tools")
-            import author_identity
-            h2 = author_identity.apply_if_ready(h, rel)
+            if identity is None:
+                if "/seo_agents/tools" not in sys.path:
+                    sys.path.insert(0, "/seo_agents/tools")
+                import author_identity
+                identity = author_identity
+            h2 = identity.apply_if_ready(h, rel)
             if h2 != h:
                 h = h2
                 stats["author_identity"] = stats.get("author_identity", 0) + 1
