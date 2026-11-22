@@ -1194,4 +1194,9 @@
     <loc>https://timlabs.online/stihi/stih-na-zakaz/</loc>
     <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Стихи на заказ по вашей истории: к празднику и в подарок</image:title></image:image>
   </url>
+  <url>
+    <loc>https://timlabs.online/journal/ruchnoe-podtverzhdenie-deystviy-ii-agenta/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/ruchnoe-podtverzhdenie-deystviy-ii-agenta.jpg</image:loc><image:title>Как организовать ручное подтверждение действий ИИ-агента</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/ruchnoe-podtverzhdenie-deystviy-ii-agenta-800.webp</image:loc><image:title>Иллюстрация к статье «Как организовать ручное подтверждение действий ИИ-агента»</image:title></image:image>
+  </url>
 </urlset>
