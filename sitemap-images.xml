@@ -816,7 +816,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-podushku/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/posadka-za-rulyom/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/posadka-za-rulyom/cover.webp</image:loc><image:title>Вид из салона автомобиля: руль, приборная панель и горная дорога в закатном свете.</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-podushku/cover.webp</image:loc><image:title>Застеленная кровать с двумя подушками разной высоты у окна в утреннем свете</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-dyshat-chtoby-rasslabitsya/cover.webp</image:loc><image:title>Открытое окно с льняной занавеской и зелёное растение на подоконнике, за окном горы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/massazh-dlya-muzhchin/cover.webp</image:loc><image:title>Тёмная куртка на вешалке у стены, кресло и ботинки рядом с окнами с видом на горы.</image:title></image:image>
@@ -980,6 +981,11 @@
     <loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.jpg</image:loc><image:title>Плечи у ушей: как проверить бытовое удобство без самодиагностики | MARAFDY</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/plechi-u-ushey/cover.webp</image:loc><image:title>Деревянные плечики для одежды висят на крючке у тёмной стены, тёплый золотой свет сбоку, фон глубокий изумрудный, к углам почти чёрный</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/posadka-za-rulyom/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/posadka-za-rulyom/cover.jpg</image:loc><image:title>Посадка за рулём: подготовить своё место до поездки | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/posadka-za-rulyom/cover.webp</image:loc><image:title>Вид из салона автомобиля: руль, приборная панель и горная дорога в закатном свете.</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/posle-dolgoy-dorogi/</loc>

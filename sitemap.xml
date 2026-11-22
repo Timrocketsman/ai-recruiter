@@ -476,10 +476,10 @@
     <lastmod>2026-11-21</lastmod>
   </url>
   <url><loc>https://timlabs.online/zhivoj-ofis/</loc><lastmod>2026-11-18</lastmod><changefreq>daily</changefreq></url>
-  <url><loc>https://timlabs.online/partners/</loc><lastmod>2026-11-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://timlabs.online/partners/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1118,5 +1118,9 @@
 <url>
     <loc>https://timlabs.online/journal/korotkaya-progulka-v-kislovodske-za-chas/</loc>
     <lastmod>2026-11-21</lastmod>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/posadka-za-rulyom/</loc>
+    <lastmod>2026-11-22</lastmod>
   </url>
 </urlset>
