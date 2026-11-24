@@ -254,13 +254,14 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/rabochee-mesto-dlya-chteniya-s-noutbuka.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/rabochee-mesto-dlya-chteniya-s-noutbuka-800.webp</image:loc><image:title>Иллюстрация к статье «Как настроить рабочее место для чтения с ноутбука дома»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vybrat-retrit-bez-telefona.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vybrat-retrit-bez-telefona-800.webp</image:loc><image:title>Иллюстрация к статье «Как выбрать ретрит без телефона и о чём договориться до поездки»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga-800.webp</image:loc><image:title>Деревянные макеты домиков и листы с геометрическими фигурами</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Ящик с деревянными деталями конструктора рядом с низким детским стулом</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Ступенька у открытой двери, по бокам комнатные растения</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/video-poleznye-privychki-800.webp</image:loc><image:title>Телефон на подставке, эластичная лента и белая карточка на рабочем столе</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/professionalnoe-samorazvitie-800.webp</image:loc><image:title>Макет из дерева и свёрнутая одежда на разных концах рабочего стола</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/rabochee-mesto-dlya-chteniya-s-noutbuka-800.webp</image:loc><image:title>Иллюстрация к статье «Как настроить рабочее место для чтения с ноутбука дома»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/spa-kislovodsk-800.webp</image:loc><image:title>Свёрнутое белое полотенце на каменном бортике бассейна</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-massazh-800.webp</image:loc><image:title>Массажный стол, застеленный светлой тканью, в комнате у окна</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-sanatoriy-kakoy-luchshe-800.webp</image:loc><image:title>Вязаная одежда, конверт и планшет с листом на деревянном столе</image:title></image:image>
@@ -293,7 +294,6 @@
     <image:image><image:loc>https://timlabs.online/media/covers/proverka-zayavok-iz-telegram-bota-800.webp</image:loc><image:title>Смартфон на подставке и два лотка с листами бумаги на столе</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-podgotovit-dokumenty-kompanii-dlya-ii-assistenta-800.webp</image:loc><image:title>Разложенные по стопкам документы с зажимами и чёрная коробка для бумаг</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese-800.webp</image:loc><image:title>Ноутбук, лист с клетками и стопка папок на деревянном рабочем столе</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa-800.webp</image:loc><image:title>Ноутбук, стопка книг и закрытый блокнот на столе у окна</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
@@ -406,6 +406,11 @@
   <url>
     <loc>https://timlabs.online/journal/kak-vosstanovit-sily-posle-rabochego-dny/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-vosstanovit-sily-posle-rabochego-dny.webp</image:loc><image:title>Стул с накинутой одеждой и сумка на полу в освещённой солнцем прихожей</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/kak-vybrat-retrit-bez-telefona/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vybrat-retrit-bez-telefona.jpg</image:loc><image:title>Как выбрать ретрит без телефона и о чём договориться до поездки</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vybrat-retrit-bez-telefona-800.webp</image:loc><image:title>Иллюстрация к статье «Как выбрать ретрит без телефона и о чём договориться до поездки»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/kak-vyrazhat-emotsii-bez-konfliktov/</loc>
@@ -1210,10 +1215,5 @@
   <url>
     <loc>https://timlabs.online/stihi/stih-na-zakaz/</loc>
     <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Стихи на заказ по вашей истории: к празднику и в подарок</image:title></image:image>
-  </url>
-<url>
-    <loc>https://timlabs.online/journal/kak-vybrat-retrit-bez-telefona/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-vybrat-retrit-bez-telefona.jpg</image:loc><image:title>Как выбрать ретрит без телефона и о чём договориться до поездки</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-vybrat-retrit-bez-telefona-800.webp</image:loc><image:title>Иллюстрация к статье «Как выбрать ретрит без телефона и о чём договориться до поездки»</image:title></image:image>
   </url>
 </urlset>
