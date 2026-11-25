@@ -832,7 +832,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/utrennyaya-rastyazhka/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obedennyy-pereryv/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obedennyy-pereryv/cover.webp</image:loc><image:title>Пустая скамейка с чашкой под деревом с жёлтой листвой; вдали горы.</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/utrennyaya-rastyazhka/cover.webp</image:loc><image:title>Кровать с откинутым одеялом у окна, утренний свет на деревянном полу, за окном горы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/posadka-za-rulyom/cover.webp</image:loc><image:title>Вид из салона автомобиля: руль, приборная панель и горная дорога в закатном свете.</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/kak-vybrat-podushku/cover.webp</image:loc><image:title>Застеленная кровать с двумя подушками разной высоты у окна в утреннем свете</image:title></image:image>
@@ -983,6 +984,11 @@
     <loc>https://timlabs.online/partners/marafdy/muzyka-dlya-massazha/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/muzyka-dlya-massazha/cover.jpg</image:loc><image:title>Музыка для массажа: как выбрать фон и оставить право на тишину | MARAFDY</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/muzyka-dlya-massazha/cover.webp</image:loc><image:title>Проигрыватель с пластинкой на деревянном комоде у окна, за окном осенний парк — MARAFDY, аппаратный массаж на дому в Кисловодске</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/obedennyy-pereryv/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obedennyy-pereryv/cover.jpg</image:loc><image:title>Обеденный перерыв: оставить место себе между двумя делами | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/obedennyy-pereryv/cover.webp</image:loc><image:title>Пустая скамейка с чашкой под деревом с жёлтой листвой; вдали горы.</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/obshchiy-massazh-tela/</loc>
