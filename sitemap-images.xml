@@ -254,8 +254,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-vybrat-retrit-bez-telefona.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-vybrat-retrit-bez-telefona-800.webp</image:loc><image:title>Иллюстрация к статье «Как выбрать ретрит без телефона и о чём договориться до поездки»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vernutsya-k-lichnomu-proektu.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vernutsya-k-lichnomu-proektu-800.webp</image:loc><image:title>Иллюстрация к статье «Как вернуться к личному проекту после долгой паузы»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga-800.webp</image:loc><image:title>Деревянные макеты домиков и листы с геометрическими фигурами</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Ящик с деревянными деталями конструктора рядом с низким детским стулом</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Ступенька у открытой двери, по бокам комнатные растения</image:title></image:image>
@@ -270,11 +270,11 @@
     <image:image><image:loc>https://timlabs.online/media/covers/kak-podnyat-samootsenku-800.webp</image:loc><image:title>Почти собранный пазл с горным пейзажем и оставшиеся детали на столе</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samootsenka-zhenschiny-800.webp</image:loc><image:title>Зеркало в полный рост и синяя рубашка на вешалке</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-perestat-sravnivat-sebya-s-drugimi-800.webp</image:loc><image:title>Две пары кроссовок стоят рядом на размеченных дорожках</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vybrat-retrit-bez-telefona-800.webp</image:loc><image:title>Иллюстрация к статье «Как выбрать ретрит без телефона и о чём договориться до поездки»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/retrit-molchaniya-800.webp</image:loc><image:title>Круглые часы и пустой стул у деревянного стола</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/meditatsiya-retrit-800.webp</image:loc><image:title>Круглая подушка на полу в пустой комнате с большим окном</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/den-retrita-800.webp</image:loc><image:title>Деревянная скамья и плетёный коврик в комнате, открытой в сад</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/retrit-tsentr-800.webp</image:loc><image:title>Открытая дорожная сумка с одеждой и сложенные полотенца</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/yoga-retrit-800.webp</image:loc><image:title>Фиолетовый коврик и тапочки на деревянном полу у открытой двери</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/korotkaya-progulka-v-kislovodske-za-chas-800.webp</image:loc><image:title>Развёрнутая карта парка и наручные часы лежат на камне у тропы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/avtorskie-ekskursii-kislovodsk-800.webp</image:loc><image:title>Бинокль, туристические ботинки и сложенная карта на деревянном столе</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/gora-elbrus-800.webp</image:loc><image:title>Две альпинистские кошки на тёмной каменистой поверхности</image:title></image:image>
@@ -402,6 +402,11 @@
   <url>
     <loc>https://timlabs.online/journal/kak-stavit-tsel-zhizni/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-stavit-tsel-zhizni.webp</image:loc><image:title>Две грунтовые дорожки расходятся вокруг дерева</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/kak-vernutsya-k-lichnomu-proektu/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vernutsya-k-lichnomu-proektu.jpg</image:loc><image:title>Как вернуться к личному проекту после долгой паузы</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-vernutsya-k-lichnomu-proektu-800.webp</image:loc><image:title>Иллюстрация к статье «Как вернуться к личному проекту после долгой паузы»</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/kak-vosstanovit-sily-posle-rabochego-dny/</loc>
@@ -1221,10 +1226,5 @@
   <url>
     <loc>https://timlabs.online/stihi/stih-na-zakaz/</loc>
     <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Стихи на заказ по вашей истории: к празднику и в подарок</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://timlabs.online/journal/kak-vernutsya-k-lichnomu-proektu/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-vernutsya-k-lichnomu-proektu.jpg</image:loc><image:title>Как вернуться к личному проекту после долгой паузы</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-vernutsya-k-lichnomu-proektu-800.webp</image:loc><image:title>Иллюстрация к статье «Как вернуться к личному проекту после долгой паузы»</image:title></image:image>
   </url>
 </urlset>
