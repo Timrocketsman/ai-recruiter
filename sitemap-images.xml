@@ -254,13 +254,13 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-vernutsya-k-lichnomu-proektu.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-chto-obnovlenie-doshlo-do-saita.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-chto-obnovlenie-doshlo-do-saita-800.webp</image:loc><image:title>Два отпечатка одной двери на деревянном столе, слева без ручки, справа с латунной ручкой</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-vernutsya-k-lichnomu-proektu-800.webp</image:loc><image:title>Иллюстрация к статье «Как вернуться к личному проекту после долгой паузы»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga-800.webp</image:loc><image:title>Деревянные макеты домиков и листы с геометрическими фигурами</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Ящик с деревянными деталями конструктора рядом с низким детским стулом</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitiya-lichnosti-800.webp</image:loc><image:title>Ступенька у открытой двери, по бокам комнатные растения</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/video-poleznye-privychki-800.webp</image:loc><image:title>Телефон на подставке, эластичная лента и белая карточка на рабочем столе</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/professionalnoe-samorazvitie-800.webp</image:loc><image:title>Макет из дерева и свёрнутая одежда на разных концах рабочего стола</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/rabochee-mesto-dlya-chteniya-s-noutbuka-800.webp</image:loc><image:title>Иллюстрация к статье «Как настроить рабочее место для чтения с ноутбука дома»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/spa-kislovodsk-800.webp</image:loc><image:title>Свёрнутое белое полотенце на каменном бортике бассейна</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kislovodsk-massazh-800.webp</image:loc><image:title>Массажный стол, застеленный светлой тканью, в комнате у окна</image:title></image:image>
@@ -361,6 +361,11 @@
     <loc>https://timlabs.online/journal/kak-prazdniki-otdyhat/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-prazdniki-otdyhat.webp</image:loc><image:title>Как отдыхать в праздники, если выходные уже заняты | Компас</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-prazdniki-otdyhat-800.webp</image:loc><image:title>Открытый планер с вырезанными из бумаги фигурками и ключи рядом</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/journal/kak-proverit-chto-obnovlenie-doshlo-do-saita/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-chto-obnovlenie-doshlo-do-saita.jpg</image:loc><image:title>Как проверить, что обновление сайта дошло до посетителя</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-chto-obnovlenie-doshlo-do-saita-800.webp</image:loc><image:title>Два отпечатка одной двери на деревянном столе, слева без ручки, справа с латунной ручкой</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese/</loc>
@@ -1226,10 +1231,5 @@
   <url>
     <loc>https://timlabs.online/stihi/stih-na-zakaz/</loc>
     <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Стихи на заказ по вашей истории: к празднику и в подарок</image:title></image:image>
-  </url>
-<url>
-    <loc>https://timlabs.online/journal/kak-proverit-chto-obnovlenie-doshlo-do-saita/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-chto-obnovlenie-doshlo-do-saita.jpg</image:loc><image:title>Как проверить, что обновление сайта дошло до посетителя</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-chto-obnovlenie-doshlo-do-saita-800.webp</image:loc><image:title>Два отпечатка одной двери на деревянном столе, слева без ручки, справа с латунной ручкой</image:title></image:image>
   </url>
 </urlset>
