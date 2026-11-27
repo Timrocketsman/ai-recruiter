@@ -809,6 +809,41 @@ body:has(>.tl-space)::before{display:none}
 @media(forced-colors:active),print{
   .tl-space,.tl-space-control{display:none!important}
 }
+
+
+/* Action colors for the shared TimLabs pages. The editorial and shop controls use the same palette. */
+body:has(>.tl-space){
+  --tl-action-fill:#a9bbcf;
+  --tl-action-bg:linear-gradient(110deg,var(--tl-action-fill),#9eaec5);
+  --tl-action-ink:#0d1826;
+  --tl-action-hover:#c0cddd;
+}
+:root:is([data-theme=light],.auto-light:not([data-theme])) body:has(>.tl-space){
+  --tl-action-fill:#35495f;
+  --tl-action-bg:linear-gradient(110deg,var(--tl-action-fill),#43546d);
+  --tl-action-ink:#f5f8fc;
+  --tl-action-hover:#2c3e54;
+}
+body:has(>.tl-space) :is(.tls>a,.sh-add){
+  background:var(--tl-action-fill) var(--tl-action-bg)!important;
+  color:var(--tl-action-ink)!important;
+  -webkit-text-fill-color:currentColor!important;
+}
+body:has(>.tl-space) .tls>a{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:44px;padding:10px 18px!important;border-radius:999px!important;
+  text-decoration:none!important;
+}
+body:has(>.tl-space) .sh-chip[aria-current=true]{
+  background:color-mix(in srgb,var(--tl-action-fill) 16%,var(--bone))!important;
+  color:var(--ink)!important;
+  border-color:color-mix(in srgb,var(--tl-action-fill) 52%,var(--bone));
+}
+@media(hover:hover){
+  body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.tlp-main,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.tls>a,.sh-add):hover:not(:disabled){
+    --tl-action-bg:linear-gradient(var(--tl-action-hover),var(--tl-action-hover));
+  }
+}
 </style><script src="/assets/tl-space-v1.js?v=d964f4d642" defer></script><!--/tl-space-head-v1--></head>
 <body class="shop" data-bot="TimLabs_bot" data-note="Книги подписываю и отправляю лично. Оплата — по ссылке в Telegram, чек самозанятого."><!--tl-space-body-v1--><div class="tl-space" data-tone="studio" aria-hidden="true"><span class="tl-space-far"></span><span class="tl-space-format"></span><span class="tl-space-glint"></span></div><!--/tl-space-body-v1-->
 <header class="pp-top"><div class="pp-wrap"><a class="pp-logo" href="/" aria-label="TimLabs — на главную">TimLabs <i>проводник</i></a><nav class="pp-nav" aria-label="Разделы"><a href="/journal/">Журнал «Компас»</a><a href="/#put">Направления</a><a href="/#mastera">Мастера</a><a href="/ii-avtomatizaciya/">ИИ-автоматизация</a><a href="/magazin/">Магазин</a><a class="pp-btn" href="/#tl-podbor">Подобрать мастера</a><button class="pp-theme" type="button" aria-label="Переключить тему: день или ночь" title="День / ночь"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button></nav><button class="pp-theme pp-theme-m" type="button" aria-label="Переключить тему: день или ночь" title="День / ночь"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><details class="pp-menu"><summary>Меню</summary><div class="pp-drop"><a href="/journal/">Журнал «Компас»</a><a href="/#put">Направления</a><a href="/#tl-podbor">Подобрать мастера</a><a href="/#mastera">Мастера</a><a href="/ii-avtomatizaciya/">ИИ-автоматизация</a><a href="/magazin/">Магазин</a><a href="/#svyaz">Написать мне</a></div></details></div></header>
