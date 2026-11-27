@@ -149,6 +149,11 @@
     <image:image><image:loc>https://timlabs.online/media/covers/chto-umeet-ii-assistent-dlya-biznesa.webp</image:loc><image:title>Ноутбук, стопка книг и закрытый блокнот на столе у окна</image:title></image:image>
   </url>
   <url>
+    <loc>https://timlabs.online/journal/chto-utochnit-pered-pokupkoy-abonementa-na-massazh/</loc>
+    <image:image><image:loc>https://timlabs.online/media/covers/chto-utochnit-pered-pokupkoy-abonementa-na-massazh.jpg</image:loc><image:title>Что уточнить перед покупкой абонемента на массаж</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/chto-utochnit-pered-pokupkoy-abonementa-na-massazh-800.webp</image:loc><image:title>Карточки записи на деревянном столе рядом с массажной кушеткой</image:title></image:image>
+  </url>
+  <url>
     <loc>https://timlabs.online/journal/den-poleznyh-privychek/</loc>
     <image:image><image:loc>https://timlabs.online/media/covers/den-poleznyh-privychek.webp</image:loc><image:title>Скамья у входа, кроссовки под ней и верхняя одежда на крючках</image:title></image:image>
   </url>
@@ -254,8 +259,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-chto-obnovlenie-doshlo-do-saita.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-chto-obnovlenie-doshlo-do-saita-800.webp</image:loc><image:title>Два отпечатка одной двери на деревянном столе, слева без ручки, справа с латунной ручкой</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/chto-utochnit-pered-pokupkoy-abonementa-na-massazh.webp</image:loc><image:title>Журнал «Компас»</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/chto-utochnit-pered-pokupkoy-abonementa-na-massazh-800.webp</image:loc><image:title>Карточки записи на деревянном столе рядом с массажной кушеткой</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-vernutsya-k-lichnomu-proektu-800.webp</image:loc><image:title>Иллюстрация к статье «Как вернуться к личному проекту после долгой паузы»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-pedagoga-800.webp</image:loc><image:title>Деревянные макеты домиков и листы с геометрическими фигурами</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/samorazvitie-rebenka-800.webp</image:loc><image:title>Ящик с деревянными деталями конструктора рядом с низким детским стулом</image:title></image:image>
@@ -290,10 +295,10 @@
     <image:image><image:loc>https://timlabs.online/media/covers/5-nedel-uchitsya-i-odnu-nedelyu-otdyhat-800.webp</image:loc><image:title>Бумажный календарь и ряд деревянных меток, одна из которых стоит отдельно</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/vosstanovitsya-kak-pravilno-800.webp</image:loc><image:title>Свёрнутый коврик, бутылка воды и полотенце у окна</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-pravilno-vosstanavlivat-sily-800.webp</image:loc><image:title>Бутылка воды, маска для сна и лента для упражнений на столе</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-chto-obnovlenie-doshlo-do-saita-800.webp</image:loc><image:title>Два отпечатка одной двери на деревянном столе, слева без ручки, справа с латунной ручкой</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/ruchnoe-podtverzhdenie-deystviy-ii-agenta-800.webp</image:loc><image:title>Иллюстрация к статье «Как организовать ручное подтверждение действий ИИ-агента»</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/proverka-zayavok-iz-telegram-bota-800.webp</image:loc><image:title>Смартфон на подставке и два лотка с листами бумаги на столе</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/media/covers/kak-podgotovit-dokumenty-kompanii-dlya-ii-assistenta-800.webp</image:loc><image:title>Разложенные по стопкам документы с зажимами и чёрная коробка для бумаг</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/kak-proverit-ii-assistenta-pered-zapuskom-v-biznese-800.webp</image:loc><image:title>Ноутбук, лист с клетками и стопка папок на деревянном рабочем столе</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/journal/irganayskoe-vodohranilische/</loc>
@@ -1237,10 +1242,5 @@
   <url>
     <loc>https://timlabs.online/stihi/stih-na-zakaz/</loc>
     <image:image><image:loc>https://timlabs.online/media/paper/zhurnal-kompas-chai-u-okna.webp</image:loc><image:title>Стихи на заказ по вашей истории: к празднику и в подарок</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://timlabs.online/journal/chto-utochnit-pered-pokupkoy-abonementa-na-massazh/</loc>
-    <image:image><image:loc>https://timlabs.online/media/covers/chto-utochnit-pered-pokupkoy-abonementa-na-massazh.jpg</image:loc><image:title>Что уточнить перед покупкой абонемента на массаж</image:title></image:image>
-    <image:image><image:loc>https://timlabs.online/media/covers/chto-utochnit-pered-pokupkoy-abonementa-na-massazh-800.webp</image:loc><image:title>Карточки записи на деревянном столе рядом с массажной кушеткой</image:title></image:image>
   </url>
 </urlset>
