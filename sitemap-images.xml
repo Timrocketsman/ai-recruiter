@@ -842,7 +842,8 @@
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/</loc>
-    <image:image><image:loc>https://timlabs.online/partners/marafdy/obedennyy-pereryv/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/vechernyaya-progulka/cover.jpg</image:loc><image:title>Статьи MARAFDY: тело, массаж, восстановление</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/vechernyaya-progulka/cover.webp</image:loc><image:title>Пустая осенняя аллея с фонарями и скамейкой; вдали горы.</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/obedennyy-pereryv/cover.webp</image:loc><image:title>Пустая скамейка с чашкой под деревом с жёлтой листвой; вдали горы.</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/utrennyaya-rastyazhka/cover.webp</image:loc><image:title>Кровать с откинутым одеялом у окна, утренний свет на деревянном полу, за окном горы</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/posadka-za-rulyom/cover.webp</image:loc><image:title>Вид из салона автомобиля: руль, приборная панель и горная дорога в закатном свете.</image:title></image:image>
@@ -1049,6 +1050,11 @@
     <loc>https://timlabs.online/partners/marafdy/utrennyaya-rastyazhka/</loc>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/utrennyaya-rastyazhka/cover.jpg</image:loc><image:title>Как начать утро без спешки: одно дело на завтра | MARAFDY</image:title></image:image>
     <image:image><image:loc>https://timlabs.online/partners/marafdy/utrennyaya-rastyazhka/cover.webp</image:loc><image:title>Кровать с откинутым одеялом у окна, утренний свет на деревянном полу, за окном горы</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://timlabs.online/partners/marafdy/vechernyaya-progulka/</loc>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/vechernyaya-progulka/cover.jpg</image:loc><image:title>Вечерняя прогулка: выбрать выход из дома, который подходит сегодня | MARAFDY</image:title></image:image>
+    <image:image><image:loc>https://timlabs.online/partners/marafdy/vechernyaya-progulka/cover.webp</image:loc><image:title>Пустая осенняя аллея с фонарями и скамейкой; вдали горы.</image:title></image:image>
   </url>
   <url>
     <loc>https://timlabs.online/partners/marafdy/zazhataya-chelyust/</loc>
