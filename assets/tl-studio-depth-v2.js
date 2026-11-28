@@ -261,7 +261,109 @@
   }
 
   const projects = document.querySelector("#tl-mine-list");
-  if (projects) bindRail(projects, true);
+  if (projects) {
+    bindRail(projects, true);
+    const scene = projects.closest(".tl-arc-scene");
+    const section = scene?.closest("#moi");
+    const beam = scene?.querySelector(".tl-arc-beam");
+    if (section && beam) {
+      // Keep reading and focus order aligned whenever the showcase generator refreshes the cards.
+      const school = projects.querySelector("#card-school");
+      const music = projects.querySelector("#card-music");
+      if (school && music) projects.insertBefore(school, music);
+      const cards = Array.from(projects.querySelectorAll(":scope>article"));
+      const tags = Array.from(section.querySelectorAll(".tl-arc-tags a"));
+      let geometry = [], stops = [], frame = 0, viewport = 0, visible = false, drift, flash;
+
+      function paint() {
+        frame = 0;
+        if (!visible || !geometry.length) return;
+        const left = projects.scrollLeft;
+        const middle = viewport / 2;
+        const moving = railMotion();
+        const closest = stops.reduce((best, stop, index) => Math.abs(stop-left) < Math.abs(stops[best]-left) ? index : best, 0);
+        tags.forEach((tag, index) => {
+          if (index === closest) tag.setAttribute("aria-current", "true");
+          else tag.removeAttribute("aria-current");
+        });
+        cards.forEach((card,index) => {
+          const projected = (geometry[index] - left - middle) / Math.max(1,middle);
+          const d = moving ? Math.max(-1, Math.min(1, projected)) : 0;
+          const bend = 1 - Math.cos(d * 1.14);
+          const small = viewport < 650;
+          card.style.setProperty("--arc-y", (bend * (small ? 25 : 61)).toFixed(2) + "px");
+          card.style.setProperty("--arc-z", (-bend * (small ? 15 : 52)).toFixed(2) + "px");
+          card.style.setProperty("--arc-yaw", (-d * (small ? 5 : 12)).toFixed(2) + "deg");
+          card.style.setProperty("--arc-bank", (d * (small ? 2 : 4.5)).toFixed(2) + "deg");
+        });
+      }
+
+      function schedule() {
+        if (visible && !frame) frame = requestAnimationFrame(paint);
+      }
+
+      function measure() {
+        viewport = projects.clientWidth;
+        geometry = cards.map(card => card.offsetLeft + card.offsetWidth / 2);
+        const limit = Math.max(0, projects.scrollWidth - viewport);
+        const first = cards[0]?.offsetLeft ?? 0;
+        stops = tags.map(tag => Math.max(0, Math.min(limit, (projects.querySelector(tag.hash)?.offsetLeft ?? first) - first)));
+        schedule();
+      }
+
+      function sync() {
+        const moving = railMotion() && visible && !document.hidden;
+        scene.toggleAttribute("data-arc-motion", moving);
+        if (moving) {
+          drift ??= beam.animate?.([{transform:"translate3d(-2%,1%,0)"},{transform:"translate3d(3%,-2%,0)"}],
+            {duration:17000,direction:"alternate",iterations:Infinity,easing:"ease-in-out"});
+          drift?.play();
+        } else drift?.pause();
+        schedule();
+      }
+
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(([entry]) => { visible=entry.isIntersecting; sync(); },{rootMargin:"40px"}).observe(scene);
+      } else {
+        visible=true;
+        sync();
+      }
+      new ResizeObserver(measure).observe(projects);
+      projects.addEventListener("scroll", schedule, {passive:true});
+      motion.addEventListener("change", sync);
+      toggle?.addEventListener("click", sync);
+      document.addEventListener("visibilitychange", sync);
+      tags.forEach((tag,index) => tag.addEventListener("click", event => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        projects.scrollTo({left:stops[index],behavior:railMotion()?"smooth":"instant"});
+      }));
+
+      projects.addEventListener("click", event => {
+        const link = event.target.closest("a[href]");
+        if (!link || event.defaultPrevented || event.detail===0 || event.button!==0 || !railMotion() ||
+            event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ||
+            link.hasAttribute("download") || (link.target && link.target!=="_self") || !Element.prototype.animate) return;
+        const url = new URL(link.href);
+        if (url.origin!==location.origin || url.pathname===location.pathname) return;
+        event.preventDefault();
+        if (flash) return;
+        flash=document.createElement("div");
+        flash.className="tl-arc-flash";
+        flash.setAttribute("aria-hidden","true");
+        document.body.append(flash);
+        flash.animate([
+          {transform:"translate3d(-65vw,0,0) skewX(-18deg)",opacity:0},
+          {opacity:.60,offset:.54},
+          {transform:"translate3d(114vw,0,0) skewX(-18deg)",opacity:0}
+        ],{duration:180,easing:"cubic-bezier(.25,.65,.36,1)"}).finished.then(() => location.assign(url.href), () => {
+          flash?.remove();flash=undefined;
+        });
+      });
+      addEventListener("pageshow", () => { flash?.remove();flash=undefined; });
+      measure();
+    }
+  }
 
   const picker = document.querySelector("#tl-podbor > .tl-home-picker");
   if (picker) {
