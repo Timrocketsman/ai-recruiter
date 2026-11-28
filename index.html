@@ -629,20 +629,49 @@ html:root body .tl-home-hero .pp-tim{background:transparent!important;box-shadow
 .tl-project-picture.tl-project-book img:nth-child(4){transform:translateY(2%) rotate(3deg)}
 .tl-project-picture.tl-project-book img:nth-child(5){transform:translateY(6%) rotate(7deg)}
 
-/* Keep the expanded content in each card and allow links to receive focus native to the browser. */
-#moi .tl-mine-controls{justify-content:flex-end;margin:0 0 10px}
+/* Projects use the full reading width. A visible next card cues native scrolling. */
 #moi .tl-mine-list{
-  --mine-size:calc((100% - 2 * var(--gut)) / 3);
-  position:relative;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:var(--mine-size);
-  align-items:start;overflow-x:auto;scroll-snap-type:x mandatory;
-  scrollbar-width:thin;padding:3px 0 14px;
+  --mine-gap:15px;
+  --mine-size:calc((100% - 3 * var(--mine-gap)) / 3.12);
+  position:relative;display:grid;grid-auto-flow:column;grid-template-columns:none;
+  grid-auto-columns:var(--mine-size);gap:var(--mine-gap)!important;align-items:start;
+  overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x proximity;
+  scroll-padding-inline:3px;scrollbar-width:thin;scrollbar-color:var(--tl-action-highlight,var(--accent)) transparent;
+  padding:6px 3px 10px;margin-top:18px;
 }
-#moi .tl-mine-list:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-#moi .tl-mine-list>article{grid-column:auto;scroll-snap-align:start;min-width:0}
-#moi .tl-mine-list .g-depth{transition:none}
+#moi .tl-mine-list:focus-visible{outline:2px solid var(--tl-action-highlight,var(--accent));outline-offset:3px}
+#moi .tl-mine-list.tl-dragging{scroll-snap-type:none;user-select:none;cursor:grabbing}
+html body #moi .tl-mine-list>article{
+  grid-column:auto;scroll-snap-align:start;min-width:0;margin:0;
+  padding:clamp(16px,1.8vw,22px)!important;border-radius:14px!important;
+  background:
+    radial-gradient(ellipse at 0 0,var(--tl-picker-blue,transparent),transparent 67%),
+    radial-gradient(ellipse at 100% 0,var(--tl-picker-violet,transparent),transparent 67%),
+    var(--bone)!important;
+  border-color:var(--line-2)!important;box-shadow:inset 0 1px var(--line-2)!important;
+}
 html.js #moi .tl-mine-list>article.rv{opacity:1;transform:none;filter:none}
-@media(max-width:1000px){#moi .tl-mine-list{--mine-size:calc((100% - var(--gut)) / 2)}}
-@media(max-width:560px){#moi .tl-mine-list{--mine-size:89%}}
+#moi .tl-mine-list .gcard h3{font:650 clamp(18px,2.1vw,23px)/1.16 var(--sans);margin:0;letter-spacing:-.024em}
+#moi .tl-mine-list .gcard h3>a{text-underline-offset:4px}
+#moi .tl-mine-list .gcard h3>button{min-height:44px}
+#moi .tl-mine-list .gcard .chips{justify-content:flex-start}
+#moi .tl-mine-list .gcard .g-top:empty{display:none}
+#moi .tl-mine-list .gcard p{margin:0;line-height:1.48}
+@media(max-width:1020px){
+  #moi .tl-mine-list{--mine-size:calc((100% - 2 * var(--mine-gap)) / 2.10)}
+}
+@media(max-width:580px){#moi .tl-mine-list{--mine-size:87%;--mine-gap:11px;margin-top:12px}}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  #moi .tl-mine-list>article{transition:transform 170ms var(--ease-out),border-color 170ms ease}
+  html.js #moi .tl-mine-list:not(.tl-dragging)>article.rv:hover{
+    transform:perspective(840px) translateY(-2px) rotateX(2deg);
+    border-color:color-mix(in srgb,var(--tl-action-highlight,var(--accent)) 52%,var(--line-2))!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #moi .tl-mine-list{scroll-behavior:auto}
+  #moi .tl-mine-list>article{transition:none!important;transform:none!important}
+}
 
 /* One set of surfaces and spacing for the homepage. */
 main{--home-r:22px;--home-pad:clamp(18px,3.1vw,38px)}
@@ -733,44 +762,6 @@ html.js #mastera :is(.pp-head,.pp-row).rv{opacity:1;transform:none;filter:none}
 .tl-home-picker .tlp-go a{flex:0 1 auto;min-height:44px}
 .tl-home-picker fieldset label span{min-height:44px;display:flex;align-items:center}
 #svyaz{padding-bottom:clamp(32px,6vw,72px)}
-
-/* Seven faces on an interactive wheel; only the front face is in the reading flow. */
-#moi .tl-mine-list[data-drum]{
-  --mine-card:min(64%,530px);
-  display:block;perspective:1060px;overflow:clip;touch-action:pan-y;
-  padding:16px 0 14px;scroll-snap-type:none;min-height:var(--drum-min);
-}
-#moi .tl-mine-list[data-drum]>article{
-  width:var(--mine-card);margin-inline:auto;min-height:235px;
-  background:var(--paper-2)!important;box-shadow:none!important;opacity:var(--drum-opacity,1);
-  backface-visibility:hidden;
-}
-html.js #moi .tl-mine-list[data-drum]>article.rv{
-  transform:var(--drum-transform,none);opacity:var(--drum-opacity,1);
-}
-#moi .tl-mine-list[data-drum]>article:not([data-drum-front]){
-  position:absolute;top:16px;left:calc((100% - var(--mine-card))/2);
-  pointer-events:none;overflow:hidden;height:var(--drum-height,235px);
-}
-#moi .tl-mine-list[data-drum]>article[data-drum-front]{position:relative;z-index:1;touch-action:pan-y}
-#moi .tl-mine-list[data-drum] .gcard h3{font:650 clamp(20px,2.5vw,28px)/1.16 var(--sans);margin:0}
-#moi .tl-mine-list[data-drum] .gcard h3>a{text-underline-offset:4px}
-#moi .tl-mine-list[data-drum] .gcard h3>button{min-height:44px}
-#moi .tl-mine-list[data-drum] .gcard .chips{justify-content:flex-start}
-#moi .tl-drum-nav{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:3px}
-#moi .tl-drum-nav[hidden]{display:none}
-.tl-drum-nav button{
-  width:38px;height:44px;display:grid;place-items:center;cursor:pointer;color:var(--mute);
-  border:0;border-radius:8px;background:none;padding:0;
-}
-.tl-drum-nav button::after{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
-.tl-drum-nav button[aria-pressed=true]{color:var(--accent)}
-.tl-drum-nav button[aria-pressed=true]::after{width:16px;border-radius:7px}
-.tl-drum-nav button:focus-visible{outline:2px solid var(--accent)}
-@media(max-width:560px){#moi .tl-mine-list[data-drum]{--mine-card:83%;perspective:770px}}
-@media(prefers-reduced-motion:reduce){
-  #moi .tl-mine-list[data-drum]>article:not([data-drum-front]){visibility:hidden}
-}
 </style>
 <!--tl-space-head-v1--><style id="tl-space-theme">/* TimLabs perspective drawing. Only the two drawing planes move. */
 body:has(>.tl-space){isolation:isolate}
@@ -842,7 +833,7 @@ body:has(>.tl-space){
   --tl-picker-violet:#b39aff32;
   --tl-picker-selected:linear-gradient(112deg,#e4f2fe,#efe8ff);
 }
-html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add){
+html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add,.chip.main){
   --tl-face:var(--tl-action-bg) padding-box,var(--tl-action-edge) border-box;
   --tl-face-ink:var(--tl-action-ink);
   --tl-face-depth:var(--tl-action-depth);
@@ -852,7 +843,7 @@ html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.t
   border:1px solid transparent!important;border-radius:var(--tl-action-radius)!important;
   box-shadow:var(--tl-face-depth)!important;
 }
-html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add):where(.line,.ink,.sec,.ghost,.secondary,.tg,.max){
+html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add,.chip.main):where(.line,.ink,.sec,.ghost,.secondary,.tg,.max){
   --tl-face:linear-gradient(transparent,transparent);
   --tl-face-ink:var(--ink);
   --tl-face-depth:inset 0 0 0 1px var(--line-2);
@@ -926,6 +917,24 @@ html body #tl-podbor[data-picker=compact] .tlp-go a[data-tlp=ask]{
   text-decoration:underline!important;text-underline-offset:3px;font-size:13px;font-weight:600;
 }
 #tl-podbor[data-picker=compact] small{display:block;margin:4px 0 0;color:var(--mute);font-size:12px;line-height:1.4}
+/* TimLabs showcase controls, media playback and selected tabs. */
+html body.ps-show:has(>.tl-space) .chip:not(.main){
+  min-height:44px;border-radius:var(--tl-action-radius);
+  background:transparent;color:var(--ink)!important;
+}
+html body:has(>.tl-space) :is(.pj-tab[aria-selected=true],.zo-mode button[aria-pressed=true]){
+  background:var(--tl-picker-selected)!important;color:var(--ink)!important;
+  border-color:color-mix(in srgb,var(--tl-action-highlight) 60%,var(--line-2));
+}
+html body:has(>.tl-space) .pj-tab{min-height:44px}
+html body:has(>.tl-space) .pl-ic{
+  background:var(--tl-action-bg) padding-box,var(--tl-action-edge) border-box!important;
+  border:1px solid transparent;box-shadow:inset 0 1px #ffffff4d;
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  html body:has(>.tl-space) .pl-ic{transition:transform 160ms var(--ease-out)}
+  html body:has(>.tl-space) .pl:hover .pl-ic{transform:perspective(240px) translateZ(10px) rotateX(8deg)}
+}
 @media(max-width:520px){
   #tl-podbor[data-picker=compact] .tlp-ch,#tl-podbor[data-picker=compact] .tlp-go{column-gap:5px}
   html body #tl-podbor[data-picker=compact] :is(.tlp-ch label>span,.tlp-go a>span){padding-inline:8px}
@@ -934,27 +943,27 @@ html body #tl-podbor[data-picker=compact] .tlp-go a[data-tlp=ask]{
   #tl-podbor[data-picker=compact] select{font-size:13px;padding-inline:4px}
 }
 @media(hover:hover) and (pointer:fine){
-  html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add):hover:not(:disabled),
+  html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add,.chip.main):hover:not(:disabled),
   #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a):hover>span{
     transform:perspective(420px) translate3d(0,-2px,6px) rotateX(7deg);
   }
   #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
     transition:transform 160ms var(--ease-out),box-shadow 160ms ease;
   }
-  html body:has(>.tl-space) :is(.pp-btn,.btn,.sh-add):hover:not(:disabled),
+  html body:has(>.tl-space) :is(.pp-btn,.btn,.sh-add,.chip.main):hover:not(:disabled),
   html body #tl-podbor[data-picker=compact] .tlp-go .tlp-main:hover>span{
     box-shadow:inset 0 1px #cde8ff91,0 4px 0 #20264aab,0 9px 16px -9px #557be7b0!important;
   }
   html body:has(>.tl-space) .tls>a:hover{color:var(--tl-action-violet)!important}
 }
 @media(prefers-reduced-motion:reduce){
-  html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add),
+  html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add,.chip.main),
   html body #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
     transform:none!important;transition:none!important;
   }
 }
 @media(forced-colors:active){
-  html body:has(>.tl-space) :is(.pp-btn,.btn,.sh-add),html body #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
+  html body:has(>.tl-space) :is(.pp-btn,.btn,.sh-add,.chip.main),html body #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
     border-color:ButtonText!important;box-shadow:none!important;
   }
 }
@@ -1210,7 +1219,7 @@ html body #tl-podbor[data-picker=compact] .tlp-go a[data-tlp=ask]{
         <div class="chips"><a class="chip main" style="--c:#2aabee" href="https://t.me/TimLabs_bot" target="_blank" rel="noopener">Открыть бота</a></div>
       </article>
     </div>
-  <div class="tl-drum-nav" role="group" aria-label="Выбрать проект" hidden></div></section>
+  </section>
 <section class="pp-close" id="svyaz" aria-labelledby="svyaz-h"><div class="pp-wrap">
   <h2 id="svyaz-h">Напишите мне <em>лично</em></h2>
   <p>Отвечаю сам. Расскажите, какую задачу хотите передать ИИ, чему научиться или какой проект задумали.</p>
@@ -1230,7 +1239,7 @@ html body #tl-podbor[data-picker=compact] .tlp-go a[data-tlp=ask]{
   </div></footer>
 </main>
 <script src="/assets/tl-motion.js?v=d8a3c0e8d4" defer></script>
-<script src="/assets/tl-studio-depth-v2.js?v=31844810f4" defer></script>
+<script src="/assets/tl-studio-depth-v2.js?v=f2081e7c2f" defer></script>
 
 <!-- tl-consent-v2: согласие на обработку данных (152-ФЗ / cookie) -->
 <style>@layer tl-base,legacy;@layer legacy{

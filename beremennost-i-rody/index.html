@@ -223,7 +223,7 @@ body:has(>.tl-space){
   --tl-picker-violet:#b39aff32;
   --tl-picker-selected:linear-gradient(112deg,#e4f2fe,#efe8ff);
 }
-html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add){
+html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add,.chip.main){
   --tl-face:var(--tl-action-bg) padding-box,var(--tl-action-edge) border-box;
   --tl-face-ink:var(--tl-action-ink);
   --tl-face-depth:var(--tl-action-depth);
@@ -233,7 +233,7 @@ html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.t
   border:1px solid transparent!important;border-radius:var(--tl-action-radius)!important;
   box-shadow:var(--tl-face-depth)!important;
 }
-html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add):where(.line,.ink,.sec,.ghost,.secondary,.tg,.max){
+html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add,.chip.main):where(.line,.ink,.sec,.ghost,.secondary,.tg,.max){
   --tl-face:linear-gradient(transparent,transparent);
   --tl-face-ink:var(--ink);
   --tl-face-depth:inset 0 0 0 1px var(--line-2);
@@ -307,6 +307,24 @@ html body #tl-podbor[data-picker=compact] .tlp-go a[data-tlp=ask]{
   text-decoration:underline!important;text-underline-offset:3px;font-size:13px;font-weight:600;
 }
 #tl-podbor[data-picker=compact] small{display:block;margin:4px 0 0;color:var(--mute);font-size:12px;line-height:1.4}
+/* TimLabs showcase controls, media playback and selected tabs. */
+html body.ps-show:has(>.tl-space) .chip:not(.main){
+  min-height:44px;border-radius:var(--tl-action-radius);
+  background:transparent;color:var(--ink)!important;
+}
+html body:has(>.tl-space) :is(.pj-tab[aria-selected=true],.zo-mode button[aria-pressed=true]){
+  background:var(--tl-picker-selected)!important;color:var(--ink)!important;
+  border-color:color-mix(in srgb,var(--tl-action-highlight) 60%,var(--line-2));
+}
+html body:has(>.tl-space) .pj-tab{min-height:44px}
+html body:has(>.tl-space) .pl-ic{
+  background:var(--tl-action-bg) padding-box,var(--tl-action-edge) border-box!important;
+  border:1px solid transparent;box-shadow:inset 0 1px #ffffff4d;
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  html body:has(>.tl-space) .pl-ic{transition:transform 160ms var(--ease-out)}
+  html body:has(>.tl-space) .pl:hover .pl-ic{transform:perspective(240px) translateZ(10px) rotateX(8deg)}
+}
 @media(max-width:520px){
   #tl-podbor[data-picker=compact] .tlp-ch,#tl-podbor[data-picker=compact] .tlp-go{column-gap:5px}
   html body #tl-podbor[data-picker=compact] :is(.tlp-ch label>span,.tlp-go a>span){padding-inline:8px}
@@ -315,27 +333,27 @@ html body #tl-podbor[data-picker=compact] .tlp-go a[data-tlp=ask]{
   #tl-podbor[data-picker=compact] select{font-size:13px;padding-inline:4px}
 }
 @media(hover:hover) and (pointer:fine){
-  html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add):hover:not(:disabled),
+  html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add,.chip.main):hover:not(:disabled),
   #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a):hover>span{
     transform:perspective(420px) translate3d(0,-2px,6px) rotateX(7deg);
   }
   #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
     transition:transform 160ms var(--ease-out),box-shadow 160ms ease;
   }
-  html body:has(>.tl-space) :is(.pp-btn,.btn,.sh-add):hover:not(:disabled),
+  html body:has(>.tl-space) :is(.pp-btn,.btn,.sh-add,.chip.main):hover:not(:disabled),
   html body #tl-podbor[data-picker=compact] .tlp-go .tlp-main:hover>span{
     box-shadow:inset 0 1px #cde8ff91,0 4px 0 #20264aab,0 9px 16px -9px #557be7b0!important;
   }
   html body:has(>.tl-space) .tls>a:hover{color:var(--tl-action-violet)!important}
 }
 @media(prefers-reduced-motion:reduce){
-  html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add),
+  html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add,.chip.main),
   html body #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
     transform:none!important;transition:none!important;
   }
 }
 @media(forced-colors:active){
-  html body:has(>.tl-space) :is(.pp-btn,.btn,.sh-add),html body #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
+  html body:has(>.tl-space) :is(.pp-btn,.btn,.sh-add,.chip.main),html body #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
     border-color:ButtonText!important;box-shadow:none!important;
   }
 }

@@ -176,189 +176,92 @@
     });
   }
 
-  for (const list of document.querySelectorAll(".tl-project-list")) {
-    const controls = list.closest(".tl-projects").querySelector(".tl-project-controls");
-    const [prev,next] = controls.querySelectorAll("button");
+  const railMotion = () => !motion.matches && !hero?.classList.contains("tl-paused");
+
+  function stepRail(list, direction, wrap) {
+    const edge = list.scrollWidth - list.clientWidth;
     const items = [...list.children];
-    const smooth = () => !motion.matches && !hero?.classList.contains("tl-paused");
-    const edge = () => list.scrollWidth-list.clientWidth;
-    function sync() {
-      prev.disabled = list.scrollLeft < 2;
-      next.disabled = list.scrollLeft >= edge()-2;
-      items.forEach(item => {
-        const delta = (item.offsetLeft-list.scrollLeft)/Math.max(1,list.clientWidth);
-        item.style.setProperty("--tl-project-turn",smooth() ? `${Math.max(-8, Math.min(9,delta*15))}deg` : "0deg");
-      });
-    }
-    function step(direction) {
-      const stops = items.map(item => Math.min(edge(),item.offsetLeft-items[0].offsetLeft));
-      const current = list.scrollLeft;
-      const target = direction > 0
-        ? stops.find(left => left > current+3) ?? edge()
-        : stops.findLast(left => left < current-3) ?? 0;
-      list.scrollTo({left:target,behavior:smooth() ? "smooth" : "instant"});
-    }
-    prev.addEventListener("click",() => step(-1));
-    next.addEventListener("click",() => step(1));
-    list.addEventListener("keydown",event => {
-      if (event.target !== list || !["ArrowLeft","ArrowRight"].includes(event.key)) return;
-      event.preventDefault();
-      step(event.key === "ArrowRight" ? 1 : -1);
+    if (!items.length || edge < 2) return;
+    const stops = items.map(item => Math.min(edge, item.offsetLeft - items[0].offsetLeft));
+    const current = list.scrollLeft;
+    const stop = direction > 0
+      ? stops.find(left => left > current + 3)
+      : stops.findLast(left => left < current - 3);
+    const atEdge = direction > 0 ? current >= edge - 3 : current <= 3;
+    const target = stop ?? (wrap && atEdge ? (direction > 0 ? 0 : edge) : (direction > 0 ? edge : 0));
+    list.scrollTo({left:target,behavior:railMotion() && !(wrap && atEdge) ? "smooth" : "instant"});
+  }
+
+  function bindRail(list, wrap = false) {
+    list.addEventListener("keydown", event => {
+      if (event.target !== list || event.altKey || event.ctrlKey || event.metaKey) return;
+      const step = {ArrowLeft:-1,ArrowRight:1}[event.key];
+      if (step) {
+        event.preventDefault();
+        stepRail(list, step, wrap);
+      } else if (wrap && (event.key === "Home" || event.key === "End")) {
+        event.preventDefault();
+        list.scrollTo({left:event.key === "Home" ? 0 : list.scrollWidth,behavior:"instant"});
+      }
     });
-    list.addEventListener("scroll",sync,{passive:true});
-    motion.addEventListener("change",sync);
-    new ResizeObserver(sync).observe(list);
-    list.querySelectorAll("img").forEach(img => { img.draggable = false; });
+    list.querySelectorAll("img").forEach(image => { image.draggable = false; });
     let gesture;
     let blockClick = false;
-    list.addEventListener("pointerdown",event => {
-      if (event.pointerType !== "mouse" || event.button !== 0) return;
-      gesture = {x:event.clientX,left:list.scrollLeft,id:event.pointerId};
+
+    list.addEventListener("pointerdown", event => {
+      if (event.pointerType !== "mouse" || event.button !== 0 || event.target.closest(".g-depth,input,select,textarea")) return;
+      gesture = {x:event.clientX,y:event.clientY,left:list.scrollLeft,id:event.pointerId};
       blockClick = false;
     });
-    list.addEventListener("pointermove",event => {
+    list.addEventListener("pointermove", event => {
       if (!gesture || event.pointerId !== gesture.id) return;
-      const dx = event.clientX-gesture.x;
-      if (!blockClick && Math.abs(dx) < 8) return;
-      if (!blockClick) list.setPointerCapture(event.pointerId);
+      const dx = event.clientX - gesture.x;
+      if (!blockClick) {
+        if (Math.abs(event.clientY - gesture.y) > Math.abs(dx) + 8) { gesture = null; return; }
+        if (Math.abs(dx) < 8) return;
+        list.setPointerCapture(event.pointerId);
+      }
       blockClick = true;
       list.classList.add("tl-dragging");
-      list.scrollLeft = gesture.left-dx;
+      list.scrollLeft = gesture.left - dx;
     });
-    for (const type of ["pointerup","pointercancel","lostpointercapture","pointerleave"]) list.addEventListener(type,() => {
+    for (const type of ["pointerup","pointercancel","lostpointercapture","pointerleave"]) list.addEventListener(type, () => {
       if (type === "pointerleave" && blockClick) return;
       gesture = null;
       list.classList.remove("tl-dragging");
     });
-    list.addEventListener("click",event => {
+    list.addEventListener("click", event => {
       if (!blockClick || event.detail === 0) return;
       blockClick = false;
       event.preventDefault();
       event.stopPropagation();
-    },true);
+    }, true);
+  }
+
+  for (const list of document.querySelectorAll(".tl-project-list")) {
+    const controls = list.closest(".tl-projects").querySelector(".tl-project-controls");
+    const [prev,next] = controls.querySelectorAll("button");
+    const items = [...list.children];
+    function sync() {
+      prev.disabled = list.scrollLeft < 2;
+      next.disabled = list.scrollLeft >= list.scrollWidth - list.clientWidth - 2;
+      items.forEach(item => {
+        const delta = (item.offsetLeft - list.scrollLeft) / Math.max(1, list.clientWidth);
+        item.style.setProperty("--tl-project-turn",railMotion() ? Math.max(-8, Math.min(9,delta*15)) + "deg" : "0deg");
+      });
+    }
+    prev.addEventListener("click", () => stepRail(list, -1, false));
+    next.addEventListener("click", () => stepRail(list, 1, false));
+    list.addEventListener("scroll", sync, {passive:true});
+    motion.addEventListener("change", sync);
+    new ResizeObserver(sync).observe(list);
+    bindRail(list);
     controls.hidden = false;
     sync();
   }
 
-  const drum = document.querySelector("#tl-mine-list");
-  if (drum && window.TL?.spring && "inert" in HTMLElement.prototype) {
-    const cards = [...drum.children].filter(node => node.matches("article"));
-    const nav = document.querySelector(".tl-drum-nav");
-    if (nav && cards.length > 2) {
-      const count = cards.length;
-      const mod = n => ((n % count) + count) % count;
-      const offset = (n, center) => mod(n - center + count / 2) - count / 2;
-      const still = () => motion.matches || hero?.classList.contains("tl-paused");
-      let index = 0, position = 0, target = 0, drag, ignoreClick = false;
-      const dots = cards.map((card,n) => {
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.setAttribute("aria-label", card.querySelector("h3").textContent.trim());
-        dot.setAttribute("aria-controls", drum.id);
-        dot.addEventListener("click",() => move(target + offset(n,target)));
-        nav.append(dot);
-        return dot;
-      });
-      function paint(value) {
-        position = value;
-        cards.forEach((card,n) => {
-          const angle = offset(n,value) * (2 * Math.PI / count);
-          const depth = 1 - Math.cos(angle);
-          card.style.setProperty("--drum-transform", still() ? "none" :
-            `translate3d(${(Math.sin(angle)*88).toFixed(2)}%,${(depth*14).toFixed(2)}px,${(-depth*210).toFixed(2)}px) rotateY(${angle.toFixed(4)}rad)`);
-          card.style.setProperty("--drum-opacity",still() ? (n === index ? "1" : "0") : Math.max(0,1-depth*.98).toFixed(3));
-        });
-      }
-      function active(n) {
-        if (cards[index].contains(document.activeElement)) drum.focus({preventScroll:true});
-        index = mod(n);
-        cards.forEach((card,i) => {
-          card.toggleAttribute("data-drum-front",i===index);
-          card.inert = i!==index;
-          dots[i].setAttribute("aria-pressed", String(i===index));
-        });
-        const title = dots[index].getAttribute("aria-label");
-        drum.setAttribute("aria-label", `${title}, ${index+1} из ${count}`);
-      }
-      const spring = TL.spring({from:0,onUpdate:paint,onDone:()=>active(target)});
-      function move(n) {
-        target = n;
-        if (still() || Math.abs(position - n) < .002) {
-          active(n);
-          spring.jump(n);
-        } else spring.set(n);
-      }
-      // Enhance near the section. Preserve its original footprint before choosing a face.
-      function mount() {
-        drum.style.setProperty("--drum-min", `${drum.offsetHeight}px`);
-        drum.dataset.drum = "";
-        active(0);
-        paint(0);
-        nav.hidden = false;
-      }
-      let mounted = false;
-      const nearby = new IntersectionObserver(entries=>{
-        if (!entries.some(entry=>entry.isIntersecting)) return;
-        nearby.disconnect();
-        mounted = true;
-        mount();
-      },{rootMargin:"200px"});
-      nearby.observe(drum);
-      const syncMotion = () => { if (mounted) move(target); };
-      motion.addEventListener("change",syncMotion);
-      hero?.querySelector(".tl-motion-toggle")?.addEventListener("click",syncMotion);
-      drum.addEventListener("keydown",event => {
-        if (!mounted || event.target!==drum || event.altKey || event.ctrlKey || event.metaKey) return;
-        const delta = {ArrowLeft:-1,ArrowRight:1}[event.key];
-        if (!delta) return;
-        event.preventDefault();
-        move(target+delta);
-      });
-      drum.addEventListener("pointerdown",event => {
-        if (!mounted || !event.isPrimary || (event.pointerType==="mouse" && event.button!==0) || event.target.closest(".gd-rels")) return;
-        ignoreClick = false;
-        drag = {id:event.pointerId,x:event.clientX,y:event.clientY,center:target,origin:target,distance:0};
-      });
-      drum.addEventListener("pointermove",event => {
-        if (!drag || event.pointerId!==drag.id) return;
-        const dx = event.clientX-drag.x, dy = event.clientY-drag.y;
-        if (!ignoreClick) {
-          if (Math.abs(dy)>12 && Math.abs(dy)>=Math.abs(dx)) { drag=null; return; }
-          if (Math.abs(dx)<9) return;
-          if (!still()) spring.jump(position);
-          drag.center=still()?target:position;
-          ignoreClick = true;
-          drum.setPointerCapture(event.pointerId);
-        }
-        drag.distance = dx;
-        if (!still()) spring.jump(drag.center - Math.max(-1.25,Math.min(1.25,dx/drum.clientWidth*2)));
-      });
-      function finish(event,cancelled) {
-        if (!drag || event.pointerId!==drag.id) return;
-        const {distance,origin} = drag;
-        drag=null;
-        if (!ignoreClick) return;
-        move(origin + (cancelled || Math.abs(distance)<22 ? 0 : -Math.sign(distance)));
-      }
-      drum.addEventListener("pointerup",event=>finish(event,false));
-      drum.addEventListener("pointercancel",event=>finish(event,true));
-      drum.addEventListener("lostpointercapture",event=>{if (event.target===drum) finish(event,true);});
-      drum.addEventListener("click",event => {
-        if (!ignoreClick || event.detail===0) return;
-        ignoreClick=false;
-        event.preventDefault();
-        event.stopImmediatePropagation();
-      },true);
-      let wheelAt = -Infinity;
-      drum.addEventListener("wheel",event => {
-        if (!mounted || event.ctrlKey || event.target.closest(".gd-rels") || Math.abs(event.deltaX)<=Math.abs(event.deltaY) || Math.abs(event.deltaX)<5) return;
-        if (event.cancelable) event.preventDefault();
-        if (event.timeStamp-wheelAt<380) return;
-        wheelAt=event.timeStamp;
-        move(target+Math.sign(event.deltaX));
-      },{passive:false});
-    }
-  }
+  const projects = document.querySelector("#tl-mine-list");
+  if (projects) bindRail(projects, true);
 
   const picker = document.querySelector("#tl-podbor > .tl-home-picker");
   if (picker) {
