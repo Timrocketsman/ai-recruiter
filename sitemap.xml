@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://timlabs.online/</loc>
-    <lastmod>2026-11-27</lastmod>
+    <lastmod>2026-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>https://timlabs.online/journal/</loc>
-    <lastmod>2026-11-27</lastmod>
+    <lastmod>2026-11-28</lastmod>
   </url>
   <url>
     <loc>https://timlabs.online/journal/spa-kislovodsk/</loc>
@@ -463,10 +463,10 @@
   </url>
   <url><loc>https://timlabs.online/beremennost-i-rody/</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://timlabs.online/telo-i-vosstanovlenie/</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://timlabs.online/retrity-i-kmv/</loc><lastmod>2026-11-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://timlabs.online/retrity-i-kmv/</loc><lastmod>2026-11-28</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url>
     <loc>https://timlabs.online/ii-avtomatizaciya/</loc>
-    <lastmod>2026-11-27</lastmod>
+    <lastmod>2026-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1158,5 +1158,9 @@
   <url>
     <loc>https://timlabs.online/journal/chto-utochnit-pered-pokupkoy-abonementa-na-massazh/</loc>
     <lastmod>2026-11-27</lastmod>
+  </url>
+<url>
+    <loc>https://timlabs.online/journal/muzey-kosmonavtiki-v-kislovodske-kak-splanirovat-vizit/</loc>
+    <lastmod>2026-11-28</lastmod>
   </url>
 </urlset>
