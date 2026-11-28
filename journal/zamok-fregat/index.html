@@ -112,38 +112,141 @@ body:has(>.tl-space)::before{display:none}
   .tl-space,.tl-space-control{display:none!important}
 }
 
-
-/* Action colors for the shared TimLabs pages. The editorial and shop controls use the same palette. */
+/* TimLabs actions: cyan / violet light and a compact, physical control surface. */
 body:has(>.tl-space){
-  --tl-action-fill:#a9bbcf;
-  --tl-action-bg:linear-gradient(110deg,var(--tl-action-fill),#9eaec5);
-  --tl-action-ink:#0d1826;
-  --tl-action-hover:#c0cddd;
+  --tl-action-fill:#185b9d;
+  --tl-action-bg:linear-gradient(115deg,var(--tl-action-fill),#294b98 52%,#5336a0);
+  --tl-action-edge:linear-gradient(112deg,#76c6fb,#807dca 53%,#b496ff);
+  --tl-action-ink:#f9fbff;
+  --tl-action-depth:inset 0 1px #d3e9ff55,0 2px 0 #1019309e,0 5px 12px -7px #000a;
+  --tl-action-radius:8px;
+  --tl-action-highlight:#8acbfc;
+  --tl-action-violet:#a593ff;
+  --tl-picker-blue:#2289f027;
+  --tl-picker-violet:#8050e827;
+  --tl-picker-selected:linear-gradient(112deg,#173751,#25234b);
 }
 :root:is([data-theme=light],.auto-light:not([data-theme])) body:has(>.tl-space){
-  --tl-action-fill:#35495f;
-  --tl-action-bg:linear-gradient(110deg,var(--tl-action-fill),#43546d);
-  --tl-action-ink:#f5f8fc;
-  --tl-action-hover:#2c3e54;
+  --tl-action-highlight:#245c90;
+  --tl-action-violet:#6242a4;
+  --tl-picker-blue:#69bfff35;
+  --tl-picker-violet:#b39aff32;
+  --tl-picker-selected:linear-gradient(112deg,#e4f2fe,#efe8ff);
 }
-body:has(>.tl-space) :is(.tls>a,.sh-add){
-  background:var(--tl-action-fill) var(--tl-action-bg)!important;
-  color:var(--tl-action-ink)!important;
-  -webkit-text-fill-color:currentColor!important;
+html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add){
+  --tl-face:var(--tl-action-bg) padding-box,var(--tl-action-edge) border-box;
+  --tl-face-ink:var(--tl-action-ink);
+  --tl-face-depth:var(--tl-action-depth);
+  --accent-ink:var(--tl-face-ink);
+  min-height:44px;
+  background:var(--tl-face)!important;color:var(--tl-face-ink)!important;
+  border:1px solid transparent!important;border-radius:var(--tl-action-radius)!important;
+  box-shadow:var(--tl-face-depth)!important;
 }
-body:has(>.tl-space) .tls>a{
-  display:inline-flex;align-items:center;justify-content:center;
-  min-height:44px;padding:10px 18px!important;border-radius:999px!important;
-  text-decoration:none!important;
+html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add):where(.line,.ink,.sec,.ghost,.secondary,.tg,.max){
+  --tl-face:linear-gradient(transparent,transparent);
+  --tl-face-ink:var(--ink);
+  --tl-face-depth:inset 0 0 0 1px var(--line-2);
+}
+html body:has(>.tl-space) :is(.pp-btn,.sh-add){padding:8px 13px}
+html body:has(>.tl-space) .sh-add{width:auto;max-width:100%}
+html body:has(>.tl-space) .tls>a{
+  display:inline-flex;align-items:center;min-height:44px;padding:0 2px!important;
+  background:none!important;color:var(--tl-action-highlight)!important;
+  border-radius:4px!important;text-decoration:underline!important;text-underline-offset:4px;
 }
 body:has(>.tl-space) .sh-chip[aria-current=true]{
-  background:color-mix(in srgb,var(--tl-action-fill) 16%,var(--bone))!important;
-  color:var(--ink)!important;
-  border-color:color-mix(in srgb,var(--tl-action-fill) 52%,var(--bone));
+  background:var(--tl-picker-selected)!important;color:var(--ink)!important;
+  border-color:color-mix(in srgb,var(--tl-action-highlight) 52%,var(--bone));
 }
-@media(hover:hover){
-  body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.tlp-main,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.tls>a,.sh-add):hover:not(:disabled){
-    --tl-action-bg:linear-gradient(var(--tl-action-hover),var(--tl-action-hover));
+html body #tl-podbor[data-picker=compact]{
+  padding:clamp(16px,3vw,26px)!important;border-radius:16px!important;
+  background:radial-gradient(ellipse at 0 0,var(--tl-picker-blue,transparent),transparent 64%),
+    radial-gradient(ellipse at 100% 0,var(--tl-picker-violet,transparent),transparent 64%),var(--bone)!important;
+  box-shadow:inset 0 1px var(--line-2),0 12px 22px -20px #000a!important;
+  scroll-margin-top:80px;
+}
+html body #tl-podbor[data-picker=compact] h2{font:650 clamp(22px,3vw,31px)/1.14 var(--sans)!important;letter-spacing:-.04em;margin:0}
+#tl-podbor[data-picker=compact] .tlp-intro{margin:5px 0 13px;color:var(--mute);font-size:.89rem}
+#tl-podbor[data-picker=compact] .tl-home-picker[open] summary{margin-bottom:10px;padding-bottom:8px}
+#tl-podbor[data-picker=compact] .tl-home-picker[open] .tlp-intro{margin-bottom:0}
+#tl-podbor[data-picker=compact] fieldset{min-width:0;margin:0;padding:0;border:0}
+html body #tl-podbor[data-picker=compact] :is(legend,.tlp-selects label){
+  color:var(--ink);letter-spacing:0;text-transform:none;font:620 13px/1.35 var(--sans)!important;
+}
+#tl-podbor[data-picker=compact] legend{margin-bottom:3px}
+#tl-podbor[data-picker=compact] .tlp-ch,#tl-podbor[data-picker=compact] .tlp-go{display:flex;flex-wrap:wrap;gap:0 7px}
+#tl-podbor[data-picker=compact] .tlp-ch label{
+  position:relative;display:inline-flex;align-items:center;min-height:44px;cursor:pointer;perspective:420px;
+}
+#tl-podbor[data-picker=compact] .tlp-ch input{position:absolute;inset:0;opacity:0;margin:0;cursor:inherit}
+html body #tl-podbor[data-picker=compact] :is(.tlp-ch label>span,.tlp-go a>span){
+  display:inline-flex;align-items:center;gap:6px;min-height:35px;padding:5px 10px;line-height:1.2;
+  border:1px solid var(--line-2);border-radius:var(--tl-action-radius,8px);
+  background:var(--paper-2);color:var(--ink);box-shadow:inset 0 1px var(--line);
+  font:600 13px/1.2 var(--sans);pointer-events:none;
+}
+html body #tl-podbor[data-picker=compact] .tlp-ch input:checked+span{
+  border-color:transparent!important;background:var(--tl-picker-selected,#193551) padding-box,
+    var(--tl-action-edge,#6cb6efa0) border-box!important;color:var(--ink)!important;
+}
+#tl-podbor[data-picker=compact] .tlp-ch input:focus-visible+span{
+  outline:2px solid var(--tl-action-highlight,var(--accent));outline-offset:2px;
+}
+#tl-podbor[data-picker=compact] .tlp-selects{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-width:510px;margin:8px 0 10px;
+}
+#tl-podbor[data-picker=compact] .tlp-selects label{display:grid;gap:4px;min-width:0}
+#tl-podbor[data-picker=compact] select{
+  min-height:44px;min-width:0;width:100%;margin:0;padding:0 6px;
+  background:var(--paper-2);color:var(--ink);border:1px solid var(--line-2);
+  border-radius:8px;font:500 14px/1.3 var(--sans);cursor:pointer;
+}
+#tl-podbor[data-picker=compact] .tlp-go{padding-top:5px;border-top:1px solid var(--line)}
+html body #tl-podbor[data-picker=compact] .tlp-go a{
+  flex:0 1 auto;display:inline-flex;align-items:center;min-height:44px;padding:0 1px;border:0!important;
+  background:none!important;color:var(--tl-action-ink,var(--ink))!important;
+  border-radius:8px!important;text-decoration:none!important;perspective:420px;
+}
+html body #tl-podbor[data-picker=compact] .tlp-go a.tlp-main>span{
+  background:var(--tl-action-bg,#185b9d) padding-box,var(--tl-action-edge,#6cb6ef) border-box;
+  border-color:transparent;color:var(--tl-action-ink,#fff);box-shadow:var(--tl-action-depth,none);
+}
+html body #tl-podbor[data-picker=compact] .tlp-go a[data-tlp=ask]{
+  padding-inline:5px;color:var(--tl-action-highlight,var(--accent))!important;
+  text-decoration:underline!important;text-underline-offset:3px;font-size:13px;font-weight:600;
+}
+#tl-podbor[data-picker=compact] small{display:block;margin:4px 0 0;color:var(--mute);font-size:12px;line-height:1.4}
+@media(max-width:520px){
+  #tl-podbor[data-picker=compact] .tlp-ch,#tl-podbor[data-picker=compact] .tlp-go{column-gap:5px}
+  html body #tl-podbor[data-picker=compact] :is(.tlp-ch label>span,.tlp-go a>span){padding-inline:8px}
+}
+@media(max-width:374px){
+  #tl-podbor[data-picker=compact] select{font-size:13px;padding-inline:4px}
+}
+@media(hover:hover) and (pointer:fine){
+  html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add):hover:not(:disabled),
+  #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a):hover>span{
+    transform:perspective(420px) translate3d(0,-2px,6px) rotateX(7deg);
+  }
+  #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
+    transition:transform 160ms var(--ease-out),box-shadow 160ms ease;
+  }
+  html body:has(>.tl-space) :is(.pp-btn,.btn,.sh-add):hover:not(:disabled),
+  html body #tl-podbor[data-picker=compact] .tlp-go .tlp-main:hover>span{
+    box-shadow:inset 0 1px #cde8ff91,0 4px 0 #20264aab,0 9px 16px -9px #557be7b0!important;
+  }
+  html body:has(>.tl-space) .tls>a:hover{color:var(--tl-action-violet)!important}
+}
+@media(prefers-reduced-motion:reduce){
+  html body:has(>.tl-space) :is(.pp-btn,.btn,a.p,a.gd-go,.hub-cta a:first-child,.tl-go a.live,#tl-consent .tl-ok,.bar button,.sh-add),
+  html body #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
+    transform:none!important;transition:none!important;
+  }
+}
+@media(forced-colors:active){
+  html body:has(>.tl-space) :is(.pp-btn,.btn,.sh-add),html body #tl-podbor[data-picker=compact] :is(.tlp-ch label,.tlp-go a)>span{
+    border-color:ButtonText!important;box-shadow:none!important;
   }
 }
 </style><script src="/assets/tl-space-v1.js?v=d964f4d642" defer></script><!--/tl-space-head-v1--></head>
@@ -186,59 +289,59 @@ body:has(>.tl-space) .sh-chip[aria-current=true]{
 <details><summary>Безопасно ли место с детьми?</summary><p>С детьми старше младшего школьного возраста возможно при плотном присмотре: горный рельеф, камни и отсутствие ограждений. Для малышей поездка может быть некомфортной из-за перепада высот и длинной дороги.</p></details>
   </section>
 
-  <!--tl-podbor-v1--><section class="tlp" id="tl-podbor" aria-labelledby="tlp-h">
-<style>@layer tl-base,legacy;@layer legacy{
-.tlp{margin:28px 0;padding:22px 20px;border:1px solid var(--stroke-hi,rgba(0,180,255,.5));border-radius:16px;background:rgba(0,180,255,.05);color:var(--text,#e7ecf7);text-align:left}
-.tlp h2{margin:0 0 6px;font-size:1.25rem}
-.tlp p{margin:0 0 12px;color:var(--muted,#9aa3b8);font-size:.95rem;line-height:1.5}
-.tlp fieldset{border:0;margin:0 0 12px;padding:0}
-.tlp legend{font-weight:600;margin-bottom:8px;font-size:.95rem}
-.tlp .tlp-ch{display:flex;flex-wrap:wrap;gap:8px}
-.tlp label{cursor:pointer}
-.tlp input{position:absolute;opacity:0;pointer-events:none}
-.tlp label span{display:inline-block;padding:8px 12px;border:1px solid var(--stroke,rgba(255,255,255,.12));border-radius:999px;font-size:.9rem;transition:border-color .15s,background .15s}
-.tlp input:checked+span{border-color:var(--cyan,#00b4ff);background:rgba(0,180,255,.16)}
-.tlp input:focus-visible+span{outline:2px solid var(--cyan,#00b4ff);outline-offset:2px}
-.tlp .tlp-go{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-.tlp .tlp-go a{flex:1 1 200px;text-align:center;padding:12px 16px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--cyan,#00b4ff);color:var(--text,#e7ecf7)}
-.tlp .tlp-go a.tlp-main{background:var(--cyan,#00b4ff);color:#00121f}
-.tlp small{display:block;margin-top:10px;color:var(--dim,#5c6478);font-size:.8rem;line-height:1.4}
-}</style>
-<h2 id="tlp-h">Подобрать мастера за минуту</h2>
-<p>Отметьте, что вам сейчас нужно, — посоветую специалиста или практику, которые знаю сам.</p>
+  <!--tl-podbor-v1--><section class="tlp" id="tl-podbor" aria-labelledby="tlp-h" data-picker="compact">
+<h2 id="tlp-h">Подобрать мастера</h2>
+<p class="tlp-intro">Укажите, что вам нужно, и выберите удобный способ связи.</p>
 <fieldset><legend>Что важно сейчас?</legend><div class="tlp-ch">
 <label><input type="radio" name="tlp-what" value="беременность и роды"><span>Беременность и роды</span></label>
 <label><input type="radio" name="tlp-what" value="тело и восстановление"><span>Тело и восстановление</span></label>
 <label><input type="radio" name="tlp-what" value="ретрит или поездка по КМВ"><span>Ретрит или поездка по КМВ</span></label>
-<label><input type="radio" name="tlp-what" value="внутренняя опора и сообщество"><span>Внутренняя опора и сообщество</span></label>
+<label><input type="radio" name="tlp-what" value="внутренняя опора и сообщество" aria-label="Внутренняя опора и сообщество"><span>Опора и сообщество</span></label>
 <label><input type="radio" name="tlp-what" value="другое"><span>Другое</span></label>
 </div></fieldset>
-<fieldset><legend>Формат</legend><div class="tlp-ch">
-<label><input type="radio" name="tlp-where" value="на месте, Кавминводы"><span>На месте, Кавминводы</span></label>
-<label><input type="radio" name="tlp-where" value="онлайн"><span>Онлайн</span></label>
-<label><input type="radio" name="tlp-where" value="пока не знаю"><span>Пока не знаю</span></label>
-</div></fieldset>
-<fieldset><legend>Когда</legend><div class="tlp-ch">
-<label><input type="radio" name="tlp-when" value="в ближайшие дни"><span>В ближайшие дни</span></label>
-<label><input type="radio" name="tlp-when" value="в этом месяце"><span>В этом месяце</span></label>
-<label><input type="radio" name="tlp-when" value="пока присматриваюсь"><span>Пока присматриваюсь</span></label>
-</div></fieldset>
+<div class="tlp-selects">
+<label>Формат<select name="tlp-where">
+<option value="">Любой формат</option><option value="на месте, Кавминводы">Кавминводы</option>
+<option value="онлайн">Онлайн</option><option value="пока не знаю">Пока не знаю</option>
+</select></label>
+<label>Когда<select name="tlp-when">
+<option value="">Без срока</option><option value="в ближайшие дни">В ближайшие дни</option>
+<option value="в этом месяце">В этом месяце</option><option value="пока присматриваюсь">Присматриваюсь</option>
+</select></label>
+</div>
 <div class="tlp-go">
-<a class="tlp-main" data-tlp="wa" href="https://t.me/umas_channel" target="_blank" rel="noopener">Канал в Telegram</a>
-
-
+<a class="tlp-main" data-tlp="wa" href="https://wa.me/79938917761" target="_blank" rel="noopener"><span>Написать в WhatsApp <span aria-hidden="true">↗</span></span></a>
+<a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener"><span>Telegram-бот</span></a>
+<a data-tlp="ask" href="https://t.me/TimLabs_bot?start=q" target="_blank" rel="noopener">Задать вопрос в Telegram</a>
 </div>
 <small>Ответы не сохраняются на сайте: они только складываются в текст сообщения, и вы сами решаете, отправлять ли его. Не указывайте диагнозы и сведения о здоровье. Подробнее — в <a href="/privacy/">политике обработки данных</a>. Практики мастеров носят велнес-характер и не являются медицинской помощью.</small>
-<script>(function(){var box=document.getElementById('tl-podbor');if(!box)return;
-function v(n){var x=box.querySelector('input[name="'+n+'"]:checked');return x?x.value:'';}
-function text(){var p=['Здравствуйте, Тим! Хочу подобрать мастера.'],a=v('tlp-what'),b=v('tlp-where'),c=v('tlp-when');
-if(a)p.push('Что важно: '+a+'.');if(b)p.push('Формат: '+b+'.');if(c)p.push('Когда: '+c+'.');
-p.push('Нашёл(ла) вас на странице: '+location.origin+location.pathname);return p.join('\n');}
-var wa=box.querySelector('[data-tlp="wa"]');
-function ix(n){var l=box.querySelectorAll('input[name=\"'+n+'\"]');for(var i=0;i<l.length;i++)if(l[i].checked)return i+1;return 0;}var tg=box.querySelector('[data-tlp=\"tg\"]');function upd(){wa.href='https://wa.me/79938917761?text='+encodeURIComponent(text());if(tg){var s='podbor',w=ix('tlp-what'),f=ix('tlp-where'),t=ix('tlp-when');if(w)s+='_w'+w;if(f)s+='_f'+f;if(t)s+='_t'+t;tg.href='https://t.me/TimLabs_bot?start='+s;}}
-box.addEventListener('change',upd);upd();
-box.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-tlp]');if(!a)return;
-try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getAttribute('data-tlp'),page:location.pathname});}catch(_){}});
+<script>(function(){
+  var box=document.getElementById('tl-podbor');
+  if(!box)return;
+  var wa=box.querySelector('[data-tlp="wa"]'), tg=box.querySelector('[data-tlp="tg"]');
+  if(!wa || !tg)return;
+  function update(){
+    var choices=Array.from(box.querySelectorAll('input[name="tlp-what"]'));
+    var topic=choices.findIndex(function(choice){return choice.checked;})+1;
+    var format=box.querySelector('[name="tlp-where"]'), timing=box.querySelector('[name="tlp-when"]');
+    var text=['Здравствуйте, Тим! Хочу подобрать мастера.'];
+    if(topic)text.push('Что важно: '+choices[topic-1].value+'.');
+    if(format.value)text.push('Формат: '+format.value+'.');
+    if(timing.value)text.push('Когда: '+timing.value+'.');
+    text.push('Нашёл(ла) вас на странице: '+location.origin+location.pathname);
+    wa.href='https://wa.me/79938917761?text='+encodeURIComponent(text.join('\n'));
+    tg.href='https://t.me/TimLabs_bot?start=podbor'+
+      (topic?'_w'+topic:'')+(format.selectedIndex?'_f'+format.selectedIndex:'')+
+      (timing.selectedIndex?'_t'+timing.selectedIndex:'');
+  }
+  box.addEventListener('change',update);
+  window.addEventListener('pageshow',update);
+  update();
+  box.addEventListener('click',function(event){
+    var link=event.target.closest&&event.target.closest('[data-tlp]');
+    if(!link)return;
+    try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:link.getAttribute('data-tlp'),page:location.pathname});}catch(_){}
+  });
 })();</script>
 </section>
 

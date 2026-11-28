@@ -58,61 +58,82 @@ if(b)b.addEventListener('click',function(e){e.stopImmediatePropagation();window.
 try{if(typeof ym==='function')ym(111725024,'reachGoal','ask_click',{page:location.pathname});}catch(_){}} ,true);
 })();</script>'''
 
-PODBOR = r"""<!--tl-podbor-v1--><section class="tlp" id="tl-podbor" aria-labelledby="tlp-h">
-<style>
-.tlp{margin:28px 0;padding:22px 20px;border:1px solid var(--stroke-hi,rgba(0,180,255,.5));border-radius:16px;background:rgba(0,180,255,.05);color:var(--text,#e7ecf7);text-align:left}
-.tlp h2{margin:0 0 6px;font-size:1.25rem}
-.tlp p{margin:0 0 12px;color:var(--muted,#9aa3b8);font-size:.95rem;line-height:1.5}
-.tlp fieldset{border:0;margin:0 0 12px;padding:0}
-.tlp legend{font-weight:600;margin-bottom:8px;font-size:.95rem}
-.tlp .tlp-ch{display:flex;flex-wrap:wrap;gap:8px}
-.tlp label{cursor:pointer}
-.tlp input{position:absolute;opacity:0;pointer-events:none}
-.tlp label span{display:inline-block;padding:8px 12px;border:1px solid var(--stroke,rgba(255,255,255,.12));border-radius:999px;font-size:.9rem;transition:border-color .15s,background .15s}
-.tlp input:checked+span{border-color:var(--cyan,#00b4ff);background:rgba(0,180,255,.16)}
-.tlp input:focus-visible+span{outline:2px solid var(--cyan,#00b4ff);outline-offset:2px}
-.tlp .tlp-go{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-.tlp .tlp-go a{flex:1 1 200px;text-align:center;padding:12px 16px;border-radius:12px;font-weight:600;text-decoration:none;border:1px solid var(--cyan,#00b4ff);color:var(--text,#e7ecf7)}
-.tlp .tlp-go a.tlp-main{background:var(--cyan,#00b4ff);color:#00121f}
-.tlp small{display:block;margin-top:10px;color:var(--dim,#5c6478);font-size:.8rem;line-height:1.4}
-</style>
-<h2 id="tlp-h">Подобрать мастера за минуту</h2>
-<p>Отметьте, что вам сейчас нужно, — посоветую специалиста или практику, которые знаю сам.</p>
+PODBOR = r"""<!--tl-podbor-v1--><section class="tlp" id="tl-podbor" aria-labelledby="tlp-h" data-picker="compact">
+<h2 id="tlp-h">Подобрать мастера</h2>
+<p class="tlp-intro">Укажите, что вам нужно, и выберите удобный способ связи.</p>
 <fieldset><legend>Что важно сейчас?</legend><div class="tlp-ch">
 <label><input type="radio" name="tlp-what" value="беременность и роды"><span>Беременность и роды</span></label>
 <label><input type="radio" name="tlp-what" value="тело и восстановление"><span>Тело и восстановление</span></label>
 <label><input type="radio" name="tlp-what" value="ретрит или поездка по КМВ"><span>Ретрит или поездка по КМВ</span></label>
-<label><input type="radio" name="tlp-what" value="внутренняя опора и сообщество"><span>Внутренняя опора и сообщество</span></label>
+<label><input type="radio" name="tlp-what" value="внутренняя опора и сообщество" aria-label="Внутренняя опора и сообщество"><span>Опора и сообщество</span></label>
 <label><input type="radio" name="tlp-what" value="другое"><span>Другое</span></label>
 </div></fieldset>
-<fieldset><legend>Формат</legend><div class="tlp-ch">
-<label><input type="radio" name="tlp-where" value="на месте, Кавминводы"><span>На месте, Кавминводы</span></label>
-<label><input type="radio" name="tlp-where" value="онлайн"><span>Онлайн</span></label>
-<label><input type="radio" name="tlp-where" value="пока не знаю"><span>Пока не знаю</span></label>
-</div></fieldset>
-<fieldset><legend>Когда</legend><div class="tlp-ch">
-<label><input type="radio" name="tlp-when" value="в ближайшие дни"><span>В ближайшие дни</span></label>
-<label><input type="radio" name="tlp-when" value="в этом месяце"><span>В этом месяце</span></label>
-<label><input type="radio" name="tlp-when" value="пока присматриваюсь"><span>Пока присматриваюсь</span></label>
-</div></fieldset>
+<div class="tlp-selects">
+<label>Формат<select name="tlp-where">
+<option value="">Любой формат</option><option value="на месте, Кавминводы">Кавминводы</option>
+<option value="онлайн">Онлайн</option><option value="пока не знаю">Пока не знаю</option>
+</select></label>
+<label>Когда<select name="tlp-when">
+<option value="">Без срока</option><option value="в ближайшие дни">В ближайшие дни</option>
+<option value="в этом месяце">В этом месяце</option><option value="пока присматриваюсь">Присматриваюсь</option>
+</select></label>
+</div>
 <div class="tlp-go">
-<a class="tlp-main" data-tlp="wa" href="https://wa.me/__WA__" target="_blank" rel="noopener">Отправить в WhatsApp</a>
-<a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener">Подобрать в Telegram-боте</a>
+<a class="tlp-main" data-tlp="wa" href="https://wa.me/__WA__" target="_blank" rel="noopener"><span>Написать в WhatsApp <span aria-hidden="true">↗</span></span></a>
+<a data-tlp="tg" href="https://t.me/TimLabs_bot?start=podbor" target="_blank" rel="noopener"><span>Telegram-бот</span></a>
 __ASK__
 </div>
 <small>Ответы не сохраняются на сайте: они только складываются в текст сообщения, и вы сами решаете, отправлять ли его. Не указывайте диагнозы и сведения о здоровье. Подробнее — в <a href="/privacy/">политике обработки данных</a>. Практики мастеров носят велнес-характер и не являются медицинской помощью.</small>
-<script>(function(){var box=document.getElementById('tl-podbor');if(!box)return;
-function v(n){var x=box.querySelector('input[name="'+n+'"]:checked');return x?x.value:'';}
-function text(){var p=['Здравствуйте, Тим! Хочу подобрать мастера.'],a=v('tlp-what'),b=v('tlp-where'),c=v('tlp-when');
-if(a)p.push('Что важно: '+a+'.');if(b)p.push('Формат: '+b+'.');if(c)p.push('Когда: '+c+'.');
-p.push('Нашёл(ла) вас на странице: '+location.origin+location.pathname);return p.join('\n');}
-var wa=box.querySelector('[data-tlp="wa"]');
-function ix(n){var l=box.querySelectorAll('input[name=\"'+n+'\"]');for(var i=0;i<l.length;i++)if(l[i].checked)return i+1;return 0;}var tg=box.querySelector('[data-tlp=\"tg\"]');function upd(){wa.href='https://wa.me/__WA__?text='+encodeURIComponent(text());if(tg){var s='podbor',w=ix('tlp-what'),f=ix('tlp-where'),t=ix('tlp-when');if(w)s+='_w'+w;if(f)s+='_f'+f;if(t)s+='_t'+t;tg.href='https://t.me/TimLabs_bot?start='+s;}}
-box.addEventListener('change',upd);upd();
-box.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-tlp]');if(!a)return;
-try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:a.getAttribute('data-tlp'),page:location.pathname});}catch(_){}});
+<script>(function(){
+  var box=document.getElementById('tl-podbor');
+  if(!box)return;
+  var wa=box.querySelector('[data-tlp="wa"]'), tg=box.querySelector('[data-tlp="tg"]');
+  if(!wa || !tg)return;
+  function update(){
+    var choices=Array.from(box.querySelectorAll('input[name="tlp-what"]'));
+    var topic=choices.findIndex(function(choice){return choice.checked;})+1;
+    var format=box.querySelector('[name="tlp-where"]'), timing=box.querySelector('[name="tlp-when"]');
+    var text=['Здравствуйте, Тим! Хочу подобрать мастера.'];
+    if(topic)text.push('Что важно: '+choices[topic-1].value+'.');
+    if(format.value)text.push('Формат: '+format.value+'.');
+    if(timing.value)text.push('Когда: '+timing.value+'.');
+    text.push('Нашёл(ла) вас на странице: '+location.origin+location.pathname);
+    wa.href='https://wa.me/__WA__?text='+encodeURIComponent(text.join('\n'));
+    tg.href='https://t.me/TimLabs_bot?start=podbor'+
+      (topic?'_w'+topic:'')+(format.selectedIndex?'_f'+format.selectedIndex:'')+
+      (timing.selectedIndex?'_t'+timing.selectedIndex:'');
+  }
+  box.addEventListener('change',update);
+  window.addEventListener('pageshow',update);
+  update();
+  box.addEventListener('click',function(event){
+    var link=event.target.closest&&event.target.closest('[data-tlp]');
+    if(!link)return;
+    try{if(typeof ym==='function')ym(111725024,'reachGoal','podbor_send',{via:link.getAttribute('data-tlp'),page:location.pathname});}catch(_){}
+  });
 })();</script>
 </section>""".replace("__WA__", WA).replace("__ASK__", ASK_BTN)
+
+
+def upgrade_picker(html):
+    """Project the current picker while retaining the home disclosure UI."""
+    marker = re.compile(r'(<!--tl-podbor-v1-->\s*<section\b(?=[^>]*\bid="tl-podbor")[^>]*>).*?</section>', re.S)
+    def replace(match):
+        previous = match.group(0)
+        if 'data-picker="compact"' in match.group(1):
+            return previous
+        updated = match.group(1)[:-1] + ' data-picker="compact">' + PODBOR[PODBOR.index('\n'):]
+        if 'class="tl-home-picker"' not in previous:
+            return updated
+        title = updated.index('<h2 id="tlp-h">')
+        body = updated.index('<fieldset>', title)
+        end = updated.rindex('</section>')
+        opened = ' open' if re.search(r'<details\b[^>]*\bopen(?:\s|>)', previous) else ''
+        return (updated[:title] + '<details class="tl-home-picker"' + opened +
+                '><summary>' + updated[title:body].rstrip() + '</summary>\n' +
+                updated[body:end] + '</details>\n' + updated[end:])
+    return marker.sub(replace, html, count=1)
+
 
 SUB = """<!--tl-sub-v1--><div class="tls" style="margin:24px 0;padding:16px 18px;border:1px solid var(--stroke,rgba(255,255,255,.12));border-radius:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
 <span style="flex:1 1 240px;color:var(--text,#e7ecf7)">📬 Новые статьи журнала «Компас» — в Telegram-канале</span>
